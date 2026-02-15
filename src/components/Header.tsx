@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Globe, Shield, Car, Building2, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import logoDark from '@/assets/logo-dark.png';
 
 const languages = [
   { code: 'pt', label: 'PT', flag: '🇧🇷' },
@@ -64,9 +65,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl lg:text-2xl font-black tracking-wider text-gradient-premium">
-              INSULFILM™
-            </span>
+            <img src={logoDark} alt="INSULFILM™" className="h-10 lg:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -79,7 +78,7 @@ const Header = () => {
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-silver-light hover:text-foreground transition-colors rounded-md"
+                  className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
                   aria-expanded={openMenu === menu.key}
                 >
                   <menu.icon className="w-4 h-4" />
@@ -88,12 +87,12 @@ const Header = () => {
                 </button>
 
                 {openMenu === menu.key && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-glass rounded-lg shadow-premium border-glow p-2 animate-fade-in-up">
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-lg shadow-premium border border-border p-2 animate-fade-in-up">
                     {menu.items.map((item) => (
                       <Link
                         key={item.href}
                         to={item.href}
-                        className="block px-4 py-3 text-sm text-silver-light hover:text-foreground hover:bg-secondary/50 rounded-md transition-colors"
+                        className="block px-4 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -105,7 +104,7 @@ const Header = () => {
 
             <Link
               to="/produtos"
-              className="px-4 py-2 text-sm font-medium text-silver-light hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
               {t('nav.products')}
             </Link>
@@ -114,15 +113,15 @@ const Header = () => {
           {/* Right side: Language + CTA + Mobile */}
           <div className="flex items-center gap-3">
             {/* Language Selector */}
-            <div className="flex items-center gap-1 bg-secondary/50 rounded-md p-1">
+            <div className="flex items-center gap-1 bg-primary-foreground/10 rounded-md p-1">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => i18n.changeLanguage(lang.code)}
                   className={`flex items-center gap-1 px-2 py-1 text-xs rounded transition-colors ${
                     i18n.language === lang.code
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
+                      ? 'bg-accent text-accent-foreground'
+                      : 'text-primary-foreground/70 hover:text-primary-foreground'
                   }`}
                   aria-label={`Switch to ${lang.label}`}
                 >
@@ -134,7 +133,7 @@ const Header = () => {
 
             {/* CTA Desktop */}
             <Link to="/parceiro" className="hidden lg:block">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-xs">
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs">
                 {t('nav.becomePartner')}
               </Button>
             </Link>
@@ -142,12 +141,14 @@ const Header = () => {
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon" className="text-foreground">
+                <Button variant="ghost" size="icon" className="text-primary-foreground">
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-card border-border w-80">
-                <SheetTitle className="text-foreground text-lg font-bold mb-6">INSULFILM™</SheetTitle>
+                <SheetTitle className="text-foreground text-lg font-bold mb-6">
+                  <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(5000%) hue-rotate(220deg)' }} />
+                </SheetTitle>
                 <nav className="flex flex-col gap-2">
                   {megaMenuItems.map((menu) => (
                     <div key={menu.key}>
@@ -158,7 +159,7 @@ const Header = () => {
                         <Link
                           key={item.href}
                           to={item.href}
-                          className="block px-3 py-2.5 text-sm text-silver-light hover:text-foreground hover:bg-secondary/50 rounded-md transition-colors"
+                          className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
                           onClick={() => setMobileOpen(false)}
                         >
                           {item.label}
@@ -168,14 +169,14 @@ const Header = () => {
                   ))}
                   <Link
                     to="/produtos"
-                    className="block px-3 py-2.5 text-sm font-medium text-silver-light hover:text-foreground"
+                    className="block px-3 py-2.5 text-sm font-medium text-foreground/70 hover:text-accent"
                     onClick={() => setMobileOpen(false)}
                   >
                     {t('nav.products')}
                   </Link>
                   <div className="pt-4 px-3">
                     <Link to="/parceiro" onClick={() => setMobileOpen(false)}>
-                      <Button className="w-full bg-primary text-primary-foreground">
+                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                         {t('nav.becomePartner')}
                       </Button>
                     </Link>

@@ -60,8 +60,8 @@ const Index = () => {
       <section id="hero" className="relative min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
         {/* Background glow effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-glow-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-glow-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary-foreground/5 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
         </div>
 
         <div className="container mx-auto px-4 pt-20 relative z-10">
@@ -71,30 +71,30 @@ const Index = () => {
             animate="visible"
             variants={stagger}
           >
-            <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.3em] text-primary mb-4 font-medium">
+            <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.3em] text-accent mb-4 font-medium">
               INSULFILM™
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-gradient-premium leading-tight">
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-primary-foreground leading-tight">
               {t('hero.tagline')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto">
               {t('hero.subtitle')}
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/automotivo">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold gap-2 w-full sm:w-auto">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold gap-2 w-full sm:w-auto">
                   <Car className="w-4 h-4" />
                   {t('hero.ctaCar')}
                 </Button>
               </Link>
               <Link to="/residencial">
-                <Button size="lg" variant="outline" className="border-silver/30 text-foreground hover:bg-secondary/50 font-semibold gap-2 w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold gap-2 w-full sm:w-auto">
                   <Building2 className="w-4 h-4" />
                   {t('hero.ctaHome')}
                 </Button>
               </Link>
               <Link to="/parceiro">
-                <Button size="lg" variant="ghost" className="text-primary hover:text-primary hover:bg-primary/10 font-semibold gap-2 w-full sm:w-auto">
+                <Button size="lg" variant="ghost" className="text-accent hover:text-accent hover:bg-accent/10 font-semibold gap-2 w-full sm:w-auto">
                   {t('hero.ctaPartner')}
                   <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -135,17 +135,17 @@ const Index = () => {
             {productHighlights.map((product, i) => (
               <motion.div key={i} variants={fadeInUp}>
                 <Link to={product.href}>
-                  <Card className="bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-premium group h-full">
+                  <Card className="bg-card border-border hover:border-accent/30 transition-all duration-300 hover:shadow-premium group h-full">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                        <product.icon className="w-6 h-6 text-primary" />
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors">
+                        <product.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
                       </div>
-                      <span className="text-xs font-medium uppercase tracking-wider text-primary mb-2 block">
+                      <span className="text-xs font-medium uppercase tracking-wider text-accent mb-2 block">
                         {product.category}
                       </span>
                       <h3 className="text-xl font-bold text-foreground mb-2">{product.title}</h3>
                       <p className="text-sm text-muted-foreground mb-4">{product.desc}</p>
-                      <span className="text-sm font-medium text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-sm font-medium text-accent flex items-center gap-1 group-hover:gap-2 transition-all">
                         {t('products.viewDetails')} <ArrowRight className="w-4 h-4" />
                       </span>
                     </CardContent>
@@ -167,10 +167,10 @@ const Index = () => {
             viewport={{ once: true }}
             variants={stagger}
           >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-gradient-premium mb-3">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
               {t('why.title')}
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg">
+            <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg">
               {t('why.subtitle')}
             </motion.p>
           </motion.div>
@@ -184,13 +184,13 @@ const Index = () => {
           >
             {whyItems.map((item, i) => (
               <motion.div key={i} variants={fadeInUp}>
-                <Card className="bg-card/50 border-border hover:border-primary/20 transition-all h-full text-center">
+                <Card className="bg-primary-foreground/5 border-primary-foreground/10 hover:border-accent/30 transition-all h-full text-center">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <item.icon className="w-7 h-7 text-primary" />
+                    <div className="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-4">
+                      <item.icon className="w-7 h-7 text-accent" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    <h3 className="text-lg font-bold text-primary-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-primary-foreground/60">{item.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -228,12 +228,12 @@ const Index = () => {
               <motion.div key={sim.id} variants={fadeInUp}>
                 <Card id={sim.id} className="bg-card border-border border-dashed h-full">
                   <CardContent className="p-8 text-center flex flex-col items-center justify-center min-h-[240px]">
-                    <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-4">
                       <sim.icon className="w-8 h-8 text-muted-foreground" />
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-2">{sim.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{sim.desc}</p>
-                    <span className="text-xs uppercase tracking-wider text-primary font-semibold px-3 py-1 rounded-full bg-primary/10">
+                    <span className="text-xs uppercase tracking-wider text-accent font-semibold px-3 py-1 rounded-full bg-accent/10">
                       {t('simulators.comingSoon')}
                     </span>
                   </CardContent>
