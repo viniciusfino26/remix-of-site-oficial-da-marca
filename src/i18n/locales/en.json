@@ -73,5 +73,178 @@
     "productLines": "Product Lines",
     "support": "Support",
     "followUs": "Follow Us"
+  },
+  "about": {
+    "heroTitle": "The film brand. Since 1988.",
+    "heroQuestion": "Why does almost everyone in Brazil call solar protection films \"insulfilm\"?",
+    "heroText": "INSULFILM™ is the first and most recognized film brand in Brazil for automotive and architectural glass. Over 35 years innovating in films for glass and metallic surfaces. Since 1988, INSULFILM™ has revolutionized how Brazilians experience their glazed environments, transforming this experience into comfort and protection with sophistication.",
+    "timelineTitle": "Our History",
+    "timelineSubtitle": "Pioneering films in Brazil",
+    "timelineToday": "Today",
+    "timelineClosing": "INSULFILM™ doesn't protect glass, it protects you.",
+    "timeline": {
+      "decade1": "1980–1990",
+      "decade2": "2000–2010",
+      "decade3": "2010–2020",
+      "decade4": "2020–2025",
+      "e1988": "We inaugurated the solar protection film market in Brazil, ensuring exclusive innovation with registered patents from the start.",
+      "e1996": "World's largest glass film distributor, title granted by the world's largest industry at the time, headquartered in the USA.",
+      "e1996b": "First to offer architectural anti-vandalism and security protection films — INSULFILM™ SafetySecurityFilm.",
+      "e1997": "First to offer films manufactured by OEM system with specific characteristics for the Brazilian climate.",
+      "e1998": "We led the change in the sector by directly supporting Contran regulation for the commercialization of automotive films.",
+      "e2000": "First to offer automotive anti-vandalism and security protection films in Brazil — INSULFILM™ Blindado.",
+      "e2001": "First film brand to open an official store for direct consumer service — Official INSULFILM™ Store, Água Branca, SP.",
+      "e2001b": "First to remove car windows for application of anti-vandalism protection films.",
+      "e2008": "First to offer automotive film with photochromic effect and superior technology to block heat — INSULFILM™ Elite.",
+      "e2011": "Brazil's first architectural project with custom glass films for ballistic resistance.",
+      "e2012": "Sale of the first glass film service franchise in Brazil — Official INSULFILM™ Store, Ribeirão Preto.",
+      "e2018": "First to offer films with high definition technology — INSULFILM™ Elite.",
+      "e2019": "Launch of premium paint protection film (PPF) — INSULFILM™ Phantom 8mil.",
+      "e2024": "Launch of ultra definition technology — INSULFILM™ Elite, Polariz and Matrix.",
+      "e2025": "Launch of Eclipse, Skye Ultra, Panoramic films and the new \"Superior Security Films\" category for automotive glass."
+    },
+    "diffTitle": "Not All Films Are Equal",
+    "diffSubtitle": "The difference between an original INSULFILM™ film and an imitation goes far beyond appearance. It's technology, protection and real warranty.",
+    "diff": {
+      "originalTitle": "Original Film",
+      "originalDesc": "Patented technology with authenticity certification on every product.",
+      "lastingTitle": "Lasting Protection",
+      "lastingDesc": "Films that maintain performance for years, without discoloring or peeling.",
+      "professionalsTitle": "Professional Installers",
+      "professionalsDesc": "Network of certified installers trained by the factory.",
+      "warrantyTitle": "Valid Warranty",
+      "warrantyDesc": "Factory warranty with traceability and anti-piracy verification."
+    }
+  },
+  "automotivePage": {
+    "heroLabel": "Automotive",
+    "heroTitle": "Solar Protection Films",
+    "heroSubtitle": "Premium Performance — protection, comfort and style for your vehicle.",
+    "productsTitle": "Our Products",
+    "productsSubtitle": "Choose the ideal film for your vehicle",
+    "specSerie": "Series",
+    "specHeat": "Heat Rejection",
+    "specTech": "Technology",
+    "specType": "Type",
+    "cta": "I want to know more",
+    "dark": {
+      "name": "INSULFILM™ Dark",
+      "category": "Classic",
+      "serie": "Pigmented",
+      "heat": "Up to 39%",
+      "tech": "Clear",
+      "type": "Pigmentation",
+      "desc": "Brazil's most traditional film. Solar protection with classic style and unbeatable value.",
+      "warranty": "Factory Warranty"
+    },
+    "eclipse": {
+      "name": "INSULFILM™ Eclipse",
+      "category": "Premium Performance",
+      "serie": "Carbon",
+      "heat": "Up to 49%",
+      "tech": "High Definition",
+      "type": "Carbon HD",
+      "desc": "Carbon technology with high definition. Superior heat rejection for maximum comfort.",
+      "warranty": "Extended Factory Warranty"
+    },
+    "vip": {
+      "name": "INSULFILM™ VIP",
+      "category": "Premium Performance",
+      "serie": "Carbon Extra",
+      "heat": "Up to 58%",
+      "tech": "High Definition",
+      "type": "Carbon Extra HD",
+      "desc": "Maximum heat rejection in the carbon line. For those who demand the best in performance.",
+      "warranty": "Extended Factory Warranty"
+    },
+    "polaris": {
+      "name": "INSULFILM™ Polaris",
+      "category": "Ultra Performance",
+      "serie": "Nano Ceramic",
+      "heat": "Up to 72%",
+      "tech": "Ultra Definition",
+      "type": "Nano Ceramic",
+      "desc": "Nano ceramic technology with ultra definition. Top of the line in performance and visual clarity.",
+      "warranty": "Premium Lifetime Warranty"
+    },
+    "antivandal": {
+      "name": "INSULFILM™ Anti-Vandalism 13K",
+      "category": "Security",
+      "serie": "Safety & Security",
+      "heat": "Total Protection",
+      "tech": "Anti-Vandalism",
+      "type": "Security 13K",
+      "desc": "Anti-vandalism protection for automotive glass. Reinforced security against impacts and break-in attempts.",
+      "warranty": "Factory Warranty"
+    },
+    "phantom": {
+      "name": "INSULFILM™ Phantom PPF",
+      "category": "Paint Protection",
+      "serie": "PPF 6mil / 8mil",
+      "heat": "N/A",
+      "tech": "Self-Healing",
+      "type": "Premium PPF",
+      "desc": "Invisible protection for your vehicle's paint. Self-healing film against scratches and impacts.",
+      "warranty": "Premium 10 Year Warranty"
+    },
+    "diffTitle": "Our Differentials",
+    "diff": {
+      "service": {
+        "title": "Service",
+        "desc": "Specialized and personalized service for each client, with complete technical consulting.",
+        "item1": "Personalized technical consulting for choosing the ideal film.",
+        "item2": "Team trained with INSULFILM™ factory certification.",
+        "item3": "After-sales service with complete support."
+      },
+      "performance": {
+        "title": "Performance",
+        "desc": "High-performance films with the most advanced technologies on the market.",
+        "item1": "Exclusive technologies: Clear, High Definition, Ultra Definition.",
+        "item2": "Heat rejection up to 72% with the Polaris line.",
+        "item3": "UV protection up to 99% across all lines."
+      },
+      "box": {
+        "title": "Dedicated Bay",
+        "desc": "Complete infrastructure with dedicated bay for professional application.",
+        "item1": "Climate-controlled environment for perfect application.",
+        "item2": "State-of-the-art professional equipment.",
+        "item3": "Exclusive area for film drying and curing."
+      },
+      "application": {
+        "title": "Application",
+        "desc": "Professional application with exclusive techniques and specialized tools.",
+        "item1": "Window removal technique for security film application.",
+        "item2": "Standardized process with rigorous quality control.",
+        "item3": "Impeccable finish with satisfaction guarantee."
+      },
+      "warranty": {
+        "title": "Warranty",
+        "desc": "Factory warranty with complete traceability and anti-piracy verification.",
+        "item1": "Authenticity certificate with verifiable QR Code.",
+        "item2": "Warranty against discoloration, bubbles and peeling.",
+        "item3": "National network of authorized stores for warranty claims."
+      }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faq1": {
+      "q": "Which film is recommended for my car?",
+      "a": "The choice depends on your needs. For thermal comfort, we recommend the Eclipse or VIP line. For security, the Anti-Vandalism 13K. For paint protection, the Phantom PPF. Our team can help with technical consulting."
+    },
+    "faq2": {
+      "q": "Does the film darken the glass too much?",
+      "a": "Each line has different visible light transmission (VLT) levels. We offer options from light tints to maximum darkening allowed by legislation. The important thing is to respect CONTRAN limits."
+    },
+    "faq3": {
+      "q": "How long does the film last?",
+      "a": "Durability varies by line. Original INSULFILM™ films are designed to last years without discoloring or peeling, with factory warranty that proves the quality."
+    },
+    "faq4": {
+      "q": "How do I know if the film is original?",
+      "a": "Every original INSULFILM™ film has an authenticity certificate with a verifiable QR Code. Additionally, only authorized dealers have access to original products. Be wary of prices well below market value."
+    },
+    "faq5": {
+      "q": "Can the film be applied to any glass?",
+      "a": "Yes, we have films for all types of automotive glass, including windshields (with authorization), side windows, rear window and sunroof. Each glass can receive the most suitable film for your needs."
+    }
   }
 }
