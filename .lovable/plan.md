@@ -1,49 +1,54 @@
 
+# Elevar o Visual Premium — INSULFILM™
 
-# Atualizar Paleta de Cores — INSULFILM™ Brand Guidelines
+## Melhorias Visuais Propostas
 
-## Cores da Marca (do manual enviado)
-- **Azul Principal:** #001E60 (RGB 0, 30, 96)
-- **Laranja Detalhe:** #FF6720 (RGB 255, 103, 32)
-- **Branco Puro:** #FFFFFF
+### 1. Hero Section — Impacto Visual
+- Adicionar uma linha fina laranja/dourada no topo do header (accent bar) como sites premium fazem
+- Incluir um padrão sutil geométrico (grid de linhas finas) no fundo do hero para dar textura
+- Aumentar o espaçamento entre letras no "INSULFILM™" do hero para mais elegância
+- Adicionar um separador decorativo (linha fina laranja) entre o subtítulo e os CTAs
+- Botão "For My Home" está invisível (texto branco em fundo que não contrasta) — corrigir com borda visível
+
+### 2. Header — Refinamento
+- Adicionar uma barra fina de 3px laranja no topo absoluto da página (accent stripe)
+- Aumentar levemente a altura do header e melhorar o espaçamento dos itens
+- Logo um pouco maior no desktop
+- Efeito hover mais sofisticado nos links (underline animado ao invés de simples mudança de cor)
+
+### 3. Seção de Produtos — Cards Premium
+- Adicionar um hover com elevação mais pronunciada (shadow maior + leve scale)
+- Borda superior laranja sutil nos cards ao hover
+- Ícones com fundo em gradiente sutil ao invés de cor sólida
+- Espaçamento mais generoso dentro dos cards
+
+### 4. Seção "Why INSULFILM" — Mais Impacto
+- Adicionar uma textura sutil de linhas diagonais no fundo azul escuro
+- Cards com efeito glassmorphism (fundo translúcido com blur)
+- Ícones com um anel/círculo animado sutil ao redor
+
+### 5. Seção Simuladores — Menos "Placeholder"
+- Melhorar os cards com um gradiente de fundo sutil ao invés de borda tracejada
+- Adicionar um efeito shimmer/pulse sutil no badge "Coming Soon"
+- Bordas arredondadas maiores e sombra suave
+
+### 6. Footer — Mais Elegante
+- Adicionar uma linha separadora decorativa laranja no topo do footer
+- Melhorar a hierarquia visual com espaçamento e tipografia
+- Ícones de redes sociais com hover animado (scale + cor laranja)
+
+### 7. Animações e Micro-interações
+- Scroll-triggered animations mais suaves (já usa framer-motion, refinar)
+- Efeito parallax sutil no hero
+- Transições de página suaves
+
+### 8. Tipografia Premium
+- Pesos mais variados do Nunito Sans (ExtraBold para títulos principais, Light para subtítulos)
+- Tamanhos mais dramáticos nos títulos hero (maior contraste de escala)
 
 ## Arquivos a Alterar
-
-### 1. `src/index.css` — Variáveis CSS
-Atualizar todas as variáveis HSL para refletir a nova paleta:
-- `--background`: Branco puro (0 0% 100%)
-- `--foreground`: Azul escuro (#001E60)
-- `--primary`: Azul #001E60 (hsl ~220 100% 19%)
-- `--accent`: Laranja #FF6720 (hsl ~19 100% 56%)
-- `--card`, `--popover`: Branco ou cinza muito claro
-- `--muted`, `--secondary`: Tons claros de cinza/azul
-- `--border`, `--input`: Cinza claro
-- Remover variáveis custom `--carbon`, `--carbon-deep`, `--deep-blue`, `--deep-blue-accent`, `--silver`, `--silver-light`, `--glass`
-- Ajustar sidebar para tons de azul escuro
-
-### 2. `src/index.css` — Classes utilitárias
-- `.text-gradient-premium`: Gradiente com azul escuro
-- `.text-gradient-blue`: Gradiente azul para laranja
-- `.bg-glass`: Fundo branco translucido
-- `.bg-carbon-gradient`: Substituir por gradiente azul
-- `.shadow-premium`: Sombra com tom azul
-- `.border-glow`: Borda laranja sutil
-
-### 3. `tailwind.config.ts`
-- Remover cores custom `carbon`, `silver`, `deep-blue` (ja que as variáveis CSS serão removidas)
-
-### 4. `src/components/Header.tsx`
-- Ajustar classes de fundo e texto para usar a nova paleta (azul escuro de fundo, texto branco, detalhes laranja)
-
-### 5. `src/components/Footer.tsx`
-- Ajustar fundo para azul escuro, texto branco, CTAs em laranja
-
-### 6. `src/pages/Index.tsx`
-- Ajustar hero, cards e seções para a nova paleta (fundo branco, textos azul escuro, botões/detalhes em laranja)
-
-### 7. Logos
-- Copiar os logos enviados (`2.png` versão fundo branco e `3.png` versão fundo escuro) para `src/assets/` e usar no Header/Footer
-
-## Resultado
-Site com visual limpo e profissional: fundo branco, textos e navegação em azul marinho #001E60, botões e destaques em laranja #FF6720, seguindo fielmente o manual de identidade visual da INSULFILM™.
-
+- `src/index.css` — Novas utilidades CSS (accent stripe, texturas, shimmer)
+- `src/components/Header.tsx` — Accent bar, hover animado, logo maior
+- `src/pages/Index.tsx` — Refinamento de todas as seções (hero, cards, simuladores)
+- `src/components/Footer.tsx` — Linha decorativa, hover nos ícones
+- `tailwind.config.ts` — Novas animações (shimmer, scale)
