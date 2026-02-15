@@ -68,6 +68,7 @@
 }
 
 @layer utilities {
+  /* Premium text gradients */
   .text-gradient-premium {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(224 100% 19%), hsl(224 80% 30%));
@@ -78,21 +79,128 @@
     background-image: linear-gradient(135deg, hsl(224 100% 19%), hsl(19 100% 56%));
   }
 
+  /* Glass header */
   .bg-glass {
-    background: hsl(224 100% 14% / 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid hsl(224 60% 25% / 0.5);
+    background: hsl(224 100% 14% / 0.97);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid hsl(224 60% 25% / 0.4);
   }
 
+  /* Dark gradient sections */
   .bg-carbon-gradient {
     background: linear-gradient(180deg, hsl(224 100% 14%) 0%, hsl(224 100% 19%) 100%);
   }
 
+  /* Premium shadows */
   .shadow-premium {
     box-shadow: 0 4px 30px hsl(224 100% 19% / 0.1), 0 1px 3px hsl(0 0% 0% / 0.08);
   }
 
+  .shadow-premium-lg {
+    box-shadow: 0 8px 40px hsl(224 100% 19% / 0.15), 0 2px 6px hsl(0 0% 0% / 0.1);
+  }
+
+  /* Orange glow border */
   .border-glow {
     border: 1px solid hsl(19 100% 56% / 0.3);
+  }
+
+  /* Accent stripe - thin orange bar */
+  .accent-stripe {
+    height: 3px;
+    background: linear-gradient(90deg, hsl(19 100% 56%) 0%, hsl(19 100% 66%) 50%, hsl(19 100% 56%) 100%);
+  }
+
+  /* Hero geometric texture overlay */
+  .bg-hero-texture {
+    background-image:
+      linear-gradient(hsl(224 100% 30% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(224 100% 30% / 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Diagonal texture for dark sections */
+  .bg-diagonal-texture {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 30px,
+      hsl(224 100% 30% / 0.05) 30px,
+      hsl(224 100% 30% / 0.05) 31px
+    );
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: hsl(0 0% 100% / 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+
+  /* Shimmer effect for badges */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(19 100% 56% / 0.15), transparent);
+    animation: shimmer 2.5s infinite;
+  }
+
+  /* Animated underline for nav links */
+  .nav-link-premium {
+    position: relative;
+  }
+  .nav-link-premium::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: hsl(19 100% 56%);
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  .nav-link-premium:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Social icon hover */
+  .social-icon-premium {
+    @apply transition-all duration-300;
+  }
+  .social-icon-premium:hover {
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 4px 12px hsl(19 100% 56% / 0.3);
+  }
+
+  /* Card premium hover */
+  .card-premium-hover {
+    @apply transition-all duration-300;
+  }
+  .card-premium-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px hsl(224 100% 19% / 0.15);
+    border-top-color: hsl(19 100% 56% / 0.5);
+  }
+
+  /* Decorative separator */
+  .separator-accent {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(19 100% 56%), hsl(19 100% 66%));
+    border-radius: 2px;
+  }
+
+  /* Icon ring glow */
+  .icon-ring-glow {
+    box-shadow: 0 0 0 4px hsl(19 100% 56% / 0.1), 0 0 0 8px hsl(19 100% 56% / 0.05);
   }
 }
