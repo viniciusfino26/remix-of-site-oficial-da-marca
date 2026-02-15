@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "brand": "Marca",
+    "automotive": "Automotriz",
+    "architecture": "Arquitectura",
+    "support": "Soporte",
+    "whoWeAre": "Quiénes Somos",
+    "franchising": "Franquicias",
+    "careers": "Carreras",
+    "antiPiracy": "Anti-Piratería",
+    "forMyCar": "Para Mi Auto",
+    "forMyFleet": "Para Mi Flota",
+    "forMyHome": "Para Mi Hogar",
+    "forMyCompany": "Para Mi Empresa",
+    "salesCentral": "Central de Ventas",
+    "sac": "Atención al Cliente",
+    "storeLocator": "Localizador de Tiendas",
+    "becomePartner": "Sea Socio",
+    "products": "Productos"
+  },
+  "hero": {
+    "tagline": "Tecnología Premium en Películas",
+    "subtitle": "Protección, estilo y rendimiento para vehículos y edificaciones con la marca líder mundial.",
+    "ctaCar": "Para Mi Auto",
+    "ctaHome": "Para Mi Hogar",
+    "ctaPartner": "Sea Socio"
+  },
+  "products": {
+    "title": "Nuestras Líneas de Productos",
+    "subtitle": "Soluciones premium para cada necesidad",
+    "automotive": "Automotriz",
+    "architecture": "Arquitectura",
+    "security": "Seguridad",
+    "decorative": "Decorativo",
+    "solarControl": "Control Solar",
+    "ppf": "Protección de Pintura (PPF)",
+    "viewDetails": "Ver Detalles",
+    "findInstaller": "Encuentre un Instalador"
+  },
+  "why": {
+    "title": "¿Por qué INSULFILM™?",
+    "subtitle": "Diferenciales que hacen la diferencia",
+    "tech": "Tecnología Avanzada",
+    "techDesc": "Películas desarrolladas con las más avanzadas tecnologías de rechazo solar y protección.",
+    "warranty": "Garantía de Fábrica",
+    "warrantyDesc": "Todos los productos cuentan con garantía de fábrica contra defectos y decoloración.",
+    "authentic": "Autenticidad Garantizada",
+    "authenticDesc": "Sistema anti-piratería con verificación de autenticidad en cada producto.",
+    "global": "Presencia Global",
+    "globalDesc": "Red mundial de distribuidores autorizados e instaladores certificados."
+  },
+  "simulators": {
+    "title": "Simuladores Interactivos",
+    "subtitle": "Pruebe antes de decidir",
+    "autoViz": "Visualizador Automotriz",
+    "autoVizDesc": "Visualice cómo se ven las diferentes películas en su vehículo.",
+    "vlt": "Simulador VLT",
+    "vltDesc": "Compare los niveles de transmisión de luz visible entre las películas.",
+    "archDemo": "Demo Películas Arquitectónicas",
+    "archDemoDesc": "Vea el efecto de las películas arquitectónicas en diferentes ambientes.",
+    "comingSoon": "Próximamente"
+  },
+  "cta": {
+    "partnerTitle": "Conviértase en Distribuidor Autorizado",
+    "partnerSubtitle": "Forme parte de la mayor red de películas premium del mundo.",
+    "partnerButton": "Quiero Ser Socio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso",
+    "institutional": "Institucional",
+    "productLines": "Líneas de Producto",
+    "support": "Soporte",
+    "followUs": "Síguenos"
+  }
+}

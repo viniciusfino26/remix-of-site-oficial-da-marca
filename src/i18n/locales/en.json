@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "brand": "Brand",
+    "automotive": "Automotive",
+    "architecture": "Architecture",
+    "support": "Support",
+    "whoWeAre": "Who We Are",
+    "franchising": "Franchising",
+    "careers": "Careers",
+    "antiPiracy": "Anti-Piracy",
+    "forMyCar": "For My Car",
+    "forMyFleet": "For My Fleet",
+    "forMyHome": "For My Home",
+    "forMyCompany": "For My Company",
+    "salesCentral": "Sales Central",
+    "sac": "Customer Service",
+    "storeLocator": "Store Locator",
+    "becomePartner": "Become a Partner",
+    "products": "Products"
+  },
+  "hero": {
+    "tagline": "Premium Film Technology",
+    "subtitle": "Protection, style and performance for vehicles and buildings from the world's leading brand.",
+    "ctaCar": "For My Car",
+    "ctaHome": "For My Home",
+    "ctaPartner": "Become a Partner"
+  },
+  "products": {
+    "title": "Our Product Lines",
+    "subtitle": "Premium solutions for every need",
+    "automotive": "Automotive",
+    "architecture": "Architecture",
+    "security": "Security",
+    "decorative": "Decorative",
+    "solarControl": "Solar Control",
+    "ppf": "Paint Protection Film (PPF)",
+    "viewDetails": "View Details",
+    "findInstaller": "Find an Installer"
+  },
+  "why": {
+    "title": "Why INSULFILM™?",
+    "subtitle": "Differentials that make the difference",
+    "tech": "Advanced Technology",
+    "techDesc": "Films developed with the most advanced solar rejection and protection technologies.",
+    "warranty": "Factory Warranty",
+    "warrantyDesc": "All products come with factory warranty against defects and discoloration.",
+    "authentic": "Guaranteed Authenticity",
+    "authenticDesc": "Anti-piracy system with authenticity verification on every product.",
+    "global": "Global Presence",
+    "globalDesc": "Worldwide network of authorized dealers and certified installers."
+  },
+  "simulators": {
+    "title": "Interactive Simulators",
+    "subtitle": "Try before you decide",
+    "autoViz": "Automotive Visualizer",
+    "autoVizDesc": "Visualize how different films look on your vehicle.",
+    "vlt": "VLT Simulator",
+    "vltDesc": "Compare visible light transmission levels between films.",
+    "archDemo": "Architectural Film Demo",
+    "archDemoDesc": "See the effect of architectural films in different environments.",
+    "comingSoon": "Coming Soon"
+  },
+  "cta": {
+    "partnerTitle": "Become an Authorized Dealer",
+    "partnerSubtitle": "Join the world's largest premium film network.",
+    "partnerButton": "I Want to Be a Partner"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "institutional": "Institutional",
+    "productLines": "Product Lines",
+    "support": "Support",
+    "followUs": "Follow Us"
+  }
+}
