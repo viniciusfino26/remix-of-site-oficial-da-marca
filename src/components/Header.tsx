@@ -37,6 +37,7 @@ const Header = () => {
         { label: t('nav.forMyCar'), href: '/automotivo' },
         { label: t('nav.antiVandalism'), href: '/antivandalismo13k' },
         { label: t('nav.antiVandalismProposal'), href: '/antivandalismo13k/teste_proposta' },
+        { label: 'SkudoGuard', href: '/skudoguard' },
         { label: t('nav.forMyFleet'), href: '/frota' },
       ],
     },
