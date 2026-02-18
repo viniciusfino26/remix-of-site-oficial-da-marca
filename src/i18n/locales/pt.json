@@ -17,6 +17,7 @@
     "storeLocator": "Localizador de Lojas",
     "becomePartner": "Seja Parceiro",
     "antiVandalism": "Antivandalismo 13K",
+    "antiVandalismProposal": "Antivandalismo 13K — Proposta",
     "products": "Produtos"
   },
   "hero": {
@@ -326,5 +327,44 @@
     "ctaSubtitle": "Solicite um orçamento para a película Antivandalismo 13K e tenha a proteção que seu veículo merece.",
     "ctaButton": "Solicitar Orçamento",
     "ctaDisclaimer": "INSULFILM™ é marca registrada. Todos os direitos reservados."
+  },
+  "av13kP": {
+    "reality": {
+      "title": "A Realidade dos Roubos no Brasil",
+      "subtitle": "O vidro do seu carro é a porta de entrada mais vulnerável. Os números não mentem.",
+      "stat1": "A cada 8 minutos, um veículo é arrombado por quebra de vidro em São Paulo.",
+      "stat2": "Mais de 180 mil veículos arrombados por ano no estado de SP.",
+      "stat3": "73% dos arrombamentos acontecem por quebra de vidros laterais.",
+      "source": "Fontes: SSP-SP, Atlas da Violência (IPEA), Fórum Brasileiro de Segurança Pública."
+    },
+    "danger": {
+      "title": "O Perigo Vai Além do Prejuízo",
+      "subtitle": "Vidro temperado se fragmenta em centenas de estilhaços. Sem película, esses fragmentos atingem quem está dentro do veículo — rosto, olhos, braços.",
+      "shards": "Estilhaços Cortantes",
+      "shardsDesc": "Na quebra, o vidro temperado se fragmenta em centenas de pedaços que se espalham pelo interior do veículo com força e velocidade.",
+      "eyes": "Risco aos Olhos",
+      "eyesDesc": "Os fragmentos de vidro podem atingir diretamente os olhos dos ocupantes, causando lesões graves e até perda de visão.",
+      "skin": "Cortes na Pele e Rosto",
+      "skinDesc": "Estilhaços cortam a pele exposta, braços, mãos e rosto. Ferimentos que podem deixar cicatrizes permanentes.",
+      "children": "Crianças Vulneráveis",
+      "childrenDesc": "Crianças no banco traseiro estão na zona de maior risco. Pele mais fina, reflexos menores, consequências maiores."
+    },
+    "family": {
+      "title": "Proteja Quem Você Ama",
+      "imagePlaceholder": "Foto de família — em breve",
+      "message1": "Sua família está no banco de trás. Um ato de vandalismo pode durar segundos, mas as marcas podem durar para sempre.",
+      "message2": "A película não é um acessório. É uma camada de proteção entre o perigo e as pessoas que você mais ama.",
+      "message3": "A película não protege só o vidro. Protege a pele, os olhos e a tranquilidade de quem você mais ama."
+    },
+    "ctaMid": {
+      "title": "Não espere acontecer. Proteja agora.",
+      "subtitle": "Segurança não é luxo. É necessidade.",
+      "button": "Proteger Minha Família"
+    },
+    "testimonial": {
+      "quote": "Eu estava parado no semáforo com meus filhos quando quebraram o vidro traseiro. Os estilhaços voaram no banco de trás. Se não fosse pela película, meus filhos teriam se machucado gravemente. Foi o melhor investimento que eu fiz.",
+      "author": "Relato anônimo",
+      "location": "São Paulo, SP"
+    }
   }
 }

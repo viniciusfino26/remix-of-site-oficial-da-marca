@@ -17,6 +17,7 @@
     "storeLocator": "Store Locator",
     "becomePartner": "Become a Partner",
     "antiVandalism": "Anti-Vandalism 13K",
+    "antiVandalismProposal": "Anti-Vandalism 13K — Proposal",
     "products": "Products"
   },
   "hero": {
@@ -326,5 +327,44 @@
     "ctaSubtitle": "Request a quote for the Anti-Vandalism 13K film and get the protection your vehicle deserves.",
     "ctaButton": "Request a Quote",
     "ctaDisclaimer": "INSULFILM™ is a registered trademark. All rights reserved."
+  },
+  "av13kP": {
+    "reality": {
+      "title": "The Reality of Break-Ins in Brazil",
+      "subtitle": "Your car window is the most vulnerable entry point. The numbers don't lie.",
+      "stat1": "Every 8 minutes, a vehicle is broken into by glass smashing in São Paulo.",
+      "stat2": "Over 180 thousand vehicles broken into per year in the state of SP.",
+      "stat3": "73% of break-ins happen through side window smashing.",
+      "source": "Sources: SSP-SP, Atlas of Violence (IPEA), Brazilian Public Safety Forum."
+    },
+    "danger": {
+      "title": "The Danger Goes Beyond Property Damage",
+      "subtitle": "Tempered glass shatters into hundreds of fragments. Without film, these shards hit everyone inside the vehicle — face, eyes, arms.",
+      "shards": "Cutting Shards",
+      "shardsDesc": "When broken, tempered glass fragments into hundreds of pieces that scatter inside the vehicle with force and speed.",
+      "eyes": "Risk to Eyes",
+      "eyesDesc": "Glass fragments can directly hit occupants' eyes, causing severe injuries and even vision loss.",
+      "skin": "Cuts to Skin and Face",
+      "skinDesc": "Shards cut exposed skin, arms, hands and face. Wounds that can leave permanent scars.",
+      "children": "Vulnerable Children",
+      "childrenDesc": "Children in the back seat are in the highest risk zone. Thinner skin, slower reflexes, greater consequences."
+    },
+    "family": {
+      "title": "Protect Those You Love",
+      "imagePlaceholder": "Family photo — coming soon",
+      "message1": "Your family is in the back seat. An act of vandalism may last seconds, but the scars can last forever.",
+      "message2": "The film is not an accessory. It's a layer of protection between danger and the people you love most.",
+      "message3": "The film doesn't just protect the glass. It protects the skin, the eyes and the peace of mind of those you love most."
+    },
+    "ctaMid": {
+      "title": "Don't wait for it to happen. Protect now.",
+      "subtitle": "Safety is not a luxury. It's a necessity.",
+      "button": "Protect My Family"
+    },
+    "testimonial": {
+      "quote": "I was stopped at a traffic light with my kids when they smashed the rear window. The shards flew into the back seat. If it weren't for the film, my children would have been seriously hurt. It was the best investment I ever made.",
+      "author": "Anonymous report",
+      "location": "São Paulo, SP"
+    }
   }
 }
