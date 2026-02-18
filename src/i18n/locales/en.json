@@ -246,5 +246,84 @@
       "q": "Can the film be applied to any glass?",
       "a": "Yes, we have films for all types of automotive glass, including windshields (with authorization), side windows, rear window and sunroof. Each glass can receive the most suitable film for your needs."
     }
+  },
+  "av13k": {
+    "heroBadge": "Protection Film",
+    "heroSubtitle": "PROTECTION AGAINST VANDALISM",
+    "descTitle": "Protection beyond the glass",
+    "descText": "The INSULFILM™ Anti-Vandalism 13K film is composed of multiple layers of high-resistance polyester with special adhesive, which combined with tempered glass form a protective barrier against impacts, break-in attempts and acts of vandalism.",
+    "benefit1": "Protective barrier after glass breakage",
+    "benefit2": "Protection in accidental situations or acts of vandalism",
+    "benefit3": "Does not interfere with cell phone and electronic signals",
+    "benefit4": "Does not alter the vehicle's originality",
+    "imagePlaceholder": "Image coming soon",
+    "impactTitle": "Maximum Estimated Resistance",
+    "impactSubtitle": "Impact resistance tests with different types of objects",
+    "impact": {
+      "preBrk": "Pre-break",
+      "postBrk": "Post-break",
+      "total": "Total",
+      "candle": "Candle",
+      "stone": "Stone",
+      "bat": "Bat"
+    },
+    "impactFootnote": "*The window must be fully closed. Performance variations may occur.",
+    "barrierTitle": "Protective Barrier",
+    "barrierText": "The glass + film combination makes the assembly a protective and resistant barrier, delaying vandals and protecting vehicle occupants.",
+    "applicTitle": "Applicability",
+    "applic1Title": "Side Windows",
+    "applic1Desc": "Application on door side windows for protection against break-in attempts.",
+    "applic2Title": "Rear Window",
+    "applic2Desc": "Rear window protection against impacts and acts of vandalism.",
+    "physTitle": "Physical Properties",
+    "phys": {
+      "tensile": "Tensile Strength",
+      "tensileVal": "≥ 165 MPa",
+      "rupture": "Rupture Force",
+      "ruptureVal": "≥ 330 N/25mm",
+      "pullout": "Pull-out Force",
+      "pulloutVal": "≥ 15 N/25mm",
+      "elongation": "Elongation at Break",
+      "elongationVal": "≥ 120%",
+      "puncture": "Puncture Force",
+      "punctureVal": "≥ 80 N"
+    },
+    "opticalTitle": "Optical & Solar Benefits",
+    "optical": {
+      "clarity": "High Optical Clarity",
+      "clarityDesc": "Crystal-clear transparency that does not compromise driver visibility.",
+      "uv": "100% UV Protection",
+      "uvDesc": "Total ultraviolet ray rejection, protecting skin and vehicle interior.",
+      "privacy": "Privacy & Security",
+      "privacyDesc": "Visual security and privacy for vehicle occupants.",
+      "comfort": "Visual Comfort",
+      "comfortDesc": "Reduced excess brightness for greater driving comfort."
+    },
+    "warranty": {
+      "prodTitle": "Product Warranty — 5 Years",
+      "prodDesc": "Factory warranty against film manufacturing defects.",
+      "prodItem1": "Adhesive failure",
+      "prodItem2": "Delamination",
+      "prodItem3": "Spontaneous cracking",
+      "servTitle": "Service Warranty",
+      "servDesc": "Warranty on the quality of professional installation.",
+      "servItem1": "Detachment",
+      "servItem2": "Bubbles and scratches",
+      "servItem3": "Tears and gaps",
+      "replTitle": "Free Replacement",
+      "replDesc": "Free replacement of films on movable door side windows in case of proven incident.",
+      "replConditions": "Conditions: invoice + police report, once per year."
+    },
+    "glossaryTitle": "Technical Glossary",
+    "glossary": {
+      "mechTitle": "Mechanical Properties",
+      "mechContent": "Tensile Strength: maximum force the film withstands before breaking. Rupture Force: load required to break the film. Pull-out Force: adhesive resistance to detachment. Elongation at Break: stretching capacity before rupture. Puncture Force: resistance to point perforation.",
+      "solarTitle": "Solar & Optical Properties",
+      "solarContent": "VLT (Visible Light Transmission): percentage of visible light passing through the film. UV Rejection: ability to block ultraviolet rays. Optical Clarity: transparency and visual clarity quality of the applied film."
+    },
+    "ctaTitle": "Protect your vehicle now",
+    "ctaSubtitle": "Request a quote for the Anti-Vandalism 13K film and get the protection your vehicle deserves.",
+    "ctaButton": "Request a Quote",
+    "ctaDisclaimer": "INSULFILM™ is a registered trademark. All rights reserved."
   }
 }
