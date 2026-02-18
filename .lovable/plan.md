@@ -1,202 +1,115 @@
-# Roadmap Completo — Site Institucional INSULFILM™
 
-## Estado Atual
 
-**Paginas prontas (3):**
+# Pagina Antivandalismo13K — Plano Atualizado
 
-- `/` — Home (hero, produtos, why, simuladores)
-- `/quem-somos` — Institucional com timeline
-- `/automotivo` — Catalogo automotivo com FAQ
+## Alteracao: Imagem de Referencia e Tabela de Impactos
 
-**Paginas referenciadas no menu/footer mas que NAO existem (11):**
-
-- `/franquias` — Franquias
-- `/carreiras` — Carreiras
-- `/anti-pirataria` — Anti-Pirataria
-- `/frota` — Para Minha Frota
-- `/residencial` — Para Minha Residencia
-- `/empresarial` — Para Minha Empresa
-- `/vendas` — Central de Vendas
-- `/sac` — SAC
-- `/lojas` — Localizador de Lojas
-- `/parceiro` — Seja Parceiro
-- `/produtos` — Catalogo Geral de Produtos
-- `/privacidade` — Politica de Privacidade
-- `/termos` — Termos de Uso
-
-**Funcionalidades globais que faltam:**
-
-- Botao flutuante WhatsApp
-- Formulario de contato/orcamento
-- SEO (meta tags, Open Graph), GEO, webMCP
-- Links reais de redes sociais no footer
+A imagem enviada (`Antivandalismo13K_desktop.png`) sera usada como **referencia visual** para recriar a secao de impactos com componentes animados (nao como imagem estatica embedada). Isso garante melhor performance, responsividade e apelo visual.
 
 ---
 
-## Ordem de Prioridade
+## Dados da Tabela de Impactos (extraidos da imagem)
 
-### FASE 1 — Funcionalidades Essenciais (Impacto Imediato)
+Estes sao os valores que serao usados na pagina. Caso o video institucional (nGBNE0FG-8Q) apresente valores diferentes, o usuario devera confirmar quais usar — **nao e possivel extrair dados numericos do video automaticamente**. Os valores abaixo seguem a imagem fornecida:
 
-**1.1 Botao Flutuante WhatsApp**
+```text
+Resistencia Maxima Estimada*
 
-- Componente global fixo no canto inferior direito
-- Icone WhatsApp com animacao pulse
-- Link direto para conversa com mensagem pre-formatada
-- Visivel em todas as paginas
+                  vela      pedra     taco
+Pre-quebra        01        ate 22    ate 05
+Pos-quebra        ate 24    ate 22    ate 12
+Total             ate 25    ate 44    ate 17
+```
 
-**1.2 Pagina `/residencial` — Peliculas Arquitetonicas**
-
-- Mesmo padrao visual do `/automotivo`
-- Produtos: Petrolio, Metallico, Specchiato, Naturale, Orizzonte
-- Secao de diferenciais para residencias
-- FAQ especifico para peliculas arquitetonicas
-
-**1.3 Pagina `/parceiro` — Seja Parceiro / Franquias**
-
-- Hero com proposta de valor para franqueados/revendedores
-- Formulario de cadastro (nome, email, telefone, cidade, tipo de interesse)
-- Beneficios de ser parceiro (cards com icones)
-- CTA WhatsApp como alternativa ao formulario
-
-**1.4 SEO e Meta Tags**
-
-- Componente `<SEO>` reutilizavel com react-helmet ou tags manuais
-- Title, description, Open Graph para cada pagina
-- Favicon e manifest corretos
+Nota de rodape: *O vidro deve estar completamente fechado. Variacoes de desempenho podem ocorrer.*
 
 ---
 
-### FASE 2 — Paginas de Suporte ao Cliente
+## Como a Imagem Sera Recriada de Forma Animada
 
-**2.1 Pagina `/lojas` — Localizador de Lojas**
+Em vez de embedar a imagem estatica, vamos recriar o conteudo como **componentes React animados com framer-motion**:
 
-- Lista de lojas autorizadas por estado/cidade
-- Filtro por regiao
-- Card de cada loja com endereco, telefone, WhatsApp
-- Futuro: integracao com mapa (Google Maps embed)
+### Secao "Resistencia Maxima Estimada"
+- **Tabela animada**: cada linha entra com stagger (fadeInUp), celulas com contadores animados que "contam" ate o valor final (efeito countUp)
+- **Icones animados**: vela, pedra e taco como icones Lucide (Sword/Knife, Circle/Rock, Slash/Bat) com micro-animacao de bounce ao entrar no viewport
+- **Label "IMPACTOS"** na lateral esquerda com rotacao -90deg e tracking largo, igual a imagem
+- **Hover nos valores**: ao passar o mouse em cada celula, destaque com glow laranja
 
-**2.2 Pagina `/vendas` — Central de Vendas**
+### Secao "Barreira Protetora"
+- Texto "Torna vidro+pelicula uma barreira protetora e resistente" como bloco de destaque
+- Fundo com gradiente escuro + overlay sutil
+- Animacao fadeInRight com parallax leve
 
-- Formulario de orcamento (tipo de servico, veiculo/imovel, cidade)
-- Informacoes de contato comercial
-- CTA WhatsApp
-
-**2.3 Pagina `/sac` — SAC / Atendimento**
-
-- FAQ geral (diferente do FAQ de produto)
-- Formulario de contato para reclamacoes/duvidas
-- Canais de atendimento (telefone, email, WhatsApp)
-- Verificador de autenticidade (campo para codigo do certificado)
+### Secao "Garantia + Reposicao"
+- Card com icone de escudo/garantia
+- Texto sobre certificado individual e reposicao gratuita em negrito
+- Animacao de entrada com spring bounce
 
 ---
 
-### FASE 3 — Paginas Institucionais Complementares
+## Estrutura Completa da Pagina (atualizada)
 
-**3.1 Pagina `/franquias` — Modelo de Franquia**
+### 1 -- Hero com Video YouTube
+- iframe 16:9 com autoplay, `rel=0`, `modestbranding=1`
+- Badge "Pelicula de Protecao" + titulo + subtitulo
+- Parallax no fundo (mesmo padrao do Automotivo)
 
-- Explicacao do modelo de franquia INSULFILM™
-- Numeros e dados da rede
-- Depoimentos de franqueados
-- CTA para formulario de interesse (redireciona para `/parceiro`)
+### 2 -- Descricao do Produto
+- Texto explicativo a esquerda
+- 4 beneficios com checkmarks laranja animados (stagger)
+- Placeholder para imagem a direita
 
-**3.2 Pagina `/anti-pirataria` — Anti-Pirataria**
+### 3 -- Tabela de Impactos (NOVA — baseada na imagem)
+- Tabela animada com countUp nos numeros
+- Icones animados para cada tipo de arma branca
+- Label "IMPACTOS" vertical rotacionado
+- Nota de rodape com asterisco
+- Fundo branco, bordas premium
 
-- Como identificar pelicula original vs falsa
-- Sistema de verificacao de autenticidade (QR Code)
-- Riscos de usar pelicula pirata
-- Canal de denuncia
+### 4 -- Aplicabilidade
+- Dois cards lado a lado com placeholders para imagens
 
-**3.3 Pagina `/carreiras` — Trabalhe Conosco**
+### 5 -- Propriedades Fisicas
+- Cards estilizados com dados mecanicos
 
-- Cultura e valores da marca
-- Vagas abertas (lista simples, editavel)
-- Formulario de candidatura (nome, email, area, curriculo)
+### 6 -- Beneficios Opticos e Solares
+- 4 cards com icones animados (spring rotation)
 
----
+### 7 -- Garantia de Produto (5 anos)
+- Card com icone de garantia
 
-### FASE 4 — Paginas Secundarias e Complementos
+### 8 -- Garantia de Servico
+- Card similar
 
-**4.1 Pagina `/empresarial` — Peliculas para Empresas**
+### 9 -- Reposicao Gratuita
+- Card com borda laranja destacada
+- Texto em negrito sobre condicoes
 
-- Mesmo padrao do `/residencial` mas focado em B2B
-- Cases de sucesso (predios, frotas corporativas)
-- Formulario de orcamento corporativo
+### 10 -- Glossario Tecnico
+- Accordion com secoes Mecanico e Solar
 
-**4.2 Pagina `/frota` — Peliculas para Frotas**
-
-- Beneficios para gestores de frota
-- Tabela de produtos recomendados por tipo de veiculo
-- Formulario de orcamento para frota
-- CTA para contato comercial
-
-**4.3 Pagina `/produtos` — Catalogo Geral**
-
-- Pagina que unifica automotivo + residencial + empresarial
-- Filtros por categoria (automotivo, arquitetonico, seguranca, PPF)
-- Grid com todos os produtos
-- Links para paginas especificas
-
-**4.4 Paginas Legais**
-
-- `/privacidade` — Politica de Privacidade (texto legal)
-- `/termos` — Termos de Uso (texto legal)
-
----
-
-### FASE 5 — Funcionalidades Avancadas (Futuro)
-
-**5.1 Simuladores Interativos**
-
-- Visualizador automotivo (selecionar carro + pelicula)
-- Simulador VLT (comparar niveis de escurecimento)
-- Demo arquitetonico (antes/depois em ambientes)
-
-**5.2 Blog / Conteudo**
-
-- Pagina de artigos sobre peliculas, legislacao, dicas
-- SEO para trafico organico
-
-**5.3 Area do Franqueado (restrita)**
-
-- Login para franqueados
-- Materiais de marketing para download
-- Tabela de precos
-
----
-
-## Resumo por Fase
-
-
-| Fase | Paginas/Funcionalidades              | Estimativa          |
-| ---- | ------------------------------------ | ------------------- |
-| 1    | WhatsApp, Residencial, Parceiro, SEO | 4 entregas          |
-| 2    | Lojas, Vendas, SAC                   | 3 entregas          |
-| 3    | Franquias, Anti-Pirataria, Carreiras | 3 entregas          |
-| 4    | Empresarial, Frota, Catalogo, Legais | 4 entregas          |
-| 5    | Simuladores, Blog, Area Restrita     | 3 entregas (futuro) |
-
+### 11 -- CTA Final
+- "Proteja seu veiculo agora" + botao WhatsApp
 
 ---
 
 ## Detalhes Tecnicos
 
-### Padrao para cada nova pagina:
+### Arquivos:
+- **Novo**: `src/pages/Antivandalismo13K.tsx`
+- **Editado**: `src/App.tsx` (rota `/antivandalismo13k`)
+- **Editado**: `src/i18n/locales/pt.json`, `en.json`, `es.json` (traducoes completas)
 
-- Criar `src/pages/NomeDaPagina.tsx`
-- Adicionar rota em `src/App.tsx`
-- Adicionar traducoes em `pt.json`, `en.json`, `es.json`
-- Seguir padrao visual existente (hero azul escuro, cards premium, animacoes framer-motion)
+### Animacoes especificas da tabela de impactos:
+- `framer-motion` useInView para trigger
+- countUp customizado com `useSpring` + `useTransform` para animar numeros de 0 ate o valor final
+- staggerChildren para entrada sequencial das linhas
+- Icones com `whileInView={{ rotate: [0, -10, 10, 0], scale: [0.8, 1.1, 1] }}`
 
-### Componentes reutilizaveis a criar:
+### Padrao visual mantido:
+- bg-carbon-gradient para secoes escuras
+- Cards glass no fundo escuro
+- separator-accent entre secoes
+- Botoes CTA laranja
+- Tipografia extrabold + font-light para contraste
 
-- `src/components/WhatsAppButton.tsx` — Botao flutuante global
-- `src/components/ContactForm.tsx` — Formulario reutilizavel (orcamento, contato, candidatura)
-- `src/components/ProductCard.tsx` — Card de produto extraido do Automotivo para reutilizar
-- `src/components/PageHero.tsx` — Hero padrao reutilizavel para todas as paginas
-- `src/components/SEO.tsx` — Meta tags reutilizaveis
-
-### Arquivos editados em cada fase:
-
-- `src/App.tsx` — Novas rotas
-- `src/i18n/locales/*.json` — Traducoes
-- `src/components/Header.tsx` — Ajustes de navegacao se necessario
