@@ -35,6 +35,7 @@ const Header = () => {
       icon: Car,
       items: [
         { label: t('nav.forMyCar'), href: '/automotivo' },
+        { label: t('nav.antiVandalism'), href: '/antivandalismo13k' },
         { label: t('nav.forMyFleet'), href: '/frota' },
       ],
     },
