@@ -136,15 +136,17 @@ const Antivandalismo13K = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-primary-foreground/10">
-            <div className="aspect-video">
+            <div className="aspect-video relative">
               <iframe
-                src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1"
                 title="INSULFILM™ Antivandalismo 13K"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
                 loading="lazy"
               />
+              {/* Overlay to block YouTube logo click */}
+              <div className="absolute bottom-0 right-0 w-36 h-12 z-10" />
             </div>
           </div>
         </motion.div>
