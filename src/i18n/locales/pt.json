@@ -246,5 +246,84 @@
       "q": "A película pode ser aplicada em qualquer vidro?",
       "a": "Sim, temos películas para todos os tipos de vidros automotivos, incluindo para-brisas (com autorização), laterais, traseiro e teto solar. Cada vidro pode receber a película mais adequada à sua necessidade."
     }
+  },
+  "av13k": {
+    "heroBadge": "Película de Proteção",
+    "heroSubtitle": "PROTEÇÃO CONTRA ATOS DE VANDALISMO",
+    "descTitle": "Proteção que vai além do vidro",
+    "descText": "A película INSULFILM™ Antivandalismo 13K é composta por múltiplas camadas de poliéster de alta resistência com adesivo especial, que combinadas ao vidro temperado formam uma barreira protetora contra impactos, tentativas de arrombamento e atos de vandalismo.",
+    "benefit1": "Barreira protetora após a quebra do vidro",
+    "benefit2": "Proteção em situações acidentais ou atos de depredação",
+    "benefit3": "Não interfere em sinais de celulares e eletrônicos",
+    "benefit4": "Não altera a originalidade do veículo",
+    "imagePlaceholder": "Imagem em breve",
+    "impactTitle": "Resistência Máxima Estimada",
+    "impactSubtitle": "Testes de resistência a impactos com diferentes tipos de objetos",
+    "impact": {
+      "preBrk": "Pré-quebra",
+      "postBrk": "Pós-quebra",
+      "total": "Total",
+      "candle": "Vela",
+      "stone": "Pedra",
+      "bat": "Taco"
+    },
+    "impactFootnote": "*O vidro deve estar completamente fechado. Variações de desempenho podem ocorrer.",
+    "barrierTitle": "Barreira Protetora",
+    "barrierText": "A combinação vidro + película torna o conjunto uma barreira protetora e resistente, retardando a ação de vândalos e protegendo os ocupantes do veículo.",
+    "applicTitle": "Aplicabilidade",
+    "applic1Title": "Vidros Laterais",
+    "applic1Desc": "Aplicação nos vidros laterais das portas para proteção contra tentativas de arrombamento.",
+    "applic2Title": "Vidro Traseiro",
+    "applic2Desc": "Proteção do vidro traseiro contra impactos e atos de vandalismo.",
+    "physTitle": "Propriedades Físicas",
+    "phys": {
+      "tensile": "Resistência à Tensão",
+      "tensileVal": "≥ 165 MPa",
+      "rupture": "Força de Ruptura",
+      "ruptureVal": "≥ 330 N/25mm",
+      "pullout": "Força de Arrancamento",
+      "pulloutVal": "≥ 15 N/25mm",
+      "elongation": "Alongamento na Ruptura",
+      "elongationVal": "≥ 120%",
+      "puncture": "Força de Punção",
+      "punctureVal": "≥ 80 N"
+    },
+    "opticalTitle": "Benefícios Ópticos e Solares",
+    "optical": {
+      "clarity": "Alta Nitidez Óptica",
+      "clarityDesc": "Transparência cristalina que não compromete a visibilidade do condutor.",
+      "uv": "100% Proteção UV",
+      "uvDesc": "Rejeição total dos raios ultravioleta, protegendo pele e interior do veículo.",
+      "privacy": "Privacidade e Segurança",
+      "privacyDesc": "Sensação de segurança visual com privacidade para os ocupantes.",
+      "comfort": "Conforto Visual",
+      "comfortDesc": "Redução do excesso de luminosidade para maior conforto na direção."
+    },
+    "warranty": {
+      "prodTitle": "Garantia de Produto — 5 Anos",
+      "prodDesc": "Garantia de fábrica contra vícios de fabricação da película.",
+      "prodItem1": "Falha adesiva",
+      "prodItem2": "Delaminação",
+      "prodItem3": "Rachadura espontânea",
+      "servTitle": "Garantia de Serviço",
+      "servDesc": "Garantia sobre a qualidade da instalação profissional.",
+      "servItem1": "Descolamento",
+      "servItem2": "Bolhas e riscos",
+      "servItem3": "Rasgos e frestas",
+      "replTitle": "Reposição Gratuita",
+      "replDesc": "Reposição gratuita das películas nos vidros móveis das portas laterais em caso de sinistro comprovado.",
+      "replConditions": "Condições: nota fiscal + boletim de ocorrência, 1x por ano."
+    },
+    "glossaryTitle": "Glossário Técnico",
+    "glossary": {
+      "mechTitle": "Propriedades Mecânicas",
+      "mechContent": "Resistência à Tensão: força máxima que a película suporta antes de romper. Força de Ruptura: carga necessária para romper a película. Força de Arrancamento: resistência do adesivo ao desprendimento. Alongamento na Ruptura: capacidade de estiramento antes da ruptura. Força de Punção: resistência à perfuração pontual.",
+      "solarTitle": "Propriedades Solares e Ópticas",
+      "solarContent": "VLT (Visible Light Transmission): porcentagem de luz visível que atravessa a película. Rejeição UV: capacidade de bloquear raios ultravioleta. Nitidez Óptica: qualidade de transparência e claridade visual da película aplicada."
+    },
+    "ctaTitle": "Proteja seu veículo agora",
+    "ctaSubtitle": "Solicite um orçamento para a película Antivandalismo 13K e tenha a proteção que seu veículo merece.",
+    "ctaButton": "Solicitar Orçamento",
+    "ctaDisclaimer": "INSULFILM™ é marca registrada. Todos os direitos reservados."
   }
 }

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
 import Automotivo from "./pages/Automotivo";
+import Antivandalismo13K from "./pages/Antivandalismo13K";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 import "./i18n";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/quem-somos" element={<QuemSomos />} />
           <Route path="/automotivo" element={<Automotivo />} />
+          <Route path="/antivandalismo13k" element={<Antivandalismo13K />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
