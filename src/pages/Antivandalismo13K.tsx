@@ -238,7 +238,7 @@ const Antivandalismo13K = () => {
             variants={stagger}
           >
             {/* Vertical IMPACTOS label */}
-            <div className="hidden lg:flex absolute -left-2 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+            <div className="hidden lg:flex absolute -left-14 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
               <span className="text-2xl font-extrabold tracking-[0.5em] text-accent/40 uppercase whitespace-nowrap">
                 IMPACTOS
               </span>
