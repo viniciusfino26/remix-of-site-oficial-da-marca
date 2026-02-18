@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
 import Automotivo from "./pages/Automotivo";
 import Antivandalismo13K from "./pages/Antivandalismo13K";
+import Antivandalismo13KProposta from "./pages/Antivandalismo13KProposta";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 import "./i18n";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/quem-somos" element={<QuemSomos />} />
           <Route path="/automotivo" element={<Automotivo />} />
           <Route path="/antivandalismo13k" element={<Antivandalismo13K />} />
+          <Route path="/antivandalismo13k/teste_proposta" element={<Antivandalismo13KProposta />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

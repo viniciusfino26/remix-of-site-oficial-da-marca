@@ -17,6 +17,7 @@
     "storeLocator": "Localizador de Tiendas",
     "becomePartner": "Sea Socio",
     "antiVandalism": "Antivandálico 13K",
+    "antiVandalismProposal": "Antivandálico 13K — Propuesta",
     "products": "Productos"
   },
   "hero": {
@@ -326,5 +327,44 @@
     "ctaSubtitle": "Solicite un presupuesto para la película Antivandálico 13K y obtenga la protección que su vehículo merece.",
     "ctaButton": "Solicitar Presupuesto",
     "ctaDisclaimer": "INSULFILM™ es una marca registrada. Todos los derechos reservados."
+  },
+  "av13kP": {
+    "reality": {
+      "title": "La Realidad de los Robos en Brasil",
+      "subtitle": "El vidrio de su auto es la entrada más vulnerable. Los números no mienten.",
+      "stat1": "Cada 8 minutos, un vehículo es asaltado por rotura de vidrio en São Paulo.",
+      "stat2": "Más de 180 mil vehículos asaltados por año en el estado de SP.",
+      "stat3": "73% de los asaltos ocurren por rotura de vidrios laterales.",
+      "source": "Fuentes: SSP-SP, Atlas de la Violencia (IPEA), Foro Brasileño de Seguridad Pública."
+    },
+    "danger": {
+      "title": "El Peligro Va Más Allá del Daño Material",
+      "subtitle": "El vidrio templado se fragmenta en cientos de esquirlas. Sin película, estos fragmentos golpean a quienes están dentro del vehículo — rostro, ojos, brazos.",
+      "shards": "Esquirlas Cortantes",
+      "shardsDesc": "Al romperse, el vidrio templado se fragmenta en cientos de pedazos que se esparcen por el interior del vehículo con fuerza y velocidad.",
+      "eyes": "Riesgo para los Ojos",
+      "eyesDesc": "Los fragmentos de vidrio pueden alcanzar directamente los ojos de los ocupantes, causando lesiones graves e incluso pérdida de visión.",
+      "skin": "Cortes en Piel y Rostro",
+      "skinDesc": "Las esquirlas cortan la piel expuesta, brazos, manos y rostro. Heridas que pueden dejar cicatrices permanentes.",
+      "children": "Niños Vulnerables",
+      "childrenDesc": "Los niños en el asiento trasero están en la zona de mayor riesgo. Piel más delgada, reflejos más lentos, consecuencias mayores."
+    },
+    "family": {
+      "title": "Proteja a Quienes Ama",
+      "imagePlaceholder": "Foto de familia — próximamente",
+      "message1": "Su familia está en el asiento trasero. Un acto de vandalismo puede durar segundos, pero las marcas pueden durar para siempre.",
+      "message2": "La película no es un accesorio. Es una capa de protección entre el peligro y las personas que más ama.",
+      "message3": "La película no solo protege el vidrio. Protege la piel, los ojos y la tranquilidad de quienes más ama."
+    },
+    "ctaMid": {
+      "title": "No espere a que suceda. Proteja ahora.",
+      "subtitle": "La seguridad no es un lujo. Es una necesidad.",
+      "button": "Proteger a Mi Familia"
+    },
+    "testimonial": {
+      "quote": "Estaba detenido en el semáforo con mis hijos cuando rompieron el vidrio trasero. Las esquirlas volaron al asiento trasero. Si no fuera por la película, mis hijos se habrían lastimado gravemente. Fue la mejor inversión que hice.",
+      "author": "Relato anónimo",
+      "location": "São Paulo, SP"
+    }
   }
 }
