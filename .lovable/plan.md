@@ -1,104 +1,75 @@
 
 
-# Nova Pagina: Antivandalismo 13K — Versao Emocional (teste_proposta)
+# Nova Pagina: INSULFILM SkudoGuard — Versao Emocional
 
 ## Resumo
 
-Criar uma copia da pagina `/antivandalismo13k` em uma nova rota `/antivandalismo13k/teste_proposta`, mantendo toda a base tecnica (componentes, animacoes, tabela de impactos, garantias, glossario), mas adicionando secoes com apelo emocional focadas na **dor humana** — nao apenas dano ao veiculo, mas risco real a seguranca de pessoas e familias.
+Criar a pagina `/skudoguard` seguindo exatamente o mesmo padrao visual e estrutural da `/antivandalismo13k/teste_proposta`, mas com conteudo do produto SkudoGuard. Tom emocional mais intenso e agressivo, focado em abordagens criminosas violentas com armas brancas, tempo de reacao e protecao da familia. Textos hardcoded em portugues (sem i18n).
 
 ---
 
-## O que muda em relacao a pagina original
+## Dados do produto (extraidos do site oficial + imagem de referencia)
 
-### Novas secoes intercaladas ao longo da pagina:
+- **Nome:** INSULFILM SkudoGuard
+- **Badge:** Pelicula de Seguranca Superior
+- **Subtitulo:** Mais que antivandalismo. Seguranca forte e efetiva.
+- **Video YouTube:** broTJbFxFqM
+- **Descricao:** Pelicula premium de forte seguranca contra abordagens agressivas para invasao criminosa com armas brancas. Tripla laminacao industrial, adesivo performance (mais pegajoso), polimeros mais resistentes.
+- **4 beneficios:** Retencao de fragmentos (protege pele/rosto/olhos), nao altera originalidade do veiculo, nao aplicavel a furtos, nao interfere em sinais eletronicos.
+- **Diferenciais tecnicos:** Multicamadas com tripla laminacao, poliester alta densidade, adesivo performance, nitidez optica cristal.
 
-1. **Secao "A Realidade dos Roubos" (apos o Hero)**
-   - Dados sobre roubos por quebra de vidro no Brasil (fontes: SSP-SP, Atlas da Violencia, FBSP)
-   - Estatisticas destacadas com countUp animado: ex. "A cada 8 minutos, um veiculo e arrombado por quebra de vidro em SP"
-   - Fundo escuro com tom dramatico
+### Tabela de impactos (da imagem de referencia):
+| | Vela | Pedra | Taco |
+|---|---|---|---|
+| Pre-quebra | 01 | ate 22 | ate 14 |
+| Pos-quebra | ate 79 | ate 35 | ate 07 |
+| Total | ate 80 | ate 57 | ate 21 |
 
-2. **Secao "O Perigo Vai Alem do Prejuizo" (apos Descricao do Produto)**
-   - Foco nos riscos fisicos: estilhacos de vidro cortam pele, rosto e olhos
-   - Cards com icones (AlertTriangle, HeartCrack, Eye, UserX) descrevendo cenarios reais
-   - Texto emocional: "Vidro temperado se fragmenta em centenas de estilhacos. Sem pelicula, esses fragmentos atingem quem esta dentro do veiculo — rosto, olhos, bracos."
-   - Animacao de entrada com fade dramatico
-
-3. **Secao "Proteja Quem Voce Ama" (apos Tabela de Impactos)**
-   - Layout lado a lado: placeholder de foto de familia a esquerda + texto emocional a direita
-   - Mensagens como: "Sua familia esta no banco de tras. Um ato de vandalismo pode durar segundos, mas as marcas podem durar para sempre."
-   - Card com borda laranja destacada e icone de coracao/escudo
-   - Segundo bloco: "A pelicula nao protege so o vidro. Protege a pele, os olhos e a tranquilidade de quem voce mais ama."
-
-4. **Secao "Depoimento / Cenario Real" (apos Aplicabilidade)**
-   - Card estilizado simulando depoimento anonimo
-   - Texto como: "Eu estava parado no semaforo com meus filhos quando quebraram o vidro. Os estilhacos voaram no banco de tras..."
-   - Icone de aspas e tom visual diferenciado (fundo com gradiente emocional)
-
-5. **CTA intermediario emocional (apos secao de familia)**
-   - "Nao espere acontecer. Proteja agora." + botao WhatsApp
-   - Menor que o CTA final, mas com urgencia visual
-
-### Secoes que permanecem identicas (ctrl+c / ctrl+v):
-- Hero com video YouTube
-- Descricao do produto (4 beneficios)
-- Tabela de impactos animada
-- Aplicabilidade
-- Propriedades fisicas
-- Beneficios opticos e solares
-- Garantias (produto, servico, reposicao)
-- Glossario tecnico
-- CTA final
+### Garantias (identicas ao 13K):
+- Produto: 5 anos (falha adesiva, delaminacao, rachadura)
+- Servico: descolamento, bolha, riscos, rasgos, frestas
+- Reposicao gratuita: INSULFILM SkudoGuard + pelicula solar escolhida
 
 ---
 
-## Estrutura final da pagina (ordem das secoes)
+## Estrutura da pagina (mesma ordem do teste_proposta)
 
-1. Hero + Video
-2. **A Realidade dos Roubos** (NOVA)
-3. Descricao do Produto
-4. **O Perigo Vai Alem do Prejuizo** (NOVA)
-5. Tabela de Impactos
-6. **Proteja Quem Voce Ama** (NOVA)
-7. **CTA intermediario emocional** (NOVO)
-8. Aplicabilidade
-9. **Depoimento / Cenario Real** (NOVO)
-10. Propriedades Fisicas
-11. Beneficios Opticos e Solares
-12. Garantias
-13. Glossario Tecnico
-14. CTA Final
+1. **Hero + Video** (broTJbFxFqM) — badge "Pelicula de Seguranca Superior", titulo "INSULFILM SkudoGuard"
+2. **A Realidade da Violencia** — estatisticas mais pesadas: latrocinios, tempo medio de abordagem (7 segundos), assaltos com arma branca. Tom mais agressivo.
+3. **Descricao do Produto** — texto adaptado do site oficial com os 4 beneficios
+4. **O Que Acontece em Segundos** — secao emocional mais intensa: invasao violenta, armas brancas, estilhacos, criancas vulneraveis. Cards com AlertTriangle, Eye, HeartCrack, UserX, Swords.
+5. **Tabela de Impactos** — dados da imagem (valores superiores ao 13K)
+6. **Proteja Quem Voce Ama** — mensagens mais intensas: "Um marginal armado precisa de segundos. O SkudoGuard da a voce o tempo que separa sua familia do perigo."
+7. **CTA intermediario** — "Cada segundo conta. Proteja agora."
+8. **Diferenciais Tecnicos** — secao nova com 4 cards: tripla laminacao, poliester alta densidade, adesivo performance, nitidez optica
+9. **Aplicabilidade** — vidros laterais + traseiro
+10. **Depoimento** — cenario mais violento: abordagem com arma branca, tentativa de invasao
+11. **Propriedades Fisicas** — valores superiores ao 13K (tensao >= 200 MPa, ruptura >= 450 N, arrancamento >= 20 N, alongamento >= 140%, puncao >= 110 N)
+12. **Beneficios Opticos e Solares** — identico
+13. **Garantias** — mesma estrutura, texto adaptado para "INSULFILM SkudoGuard"
+14. **Glossario Tecnico** — identico (mecanico + solar)
+15. **CTA Final** — "Proteja sua familia agora" + WhatsApp
 
 ---
 
-## Link no menu
+## Arquivos
 
-Adicionar um item extra no dropdown **Automotivo** do Header:
-- Label: "Antivandalismo 13K — Proposta"
-- Rota: `/antivandalismo13k/teste_proposta`
+### Novo:
+- `src/pages/SkudoGuard.tsx` — pagina completa, textos em PT hardcoded
+
+### Editados:
+- `src/App.tsx` — nova rota `/skudoguard`
+- `src/components/Header.tsx` — link "SkudoGuard" no dropdown Automotivo
 
 ---
 
 ## Detalhes tecnicos
 
-### Arquivos:
-- **Novo**: `src/pages/Antivandalismo13KProposta.tsx` — copia completa do Antivandalismo13K.tsx + secoes emocionais
-- **Editado**: `src/App.tsx` — nova rota `/antivandalismo13k/teste_proposta`
-- **Editado**: `src/components/Header.tsx` — link adicional no dropdown Automotivo
-- **Editado**: `src/i18n/locales/pt.json` — textos emocionais (namespace `av13kP`)
-- **Editado**: `src/i18n/locales/en.json` e `es.json` — traducoes correspondentes
-
-### Icones adicionais (Lucide):
-- `AlertTriangle`, `HeartCrack`, `Eye`, `UserX`, `Quote`, `Heart`, `ShieldAlert`, `Users`
-
-### Animacoes:
-- Mesmas variants (fadeInUp, fadeInLeft, stagger, scaleIn) reutilizadas
-- CountUp reutilizado para estatisticas de violencia
-- Secoes emocionais com `opacity` partindo de 0.3 para efeito dramatico mais lento
-
-### Padrao visual mantido:
-- bg-carbon-gradient para secoes escuras
-- Cards glass e card-premium-hover
-- separator-accent entre secoes
-- Botoes CTA laranja
-- Tipografia extrabold + font-light
+- Copia exata da estrutura do `Antivandalismo13KProposta.tsx` como base
+- Textos hardcoded em portugues (sem namespace i18n)
+- Secao extra "Diferenciais Tecnicos" com 4 cards (baseada nos dados do site oficial)
+- Icone adicional: `Swords` (Lucide) para representar armas brancas
+- Video YouTube ID: `broTJbFxFqM` com mesmos parametros (controls=0, autoplay=1, mute=1, loop=1, pointer-events-none)
+- Mensagem WhatsApp adaptada para SkudoGuard
+- Foco total no cliente/familia, nunca no carro
 
