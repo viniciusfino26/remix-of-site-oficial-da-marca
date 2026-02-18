@@ -130,7 +130,7 @@ const Antivandalismo13K = () => {
 
         {/* YouTube embed */}
         <motion.div
-          className="container mx-auto px-4 pb-16 relative z-10 w-full max-w-4xl"
+          className="mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10 w-full max-w-7xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
