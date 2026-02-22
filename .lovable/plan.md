@@ -1,75 +1,66 @@
 
 
-# Nova Pagina: INSULFILM SkudoGuard — Versao Emocional
+# Nova Pagina: Peliculas Arquitetonicas — Para Minha Residencia
 
 ## Resumo
 
-Criar a pagina `/skudoguard` seguindo exatamente o mesmo padrao visual e estrutural da `/antivandalismo13k/teste_proposta`, mas com conteudo do produto SkudoGuard. Tom emocional mais intenso e agressivo, focado em abordagens criminosas violentas com armas brancas, tempo de reacao e protecao da familia. Textos hardcoded em portugues (sem i18n).
+Criar a pagina `/residencial` seguindo o mesmo padrao visual e estrutural das paginas emocionais existentes (teste_proposta, skudoguard), mas adaptada para o contexto residencial/arquitetonico. Conteudo extraido da landing page oficial. Textos hardcoded em portugues. Foco no conforto, economia, protecao da familia dentro de casa e qualidade de vida.
 
 ---
 
-## Dados do produto (extraidos do site oficial + imagem de referencia)
+## Dados extraidos do site oficial
 
-- **Nome:** INSULFILM SkudoGuard
-- **Badge:** Pelicula de Seguranca Superior
-- **Subtitulo:** Mais que antivandalismo. Seguranca forte e efetiva.
-- **Video YouTube:** broTJbFxFqM
-- **Descricao:** Pelicula premium de forte seguranca contra abordagens agressivas para invasao criminosa com armas brancas. Tripla laminacao industrial, adesivo performance (mais pegajoso), polimeros mais resistentes.
-- **4 beneficios:** Retencao de fragmentos (protege pele/rosto/olhos), nao altera originalidade do veiculo, nao aplicavel a furtos, nao interfere em sinais eletronicos.
-- **Diferenciais tecnicos:** Multicamadas com tripla laminacao, poliester alta densidade, adesivo performance, nitidez optica cristal.
-
-### Tabela de impactos (da imagem de referencia):
-| | Vela | Pedra | Taco |
-|---|---|---|---|
-| Pre-quebra | 01 | ate 22 | ate 14 |
-| Pos-quebra | ate 79 | ate 35 | ate 07 |
-| Total | ate 80 | ate 57 | ate 21 |
-
-### Garantias (identicas ao 13K):
-- Produto: 5 anos (falha adesiva, delaminacao, rachadura)
-- Servico: descolamento, bolha, riscos, rasgos, frestas
-- Reposicao gratuita: INSULFILM SkudoGuard + pelicula solar escolhida
+- **Video YouTube:** paCtipjRfPI
+- **Problemas que resolve:** Gastos extras com energia eletrica, ausencia de privacidade, excesso de luz e calor, protecao e seguranca
+- **6 categorias de peliculas:** Espelhadas, Transparentes, Refletivas, Neutras, Nao Refletivas, Antivandalismo e Seguranca
+- **5 beneficios principais:** Reducao de calor e economia de energia, Privacidade e reducao de claridade, Protecao contra estilhacos, Manutencao do design ou personalizacao, Reducao do desbotamento e envelhecimento
+- **Diferenciais:** Atendimento pre-venda (especialistas, diagnostico, especificacao tecnica), Produto (alto desempenho, OEM, familias Performance e Premium, garantia certificada), Servico de Aplicacao (aplicadores credenciados, protecao do ambiente, certificado individual)
+- **Clientes:** Logos de clientes corporativos
 
 ---
 
-## Estrutura da pagina (mesma ordem do teste_proposta)
+## Estrutura da pagina
 
-1. **Hero + Video** (broTJbFxFqM) — badge "Pelicula de Seguranca Superior", titulo "INSULFILM SkudoGuard"
-2. **A Realidade da Violencia** — estatisticas mais pesadas: latrocinios, tempo medio de abordagem (7 segundos), assaltos com arma branca. Tom mais agressivo.
-3. **Descricao do Produto** — texto adaptado do site oficial com os 4 beneficios
-4. **O Que Acontece em Segundos** — secao emocional mais intensa: invasao violenta, armas brancas, estilhacos, criancas vulneraveis. Cards com AlertTriangle, Eye, HeartCrack, UserX, Swords.
-5. **Tabela de Impactos** — dados da imagem (valores superiores ao 13K)
-6. **Proteja Quem Voce Ama** — mensagens mais intensas: "Um marginal armado precisa de segundos. O SkudoGuard da a voce o tempo que separa sua familia do perigo."
-7. **CTA intermediario** — "Cada segundo conta. Proteja agora."
-8. **Diferenciais Tecnicos** — secao nova com 4 cards: tripla laminacao, poliester alta densidade, adesivo performance, nitidez optica
-9. **Aplicabilidade** — vidros laterais + traseiro
-10. **Depoimento** — cenario mais violento: abordagem com arma branca, tentativa de invasao
-11. **Propriedades Fisicas** — valores superiores ao 13K (tensao >= 200 MPa, ruptura >= 450 N, arrancamento >= 20 N, alongamento >= 140%, puncao >= 110 N)
-12. **Beneficios Opticos e Solares** — identico
-13. **Garantias** — mesma estrutura, texto adaptado para "INSULFILM SkudoGuard"
-14. **Glossario Tecnico** — identico (mecanico + solar)
-15. **CTA Final** — "Proteja sua familia agora" + WhatsApp
+1. **Hero + Video** (paCtipjRfPI) — badge "Peliculas Arquitetonicas", titulo "Peliculas originais INSULFILM", subtitulo "Desempenho surpreendente para projetos residenciais." Botoes ancora: Nossas Peliculas, Beneficios, Diferenciais.
+
+2. **O Problema** — secao emocional focada nos problemas reais de uma residencia: calor excessivo, conta de luz alta, moveis desbotando, falta de privacidade. Cards com icones e estatisticas (CountUp): ex. "ate 80% de rejeicao de calor", "ate 99% de bloqueio UV", "ate 30% de economia na conta de energia".
+
+3. **Nossas Peliculas** — grid com 6 cards das categorias (Espelhadas, Transparentes, Refletivas, Neutras, Nao Refletivas, Seguranca). Cada card com icone, titulo, descricao curta do site.
+
+4. **Principais Beneficios** — 5 cards com icones: Reducao de Calor, Privacidade, Protecao contra Estilhacos, Design, Anti-desbotamento. Textos do site oficial.
+
+5. **Proteja Sua Casa e Sua Familia** — secao emocional: foco na familia dentro de casa, criancas brincando perto de janelas, protecao UV para a pele, moveis e pisos protegidos. Layout lado a lado com placeholder de imagem.
+
+6. **CTA intermediario** — "Transforme sua residencia. Fale com um especialista." + WhatsApp.
+
+7. **Nossos Diferenciais** — 3 blocos: Atendimento Pre-venda, Produto, Servico de Aplicacao. Cada um com icone e bullet points do site oficial. Destaque para garantia certificada.
+
+8. **Familias de Produtos** — 2 cards: Performance (eficientes e economicas) e Premium (maximo desempenho e maior durabilidade).
+
+9. **Garantia Certificada** — secao com destaque: certificado individual por projeto, garantia com lastro industrial.
+
+10. **CTA Final** — "Faca seu orcamento agora" + formulario ou WhatsApp.
 
 ---
 
 ## Arquivos
 
 ### Novo:
-- `src/pages/SkudoGuard.tsx` — pagina completa, textos em PT hardcoded
+- `src/pages/Residencial.tsx` — pagina completa, textos em PT hardcoded
 
 ### Editados:
-- `src/App.tsx` — nova rota `/skudoguard`
-- `src/components/Header.tsx` — link "SkudoGuard" no dropdown Automotivo
+- `src/App.tsx` — nova rota `/residencial`
+- `src/components/Header.tsx` — o link "Para Minha Residencia" ja existe no dropdown Arquitetura apontando para `/residencial`
 
 ---
 
 ## Detalhes tecnicos
 
-- Copia exata da estrutura do `Antivandalismo13KProposta.tsx` como base
-- Textos hardcoded em portugues (sem namespace i18n)
-- Secao extra "Diferenciais Tecnicos" com 4 cards (baseada nos dados do site oficial)
-- Icone adicional: `Swords` (Lucide) para representar armas brancas
-- Video YouTube ID: `broTJbFxFqM` com mesmos parametros (controls=0, autoplay=1, mute=1, loop=1, pointer-events-none)
-- Mensagem WhatsApp adaptada para SkudoGuard
-- Foco total no cliente/familia, nunca no carro
+- Base visual identica as demais paginas emocionais (bg-carbon-gradient, glass-card, card-premium-hover, separator-accent, tipografia extrabold + font-light)
+- Mesmas animation variants reutilizadas (fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger, emotionalFade)
+- CountUp para estatisticas de beneficios
+- Video YouTube ID: `paCtipjRfPI` com mesmos parametros (controls=0, autoplay=1, mute=1, loop=1)
+- Icones Lucide: Sun, Thermometer, Eye, Shield, Palette, Sparkles, ShieldCheck, Award, Users, Home, Zap, Lock
+- Mensagem WhatsApp adaptada para peliculas residenciais
+- Foco emocional no conforto da familia, economia e protecao — nunca apenas no vidro
 
