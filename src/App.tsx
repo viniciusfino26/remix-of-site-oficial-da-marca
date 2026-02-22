@@ -11,6 +11,7 @@ import Automotivo from "./pages/Automotivo";
 import Antivandalismo13K from "./pages/Antivandalismo13K";
 import Antivandalismo13KProposta from "./pages/Antivandalismo13KProposta";
 import SkudoGuard from "./pages/SkudoGuard";
+import Residencial from "./pages/Residencial";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 import "./i18n";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/antivandalismo13k" element={<Antivandalismo13K />} />
           <Route path="/antivandalismo13k/teste_proposta" element={<Antivandalismo13KProposta />} />
           <Route path="/skudoguard" element={<SkudoGuard />} />
+          <Route path="/residencial" element={<Residencial />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
