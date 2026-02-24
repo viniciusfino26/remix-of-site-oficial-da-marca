@@ -1,72 +1,91 @@
-
-
-# Redesign da Home Page — Layout de Banners com Animacoes Originais
+# Redesign da Pagina Automotivo — Layout Alternado com Tabs
 
 ## Objetivo
 
-Reestruturar a home page para seguir o layout da imagem de referencia (secoes full-width com caixas de texto sobrepostas em fundo escuro), mantendo **todos os textos existentes** (mesmas chaves i18n) e **todas as animacoes** (parallax, fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger, glow effects).
+Redesenhar a pagina `/automotivo` (`src/pages/Automotivo.tsx`) seguindo a imagem de referencia: hero com "Peliculas Premium / Sinta a diferenca", texto introdutorio, barra de tabs para navegacao entre produtos solares, secoes alternadas (texto esquerda/direita) para cada produto, secao de beneficios com icones, e CTA final. Manter todos os textos existentes (chaves i18n) e animacoes (parallax, fadeIn, stagger).
 
-## Nova Estrutura
+## Nova Estrutura da Pagina
 
-A pagina tera as seguintes secoes, de cima para baixo:
-
-1. **Banner "Website Oficial"** — faixa fina com "INSULFILM(TM) — Website Oficial"
-2. **Hero Section** — mantido identico (parallax, glow, textos hero.tagline/subtitle, botoes CTA) — sem alteracao
-3. **Video YouTube** — mantido identico (embed com autoplay/mute/loop, zoom 110%) — sem alteracao
-4. **Banner "Peliculas Solares"** — secao full-width bg-carbon-gradient, caixa de texto a direita com fadeInRight, titulo `products.solarControl`, desc existente, botao "Ver Detalhes" (link `/automotivo`)
-5. **Banner "Protecao e Seguranca"** — secao full-width, caixa de texto a esquerda com fadeInLeft, usando textos do `products.ppf`, botao link `/antivandalismo13k`
-6. **Banner "Comerciais e Residenciais"** — secao full-width, caixa de texto a direita com fadeInRight, usando textos do `products.architecture`, botao link `/residencial`
-7. **Banner "PPF"** — secao full-width, caixa de texto a esquerda com fadeInLeft, titulo `products.ppf`, botao link `/ppf`
-8. **Why INSULFILM** — mantido identico (parallax diagonal texture, glass cards, icon ring glow, stagger) — sem alteracao
-9. **Simulators** — mantido identico (cards com shimmer badge, stagger) — sem alteracao
-
-## O Que Muda
-
-- A secao "Product Highlights" (3 cards em grid) sera substituida por 4 banners full-width alternados (texto direita/esquerda)
-- Cada banner usa `bg-carbon-gradient` com texturas geometricas e glow effects similares ao hero
-- Animacoes de entrada: `fadeInRight` para banners alinhados a direita, `fadeInLeft` para a esquerda
-- Caixas de texto com `bg-primary/80 backdrop-blur-md`, bordas `border-white/10`, efeito `whileHover` com escala sutil
-- Botoes mantidos com `bg-accent hover:bg-accent/90` e icones correspondentes (Car, Shield, Building2)
-- Parallax sutil no fundo de cada banner usando `useScroll` + `useTransform`
-
-## O Que NAO Muda
-
-- Hero section: textos, parallax, glow, botoes — tudo identico
-- Video YouTube: embed, configuracoes, zoom — tudo identico
-- Why INSULFILM: textos, parallax, glass cards — tudo identico
-- Simulators: textos, shimmer, cards — tudo identico
-- Todas as animacoes (fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger)
-- Todas as chaves de traducao i18n
-- LegalNotice e Footer (renderizados pelo App.tsx)
+1. **Hero** — mantido com parallax, glow e textos existentes. Ajustar subtitulo visual para "Peliculas Premium / Sinta a diferenca" conforme referencia
+2. **Texto introdutorio** — secao com titulo "Peliculas de Protecao Solar para Vidros Automotivos", subtitulo italico e paragrafo descritivo usando textos existentes (`heroTitle`, `heroSubtitle`, `productsSubtitle`)
+3. **CTA "ENCONTRE O SEU INSULFILM IDEAL"** — botao/banner centralizado com destaque
+4. **Tabs de navegacao** — barra com tabs: Dark, Eclipse, Vip, Matrix, Transparente, Polariz Ultra (filtrando apenas produtos de controle solar)
+5. **Secoes alternadas de produto** — cada produto solar exibido em secao full-width com layout alternado:
+  - Secoes impares: texto a esquerda, imagem placeholder a direita
+  - Secoes pares: imagem placeholder a esquerda, texto a direita
+  - Cada secao mostra: nome INSULFILM + produto, tecnologia/serie, descricao completa, visual, botao "EXPLORE"
+6. **Beneficios** — secao com 5 icones: Maxima Reducao de Calor, Excelente Visibilidade, Privacidade e Seguranca, Celulares e Eletronicos, Design Sofisticado + badge "PACOTE COMPLETO DE GARANTIAS / CERTIFICADO INDIVIDUAL"
+7. **CTA Final** — banner laranja "Exija as peliculas originais INSULFILM! Sofisticacao e Protecao Solar de verdade para voce e sua familia."
+8. **Diferenciais** — mantido identico (tabs com parallax)
+9. **FAQ** — mantido identico
 
 ## Detalhes Tecnicos
 
-### Arquivo editado
-- `src/pages/Index.tsx` — substituir secao "Product Highlights" por 4 banners full-width; adicionar banner "Website Oficial" no topo
+### Arquivo principal editado
 
-### Componente local `ProductBanner`
+- `src/pages/Automotivo.tsx` — reescrita da secao de produtos
+
+### Estrutura dos produtos solares (apenas controle solar)
+
+Filtrar os produtos para exibir apenas os de controle solar na secao principal:
+
+- Dark (Pigmentada, Clear, ate 39%)
+- Eclipse (Carbono, HD, ate 49%)
+- VIP (Carbono Extra, HD, ate 58%)
+- Matrix (Nano Ceramica, Ultra Definition, ate 72%) — usando chave `ltMatrix`
+- Transparente — Matrix  também, mas quase incolor
+- Polariz Ultra (Nano Ceramica, Ultra Definition, ate 72%)
+
+Os produtos de seguranca (Antivandal, SkudoGuard, SkudoUltra, SkinSafe8K, Phantom PPF) permanecem no array mas nao aparecem na secao principal de tabs — ficam apenas nos cards existentes ou links.
+
+### Layout alternado de cada produto
+
 ```text
-Props: title, description, buttonText, buttonIcon, link, alignment ('left' | 'right')
-
-Estrutura:
-- section com min-h-[60vh], bg-carbon-gradient, overflow-hidden
-- Textura geometrica com parallax sutil
-- Glow effect no fundo
-- Container flex com justify-end ou justify-start conforme alignment
-- motion.div com fadeInRight ou fadeInLeft
-- Caixa: bg-primary/80 backdrop-blur-md p-8 md:p-12 max-w-xl rounded-lg border-white/10
-- Titulo h2, descricao p, Button com Link
-- whileHover={{ scale: 1.02 }} na caixa
+Secao full-width com min-h-[50vh]
+  - Grid 2 colunas (md:grid-cols-2)
+  - Coluna texto: nome, specs (tecnologia/serie), descricao, visual, botao
+  - Coluna imagem: bg-carbon-gradient com placeholder
+  - Alternancia: odd = texto-esquerda, even = texto-direita
+  - Animacao: fadeInLeft para texto, fadeInRight para imagem (e vice-versa)
+  - whileInView com stagger
 ```
 
-### Sequencia dos banners
-1. Peliculas Solares — alignment: right, icon: Car, link: /automotivo
-2. Protecao e Seguranca — alignment: left, icon: Shield, link: /antivandalismo13k
-3. Comerciais e Residenciais — alignment: right, icon: Building2, link: /residencial
-4. PPF — alignment: left, icon: Shield, link: /ppf
+### Secao de beneficios
 
-### Imports
-- Remover: `useRef` para `productsRef` (substituido por refs dentro do ProductBanner)
-- Remover: `Card`, `CardContent` do import (ainda usados em Why e Simulators — manter)
-- Manter todos os demais imports
+```text
+5 icones em grid (grid-cols-5 no desktop, grid-cols-2 no mobile)
+  - Sun: Maxima Reducao de Calor, Raios UV e IR
+  - Eye: Excelente Visibilidade Interna
+  - Shield: Privacidade e Seguranca Visual
+  - Smartphone: Celulares e Eletronicos
+  - Award: Design Sofisticado
+  - Badge central: "PACOTE COMPLETO DE GARANTIAS / CERTIFICADO INDIVIDUAL"
+```
 
+### CTA final
+
+```text
+Banner full-width bg-accent (laranja)
+  - Texto: "Exija as peliculas originais INSULFILM!"
+  - Subtitulo: "Sofisticacao e Protecao Solar de verdade para voce e sua familia."
+  - Animacao fadeInUp
+```
+
+### Animacoes mantidas
+
+- Hero: parallax com useScroll/useTransform/useSpring, glow pulse
+- Produtos: fadeInLeft/fadeInRight alternados, stagger, whileInView
+- Tabs: mantidos com animacao de entrada
+- Diferenciais: parallax diagonal texture, glass cards
+- FAQ: fadeInLeft/fadeInRight alternados no accordion
+
+### Imports adicionais
+
+- `Eye, Smartphone` do lucide-react (para secao de beneficios)
+
+### Nenhuma dependencia nova necessaria
+
+### Chaves i18n existentes utilizadas
+
+- Todas as chaves `automotivePage.*` permanecem
+- Textos da secao de beneficios e CTA final serao inline (portugues direto) pois nao existem chaves i18n para eles — consistente com o padrao ja usado nos banners da home
