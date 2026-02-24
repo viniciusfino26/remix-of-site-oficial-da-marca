@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-mo
 import {
   Sun, Thermometer, Eye, Shield, Palette, Sparkles, ShieldCheck, Award,
   Users, Home, Zap, Lock, CheckCircle, MessageCircle, Heart,
-  FileText, RefreshCw, Layers, Star
+  FileText, Layers, Star
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -281,7 +281,7 @@ const Residencial = () => {
       </section>
 
       {/* ═══ 4. PARALLAX — Residências ═══ */}
-      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/residencias.jpg">
+      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/Arquitetonico--Casas--Interior--G.jpg">
         <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={emotionalFade} className="text-2xl md:text-4xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
           Conforto térmico e proteção UV para todos os ambientes da sua residência
         </motion.p>
@@ -434,13 +434,12 @@ const Residencial = () => {
                   <div className="text-center md:text-left">
                     <h3 className="text-2xl font-extrabold text-foreground mb-3">Garantia Certificada</h3>
                     <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                      Cada projeto recebe um certificado individual com garantia de lastro industrial. Cobertura para o produto e para o serviço de instalação, com possibilidade de reposição gratuita em caso de sinistro.
+                      Cada projeto recebe um certificado individual com garantia de lastro industrial. Cobertura para o produto e para o serviço de instalação.
                     </p>
                     <div className="flex flex-wrap gap-4">
                       {[
                         { icon: FileText, label: 'Certificado individual' },
                         { icon: Shield, label: 'Garantia do produto' },
-                        { icon: RefreshCw, label: 'Reposição gratuita' },
                       ].map((item, i) => (
                         <div key={i} className="flex items-center gap-2 text-sm text-accent font-bold">
                           <item.icon className="w-4 h-4" />
@@ -456,8 +455,31 @@ const Residencial = () => {
         </div>
       </section>
 
+      {/* ═══ 9.5. CLIENTES QUE CONFIAM ═══ */}
+      <section className="py-20 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="text-center max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
+              Clientes que confiam na INSULFILM™
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light mb-6">
+              Grandes projetos em todo o Brasil
+            </motion.p>
+            <motion.div variants={scaleIn} className="flex justify-center mb-8"><div className="separator-accent" /></motion.div>
+            <motion.div variants={fadeInUp}>
+              <img
+                src="https://d335luupugsy2.cloudfront.net/cms/files/538892/1757442209/$1chrfqbj4ma"
+                alt="Clientes que confiam na INSULFILM"
+                className="mx-auto max-w-4xl w-full rounded-xl shadow-premium"
+                loading="lazy"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ═══ 10. PARALLAX — Escritórios/Fachadas ═══ */}
-      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/escritorios.jpg" />
+      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/solucoes/fachadas-exclusivas.jpg" />
 
       {/* ═══ 11. PROTEJA SUA CASA E SUA FAMÍLIA ═══ */}
       <section className="py-24 bg-background overflow-hidden">
