@@ -18,6 +18,7 @@ import Privacidade from "./pages/Privacidade";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 import SchemaOrg from "./components/SchemaOrg";
+import LegalNotice from "./components/LegalNotice";
 import "./i18n";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <LegalNotice />
         <Footer />
         <WhatsAppButton />
       </BrowserRouter>
