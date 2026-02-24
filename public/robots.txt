@@ -25,3 +25,6 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+
+# Referência para LLMs e crawlers semânticos
+# https://www.insulfilm.com.br/llms.txt
