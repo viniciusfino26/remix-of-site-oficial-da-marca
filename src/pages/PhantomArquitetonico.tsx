@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Shield, Sparkles, Droplets, Eye, Layers, Sun, CheckCircle, ArrowRight, Gem, TreeDeciduous, Building, GlassWater, MessageCircle, ChevronDown, Home, UtensilsCrossed, Hotel, Briefcase, Quote, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,18 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-import phantomHero from '@/assets/phantom-hero.png';
-import phantomAtmosphere from '@/assets/phantom-atmosphere.png';
-import phantomGlossAppeal from '@/assets/phantom-gloss-appeal.png';
-import phantomMatteAppeal from '@/assets/phantom-matte-appeal.png';
-import phantomDailyUse from '@/assets/phantom-daily-use.png';
-import phantomDamageGloss from '@/assets/phantom-damage-gloss.png';
-import phantomDamageMatte from '@/assets/phantom-damage-matte.png';
-import phantomSolution from '@/assets/phantom-solution.png';
-import phantomGlossResult from '@/assets/phantom-gloss-result.png';
-import phantomMatteResult from '@/assets/phantom-matte-result.png';
-import phantomMaterials from '@/assets/phantom-materials.png';
-import phantomFuture from '@/assets/phantom-future.png';
+import phantomSolutionThickness from '@/assets/phantom-solution-thickness.png';
 
 // ═══════════════════════ ANIMATION VARIANTS ═══════════════════════
 
@@ -46,29 +34,6 @@ const scaleIn = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
-
-// ═══════════════════════ PARALLAX SECTION COMPONENT ═══════════════════════
-
-const ParallaxSection = ({ image, quote }: { image: string; quote: string }) => (
-  <section
-    className="relative h-[50vh] md:h-[60vh] bg-parallax flex items-center justify-center overflow-hidden"
-    style={{ backgroundImage: `url(${image})` }}
-  >
-    <div className="absolute inset-0 bg-black/60" />
-    <motion.div
-      className="relative z-10 text-center px-6 max-w-3xl mx-auto"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
-      <p className="text-2xl md:text-4xl font-extrabold text-white leading-snug italic">
-        "{quote}"
-      </p>
-      <div className="separator-accent mx-auto mt-6" />
-    </motion.div>
-  </section>
-);
 
 // ═══════════════════════ DATA ═══════════════════════
 
@@ -116,64 +81,12 @@ const faqs = [
 ];
 
 const PhantomArquitetonico = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const dailyUseRef = useRef<HTMLElement>(null);
-  const solutionRef = useRef<HTMLElement>(null);
-  const matteRef = useRef<HTMLElement>(null);
-  const testimonialsRef = useRef<HTMLElement>(null);
-  const storeRef = useRef<HTMLElement>(null);
-
-  // Hero parallax
-  const { scrollYProgress: heroProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-  const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
-  const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
-  const heroImageScale = useTransform(heroProgress, [0, 1], [1, 1.15]);
-
-  // Depth parallax for carbon-gradient sections
-  const { scrollYProgress: dailyUseProgress } = useScroll({
-    target: dailyUseRef,
-    offset: ['start end', 'end start'],
-  });
-  const dailyUseTextureY = useTransform(dailyUseProgress, [0, 1], [30, -30]);
-
-  const { scrollYProgress: solutionProgress } = useScroll({
-    target: solutionRef,
-    offset: ['start end', 'end start'],
-  });
-  const solutionTextureY = useTransform(solutionProgress, [0, 1], [30, -30]);
-
-  const { scrollYProgress: matteProgress } = useScroll({
-    target: matteRef,
-    offset: ['start end', 'end start'],
-  });
-  const matteTextureY = useTransform(matteProgress, [0, 1], [30, -30]);
-
-  const { scrollYProgress: testimonialsProgress } = useScroll({
-    target: testimonialsRef,
-    offset: ['start end', 'end start'],
-  });
-  const testimonialsTextureY = useTransform(testimonialsProgress, [0, 1], [30, -30]);
-
-  const { scrollYProgress: storeProgress } = useScroll({
-    target: storeRef,
-    offset: ['start end', 'end start'],
-  });
-  const storeTextureY = useTransform(storeProgress, [0, 1], [30, -30]);
-
   return (
     <main>
-      {/* ═══════════════════════ HERO — Full Screen ═══════════════════════ */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-        <motion.div className="absolute inset-0 z-0" style={{ scale: heroImageScale }}>
-          <img src={phantomHero} alt="Phantom - Proteção de Superfícies" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </motion.div>
-
-        <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
+      {/* ═══════════════════════ HERO ═══════════════════════ */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-carbon-gradient">
+        <div className="absolute inset-0 bg-hero-texture" />
+        <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
           <motion.div className="max-w-3xl" initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeInLeft}>
               <Badge className="bg-accent/10 text-accent border-accent/20 mb-6 text-xs tracking-widest uppercase">
@@ -183,13 +96,13 @@ const PhantomArquitetonico = () => {
             <motion.p variants={fadeInLeft} className="text-sm uppercase tracking-[0.4em] text-accent mb-3 font-semibold">
               INSULFILM™
             </motion.p>
-            <motion.h1 variants={fadeInLeft} className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 leading-[0.95]">
+            <motion.h1 variants={fadeInLeft} className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
               Phantom
             </motion.h1>
-            <motion.p variants={fadeInLeft} className="text-xl md:text-2xl text-white/80 font-light mb-2">
+            <motion.p variants={fadeInLeft} className="text-xl md:text-2xl text-primary-foreground/80 font-light mb-2">
               Preservando o Design dos Seus Acabamentos
             </motion.p>
-            <motion.p variants={fadeInLeft} className="text-base text-white/50 font-light mb-8">
+            <motion.p variants={fadeInLeft} className="text-base text-primary-foreground/50 font-light mb-8">
               Um guia para arquitetos, designers e proprietários exigentes.
             </motion.p>
             <motion.div variants={scaleIn}>
@@ -206,7 +119,7 @@ const PhantomArquitetonico = () => {
               </a>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div
@@ -215,7 +128,7 @@ const PhantomArquitetonico = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.6 }}
         >
-          <span className="text-white/50 text-xs tracking-widest uppercase font-light">Continue navegando</span>
+          <span className="text-primary-foreground/50 text-xs tracking-widest uppercase font-light">Continue navegando</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -262,25 +175,9 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ PARALLAX 1 — Após Segmentos ═══════════════════════ */}
-      <ParallaxSection
-        image={phantomAtmosphere}
-        quote="Cada acabamento conta uma história. A nossa missão é preservá-la."
-      />
-
       {/* ═══════════════════════ A DECISÃO QUE DEFINE A ATMOSFERA ═══════════════════════ */}
       <section className="py-24 bg-muted/30 overflow-hidden">
         <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-6xl mx-auto mb-16 overflow-hidden rounded-2xl"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <img src={phantomAtmosphere} alt="Ambientes de alto padrão com acabamentos sofisticados" className="w-full h-[500px] object-cover" />
-          </motion.div>
-
           <motion.div className="max-w-3xl mx-auto text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
               A Decisão que Define a Atmosfera
@@ -295,10 +192,7 @@ const PhantomArquitetonico = () => {
 
           <motion.div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeInLeft}>
-              <Card className="card-premium-hover h-full border-t-2 border-t-accent/30 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img src={phantomGlossAppeal} alt="Acabamento Gloss - brilho e sofisticação" className="w-full h-56 object-cover" />
-                </div>
+              <Card className="card-premium-hover h-full border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <Sparkles className="w-8 h-8 text-accent mb-4" />
                   <h3 className="text-xl font-extrabold text-foreground mb-3">Gloss — Declaração Ousada</h3>
@@ -312,10 +206,7 @@ const PhantomArquitetonico = () => {
               </Card>
             </motion.div>
             <motion.div variants={fadeInRight}>
-              <Card className="card-premium-hover h-full border-t-2 border-t-accent/30 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img src={phantomMatteAppeal} alt="Acabamento Matte - elegância tátil" className="w-full h-56 object-cover" />
-                </div>
+              <Card className="card-premium-hover h-full border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <Layers className="w-8 h-8 text-accent mb-4" />
                   <h3 className="text-xl font-extrabold text-foreground mb-3">Matte — O Luxo Silencioso</h3>
@@ -333,9 +224,8 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ QUANDO O DESIGN ENCONTRA O USO DIÁRIO ═══════════════════════ */}
-      <section ref={dailyUseRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: dailyUseTextureY }} />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -357,14 +247,15 @@ const PhantomArquitetonico = () => {
                 </motion.p>
               </div>
 
-              <motion.div variants={fadeInRight} className="relative">
-                <div className="overflow-hidden rounded-2xl border border-primary-foreground/10">
-                  <img src={phantomDailyUse} alt="Desgaste do uso diário em superfícies nobres" className="w-full h-[500px] object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl" />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm p-3 rounded-lg">
-                  <p className="text-sm text-primary-foreground/80 font-light">O uso diário compromete até os acabamentos mais resistentes</p>
-                </div>
+              <motion.div variants={fadeInRight}>
+                <Card className="glass-card border-primary-foreground/10">
+                  <CardContent className="p-8 text-center">
+                    <Shield className="w-16 h-16 text-accent mx-auto mb-4" />
+                    <p className="text-primary-foreground/70 font-light text-sm leading-relaxed">
+                      O uso diário compromete até os acabamentos mais resistentes. A solução é proteger antes que o dano aconteça.
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             </div>
           </motion.div>
@@ -383,10 +274,7 @@ const PhantomArquitetonico = () => {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card className="border-destructive/20 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img src={phantomDamageGloss} alt="Danos em superfícies Gloss" className="w-full h-56 object-cover" />
-                </div>
+              <Card className="border-destructive/20">
                 <CardContent className="p-8">
                   <h3 className="text-lg font-extrabold text-foreground mb-4 flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-accent" /> Danos ao Gloss
@@ -408,10 +296,7 @@ const PhantomArquitetonico = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-destructive/20 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img src={phantomDamageMatte} alt="Danos em superfícies Matte" className="w-full h-56 object-cover" />
-                </div>
+              <Card className="border-destructive/20">
                 <CardContent className="p-8">
                   <h3 className="text-lg font-extrabold text-foreground mb-4 flex items-center gap-2">
                     <Layers className="w-5 h-5 text-accent" /> Danos ao Matte
@@ -471,16 +356,9 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ PARALLAX 2 — Após Anatomia do Dano ═══════════════════════ */}
-      <ParallaxSection
-        image={phantomDailyUse}
-        quote="Proteger não é esconder. É manter vivo o que foi projetado para impressionar."
-      />
-
       {/* ═══════════════════════ A SOLUÇÃO — PELÍCULAS PHANTOM ═══════════════════════ */}
-      <section ref={solutionRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: solutionTextureY }} />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-6">
@@ -492,7 +370,7 @@ const PhantomArquitetonico = () => {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="overflow-hidden rounded-2xl mb-12 border border-primary-foreground/10">
-              <img src={phantomSolution} alt="Película Phantom - camada de proteção invisível" className="w-full h-[500px] object-cover" />
+              <img src={phantomSolutionThickness} alt="Película Phantom - 180 microns de espessura premium" className="w-full object-contain bg-muted/10" />
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -545,14 +423,14 @@ const PhantomArquitetonico = () => {
                 </motion.div>
               </div>
 
-              <motion.div variants={fadeInRight} className="relative">
-                <div className="overflow-hidden rounded-2xl">
-                  <img src={phantomGlossResult} alt="Resultado Phantom Gloss - brilho preservado" className="w-full h-[500px] object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
-                </div>
-                <div className="absolute bottom-4 left-4 bg-accent/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                  <p className="text-accent-foreground text-sm font-bold">100% Brilho Preservado</p>
-                </div>
+              <motion.div variants={fadeInRight}>
+                <Card className="card-premium-hover border-t-2 border-t-accent/30">
+                  <CardContent className="p-8 text-center">
+                    <Sparkles className="w-16 h-16 text-accent mx-auto mb-4" />
+                    <p className="text-2xl font-extrabold text-foreground mb-2">100%</p>
+                    <p className="text-sm text-muted-foreground font-light">Brilho Preservado</p>
+                  </CardContent>
+                </Card>
               </motion.div>
             </div>
           </motion.div>
@@ -560,19 +438,18 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ PHANTOM MATTE ═══════════════════════ */}
-      <section ref={matteRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: matteTextureY }} />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div variants={fadeInLeft} className="relative order-last lg:order-first">
-                <div className="overflow-hidden rounded-2xl">
-                  <img src={phantomMatteResult} alt="Resultado Phantom Matte - toque aveludado preservado" className="w-full h-[500px] object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl" />
-                </div>
-                <div className="absolute bottom-4 right-4 bg-accent/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                  <p className="text-accent-foreground text-sm font-bold">Fosco Intacto</p>
-                </div>
+              <motion.div variants={fadeInLeft} className="order-last lg:order-first">
+                <Card className="glass-card border-primary-foreground/10">
+                  <CardContent className="p-8 text-center">
+                    <Layers className="w-16 h-16 text-accent mx-auto mb-4" />
+                    <p className="text-2xl font-extrabold text-primary-foreground mb-2">Fosco Intacto</p>
+                    <p className="text-sm text-primary-foreground/60 font-light">Toque aveludado preservado</p>
+                  </CardContent>
+                </Card>
               </motion.div>
 
               <div>
@@ -602,12 +479,6 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ PARALLAX 3 — Após Phantom Matte ═══════════════════════ */}
-      <ParallaxSection
-        image={phantomMaterials}
-        quote="Mármore. Madeira. Aço Inox. Vidro. Cada superfície merece proteção à sua altura."
-      />
-
       {/* ═══════════════════════ MATERIAIS NOBRES ═══════════════════════ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
@@ -617,10 +488,6 @@ const PhantomArquitetonico = () => {
             </motion.h2>
             <motion.div variants={scaleIn} className="flex justify-center mb-12">
               <div className="separator-accent" />
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="overflow-hidden rounded-2xl mb-12">
-              <img src={phantomMaterials} alt="Materiais nobres protegidos - mármore, madeira, aço inox, vidro" className="w-full h-[500px] object-cover" />
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -643,9 +510,8 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ DEPOIMENTOS ═══════════════════════ */}
-      <section ref={testimonialsRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: testimonialsTextureY }} />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <Badge className="bg-accent/10 text-accent border-accent/20 mb-4 text-xs tracking-widest uppercase">
@@ -681,24 +547,14 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ PARALLAX 4 — Após Depoimentos ═══════════════════════ */}
-      <ParallaxSection
-        image={phantomSolution}
-        quote="Elegância que permanece. Proteção que não aparece."
-      />
-
       {/* ═══════════════════════ O FUTURO DO SEU PROJETO ═══════════════════════ */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={phantomFuture} alt="Projeto impecável preservado" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/70" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-muted/30 overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-3xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-white mb-6">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
               O Futuro do Seu Projeto
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-white/60 font-light leading-relaxed mb-10">
+            <motion.p variants={fadeInUp} className="text-lg text-muted-foreground font-light leading-relaxed mb-10">
               Você não precisa mais escolher entre estética e praticidade. Com a tecnologia Phantom, beleza e durabilidade coexistem.
             </motion.p>
 
@@ -710,7 +566,7 @@ const PhantomArquitetonico = () => {
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                  <p className="text-white/80 font-light">{text}</p>
+                  <p className="text-muted-foreground font-light">{text}</p>
                 </div>
               ))}
             </motion.div>
@@ -753,9 +609,8 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ ENCONTRE UMA LOJA ═══════════════════════ */}
-      <section ref={storeRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: storeTextureY }} />
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
           <motion.div className="max-w-3xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp}>
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
