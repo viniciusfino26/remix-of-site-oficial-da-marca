@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Shield, Award, Globe, Cpu, Car, Building2, Eye, SunDim, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import ProductBanner from '@/components/ProductBanner';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,7 +34,6 @@ const stagger = {
 const Index = () => {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLElement>(null);
-  const productsRef = useRef<HTMLElement>(null);
   const whyRef = useRef<HTMLElement>(null);
 
   // Hero parallax
@@ -47,43 +47,12 @@ const Index = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.7], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 50]), { stiffness: 60, damping: 20 });
 
-  // Products section parallax
-  const { scrollYProgress: productsProgress } = useScroll({
-    target: productsRef,
-    offset: ['start end', 'end start'],
-  });
-  const productsBgY = useTransform(productsProgress, [0, 1], [40, -40]);
-
   // Why section parallax
   const { scrollYProgress: whyProgress } = useScroll({
     target: whyRef,
     offset: ['start end', 'end start'],
   });
   const whyTextureY = useTransform(whyProgress, [0, 1], [30, -30]);
-
-  const productHighlights = [
-    {
-      icon: Car,
-      title: t('products.solarControl'),
-      desc: 'Dark, Eclipse, VIP, Polaris, Matrix, Polaris Ultra',
-      href: '/automotivo',
-      category: t('products.automotive'),
-    },
-    {
-      icon: Shield,
-      title: t('products.ppf'),
-      desc: 'PPF Phantom 6mil / 8mil',
-      href: '/produtos',
-      category: t('products.automotive'),
-    },
-    {
-      icon: Building2,
-      title: t('products.architecture'),
-      desc: 'Petrolio, Metallico, Specchiato, Naturale, Orizzonte',
-      href: '/residencial',
-      category: t('products.architecture'),
-    },
-  ];
 
   const whyItems = [
     { icon: Cpu, title: t('why.tech'), desc: t('why.techDesc') },
@@ -100,6 +69,16 @@ const Index = () => {
 
   return (
     <main>
+      {/* Banner Website Oficial */}
+      <motion.div
+        className="bg-primary text-primary-foreground text-center py-2 text-xs uppercase tracking-[0.3em] font-semibold"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        INSULFILM™ — Website Oficial
+      </motion.div>
+
       {/* Hero Section */}
       <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
         {/* Geometric texture with parallax */}
@@ -184,64 +163,42 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Product Highlights */}
-      <section ref={productsRef} id="product-highlights" className="py-24 bg-background overflow-hidden">
-        <motion.div className="container mx-auto px-4" style={{ y: productsBgY }}>
-          <motion.div
-            className="text-center mb-14"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={stagger}
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              {t('products.title')}
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light">
-              {t('products.subtitle')}
-            </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4">
-              <div className="separator-accent" />
-            </motion.div>
-          </motion.div>
+      {/* Product Banners */}
+      <ProductBanner
+        title={t('products.solarControl')}
+        description="Dark, Eclipse, VIP, Polaris, Matrix, Polaris Ultra"
+        buttonText={t('products.viewDetails')}
+        buttonIcon={Car}
+        link="/automotivo"
+        alignment="right"
+      />
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={stagger}
-          >
-            {productHighlights.map((product, i) => (
-              <motion.div
-                key={i}
-                variants={i === 0 ? fadeInLeft : i === 2 ? fadeInRight : fadeInUp}
-              >
-                <Link to={product.href}>
-                  <Card className="card-premium-hover bg-card border-border border-t-2 border-t-transparent hover:border-t-accent/50 group h-full rounded-xl">
-                    <CardContent className="p-8">
-                      <motion.div
-                        className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-5 group-hover:from-accent/15 group-hover:to-accent/25 transition-all duration-300"
-                        whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
-                      >
-                        <product.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors duration-300" />
-                      </motion.div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-accent mb-3 block">
-                        {product.category}
-                      </span>
-                      <h3 className="text-xl font-extrabold text-foreground mb-2">{product.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-5 font-light">{product.desc}</p>
-                      <span className="text-sm font-semibold text-accent flex items-center gap-1 group-hover:gap-2.5 transition-all duration-300">
-                        {t('products.viewDetails')} <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </section>
+      <ProductBanner
+        title={t('products.ppf')}
+        description="PPF Phantom 6mil / 8mil"
+        buttonText={t('products.viewDetails')}
+        buttonIcon={Shield}
+        link="/antivandalismo13k"
+        alignment="left"
+      />
+
+      <ProductBanner
+        title={t('products.architecture')}
+        description="Petrolio, Metallico, Specchiato, Naturale, Orizzonte"
+        buttonText={t('products.viewDetails')}
+        buttonIcon={Building2}
+        link="/residencial"
+        alignment="right"
+      />
+
+      <ProductBanner
+        title={t('products.ppf')}
+        description="PPF Phantom 6mil / 8mil"
+        buttonText={t('products.viewDetails')}
+        buttonIcon={Shield}
+        link="/ppf"
+        alignment="left"
+      />
 
       {/* Why INSULFILM */}
       <section ref={whyRef} id="why-insulfilm" className="relative py-24 bg-carbon-gradient overflow-hidden">
