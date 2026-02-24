@@ -243,13 +243,13 @@ const QuemSomos = () => {
                 {/* Decade marker */}
                 <motion.div variants={scaleIn} className="relative flex items-center mb-8">
                   <motion.div
-                    className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full border-4 border-background -translate-x-1/2 z-10 shadow-md"
+                    className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full border-4 border-background -translate-x-1/2 z-20 shadow-md"
                     style={{ background: BRAND_GRADIENT }}
                     whileInView={{ scale: [0, 1.3, 1] }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   />
-                  <div className="ml-14 md:ml-0 md:text-center md:w-full">
+                  <div className="ml-14 md:ml-0 md:text-center md:w-full relative z-20">
                     <motion.span
                       className="inline-block text-sm font-extrabold px-5 py-2 rounded-full shadow-lg text-white shimmer"
                       style={{ background: BRAND_GRADIENT }}
@@ -288,10 +288,8 @@ const QuemSomos = () => {
                             transition: { duration: 0.25 },
                           }}
                         >
-                          <Card
-                            className="rounded-xl border-border overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_hsl(19,100%,56%,0.15)]"
-                            style={{ borderLeft: `3px solid transparent`, borderImage: `${BRAND_GRADIENT_VERTICAL} 1` }}
-                          >
+                          <Card className="rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_hsl(19,100%,56%,0.15)] border border-border relative">
+                            <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-l-xl" style={{ background: BRAND_GRADIENT_VERTICAL }} />
                             <CardContent className="p-5">
                               <span
                                 className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-white px-3 py-1 rounded-full mb-2"
@@ -318,10 +316,10 @@ const QuemSomos = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={scaleIn}
-              className="relative"
+              className="relative flex flex-col items-start md:items-center"
             >
               <motion.div
-                className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full border-4 border-background -translate-x-1/2 z-10"
+                className="w-6 h-6 rounded-full border-4 border-background z-10 ml-[7px] md:ml-0"
                 style={{
                   background: BRAND_GRADIENT,
                   boxShadow: '0 0 20px hsl(19, 100%, 56%, 0.4), 0 0 40px hsl(19, 100%, 56%, 0.2)',
@@ -330,7 +328,7 @@ const QuemSomos = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
               />
-              <div className="ml-14 md:ml-0 md:text-center md:w-full pt-0">
+              <div className="ml-14 md:ml-0 md:text-center mt-3">
                 <motion.p
                   className="text-lg font-bold bg-clip-text text-transparent"
                   style={{ backgroundImage: BRAND_GRADIENT }}
