@@ -199,7 +199,89 @@ const QuemSomos = () => {
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </section>
+
+      {/* Seção Institucional */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          {/* Blocos 1 e 2 lado a lado */}
+          <motion.div
+            className="grid md:grid-cols-2 gap-12 mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">
+                {t('about.intro.whoTitle')}
+              </h2>
+              <div className="separator-accent mb-6" />
+              <p className="text-muted-foreground font-light leading-relaxed">
+                {t('about.intro.whoText')}
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">
+                {t('about.intro.diffTitle')}
+              </h2>
+              <div className="separator-accent mb-6" />
+              <p className="text-muted-foreground font-light leading-relaxed">
+                {t('about.intro.diffText')}
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Bloco 3 - Produtos */}
+          <motion.div
+            className="mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">
+              {t('about.intro.productsTitle')}
+            </motion.h2>
+            <motion.div variants={scaleIn} className="separator-accent mb-6" />
+            <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">
+              {t('about.intro.productsText')}
+            </motion.p>
+            <motion.ul variants={stagger} className="space-y-3">
+              {[
+                t('about.intro.product1'),
+                t('about.intro.product2'),
+                t('about.intro.product3'),
+              ].map((item, i) => (
+                <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground font-light leading-relaxed">{item}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+
+          {/* Bloco 4 - Statement final */}
+          <motion.div
+            className="text-center max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">
+              {t('about.intro.driveTitle')}
+            </motion.h2>
+            <motion.div variants={scaleIn} className="flex justify-center mb-6">
+              <div className="separator-accent" />
+            </motion.div>
+            <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">
+              {t('about.intro.driveText')}
+            </motion.p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Timeline */}
