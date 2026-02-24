@@ -1,62 +1,73 @@
 
 
-# Redesign da Pagina Frota — Conteudo Profissional Completo
+# Adicionar Categorias de FAQ: Peliculas Solares e Peliculas de Protecao e Seguranca
 
 ## Resumo
 
-Reescrever a pagina `/frota` com todo o conteudo fornecido pelo usuario, seguindo o design system existente (carbon-gradient, glass-card, Framer Motion). Textos hardcoded em portugues, sem i18n — mesmo padrao do SkudoGuard e SkudoUltra.
+Adicionar duas novas categorias ao array `faqCategories` no arquivo `src/pages/FAQ.tsx`:
+1. **Peliculas Solares** — perguntas gerais sobre peliculas solares (reorganizando algumas existentes da categoria "Automotivo")
+2. **Peliculas de Protecao e Seguranca Superior** — todo o conteudo do PDF oficial fornecido (20+ perguntas e respostas)
 
 ---
 
-## Estrutura da Pagina
+## Categoria 1: Peliculas Solares
 
-### Secao 1 — HERO
-- Badge: "Frotas Corporativas" com icone Truck
-- Titulo: "Para Minha Frota"
-- Subtitulo: "Solucoes de Alta Performance para Frotas Corporativas"
-- Texto de posicionamento: "O veiculo de frota e o posto de trabalho do seu colaborador. Proporcionar um ambiente seguro e termicamente controlado nao e apenas conforto, e eficiencia operacional e dever de cuidado."
-- Fundo bg-carbon-gradient com separator-accent
+Mover/adaptar perguntas relevantes da categoria "Automotivo" atual e adicionar contexto sobre peliculas solares:
 
-### Secao 2 — CONFORTO TERMICO E SAUDE DO MOTORISTA
-- Titulo da secao: "Conforto Termico e Saude do Motorista"
-- Subtitulo: "Horas ao volante sob sol forte causam fadiga precoce e exposicao perigosa a radiacoes."
-- 3 cards glass-card com icones minimalistas:
-  - Thermometer → "Bloqueio de Calor (IR)" — "Reducao drastica da temperatura interna, diminuindo o uso do ar-condicionado e o consumo de combustivel."
-  - Shield → "Protecao UV Total" — "Escudo contra raios ultravioleta, prevenindo doencas de pele e o envelhecimento precoce de componentes internos."
-  - Eye → "Reducao de Ofuscamento" — "Maior visibilidade e menos cansaco visual, aumentando a seguranca ativa na conducao."
+- "A pelicula escurece muito o vidro?" (mover de Automotivo)
+- "A pelicula pode ser aplicada no para-brisa?" (mover de Automotivo)
+- "Quanto tempo dura a pelicula?" (mover de Automotivo)
+- Manter em "Automotivo" apenas: "Qual pelicula e indicada para o meu carro?"
 
-### Secao 3 — SEGURANCA E PROTECAO DE ATIVOS
-- bg-carbon-gradient (alternando fundo)
-- Titulo: "Seguranca e Protecao de Ativos"
-- Subtitulo: "Vidros sao os pontos mais vulneraveis em tentativas de invasao ou vandalismo."
-- 3 cards glass-card:
-  - Layers → "Tecnologia Antiestilhacamento" — "Em caso de impacto, a pelicula retem os fragmentos de vidro, protegendo o motorista de ferimentos e dificultando o acesso ao interior do veiculo."
-  - Lock → "Privacidade Estrategica" — "Reduz a visibilidade externa sobre equipamentos, ferramentas e cargas, desestimulando acoes criminosas por oportunidade."
-  - Clock → "Barreira de Tempo" — "Aumenta o tempo necessario para uma invasao, fator crucial para a preservacao da integridade fisica da equipe."
+---
 
-### Secao 4 — POR QUE ESCOLHER INSULFILM PARA SUA FROTA?
-- Titulo: "Por que escolher INSULFILM para sua frota?"
-- 3 cards com checklist:
-  - Award → "Padronizacao" — "Garanta a mesma estetica e nivel de protecao em toda a sua frota nacional."
-  - RefreshCw → "Durabilidade" — "Peliculas que nao desbotam, nao criam bolhas e mantem a performance por anos."
-  - DollarSign → "Valor de Revenda" — "Protecao do interior contra o ressecamento causado pelo sol, preservando o patrimonio da empresa."
+## Categoria 2: Peliculas de Protecao e Seguranca Superior
 
-### Secao 5 — CTA FINAL
-- bg-carbon-gradient
-- Titulo: "Atendimento Especializado para Frotas"
-- Subtitulo: "Condicoes especiais, orcamento personalizado e logistica sob medida para a sua frota."
-- Botao WhatsApp verde: "Solicitar Orcamento"
+Todas as perguntas do PDF oficial, na ordem do documento:
+
+1. O que e uma "pelicula anti-vandalismo" ou "pelicula de seguranca"?
+2. Como escolher entre as opcoes de peliculas de protecao e seguranca existentes?
+3. O desempenho de resistencia e o mesmo se o vidro estiver parcialmente aberto?
+4. Logo apos a aplicacao, a pelicula apresentara a resistencia esperada?
+5. Em quais vidros e possivel aplicar estas peliculas?
+6. Qual o tipo e espessura de um vidro automotivo lateral?
+7. A aplicacao das peliculas interfere sobre a garantia da montadora?
+8. Qual o significado de "PS"?
+9. A espessura determina o desempenho de resistencia da pelicula?
+10. Quais sao os principais indices tecnicos de resistencia que devo pesquisar?
+11. Como identificar se os dados tecnicos de desempenho sao confiaveis?
+12. Como identificar se os videos de testagem sao reais ou falsos?
+13. O tempo de garantia do produto interfere sobre a performance de resistencia?
+14. Qual a diferenca entre os crimes de vandalismo e roubo?
+15. As peliculas funcionam contra o crime de furto?
+16. As peliculas oferecem resistencia balistica?
+17. As peliculas podem aumentar minha protecao em caso de acidentes?
+18. As peliculas podem afetar o resgate ou dificultar a saida do carro?
+19. Como saber se a pelicula foi aplicada corretamente?
+20. Por qual motivo nao e possivel aplicar nos vidros frontal, laterais fixos, traseiro e teto-solar?
+21. As peliculas sao aplicadas interna ou externamente?
+22. E necessario desmontar os paineis das portas laterais?
+23. E normal a pelicula apresentar manchas durante o periodo de secagem?
+24. As peliculas sao transparentes ou tingidas?
+25. Carros sem colunas laterais apresentam o mesmo desempenho?
+26. E possivel aplicar em veiculos com vidros blindados?
+27. Tenho um veiculo blindado usado e os vidros estao delaminando, posso usar estas peliculas?
 
 ---
 
 ## Detalhes Tecnicos
 
-### Arquivo editado: `src/pages/Frota.tsx`
-- Reescrita completa do componente
-- Imports adicionais: Eye, Lock, Clock, Layers, Award, RefreshCw do lucide-react
-- Manter mesmas animacoes (fadeInUp, stagger, scaleIn, fadeInLeft)
-- Adicionar fadeInRight para layouts em grid alternados
-- Todos os textos hardcoded exatamente como fornecidos pelo usuario
-- WHATSAPP URL mantida: `https://wa.me/5511976136911?text=Preciso%20de%20películas%20para%20minha%20frota`
-- Nenhum arquivo adicional necessario
+### Arquivo editado: `src/pages/FAQ.tsx`
+
+- Reorganizar o array `faqCategories`:
+  1. Automotivo (manter apenas a pergunta geral de indicacao)
+  2. **Peliculas Solares** (novo — 3 perguntas movidas + contexto)
+  3. **Peliculas de Protecao e Seguranca Superior** (novo — 27 perguntas do PDF)
+  4. Arquitetonico (manter)
+  5. Garantia (manter)
+  6. Geral (manter)
+
+- Textos hardcoded em portugues, exatamente como no PDF oficial
+- Nenhum novo componente ou dependencia necessario
+- Mesma estrutura de Accordion existente
 
