@@ -62,12 +62,42 @@ const problemCards = [
 ];
 
 const filmCategories = [
-  { icon: Eye, title: 'Espelhadas', desc: 'Alta privacidade diurna com reflexão externa. Reduz calor e claridade sem comprometer a iluminação natural.' },
-  { icon: Sun, title: 'Transparentes', desc: 'Proteção UV e controle térmico com máxima transmissão de luz visível. Ideal para ambientes que precisam de luminosidade.' },
-  { icon: Sparkles, title: 'Refletivas', desc: 'Reflexão solar potente para fachadas com alta incidência de sol. Máximo controle térmico e economia de energia.' },
-  { icon: Palette, title: 'Neutras', desc: 'Tonalidade discreta que preserva a estética original da edificação. Equilíbrio entre desempenho e aparência.' },
-  { icon: Lock, title: 'Não Refletivas', desc: 'Controle de calor sem efeito espelhado. Perfeitas para residências que valorizam a vista externa noturna.' },
-  { icon: Shield, title: 'Antivandalismo e Segurança', desc: 'Proteção contra estilhaços, invasões e acidentes. Retenção de fragmentos que protege a família.' },
+  {
+    icon: Eye,
+    title: 'Espelhadas',
+    desc: 'Espelhamento intenso em ambos os lados para uma rejeição de calor espetacular. Diversas opções de cores externas com interior prata.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/SpecchiatoBronzo.jpg',
+  },
+  {
+    icon: Sun,
+    title: 'Transparentes',
+    desc: 'Quase imperceptível, mantém o design atual do projeto enquanto proporciona ótima redução de calor por sua tecnologia seletiva de absorção térmica.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Orizzonte80.jpg',
+  },
+  {
+    icon: Sparkles,
+    title: 'Refletivas',
+    desc: 'Alta refletividade externa para maximizar a rejeição de calor, com um interior neutro para facilitar a visibilidade externa.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Metallico.jpg',
+  },
+  {
+    icon: Palette,
+    title: 'Neutras',
+    desc: 'Visual natural de refletividade baixa ou moderada para aumentar o conforto térmico, sem destacar expressivamente a área envidraçada.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Naturale.jpg',
+  },
+  {
+    icon: Lock,
+    title: 'Não Refletivas',
+    desc: 'Visual escuro e não espelhado, proporcionando excelente privacidade e controle de luz que aumenta o conforto térmico.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/UltraVioletti90.jpg',
+  },
+  {
+    icon: Shield,
+    title: 'Antivandalismo e Segurança',
+    desc: 'Praticamente invisíveis, reforçam a resistência natural do vidro contra quebras acidentais ou criminosas e retêm os estilhaços do vidro quebrado.',
+    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Safety&Security.jpg',
+  },
 ];
 
 const benefits = [
@@ -94,6 +124,17 @@ const differentials = [
 ];
 
 const WHATSAPP_NUMBER = '5511999999999';
+
+/* ── Parallax Section Component ── */
+const ParallaxSection = ({ imageUrl, children }: { imageUrl: string; children?: React.ReactNode }) => (
+  <section
+    className="bg-parallax relative min-h-[200px] md:min-h-[300px] flex items-center justify-center"
+    style={{ backgroundImage: `url(${imageUrl})` }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/70" />
+    {children && <div className="relative z-10 container mx-auto px-4 py-16 text-center">{children}</div>}
+  </section>
+);
 
 const Residencial = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -196,25 +237,39 @@ const Residencial = () => {
         </div>
       </section>
 
-      {/* ═══ 3. NOSSAS PELÍCULAS ═══ */}
+      {/* ═══ 3. NOSSAS PELÍCULAS — Cards com Fotos ═══ */}
       <section id="peliculas" className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nossas Películas</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">6 categorias de películas para cada necessidade do seu projeto residencial</motion.p>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">6 categorias de películas para cada necessidade do seu projeto arquitetônico</motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
           </motion.div>
 
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             {filmCategories.map((cat, i) => (
               <motion.div key={i} variants={fadeInUp}>
-                <motion.div whileHover={{ y: -4, transition: { duration: 0.3 } }}>
-                  <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50">
-                    <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4">
-                        <cat.icon className="w-6 h-6 text-accent" />
+                <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
+                  <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50 overflow-hidden">
+                    {/* Image with overlay */}
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img
+                        src={cat.image}
+                        alt={cat.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">
+                            <cat.icon className="w-4 h-4 text-accent" />
+                          </div>
+                          <h3 className="text-lg font-extrabold text-primary-foreground">{cat.title}</h3>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-extrabold text-foreground mb-2">{cat.title}</h3>
+                    </div>
+                    <CardContent className="p-5">
                       <p className="text-sm text-muted-foreground font-light leading-relaxed">{cat.desc}</p>
                     </CardContent>
                   </Card>
@@ -225,7 +280,14 @@ const Residencial = () => {
         </div>
       </section>
 
-      {/* ═══ 4. PRINCIPAIS BENEFÍCIOS ═══ */}
+      {/* ═══ 4. PARALLAX — Residências ═══ */}
+      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/residencias.jpg">
+        <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={emotionalFade} className="text-2xl md:text-4xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
+          Conforto térmico e proteção UV para todos os ambientes da sua residência
+        </motion.p>
+      </ParallaxSection>
+
+      {/* ═══ 5. PRINCIPAIS BENEFÍCIOS ═══ */}
       <section id="beneficios" className="py-24 bg-carbon-gradient overflow-hidden relative">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 relative z-10">
@@ -251,61 +313,6 @@ const Residencial = () => {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 5. PROTEJA SUA CASA E SUA FAMÍLIA ═══ */}
-      <section className="py-24 bg-background overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.div variants={emotionalFade} className="flex justify-center mb-4">
-              <Heart className="w-10 h-10 text-accent" />
-            </motion.div>
-            <motion.h2 variants={emotionalFade} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              Proteja Sua Casa e Sua Família
-            </motion.h2>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeInLeft}>
-              <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/30">
-                  <Home className="w-16 h-16 mx-auto mb-3" />
-                  <p className="text-sm font-light">Foto ilustrativa — residência</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInRight} className="space-y-6">
-              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Shield className="w-8 h-8 text-accent shrink-0 mt-1" />
-                    <div>
-                      <p className="text-foreground font-medium leading-relaxed mb-3">
-                        Crianças brincando perto de janelas, móveis expostos ao sol intenso, pele vulnerável à radiação UV dentro de casa. Sua família merece um ambiente seguro e confortável.
-                      </p>
-                      <p className="text-muted-foreground font-light text-sm leading-relaxed">
-                        As películas INSULFILM bloqueiam até 99% dos raios UV, reduzem o calor em até 80% e protegem contra estilhaços em caso de quebra acidental do vidro.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent/50">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Sun className="w-8 h-8 text-accent shrink-0 mt-1" />
-                    <p className="text-muted-foreground font-light leading-relaxed">
-                      Móveis, pisos de madeira, cortinas e obras de arte são protegidos contra desbotamento e envelhecimento precoce. Sua casa mantém a beleza por muito mais tempo.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -449,7 +456,67 @@ const Residencial = () => {
         </div>
       </section>
 
-      {/* ═══ 10. CTA FINAL ═══ */}
+      {/* ═══ 10. PARALLAX — Escritórios/Fachadas ═══ */}
+      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/escritorios.jpg" />
+
+      {/* ═══ 11. PROTEJA SUA CASA E SUA FAMÍLIA ═══ */}
+      <section className="py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+            <motion.div variants={emotionalFade} className="flex justify-center mb-4">
+              <Heart className="w-10 h-10 text-accent" />
+            </motion.div>
+            <motion.h2 variants={emotionalFade} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+              Proteja Sua Casa e Sua Família
+            </motion.h2>
+            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
+          </motion.div>
+
+          <motion.div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.div variants={fadeInLeft}>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-premium-lg">
+                <img
+                  src="https://www.insulfilmarquitetonico.com.br/__imagens/Arquitetonico--Casas--Interior--G.jpg"
+                  alt="Interior de residência com películas arquitetônicas INSULFILM"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeInRight} className="space-y-6">
+              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Shield className="w-8 h-8 text-accent shrink-0 mt-1" />
+                    <div>
+                      <p className="text-foreground font-medium leading-relaxed mb-3">
+                        Crianças brincando perto de janelas, móveis expostos ao sol intenso, pele vulnerável à radiação UV dentro de casa. Sua família merece um ambiente seguro e confortável.
+                      </p>
+                      <p className="text-muted-foreground font-light text-sm leading-relaxed">
+                        As películas INSULFILM bloqueiam até 99% dos raios UV, reduzem o calor em até 80% e protegem contra estilhaços em caso de quebra acidental do vidro.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent/50">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Sun className="w-8 h-8 text-accent shrink-0 mt-1" />
+                    <p className="text-muted-foreground font-light leading-relaxed">
+                      Móveis, pisos de madeira, cortinas e obras de arte são protegidos contra desbotamento e envelhecimento precoce. Sua casa mantém a beleza por muito mais tempo.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══ 12. CTA FINAL ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 relative z-10">
