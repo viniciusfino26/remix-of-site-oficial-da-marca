@@ -203,4 +203,18 @@
   .icon-ring-glow {
     box-shadow: 0 0 0 4px hsl(19 100% 56% / 0.1), 0 0 0 8px hsl(19 100% 56% / 0.05);
   }
+
+  /* Parallax background */
+  .bg-parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    .bg-parallax {
+      background-attachment: scroll;
+    }
+  }
 }
