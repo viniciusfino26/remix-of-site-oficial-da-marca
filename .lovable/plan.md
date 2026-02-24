@@ -1,50 +1,90 @@
 
-# Adicionar Conteudo Institucional na Pagina Quem Somos
+
+# Criar Paginas SkinSafe8K e SkudoUltra + Ativar Rotas
 
 ## Resumo
 
-Inserir 4 blocos de texto institucional no inicio da pagina `/quem-somos`, logo apos o hero e antes da timeline. Layout limpo e organizado com animacoes suaves seguindo o padrao da pagina.
+Criar duas novas paginas de produto seguindo 100% o design system existente (SkudoGuard/Antivandalismo13K como referencia), e descomentar as rotas no App.tsx.
 
 ---
 
-## Nova Estrutura da Pagina
+## 1. src/pages/SkinSafe8K.tsx (nova)
 
-1. **HERO** (existente, sem alteracoes)
-2. **NOVO: Secao Institucional** (4 blocos de texto)
-   - Quem Somos
-   - O que nos diferencia
-   - Os produtos que oferecemos (com lista)
-   - O que nos impulsiona diariamente
-3. **Timeline** (existente, sem alteracoes)
-4. **Nao e tudo igual** (existente, sem alteracoes)
+Pagina da pelicula de protecao pessoal contra raios UV. Estrutura:
+
+**Hero** — Fundo `bg-carbon-gradient` com parallax, Badge "Protecao Pessoal", titulo "INSULFILM SkinSafe8K", subtitulo sobre protecao UV invisivel, separator-accent.
+
+**Beneficios (4 cards)** — Grid `sm:grid-cols-2 lg:grid-cols-4` com glass-card:
+- 100% Bloqueio UV (Sun icon)
+- Transparente e Imperceptivel (Eye icon)
+- Protege Pele e Olhos (Heart icon)
+- Protege Interior do Veiculo (Car icon)
+
+**Descricao do Produto** — Grid 2 colunas (texto + placeholder imagem), lista com CheckCircle dos beneficios, mesma estrutura da secao 2 do SkudoGuard.
+
+**Especificacoes Tecnicas** — Cards com propriedades (Transmitancia Luminosa, Bloqueio UV, Rejeicao IR, etc.) usando o mesmo layout de physicalProps do Antivandalismo13K.
+
+**CTA Final** — Titulo "Proteja Sua Pele Hoje", botao WhatsApp verde, texto de atendimento. Mesmo padrao do CTA do SkudoGuard.
+
+Animacoes: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger — identicas as demais paginas.
 
 ---
 
-## Layout Visual
+## 2. src/pages/SkudoUltra.tsx (nova)
 
-- Fundo claro (`bg-background`) para contraste com o hero escuro
-- Cada bloco com titulo em `font-extrabold` + separador accent
-- Texto em `text-muted-foreground font-light leading-relaxed`
-- Grid alternado: blocos 1 e 2 lado a lado (md:grid-cols-2), bloco 3 com lista estilizada, bloco 4 centralizado como statement final
-- Animacoes `fadeInUp` com stagger, consistentes com o resto da pagina
+Pagina da pelicula de seguranca maxima. Estrutura:
+
+**Hero** — Badge "Seguranca Maxima", titulo "INSULFILM SkudoUltra", subtitulo sobre Ultra Security Grade, separator-accent, parallax.
+
+**Diferenciais vs SkudoGuard** — Secao com titulo "SkudoUltra vs SkudoGuard", tabela comparativa em Card com grid mostrando:
+- Laminacao (Tripla vs Quadrupla)
+- Resistencia a Tensao (valores comparados)
+- Forca de Ruptura (valores comparados)
+- Adesivo (Performance vs Ultra Performance)
+- Tecnologia (Security Grade vs Ultra Security Grade)
+
+**Diferenciais Tecnicos** — Grid de 4 cards (glass-card no fundo escuro) com icones e descricoes dos diferenciais exclusivos do SkudoUltra.
+
+**Especificacoes Tecnicas** — Mesma estrutura de cards com physicalProps, valores superiores ao SkudoGuard.
+
+**CTA Final** — Titulo "Protecao Maxima Para Sua Familia", botao WhatsApp, mesmo padrao.
+
+---
+
+## 3. src/App.tsx (edicao)
+
+- Descomentar import SkinSafe8K (linha 24)
+- Descomentar import SkudoUltra (linha 25)
+- Descomentar rota /skinsafe8k (linha 62)
+- Descomentar rota /skudo-ultra (linha 63)
+
+---
+
+## 4. Internacionalizacao
+
+Adicionar chaves nos 3 arquivos de traducao (pt.json, en.json, es.json):
+- `skinSafe8kPage.*` — hero, beneficios, especificacoes, CTA
+- `skudoUltraPage.*` — hero, diferenciais, comparativo, especificacoes, CTA
 
 ---
 
 ## Detalhes Tecnicos
 
-### Arquivo: `src/pages/QuemSomos.tsx`
+### Arquivos novos
+- `src/pages/SkinSafe8K.tsx`
+- `src/pages/SkudoUltra.tsx`
 
-Inserir nova `<section>` entre o fechamento do hero (linha ~203) e o inicio da timeline (linha ~205). A secao contera:
+### Arquivos editados
+- `src/App.tsx` — descomentar 2 imports + 2 rotas
+- `src/i18n/locales/pt.json` — adicionar chaves skinSafe8kPage e skudoUltraPage
+- `src/i18n/locales/en.json` — mesmas chaves traduzidas
+- `src/i18n/locales/es.json` — mesmas chaves traduzidas
 
-- Container com `max-w-5xl mx-auto`
-- 4 subsecoes com `motion.div` usando as variantes `fadeInUp` e `stagger` ja existentes
-- Lista de produtos com icones `CheckCircle` (ja importado no lucide-react)
-- Separador accent entre cada bloco
+### Padrao seguido
+- Imports identicos: framer-motion, lucide-react, shadcn/ui (Card, Button, Badge)
+- Variantes de animacao: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger (copias exatas)
+- Parallax hero com useScroll/useTransform/useSpring
+- Classes CSS: bg-carbon-gradient, bg-hero-texture, bg-diagonal-texture, glass-card, card-premium-hover, separator-accent, shadow-premium-lg
+- WHATSAPP_NUMBER constante, CTA com MessageCircle icon
+- useTranslation para todos os textos
 
-### Arquivo: `src/i18n/locales/pt.json`
-
-Adicionar chaves `about.intro.*` para os 4 blocos de texto (mantendo internacionalizacao). O conteudo em portugues sera exatamente o texto fornecido pelo usuario.
-
-### Arquivos: `src/i18n/locales/en.json` e `src/i18n/locales/es.json`
-
-Adicionar as mesmas chaves com traducoes equivalentes em ingles e espanhol.
