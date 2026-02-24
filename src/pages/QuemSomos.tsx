@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Shield, Award, CheckCircle, Users, Star, Clock } from 'lucide-react';
@@ -31,6 +31,58 @@ const stagger = {
 const staggerTimeline = {
   visible: { transition: { staggerChildren: 0.18 } },
 };
+
+// Animated counter component
+function AnimatedStat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const duration = 2000;
+    const start = performance.now();
+    const step = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * value));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [started, value]);
+
+  return (
+    <div ref={ref} className="text-center">
+      <span
+        className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent"
+        style={{ backgroundImage: BRAND_GRADIENT }}
+      >
+        {count}{suffix}
+      </span>
+      <p className="text-xs md:text-sm text-primary-foreground/60 mt-1 font-medium uppercase tracking-wider">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+const heroStats = [
+  { value: 40, suffix: '+', labelKey: 'about.statYears' },
+  { value: 4, suffix: '', labelKey: 'about.statStores' },
+  { value: 15, suffix: '+', labelKey: 'about.statPioneering' },
+];
 
 const timelineData = [
   {
@@ -137,6 +189,13 @@ const QuemSomos = () => {
             <motion.p variants={fadeInUp} className="text-base md:text-lg text-primary-foreground/70 font-light leading-relaxed max-w-3xl mx-auto">
               {t('about.heroText')}
             </motion.p>
+
+            {/* Animated Stats */}
+            <motion.div variants={fadeInUp} className="flex justify-center gap-8 md:gap-16 mt-12">
+              {heroStats.map((stat, i) => (
+                <AnimatedStat key={i} value={stat.value} suffix={stat.suffix} label={t(stat.labelKey)} />
+              ))}
+            </motion.div>
           </motion.div>
         </motion.div>
 
