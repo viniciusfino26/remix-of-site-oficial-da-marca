@@ -170,12 +170,12 @@ const Index = () => {
       <section className="bg-background py-12 overflow-hidden">
         <motion.div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-border">
-            <div className="aspect-video relative">
+            <div className="aspect-video relative overflow-hidden">
               <iframe
                 src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
                 title="INSULFILM™"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                className="w-full h-full pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] pointer-events-none"
                 loading="lazy"
               />
               <div className="absolute inset-0 z-10 cursor-default" />
