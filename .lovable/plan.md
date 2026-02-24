@@ -1,79 +1,62 @@
 
 
-# Redesign Completo da Pagina SkudoUltra — Conceito SkudoGuard
+# Redesign da Pagina Frota — Conteudo Profissional Completo
 
 ## Resumo
 
-Reescrever a pagina SkudoUltra seguindo o mesmo conceito emocional e agressivo da pagina SkudoGuard, com video embedado, dados oficiais do PDF, estatisticas de orgaos publicos, e o texto fornecido pelo usuario. Todos os textos serao hardcoded em portugues (sem i18n), igual ao SkudoGuard.
+Reescrever a pagina `/frota` com todo o conteudo fornecido pelo usuario, seguindo o design system existente (carbon-gradient, glass-card, Framer Motion). Textos hardcoded em portugues, sem i18n — mesmo padrao do SkudoGuard e SkudoUltra.
 
 ---
 
-## Estrutura da Pagina (seguindo SkudoGuard)
+## Estrutura da Pagina
 
-### Secao 1 — HERO + VIDEO
-- Badge: "Pelicula de Extrema Seguranca"
-- Titulo: INSULFILM™ SkudoUltra
-- Subtitulo: texto fornecido pelo usuario — "Seguranca superior contra ataques repetidos e agressivos para invasao"
-- Video embedado: `https://www.youtube.com/embed/iiN1wWGiECw` (autoplay, muted, loop, sem controles, pointer-events-none + overlay z-10, exatamente como SkudoGuard)
+### Secao 1 — HERO
+- Badge: "Frotas Corporativas" com icone Truck
+- Titulo: "Para Minha Frota"
+- Subtitulo: "Solucoes de Alta Performance para Frotas Corporativas"
+- Texto de posicionamento: "O veiculo de frota e o posto de trabalho do seu colaborador. Proporcionar um ambiente seguro e termicamente controlado nao e apenas conforto, e eficiencia operacional e dever de cuidado."
+- Fundo bg-carbon-gradient com separator-accent
 
-### Secao 2 — A REALIDADE DA VIOLENCIA (stats com CountUp)
-- Mesma estrutura do SkudoGuard: 4 cards glass-card com estatisticas de orgaos publicos
-- Dados adaptados para o contexto do Ultra (insistencia do agressor, tempo de resistencia)
-- Fonte: SSP-SP, Forum Brasileiro de Seguranca Publica, Atlas da Violencia
+### Secao 2 — CONFORTO TERMICO E SAUDE DO MOTORISTA
+- Titulo da secao: "Conforto Termico e Saude do Motorista"
+- Subtitulo: "Horas ao volante sob sol forte causam fadiga precoce e exposicao perigosa a radiacoes."
+- 3 cards glass-card com icones minimalistas:
+  - Thermometer → "Bloqueio de Calor (IR)" — "Reducao drastica da temperatura interna, diminuindo o uso do ar-condicionado e o consumo de combustivel."
+  - Shield → "Protecao UV Total" — "Escudo contra raios ultravioleta, prevenindo doencas de pele e o envelhecimento precoce de componentes internos."
+  - Eye → "Reducao de Ofuscamento" — "Maior visibilidade e menos cansaco visual, aumentando a seguranca ativa na conducao."
 
-### Secao 3 — DESCRICAO DO PRODUTO
-- Texto oficial do PDF (pagina 2): "Pelicula premium de extrema seguranca para blindagem dos vidros contra armas brancas pesadas..."
-- Texto do usuario integrado como paragrafo principal de posicionamento
-- Checklist com diferenciais (retirados do PDF): retencao de fragmentos, nao altera originalidade, nao interfere em sinais eletronicos, etc.
+### Secao 3 — SEGURANCA E PROTECAO DE ATIVOS
+- bg-carbon-gradient (alternando fundo)
+- Titulo: "Seguranca e Protecao de Ativos"
+- Subtitulo: "Vidros sao os pontos mais vulneraveis em tentativas de invasao ou vandalismo."
+- 3 cards glass-card:
+  - Layers → "Tecnologia Antiestilhacamento" — "Em caso de impacto, a pelicula retem os fragmentos de vidro, protegendo o motorista de ferimentos e dificultando o acesso ao interior do veiculo."
+  - Lock → "Privacidade Estrategica" — "Reduz a visibilidade externa sobre equipamentos, ferramentas e cargas, desestimulando acoes criminosas por oportunidade."
+  - Clock → "Barreira de Tempo" — "Aumenta o tempo necessario para uma invasao, fator crucial para a preservacao da integridade fisica da equipe."
 
-### Secao 4 — O QUE ACONTECE EM SEGUNDOS (danger cards)
-- Mesma estrutura do SkudoGuard: cards emocionais com icones
-- Adaptados para Ultra: enfase na insistencia do agressor e o fato de que com o Ultra, o marginal DESISTE (conforme video comprova)
-- Card especifico: "O Marginal Desiste" — referencia ao video que comprova
+### Secao 4 — POR QUE ESCOLHER INSULFILM PARA SUA FROTA?
+- Titulo: "Por que escolher INSULFILM para sua frota?"
+- 3 cards com checklist:
+  - Award → "Padronizacao" — "Garanta a mesma estetica e nivel de protecao em toda a sua frota nacional."
+  - RefreshCw → "Durabilidade" — "Peliculas que nao desbotam, nao criam bolhas e mantem a performance por anos."
+  - DollarSign → "Valor de Revenda" — "Protecao do interior contra o ressecamento causado pelo sol, preservando o patrimonio da empresa."
 
-### Secao 5 — DIFERENCIAIS TECNICOS
-- Dados oficiais do PDF:
-  - Multicamadas com TETRA laminacao industrial (vs tripla do SkudoGuard)
-  - Poliester de alta densidade
-  - Adesivo performance
-  - Nitidez optica cristal
-
-### Secao 6 — PROPRIEDADES FISICAS (dados oficiais do PDF)
-- Espessura: 24 mil / 609,6 micras / 0,609 mm
-- Forca de Ruptura: 440 lbs/in (PLI) / 78,57 kgf/cm
-- Forca de Puncao: 375 lbs / 151,95 kg
-- Resistencia a Tensao: 32.000 PSI / 2.249,82 kgf/cm2
-- Alongamento na Ruptura: 200%
-- Forca de Arrancamento: >5 lbs/in (PLI) / >892,89 g/cm
-
-### Secao 7 — COMPARATIVO SkudoGuard vs SkudoUltra (manter existente)
-- Tabela comparativa ja existente, atualizada com dados oficiais do PDF
-
-### Secao 8 — GARANTIA (dados oficiais do PDF)
-- Garantia Produto: 10 anos (falha adesiva, delaminacao, rachadura)
-- Garantia Servico: descolamento e bolha
-- Reposicao gratuita das peliculas nos vidros moveis das portas laterais
-- Metodos de teste: ANSI 97, ASTM E-308, ASTM E-903, ASTM D-882, ASTM D-1044
-
-### Secao 9 — CTA FINAL
-- WhatsApp com mensagem sobre SkudoUltra
+### Secao 5 — CTA FINAL
+- bg-carbon-gradient
+- Titulo: "Atendimento Especializado para Frotas"
+- Subtitulo: "Condicoes especiais, orcamento personalizado e logistica sob medida para a sua frota."
+- Botao WhatsApp verde: "Solicitar Orcamento"
 
 ---
 
 ## Detalhes Tecnicos
 
-### Arquivo editado: `src/pages/SkudoUltra.tsx`
-- Reescrita completa seguindo a estrutura do SkudoGuard
-- Adicionar imports: useEffect, useState, useInView, Accordion, e icones extras (AlertTriangle, HeartCrack, UserX, Swords, ShieldAlert, Users, Award, FileText, Quote, etc.)
-- Adicionar componente CountUp (copiar do SkudoGuard)
-- Video YouTube ID: `iiN1wWGiECw`
-- Textos hardcoded em portugues (sem useTranslation), mesmo padrao do SkudoGuard
-- Dados fisicos atualizados conforme PDF oficial
-
-### Texto exato do usuario (sera usado na secao de descricao):
-"Se a sua expectativa e seguranca superior em situacoes em que nao ha possibilidade de rapida evasao e o agressor insiste na abordagem, o INSULFILM™ SkudoUltra e a defesa projetada para isso. Com resistencia muito acima do antivandalismo, enfrenta situacoes mais agressivas de tentativa de invasao com o uso de armas brancas. Reforca o vidro antes e, principalmente, depois da quebra - dificultando de forma significativa o acesso imediato. Torna vidro + pelicula um escudo de dificil ruptura, mesmo diante de investidas repetidas. E a escolha para quem quer um desempenho de resistencia alem do padrao que o agressor espera encontrar."
-
-### Nenhum arquivo adicional necessario
-- Mesmos componentes shadcn/ui ja utilizados
-- Mesmas animacoes Framer Motion
+### Arquivo editado: `src/pages/Frota.tsx`
+- Reescrita completa do componente
+- Imports adicionais: Eye, Lock, Clock, Layers, Award, RefreshCw do lucide-react
+- Manter mesmas animacoes (fadeInUp, stagger, scaleIn, fadeInLeft)
+- Adicionar fadeInRight para layouts em grid alternados
+- Todos os textos hardcoded exatamente como fornecidos pelo usuario
+- WHATSAPP URL mantida: `https://wa.me/5511976136911?text=Preciso%20de%20películas%20para%20minha%20frota`
+- Nenhum arquivo adicional necessario
 
