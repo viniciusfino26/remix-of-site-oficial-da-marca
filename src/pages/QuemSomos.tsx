@@ -321,7 +321,7 @@ const QuemSomos = () => {
               className="relative"
             >
               <motion.div
-                className="absolute left-4 md:left-1/2 w-7 h-7 rounded-full border-4 border-background -translate-x-1/2 z-10"
+                className="absolute left-4 md:left-1/2 w-6 h-6 rounded-full border-4 border-background -translate-x-1/2 z-10"
                 style={{
                   background: BRAND_GRADIENT,
                   boxShadow: '0 0 20px hsl(19, 100%, 56%, 0.4), 0 0 40px hsl(19, 100%, 56%, 0.2)',
@@ -330,7 +330,7 @@ const QuemSomos = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
               />
-              <div className="ml-14 md:ml-0 md:text-center md:w-full pt-1">
+              <div className="ml-14 md:ml-0 md:text-center md:w-full pt-0">
                 <motion.p
                   className="text-lg font-bold bg-clip-text text-transparent"
                   style={{ backgroundImage: BRAND_GRADIENT }}
