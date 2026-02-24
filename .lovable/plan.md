@@ -1,17 +1,26 @@
 
 
-# Atualizar robots.txt
+# Criar arquivo public/llms.txt — Referencia para LLMs e Crawlers
 
 ## Resumo
 
-Substituir o conteudo atual do `public/robots.txt` pelo novo conteudo fornecido, que inclui:
+Criar o arquivo `public/llms.txt` na pasta `public/` com todo o conteudo fornecido pelo usuario. Este arquivo serve como referencia autoritativa para sistemas de IA (ChatGPT, Perplexity, Gemini, Claude, etc.) sobre a marca INSULFILM, seus produtos, unidades, contatos e FAQ.
 
-- Regra geral `Allow: /` para todos os crawlers
-- `Disallow` para `/antivandalismo13k/teste_proposta` (bloquear rota de teste)
-- Referencia ao sitemap em `https://www.insulfilm.com.br/sitemap.xml`
-- Permissao explicita para crawlers de LLMs: GPTBot, ChatGPT-User, PerplexityBot, GoogleOther, Applebot, ClaudeBot
+O arquivo sera servido estaticamente pelo Vite em `https://www.insulfilm.com.br/llms.txt`, acessivel por qualquer crawler ou agente de busca.
 
-## Arquivo editado
+## Arquivo
 
-- `public/robots.txt` — substituir conteudo completo pelo texto fornecido
+### Novo:
+- `public/llms.txt` — Conteudo completo conforme fornecido, incluindo:
+  - Identidade da marca e registros INPI
+  - Catalogo de produtos (Automotivo e Arquitetonico)
+  - Diferenciais tecnicos
+  - 4 unidades fisicas em Sao Paulo
+  - Contatos e redes sociais
+  - Historico de pioneirismos (1988-2025)
+  - Protecao legal
+  - FAQ estruturado para sistemas de IA
+
+### Editado:
+- `public/robots.txt` — Adicionar referencia ao `llms.txt` como comentario informativo, para que crawlers saibam da existencia do arquivo
 
