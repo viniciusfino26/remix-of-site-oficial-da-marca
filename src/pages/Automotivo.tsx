@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Star, Users, MessageCircle } from 'lucide-react';
+import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Star, Users, MessageCircle, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -39,6 +40,7 @@ interface Product {
   descKey: string;
   warrantyKey: string;
   accent?: boolean;
+  link?: string;
 }
 
 const products: Product[] = [
@@ -115,6 +117,49 @@ const products: Product[] = [
     ],
     descKey: 'automotivePage.phantom.desc',
     warrantyKey: 'automotivePage.phantom.warranty',
+    link: '/ppf',
+  },
+  {
+    nameKey: 'automotivePage.skudoGuard.name',
+    categoryKey: 'automotivePage.skudoGuard.category',
+    specs: [
+      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skudoGuard.serie' },
+      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skudoGuard.heat' },
+      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skudoGuard.tech' },
+      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skudoGuard.type' },
+    ],
+    descKey: 'automotivePage.skudoGuard.desc',
+    warrantyKey: 'automotivePage.skudoGuard.warranty',
+    accent: true,
+    link: '/skudoguard',
+  },
+  {
+    nameKey: 'automotivePage.skudoUltra.name',
+    categoryKey: 'automotivePage.skudoUltra.category',
+    specs: [
+      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skudoUltra.serie' },
+      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skudoUltra.heat' },
+      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skudoUltra.tech' },
+      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skudoUltra.type' },
+    ],
+    descKey: 'automotivePage.skudoUltra.desc',
+    warrantyKey: 'automotivePage.skudoUltra.warranty',
+    accent: true,
+    link: '/skudo-ultra',
+  },
+  {
+    nameKey: 'automotivePage.skinSafe8k.name',
+    categoryKey: 'automotivePage.skinSafe8k.category',
+    specs: [
+      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skinSafe8k.serie' },
+      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skinSafe8k.heat' },
+      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skinSafe8k.tech' },
+      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skinSafe8k.type' },
+    ],
+    descKey: 'automotivePage.skinSafe8k.desc',
+    warrantyKey: 'automotivePage.skinSafe8k.warranty',
+    accent: true,
+    link: '/skinsafe8k',
   },
 ];
 
@@ -263,10 +308,19 @@ const Automotivo = () => {
                         {t(product.warrantyKey)}
                       </div>
 
-                      <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
-                        <MessageCircle className="w-4 h-4" />
-                        {t('automotivePage.cta')}
-                      </Button>
+                      {product.link ? (
+                        <Link to={product.link}>
+                          <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
+                            <ExternalLink className="w-4 h-4" />
+                            {t('automotivePage.viewMore')}
+                          </Button>
+                        </Link>
+                      ) : (
+                        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
+                          <MessageCircle className="w-4 h-4" />
+                          {t('automotivePage.cta')}
+                        </Button>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
