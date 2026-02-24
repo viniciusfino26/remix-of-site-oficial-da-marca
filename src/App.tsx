@@ -15,6 +15,7 @@ import SkudoGuard from "./pages/SkudoGuard";
 import Residencial from "./pages/Residencial";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
+import SchemaOrg from "./components/SchemaOrg";
 import "./i18n";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SchemaOrg />
         <AnalyticsProvider />
         <Header />
         <Routes>
