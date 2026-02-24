@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Star, Users, MessageCircle, ArrowRight } from 'lucide-react';
+import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Users, MessageCircle, ArrowRight, Eye, Smartphone, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,18 +33,19 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-interface Product {
+interface SolarProduct {
+  id: string;
   nameKey: string;
   categoryKey: string;
   specs: { icon: typeof Sun; labelKey: string; valueKey: string }[];
   descKey: string;
   warrantyKey: string;
   accent?: boolean;
-  link?: string;
 }
 
-const products: Product[] = [
+const solarProducts: SolarProduct[] = [
   {
+    id: 'dark',
     nameKey: 'automotivePage.dark.name',
     categoryKey: 'automotivePage.dark.category',
     specs: [
@@ -57,6 +58,7 @@ const products: Product[] = [
     warrantyKey: 'automotivePage.dark.warranty',
   },
   {
+    id: 'eclipse',
     nameKey: 'automotivePage.eclipse.name',
     categoryKey: 'automotivePage.eclipse.category',
     specs: [
@@ -70,6 +72,7 @@ const products: Product[] = [
     accent: true,
   },
   {
+    id: 'vip',
     nameKey: 'automotivePage.vip.name',
     categoryKey: 'automotivePage.vip.category',
     specs: [
@@ -83,6 +86,7 @@ const products: Product[] = [
     accent: true,
   },
   {
+    id: 'polaris',
     nameKey: 'automotivePage.polaris.name',
     categoryKey: 'automotivePage.polaris.category',
     specs: [
@@ -94,74 +98,21 @@ const products: Product[] = [
     descKey: 'automotivePage.polaris.desc',
     warrantyKey: 'automotivePage.polaris.warranty',
   },
-  {
-    nameKey: 'automotivePage.antivandal.name',
-    categoryKey: 'automotivePage.antivandal.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.antivandal.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.antivandal.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.antivandal.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.antivandal.type' },
-    ],
-    descKey: 'automotivePage.antivandal.desc',
-    warrantyKey: 'automotivePage.antivandal.warranty',
-    link: '/antivandalismo13k',
-  },
-  {
-    nameKey: 'automotivePage.phantom.name',
-    categoryKey: 'automotivePage.phantom.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.phantom.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.phantom.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.phantom.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.phantom.type' },
-    ],
-    descKey: 'automotivePage.phantom.desc',
-    warrantyKey: 'automotivePage.phantom.warranty',
-    link: '/ppf',
-  },
-  {
-    nameKey: 'automotivePage.skudoGuard.name',
-    categoryKey: 'automotivePage.skudoGuard.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skudoGuard.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skudoGuard.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skudoGuard.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skudoGuard.type' },
-    ],
-    descKey: 'automotivePage.skudoGuard.desc',
-    warrantyKey: 'automotivePage.skudoGuard.warranty',
-    accent: true,
-    link: '/skudoguard',
-  },
-  {
-    nameKey: 'automotivePage.skudoUltra.name',
-    categoryKey: 'automotivePage.skudoUltra.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skudoUltra.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skudoUltra.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skudoUltra.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skudoUltra.type' },
-    ],
-    descKey: 'automotivePage.skudoUltra.desc',
-    warrantyKey: 'automotivePage.skudoUltra.warranty',
-    accent: true,
-    link: '/skudo-ultra',
-  },
-  {
-    nameKey: 'automotivePage.skinSafe8k.name',
-    categoryKey: 'automotivePage.skinSafe8k.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.skinSafe8k.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.skinSafe8k.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.skinSafe8k.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.skinSafe8k.type' },
-    ],
-    descKey: 'automotivePage.skinSafe8k.desc',
-    warrantyKey: 'automotivePage.skinSafe8k.warranty',
-    accent: true,
-    link: '/skinsafe8k',
-  },
+];
+
+const solarTabs = [
+  { id: 'dark', label: 'Dark' },
+  { id: 'eclipse', label: 'Eclipse' },
+  { id: 'vip', label: 'VIP' },
+  { id: 'polaris', label: 'Polariz Ultra' },
+];
+
+const benefits = [
+  { icon: Sun, title: 'Máxima Redução de Calor', desc: 'Raios UV e IR' },
+  { icon: Eye, title: 'Excelente Visibilidade', desc: 'Visibilidade Interna' },
+  { icon: Shield, title: 'Privacidade e Segurança', desc: 'Segurança Visual' },
+  { icon: Smartphone, title: 'Celulares e Eletrônicos', desc: 'Proteção garantida' },
+  { icon: Award, title: 'Design Sofisticado', desc: 'Acabamento premium' },
 ];
 
 const diffTabs = [
@@ -179,7 +130,6 @@ const Automotivo = () => {
   const heroRef = useRef<HTMLElement>(null);
   const diffRef = useRef<HTMLElement>(null);
 
-  // Hero parallax
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -189,7 +139,6 @@ const Automotivo = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  // Diff section parallax
   const { scrollYProgress: diffProgress } = useScroll({
     target: diffRef,
     offset: ['start end', 'end start'],
@@ -206,12 +155,7 @@ const Automotivo = () => {
         </motion.div>
 
         <motion.div className="container mx-auto px-4 pt-32 pb-16 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
-          <motion.div
-            className="max-w-3xl"
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-          >
+          <motion.div className="max-w-3xl" initial="hidden" animate="visible" variants={stagger}>
             <motion.p variants={fadeInLeft} className="text-sm uppercase tracking-[0.4em] text-accent mb-4 font-semibold">
               INSULFILM™ {t('automotivePage.heroLabel')}
             </motion.p>
@@ -230,7 +174,149 @@ const Automotivo = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Products */}
+      {/* Intro Text */}
+      <section className="py-20 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+              {t('automotivePage.productsTitle')}
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light italic mb-6">
+              {t('automotivePage.productsSubtitle')}
+            </motion.p>
+            <motion.div variants={scaleIn} className="flex justify-center mb-10">
+              <div className="separator-accent" />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-10 py-6 shadow-premium">
+                <Car className="w-5 h-5" />
+                ENCONTRE O SEU INSULFILM IDEAL
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solar Products — Tabs + Alternating Sections */}
+      <section className="bg-background overflow-hidden">
+        <div className="container mx-auto px-4 mb-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <div className="flex flex-wrap justify-center gap-3">
+              {solarTabs.map((tab) => (
+                <a
+                  key={tab.id}
+                  href={`#product-${tab.id}`}
+                  className="px-6 py-3 rounded-lg bg-muted hover:bg-accent hover:text-accent-foreground text-foreground font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-premium"
+                >
+                  {tab.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {solarProducts.map((product, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <section
+              key={product.id}
+              id={`product-${product.id}`}
+              className={`py-20 overflow-hidden ${isEven ? 'bg-background' : 'bg-carbon-gradient'}`}
+            >
+              <div className="container mx-auto px-4">
+                <motion.div
+                  className="grid md:grid-cols-2 items-center gap-12"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: '-80px' }}
+                  variants={stagger}
+                >
+                  {/* Text Column */}
+                  <motion.div
+                    variants={isEven ? fadeInLeft : fadeInRight}
+                    className={isEven ? 'order-1' : 'order-1 md:order-2'}
+                  >
+                    <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">
+                      {t(product.categoryKey)}
+                    </span>
+                    <h3 className={`text-3xl md:text-4xl font-extrabold mb-4 ${isEven ? 'text-foreground' : 'text-primary-foreground'}`}>
+                      INSULFILM™ {t(product.nameKey)}
+                    </h3>
+
+                    <div className="grid grid-cols-2 gap-3 mb-6">
+                      {product.specs.map((spec, si) => (
+                        <motion.div
+                          key={si}
+                          className={`flex items-center gap-2 rounded-lg p-3 ${isEven ? 'bg-muted/50' : 'bg-primary-foreground/5'}`}
+                          whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center shrink-0">
+                            <spec.icon className={`w-4 h-4 ${isEven ? 'text-primary' : 'text-accent'}`} />
+                          </div>
+                          <div className="min-w-0">
+                            <p className={`text-[10px] uppercase tracking-wider ${isEven ? 'text-muted-foreground' : 'text-primary-foreground/50'}`}>
+                              {t(spec.labelKey)}
+                            </p>
+                            <p className={`text-xs font-bold truncate ${isEven ? 'text-foreground' : 'text-primary-foreground'}`}>
+                              {t(spec.valueKey)}
+                            </p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    <p className={`text-sm font-light mb-5 leading-relaxed ${isEven ? 'text-muted-foreground' : 'text-primary-foreground/60'}`}>
+                      {t(product.descKey)}
+                    </p>
+
+                    <div className={`flex items-center gap-2 mb-6 text-xs font-semibold ${isEven ? 'text-accent' : 'text-accent'}`}>
+                      <Award className="w-4 h-4" />
+                      {t(product.warrantyKey)}
+                    </div>
+
+                    <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
+                      <MessageCircle className="w-4 h-4" />
+                      {t('automotivePage.cta')}
+                    </Button>
+                  </motion.div>
+
+                  {/* Image Column */}
+                  <motion.div
+                    variants={isEven ? fadeInRight : fadeInLeft}
+                    className={isEven ? 'order-2' : 'order-2 md:order-1'}
+                  >
+                    <motion.div
+                      className={`rounded-xl aspect-[4/3] flex items-center justify-center overflow-hidden ${isEven ? 'bg-carbon-gradient' : 'bg-primary-foreground/5'}`}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                    >
+                      <div className="bg-hero-texture absolute inset-0 opacity-30" />
+                      <div className="text-center relative z-10 p-8">
+                        <Car className={`w-16 h-16 mx-auto mb-4 ${isEven ? 'text-accent/40' : 'text-accent/30'}`} />
+                        <p className={`text-sm font-bold uppercase tracking-widest ${isEven ? 'text-primary-foreground/40' : 'text-primary-foreground/30'}`}>
+                          {t(product.nameKey)}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </section>
+          );
+        })}
+      </section>
+
+      {/* Benefits */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div
@@ -241,92 +327,65 @@ const Automotivo = () => {
             variants={stagger}
           >
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              {t('automotivePage.productsTitle')}
+              Benefícios Exclusivos
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light">
-              {t('automotivePage.productsSubtitle')}
-            </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4">
               <div className="separator-accent" />
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-5xl mx-auto mb-10"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
+            viewport={{ once: true }}
             variants={stagger}
           >
-            {products.map((product, i) => (
-              <motion.div
-                key={i}
-                variants={i % 3 === 0 ? fadeInLeft : i % 3 === 2 ? fadeInRight : fadeInUp}
-              >
-                <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
-                  <Card className={`card-premium-hover h-full rounded-xl border-t-2 border-t-transparent hover:border-t-accent/50 ${product.accent ? 'border-glow' : 'border-border'}`}>
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <h3 className="text-lg font-extrabold text-foreground">{t(product.nameKey)}</h3>
-                          <span className="text-xs font-bold uppercase tracking-widest text-accent">
-                            {t(product.categoryKey)}
-                          </span>
-                        </div>
-                        {product.accent && (
-                          <Badge className="bg-accent/10 text-accent border-accent/20 text-[10px]">
-                            <Star className="w-3 h-3 mr-1" /> Premium
-                          </Badge>
-                        )}
-                      </div>
-
-                      {/* Specs grid */}
-                      <div className="grid grid-cols-2 gap-3 mb-5">
-                        {product.specs.map((spec, si) => (
-                          <motion.div
-                            key={si}
-                            className="flex items-center gap-2 bg-muted/50 rounded-lg p-2.5"
-                            whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                          >
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center shrink-0">
-                              <spec.icon className="w-4 h-4 text-primary" />
-                            </div>
-                            <div className="min-w-0">
-                              <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t(spec.labelKey)}</p>
-                              <p className="text-xs font-bold text-foreground truncate">{t(spec.valueKey)}</p>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      <p className="text-sm text-muted-foreground font-light mb-5 leading-relaxed">
-                        {t(product.descKey)}
-                      </p>
-
-                      {/* Warranty badge */}
-                      <div className="flex items-center gap-2 mb-5 text-xs text-accent font-semibold">
-                        <Award className="w-4 h-4" />
-                        {t(product.warrantyKey)}
-                      </div>
-
-                      {product.link ? (
-                        <Link to={product.link}>
-                          <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
-                            <ArrowRight className="w-4 h-4" />
-                            {t('automotivePage.viewMore')}
-                          </Button>
-                        </Link>
-                      ) : (
-                        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
-                          <MessageCircle className="w-4 h-4" />
-                          {t('automotivePage.cta')}
-                        </Button>
-                      )}
-                    </CardContent>
-                  </Card>
+            {benefits.map((b, i) => (
+              <motion.div key={i} variants={fadeInUp} className="text-center">
+                <motion.div
+                  className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center icon-ring-glow"
+                  whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                >
+                  <b.icon className="w-7 h-7 text-accent" />
                 </motion.div>
+                <h4 className="text-sm font-extrabold text-foreground mb-1">{b.title}</h4>
+                <p className="text-xs text-muted-foreground">{b.desc}</p>
               </motion.div>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={scaleIn}
+            className="text-center"
+          >
+            <Badge className="bg-accent/10 text-accent border-accent/20 text-sm px-6 py-2 shimmer">
+              <Award className="w-4 h-4 mr-2" />
+              PACOTE COMPLETO DE GARANTIAS — CERTIFICADO INDIVIDUAL
+            </Badge>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-16 bg-accent overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-2xl md:text-4xl font-extrabold text-accent-foreground mb-3">
+              Exija as películas originais INSULFILM™!
+            </h2>
+            <p className="text-accent-foreground/80 text-lg font-light">
+              Sofisticação e Proteção Solar de verdade para você e sua família.
+            </p>
           </motion.div>
         </div>
       </section>
