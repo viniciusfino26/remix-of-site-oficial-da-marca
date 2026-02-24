@@ -6,13 +6,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LegalNotice from "./components/LegalNotice";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
 import Automotivo from "./pages/Automotivo";
 import Antivandalismo13K from "./pages/Antivandalismo13K";
-import Antivandalismo13KProposta from "./pages/Antivandalismo13KProposta";
 import SkudoGuard from "./pages/SkudoGuard";
 import SkinSafe8K from "./pages/SkinSafe8K";
 import SkudoUltra from "./pages/SkudoUltra";
@@ -55,7 +55,6 @@ const App = () => (
           {/* Divisão Automotiva */}
           <Route path="/automotivo" element={<Automotivo />} />
           <Route path="/antivandalismo13k" element={<Antivandalismo13K />} />
-          <Route path="/antivandalismo13k/teste_proposta" element={<Antivandalismo13KProposta />} />
           <Route path="/skudoguard" element={<SkudoGuard />} />
           <Route path="/skinsafe8k" element={<SkinSafe8K />} />
           <Route path="/skudo-ultra" element={<SkudoUltra />} />
@@ -82,6 +81,7 @@ const App = () => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <LegalNotice />
         <Footer />
         <WhatsAppButton />
       </BrowserRouter>
