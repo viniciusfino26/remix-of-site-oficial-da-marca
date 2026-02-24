@@ -21,7 +21,8 @@
     "products": "Produtos",
     "legislation": "Legislação",
     "warranty": "Garantia",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "ppf": "PPF"
   },
   "hero": {
     "tagline": "Tecnologia Premium em Películas",
@@ -83,6 +84,9 @@
     "heroTitle": "A marca das películas. Desde 1988.",
     "heroQuestion": "Por qual motivo quase todo mundo chama de \"insulfilm\" as películas de proteção solar?",
     "heroText": "A INSULFILM™ é a primeira e mais reconhecida marca de películas do Brasil para vidros automotivos e arquitetônicos. São mais de 35 anos inovando em películas para vidros e superfícies metálicas. Desde 1988 a INSULFILM™ revolucionou a forma como os brasileiros convivem com seus ambientes envidraçados, transformando essa experiência em conforto e proteção com sofisticação.",
+    "statYears": "Anos de Mercado",
+    "statStores": "Lojas em SP",
+    "statPioneering": "Pioneirismos",
     "timelineTitle": "Nossa História",
     "timelineSubtitle": "Pioneirismo em películas no Brasil",
     "timelineToday": "Hoje",
@@ -92,6 +96,7 @@
       "decade2": "2000–2010",
       "decade3": "2010–2020",
       "decade4": "2020–2025",
+      "e1986": "Inauguramos o mercado de películas de proteção solar no país, garantindo inovação exclusiva com patentes registradas desde o início.",
       "e1988": "Inauguramos o mercado de películas de proteção solar no país, garantindo inovação exclusiva com patentes registradas desde o início.",
       "e1996": "Maior distribuidora de películas para vidros do mundo, título concedido pela maior indústria do mundo à época, sediada nos EUA.",
       "e1996b": "Primeira a oferecer películas arquitetônicas de proteção antivandalismo e segurança — INSULFILM™ SafetySecurityFilm.",
@@ -182,6 +187,46 @@
       "warranty": "Garantia de Fábrica Estendida"
     },
     "ltPolariz": {
+      "name": "INSULFILM™ LT Polariz",
+      "category": "Ultra Performance",
+      "serie": "Nano Cerâmica",
+      "heat": "Até 72%",
+      "tech": "Ultra Definition",
+      "type": "Nano Cerâmica",
+      "desc": "Tecnologia nano cerâmica com ultra definição. O topo da linha em performance e claridade visual.",
+      "warranty": "Garantia Premium Vitalícia"
+    },
+    "dark": {
+      "name": "INSULFILM™ LT Dark",
+      "category": "Clássica",
+      "serie": "Pigmentada",
+      "heat": "Até 39%",
+      "tech": "Clear",
+      "type": "Pigmentação",
+      "desc": "A película mais tradicional do Brasil. Proteção solar com estilo clássico e custo-benefício imbatível.",
+      "warranty": "Garantia de Fábrica"
+    },
+    "eclipse": {
+      "name": "INSULFILM™ LT Eclipse",
+      "category": "Premium Performance",
+      "serie": "Carbono",
+      "heat": "Até 49%",
+      "tech": "High Definition",
+      "type": "Carbono HD",
+      "desc": "Tecnologia carbono com alta definição. Rejeição de calor superior para máximo conforto.",
+      "warranty": "Garantia de Fábrica Estendida"
+    },
+    "vip": {
+      "name": "INSULFILM™ LT VIP",
+      "category": "Premium Performance",
+      "serie": "Carbono Extra",
+      "heat": "Até 58%",
+      "tech": "High Definition",
+      "type": "Carbono Extra HD",
+      "desc": "O máximo em rejeição de calor da linha carbono. Para quem exige o melhor em performance.",
+      "warranty": "Garantia de Fábrica Estendida"
+    },
+    "polaris": {
       "name": "INSULFILM™ LT Polariz",
       "category": "Ultra Performance",
       "serie": "Nano Cerâmica",
