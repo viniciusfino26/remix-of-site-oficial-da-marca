@@ -1,220 +1,79 @@
 
 
-# Reestruturacao Completa do Site Conforme Novo Sitemap
+# Redesign Completo da Pagina SkudoUltra — Conceito SkudoGuard
 
 ## Resumo
 
-Reestruturar a navegacao, rotas e criar todas as paginas novas conforme o sitemap oficial, mantendo 100% do conteudo existente. Alem disso, corrigir as chaves de traducao faltantes no pt.json.
+Reescrever a pagina SkudoUltra seguindo o mesmo conceito emocional e agressivo da pagina SkudoGuard, com video embedado, dados oficiais do PDF, estatisticas de orgaos publicos, e o texto fornecido pelo usuario. Todos os textos serao hardcoded em portugues (sem i18n), igual ao SkudoGuard.
 
 ---
 
-## Fase 1 — Header e Navegacao
+## Estrutura da Pagina (seguindo SkudoGuard)
 
-### Arquivo: `src/components/Header.tsx`
+### Secao 1 — HERO + VIDEO
+- Badge: "Pelicula de Extrema Seguranca"
+- Titulo: INSULFILM™ SkudoUltra
+- Subtitulo: texto fornecido pelo usuario — "Seguranca superior contra ataques repetidos e agressivos para invasao"
+- Video embedado: `https://www.youtube.com/embed/iiN1wWGiECw` (autoplay, muted, loop, sem controles, pointer-events-none + overlay z-10, exatamente como SkudoGuard)
 
-Atualizar o mega-menu para refletir a nova estrutura:
+### Secao 2 — A REALIDADE DA VIOLENCIA (stats com CountUp)
+- Mesma estrutura do SkudoGuard: 4 cards glass-card com estatisticas de orgaos publicos
+- Dados adaptados para o contexto do Ultra (insistencia do agressor, tempo de resistencia)
+- Fonte: SSP-SP, Forum Brasileiro de Seguranca Publica, Atlas da Violencia
 
-**Marca** (manter icon Shield):
-- Quem Somos / Nosso Proposito → /quem-somos
-- Franquias → /franquias
-- Trabalhe Conosco → /carreiras
-- Autenticidade e Anti-pirataria → /anti-pirataria
+### Secao 3 — DESCRICAO DO PRODUTO
+- Texto oficial do PDF (pagina 2): "Pelicula premium de extrema seguranca para blindagem dos vidros contra armas brancas pesadas..."
+- Texto do usuario integrado como paragrafo principal de posicionamento
+- Checklist com diferenciais (retirados do PDF): retencao de fragmentos, nao altera originalidade, nao interfere em sinais eletronicos, etc.
 
-**Divisao Autos** (manter icon Car):
-- Para meu carro → /automotivo
-- Para minha frota → /frota
-- PPF — Protecao de Pintura → /ppf
+### Secao 4 — O QUE ACONTECE EM SEGUNDOS (danger cards)
+- Mesma estrutura do SkudoGuard: cards emocionais com icones
+- Adaptados para Ultra: enfase na insistencia do agressor e o fato de que com o Ultra, o marginal DESISTE (conforme video comprova)
+- Card especifico: "O Marginal Desiste" — referencia ao video que comprova
 
-**Divisao Arquitetonica** (manter icon Building2):
-- Para minha residencia → /residencial
-- Para minha empresa → /empresarial
+### Secao 5 — DIFERENCIAIS TECNICOS
+- Dados oficiais do PDF:
+  - Multicamadas com TETRA laminacao industrial (vs tripla do SkudoGuard)
+  - Poliester de alta densidade
+  - Adesivo performance
+  - Nitidez optica cristal
 
-**Atendimento** (manter icon Headphones):
-- Central de Vendas → /vendas
-- SAC → /sac
-- FAQ → /faq
-- Garantia → /garantia
+### Secao 6 — PROPRIEDADES FISICAS (dados oficiais do PDF)
+- Espessura: 24 mil / 609,6 micras / 0,609 mm
+- Forca de Ruptura: 440 lbs/in (PLI) / 78,57 kgf/cm
+- Forca de Puncao: 375 lbs / 151,95 kg
+- Resistencia a Tensao: 32.000 PSI / 2.249,82 kgf/cm2
+- Alongamento na Ruptura: 200%
+- Forca de Arrancamento: >5 lbs/in (PLI) / >892,89 g/cm
 
-**CTA "Seja Parceiro"** → /parceiro (manter botao existente)
+### Secao 7 — COMPARATIVO SkudoGuard vs SkudoUltra (manter existente)
+- Tabela comparativa ja existente, atualizada com dados oficiais do PDF
 
-Remover do mega-menu: links diretos para Antivandalismo, SkudoGuard e a proposta de teste (esses produtos ficam acessiveis via /automotivo como cards com link).
+### Secao 8 — GARANTIA (dados oficiais do PDF)
+- Garantia Produto: 10 anos (falha adesiva, delaminacao, rachadura)
+- Garantia Servico: descolamento e bolha
+- Reposicao gratuita das peliculas nos vidros moveis das portas laterais
+- Metodos de teste: ANSI 97, ASTM E-308, ASTM E-903, ASTM D-882, ASTM D-1044
 
-Adicionar chaves nav novas nos 3 idiomas: `nav.ppf`, `nav.faq`, `nav.warranty`, `nav.fleet` (renomear labels conforme sitemap).
-
----
-
-## Fase 2 — Rotas (App.tsx)
-
-### Arquivo: `src/App.tsx`
-
-Adicionar imports e rotas para todas as paginas novas + ajustar redirect de /quem-somos:
-
-**Rotas mantidas (sem alteracao):**
-- `/` → Index
-- `/automotivo` → Automotivo
-- `/antivandalismo13k` → Antivandalismo13K
-- `/antivandalismo13k/teste_proposta` → Antivandalismo13KProposta
-- `/skudoguard` → SkudoGuard
-- `/skinsafe8k` → SkinSafe8K
-- `/skudo-ultra` → SkudoUltra
-- `/residencial` → Residencial
-- `/lojas` → Lojas
-
-**Rota ajustada:**
-- `/quem-somos` → QuemSomos (rota principal, nao mais redirect)
-- `/institucional` → redirect para `/quem-somos` (inverter o redirect atual)
-
-**Rotas novas (11 paginas):**
-- `/franquias` → Franquias
-- `/carreiras` → Carreiras
-- `/anti-pirataria` → AntiPirataria
-- `/frota` → Frota
-- `/ppf` → PPF
-- `/empresarial` → Empresarial
-- `/vendas` → Vendas
-- `/sac` → SAC
-- `/faq` → FAQ
-- `/garantia` → Garantia
-- `/parceiro` → Parceiro
-
----
-
-## Fase 3 — Paginas Novas
-
-Todas as paginas seguem o design system existente: Framer Motion (fadeInUp, stagger), shadcn/ui, Tailwind, dark theme, useTranslation.
-
-### 3.1 Pagina Parceiro (`src/pages/Parceiro.tsx`) — PLACEHOLDER
-- Hero com bg-carbon-gradient, titulo "Seja um Parceiro Oficial INSULFILM", subtitulo
-- Duas secoes: "Autos" (Concessionarias, Aplicador Oficial) e "Arq" (Revendedor, Aplicador Oficial)
-- Cada subsecao com card glass-card + descricao + botao WhatsApp "Fale Conosco"
-- Badge "Em breve — formulario de cadastro"
-
-### 3.2 Pagina Franquias (`src/pages/Franquias.tsx`)
-- Hero sobre o modelo de franquias INSULFILM
-- Secao de beneficios (4 cards): Marca Reconhecida, Suporte Completo, Territorio Exclusivo, Retorno Rapido
-- CTA com WhatsApp
-
-### 3.3 Pagina Carreiras (`src/pages/Carreiras.tsx`)
-- Hero "Trabalhe Conosco"
-- Secao valores da empresa (3-4 cards)
-- CTA "Envie seu curriculo" com WhatsApp/email
-
-### 3.4 Pagina AntiPirataria (`src/pages/AntiPirataria.tsx`)
-- Hero "Autenticidade e Anti-pirataria"
-- Como verificar autenticidade (QR Code, certificado)
-- Alerta sobre produtos piratas
-- CTA denuncia
-
-### 3.5 Pagina Frota (`src/pages/Frota.tsx`)
-- Hero "Para Minha Frota"
-- Beneficios para frotas (conforto dos passageiros, protecao solar, reducao de custo AC)
-- CTA atendimento especializado via WhatsApp
-
-### 3.6 Pagina PPF (`src/pages/PPF.tsx`)
-- Hero "Protecao de Pintura — Phantom"
-- Cards: Phantom 6mil e Phantom 8mil (specs, descricao)
-- Secao "Ferramenta Interativa" com placeholder "Em breve"
-- CTA WhatsApp
-
-### 3.7 Pagina Empresarial (`src/pages/Empresarial.tsx`)
-- Hero "Para Minha Empresa"
-- Beneficios para empresas (eficiencia energetica, privacidade, seguranca, decorativo)
-- Subcategorias de peliculas arquitetonicas: Controle Solar, Seguranca (ISSF4000/7000), Decorativas (Jateado, Whiteout, Blackout)
-- CTA WhatsApp
-
-### 3.8 Pagina Vendas (`src/pages/Vendas.tsx`)
-- Hero "Central de Vendas"
-- Cards com canais de contato (WhatsApp, telefone, email)
-- Link para /lojas
-
-### 3.9 Pagina SAC (`src/pages/SAC.tsx`)
-- Hero "Atendimento ao Cliente"
-- Cards com opcoes de contato
-- Link para FAQ e Garantia
-
-### 3.10 Pagina FAQ (`src/pages/FAQ.tsx`)
-- Hero "Perguntas Frequentes"
-- Accordion com perguntas organizadas por categoria (Automotivo, Arquitetonico, Garantia, Geral)
-- Reaproveitar FAQs ja existentes no automotivePage + novas
-
-### 3.11 Pagina Garantia (`src/pages/Garantia.tsx`)
-- Hero "Garantia INSULFILM"
-- Tabela/cards com tipos de garantia por produto
-- Como acionar a garantia
-- CTA WhatsApp
-
----
-
-## Fase 4 — Correcao de Chaves de Traducao (pt.json)
-
-### Arquivo: `src/i18n/locales/pt.json`
-
-**4.1 Chaves da pagina Institucional:**
-- Adicionar `about.statYears`: "Anos de Mercado"
-- Adicionar `about.statStores`: "Lojas em SP"
-- Adicionar `about.statPioneering`: "Pioneirismos"
-- Adicionar `about.timeline.e1986` (copiar conteudo de e1988)
-
-**4.2 Chaves da pagina Automotivo:**
-- Adicionar aliases: `automotivePage.dark` (copiar de `ltDark`), `automotivePage.eclipse` (de `ltEclipse`), `automotivePage.vip` (de `ltVip`), `automotivePage.polaris` (de `ltPolariz`)
-- Cada alias com sub-chaves: name, category, serie, heat, tech, type, desc, warranty
-
-**4.3 Chaves novas para todas as 11 paginas** — adicionar nos 3 idiomas (pt, en, es):
-- `franquiasPage.*`, `carreirasPage.*`, `antiPiracyPage.*`, `frotaPage.*`, `ppfPage.*`, `empresarialPage.*`, `vendasPage.*`, `sacPage.*`, `faqPage.*`, `garantiaPage.*`, `parceiroPage.*`
-
-**4.4 Chaves de navegacao novas:**
-- `nav.ppf`: "PPF" / "PPF" / "PPF"
-- `nav.faq`: "FAQ" / "FAQ" / "FAQ"
-- `nav.warranty`: ja existe como `nav.warranty`
-- `nav.fleet`: usar `nav.forMyFleet` existente
-
----
-
-## Fase 5 — Footer
-
-### Arquivo: `src/components/Footer.tsx`
-
-Atualizar links do footer para refletir a nova estrutura de rotas (ex: adicionar FAQ, Garantia, remover links obsoletos).
+### Secao 9 — CTA FINAL
+- WhatsApp com mensagem sobre SkudoUltra
 
 ---
 
 ## Detalhes Tecnicos
 
-### Arquivos novos (11):
-- `src/pages/Parceiro.tsx`
-- `src/pages/Franquias.tsx`
-- `src/pages/Carreiras.tsx`
-- `src/pages/AntiPirataria.tsx`
-- `src/pages/Frota.tsx`
-- `src/pages/PPF.tsx`
-- `src/pages/Empresarial.tsx`
-- `src/pages/Vendas.tsx`
-- `src/pages/SAC.tsx`
-- `src/pages/FAQ.tsx`
-- `src/pages/Garantia.tsx`
+### Arquivo editado: `src/pages/SkudoUltra.tsx`
+- Reescrita completa seguindo a estrutura do SkudoGuard
+- Adicionar imports: useEffect, useState, useInView, Accordion, e icones extras (AlertTriangle, HeartCrack, UserX, Swords, ShieldAlert, Users, Award, FileText, Quote, etc.)
+- Adicionar componente CountUp (copiar do SkudoGuard)
+- Video YouTube ID: `iiN1wWGiECw`
+- Textos hardcoded em portugues (sem useTranslation), mesmo padrao do SkudoGuard
+- Dados fisicos atualizados conforme PDF oficial
 
-### Arquivos editados (5):
-- `src/App.tsx` — imports + 11 rotas novas + ajuste redirect quem-somos/institucional
-- `src/components/Header.tsx` — mega-menu reestruturado conforme sitemap
-- `src/i18n/locales/pt.json` — correcao de chaves faltantes + chaves das 11 paginas novas
-- `src/i18n/locales/en.json` — mesmas chaves traduzidas
-- `src/i18n/locales/es.json` — mesmas chaves traduzidas
-- `src/components/Footer.tsx` — links atualizados
+### Texto exato do usuario (sera usado na secao de descricao):
+"Se a sua expectativa e seguranca superior em situacoes em que nao ha possibilidade de rapida evasao e o agressor insiste na abordagem, o INSULFILM™ SkudoUltra e a defesa projetada para isso. Com resistencia muito acima do antivandalismo, enfrenta situacoes mais agressivas de tentativa de invasao com o uso de armas brancas. Reforca o vidro antes e, principalmente, depois da quebra - dificultando de forma significativa o acesso imediato. Torna vidro + pelicula um escudo de dificil ruptura, mesmo diante de investidas repetidas. E a escolha para quem quer um desempenho de resistencia alem do padrao que o agressor espera encontrar."
 
-### Paginas existentes preservadas (sem alteracao de conteudo):
-Index, QuemSomos, Automotivo, Antivandalismo13K, Antivandalismo13KProposta, SkudoGuard, SkinSafe8K, SkudoUltra, Residencial, Lojas
-
-### Padrao de cada pagina nova:
-- Hero com bg-carbon-gradient, parallax, Badge, titulo, subtitulo, separator-accent
-- Secoes com cards glass-card ou cards shadcn/ui
-- CTA final com botao WhatsApp verde (MessageCircle icon)
-- Animacoes: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger
-- useTranslation() para todos os textos
-
-### Ordem de implementacao sugerida:
-1. Corrigir pt.json (chaves faltantes) — resolve erros atuais
-2. Header + App.tsx — reestruturar navegacao
-3. Paginas novas (em lotes de 3-4 por prompt)
-4. Footer
-5. Traducoes en.json e es.json
+### Nenhum arquivo adicional necessario
+- Mesmos componentes shadcn/ui ja utilizados
+- Mesmas animacoes Framer Motion
 
