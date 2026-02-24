@@ -1,43 +1,72 @@
 
 
-# Adicionar Efeitos Parallax na Pagina Phantom Arquitetonico
+# Redesign da Home Page — Layout de Banners com Animacoes Originais
 
 ## Objetivo
 
-Adicionar secoes de parallax com imagem de fundo fixo (CSS `background-attachment: fixed`) entre as secoes principais da pagina, criando uma experiencia imersiva e sofisticada similar a pagina Residencial.
+Reestruturar a home page para seguir o layout da imagem de referencia (secoes full-width com caixas de texto sobrepostas em fundo escuro), mantendo **todos os textos existentes** (mesmas chaves i18n) e **todas as animacoes** (parallax, fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger, glow effects).
 
-## Abordagem
+## Nova Estrutura
 
-Reutilizar o padrao `ParallaxSection` ja existente no projeto (usado em `Residencial.tsx`), com a classe CSS `bg-parallax` que ja trata mobile (troca para scroll em telas menores).
+A pagina tera as seguintes secoes, de cima para baixo:
 
-## Secoes Parallax Planejadas
+1. **Banner "Website Oficial"** — faixa fina com "INSULFILM(TM) — Website Oficial"
+2. **Hero Section** — mantido identico (parallax, glow, textos hero.tagline/subtitle, botoes CTA) — sem alteracao
+3. **Video YouTube** — mantido identico (embed com autoplay/mute/loop, zoom 110%) — sem alteracao
+4. **Banner "Peliculas Solares"** — secao full-width bg-carbon-gradient, caixa de texto a direita com fadeInRight, titulo `products.solarControl`, desc existente, botao "Ver Detalhes" (link `/automotivo`)
+5. **Banner "Protecao e Seguranca"** — secao full-width, caixa de texto a esquerda com fadeInLeft, usando textos do `products.ppf`, botao link `/antivandalismo13k`
+6. **Banner "Comerciais e Residenciais"** — secao full-width, caixa de texto a direita com fadeInRight, usando textos do `products.architecture`, botao link `/residencial`
+7. **Banner "PPF"** — secao full-width, caixa de texto a esquerda com fadeInLeft, titulo `products.ppf`, botao link `/ppf`
+8. **Why INSULFILM** — mantido identico (parallax diagonal texture, glass cards, icon ring glow, stagger) — sem alteracao
+9. **Simulators** — mantido identico (cards com shimmer badge, stagger) — sem alteracao
 
-Inserir 4 faixas parallax com frases de impacto entre as secoes existentes:
+## O Que Muda
 
-1. **Apos "Solucoes por Segmento"** — Imagem: `phantomAtmosphere` — Frase: "Cada acabamento conta uma historia. A nossa missao e preserva-la."
-2. **Apos "Anatomia do Dano"** — Imagem: `phantomDailyUse` — Frase: "Proteger nao e esconder. E manter vivo o que foi projetado para impressionar."
-3. **Apos "Phantom Matte"** — Imagem: `phantomMaterials` — Frase: "Marmore. Madeira. Aco Inox. Vidro. Cada superficie merece protecao a sua altura."
-4. **Apos "Depoimentos"** — Imagem: `phantomSolution` — Frase: "Elegancia que permanece. Protecao que nao aparece."
+- A secao "Product Highlights" (3 cards em grid) sera substituida por 4 banners full-width alternados (texto direita/esquerda)
+- Cada banner usa `bg-carbon-gradient` com texturas geometricas e glow effects similares ao hero
+- Animacoes de entrada: `fadeInRight` para banners alinhados a direita, `fadeInLeft` para a esquerda
+- Caixas de texto com `bg-primary/80 backdrop-blur-md`, bordas `border-white/10`, efeito `whileHover` com escala sutil
+- Botoes mantidos com `bg-accent hover:bg-accent/90` e icones correspondentes (Car, Shield, Building2)
+- Parallax sutil no fundo de cada banner usando `useScroll` + `useTransform`
 
-## Implementacao
+## O Que NAO Muda
 
-Criar um componente `ParallaxSection` local (igual ao padrao Residencial) que recebe a URL da imagem como `background-image` com a classe `bg-parallax`. As frases aparecem com animacao `fadeInUp` do Framer Motion.
-
-Alem disso, adicionar parallax de textura sutil (Framer Motion `useTransform`) nas secoes de fundo escuro (carbon-gradient) para dar profundidade com o scroll — similar ao padrao da Index e Automotivo.
+- Hero section: textos, parallax, glow, botoes — tudo identico
+- Video YouTube: embed, configuracoes, zoom — tudo identico
+- Why INSULFILM: textos, parallax, glass cards — tudo identico
+- Simulators: textos, shimmer, cards — tudo identico
+- Todas as animacoes (fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger)
+- Todas as chaves de traducao i18n
+- LegalNotice e Footer (renderizados pelo App.tsx)
 
 ## Detalhes Tecnicos
 
-### Arquivo editado:
-- `src/pages/PhantomArquitetonico.tsx`
+### Arquivo editado
+- `src/pages/Index.tsx` — substituir secao "Product Highlights" por 4 banners full-width; adicionar banner "Website Oficial" no topo
 
-### Alteracoes:
-1. Criar componente local `ParallaxSection` que usa `bg-parallax` CSS (mobile-safe)
-2. Inserir 4 faixas parallax entre secoes existentes
-3. Adicionar refs e `useScroll`/`useTransform` para texturas de fundo nas secoes carbon-gradient (hero ja tem, adicionar nas secoes "Uso Diario", "Solucao", "Matte", "Depoimentos", "Encontre uma Loja")
-4. As imagens importadas ja existem — serao usadas como `background-image` via style inline
+### Componente local `ProductBanner`
+```text
+Props: title, description, buttonText, buttonIcon, link, alignment ('left' | 'right')
 
-### Classe CSS usada:
-- `bg-parallax` — ja definida em `src/index.css` (linhas 208-218), com fallback para scroll em mobile
+Estrutura:
+- section com min-h-[60vh], bg-carbon-gradient, overflow-hidden
+- Textura geometrica com parallax sutil
+- Glow effect no fundo
+- Container flex com justify-end ou justify-start conforme alignment
+- motion.div com fadeInRight ou fadeInLeft
+- Caixa: bg-primary/80 backdrop-blur-md p-8 md:p-12 max-w-xl rounded-lg border-white/10
+- Titulo h2, descricao p, Button com Link
+- whileHover={{ scale: 1.02 }} na caixa
+```
 
-### Nenhuma dependencia nova necessaria.
+### Sequencia dos banners
+1. Peliculas Solares — alignment: right, icon: Car, link: /automotivo
+2. Protecao e Seguranca — alignment: left, icon: Shield, link: /antivandalismo13k
+3. Comerciais e Residenciais — alignment: right, icon: Building2, link: /residencial
+4. PPF — alignment: left, icon: Shield, link: /ppf
+
+### Imports
+- Remover: `useRef` para `productsRef` (substituido por refs dentro do ProductBanner)
+- Remover: `Card`, `CardContent` do import (ainda usados em Why e Simulators — manter)
+- Manter todos os demais imports
 
