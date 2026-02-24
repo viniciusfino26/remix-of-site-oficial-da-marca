@@ -166,7 +166,7 @@ const Index = () => {
       {/* Product Banners */}
       <ProductBanner
         title={t('products.solarControl')}
-        description="Dark, Eclipse, VIP, Polaris, Matrix, Polaris Ultra"
+        description="Proteção, conforto e estilo para o seu veículo. Tecnologias de ponta que rejeitam até 80% do calor solar sem comprometer a visibilidade."
         buttonText={t('products.viewDetails')}
         buttonIcon={Car}
         link="/automotivo"
@@ -174,8 +174,8 @@ const Index = () => {
       />
 
       <ProductBanner
-        title={t('products.ppf')}
-        description="PPF Phantom 6mil / 8mil"
+        title="Proteção e Segurança Superior"
+        description="Películas de segurança que blindam seus vidros contra vandalismo, impactos e tentativas de arrombamento. Resistência comprovada de fábrica."
         buttonText={t('products.viewDetails')}
         buttonIcon={Shield}
         link="/antivandalismo13k"
@@ -183,8 +183,8 @@ const Index = () => {
       />
 
       <ProductBanner
-        title={t('products.architecture')}
-        description="Petrolio, Metallico, Specchiato, Naturale, Orizzonte"
+        title="Películas Comerciais e Residenciais"
+        description="Eficiência energética, privacidade e design para residências e edifícios. Reduza custos com climatização e transforme seus ambientes."
         buttonText={t('products.viewDetails')}
         buttonIcon={Building2}
         link="/residencial"
@@ -193,7 +193,7 @@ const Index = () => {
 
       <ProductBanner
         title={t('products.ppf')}
-        description="PPF Phantom 6mil / 8mil"
+        description="Proteção invisível e auto-regenerativa para a pintura do seu veículo. Filme premium que preserva o brilho original contra riscos e impactos do dia a dia."
         buttonText={t('products.viewDetails')}
         buttonIcon={Shield}
         link="/ppf"
