@@ -366,5 +366,30 @@
       "author": "Anonymous report",
       "location": "São Paulo, SP"
     }
+  },
+  "privacy": {
+    "heroTitle": "Privacy Policy",
+    "heroSubtitle": "Learn how INSULFILM™ collects, uses and protects your personal data, in compliance with Brazil's General Data Protection Law (LGPD — Law No. 13,709/2018).",
+    "introTitle": "Introduction",
+    "introText": "INSULFILM™ respects your privacy and is committed to protecting your personal data. This Privacy Policy describes how we collect, use, store and share information when you access our website or use our services.\n\nBy using our website, you agree to the practices described in this policy.",
+    "dataTitle": "Data Collected",
+    "dataText": "We may collect the following types of data:\n\n• Identification data: name, email, phone number (when voluntarily provided through contact or quote forms).\n• Browsing data: IP address, browser type, pages visited, time spent, traffic source and device used.\n• Approximate location data: based on IP address, for statistical analysis purposes.",
+    "cookiesTitle": "Cookies & Tracking",
+    "cookiesText": "We use cookies and tracking technologies to improve user experience and analyze website performance. The tools used include:\n\n• Google Analytics 4 (GA4): collects anonymized browsing data for traffic and behavior analysis.\n• Google Tag Manager (GTM): manages third-party scripts and tags on the site.\n• Microsoft Clarity: records browsing sessions (heatmaps and recordings) for usability analysis, without capturing sensitive personal data.\n\nYou can manage or disable cookies in your browser settings.",
+    "purposeTitle": "Purpose of Data Processing",
+    "purposeText": "Collected data is used for the following purposes:\n\n• Responding to contact and quote requests.\n• Improving browsing experience and website performance.\n• Conducting statistical analysis of access and behavior.\n• Sending relevant communications about products and services (only with your consent).\n• Complying with legal and regulatory obligations.",
+    "sharingTitle": "Data Sharing",
+    "sharingText": "Your personal data is not sold, rented or transferred to third parties for commercial purposes. We may share information with:\n\n• Essential service providers (hosting, data analysis), under confidentiality agreements.\n• Competent authorities, when required by law or court order.\n• INSULFILM™ franchisees and authorized stores, exclusively to fulfill requests made by you.",
+    "rightsTitle": "Your Rights (LGPD)",
+    "rightsText": "Under Brazil's General Data Protection Law (Law No. 13,709/2018), you have the right to:\n\n• Confirm the existence of data processing.\n• Access your personal data.\n• Correct incomplete, inaccurate or outdated data.\n• Request anonymization, blocking or deletion of unnecessary data.\n• Request data portability to another provider.\n• Revoke consent at any time.\n• Obtain information about sharing of your data.\n\nTo exercise your rights, please contact us through the channels listed below.",
+    "retentionTitle": "Data Retention",
+    "retentionText": "Your personal data is stored for as long as necessary to fulfill the purposes for which it was collected, or as required by legal, contractual or regulatory obligations. Browsing data collected by analytics tools follows each platform's retention policies (Google, Microsoft).",
+    "securityTitle": "Security",
+    "securityText": "We adopt appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, alteration or destruction. This includes use of secure connection (HTTPS), restricted access control and periodic review of our security practices.",
+    "contactTitle": "Contact",
+    "contactText": "For questions, requests or to exercise your rights related to privacy and data protection, please contact us:\n\n• Email: privacidade@insulfilm.com.br\n• Phone: +55 (11) 3611-2474\n• Address: Rua Catão, 72 — Lapa, São Paulo — SP, Brazil, ZIP 05049-000",
+    "updatesTitle": "Policy Updates",
+    "updatesText": "This Privacy Policy may be updated periodically to reflect changes in our practices or legal requirements. We recommend that you review this page regularly. Any significant changes will be communicated visibly on the website.",
+    "lastUpdated": "Last updated: February 2026."
   }
 }

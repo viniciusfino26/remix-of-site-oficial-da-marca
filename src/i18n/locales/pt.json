@@ -366,5 +366,30 @@
       "author": "Relato anônimo",
       "location": "São Paulo, SP"
     }
+  },
+  "privacy": {
+    "heroTitle": "Política de Privacidade",
+    "heroSubtitle": "Saiba como a INSULFILM™ coleta, utiliza e protege seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).",
+    "introTitle": "Introdução",
+    "introText": "A INSULFILM™ respeita a sua privacidade e está comprometida com a proteção dos seus dados pessoais. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e compartilhamos informações quando você acessa nosso site ou utiliza nossos serviços.\n\nAo utilizar nosso site, você concorda com as práticas descritas nesta política.",
+    "dataTitle": "Dados Coletados",
+    "dataText": "Podemos coletar os seguintes tipos de dados:\n\n• Dados de identificação: nome, e-mail, telefone (quando fornecidos voluntariamente em formulários de contato ou orçamento).\n• Dados de navegação: endereço IP, tipo de navegador, páginas visitadas, tempo de permanência, origem do acesso e dispositivo utilizado.\n• Dados de localização aproximada: com base no endereço IP, para fins de análise estatística.",
+    "cookiesTitle": "Cookies e Rastreamento",
+    "cookiesText": "Utilizamos cookies e tecnologias de rastreamento para melhorar a experiência do usuário e analisar o desempenho do site. As ferramentas utilizadas incluem:\n\n• Google Analytics 4 (GA4): coleta dados de navegação anonimizados para análise de tráfego e comportamento.\n• Google Tag Manager (GTM): gerencia scripts e tags de terceiros no site.\n• Microsoft Clarity: registra sessões de navegação (mapas de calor e gravações) para análise de usabilidade, sem capturar dados pessoais sensíveis.\n\nVocê pode gerenciar ou desativar cookies nas configurações do seu navegador.",
+    "purposeTitle": "Finalidade do Tratamento",
+    "purposeText": "Os dados coletados são utilizados para as seguintes finalidades:\n\n• Responder a solicitações de contato e orçamento.\n• Melhorar a experiência de navegação e o desempenho do site.\n• Realizar análises estatísticas de acesso e comportamento.\n• Enviar comunicações relevantes sobre produtos e serviços (somente com seu consentimento).\n• Cumprir obrigações legais e regulatórias.",
+    "sharingTitle": "Compartilhamento de Dados",
+    "sharingText": "Seus dados pessoais não são vendidos, alugados ou cedidos a terceiros para fins comerciais. Podemos compartilhar informações com:\n\n• Prestadores de serviços essenciais (hospedagem, análise de dados), sob contrato de confidencialidade.\n• Autoridades competentes, quando exigido por lei ou ordem judicial.\n• Franqueados e lojas autorizadas INSULFILM™, exclusivamente para atendimento de solicitações feitas por você.",
+    "rightsTitle": "Seus Direitos (LGPD)",
+    "rightsText": "Nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem direito a:\n\n• Confirmar a existência de tratamento de dados.\n• Acessar os seus dados pessoais.\n• Corrigir dados incompletos, inexatos ou desatualizados.\n• Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários.\n• Solicitar a portabilidade dos dados a outro fornecedor.\n• Revogar o consentimento a qualquer momento.\n• Obter informações sobre o compartilhamento dos seus dados.\n\nPara exercer seus direitos, entre em contato conosco pelos canais indicados abaixo.",
+    "retentionTitle": "Retenção de Dados",
+    "retentionText": "Seus dados pessoais são armazenados pelo tempo necessário para cumprir as finalidades para as quais foram coletados, ou conforme exigido por obrigações legais, contratuais ou regulatórias. Dados de navegação coletados por ferramentas de análise seguem as políticas de retenção de cada plataforma (Google, Microsoft).",
+    "securityTitle": "Segurança",
+    "securityText": "Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, perda, alteração ou destruição. Isso inclui uso de conexão segura (HTTPS), controle de acesso restrito e revisão periódica de nossas práticas de segurança.",
+    "contactTitle": "Contato",
+    "contactText": "Para dúvidas, solicitações ou exercício dos seus direitos relacionados à privacidade e proteção de dados, entre em contato:\n\n• E-mail: privacidade@insulfilm.com.br\n• Telefone: (11) 3611-2474\n• Endereço: Rua Catão, 72 — Lapa, São Paulo — SP, CEP 05049-000",
+    "updatesTitle": "Atualizações desta Política",
+    "updatesText": "Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas ou em exigências legais. Recomendamos que você revise esta página regularmente. Qualquer alteração significativa será comunicada de forma visível no site.",
+    "lastUpdated": "Última atualização: Fevereiro de 2026."
   }
 }
