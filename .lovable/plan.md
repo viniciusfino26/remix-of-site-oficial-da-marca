@@ -1,76 +1,41 @@
 
-# Melhorias Visuais na Pagina Quem Somos + Correcao do Ano de Fundacao
+
+# Adicionar Aviso Legal Global Antes do Footer
 
 ## Resumo
 
-Duas frentes de trabalho: (1) corrigir o ano de fundacao de 1988 para 1986 em todos os arquivos do projeto, e (2) elevar visualmente a pagina /quem-somos com foco nos cards da timeline, adicionando gradientes com as cores da marca, animacoes mais ricas e efeitos visuais premium.
+Criar um componente `LegalNotice` que sera renderizado em **todas as paginas** automaticamente, posicionado entre o conteudo da pagina e o Footer no `App.tsx`. O componente contera o aviso de propriedade industrial (INPI), o aviso anti-pirataria com citacoes legais, e uma linha laranja separadora entre as duas secoes.
 
----
+## Abordagem
 
-## 1. Correcao do Ano de Fundacao (1988 para 1986)
+Como o `<Footer />` ja e renderizado globalmente em `App.tsx` apos o `<Routes>`, basta inserir o novo componente `<LegalNotice />` imediatamente antes do `<Footer />`. Isso garante que apareca em **todas as paginas** sem precisar editar cada uma individualmente.
 
-Arquivos afetados:
+## Arquivos
 
-- **`src/pages/QuemSomos.tsx`** — Alterar `year: '1988'` para `'1986'` e ajustar a primeira decada de `'1980-1990'` para `'1986-2000'` (ou manter como `'1980-1990'`)
-- **`src/i18n/locales/pt.json`** — Substituir "Desde 1988" por "Desde 1986" no heroTitle e heroText; renomear chave `e1988` para `e1986`
-- **`src/i18n/locales/en.json`** — Idem: "Since 1988" para "Since 1986"
-- **`src/i18n/locales/es.json`** — Idem: "Desde 1988" para "Desde 1986"
-- **`src/components/SchemaOrg.tsx`** — Alterar `foundingDate: '1988'` para `'1986'` e textos descritivos
-- **`public/llms.txt`** — Alterar "1988" para "1986" na linha do historico
+### Novo:
+- **`src/components/LegalNotice.tsx`** — Componente com:
+  - Fundo `bg-carbon-gradient` (mesmo do footer) para continuidade visual
+  - Secao 1: "INSULFILM(TM) e marca registrada." (bold, centralizado)
+  - Secao 2: "Aviso de Propriedade Industrial e Intelectual" com o texto completo sobre INPI e registros
+  - Linha separadora laranja fina (`bg-accent`, 1-2px de altura, largura parcial)
+  - Secao 3: "Aviso Legal - Pirataria e crime!" com todos os artigos da Lei 9.279/96 e CDC
+  - Textos centralizados, tamanho pequeno (text-xs/text-sm), cor `text-primary-foreground/60`
+  - Citacoes legais em italico
+  - Uso de `useTranslation` para i18n
 
----
+### Editados:
+- **`src/App.tsx`** — Importar e renderizar `<LegalNotice />` entre `</Routes>` e `<Footer />`
+- **`src/i18n/locales/pt.json`** — Adicionar chaves `legal.*` com todo o conteudo em portugues
+- **`src/i18n/locales/en.json`** — Adicionar chaves `legal.*` com versao em ingles
+- **`src/i18n/locales/es.json`** — Adicionar chaves `legal.*` com versao em espanhol
 
-## 2. Melhorias Visuais da Pagina /quem-somos
+## Detalhes Tecnicos
 
-### Timeline Cards — Redesign Premium
+- Componente funcional React com `useTranslation()`
+- Layout: `container mx-auto px-4 py-10 text-center`
+- Tipografia: titulos em `font-bold text-sm`, corpo em `text-xs text-primary-foreground/50`, citacoes em `italic`
+- Linha laranja separadora: `<div className="w-24 h-[2px] bg-accent mx-auto my-8" />`
+- Link externo para INPI com `target="_blank" rel="noopener noreferrer"` e estilo `text-accent hover:underline`
+- Posicionamento global via `App.tsx` — nao precisa tocar em nenhuma pagina individual
+- Border top sutil para separar do conteudo da pagina: `border-t border-primary-foreground/10`
 
-Transformar os cards simples atuais em cards com identidade visual da marca:
-
-- **Gradiente lateral nas bordas**: borda esquerda com gradiente vertical azul (#001E60) para laranja (#FF6720)
-- **Badge do ano**: em vez de texto simples, o ano aparece dentro de um badge com fundo gradiente azul-laranja, texto branco, com leve brilho
-- **Hover com glow**: ao passar o mouse, o card ganha uma sombra com tonalidade laranja sutil e eleva mais (translateY -6px)
-- **Animacao de entrada escalonada**: cada card entra com um delay progressivo dentro da decada (stagger mais pronunciado)
-- **Linha central da timeline**: gradiente vertical de azul para laranja em vez de cor solida
-
-### Marcadores da Decada
-
-- Badge da decada com gradiente azul-para-laranja em vez de fundo solido laranja
-- Efeito shimmer sutil no badge ao entrar na viewport
-- Dot central com animacao de pulso continuo (icon-pulse)
-
-### Marcadores dos Eventos (Dots)
-
-- Dots com gradiente radial azul-laranja em vez de cor solida
-- Animacao de scale com spring ao entrar na viewport
-
-### Secao "Hoje" (Fechamento da Timeline)
-
-- Dot final maior com animacao de pulso e glow laranja
-- Texto com gradiente azul-laranja no titulo
-
-### Secao de Diferenciais
-
-- Cards glass com borda superior gradiente azul-laranja ao hover
-- Icones com animacao de rotacao sutil ao hover (rotate 5deg + scale)
-
-### Detalhes Tecnicos
-
-Todas as mudancas concentradas em `src/pages/QuemSomos.tsx`:
-- Adicionar estilos inline com `background: linear-gradient(...)` usando as cores da marca
-- Enriquecer as variantes de animacao do framer-motion com `whileInView` e transicoes spring
-- Manter 100% da estrutura de texto e i18n intacta
-- Adicionar classes CSS utilitarias em `src/index.css` se necessario (ex: `.timeline-gradient-line`, `.badge-gradient`)
-
----
-
-## Arquivos Editados
-
-| Arquivo | Tipo de Alteracao |
-|---------|-------------------|
-| `src/pages/QuemSomos.tsx` | Redesign visual dos cards, animacoes, gradientes, correcao do ano |
-| `src/index.css` | Novas classes utilitarias para gradientes da timeline |
-| `src/i18n/locales/pt.json` | 1988 para 1986 |
-| `src/i18n/locales/en.json` | 1988 para 1986 |
-| `src/i18n/locales/es.json` | 1988 para 1986 |
-| `src/components/SchemaOrg.tsx` | 1988 para 1986 |
-| `public/llms.txt` | 1988 para 1986 |
