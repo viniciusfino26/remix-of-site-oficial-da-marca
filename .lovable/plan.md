@@ -1,90 +1,220 @@
 
 
-# Criar Paginas SkinSafe8K e SkudoUltra + Ativar Rotas
+# Reestruturacao Completa do Site Conforme Novo Sitemap
 
 ## Resumo
 
-Criar duas novas paginas de produto seguindo 100% o design system existente (SkudoGuard/Antivandalismo13K como referencia), e descomentar as rotas no App.tsx.
+Reestruturar a navegacao, rotas e criar todas as paginas novas conforme o sitemap oficial, mantendo 100% do conteudo existente. Alem disso, corrigir as chaves de traducao faltantes no pt.json.
 
 ---
 
-## 1. src/pages/SkinSafe8K.tsx (nova)
+## Fase 1 — Header e Navegacao
 
-Pagina da pelicula de protecao pessoal contra raios UV. Estrutura:
+### Arquivo: `src/components/Header.tsx`
 
-**Hero** — Fundo `bg-carbon-gradient` com parallax, Badge "Protecao Pessoal", titulo "INSULFILM SkinSafe8K", subtitulo sobre protecao UV invisivel, separator-accent.
+Atualizar o mega-menu para refletir a nova estrutura:
 
-**Beneficios (4 cards)** — Grid `sm:grid-cols-2 lg:grid-cols-4` com glass-card:
-- 100% Bloqueio UV (Sun icon)
-- Transparente e Imperceptivel (Eye icon)
-- Protege Pele e Olhos (Heart icon)
-- Protege Interior do Veiculo (Car icon)
+**Marca** (manter icon Shield):
+- Quem Somos / Nosso Proposito → /quem-somos
+- Franquias → /franquias
+- Trabalhe Conosco → /carreiras
+- Autenticidade e Anti-pirataria → /anti-pirataria
 
-**Descricao do Produto** — Grid 2 colunas (texto + placeholder imagem), lista com CheckCircle dos beneficios, mesma estrutura da secao 2 do SkudoGuard.
+**Divisao Autos** (manter icon Car):
+- Para meu carro → /automotivo
+- Para minha frota → /frota
+- PPF — Protecao de Pintura → /ppf
 
-**Especificacoes Tecnicas** — Cards com propriedades (Transmitancia Luminosa, Bloqueio UV, Rejeicao IR, etc.) usando o mesmo layout de physicalProps do Antivandalismo13K.
+**Divisao Arquitetonica** (manter icon Building2):
+- Para minha residencia → /residencial
+- Para minha empresa → /empresarial
 
-**CTA Final** — Titulo "Proteja Sua Pele Hoje", botao WhatsApp verde, texto de atendimento. Mesmo padrao do CTA do SkudoGuard.
+**Atendimento** (manter icon Headphones):
+- Central de Vendas → /vendas
+- SAC → /sac
+- FAQ → /faq
+- Garantia → /garantia
 
-Animacoes: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger — identicas as demais paginas.
+**CTA "Seja Parceiro"** → /parceiro (manter botao existente)
 
----
+Remover do mega-menu: links diretos para Antivandalismo, SkudoGuard e a proposta de teste (esses produtos ficam acessiveis via /automotivo como cards com link).
 
-## 2. src/pages/SkudoUltra.tsx (nova)
-
-Pagina da pelicula de seguranca maxima. Estrutura:
-
-**Hero** — Badge "Seguranca Maxima", titulo "INSULFILM SkudoUltra", subtitulo sobre Ultra Security Grade, separator-accent, parallax.
-
-**Diferenciais vs SkudoGuard** — Secao com titulo "SkudoUltra vs SkudoGuard", tabela comparativa em Card com grid mostrando:
-- Laminacao (Tripla vs Quadrupla)
-- Resistencia a Tensao (valores comparados)
-- Forca de Ruptura (valores comparados)
-- Adesivo (Performance vs Ultra Performance)
-- Tecnologia (Security Grade vs Ultra Security Grade)
-
-**Diferenciais Tecnicos** — Grid de 4 cards (glass-card no fundo escuro) com icones e descricoes dos diferenciais exclusivos do SkudoUltra.
-
-**Especificacoes Tecnicas** — Mesma estrutura de cards com physicalProps, valores superiores ao SkudoGuard.
-
-**CTA Final** — Titulo "Protecao Maxima Para Sua Familia", botao WhatsApp, mesmo padrao.
+Adicionar chaves nav novas nos 3 idiomas: `nav.ppf`, `nav.faq`, `nav.warranty`, `nav.fleet` (renomear labels conforme sitemap).
 
 ---
 
-## 3. src/App.tsx (edicao)
+## Fase 2 — Rotas (App.tsx)
 
-- Descomentar import SkinSafe8K (linha 24)
-- Descomentar import SkudoUltra (linha 25)
-- Descomentar rota /skinsafe8k (linha 62)
-- Descomentar rota /skudo-ultra (linha 63)
+### Arquivo: `src/App.tsx`
+
+Adicionar imports e rotas para todas as paginas novas + ajustar redirect de /quem-somos:
+
+**Rotas mantidas (sem alteracao):**
+- `/` → Index
+- `/automotivo` → Automotivo
+- `/antivandalismo13k` → Antivandalismo13K
+- `/antivandalismo13k/teste_proposta` → Antivandalismo13KProposta
+- `/skudoguard` → SkudoGuard
+- `/skinsafe8k` → SkinSafe8K
+- `/skudo-ultra` → SkudoUltra
+- `/residencial` → Residencial
+- `/lojas` → Lojas
+
+**Rota ajustada:**
+- `/quem-somos` → QuemSomos (rota principal, nao mais redirect)
+- `/institucional` → redirect para `/quem-somos` (inverter o redirect atual)
+
+**Rotas novas (11 paginas):**
+- `/franquias` → Franquias
+- `/carreiras` → Carreiras
+- `/anti-pirataria` → AntiPirataria
+- `/frota` → Frota
+- `/ppf` → PPF
+- `/empresarial` → Empresarial
+- `/vendas` → Vendas
+- `/sac` → SAC
+- `/faq` → FAQ
+- `/garantia` → Garantia
+- `/parceiro` → Parceiro
 
 ---
 
-## 4. Internacionalizacao
+## Fase 3 — Paginas Novas
 
-Adicionar chaves nos 3 arquivos de traducao (pt.json, en.json, es.json):
-- `skinSafe8kPage.*` — hero, beneficios, especificacoes, CTA
-- `skudoUltraPage.*` — hero, diferenciais, comparativo, especificacoes, CTA
+Todas as paginas seguem o design system existente: Framer Motion (fadeInUp, stagger), shadcn/ui, Tailwind, dark theme, useTranslation.
+
+### 3.1 Pagina Parceiro (`src/pages/Parceiro.tsx`) — PLACEHOLDER
+- Hero com bg-carbon-gradient, titulo "Seja um Parceiro Oficial INSULFILM", subtitulo
+- Duas secoes: "Autos" (Concessionarias, Aplicador Oficial) e "Arq" (Revendedor, Aplicador Oficial)
+- Cada subsecao com card glass-card + descricao + botao WhatsApp "Fale Conosco"
+- Badge "Em breve — formulario de cadastro"
+
+### 3.2 Pagina Franquias (`src/pages/Franquias.tsx`)
+- Hero sobre o modelo de franquias INSULFILM
+- Secao de beneficios (4 cards): Marca Reconhecida, Suporte Completo, Territorio Exclusivo, Retorno Rapido
+- CTA com WhatsApp
+
+### 3.3 Pagina Carreiras (`src/pages/Carreiras.tsx`)
+- Hero "Trabalhe Conosco"
+- Secao valores da empresa (3-4 cards)
+- CTA "Envie seu curriculo" com WhatsApp/email
+
+### 3.4 Pagina AntiPirataria (`src/pages/AntiPirataria.tsx`)
+- Hero "Autenticidade e Anti-pirataria"
+- Como verificar autenticidade (QR Code, certificado)
+- Alerta sobre produtos piratas
+- CTA denuncia
+
+### 3.5 Pagina Frota (`src/pages/Frota.tsx`)
+- Hero "Para Minha Frota"
+- Beneficios para frotas (conforto dos passageiros, protecao solar, reducao de custo AC)
+- CTA atendimento especializado via WhatsApp
+
+### 3.6 Pagina PPF (`src/pages/PPF.tsx`)
+- Hero "Protecao de Pintura — Phantom"
+- Cards: Phantom 6mil e Phantom 8mil (specs, descricao)
+- Secao "Ferramenta Interativa" com placeholder "Em breve"
+- CTA WhatsApp
+
+### 3.7 Pagina Empresarial (`src/pages/Empresarial.tsx`)
+- Hero "Para Minha Empresa"
+- Beneficios para empresas (eficiencia energetica, privacidade, seguranca, decorativo)
+- Subcategorias de peliculas arquitetonicas: Controle Solar, Seguranca (ISSF4000/7000), Decorativas (Jateado, Whiteout, Blackout)
+- CTA WhatsApp
+
+### 3.8 Pagina Vendas (`src/pages/Vendas.tsx`)
+- Hero "Central de Vendas"
+- Cards com canais de contato (WhatsApp, telefone, email)
+- Link para /lojas
+
+### 3.9 Pagina SAC (`src/pages/SAC.tsx`)
+- Hero "Atendimento ao Cliente"
+- Cards com opcoes de contato
+- Link para FAQ e Garantia
+
+### 3.10 Pagina FAQ (`src/pages/FAQ.tsx`)
+- Hero "Perguntas Frequentes"
+- Accordion com perguntas organizadas por categoria (Automotivo, Arquitetonico, Garantia, Geral)
+- Reaproveitar FAQs ja existentes no automotivePage + novas
+
+### 3.11 Pagina Garantia (`src/pages/Garantia.tsx`)
+- Hero "Garantia INSULFILM"
+- Tabela/cards com tipos de garantia por produto
+- Como acionar a garantia
+- CTA WhatsApp
+
+---
+
+## Fase 4 — Correcao de Chaves de Traducao (pt.json)
+
+### Arquivo: `src/i18n/locales/pt.json`
+
+**4.1 Chaves da pagina Institucional:**
+- Adicionar `about.statYears`: "Anos de Mercado"
+- Adicionar `about.statStores`: "Lojas em SP"
+- Adicionar `about.statPioneering`: "Pioneirismos"
+- Adicionar `about.timeline.e1986` (copiar conteudo de e1988)
+
+**4.2 Chaves da pagina Automotivo:**
+- Adicionar aliases: `automotivePage.dark` (copiar de `ltDark`), `automotivePage.eclipse` (de `ltEclipse`), `automotivePage.vip` (de `ltVip`), `automotivePage.polaris` (de `ltPolariz`)
+- Cada alias com sub-chaves: name, category, serie, heat, tech, type, desc, warranty
+
+**4.3 Chaves novas para todas as 11 paginas** — adicionar nos 3 idiomas (pt, en, es):
+- `franquiasPage.*`, `carreirasPage.*`, `antiPiracyPage.*`, `frotaPage.*`, `ppfPage.*`, `empresarialPage.*`, `vendasPage.*`, `sacPage.*`, `faqPage.*`, `garantiaPage.*`, `parceiroPage.*`
+
+**4.4 Chaves de navegacao novas:**
+- `nav.ppf`: "PPF" / "PPF" / "PPF"
+- `nav.faq`: "FAQ" / "FAQ" / "FAQ"
+- `nav.warranty`: ja existe como `nav.warranty`
+- `nav.fleet`: usar `nav.forMyFleet` existente
+
+---
+
+## Fase 5 — Footer
+
+### Arquivo: `src/components/Footer.tsx`
+
+Atualizar links do footer para refletir a nova estrutura de rotas (ex: adicionar FAQ, Garantia, remover links obsoletos).
 
 ---
 
 ## Detalhes Tecnicos
 
-### Arquivos novos
-- `src/pages/SkinSafe8K.tsx`
-- `src/pages/SkudoUltra.tsx`
+### Arquivos novos (11):
+- `src/pages/Parceiro.tsx`
+- `src/pages/Franquias.tsx`
+- `src/pages/Carreiras.tsx`
+- `src/pages/AntiPirataria.tsx`
+- `src/pages/Frota.tsx`
+- `src/pages/PPF.tsx`
+- `src/pages/Empresarial.tsx`
+- `src/pages/Vendas.tsx`
+- `src/pages/SAC.tsx`
+- `src/pages/FAQ.tsx`
+- `src/pages/Garantia.tsx`
 
-### Arquivos editados
-- `src/App.tsx` — descomentar 2 imports + 2 rotas
-- `src/i18n/locales/pt.json` — adicionar chaves skinSafe8kPage e skudoUltraPage
+### Arquivos editados (5):
+- `src/App.tsx` — imports + 11 rotas novas + ajuste redirect quem-somos/institucional
+- `src/components/Header.tsx` — mega-menu reestruturado conforme sitemap
+- `src/i18n/locales/pt.json` — correcao de chaves faltantes + chaves das 11 paginas novas
 - `src/i18n/locales/en.json` — mesmas chaves traduzidas
 - `src/i18n/locales/es.json` — mesmas chaves traduzidas
+- `src/components/Footer.tsx` — links atualizados
 
-### Padrao seguido
-- Imports identicos: framer-motion, lucide-react, shadcn/ui (Card, Button, Badge)
-- Variantes de animacao: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger (copias exatas)
-- Parallax hero com useScroll/useTransform/useSpring
-- Classes CSS: bg-carbon-gradient, bg-hero-texture, bg-diagonal-texture, glass-card, card-premium-hover, separator-accent, shadow-premium-lg
-- WHATSAPP_NUMBER constante, CTA com MessageCircle icon
-- useTranslation para todos os textos
+### Paginas existentes preservadas (sem alteracao de conteudo):
+Index, QuemSomos, Automotivo, Antivandalismo13K, Antivandalismo13KProposta, SkudoGuard, SkinSafe8K, SkudoUltra, Residencial, Lojas
+
+### Padrao de cada pagina nova:
+- Hero com bg-carbon-gradient, parallax, Badge, titulo, subtitulo, separator-accent
+- Secoes com cards glass-card ou cards shadcn/ui
+- CTA final com botao WhatsApp verde (MessageCircle icon)
+- Animacoes: fadeInUp, fadeInLeft, fadeInRight, scaleIn, stagger
+- useTranslation() para todos os textos
+
+### Ordem de implementacao sugerida:
+1. Corrigir pt.json (chaves faltantes) — resolve erros atuais
+2. Header + App.tsx — reestruturar navegacao
+3. Paginas novas (em lotes de 3-4 por prompt)
+4. Footer
+5. Traducoes en.json e es.json
 
