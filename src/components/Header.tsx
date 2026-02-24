@@ -35,10 +35,8 @@ const Header = () => {
       icon: Car,
       items: [
         { label: t('nav.forMyCar'), href: '/automotivo' },
-        { label: t('nav.antiVandalism'), href: '/antivandalismo13k' },
-        { label: t('nav.antiVandalismProposal'), href: '/antivandalismo13k/teste_proposta' },
-        { label: 'SkudoGuard', href: '/skudoguard' },
         { label: t('nav.forMyFleet'), href: '/frota' },
+        { label: t('nav.ppf'), href: '/ppf' },
       ],
     },
     {
@@ -57,6 +55,8 @@ const Header = () => {
       items: [
         { label: t('nav.salesCentral'), href: '/vendas' },
         { label: t('nav.sac'), href: '/sac' },
+        { label: t('nav.faq'), href: '/faq' },
+        { label: t('nav.warranty'), href: '/garantia' },
         { label: t('nav.storeLocator'), href: '/lojas' },
       ],
     },
@@ -109,12 +109,6 @@ const Header = () => {
                 </div>
               ))}
 
-              <Link
-                to="/produtos"
-                className="nav-link-premium px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                {t('nav.products')}
-              </Link>
             </nav>
 
             {/* Right side: Language + CTA + Mobile */}
@@ -174,13 +168,6 @@ const Header = () => {
                         ))}
                       </div>
                     ))}
-                    <Link
-                      to="/produtos"
-                      className="block px-3 py-2.5 text-sm font-medium text-foreground/70 hover:text-accent"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {t('nav.products')}
-                    </Link>
                     <div className="pt-4 px-3">
                       <Link to="/parceiro" onClick={() => setMobileOpen(false)}>
                         <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
