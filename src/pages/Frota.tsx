@@ -34,7 +34,8 @@ const whyCards = [
 
 const WHATSAPP = 'https://wa.me/5511976136911?text=Preciso%20de%20películas%20para%20minha%20frota';
 
-const SectionCards = ({ cards }: { cards: typeof comfortCards }) => (
+/* Dark variant for carbon-gradient sections */
+const DarkSectionCards = ({ cards }: { cards: typeof comfortCards }) => (
   <motion.div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
     {cards.map((c, i) => (
       <motion.div key={i} variants={fadeInUp}>
@@ -47,6 +48,27 @@ const SectionCards = ({ cards }: { cards: typeof comfortCards }) => (
             <p className="text-sm text-primary-foreground/60 font-light leading-relaxed">{c.desc}</p>
           </CardContent>
         </Card>
+      </motion.div>
+    ))}
+  </motion.div>
+);
+
+/* Light variant for bg-background sections */
+const LightSectionCards = ({ cards }: { cards: typeof comfortCards }) => (
+  <motion.div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+    {cards.map((c, i) => (
+      <motion.div key={i} variants={fadeInUp}>
+        <motion.div whileHover={{ y: -4, transition: { duration: 0.3 } }}>
+          <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50">
+            <CardContent className="p-8 flex flex-col items-center text-center gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
+                <c.icon className="w-8 h-8 text-accent" />
+              </div>
+              <h3 className="text-lg font-extrabold text-foreground">{c.title}</h3>
+              <p className="text-sm text-muted-foreground font-light leading-relaxed">{c.desc}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
       </motion.div>
     ))}
   </motion.div>
@@ -85,12 +107,12 @@ const Frota = () => (
       <div className="container mx-auto px-4">
         <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Conforto Térmico e Saúde do Motorista</motion.h2>
-          <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light max-w-2xl mx-auto">
+          <motion.p variants={fadeInUp} className="text-muted-foreground font-light max-w-2xl mx-auto">
             Horas ao volante sob sol forte causam fadiga precoce e exposição perigosa a radiações.
           </motion.p>
           <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
         </motion.div>
-        <SectionCards cards={comfortCards} />
+        <LightSectionCards cards={comfortCards} />
       </div>
     </section>
 
@@ -104,7 +126,7 @@ const Frota = () => (
           </motion.p>
           <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
         </motion.div>
-        <SectionCards cards={securityCards} />
+        <DarkSectionCards cards={securityCards} />
       </div>
     </section>
 
@@ -117,7 +139,7 @@ const Frota = () => (
           </motion.h2>
           <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
         </motion.div>
-        <SectionCards cards={whyCards} />
+        <LightSectionCards cards={whyCards} />
       </div>
     </section>
 
