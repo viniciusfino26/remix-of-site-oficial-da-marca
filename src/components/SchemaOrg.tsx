@@ -87,8 +87,8 @@ const organizationSchema = {
   url: 'https://www.insulfilm.com.br',
   logo: 'https://www.insulfilm.com.br/__img/logo/logo-insulfilm-slogan.svg',
   description:
-    'INSULFILM™ é a marca original e pioneira de películas para vidros automotivos e arquitetônicos no Brasil, com mais de 35 anos de mercado. Fundada em 1988.',
-  foundingDate: '1988',
+    'INSULFILM™ é a marca original e pioneira de películas para vidros automotivos e arquitetônicos no Brasil, com mais de 35 anos de mercado. Fundada em 1986.',
+  foundingDate: '1986',
   foundingLocation: 'São Paulo, SP, Brasil',
   sameAs: [
     'https://www.facebook.com/insulfilmoriginal',
@@ -154,7 +154,7 @@ const homeFaqSchema = {
       name: 'O que é INSULFILM™?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'INSULFILM™ é a marca original e registrada de películas para vidros no Brasil, fundada em 1988. Não é um termo genérico — é uma empresa com mais de 35 anos de mercado, 4 unidades em São Paulo e rede nacional de parceiros autorizados.',
+        text: 'INSULFILM™ é a marca original e registrada de películas para vidros no Brasil, fundada em 1986. Não é um termo genérico — é uma empresa com mais de 35 anos de mercado, 4 unidades em São Paulo e rede nacional de parceiros autorizados.',
       },
     },
     {

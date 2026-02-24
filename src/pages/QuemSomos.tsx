@@ -28,12 +28,16 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
+const staggerTimeline = {
+  visible: { transition: { staggerChildren: 0.18 } },
+};
+
 const timelineData = [
   {
-    decade: '1980–1990',
+    decade: '1986–2000',
     decadeKey: 'about.timeline.decade1',
     events: [
-      { year: '1988', key: 'about.timeline.e1988' },
+      { year: '1986', key: 'about.timeline.e1986' },
       { year: '1996–98', key: 'about.timeline.e1996' },
       { year: '1996', key: 'about.timeline.e1996b' },
       { year: '1997', key: 'about.timeline.e1997' },
@@ -76,6 +80,9 @@ const differentials = [
   { icon: Users, key: 'about.diff.professionals' },
   { icon: Award, key: 'about.diff.warranty' },
 ];
+
+const BRAND_GRADIENT = 'linear-gradient(135deg, hsl(224, 100%, 19%), hsl(19, 100%, 56%))';
+const BRAND_GRADIENT_VERTICAL = 'linear-gradient(180deg, hsl(224, 100%, 19%), hsl(19, 100%, 56%))';
 
 const QuemSomos = () => {
   const { t } = useTranslation();
@@ -159,8 +166,11 @@ const QuemSomos = () => {
 
           {/* Timeline vertical */}
           <div className="relative max-w-5xl mx-auto">
-            {/* Central line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 md:-translate-x-px" />
+            {/* Central line with brand gradient */}
+            <div
+              className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-px"
+              style={{ background: BRAND_GRADIENT_VERTICAL }}
+            />
 
             {timelineData.map((decade, di) => (
               <motion.div
@@ -168,21 +178,28 @@ const QuemSomos = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: '-60px' }}
-                variants={stagger}
+                variants={staggerTimeline}
                 className="mb-16"
               >
                 {/* Decade marker */}
                 <motion.div variants={scaleIn} className="relative flex items-center mb-8">
                   <motion.div
-                    className="absolute left-4 md:left-1/2 w-5 h-5 bg-accent rounded-full border-4 border-background -translate-x-1/2 z-10 shadow-md"
+                    className="absolute left-4 md:left-1/2 w-5 h-5 rounded-full border-4 border-background -translate-x-1/2 z-10 shadow-md"
+                    style={{ background: BRAND_GRADIENT }}
                     whileInView={{ scale: [0, 1.3, 1] }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   />
                   <div className="ml-14 md:ml-0 md:text-center md:w-full">
-                    <span className="inline-block bg-accent text-accent-foreground text-sm font-extrabold px-5 py-2 rounded-full shadow-md">
+                    <motion.span
+                      className="inline-block text-sm font-extrabold px-5 py-2 rounded-full shadow-lg text-white shimmer"
+                      style={{ background: BRAND_GRADIENT }}
+                      whileInView={{ opacity: [0, 1], scale: [0.8, 1] }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
                       {decade.decade}
-                    </span>
+                    </motion.span>
                   </div>
                 </motion.div>
 
@@ -195,20 +212,34 @@ const QuemSomos = () => {
                       variants={isRight ? fadeInLeft : fadeInRight}
                       className="relative mb-6"
                     >
-                      {/* Dot */}
+                      {/* Dot with gradient */}
                       <motion.div
-                        className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary/40 rounded-full border-2 border-background -translate-x-1/2 mt-4 z-10"
-                        whileInView={{ scale: [0, 1] }}
+                        className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full border-2 border-background -translate-x-1/2 mt-4 z-10"
+                        style={{ background: BRAND_GRADIENT }}
+                        whileInView={{ scale: [0, 1.2, 1] }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
+                        transition={{ duration: 0.4, delay: 0.1, type: 'spring', stiffness: 300 }}
                       />
 
                       {/* Card */}
                       <div className={`ml-14 md:ml-0 md:w-[45%] ${isRight ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                        <motion.div whileHover={{ y: -4, transition: { duration: 0.25 } }}>
-                          <Card className="card-premium-hover border-border border-t-2 border-t-transparent hover:border-t-accent/50 rounded-xl">
+                        <motion.div
+                          whileHover={{
+                            y: -6,
+                            transition: { duration: 0.25 },
+                          }}
+                        >
+                          <Card
+                            className="rounded-xl border-border overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_hsl(19,100%,56%,0.15)]"
+                            style={{ borderLeft: `3px solid transparent`, borderImage: `${BRAND_GRADIENT_VERTICAL} 1` }}
+                          >
                             <CardContent className="p-5">
-                              <span className="text-xs font-extrabold text-accent uppercase tracking-wider">{event.year}</span>
+                              <span
+                                className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-white px-3 py-1 rounded-full mb-2"
+                                style={{ background: BRAND_GRADIENT }}
+                              >
+                                {event.year}
+                              </span>
                               <p className="text-sm text-foreground/80 mt-1 font-light leading-relaxed">
                                 {t(event.key)}
                               </p>
@@ -231,14 +262,19 @@ const QuemSomos = () => {
               className="relative"
             >
               <motion.div
-                className="absolute left-4 md:left-1/2 w-6 h-6 bg-accent rounded-full border-4 border-background -translate-x-1/2 z-10 shadow-lg icon-ring-glow"
+                className="absolute left-4 md:left-1/2 w-7 h-7 rounded-full border-4 border-background -translate-x-1/2 z-10"
+                style={{
+                  background: BRAND_GRADIENT,
+                  boxShadow: '0 0 20px hsl(19, 100%, 56%, 0.4), 0 0 40px hsl(19, 100%, 56%, 0.2)',
+                }}
                 whileInView={{ scale: [0, 1.4, 1] }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
               />
               <div className="ml-14 md:ml-0 md:text-center md:w-full pt-1">
                 <motion.p
-                  className="text-lg font-bold text-accent"
+                  className="text-lg font-bold bg-clip-text text-transparent"
+                  style={{ backgroundImage: BRAND_GRADIENT }}
                   whileInView={{ opacity: [0, 1], y: [20, 0] }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -291,11 +327,17 @@ const QuemSomos = () => {
             {differentials.map((diff, i) => (
               <motion.div key={i} variants={fadeInUp}>
                 <motion.div whileHover={{ y: -8, transition: { duration: 0.3 } }}>
-                  <Card className="glass-card hover:border-accent/20 transition-all duration-300 h-full text-center rounded-xl">
+                  <Card className="glass-card transition-all duration-300 h-full text-center rounded-xl group hover:border-accent/30"
+                    style={{ borderTop: '2px solid transparent' }}
+                  >
+                    <div
+                      className="h-0.5 rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: BRAND_GRADIENT }}
+                    />
                     <CardContent className="p-8">
                       <motion.div
                         className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-5 icon-ring-glow"
-                        whileHover={{ scale: 1.15, transition: { type: 'spring', stiffness: 300 } }}
+                        whileHover={{ scale: 1.15, rotate: 5, transition: { type: 'spring', stiffness: 300 } }}
                       >
                         <diff.icon className="w-8 h-8 text-accent" />
                       </motion.div>
