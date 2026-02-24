@@ -173,7 +173,7 @@ const Residencial = () => {
                 { label: 'Benefícios', target: 'beneficios' },
                 { label: 'Diferenciais', target: 'diferenciais' },
               ].map(btn => (
-                <Button key={btn.target} variant="outline" size="sm" className="border-primary-foreground/20 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-lg" onClick={() => scrollTo(btn.target)}>
+                <Button key={btn.target} variant="ghost" size="sm" className="border border-primary-foreground/20 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-lg" onClick={() => scrollTo(btn.target)}>
                   {btn.label}
                 </Button>
               ))}
