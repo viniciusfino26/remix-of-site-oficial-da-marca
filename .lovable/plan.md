@@ -1,41 +1,107 @@
 
 
-# Adicionar Aviso Legal Global Antes do Footer
+# Reformulacao Visual da Pagina /residencial para "Arquitetonico" + Upgrade Premium
 
 ## Resumo
 
-Criar um componente `LegalNotice` que sera renderizado em **todas as paginas** automaticamente, posicionado entre o conteudo da pagina e o Footer no `App.tsx`. O componente contera o aviso de propriedade industrial (INPI), o aviso anti-pirataria com citacoes legais, e uma linha laranja separadora entre as duas secoes.
+Renomear o menu "Arquitetura" para "Arquitetonico" no header, reformular visualmente a pagina /residencial com fotos reais dos sites de referencia (insulfilmarquitetonico.com.br e materiais.insulfilm.com.br/lp-insulfilm-arquitetonico), adicionar parallax com imagens, enriquecer descricoes das peliculas com textos do site oficial, e mover a secao de seguranca/acidentes para o final da pagina (antes do CTA). Manter o video existente (paCtipjRfPI) e adicionar o video empresarial (broTJbFxFqM) em secao futura.
 
-## Abordagem
+---
 
-Como o `<Footer />` ja e renderizado globalmente em `App.tsx` apos o `<Routes>`, basta inserir o novo componente `<LegalNotice />` imediatamente antes do `<Footer />`. Isso garante que apareca em **todas as paginas** sem precisar editar cada uma individualmente.
+## 1. Renomear Header: "Arquitetura" para "Arquitetonico"
 
-## Arquivos
+Alterar a chave `nav.architecture` nos 3 arquivos de traducao:
+- **pt.json**: `"architecture": "Arquitetônico"`
+- **en.json**: `"architecture": "Architectural"`
+- **es.json**: `"architecture": "Arquitectónico"`
 
-### Novo:
-- **`src/components/LegalNotice.tsx`** — Componente com:
-  - Fundo `bg-carbon-gradient` (mesmo do footer) para continuidade visual
-  - Secao 1: "INSULFILM(TM) e marca registrada." (bold, centralizado)
-  - Secao 2: "Aviso de Propriedade Industrial e Intelectual" com o texto completo sobre INPI e registros
-  - Linha separadora laranja fina (`bg-accent`, 1-2px de altura, largura parcial)
-  - Secao 3: "Aviso Legal - Pirataria e crime!" com todos os artigos da Lei 9.279/96 e CDC
-  - Textos centralizados, tamanho pequeno (text-xs/text-sm), cor `text-primary-foreground/60`
-  - Citacoes legais em italico
-  - Uso de `useTranslation` para i18n
+---
 
-### Editados:
-- **`src/App.tsx`** — Importar e renderizar `<LegalNotice />` entre `</Routes>` e `<Footer />`
-- **`src/i18n/locales/pt.json`** — Adicionar chaves `legal.*` com todo o conteudo em portugues
-- **`src/i18n/locales/en.json`** — Adicionar chaves `legal.*` com versao em ingles
-- **`src/i18n/locales/es.json`** — Adicionar chaves `legal.*` com versao em espanhol
+## 2. Fotos Reais dos Sites de Referencia
 
-## Detalhes Tecnicos
+Utilizar as seguintes imagens externas diretamente via URL nos componentes (sem download):
 
-- Componente funcional React com `useTranslation()`
-- Layout: `container mx-auto px-4 py-10 text-center`
-- Tipografia: titulos em `font-bold text-sm`, corpo em `text-xs text-primary-foreground/50`, citacoes em `italic`
-- Linha laranja separadora: `<div className="w-24 h-[2px] bg-accent mx-auto my-8" />`
-- Link externo para INPI com `target="_blank" rel="noopener noreferrer"` e estilo `text-accent hover:underline`
-- Posicionamento global via `App.tsx` — nao precisa tocar em nenhuma pagina individual
-- Border top sutil para separar do conteudo da pagina: `border-t border-primary-foreground/10`
+| Imagem | URL | Uso |
+|--------|-----|-----|
+| Interior residencial (hero contexto) | `https://www.insulfilmarquitetonico.com.br/__imagens/Arquitetonico--Casas--Interior--G.jpg` | Secao "Proteja Sua Casa" — substituir placeholder |
+| Linha Metallico | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Metallico.jpg` | Card Refletivas |
+| Linha Naturale | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Naturale.jpg` | Card Neutras |
+| Linha Orizzonte | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Orizzonte80.jpg` | Card Transparentes |
+| Linha Ultravioletti | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/UltraVioletti90.jpg` | Card Nao Refletivas |
+| Linha Specchiato | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/SpecchiatoBronzo.jpg` | Card Espelhadas |
+| Linha Safety | `https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Safety&Security.jpg` | Card Antivandalismo |
+| Escritorios | `https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/escritorios.jpg` | Parallax intermediario |
+| Residencias | `https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/residencias.jpg` | Parallax secao beneficios |
+| Hoteis | `https://www.insulfilmarquitetonico.com.br/__imagens/possibilidades-aplicacao/hoteis.jpg` | Parallax secao diferenciais |
+| Fachadas exclusivas | `https://www.insulfilmarquitetonico.com.br/__imagens/solucoes/fachadas-exclusivas.jpg` | Secao diferenciais |
+| Clientes atendidos | `https://d335luupugsy2.cloudfront.net/cms/files/538892/1757442209/$1chrfqbj4ma` | Secao social proof |
+
+---
+
+## 3. Reestruturacao das Secoes da Pagina
+
+Nova ordem (mover "Proteja sua casa/seguranca/acidentes" para quase o final):
+
+1. **HERO + VIDEO** (manter video paCtipjRfPI)
+2. **O Problema** (calor, UV, energia — foco na dor)
+3. **Nossas Peliculas** (6 cards com fotos reais + descricoes enriquecidas do site oficial)
+4. **PARALLAX PHOTO** — nova secao com imagem residencial em full-width com parallax
+5. **Principais Beneficios** (manter, com imagem de fundo parallax)
+6. **CTA Intermediario** (manter)
+7. **Nossos Diferenciais** (manter, com imagem parallax)
+8. **Familias de Produtos** (manter Performance/Premium)
+9. **Garantia Certificada** (manter)
+10. **PARALLAX PHOTO** — nova secao com imagem de escritorio/fachada
+11. **Proteja Sua Casa e Sua Familia** (secao de seguranca/acidentes — movida para ca)
+12. **CTA Final** (manter)
+
+---
+
+## 4. Melhorias Visuais Premium
+
+### Cards de Peliculas — Com Foto
+- Cada card tera uma imagem de topo (das linhas do site oficial) com aspect-ratio 16/9
+- Overlay gradiente escuro sobre a foto para legibilidade
+- Titulo da pelicula sobre a imagem em branco
+- Descricao enriquecida abaixo com textos do site oficial (mais detalhados)
+
+### Secoes Parallax
+- Novas secoes de foto full-width entre blocos de conteudo
+- Implementacao via `background-attachment: fixed` com overlay gradiente escuro
+- Altura minima de ~300px (desktop) / ~200px (mobile)
+- Em mobile, `background-attachment: scroll` (iOS nao suporta fixed)
+
+### Descricoes Enriquecidas das Peliculas
+Usando os textos dos sites de referencia:
+- **Espelhadas**: "Espelhamento intenso em ambos os lados para uma rejeicao de calor espetacular. Diversas opcoes de cores externas com interior prata."
+- **Transparentes**: "Quase imperceptivel, mantem o design atual do projeto enquanto proporciona otima reducao de calor por sua tecnologia seletiva de absorcao termica."
+- **Refletivas**: "Alta refletividade externa para maximizar a rejeicao de calor, com um interior neutro para facilitar a visibilidade externa."
+- **Neutras**: "Visual natural de refletividade baixa ou moderada para aumentar o conforto termico, sem destacar expressivamente a area envidracada."
+- **Nao Refletivas**: "Visual escuro e nao espelhado, proporcionando excelente privacidade e controle de luz que aumenta o conforto termico."
+- **Antivandalismo e Seguranca**: "Praticamente invisiveis, reforcam a resistencia natural do vidro contra quebras acidentais ou criminosas e retem os estilhacos do vidro quebrado."
+
+### Secao "Proteja Sua Casa" — Com Foto Real
+- Substituir o placeholder (div cinza com icone) pela foto `Arquitetonico--Casas--Interior--G.jpg`
+- Foto com bordas arredondadas e sombra premium
+
+---
+
+## 5. Responsividade
+
+- Parallax com `background-attachment: scroll` em mobile (via media query ou classe condicional)
+- Cards de peliculas com imagem: grid 1 coluna (mobile), 2 colunas (sm), 3 colunas (lg)
+- Imagens com `object-fit: cover` e `loading="lazy"`
+- Video mantendo enquadramento `aspect-video` existente
+
+---
+
+## Arquivos Editados
+
+| Arquivo | Tipo |
+|---------|------|
+| `src/pages/Residencial.tsx` | Reescrita visual com fotos, parallax, reordenacao |
+| `src/i18n/locales/pt.json` | Renomear nav.architecture |
+| `src/i18n/locales/en.json` | Renomear nav.architecture |
+| `src/i18n/locales/es.json` | Renomear nav.architecture |
+| `src/index.css` | Classe utilitaria `.bg-parallax` para efeito parallax |
 
