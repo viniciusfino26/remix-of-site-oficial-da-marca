@@ -394,5 +394,22 @@
     "updatesTitle": "Policy Updates",
     "updatesText": "This Privacy Policy may be updated periodically to reflect changes in our practices or legal requirements. We recommend that you review this page regularly. Any significant changes will be communicated visibly on the website.",
     "lastUpdated": "Last updated: February 2026."
+  },
+  "legal": {
+    "ariaLabel": "Legal Notice and Industrial Property",
+    "trademark": "is a registered trademark.",
+    "propertyTitle": "Industrial and Intellectual Property Notice",
+    "propertyText1": "INSULFILM DO BRASIL is the legitimate owner and exclusive holder of rights over the INSULFILM™ brand for businesses, products and services, duly registered with the",
+    "propertyText2": "Its registrations are public and have been in full force since 1987, under the numbers 813633370, 813633389, 813633451, 813633460, 814699421, 818911069, 822317508, 822553090, 822553104, 822553112, 822553120.",
+    "propertyText3": "Any use of the INSULFILM™ brand without express authorization constitutes a violation of rights protected by current legislation and is subject to applicable legal measures.",
+    "piracyTitle": "Legal Notice — Piracy is a crime!",
+    "piracyText1": "Due to Internet piracy, with the unauthorized use of the INSULFILM™ brand in various electronic addresses, website content, Google geolocation registration, all social networks, Marketplaces and other digital media. Also, due to the illicit conduct of dishonest merchants who engage in such practices and still improperly use the INSULFILM™ brand on facades, banners, billboards, printed materials and other communication media.",
+    "piracyText2": "As a warning, regarding counterfeiting, defamation, false advertising, unfair and parasitic competition, and especially crimes against consumers and the economy, INSULFILM™ notifies and clarifies the following:",
+    "piracyLaw": "The INSULFILM™ brand is protected by the Industrial Property Law — LAW No. 9,279/96.",
+    "art189": "\"Art. 189: Commits a crime against trademark registration whoever: I — reproduces, without the owner's authorization, in whole or in part, a registered trademark, or imitates it in a way that may cause confusion; or.\"",
+    "art195": "\"Art. 195: Commits a crime of unfair competition whoever: (...) I — Publishes, by any means, a false statement, to the detriment of a competitor, in order to gain an advantage; III — uses fraudulent means to divert, for their own or another's benefit, another's clientele; V — Improperly uses another's trade name, establishment title or insignia, or sells, displays, offers for sale or stocks products with such references.\"",
+    "cdcIntro": "According to the Consumer Defense Code, deceiving the consumer is a crime — LAW No. 9,008/95.",
+    "art4": "\"Art. 4: The National Consumer Relations Policy aims to meet consumer needs, respect their dignity, health and safety, protect their economic interests, improve their quality of life, as well as transparency and harmony in consumer relations, meeting the following principles: VI — efficient deterrence and repression of all abuses practiced in the consumer market, including unfair competition and improper use of inventions and industrial creations, trademarks, trade names and distinctive signs that may cause harm to consumers;\"",
+    "art6": "\"Art. 6: Basic consumer rights include: IV — protection against misleading and abusive advertising, coercive or unfair commercial methods, as well as abusive practices and clauses imposed in the supply of products and services;\""
   }
 }

@@ -394,5 +394,22 @@
     "updatesTitle": "Actualizaciones de esta Política",
     "updatesText": "Esta Política de Privacidad puede actualizarse periódicamente para reflejar cambios en nuestras prácticas o en exigencias legales. Recomendamos que revise esta página regularmente. Cualquier cambio significativo será comunicado de forma visible en el sitio.",
     "lastUpdated": "Última actualización: Febrero de 2026."
+  },
+  "legal": {
+    "ariaLabel": "Aviso Legal y Propiedad Industrial",
+    "trademark": "es una marca registrada.",
+    "propertyTitle": "Aviso de Propiedad Industrial e Intelectual",
+    "propertyText1": "INSULFILM DO BRASIL es la legítima propietaria y titular exclusiva de los derechos sobre la marca INSULFILM™ para negocios, productos y servicios, debidamente registrada ante el",
+    "propertyText2": "Sus registros son públicos y están en plena vigencia desde 1987, bajo los números 813633370, 813633389, 813633451, 813633460, 814699421, 818911069, 822317508, 822553090, 822553104, 822553112, 822553120.",
+    "propertyText3": "Cualquier uso de la marca INSULFILM™ sin autorización expresa constituye una violación de derechos protegidos por la legislación vigente y está sujeto a las medidas legales correspondientes.",
+    "piracyTitle": "Aviso Legal — ¡La piratería es un crimen!",
+    "piracyText1": "Debido a la piratería en Internet, con el uso indebido de la marca INSULFILM™ en diversos direcciones electrónicas, contenido de sitios web, registro de geolocalización de Google, todas las redes sociales, Marketplaces y demás medios digitales. También, por la conducta ilícita de comerciantes deshonestos que se benefician de tales prácticas y además usan indebidamente la marca INSULFILM™ en fachadas, banners, carteles, impresos en general y demás medios de comunicación.",
+    "piracyText2": "Como alerta, por la falsificación, difamación, divulgación falsa, competencia desleal y parasitaria, y principalmente por los crímenes contra el consumidor y la economía, INSULFILM™ notifica y aclara lo siguiente:",
+    "piracyLaw": "La marca INSULFILM™ está protegida por la Ley de Propiedad Industrial — LEY nº 9.279/96.",
+    "art189": "\"Art. 189: Comete delito contra el registro de marca quien: I — reproduce, sin autorización del titular, en todo o en parte, una marca registrada, o la imita de modo que pueda inducir a confusión; o.\"",
+    "art195": "\"Art. 195: Comete delito de competencia desleal quien: (...) I — Publica, por cualquier medio, una afirmación falsa en detrimento de un competidor, con el fin de obtener ventaja; III — emplea medios fraudulentos para desviar, en provecho propio o ajeno, la clientela de otro; V — Usa indebidamente nombre comercial, título de establecimiento o insignia ajena, o vende, expone u ofrece a la venta o tiene en stock productos con dichas referencias.\"",
+    "cdcIntro": "Según el Código de Defensa del Consumidor, engañar al consumidor es un crimen — LEY nº 9.008/95.",
+    "art4": "\"Art. 4º: La Política Nacional de Relaciones de Consumo tiene por objetivo la atención de las necesidades de los consumidores, el respeto a su dignidad, salud y seguridad, la protección de sus intereses económicos, la mejora de su calidad de vida, así como la transparencia y armonía de las relaciones de consumo, atendidos los siguientes principios: VI — cohibición y represión eficientes de todos los abusos practicados en el mercado de consumo, incluida la competencia desleal y utilización indebida de inventos y creaciones industriales, marcas, nombres comerciales y signos distintivos que puedan causar perjuicios a los consumidores;\"",
+    "art6": "\"Art. 6º: Son derechos básicos del consumidor: IV — la protección contra la publicidad engañosa y abusiva, métodos comerciales coercitivos o desleales, así como contra prácticas y cláusulas abusivas o impuestas en el suministro de productos y servicios;\""
   }
 }
