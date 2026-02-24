@@ -1,44 +1,59 @@
 
 
-# Implementar Schema.org — Dados Estruturados para SEO
+# Criar Pagina /lojas — Lojas Oficiais INSULFILM
 
 ## Resumo
 
-Criar o componente `SchemaOrg.tsx` com dados estruturados JSON-LD para Google Rich Results e LLMs, e integra-lo ao `App.tsx`.
+Criar a pagina `src/pages/Lojas.tsx` com as 4 unidades fisicas em Sao Paulo, e adicionar a rota `/lojas` no `App.tsx`. A pagina segue o mesmo padrao visual das demais (carbon-gradient, hero-texture, Framer Motion, shadcn/ui).
 
 ---
 
 ## Arquivos
 
 ### Novo:
-- `src/components/SchemaOrg.tsx` — Componente completo conforme o codigo fornecido, com schemas para Organization, LocalBusiness (4 unidades), FAQPage (home e automotivo), BreadcrumbList (dinamico por rota), e export de STORES
+- `src/pages/Lojas.tsx` — Pagina completa conforme o codigo fornecido pelo usuario, com:
+  - Hero section com navegacao rapida por zona
+  - Grid de 4 cards (Pacaembu, Santana, Paulista, Moema) com mapa embed, horarios, servicos, botoes WhatsApp/telefone/como chegar
+  - Secao "Arquitetonico Nacional" com CTA WhatsApp
+  - Secao "Seja Parceiro Oficial" com link para formulario
+  - Tracking Analytics integrado em todos os CTAs
+  - Componente `StoreCard` interno com Badge, Card, Button do shadcn/ui
 
 ### Editado:
-- `src/App.tsx` — Importar e adicionar `<SchemaOrg />` dentro do `<BrowserRouter>`, antes do `<AnalyticsProvider />`
+- `src/App.tsx` — Importar `Lojas` e adicionar `<Route path="/lojas" element={<Lojas />} />` antes do catch-all
 
 ---
 
 ## Detalhes tecnicos
 
-### Schemas injetados:
-- **Organization** — em todas as paginas (nome, logo, fundacao, redes sociais, contato)
-- **LocalBusiness (AutoBodyShop)** — 4 lojas: Pacaembu, Santana, Av. Paulista, Moema, com endereco, geo, horarios, telefone
-- **BreadcrumbList** — dinamico por rota (`/`, `/automotivo`, `/residencial`, `/lojas`, etc.)
-- **FAQPage** — 7 perguntas na home, 3 perguntas no `/automotivo`; removido em outras paginas
-
 ### App.tsx — mudanca:
-```
-import SchemaOrg from './components/SchemaOrg';
+```typescript
+import Lojas from "./pages/Lojas";
 ...
-<BrowserRouter>
-  <SchemaOrg />          // adicionar aqui
-  <AnalyticsProvider />
-  <Header />
-  ...
+<Route path="/residencial" element={<Residencial />} />
+<Route path="/lojas" element={<Lojas />} />
+{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 ```
 
-### Injecao via DOM:
-- Cada schema e injetado como `<script type="application/ld+json">` no `<head>`
-- IDs unicos por schema para evitar duplicatas
-- Atualizado automaticamente a cada mudanca de rota via `useLocation`
+### Correcao no codigo fornecido:
+O JSX do `StoreCard` tem um trecho incompleto na area do mapa embed (falta a `<div>` de abertura e o `<iframe>`). Sera reconstruido como:
+```tsx
+<div className="relative aspect-video overflow-hidden rounded-t-lg">
+  <iframe
+    src={store.embed}
+    className="w-full h-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title={`Mapa ${store.name}`}
+  />
+  <div className="absolute top-3 left-3">
+    <Badge ...>{store.zone}</Badge>
+  </div>
+</div>
+```
+
+### Dependencias utilizadas (ja instaladas):
+- framer-motion, react-i18next, lucide-react, shadcn/ui (Card, Badge, Button)
+- Analytics (ja criado)
 
