@@ -25,6 +25,7 @@ import AntiPirataria from "./pages/AntiPirataria";
 import Frota from "./pages/Frota";
 import PPF from "./pages/PPF";
 import Empresarial from "./pages/Empresarial";
+import PhantomArquitetonico from "./pages/PhantomArquitetonico";
 import Vendas from "./pages/Vendas";
 import SAC from "./pages/SAC";
 import FAQ from "./pages/FAQ";
@@ -64,6 +65,7 @@ const App = () => (
           {/* Divisão Arquitetônica */}
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/empresarial" element={<Empresarial />} />
+          <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
 
           {/* Atendimento */}
           <Route path="/vendas" element={<Vendas />} />

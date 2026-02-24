@@ -46,6 +46,7 @@ const Header = () => {
       items: [
         { label: t('nav.forMyHome'), href: '/residencial' },
         { label: t('nav.forMyCompany'), href: '/empresarial' },
+        { label: 'Proteção de Superfícies', href: '/phantom-arquitetonico' },
       ],
     },
     {

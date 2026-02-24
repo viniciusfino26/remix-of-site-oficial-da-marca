@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Star, Users, MessageCircle, ExternalLink } from 'lucide-react';
+import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Star, Users, MessageCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -105,6 +105,7 @@ const products: Product[] = [
     ],
     descKey: 'automotivePage.antivandal.desc',
     warrantyKey: 'automotivePage.antivandal.warranty',
+    link: '/antivandalismo13k',
   },
   {
     nameKey: 'automotivePage.phantom.name',
@@ -311,7 +312,7 @@ const Automotivo = () => {
                       {product.link ? (
                         <Link to={product.link}>
                           <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
-                            <ExternalLink className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4" />
                             {t('automotivePage.viewMore')}
                           </Button>
                         </Link>
