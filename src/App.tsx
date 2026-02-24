@@ -20,7 +20,7 @@ import Residencial from "./pages/Residencial";
 import NotFound from "./pages/NotFound";
 
 // Páginas novas — descomente conforme for criando no Lovable
-// import Lojas from "./pages/Lojas";
+import Lojas from "./pages/Lojas";
 // import SkinSafe8K from "./pages/SkinSafe8K";
 // import SkudoUltra from "./pages/SkudoUltra";
 // import Parceiro from "./pages/Parceiro";
@@ -58,7 +58,7 @@ const App = () => (
           <Route path="/skudoguard" element={<SkudoGuard />} />
 
           {/* Rotas novas — descomente conforme criar as páginas */}
-          {/* <Route path="/lojas"        element={<Lojas />} /> */}
+          <Route path="/lojas" element={<Lojas />} />
           {/* <Route path="/skinsafe8k"   element={<SkinSafe8K />} /> */}
           {/* <Route path="/skudo-ultra"  element={<SkudoUltra />} /> */}
           {/* <Route path="/parceiro"     element={<Parceiro />} /> */}
