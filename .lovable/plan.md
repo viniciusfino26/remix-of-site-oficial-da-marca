@@ -1,108 +1,43 @@
 
 
-# Melhorias na Pagina Phantom Arquitetonico — Inspirado no Wone Home
+# Adicionar Efeitos Parallax na Pagina Phantom Arquitetonico
 
-## Elementos Capturados da Referencia (wonehome.com.br)
+## Objetivo
 
-A Wone Home apresenta um design imersivo e sofisticado com elementos que elevam a experiencia do visitante. Vamos incorporar os seguintes padroes:
+Adicionar secoes de parallax com imagem de fundo fixo (CSS `background-attachment: fixed`) entre as secoes principais da pagina, criando uma experiencia imersiva e sofisticada similar a pagina Residencial.
 
----
+## Abordagem
 
-## 1. Hero Full-Screen Mais Imersivo
+Reutilizar o padrao `ParallaxSection` ja existente no projeto (usado em `Residencial.tsx`), com a classe CSS `bg-parallax` que ja trata mobile (troca para scroll em telas menores).
 
-**Atual:** Hero com 70vh, texto alinhado a esquerda.
-**Melhoria:** Hero com min-h-screen, indicador de scroll animado ("Continue navegando" com seta para baixo), e um CTA primario ja no hero para engajamento imediato.
+## Secoes Parallax Planejadas
 
----
+Inserir 4 faixas parallax com frases de impacto entre as secoes existentes:
 
-## 2. Secao "Solucoes por Segmento" (Novo)
+1. **Apos "Solucoes por Segmento"** — Imagem: `phantomAtmosphere` — Frase: "Cada acabamento conta uma historia. A nossa missao e preserva-la."
+2. **Apos "Anatomia do Dano"** — Imagem: `phantomDailyUse` — Frase: "Proteger nao e esconder. E manter vivo o que foi projetado para impressionar."
+3. **Apos "Phantom Matte"** — Imagem: `phantomMaterials` — Frase: "Marmore. Madeira. Aco Inox. Vidro. Cada superficie merece protecao a sua altura."
+4. **Apos "Depoimentos"** — Imagem: `phantomSolution` — Frase: "Elegancia que permanece. Protecao que nao aparece."
 
-Inspirado no carrossel de solucoes da Wone Home (Escritorios, Hoteis, Restaurantes, Residencias).
+## Implementacao
 
-Adicionar uma secao apos o hero com 4 cards de segmento:
-- **Residencias** — "Protecao que valoriza a sua casa e mantem a beleza sempre impecavel."
-- **Restaurantes** — "Protecao para cada ambiente, mantendo o acolhimento que tornam seu restaurante unico."
-- **Hoteis** — "Preservando a elegancia do seu hotel e garantindo uma experiencia para cada hospede."
-- **Escritorios** — "Solucoes que protegem seu espaco de trabalho, refletindo cuidado e profissionalismo."
+Criar um componente `ParallaxSection` local (igual ao padrao Residencial) que recebe a URL da imagem como `background-image` com a classe `bg-parallax`. As frases aparecem com animacao `fadeInUp` do Framer Motion.
 
-Cards com icones e hover elegante, usando o design system existente.
-
----
-
-## 3. Secao de Depoimentos (Novo)
-
-Inspirado nos depoimentos da Wone Home. Adicionar uma secao com 3 depoimentos fictícios (que podem ser substituidos depois por reais):
-- Proprietaria residencial
-- Arquiteto
-- Restaurante
-
-Formato: citacao grande em italico com nome e ocupacao abaixo, em um carrossel ou grid de 3 colunas.
-
----
-
-## 4. Secao de FAQ com Accordion (Novo)
-
-Inspirado no FAQ da Wone Home. Adicionar perguntas frequentes usando o componente Accordion existente:
-- "Vai mudar o visual do meu ambiente?"
-- "Se eu quiser tirar depois, posso?"
-- "Funciona em ambientes com muita circulacao?"
-- "Essa pelicula realmente protege ou e so estetica?"
-- "Quanto tempo leva pra instalar?"
-- "E resistente com crianca, pet ou muito movimento?"
-
-Textos adaptados para o contexto INSULFILM Phantom.
-
----
-
-## 5. Imagens Mais Imersivas
-
-**Atual:** Imagens com h-48 ou h-64 dentro de containers limitados.
-**Melhoria:** Aumentar as imagens de destaque para full-width com h-[500px] onde o layout permite, adicionando gradientes overlay mais sofisticados. Imagens dos cards Gloss/Matte maiores (h-56 em vez de h-48).
-
----
-
-## 6. Secao "Encontre uma Loja" CTA (Novo)
-
-Adicionar antes do CTA final uma secao com link para `/lojas`, inspirado no "Encontre uma loja WONE Home":
-- Texto: "Encontre uma loja INSULFILM"
-- Subtexto: "Encontre nossas lojas oficiais em todo o Brasil e tenha acesso ao que ha de melhor em protecao e sofisticacao."
-- Botao linkando para `/lojas`
-
----
-
-## 7. Indicador de Scroll no Hero
-
-Adicionar um elemento "Continue navegando" animado com seta chevron-down na base do hero, igual ao Wone Home.
-
----
+Alem disso, adicionar parallax de textura sutil (Framer Motion `useTransform`) nas secoes de fundo escuro (carbon-gradient) para dar profundidade com o scroll — similar ao padrao da Index e Automotivo.
 
 ## Detalhes Tecnicos
 
 ### Arquivo editado:
-- **`src/pages/PhantomArquitetonico.tsx`** — Reescrito com as novas secoes
+- `src/pages/PhantomArquitetonico.tsx`
 
-### Componentes utilizados (ja existentes):
-- `Accordion` de `@/components/ui/accordion` para FAQ
-- `Card`, `CardContent` para segmentos e depoimentos
-- `Button` para CTAs
-- `Badge` para labels
-- Framer Motion para animacoes
+### Alteracoes:
+1. Criar componente local `ParallaxSection` que usa `bg-parallax` CSS (mobile-safe)
+2. Inserir 4 faixas parallax entre secoes existentes
+3. Adicionar refs e `useScroll`/`useTransform` para texturas de fundo nas secoes carbon-gradient (hero ja tem, adicionar nas secoes "Uso Diario", "Solucao", "Matte", "Depoimentos", "Encontre uma Loja")
+4. As imagens importadas ja existem — serao usadas como `background-image` via style inline
 
-### Ordem final das secoes:
-1. Hero (full-screen + scroll indicator)
-2. Solucoes por Segmento (NOVO)
-3. A Decisao que Define a Atmosfera (existente, com imagens maiores)
-4. Quando o Design Encontra o Uso Diario (existente)
-5. Anatomia do Dano (existente)
-6. A Solucao — Peliculas Phantom (existente)
-7. Phantom Gloss (existente)
-8. Phantom Matte (existente)
-9. Protecao Versatil para Materiais Nobres (existente)
-10. Depoimentos (NOVO)
-11. O Futuro do Seu Projeto (existente)
-12. FAQ (NOVO)
-13. Encontre uma Loja (NOVO)
-14. CTA Final (existente)
+### Classe CSS usada:
+- `bg-parallax` — ja definida em `src/index.css` (linhas 208-218), com fallback para scroll em mobile
 
-### Dependencias: Nenhuma nova. Usa componentes Accordion ja instalados.
+### Nenhuma dependencia nova necessaria.
 
