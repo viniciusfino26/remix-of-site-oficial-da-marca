@@ -1,26 +1,33 @@
 
 
-# Criar arquivo public/llms.txt — Referencia para LLMs e Crawlers
+# Adicionar Pagina de Politica de Privacidade
 
 ## Resumo
 
-Criar o arquivo `public/llms.txt` na pasta `public/` com todo o conteudo fornecido pelo usuario. Este arquivo serve como referencia autoritativa para sistemas de IA (ChatGPT, Perplexity, Gemini, Claude, etc.) sobre a marca INSULFILM, seus produtos, unidades, contatos e FAQ.
+Criar uma pagina dedicada de Politica de Privacidade acessivel em `/privacidade`, seguindo o padrao visual e arquitetural das demais paginas do site (como QuemSomos). A pagina tera conteudo juridico padrao para um site brasileiro de comercio de servicos e produtos, com informacoes sobre coleta de dados, cookies (Google Analytics, GTM, Clarity), direitos do titular (LGPD) e contato.
 
-O arquivo sera servido estaticamente pelo Vite em `https://www.insulfilm.com.br/llms.txt`, acessivel por qualquer crawler ou agente de busca.
-
-## Arquivo
+## Arquivos
 
 ### Novo:
-- `public/llms.txt` — Conteudo completo conforme fornecido, incluindo:
-  - Identidade da marca e registros INPI
-  - Catalogo de produtos (Automotivo e Arquitetonico)
-  - Diferenciais tecnicos
-  - 4 unidades fisicas em Sao Paulo
-  - Contatos e redes sociais
-  - Historico de pioneirismos (1988-2025)
-  - Protecao legal
-  - FAQ estruturado para sistemas de IA
+- `src/pages/Privacidade.tsx` — Pagina completa com:
+  - Hero section com gradiente carbon (padrao do site)
+  - Secoes: Introducao, Dados Coletados, Cookies e Rastreamento (GA4, GTM, Clarity), Finalidade do Tratamento, Compartilhamento, Direitos do Titular (LGPD), Retencao, Seguranca, Contato, Atualizacoes
+  - Animacoes com framer-motion (fadeInUp) seguindo o padrao existente
+  - Uso de `useTranslation` para textos
 
-### Editado:
-- `public/robots.txt` — Adicionar referencia ao `llms.txt` como comentario informativo, para que crawlers saibam da existencia do arquivo
+### Editados:
+- `src/App.tsx` — Adicionar rota `/privacidade` com import da nova pagina
+- `src/i18n/locales/pt.json` — Adicionar chaves `privacy.*` com todo o conteudo juridico em portugues
+- `src/i18n/locales/en.json` — Adicionar chaves `privacy.*` com versao em ingles
+- `src/i18n/locales/es.json` — Adicionar chaves `privacy.*` com versao em espanhol
+
+## Detalhes Tecnicos
+
+- Componente funcional React com `useTranslation()` para i18n
+- Animacoes `framer-motion` com `motion.div`, `initial="hidden"`, `whileInView="visible"` (padrao QuemSomos)
+- Classes CSS do projeto: `bg-carbon-gradient`, `text-primary-foreground`, `separator-accent`, `container mx-auto`
+- Scroll to top ao montar a pagina com `useEffect`
+- Conteudo LGPD: mencao explicita a Lei 13.709/2018, direitos de acesso, correcao, exclusao, portabilidade e revogacao de consentimento
+- Mencao aos servicos de terceiros: Google Analytics 4, Google Tag Manager, Microsoft Clarity
+- Link do footer `/privacidade` ja existe e apontara para a nova rota
 
