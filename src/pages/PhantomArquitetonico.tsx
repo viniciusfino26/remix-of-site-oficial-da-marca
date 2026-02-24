@@ -21,6 +21,8 @@ import phantomMatteResult from '@/assets/phantom-matte-result.png';
 import phantomMaterials from '@/assets/phantom-materials.png';
 import phantomFuture from '@/assets/phantom-future.png';
 
+// ═══════════════════════ ANIMATION VARIANTS ═══════════════════════
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
@@ -44,6 +46,31 @@ const scaleIn = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
+
+// ═══════════════════════ PARALLAX SECTION COMPONENT ═══════════════════════
+
+const ParallaxSection = ({ image, quote }: { image: string; quote: string }) => (
+  <section
+    className="relative h-[50vh] md:h-[60vh] bg-parallax flex items-center justify-center overflow-hidden"
+    style={{ backgroundImage: `url(${image})` }}
+  >
+    <div className="absolute inset-0 bg-black/60" />
+    <motion.div
+      className="relative z-10 text-center px-6 max-w-3xl mx-auto"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      <p className="text-2xl md:text-4xl font-extrabold text-white leading-snug italic">
+        "{quote}"
+      </p>
+      <div className="separator-accent mx-auto mt-6" />
+    </motion.div>
+  </section>
+);
+
+// ═══════════════════════ DATA ═══════════════════════
 
 const glossBenefits = [
   { icon: Sparkles, title: 'Preserva o Brilho', desc: 'Mantém a profundidade e reflexos impecáveis como no dia da entrega.' },
@@ -90,6 +117,13 @@ const faqs = [
 
 const PhantomArquitetonico = () => {
   const heroRef = useRef<HTMLElement>(null);
+  const dailyUseRef = useRef<HTMLElement>(null);
+  const solutionRef = useRef<HTMLElement>(null);
+  const matteRef = useRef<HTMLElement>(null);
+  const testimonialsRef = useRef<HTMLElement>(null);
+  const storeRef = useRef<HTMLElement>(null);
+
+  // Hero parallax
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -97,6 +131,37 @@ const PhantomArquitetonico = () => {
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroImageScale = useTransform(heroProgress, [0, 1], [1, 1.15]);
+
+  // Depth parallax for carbon-gradient sections
+  const { scrollYProgress: dailyUseProgress } = useScroll({
+    target: dailyUseRef,
+    offset: ['start end', 'end start'],
+  });
+  const dailyUseTextureY = useTransform(dailyUseProgress, [0, 1], [30, -30]);
+
+  const { scrollYProgress: solutionProgress } = useScroll({
+    target: solutionRef,
+    offset: ['start end', 'end start'],
+  });
+  const solutionTextureY = useTransform(solutionProgress, [0, 1], [30, -30]);
+
+  const { scrollYProgress: matteProgress } = useScroll({
+    target: matteRef,
+    offset: ['start end', 'end start'],
+  });
+  const matteTextureY = useTransform(matteProgress, [0, 1], [30, -30]);
+
+  const { scrollYProgress: testimonialsProgress } = useScroll({
+    target: testimonialsRef,
+    offset: ['start end', 'end start'],
+  });
+  const testimonialsTextureY = useTransform(testimonialsProgress, [0, 1], [30, -30]);
+
+  const { scrollYProgress: storeProgress } = useScroll({
+    target: storeRef,
+    offset: ['start end', 'end start'],
+  });
+  const storeTextureY = useTransform(storeProgress, [0, 1], [30, -30]);
 
   return (
     <main>
@@ -162,7 +227,7 @@ const PhantomArquitetonico = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* ═══════════════════════ SOLUÇÕES POR SEGMENTO (NOVO) ═══════════════════════ */}
+      {/* ═══════════════════════ SOLUÇÕES POR SEGMENTO ═══════════════════════ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -197,10 +262,15 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
+      {/* ═══════════════════════ PARALLAX 1 — Após Segmentos ═══════════════════════ */}
+      <ParallaxSection
+        image={phantomAtmosphere}
+        quote="Cada acabamento conta uma história. A nossa missão é preservá-la."
+      />
+
       {/* ═══════════════════════ A DECISÃO QUE DEFINE A ATMOSFERA ═══════════════════════ */}
       <section className="py-24 bg-muted/30 overflow-hidden">
         <div className="container mx-auto px-4">
-          {/* Full-width atmosphere image */}
           <motion.div
             className="max-w-6xl mx-auto mb-16 overflow-hidden rounded-2xl"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -263,8 +333,9 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ QUANDO O DESIGN ENCONTRA O USO DIÁRIO ═══════════════════════ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section ref={dailyUseRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
+        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: dailyUseTextureY }} />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -400,9 +471,16 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
+      {/* ═══════════════════════ PARALLAX 2 — Após Anatomia do Dano ═══════════════════════ */}
+      <ParallaxSection
+        image={phantomDailyUse}
+        quote="Proteger não é esconder. É manter vivo o que foi projetado para impressionar."
+      />
+
       {/* ═══════════════════════ A SOLUÇÃO — PELÍCULAS PHANTOM ═══════════════════════ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section ref={solutionRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
+        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: solutionTextureY }} />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-6">
@@ -482,8 +560,9 @@ const PhantomArquitetonico = () => {
       </section>
 
       {/* ═══════════════════════ PHANTOM MATTE ═══════════════════════ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section ref={matteRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
+        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: matteTextureY }} />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div variants={fadeInLeft} className="relative order-last lg:order-first">
@@ -523,6 +602,12 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
+      {/* ═══════════════════════ PARALLAX 3 — Após Phantom Matte ═══════════════════════ */}
+      <ParallaxSection
+        image={phantomMaterials}
+        quote="Mármore. Madeira. Aço Inox. Vidro. Cada superfície merece proteção à sua altura."
+      />
+
       {/* ═══════════════════════ MATERIAIS NOBRES ═══════════════════════ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
@@ -557,9 +642,10 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ DEPOIMENTOS (NOVO) ═══════════════════════ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
+      {/* ═══════════════════════ DEPOIMENTOS ═══════════════════════ */}
+      <section ref={testimonialsRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
+        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: testimonialsTextureY }} />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <Badge className="bg-accent/10 text-accent border-accent/20 mb-4 text-xs tracking-widest uppercase">
@@ -595,6 +681,12 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
+      {/* ═══════════════════════ PARALLAX 4 — Após Depoimentos ═══════════════════════ */}
+      <ParallaxSection
+        image={phantomSolution}
+        quote="Elegância que permanece. Proteção que não aparece."
+      />
+
       {/* ═══════════════════════ O FUTURO DO SEU PROJETO ═══════════════════════ */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -626,7 +718,7 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ FAQ (NOVO) ═══════════════════════ */}
+      {/* ═══════════════════════ FAQ ═══════════════════════ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -660,9 +752,10 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ ENCONTRE UMA LOJA (NOVO) ═══════════════════════ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
+      {/* ═══════════════════════ ENCONTRE UMA LOJA ═══════════════════════ */}
+      <section ref={storeRef} className="relative py-24 bg-carbon-gradient overflow-hidden">
+        <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: storeTextureY }} />
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div className="max-w-3xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.div variants={fadeInUp}>
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
