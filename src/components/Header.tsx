@@ -133,11 +133,11 @@ const Header = () => {
               </div>
 
               {/* CTA Desktop */}
-              <Link to="/parceiro" className="hidden lg:block">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" className="hidden lg:block">
                 <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xs shadow-sm hover:shadow-md transition-all duration-200">
                   {t('nav.becomePartner')}
                 </Button>
-              </Link>
+              </a>
 
               {/* Mobile Menu */}
               <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -169,11 +169,11 @@ const Header = () => {
                       </div>
                     ))}
                     <div className="pt-4 px-3">
-                      <Link to="/parceiro" onClick={() => setMobileOpen(false)}>
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                         <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                           {t('nav.becomePartner')}
                         </Button>
-                      </Link>
+                      </a>
                     </div>
                   </nav>
                 </SheetContent>
