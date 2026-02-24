@@ -14,6 +14,7 @@ import Antivandalismo13KProposta from "./pages/Antivandalismo13KProposta";
 import SkudoGuard from "./pages/SkudoGuard";
 import Residencial from "./pages/Residencial";
 import Lojas from "./pages/Lojas";
+import Privacidade from "./pages/Privacidade";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
 import SchemaOrg from "./components/SchemaOrg";
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/skudoguard" element={<SkudoGuard />} />
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/lojas" element={<Lojas />} />
+          <Route path="/privacidade" element={<Privacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
