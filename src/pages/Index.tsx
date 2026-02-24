@@ -166,6 +166,24 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
+      {/* Hero Video */}
+      <section className="bg-background py-12 overflow-hidden">
+        <motion.div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-border">
+            <div className="aspect-video relative">
+              <iframe
+                src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
+                title="INSULFILM™"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="w-full h-full pointer-events-none"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 z-10 cursor-default" />
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Product Highlights */}
       <section ref={productsRef} id="product-highlights" className="py-24 bg-background overflow-hidden">
         <motion.div className="container mx-auto px-4" style={{ y: productsBgY }}>
