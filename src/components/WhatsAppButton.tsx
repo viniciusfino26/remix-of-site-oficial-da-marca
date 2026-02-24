@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { Analytics } from '@/components/Analytics';
 
 const WHATSAPP_NUMBER = '5511999999999';
 const WHATSAPP_MESSAGE = encodeURIComponent('Olá! Gostaria de saber mais sobre as películas INSULFILM™.');
@@ -12,6 +13,7 @@ const WhatsAppButton = () => {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => Analytics.whatsappClick('flutuante')}
       aria-label="Fale conosco pelo WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
       initial={{ scale: 0, opacity: 0 }}
