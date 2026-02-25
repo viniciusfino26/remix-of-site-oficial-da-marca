@@ -1,79 +1,77 @@
 
 
-# Fusao Visual: Estetica Premium Atual + Estrutura LLumar + Interacoes de Ponta
+# Parallax Sutil e Integrado em Todo o Site
 
-## Conceito
+## Situacao Atual
 
-Manter 100% da identidade dark premium (carbon-gradient, glass-card, accent orange, Framer Motion) e **enriquecer** com: (1) imagens grandes de impacto no estilo LLumar, (2) micro-interacoes avancadas que compensam a impossibilidade de tocar o produto, e (3) componentes reutilizaveis que padronizam todas as paginas sem reescrever tudo.
+O parallax ja existe em alguns pontos isolados:
+- **Index.tsx hero**: textura geometrica, glow e texto com parallax via `useScroll`
+- **Index.tsx "Why" section**: textura diagonal com parallax
+- **ProductBanner**: textura e glow com parallax
+- **ProductShowcase**: imagem com parallax vertical sutil (30px a -30px)
+- **ParallaxBreak**: componente dedicado com imagem parallax (usado apenas 1x no ArqHubSolar com placeholder.svg)
+- **PageHero**: imagem de fundo com scale parallax
 
-## Camada 1 — Componentes Reutilizaveis (5 novos arquivos)
+O problema: o parallax aparece de forma desconexa — forte no hero, ausente em secoes intermediarias, e o ParallaxBreak so aparece uma vez com placeholder.
 
-### `src/components/PageHero.tsx`
-Hero full-width reutilizavel com suporte a imagem de fundo. Overlay gradiente escuro (carbon) sobre a foto. Props: `title`, `subtitle`, `badge`, `backgroundImage?`, `cta?`. Quando `backgroundImage` existe, renderiza `<img>` com `object-cover` + overlay `bg-gradient-to-b from-primary/80 to-primary/95`. Quando nao existe, usa o `bg-carbon-gradient` + `bg-hero-texture` atual. Parallax com `useScroll` no texto (igual ao Index.tsx hero). Usado em todas as paginas (hubs, PDPs, institucionais).
+## Proposta: Parallax Sutil e Mesclado
 
-### `src/components/ProductShowcase.tsx`
-Secao alternada imagem+texto (estilo LLumar). Props: `title`, `subtitle`, `badge`, `description`, `imageSrc?`, `link`, `reversed`. Imagem renderizada em `aspect-[4/3] rounded-2xl overflow-hidden` com efeito hover `scale(1.05)` suave via Framer Motion. Quando sem imagem, mantem o `glass-card` com icone atual como fallback. Animacoes direcionais (fadeInLeft/fadeInRight) conforme `reversed`.
+Adicionar micro-parallax em camadas por todo o site, de forma que o efeito seja sentido naturalmente sem dominar a experiencia.
 
-### `src/components/ImageReveal.tsx`
-Componente de interacao avancada — a imagem "revela" conforme o scroll (clip-path animado ou mask gradient que se abre). Usa `useScroll` + `useTransform` do Framer Motion para animar um `clipPath` de `inset(0 0 100% 0)` para `inset(0)`. Cria a sensacao de "descoberta" do produto. Usado nos ProductShowcase para imagens de destaque.
+### 1. Secoes com fundo escuro (carbon-gradient) ganham parallax na textura
 
-### `src/components/ParallaxBreak.tsx`
-Secao de quebra visual full-width com imagem de fundo em parallax (background-attachment: fixed no desktop, scroll no mobile). Overlay escuro + texto curto centralizado ou stat badges. Usado entre secoes nos hubs para criar ritmo visual. Props: `imageSrc`, `children`.
+Todas as secoes que usam `bg-carbon-gradient` ou `bg-muted/30` recebem uma camada de textura geometrica (`bg-hero-texture` ou `bg-diagonal-texture`) com parallax sutil de **15-20px** (nao os 30px+ do hero). Isso inclui:
 
-### `src/components/FloatingCTA.tsx`
-Botao flutuante fixo no canto inferior direito (estilo "Find a Dealer" do LLumar). Aparece apos scroll de 400px com animacao de entrada. Icone de pin + texto "Encontre uma Loja". Link para `/lojas`. Convive com o WhatsAppButton existente (posicionado acima dele).
+- **ArqHubSolar** — secao "Prova Social" e "Bottom CTA"
+- **ArqHubSeguranca** — secao "Beneficios"
+- **ArqHubDecorativo** — secao "Casos de Uso"
+- **Index.tsx** — secao "Simulators" (atualmente sem parallax)
 
-## Camada 2 — Hubs Arquitetonicos (3 arquivos — foco imediato com imagens)
+### 2. ProductShowcase — parallax mais sutil no fallback icon
 
-### `ArqHubSolar.tsx`
-- Hero: `PageHero` com `backgroundImage={Paralax.png}` (imagem de fachada)
-- Cada categoria recebe imagem grande ao lado da descricao usando `ProductShowcase`:
-  - Alta Transparencia → `transparentes.png`
-  - Estetica Neutra → `Películas_neutras.png`
-  - Privacidade e Espelhados → `Películas_Espelhadas_1.png`
-  - Fume e Invertida → `Películas_Não_Refletivas.png`
-- Entre categorias: `ParallaxBreak` com `Películas_Espelhadas.png`
-- Product cards dentro de cada categoria mantem o grid atual mas com hover que mostra preview da pelicula (sutil scale + glow)
+Quando nao ha imagem (fallback icon), o glass-card ganha um leve efeito de profundidade: o icone se move em parallax oposto ao scroll (5-8px), criando sensacao de flutuar dentro do card.
 
-### `ArqHubSeguranca.tsx`
-- Hero: `PageHero` com `backgroundImage={Películas_Antivandalismo_e_Segurança.png}`
-- Produtos ISSF4000 e ISSF7000: substituir o `glass-card` placeholder por crop da imagem de seguranca com `ImageReveal`
-- Beneficios grid permanece igual (ja esta bom)
+### 3. ParallaxBreak entre secoes nos hubs
 
-### `ArqHubDecorativo.tsx`
-- Hero: mantem `bg-carbon-gradient` (sem imagem especifica)
-- Produto Whiteout: `Whiteout.png` no `ProductShowcase`
-- Produto Blackout: `Blackout.png` no `ProductShowcase`
-- Produto Jateado: mantem `glass-card` placeholder ate upload de imagem
+Inserir `ParallaxBreak` como divisor visual entre secoes nos 3 hubs e na home:
 
-## Camada 3 — Home Page (`Index.tsx`)
+- **ArqHubSolar**: ja tem um (atualizar para usar `bg-carbon-gradient` com textura ao inves de placeholder.svg, criando um parallax abstrato ate ter imagem real)
+- **ArqHubSeguranca**: adicionar ParallaxBreak entre "Produtos" e "Beneficios"
+- **ArqHubDecorativo**: adicionar ParallaxBreak entre "Produtos" e "Casos de Uso"
+- **Index.tsx**: adicionar ParallaxBreak entre os ProductBanners e a secao "Why INSULFILM"
 
-- `ProductBanner` atualizado para aceitar prop `imageSrc?`. Quando presente, renderiza a imagem como background da secao inteira com overlay, em vez do fundo abstrato. As 4 instancias na home recebem imagens quando disponiveis.
-- Hero permanece com gradiente (sem imagem) — a identidade do hero e a textura geometrica.
+### 4. Secao de stats/numeros com parallax de contadores
 
-## Camada 4 — CSS Global (`index.css`)
+Nos ParallaxBreaks, adicionar dados numericos (stats) que aparecem com stagger animation conforme scroll — ex: "+40 paises", "10M m2 instalados", "15 anos de garantia". Cada numero com parallax individual leve.
 
-Adicionar 3 utilitarios:
-- `.image-reveal` — transicao de clip-path para o componente ImageReveal
-- `.parallax-section` — wrapper para ParallaxBreak com min-height e overlay
-- `.floating-fab` — posicionamento e animacao do FloatingCTA
+### 5. Cards glass-card — micro-parallax no hover
 
-## O que NAO muda
+Os cards `glass-card` nos hubs ganham um efeito sutil: ao fazer hover, o background gradient do card se desloca levemente (translate do gradiente), criando profundidade sem movimento brusco.
 
-- Rotas, Header, Footer, tema de cores, fonte Nunito Sans
-- Estrutura dos PDPs (serao padronizados numa fase posterior quando houver imagens automotivas)
-- Animacoes Framer Motion existentes (fadeInUp, stagger, parallax) — sao **mantidas e reutilizadas**
-- WhatsAppButton (permanece, FloatingCTA fica acima)
+### 6. Separadores visuais com parallax
 
-## Ordem de implementacao
+O `separator-accent` (barra laranja de 60px) ganha parallax horizontal sutil — desliza 10px conforme scroll, como se estivesse "flutuando" sobre o conteudo.
 
-1. Criar os 5 componentes reutilizaveis
-2. Mover as 9 imagens uploadadas para `src/assets/` com nomes limpos
-3. Aplicar nos 3 hubs arquitetonicos
-4. Atualizar `ProductBanner` e `Index.tsx`
-5. Adicionar `FloatingCTA` no layout global
+## Arquivos Alterados
 
-## Resultado esperado
+| Arquivo | Alteracao |
+|---------|-----------|
+| `src/components/ProductShowcase.tsx` | Parallax no fallback icon (5-8px) |
+| `src/components/ParallaxBreak.tsx` | Suporte a modo "abstrato" (sem imagem, usa textura) + slot para stats |
+| `src/pages/ArqHubSolar.tsx` | ParallaxBreak com stats ao inves de placeholder |
+| `src/pages/ArqHubSeguranca.tsx` | Adicionar ParallaxBreak entre secoes + textura parallax nos backgrounds |
+| `src/pages/ArqHubDecorativo.tsx` | Adicionar ParallaxBreak entre secoes + textura parallax nos backgrounds |
+| `src/pages/Index.tsx` | ParallaxBreak entre banners e "Why", parallax na secao Simulators |
+| `src/index.css` | Classe `.parallax-texture` para micro-parallax em texturas de fundo |
 
-Paginas com imagens fotograficas grandes e imersivas no estilo LLumar, mas envolvidas pela estetica dark premium com glassmorphism, parallax e micro-interacoes de reveal que criam uma experiencia sensorial digital — compensando o fato de o cliente nao poder tocar o produto.
+## Detalhes Tecnicos
+
+Todas as animacoes usam `framer-motion` com `useScroll` + `useTransform`. Valores sutis:
+- Texturas de fundo: **15-20px** de deslocamento vertical
+- Icones fallback: **5-8px** de deslocamento oposto
+- Separadores accent: **10px** horizontal
+- ParallaxBreak abstrato: textura diagonal + glow com **20-30px**
+- Stats nos breaks: stagger 0.15s + fadeInUp
+
+Nenhuma rota, componente ou estrutura de pagina muda. Apenas camadas visuais adicionais.
 
