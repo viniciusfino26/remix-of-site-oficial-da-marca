@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import {
@@ -57,7 +58,33 @@ const SkinSafe8K = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "INSULFILM™ SkinSafe8K",
+    "brand": { "@type": "Brand", "name": "INSULFILM™" },
+    "description": "Película de proteção (7 mil / 177,8 micras) contra estilhaços em quebras acidentais. 5 anos de garantia.",
+    "image": "LINK_DA_IMAGEM_AQUI",
+    "url": "https://www.insulfilm.com.br/skinsafe8k",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Espessura", "value": "7 mil / 177,8 micras" },
+      { "@type": "PropertyValue", "name": "Função", "value": "Proteção contra quebras acidentais" },
+      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
+    ]
+  };
+
   return (
+    <>
+      <Helmet>
+        <title>INSULFILM™ SkinSafe8K | Película de Segurança Automotiva</title>
+        <meta name="description" content="Película de proteção (7 mil / 177,8 micras) contra estilhaços em quebras acidentais. 5 anos de garantia." />
+        <meta property="og:title" content="INSULFILM™ SkinSafe8K | Película de Segurança Automotiva" />
+        <meta property="og:description" content="Película de proteção (7 mil / 177,8 micras) contra estilhaços em quebras acidentais. 5 anos de garantia." />
+        <meta property="og:type" content="product" />
+        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+        <meta property="og:url" content="https://www.insulfilm.com.br/skinsafe8k" />
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+      </Helmet>
     <main>
       {/* ═══ 1. HERO ═══ */}
       <section ref={heroRef} className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
@@ -256,6 +283,7 @@ const SkinSafe8K = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 
