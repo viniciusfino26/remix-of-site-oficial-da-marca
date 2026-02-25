@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 import phantomSolutionThickness from '@/assets/phantom-solution-thickness.png';
 
@@ -195,6 +196,12 @@ const PhantomArquitetonico = () => {
           </motion.div>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="35vh" stats={[
+        { value: '180μm', label: 'Espessura' },
+        { value: 'Gloss', label: '& Matte' },
+        { value: '4+', label: 'Materiais' },
+      ]} />
 
       {/* ═══════════════════════ A DECISÃO QUE DEFINE A ATMOSFERA ═══════════════════════ */}
       <section className="py-24 bg-muted/30 overflow-hidden">

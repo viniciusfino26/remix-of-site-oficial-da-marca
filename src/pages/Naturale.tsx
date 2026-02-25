@@ -5,6 +5,7 @@ import { Sun, Zap, Palette, Layers, CheckCircle, MessageCircle, Home } from 'luc
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -86,6 +87,12 @@ const Naturale = () => {
             </motion.div>
           </div>
         </section>
+
+        <ParallaxBreak minHeight="35vh" stats={[
+          { value: '81%', label: 'Rejeição IR' },
+          { value: 'Sputtered', label: 'Tecnologia' },
+          { value: 'Neutra', label: 'Tonalidade' },
+        ]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />

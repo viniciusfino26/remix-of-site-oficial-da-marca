@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -45,6 +46,11 @@ const Vendas = () => (
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '4', label: 'Canais' },
+      { value: 'Seg–Sáb', label: 'Atendimento' },
+    ]} />
 
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
