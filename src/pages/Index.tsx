@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Shield, Award, Globe, Cpu, Car, Building2, Eye, SunDim, Layers } from 'lucide-react';
+import logoLight from '@/assets/logo-light.png';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductBanner from '@/components/ProductBanner';
@@ -76,12 +77,14 @@ const Index = () => {
     <main>
       {/* Banner Website Oficial */}
       <motion.div
-        className="bg-primary text-primary-foreground text-center py-2 text-xs uppercase tracking-[0.3em] font-semibold"
+        className="bg-primary text-primary-foreground text-center py-6 flex flex-col items-center gap-2"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        INSULFILM™ — Website Oficial
+        <img src={logoLight} alt="INSULFILM™" className="h-12 w-auto" />
+        <p className="text-sm text-primary-foreground/70 font-light">A marca das películas</p>
+        <p className="text-xs uppercase tracking-[0.3em] font-semibold text-primary-foreground/50">Website Oficial</p>
       </motion.div>
 
       {/* Hero Section */}
@@ -151,21 +154,17 @@ const Index = () => {
       </section>
 
       {/* Hero Video */}
-      <section className="bg-background py-12 overflow-hidden">
-        <motion.div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-border">
-            <div className="aspect-video relative overflow-hidden">
-              <iframe
-                src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
-                title="INSULFILM™"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] pointer-events-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 z-10 cursor-default" />
-            </div>
-          </div>
+      <section className="relative min-h-[60vh] overflow-hidden my-2">
+        <motion.div className="absolute inset-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          <iframe
+            src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
+            title="INSULFILM™"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] pointer-events-none"
+            loading="lazy"
+          />
         </motion.div>
+        <div className="absolute inset-0 z-10 cursor-default" />
       </section>
 
       {/* Product Banners */}
