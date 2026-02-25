@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LegalNotice from "./components/LegalNotice";
 import WhatsAppButton from "./components/WhatsAppButton";
+import FloatingCTA from "./components/FloatingCTA";
 
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
@@ -193,6 +194,7 @@ const App = () => (
         <LegalNotice />
         <Footer />
         <WhatsAppButton />
+        <FloatingCTA />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

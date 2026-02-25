@@ -21,9 +21,10 @@ interface ProductBannerProps {
   buttonIcon: LucideIcon;
   link: string;
   alignment?: 'left' | 'right';
+  imageSrc?: string;
 }
 
-const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link, alignment = 'right' }: ProductBannerProps) => {
+const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link, alignment = 'right', imageSrc }: ProductBannerProps) => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,20 +32,34 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
   });
   const textureY = useSpring(useTransform(scrollYProgress, [0, 1], [30, -30]), { stiffness: 60, damping: 20 });
   const glowY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
   return (
-    <section ref={ref} className="relative min-h-[60vh] flex items-center overflow-hidden bg-carbon-gradient">
-      {/* Geometric texture with parallax */}
-      <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: textureY }} />
-
-      {/* Glow effect */}
-      <motion.div className="absolute inset-0 pointer-events-none" style={{ y: glowY }}>
-        <div
-          className={`absolute w-80 h-80 bg-accent/8 rounded-full blur-3xl animate-glow-pulse ${
-            alignment === 'right' ? 'top-1/4 right-1/4' : 'bottom-1/4 left-1/4'
-          }`}
-        />
-      </motion.div>
+    <section ref={ref} className="relative min-h-[60vh] flex items-center overflow-hidden">
+      {/* Background: image or carbon gradient */}
+      {imageSrc ? (
+        <>
+          <motion.img
+            src={imageSrc}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ scale: imgScale }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/60" />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-carbon-gradient" />
+          <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: textureY }} />
+          <motion.div className="absolute inset-0 pointer-events-none" style={{ y: glowY }}>
+            <div
+              className={`absolute w-80 h-80 bg-accent/8 rounded-full blur-3xl animate-glow-pulse ${
+                alignment === 'right' ? 'top-1/4 right-1/4' : 'bottom-1/4 left-1/4'
+              }`}
+            />
+          </motion.div>
+        </>
+      )}
 
       <div className={`container mx-auto px-4 relative z-10 flex ${alignment === 'right' ? 'justify-end' : 'justify-start'}`}>
         <motion.div
