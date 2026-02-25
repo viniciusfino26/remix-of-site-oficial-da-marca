@@ -1,10 +1,21 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown, Globe, Shield, Car, Building2, Headphones } from 'lucide-react';
+import { Menu, ChevronDown, Shield, Car, Building2, Headphones } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { Separator } from '@/components/ui/separator';
 import logoDark from '@/assets/logo-dark.png';
+
+interface NavItem { label: string; href: string }
+interface NavSection { title: string; items: NavItem[] }
+interface NavMenu {
+  key: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  sections?: NavSection[];
+  items?: NavItem[];
+}
 
 const languages = [
   { code: 'pt', label: 'PT', flag: '🇧🇷' },
@@ -17,7 +28,7 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const megaMenuItems = [
+  const megaMenuItems: NavMenu[] = [
     {
       key: 'brand',
       label: t('nav.brand'),
@@ -33,25 +44,44 @@ const Header = () => {
       key: 'automotive',
       label: t('nav.automotive'),
       icon: Car,
-      items: [
-        { label: t('nav.forMyCar'), href: '/automotivo' },
-        { label: t('nav.forMyFleet'), href: '/frota' },
-        { label: 'Controle Solar', href: '/automotivo/solar' },
-        { label: 'Segurança', href: '/automotivo/seguranca' },
-        { label: 'PPF Phantom', href: '/automotivo/ppf' },
+      sections: [
+        {
+          title: 'Nossas Linhas',
+          items: [
+            { label: 'Controle Solar', href: '/automotivo/solar' },
+            { label: 'Segurança', href: '/automotivo/seguranca' },
+            { label: 'PPF Phantom', href: '/automotivo/ppf' },
+          ],
+        },
+        {
+          title: 'Atendimento Especializado',
+          items: [
+            { label: t('nav.forMyCar'), href: '/automotivo' },
+            { label: t('nav.forMyFleet'), href: '/frota' },
+          ],
+        },
       ],
     },
     {
       key: 'architecture',
       label: t('nav.architecture'),
       icon: Building2,
-      items: [
-        { label: t('nav.forMyHome'), href: '/residencial' },
-        { label: t('nav.forMyCompany'), href: '/empresarial' },
-        { label: 'Controle Solar', href: '/arquitetonico/solar' },
-        { label: 'Segurança', href: '/arquitetonico/seguranca' },
-        { label: 'Decorativo', href: '/arquitetonico/decorativo' },
-        { label: 'Proteção de Superfícies', href: '/phantom-arquitetonico' },
+      sections: [
+        {
+          title: 'Nossas Linhas',
+          items: [
+            { label: 'Controle Solar', href: '/arquitetonico/solar' },
+            { label: 'Segurança', href: '/arquitetonico/seguranca' },
+            { label: 'Decorativo', href: '/arquitetonico/decorativo' },
+          ],
+        },
+        {
+          title: 'Soluções por Ambiente',
+          items: [
+            { label: t('nav.forMyHome'), href: '/residencial' },
+            { label: t('nav.forMyCompany'), href: '/empresarial' },
+          ],
+        },
       ],
     },
     {
@@ -67,6 +97,65 @@ const Header = () => {
       ],
     },
   ];
+
+  const renderDropdownItems = (items: NavItem[]) =>
+    items.map((item) => (
+      <Link
+        key={item.href}
+        to={item.href}
+        className="block px-4 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-lg transition-all duration-200"
+      >
+        {item.label}
+      </Link>
+    ));
+
+  const renderDropdownContent = (menu: NavMenu) => {
+    if (menu.sections) {
+      return menu.sections.map((section, idx) => (
+        <div key={section.title}>
+          {idx > 0 && <Separator className="my-2" />}
+          <p className="px-4 pt-2 pb-1 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+            {section.title}
+          </p>
+          {renderDropdownItems(section.items)}
+        </div>
+      ));
+    }
+    return renderDropdownItems(menu.items ?? []);
+  };
+
+  const renderMobileContent = (menu: NavMenu) => {
+    if (menu.sections) {
+      return menu.sections.map((section, idx) => (
+        <div key={section.title}>
+          {idx > 0 && <Separator className="my-1.5" />}
+          <p className="px-3 pt-2 pb-1 text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest">
+            {section.title}
+          </p>
+          {section.items.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      ));
+    }
+    return (menu.items ?? []).map((item) => (
+      <Link
+        key={item.href}
+        to={item.href}
+        className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
+        onClick={() => setMobileOpen(false)}
+      >
+        {item.label}
+      </Link>
+    ));
+  };
 
   return (
     <>
@@ -100,21 +189,12 @@ const Header = () => {
                   </button>
 
                   {openMenu === menu.key && (
-                    <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-premium-lg border border-border p-2 animate-fade-in-up">
-                      {menu.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block px-4 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-lg transition-all duration-200"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-premium-lg border border-border p-2 z-50 animate-fade-in-up">
+                      {renderDropdownContent(menu)}
                     </div>
                   )}
                 </div>
               ))}
-
             </nav>
 
             {/* Right side: Language + CTA + Mobile */}
@@ -162,16 +242,7 @@ const Header = () => {
                         <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">
                           {menu.label}
                         </p>
-                        {menu.items.map((item) => (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
+                        {renderMobileContent(menu)}
                       </div>
                     ))}
                     <div className="pt-4 px-3">
