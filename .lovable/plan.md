@@ -1,84 +1,138 @@
+# Reestruturacão PDPs em Silos de Comunicacao
+
+## Inventario Atual
+
+**18 PDPs existentes** — todas intactas, com Helmet e Schema Markup:
 
 
-# SEO: Meta Tags + Schema Markup (JSON-LD) — Linha Arquitetônica
+| Arquivo                 | Linhas | Status  |
+| ----------------------- | ------ | ------- |
+| `Antivandalismo13K.tsx` | 723    | Intacto |
+| `SkudoGuard.tsx`        | 784    | Intacto |
+| `SkudoUltra.tsx`        | 712    | Intacto |
+| `SkinSafe8K.tsx`        | 290    | Intacto |
+| `Matrix.tsx`            | 188    | Intacto |
+| `PolarizUltra.tsx`      | 168    | Intacto |
+| `VIP.tsx`               | 166    | Intacto |
+| `Eclipse.tsx`           | 166    | Intacto |
+| `Dark.tsx`              | 166    | Intacto |
+| `Clear70.tsx`           | 174    | Intacto |
+| `Orizzonte70.tsx`       | 133    | Intacto |
+| `Ultravioletti90.tsx`   | 130    | Intacto |
+| `Naturale.tsx`          | 130    | Intacto |
+| `Petrolio.tsx`          | 130    | Intacto |
+| `GrigioInvertito.tsx`   | 130    | Intacto |
+| `MetallicoArgento.tsx`  | 130    | Intacto |
+| `ReflessoDArgento.tsx`  | 130    | Intacto |
+| `SpecchiatoBronzo.tsx`  | 131    | Intacto |
 
-## Descobertas
 
-Todos os 9 produtos arquitetônicos listados estão dentro de `src/pages/Residencial.tsx` como seções/cards — não possuem páginas individuais. Situação idêntica aos produtos solares automotivos antes da implementação anterior.
+**5 PDPs novas** a criar do zero: ISSF4000, ISSF7000, Jateado, Whiteout, Blackout.
 
-| Produto | Arquivo Individual | Rota |
-|---|---|---|
-| Clear70 | Não existe | Não existe |
-| Orizzonte70 | Não existe | Não existe |
-| Ultravioletti90 | Não existe | Não existe |
-| Naturale | Não existe | Não existe |
-| Petrolio | Não existe | Não existe |
-| Grigio Invertito | Não existe | Não existe |
-| Metallico Argento | Não existe | Não existe |
-| Reflesso d'Argento | Não existe | Não existe |
-| Specchiato Bronzo | Não existe | Não existe |
+## Implementacao
 
-Páginas de categoria existentes (sem Helmet):
-- `src/pages/Residencial.tsx` — `/residencial`
-- `src/pages/Empresarial.tsx` — `/empresarial`
-- `src/pages/PhantomArquitetonico.tsx` — `/phantom-arquitetonico`
+### Fase 1 — Criar 23 novos arquivos de PDP
 
-## Plano de Implementação
+Cada novo arquivo sera uma copia completa e independente (sem wrappers) baseada no componente original, com as seguintes alteracoes:
 
-### PASSO 1: Criar 9 páginas de produto arquitetônico
+- Nome do componente renomeado (ex: `Matrix` → `AutomotivoMatrix`)
+- `schemaMarkup.url` atualizado para a nova rota hierarquica
+- `og:url` atualizado para a nova rota hierarquica
+- Verificacao do formato "INSULFILM™ [NOME]" em titulo, h1, schema e OG
 
-Seguindo o mesmo padrão visual das páginas automotivas (hero com `bg-carbon-gradient`, specs em `glass-card`, seção de detalhes alternada, CTA com WhatsApp), criar:
+**Automotivo Solar (5 arquivos):**
 
-- `src/pages/Clear70.tsx` — rota `/clear70`
-- `src/pages/Orizzonte70.tsx` — rota `/orizzonte70`
-- `src/pages/Ultravioletti90.tsx` — rota `/ultravioletti90`
-- `src/pages/Naturale.tsx` — rota `/naturale`
-- `src/pages/Petrolio.tsx` — rota `/petrolio`
-- `src/pages/GrigioInvertito.tsx` — rota `/grigio-invertito`
-- `src/pages/MetallicoArgento.tsx` — rota `/metallico-argento`
-- `src/pages/ReflessoDArgento.tsx` — rota `/reflesso-dargento`
-- `src/pages/SpecchiatoBronzo.tsx` — rota `/specchiato-bronzo`
 
-Cada página terá: `<Helmet>` com title, description, OG tags, JSON-LD Product schema + layout premium (hero + specs grid + detalhes + CTA).
+| Novo Arquivo            | Baseado Em         | Rota                              |
+| ----------------------- | ------------------ | --------------------------------- |
+| `AutomotivoMatrix.tsx`  | `Matrix.tsx`       | `/automotivo/solar/matrix`        |
+| `AutomotivoPolariz.tsx` | `PolarizUltra.tsx` | `/automotivo/solar/polariz-ultra` |
+| `AutomotivoVip.tsx`     | `Vip.tsx`          | `/automotivo/solar/vip`           |
+| `AutomotivoEclipse.tsx` | `Eclipse.tsx`      | `/automotivo/solar/eclipse`       |
+| `AutomotivoDark.tsx`    | `Dark.tsx`         | `/automotivo/solar/dark`          |
 
-### PASSO 2: Registrar rotas no App.tsx
 
-Adicionar as 9 novas rotas dentro do bloco "Divisão Arquitetônica" em `src/App.tsx`.
+**Automotivo Seguranca (4 arquivos):**
 
-### PASSO 3: Adicionar Helmet nas 3 páginas de categoria existentes
 
-Adicionar SEO básico de categoria (não Product, mas WebPage) nas páginas existentes:
+| Novo Arquivo                   | Baseado Em              | Rota                                      |
+| ------------------------------ | ----------------------- | ----------------------------------------- |
+| `AutomotivoSkinSafe.tsx`       | `SkinSafe8K.tsx`        | `/automotivo/seguranca/skinsafe8k`        |
+| `AutomotivoAntivandalismo.tsx` | `Antivandalismo13K.tsx` | `/automotivo/seguranca/antivandalismo13k` |
+| `AutomotivoSkudoGuard.tsx`     | `SkudoGuard.tsx`        | `/automotivo/seguranca/skudoguard`        |
+| `AutomotivoSkudoUltra.tsx`     | `SkudoUltra.tsx`        | `/automotivo/seguranca/skudoultra`        |
 
-- **Residencial.tsx**: Title "INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa"
-- **Empresarial.tsx**: Title "INSULFILM™ Empresarial | Películas para Escritórios e Fachadas"
-- **PhantomArquitetonico.tsx**: Title "INSULFILM™ Phantom Arquitetônico | PPF para Superfícies"
 
-### Arquivos editados/criados
+**Arquitetonico Solar (9 arquivos):**
 
-| Ação | Arquivo |
-|---|---|
-| Editar | `src/App.tsx` — registrar 9 novas rotas |
-| Editar | `src/pages/Residencial.tsx` — adicionar Helmet |
-| Editar | `src/pages/Empresarial.tsx` — adicionar Helmet |
-| Editar | `src/pages/PhantomArquitetonico.tsx` — adicionar Helmet |
-| Criar | `src/pages/Clear70.tsx` |
-| Criar | `src/pages/Orizzonte70.tsx` |
-| Criar | `src/pages/Ultravioletti90.tsx` |
-| Criar | `src/pages/Naturale.tsx` |
-| Criar | `src/pages/Petrolio.tsx` |
-| Criar | `src/pages/GrigioInvertito.tsx` |
-| Criar | `src/pages/MetallicoArgento.tsx` |
-| Criar | `src/pages/ReflessoDArgento.tsx` |
-| Criar | `src/pages/SpecchiatoBronzo.tsx` |
 
-### Dados SEO por página
+| Novo Arquivo        | Baseado Em             | Rota                                      |
+| ------------------- | ---------------------- | ----------------------------------------- |
+| `ArqClear70.tsx`    | `Clear70.tsx`          | `/arquitetonico/solar/clear70`            |
+| `ArqOrizzonte.tsx`  | `Orizzonte70.tsx`      | `/arquitetonico/solar/orizzonte70`        |
+| `ArqUV90.tsx`       | `Ultravioletti90.tsx`  | `/arquitetonico/solar/ultravioletti90`    |
+| `ArqNaturale.tsx`   | `Naturale.tsx`         | `/arquitetonico/solar/naturale`           |
+| `ArqPetrolio.tsx`   | `Petrolio.tsx`         | `/arquitetonico/solar/petrolio`           |
+| `ArqGrigio.tsx`     | `GrigioInvertito.tsx`  | `/arquitetonico/solar/grigio-invertito`   |
+| `ArqMetallico.tsx`  | `MetallicoArgento.tsx` | `/arquitetonico/solar/metallico-argento`  |
+| `ArqReflesso.tsx`   | `ReflessoDArgento.tsx` | `/arquitetonico/solar/reflesso-d-argento` |
+| `ArqSpecchiato.tsx` | `SpecchiatoBronzo.tsx` | `/arquitetonico/solar/specchiato-bronzo`  |
 
-Cada página de produto recebe o schema exato fornecido pelo usuário, seguindo o padrão `Product` com `brand: INSULFILM™`, `additionalProperty` com as specs técnicas, e `"LINK_DA_IMAGEM_AQUI"` como placeholder de imagem.
 
-### O que NÃO muda
+**Arquitetonico Seguranca (2 arquivos — novos, sem base):**
 
-- Nenhum layout, design ou funcionalidade existente será alterado
-- As 3 páginas de categoria (Residencial, Empresarial, Phantom) recebem apenas o bloco `<Helmet>` no topo do return
-- O `SchemaOrg.tsx` existente continua funcionando normalmente
-- Nenhuma dependência nova necessária (`react-helmet-async` já está instalado)
 
+| Novo Arquivo               | Rota                                |
+| -------------------------- | ----------------------------------- |
+| `ArqSegurancaISSF4000.tsx` | `/arquitetonico/seguranca/issf4000` |
+| `ArqSegurancaISSF7000.tsx` | `/arquitetonico/seguranca/issf7000` |
+
+
+**Arquitetonico Decorativo (3 arquivos — novos, sem base):**
+
+
+| Novo Arquivo                | Rota                                 |
+| --------------------------- | ------------------------------------ |
+| `ArqDecorativoJateado.tsx`  | `/arquitetonico/decorativo/jateado`  |
+| `ArqDecorativoWhiteout.tsx` | `/arquitetonico/decorativo/whiteout` |
+| `ArqDecorativoBlackout.tsx` | `/arquitetonico/decorativo/blackout` |
+
+
+Os 5 novos produtos (ISSF4000, ISSF7000, Jateado, Whiteout, Blackout) usarao o mesmo layout premium das PDPs arquitetonicas existentes (hero + specs + features + CTA), com dados tecnicos placeholder.
+
+### Fase 2 — Criar 5 paginas Hub
+
+Cada hub tera: hero section, grid de cards dos produtos do silo com link para a PDP, e CTA de orcamento.
+
+
+| Arquivo                      | Rota                        | Produtos Listados                                                                       |
+| ---------------------------- | --------------------------- | --------------------------------------------------------------------------------------- |
+| `AutomotivoHubSolar.tsx`     | `/automotivo/solar`         | Matrix, Polariz Ultra, VIP, Eclipse, Dark                                               |
+| `AutomotivoHubSeguranca.tsx` | `/automotivo/seguranca`     | SkinSafe8K, Antivandalismo 13K, SkudoGuard, SkudoUltra                                  |
+| `ArqHubSolar.tsx`            | `/arquitetonico/solar`      | Clear70, Orizzonte70, UV90, Naturale, Petrolio, Grigio, Metallico, Reflesso, Specchiato |
+| `ArqHubSeguranca.tsx`        | `/arquitetonico/seguranca`  | ISSF4000, ISSF7000                                                                      |
+| `ArqHubDecorativo.tsx`       | `/arquitetonico/decorativo` | Jateado, Whiteout, Blackout                                                             |
+
+
+### Fase 3 — Atualizar App.tsx
+
+- Adicionar 28 novos imports (23 PDPs + 5 hubs)
+- Registrar rotas hierarquicas conforme especificado
+- Adicionar 18 redirects das rotas flat antigas para as novas (ex: `/matrix` → `/automotivo/solar/matrix`)
+- Manter todas as rotas nao-produto inalteradas
+
+### O que NAO muda
+
+- Homepage, Header, Footer, WhatsAppButton, LegalNotice
+- Paginas institucionais (QuemSomos, Franquias, Carreiras, etc.)
+- Paginas de categoria existentes (Automotivo.tsx, Residencial.tsx, Empresarial.tsx)
+- Frota, PPF, PhantomArquitetonico
+
+### Total de arquivos
+
+
+| Acao   | Quantidade                                                    |
+| ------ | ------------------------------------------------------------- |
+| Criar  | 28 arquivos (23 PDPs + 5 hubs)                                |
+| Editar | 1 arquivo (`App.tsx`)                                         |
+| Editar | 18 arquivos originais (atualizar URLs canonicas no schema/OG) |
