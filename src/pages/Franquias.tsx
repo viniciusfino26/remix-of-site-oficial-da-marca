@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Store, Award, HeadphonesIcon, MapPin, TrendingUp, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -72,6 +73,12 @@ const Franquias = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '35+', label: 'Anos de Mercado' },
+      { value: '#1', label: 'Marca Nacional' },
+      { value: 'ROI', label: 'Acelerado' },
+    ]} />
 
     <section className="py-24 bg-carbon-gradient">
       <div className="container mx-auto px-4 text-center">

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { motion } from 'framer-motion';
 import { Paintbrush, Shield, Sparkles, Layers, Droplets, Thermometer, FlaskConical, MessageCircle, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -122,6 +123,12 @@ const AutomotivoPhantom6 = () => (
           </motion.div>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="25vh" stats={[
+        { value: '6', label: 'mil de espessura' },
+        { value: '5', label: 'Camadas' },
+        { value: '5', label: 'Anos Garantia' },
+      ]} />
 
       {/* Composition */}
       <section className="py-20 bg-carbon-gradient">

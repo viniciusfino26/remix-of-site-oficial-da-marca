@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Handshake, Car, Building2, MessageCircle, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -85,6 +86,11 @@ const Parceiro = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '4', label: 'Lojas em SP' },
+      { value: 'Nacional', label: 'Arq. em todo Brasil' },
+    ]} />
 
     {/* Arquitetônico */}
     <section className="py-24 bg-carbon-gradient">

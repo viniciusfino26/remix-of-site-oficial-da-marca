@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { ShieldCheck, Clock, FileText, CheckCircle, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -82,6 +83,11 @@ const Garantia = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '100%', label: 'Cobertura de Fábrica' },
+      { value: 'QR Code', label: 'Verificável' },
+    ]} />
 
     <section className="py-24 bg-carbon-gradient">
       <div className="container mx-auto px-4">

@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Shield, Award, CheckCircle, Users, Star, Clock } from 'lucide-react';
@@ -283,6 +284,13 @@ const QuemSomos = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Parallax Break */}
+      <ParallaxBreak minHeight="30vh" stats={[
+        { value: '40+', label: 'Anos de Mercado' },
+        { value: '#1', label: 'Marca do Brasil' },
+        { value: '+40', label: 'Países' },
+      ]} />
 
       {/* Timeline */}
       <section className="py-24 bg-background overflow-hidden">

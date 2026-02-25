@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Shield, ShieldCheck, ShieldAlert, Swords, MessageCircle, ArrowRight, MapPin, Users } from 'lucide-react';
@@ -223,6 +224,13 @@ const AutomotivoHubSeguranca = () => {
             ))}
           </div>
         </section>
+
+        {/* Parallax Break */}
+        <ParallaxBreak minHeight="30vh" stats={[
+          { value: '8-22', label: 'mil de espessura' },
+          { value: '100%', label: 'Retenção de Estilhaços' },
+          { value: 'Certificado', label: 'de Fábrica' },
+        ]} />
 
         {/* ═══ PELÍCULAS DE DEFESA ═══ */}
         <section id="defesa" className="py-24 bg-background">

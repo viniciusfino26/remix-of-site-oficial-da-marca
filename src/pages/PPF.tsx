@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Paintbrush, Shield, Sparkles, Layers, Droplets, Thermometer, FlaskConical, MessageCircle, ChevronRight, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -124,9 +125,15 @@ const PPF = () => (
           <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
         </motion.div>
       </div>
-    </section>
+      </section>
 
-    {/* Composition */}
+      <ParallaxBreak minHeight="25vh" stats={[
+        { value: '5', label: 'Camadas' },
+        { value: '5+', label: 'Anos Garantia' },
+        { value: '∞', label: 'Auto-Regeneração' },
+      ]} />
+
+      {/* Composition */}
     <section className="py-20 bg-carbon-gradient">
       <div className="container mx-auto px-4">
         <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
