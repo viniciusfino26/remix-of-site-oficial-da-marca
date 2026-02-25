@@ -36,7 +36,9 @@ const Header = () => {
       items: [
         { label: t('nav.forMyCar'), href: '/automotivo' },
         { label: t('nav.forMyFleet'), href: '/frota' },
-        { label: t('nav.ppf'), href: '/ppf' },
+        { label: 'Controle Solar', href: '/automotivo/solar' },
+        { label: 'Segurança', href: '/automotivo/seguranca' },
+        { label: 'PPF Phantom', href: '/automotivo/ppf' },
       ],
     },
     {
@@ -46,6 +48,9 @@ const Header = () => {
       items: [
         { label: t('nav.forMyHome'), href: '/residencial' },
         { label: t('nav.forMyCompany'), href: '/empresarial' },
+        { label: 'Controle Solar', href: '/arquitetonico/solar' },
+        { label: 'Segurança', href: '/arquitetonico/seguranca' },
+        { label: 'Decorativo', href: '/arquitetonico/decorativo' },
         { label: 'Proteção de Superfícies', href: '/phantom-arquitetonico' },
       ],
     },
