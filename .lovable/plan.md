@@ -1,75 +1,63 @@
-# Silo PPF Automotivo — Plano de Implementacao
 
-## Escopo
 
-Criar 3 novos arquivos e editar App.tsx para adicionar o silo PPF na divisao automotiva.
+# Redesign do Hub Controle Solar Arquitetonico
 
-## Arquivos a Criar
+## Resumo
 
-### 1. `src/pages/AutomotivoHubPPF.tsx`
+Reescrever `src/pages/ArqHubSolar.tsx` de uma pagina simples com grid flat de 9 cards para uma pagina de venda completa com 4 secoes distintas, filtros visuais por categoria estetica e copy de conversao.
 
-Hub da categoria PPF seguindo o mesmo layout de `AutomotivoHubSolar.tsx`:
+## Arquivo a editar
 
-- Helmet com title, description, canonical (`/automotivo/ppf`)
-- Hero section com badge PPF, titulo e subtitulo
-- Grid de cards dos 2 produtos: Phantom 6mil e Phantom 8mil
-- Cada card com link para a PDP respectiva
-- CTA WhatsApp no final
-- Dados dos cards: nome, espessura, tipo de acabamento, garantia
+`src/pages/ArqHubSolar.tsx` — reescrita completa (1 arquivo).
 
-### 2. `src/pages/AutomotivoPhantom6.tsx`
+## Nova Estrutura do Componente
 
-PDP completa baseada no layout existente de `PPF.tsx` (composicao 5 camadas, propriedades fisicas, garantia, CTA):
+### Secao 1 — Hero
+- H1: "Conforto Termico e Design Sofisticado para o Seu Projeto"
+- Subtitulo longo (vibe selling) sobre calor, UV, estetica
+- CTA hero: "Falar com um Especialista Arquitetonico" (WhatsApp)
+- Badge "Controle Solar Arquitetonico"
 
-- Titulo: "INSULFILM™ Phantom 6mil"
-- Helmet com canonical `/automotivo/ppf/phantom-6mil`
-- schemaMarkup JSON-LD tipo Product
-- Espessura: 6 mil / ~150 microns
-- Acabamento: Transparente Gloss
-- Rota canonica: `/automotivo/ppf/phantom-6mil`
+### Secao 2 — Filtros e Categorizacao Visual
+- H2: "Como voce deseja transformar o seu ambiente?"
+- Texto de apoio
+- 4 categorias com estado de filtro ativo (useState), cada uma mostrando seus produtos em cards clicaveis:
 
-### 3. `src/pages/AutomotivoPhantom8.tsx`
+| Filtro | Produtos |
+|---|---|
+| Alta Transparencia | Clear70, Orizzonte70, Ultravioletti90 |
+| Estetica Neutra | Naturale |
+| Privacidade e Espelhados | Metallico Argento, Reflesso d'Argento, Specchiato Bronzo |
+| Estetica Fume e Invertida | Petrolio, Grigio Invertito |
 
-PDP completa com mesmo layout:
+- Cada filtro tera: titulo, texto descritivo, e grid de product cards
+- Os filtros serao botoes clicaveis que mostram/escondem os produtos da categoria (ou scroll-to, ou tabs)
+- Implementacao com `useState<string | null>` para filtro ativo, mostrando todos por default
 
-- Titulo: "INSULFILM™ Phantom 8mil"
-- Helmet com canonical `/automotivo/ppf/phantom-8mil`
-- schemaMarkup JSON-LD tipo Product
-- Espessura: 8 mil / ~200 microns
-- Acabamento: Transparente Gloss (espessura premium)
-- Rota canonica: `/automotivo/ppf/phantom-8mil`
+### Secao 3 — Prova Social e Garantia
+- H2: "Tecnologia e Confianca de Quem Criou o Mercado"
+- Texto sobre nanotecnologia, garantia, aplicadores certificados
+- Icones visuais (Shield, Award, etc.)
 
-## Edicao em App.tsx
+### Secao 4 — Bottom CTA
+- H2: "Qual e a pelicula ideal para o seu vidro?"
+- Texto sobre consultoria personalizada
+- Botao: "SOLICITE SEU ORCAMENTO AGORA" (WhatsApp)
 
-Adicionar 3 imports e 3 rotas apos as rotas de Seguranca Automotiva:
+## Detalhes Tecnicos
 
-```tsx
-import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
-import AutomotivoPhantom6 from "./pages/AutomotivoPhantom6";
-import AutomotivoPhantom8 from "./pages/AutomotivoPhantom8";
-
-{/* Divisão Automotiva — Hub PPF */}
-<Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
-<Route path="/automotivo/ppf/phantom-6mil" element={<AutomotivoPhantom6 />} />
-<Route path="/automotivo/ppf/phantom-8mil" element={<AutomotivoPhantom8 />} />
-```
-
-Adicionar redirect da rota legada:
-
-```tsx
-<Route path="/ppf" element={<Navigate to="/automotivo/ppf" replace />} />
-```
+- Manter imports existentes (Helmet, motion, lucide, Card, Button, Badge, Link)
+- Adicionar `useState` do React para controle de filtro ativo
+- Adicionar icones: `Shield`, `Award`, `Eye`, `Thermometer`, `Sparkles` do lucide-react
+- Manter animacoes `fadeInUp`, `scaleIn`, `stagger` existentes
+- Manter Helmet SEO com canonical `/arquitetonico/solar`
+- Manter `WHATSAPP_NUMBER` constante
+- Todos os nomes de produto no formato "INSULFILM™ [NOME]"
+- Cards de produto com Link para as rotas existentes
 
 ## O que NAO muda
 
-- `PPF.tsx` original permanece intacto (referenciado pelo redirect)
-- Homepage, Header, Footer, demais silos
-- Todas as outras rotas existentes
+- Rotas no App.tsx (ja registradas)
+- PDPs individuais dos 9 produtos
+- Nenhum outro arquivo
 
-## Total
-
-
-| Acao   | Quantidade          |
-| ------ | ------------------- |
-| Criar  | 3 arquivos          |
-| Editar | 1 arquivo (App.tsx) |
