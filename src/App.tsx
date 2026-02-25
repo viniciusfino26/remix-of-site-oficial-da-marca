@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import LegalNotice from "./components/LegalNotice";
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingCTA from "./components/FloatingCTA";
+import PageNavigation from "./components/PageNavigation";
 
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
@@ -195,6 +196,7 @@ const App = () => (
         <Footer />
         <WhatsAppButton />
         <FloatingCTA />
+        <PageNavigation />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
