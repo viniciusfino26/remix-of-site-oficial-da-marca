@@ -32,7 +32,7 @@ const Footer = () => {
 
       {/* Footer Links */}
       <div className="container mx-auto px-4 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           {/* Institucional */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">

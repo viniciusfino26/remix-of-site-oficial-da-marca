@@ -88,7 +88,7 @@ const Index = () => {
       </motion.div>
 
       {/* Hero Section */}
-      <section ref={heroRef} id="hero" className="relative min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
+      <section ref={heroRef} id="hero" className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
         {/* Geometric texture with parallax */}
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
 
@@ -114,10 +114,10 @@ const Index = () => {
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-6 font-semibold">
               INSULFILM™
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 text-primary-foreground leading-[0.95] tracking-tight">
+            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 sm:mb-6 text-primary-foreground leading-[0.95] tracking-tight">
               {t('hero.tagline')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl text-primary-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto font-light leading-relaxed px-2">
               {t('hero.subtitle')}
             </motion.p>
 
@@ -156,12 +156,12 @@ const Index = () => {
       {/* Hero Video */}
       <section className="relative overflow-hidden">
         <motion.div className="w-full" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="relative w-full overflow-hidden bg-background" style={{ paddingBottom: '50%' }}>
+          <div className="relative w-full overflow-hidden bg-background" style={{ paddingBottom: 'clamp(56%, 50vw, 50%)' }}>
             <iframe
               src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
               title="INSULFILM™"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] w-[108%] h-[132%] pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] w-[120%] h-[150%] md:w-[108%] md:h-[132%] pointer-events-none"
               loading="lazy"
             />
           </div>
@@ -226,7 +226,7 @@ const Index = () => {
       />
 
       {/* Why INSULFILM */}
-      <section ref={whyRef} id="why-insulfilm" className="relative py-24 bg-carbon-gradient overflow-hidden">
+      <section ref={whyRef} id="why-insulfilm" className="relative py-14 md:py-24 bg-carbon-gradient overflow-hidden">
         {/* Diagonal texture with parallax */}
         <motion.div className="absolute inset-0 bg-diagonal-texture" style={{ y: whyTextureY }} />
 
@@ -279,7 +279,7 @@ const Index = () => {
       </section>
 
       {/* Simulators */}
-      <section id="simulators" className="py-24 bg-background overflow-hidden">
+      <section id="simulators" className="py-14 md:py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-14"

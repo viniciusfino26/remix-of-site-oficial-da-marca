@@ -42,7 +42,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
   return (
-    <section ref={ref} className="relative min-h-[60vh] flex items-center overflow-hidden my-2">
+    <section ref={ref} className="relative min-h-[45vh] md:min-h-[60vh] flex items-center overflow-hidden my-1 md:my-2">
       {/* Background: image or carbon gradient */}
       {imageSrc ? (
         <>
@@ -75,10 +75,10 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className={`${cardVariantClasses[cardVariant]} p-8 md:p-12 max-w-xl min-h-[280px] flex flex-col justify-center rounded-lg border border-white/10`}
+          className={`${cardVariantClasses[cardVariant]} p-5 sm:p-8 md:p-12 max-w-xl min-h-[180px] md:min-h-[280px] flex flex-col justify-center rounded-lg border border-white/10`}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">{title}</h2>
-          <p className="text-white/60 mb-8 font-light leading-relaxed">{description}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 md:mb-4">{title}</h2>
+          <p className="text-sm sm:text-base text-white/60 mb-5 md:mb-8 font-light leading-relaxed">{description}</p>
           <Link to={link}>
             {cardVariant === 'orange' ? (
               <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">

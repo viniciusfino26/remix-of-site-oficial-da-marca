@@ -20,7 +20,7 @@ const FloatingCTA = () => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-          className="fixed bottom-24 right-6 z-50"
+          className="fixed bottom-[5.5rem] sm:bottom-24 right-4 sm:right-6 z-50"
         >
           <Link
             to="/lojas"
