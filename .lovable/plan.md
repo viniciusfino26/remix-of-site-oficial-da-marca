@@ -1,61 +1,68 @@
 
 
-# Cores dos Quadrantes (Cards) nos ProductBanners + LegalNotice Global
+# Ajustes na Home: Video sem faixas pretas + Destaque de Logo/Slogan
 
-## Situação Atual
-- **LegalNotice** já está global em `App.tsx` (linha 194) — aparece em TODAS as páginas. Nenhuma mudança necessária.
-- **Todos os cards** dos ProductBanners usam a mesma cor: `bg-primary/75` (azul escuro uniforme).
+## Problema 1: Video com faixas pretas
 
-## Problema
-Na referência (Homepage-2.png e Automotivo_1.png), cada banner tem uma cor de card diferente:
+O video atualmente usa `aspect-video` (16:9) com iframe escalado a 110%. As faixas pretas vem do ratio do video do YouTube nao preencher o container. Os ProductBanners usam `min-h-[60vh]` com `object-cover` — o video precisa seguir o mesmo padrao.
 
-| Banner | Cor do Card (Referência) |
-|--------|--------------------------|
-| Películas Solares | Azul escuro/navy |
-| Segurança | **Laranja** |
-| Comerciais e Residenciais | Azul escuro/navy |
-| PPF | **Cinza escuro** |
+**Solucao:** Trocar o container do video de `aspect-video` para o mesmo layout dos ProductBanners — `min-h-[60vh]` com overflow hidden e iframe escalado para cobrir 100% do espaco (scale ~130% para garantir cobertura total sem barras).
 
-## Alterações
+### Alteracao em `src/pages/Index.tsx` (linhas 153-169):
 
-### 1. `src/components/ProductBanner.tsx` — Adicionar prop `cardVariant`
-
-Nova prop opcional `cardVariant?: 'blue' | 'orange' | 'gray'` com default `'blue'`.
-
-Mapeamento de classes:
-- `'blue'` → `bg-[#1a3a6e]/85 backdrop-blur-md` (azul navy, como está hoje mas mais saturado)
-- `'orange'` → `bg-accent/85 backdrop-blur-md` (laranja INSULFILM™)
-- `'gray'` → `bg-neutral-800/85 backdrop-blur-md` (cinza escuro)
-
-A cor do texto e botão se ajustam:
-- Para `'orange'`: texto branco, botão com borda branca ou estilo invertido (botão branco com texto escuro)
-- Para `'blue'` e `'gray'`: mantém texto branco e botão laranja accent (como hoje)
-
-### 2. `src/pages/Index.tsx` — Aplicar as variantes corretas
-
-```
-ProductBanner Solar        → cardVariant="blue"
-ProductBanner Segurança    → cardVariant="orange"  
-ProductBanner Comercial    → cardVariant="blue"
-ProductBanner PPF          → cardVariant="gray"
+```tsx
+{/* Hero Video */}
+<section className="relative min-h-[60vh] overflow-hidden my-2">
+  <iframe
+    src="https://www.youtube.com/embed/C6sEdLl1R90?..."
+    title="INSULFILM™"
+    allow="..."
+    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] pointer-events-none"
+    loading="lazy"
+  />
+  <div className="absolute inset-0 z-10 cursor-default" />
+</section>
 ```
 
-### 3. Preparação para Automotivo.tsx (quando for reconstruído)
+Remove-se: `py-12`, `max-w-7xl`, `rounded-2xl`, `border`, `aspect-video` — tudo que criava um "quadro" ao redor do video. Agora fica full-bleed como os banners.
 
-Os mesmos valores serão usados:
-- Solar → `cardVariant="blue"`
-- Segurança → `cardVariant="orange"`
-- PPF → `cardVariant="gray"`
+## Problema 2: Destaque do Logo + Slogan + Website Oficial
+
+A imagem de referencia (image-4) mostra o logo INSULFILM com o slogan "A marca das peliculas" e "Website Oficial" sobre fundo navy. Isso substituira o banner fino atual (linha 78-85) por uma secao mais proeminente.
+
+**Solucao:** Substituir o `<motion.div>` do banner por uma secao centrada com:
+- Logo INSULFILM (importado de `src/assets/logo-light.png` que ja existe)
+- Slogan "A marca das peliculas" em texto leve
+- "Website Oficial" abaixo
+
+### Alteracao em `src/pages/Index.tsx` (linhas 77-85):
+
+```tsx
+{/* Banner Website Oficial */}
+<motion.div
+  className="bg-primary text-primary-foreground text-center py-6 flex flex-col items-center gap-2"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <img src={logoLight} alt="INSULFILM™" className="h-12 w-auto" />
+  <p className="text-sm text-primary-foreground/70 font-light">A marca das peliculas</p>
+  <p className="text-xs uppercase tracking-[0.3em] font-semibold text-primary-foreground/50">Website Oficial</p>
+</motion.div>
+```
+
+Adicionar import do logo no topo: `import logoLight from '@/assets/logo-light.png';`
+
+**Nota sobre o logo:** O arquivo `src/assets/logo-light.png` ja existe no projeto. Se a qualidade nao for suficiente, sera necessario o usuario fornecer uma versao em alta resolucao (idealmente SVG ou PNG 2x).
 
 ## Arquivos Alterados
 
-| Arquivo | Alteração |
+| Arquivo | Alteracao |
 |---------|-----------|
-| `src/components/ProductBanner.tsx` | Adicionar prop `cardVariant`, mapear 3 variantes de cor no card |
-| `src/pages/Index.tsx` | Passar `cardVariant` nos 4 ProductBanners |
+| `src/pages/Index.tsx` | 1) Import logo-light. 2) Banner topo: logo + slogan + "Website Oficial". 3) Video: full-bleed min-h-[60vh] sem moldura, iframe 130% |
 
-## O que NÃO muda
-- LegalNotice (já está global)
-- Footer, Header, rotas
-- Efeitos parallax e espaçamento dos banners
+## O que NAO muda
+- ProductBanner.tsx (ja esta correto)
+- Header, Footer, rotas
+- Demais secoes da home
 
