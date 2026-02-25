@@ -154,14 +154,14 @@ const Index = () => {
       </section>
 
       {/* Hero Video */}
-      <section className="relative overflow-hidden my-2">
+      <section className="relative overflow-hidden">
         <motion.div className="w-full" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="relative w-full overflow-hidden" style={{ paddingBottom: '50%' }}>
+          <div className="relative w-full overflow-hidden bg-background" style={{ paddingBottom: '50%' }}>
             <iframe
               src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
               title="INSULFILM™"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[120%] pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] w-[108%] h-[132%] pointer-events-none"
               loading="lazy"
             />
           </div>
