@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { motion } from 'framer-motion';
 import { Paintbrush, MessageCircle, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -81,9 +82,16 @@ const AutomotivoHubPPF = () => (
             ))}
           </motion.div>
         </div>
-      </section>
+        </section>
 
-      <section className="py-24 bg-background">
+        {/* Parallax Break */}
+        <ParallaxBreak minHeight="25vh" stats={[
+          { value: '5', label: 'Camadas de Proteção' },
+          { value: '5+', label: 'Anos de Garantia' },
+          { value: '∞', label: 'Auto-Regeneração' },
+        ]} />
+
+        <section className="py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-2xl mx-auto">
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Solicite seu Orçamento</motion.h2>

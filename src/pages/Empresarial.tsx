@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { motion } from 'framer-motion';
 import { Building2, Zap, Eye, Shield, Palette, Sun, Lock, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -100,6 +101,12 @@ const Empresarial = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '30%', label: 'Economia Energética' },
+      { value: '80%', label: 'Rejeição Térmica' },
+      { value: '99%', label: 'Proteção UV' },
+    ]} />
 
     <section className="py-24 bg-carbon-gradient">
       <div className="container mx-auto px-4">

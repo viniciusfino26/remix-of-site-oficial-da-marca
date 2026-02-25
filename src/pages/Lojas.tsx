@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -294,6 +295,12 @@ const Lojas = () => {
           </motion.div>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="25vh" stats={[
+        { value: '4', label: 'Unidades em SP' },
+        { value: '6', label: 'Dias por Semana' },
+        { value: 'Nacional', label: 'Arq. em todo Brasil' },
+      ]} />
 
       {/* Arquitetônico Nacional */}
       <section className="py-16 border-t border-border">

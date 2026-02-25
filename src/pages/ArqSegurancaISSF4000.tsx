@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Shield, Zap, Layers, CheckCircle, MessageCircle, Building2 } from 'lucide-react';
@@ -114,6 +115,8 @@ const ArqSegurancaISSF4000 = () => {
             </motion.div>
           </div>
         </section>
+
+        <ParallaxBreak minHeight="25vh" stats={[{ value: '4 mil', label: 'Espessura' }, { value: 'ASTM', label: 'Certificação' }]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />

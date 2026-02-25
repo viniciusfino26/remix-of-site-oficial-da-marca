@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -115,6 +116,8 @@ const Dark = () => {
             </motion.div>
           </div>
         </section>
+
+        <ParallaxBreak minHeight="25vh" stats={[{ value: '95%', label: 'Filtro UV' }, { value: '2', label: 'Anos Garantia' }]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />

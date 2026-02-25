@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Users, TrendingUp, Lightbulb, Shield, Target, Briefcase, MessageCircle, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -91,6 +92,8 @@ const Carreiras = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" />
 
     {/* Nossos Pilares de Atuação */}
     <section className="py-28 bg-carbon-gradient">

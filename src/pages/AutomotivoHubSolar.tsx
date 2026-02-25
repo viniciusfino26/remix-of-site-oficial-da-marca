@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Sun, Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, MessageCircle, MapPin, Users } from 'lucide-react';
@@ -233,6 +234,13 @@ const AutomotivoHubSolar = () => {
             ))}
           </div>
         </section>
+
+        {/* Parallax Break */}
+        <ParallaxBreak minHeight="30vh" stats={[
+          { value: '80%', label: 'Rejeição de Calor' },
+          { value: '99%', label: 'Bloqueio UV' },
+          { value: 'Vitalícia', label: 'Garantia Matrix' },
+        ]} />
 
         {/* ═══ BENEFÍCIOS ═══ */}
         <section className="py-24 bg-background">

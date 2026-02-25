@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { Truck, Thermometer, Shield, Eye, Layers, Lock, Clock, Award, RefreshCw, DollarSign, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -115,6 +116,12 @@ const Frota = () => (
         <LightSectionCards cards={comfortCards} />
       </div>
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '80%', label: 'Menos Calor' },
+      { value: '99%', label: 'Proteção UV' },
+      { value: '30%', label: 'Economia' },
+    ]} />
 
     {/* SEGURANÇA E PROTEÇÃO DE ATIVOS */}
     <section className="py-24 bg-carbon-gradient">

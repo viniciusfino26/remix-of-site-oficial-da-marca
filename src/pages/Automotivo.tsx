@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import ParallaxBreak from '@/components/ParallaxBreak';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Users, MessageCircle, ArrowRight, Eye, Smartphone, Star } from 'lucide-react';
@@ -342,6 +343,13 @@ const Automotivo = () => {
           );
         })}
       </section>
+
+      {/* Parallax Break */}
+      <ParallaxBreak minHeight="30vh" stats={[
+        { value: '+40', label: 'Países' },
+        { value: '5', label: 'Gerações de Tecnologia' },
+        { value: '#1', label: 'Marca no Brasil' },
+      ]} />
 
       {/* Benefits */}
       <section className="py-24 bg-background overflow-hidden">
