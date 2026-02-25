@@ -7,6 +7,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductBanner from '@/components/ProductBanner';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import homeSolar from '@/assets/home-solar.png';
+import homeSeguranca from '@/assets/home-seguranca.png';
+import homeComercial from '@/assets/home-comercial.png';
+import homePpf from '@/assets/home-ppf.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -166,39 +170,43 @@ const Index = () => {
 
       {/* Product Banners */}
       <ProductBanner
-        title={t('products.solarControl')}
-        description="Proteção, conforto e estilo para o seu veículo. Tecnologias de ponta que rejeitam até 80% do calor solar sem comprometer a visibilidade."
-        buttonText={t('products.viewDetails')}
+        title="Películas Solares"
+        description="Menos calor, mais conforto. Controle a claridade."
+        buttonText="Veja"
         buttonIcon={Car}
         link="/automotivo"
         alignment="right"
+        imageSrc={homeSolar}
       />
 
       <ProductBanner
-        title="Proteção e Segurança Superior"
-        description="Películas de segurança que blindam seus vidros contra vandalismo, impactos e tentativas de arrombamento. Resistência comprovada de fábrica."
-        buttonText={t('products.viewDetails')}
+        title="Películas de Proteção e Segurança Superior"
+        description="Curta o seu caminho. Vidros muito mais seguros para você chegar lá."
+        buttonText="Conheça"
         buttonIcon={Shield}
         link="/antivandalismo13k"
         alignment="left"
+        imageSrc={homeSeguranca}
       />
 
       <ProductBanner
         title="Películas Comerciais e Residenciais"
-        description="Eficiência energética, privacidade e design para residências e edifícios. Reduza custos com climatização e transforme seus ambientes."
-        buttonText={t('products.viewDetails')}
+        description="Conforto e controle solar. Economia inteligente todos os dias, durante anos."
+        buttonText="Explore"
         buttonIcon={Building2}
         link="/residencial"
         alignment="right"
+        imageSrc={homeComercial}
       />
 
       <ProductBanner
-        title={t('products.ppf')}
-        description="Proteção invisível e auto-regenerativa para a pintura do seu veículo. Filme premium que preserva o brilho original contra riscos e impactos do dia a dia."
-        buttonText={t('products.viewDetails')}
+        title="Películas de Proteção à Pintura (PPF)"
+        description="Cobertura invisível, seu carro sempre novo e valorizado."
+        buttonText="Conheça"
         buttonIcon={Shield}
         link="/ppf"
         alignment="left"
+        imageSrc={homePpf}
       />
 
       {/* Parallax Break with Stats */}

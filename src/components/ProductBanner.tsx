@@ -45,7 +45,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
             className="absolute inset-0 w-full h-full object-cover"
             style={{ scale: imgScale }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/60" />
+          <div className={`absolute inset-0 ${alignment === 'right' ? 'bg-gradient-to-l from-primary/85 via-primary/60 to-transparent' : 'bg-gradient-to-r from-primary/85 via-primary/60 to-transparent'}`} />
         </>
       ) : (
         <>
