@@ -83,7 +83,7 @@ const ParallaxBreak = ({ imageSrc, children, overlayOpacity = 0.7, minHeight = '
         {/* Stats with stagger + individual parallax */}
         {stats && stats.length > 0 && (
           <motion.div
-            className="flex flex-wrap justify-center gap-10 md:gap-16"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-6 sm:gap-10 md:gap-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
@@ -96,7 +96,7 @@ const ParallaxBreak = ({ imageSrc, children, overlayOpacity = 0.7, minHeight = '
                 className="text-center"
               >
                 <motion.span
-                  className="block text-4xl md:text-5xl font-extrabold text-accent mb-1"
+                  className="block text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent mb-1"
                   style={{ y: useTransform(scrollYProgress, [0, 1], [5 * (i + 1), -5 * (i + 1)]) }}
                 >
                   {stat.value}
