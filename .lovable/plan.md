@@ -1,67 +1,127 @@
 
 
-# Diagnostico: Paginas de Categoria e PDP Inacessiveis
+# Reescrita Completa: AutomotivoHubSeguranca.tsx
 
-## Causa Raiz
+## Objetivo
+Transformar a pagina de hub de seguranca automotiva de um grid minimalista de 4 cards para uma landing page rica e imersiva, fiel ao conteudo fornecido pelo usuario e ao padrao visual premium da homepage (parallax, separator-accent, alternancia de backgrounds, animacoes fadeInLeft/fadeInRight).
 
-As paginas existem e as rotas estao registradas no `App.tsx`, mas **nenhuma delas esta linkada na navegacao do site**. O usuario nao consegue chegar ate elas porque:
+## Estrutura Final da Pagina
 
-### 1. Header (`src/components/Header.tsx`)
-O menu principal nao expoe os hubs de silo. Os links atuais sao:
+```text
+┌─────────────────────────────────────────────┐
+│  HERO  (bg-carbon-gradient + parallax)      │
+│  Badge: Protecao e Seguranca                │
+│  H1: Proteja-se das incertezas...           │
+│  Subtitulo longo (copy completa)            │
+│  separator-accent                           │
+├─────────────────────────────────────────────┤
+│  FAIXA DE DESTAQUE                          │
+│  Texto cinza: Nao altera originalidade...   │
+│  Faixa vermelha (bg-accent): Peliculas      │
+│  Fortes. Feitas para resistir...            │
+├─────────────────────────────────────────────┤
+│  NAVEGACAO / ANCORAGEM (bg-background)      │
+│  H3: ENCONTRE O SEU INSULFILM™ IDEAL       │
+│  3 cards glass-card com icones:             │
+│  [Protecao Acidentes] [Antivandalismo]      │
+│  [Defesa]                                   │
+│  Cada card com subtitulo + "Saiba Mais"     │
+│  separator-accent                           │
+├─────────────────────────────────────────────┤
+│  PELICULAS DE PROTECAO (bg-carbon-gradient) │
+│  H2: Peliculas de Protecao                  │
+│  Layout alternado:                          │
+│  ┌──────────┬──────────┐                    │
+│  │ Texto    │ Imagem   │  SkinSafe8K        │
+│  │ fadeInL  │ fadeInR   │                    │
+│  └──────────┴──────────┘                    │
+│  separator-accent                           │
+│  ┌──────────┬──────────┐                    │
+│  │ Imagem   │ Texto    │  Antivandalismo13K │
+│  │ fadeInL  │ fadeInR   │                    │
+│  └──────────┴──────────┘                    │
+├─────────────────────────────────────────────┤
+│  PELICULAS DE DEFESA (bg-background)        │
+│  H2: Peliculas de Defesa                    │
+│  Layout alternado:                          │
+│  ┌──────────┬──────────┐                    │
+│  │ Texto    │ Imagem   │  SkudoGuard        │
+│  │ fadeInL  │ fadeInR   │                    │
+│  └──────────┴──────────┘                    │
+│  separator-accent                           │
+│  ┌──────────┬──────────┐                    │
+│  │ Imagem   │ Texto    │  SkudoUltra        │
+│  │ fadeInL  │ fadeInR   │                    │
+│  └──────────┴──────────┘                    │
+├─────────────────────────────────────────────┤
+│  CTA FINAL (bg-carbon-gradient)             │
+│  "Exija as peliculas originais INSULFILM™"  │
+│  "Elimine as vantagens do marginal."        │
+│  3 botoes: Lojas | Aplicador | WhatsApp     │
+└─────────────────────────────────────────────┘
+```
 
-| Menu Automotivo | Menu Arquitetonico |
-|---|---|
-| `/automotivo` | `/residencial` |
-| `/frota` | `/empresarial` |
-| `/ppf` (redirect) | `/phantom-arquitetonico` |
+## Conteudo Exato (fornecido pelo usuario)
 
-**Faltam**: `/automotivo/solar`, `/automotivo/seguranca`, `/automotivo/ppf`, `/arquitetonico/solar`, `/arquitetonico/seguranca`, `/arquitetonico/decorativo`
+### Hero
+- **H1:** "Proteja-se das incertezas no caminho. Dirija confiante de chegar la com protecao e seguranca de verdade."
+- **Subtitulo:** "Conheca as peliculas automotivas de Protecao, Antivandalismo e Defesa originais INSULFILM™. Desenvolvidas com engenharia de ponta e polimeros sinteticos de alta performance elastica, nossas peliculas oferecem muito mais resistencia para voce rodar com tranquilidade e seguranca total do seu carro, uma fortaleza, repelindo os vidros contra acidentes e ataques criminosos."
 
-### 2. Automotivo.tsx (`src/pages/Automotivo.tsx`)
-A pagina mostra produtos diretamente em tabs, mas nao tem **nenhum link** para os hubs de silo (`/automotivo/solar`, `/automotivo/seguranca`, `/automotivo/ppf`) nem para as PDPs individuais.
+### Faixa de Destaque
+- **Texto cinza:** "Nao altera a originalidade do veiculo. Garantia de montadora preservada."
+- **Faixa accent (vermelha):** "Peliculas Fortes. Feitas para resistir. Rigorosamente testadas para nao falhar."
 
-### 3. Residencial.tsx (`src/pages/Residencial.tsx`)
-A pagina exibe 6 categorias de peliculas como cards visuais, mas os cards **nao sao clicaveis** — nao tem `<Link>` para os hubs `/arquitetonico/solar`, `/arquitetonico/seguranca`, `/arquitetonico/decorativo`.
+### Navegacao (3 cards)
+1. **Protecao em Acidentes** — "Evite a projecao direta de estilhacos contra os ocupantes" → ancora para SkinSafe8K
+2. **Protecao Antivandalismo** — "Escudo contra atos de vandalismo e estilhacos em choques" → ancora para Antivandalismo13K
+3. **Defesa** — "Verdadeiros escudos muito mais resistentes a impactos agressivos de invasao" → ancora para SkudoGuard/SkudoUltra
 
-## Plano de Correcao
+### SkinSafe8K
+- **Subtitulo:** "PROTECAO CONTRA ACIDENTES."
+- **Texto:** "Em caso de quebras acidentais provocadas por impactos, ou quebra espontanea, falhas mecanicas ou choques termicos - a pelicula retem os fragmentos, evitando a projecao direta contra os ocupantes do veiculo."
+- **Botao:** "VEJA" → Link para `/automotivo/seguranca/skinsafe8k`
 
-### Arquivo 1: `src/components/Header.tsx`
-Atualizar o `megaMenuItems` para incluir os hubs de silo como sub-itens:
+### Antivandalismo 13K
+- **Subtitulo:** "PROTECAO CONTRA ATOS DE VANDALISMO."
+- **Texto:** "Pelicula projetada com alta tecnologia. Dificulta invasoes rapidas e retem estilhacos em quebras acidentais. O escudo contra a quebra do vidro por abordagens rapidas e premeditadas. Torna o vidro principal uma barreira resistente a impactos."
+- **Botao:** "VEJA" → Link para `/automotivo/seguranca/antivandalismo13k`
 
-**Automotivo:**
-- Para Meu Carro → `/automotivo`
-- Para Minha Frota → `/frota`
-- Controle Solar → `/automotivo/solar`
-- Seguranca → `/automotivo/seguranca`
-- PPF Phantom → `/automotivo/ppf`
+### SkudoGuard
+- **Subtitulo:** "MAIS QUE ANTIVANDALISMO, SEGURANCA SUPERIOR FORTE E EFETIVA."
+- **Texto:** "Mais protecao contra agressoes, a pelicula SkudoGuard torna o vidro com uma barreira espessa, limitando o acesso imediato nas primeiras tentativas, desestimulando a acao. Retem a projecao direta de estilhacos em acidentes. Torna a transposicao um forte escudo de dificil ruptura antes e, principalmente, apos a quebra do vidro."
+- **Botao:** "VEJA" → Link para `/automotivo/seguranca/skudoguard`
 
-**Arquitetonico:**
-- Para Minha Casa → `/residencial`
-- Para Minha Empresa → `/empresarial`
-- Controle Solar → `/arquitetonico/solar`
-- Seguranca → `/arquitetonico/seguranca`
-- Decorativo → `/arquitetonico/decorativo`
-- Protecao de Superficies → `/phantom-arquitetonico`
+### SkudoUltra
+- **Subtitulo:** "EXTREMA SEGURANCA. BLINDAGEM CONTRA ARMAS BRANCAS."
+- **Texto:** "O maximo em blindagem com filmes, aplicavel aos vidros laterais do carro. Maxima protecao diante de multiplas e severos ataques. Transforma os vidros do seu carro num escudo com altissima resistencia pos quebra para uma invasao com impacto pesado e continuo. Excepcional blindagem contra estilhacos de vidro."
+- **Botao:** "VEJA" → Link para `/automotivo/seguranca/skudoultra`
 
-### Arquivo 2: `src/pages/Automotivo.tsx`
-Adicionar uma secao de navegacao por silos com 3 cards clicaveis (Controle Solar, Seguranca, PPF) que linkam para os respectivos hubs. Cada card tera:
-- Icone representativo
-- Titulo do silo
-- Breve descricao
-- Link para o hub
+### CTA Final
+- **Texto:** "Exija as peliculas originais INSULFILM™. Protecao e Seguranca de verdade para voce e sua familia."
+- **Destaque:** "Elimine as vantagens do marginal."
+- **3 botoes:** Lojas Oficiais (`/lojas`), Seja um Aplicador (`/parceiro`), WhatsApp
 
-### Arquivo 3: `src/pages/Residencial.tsx`
-Transformar os 6 cards de `filmCategories` em links clicaveis:
-- Espelhadas, Transparentes, Refletivas, Neutras → `/arquitetonico/solar`
-- Nao Refletivas → `/arquitetonico/solar`
-- Antivandalismo e Seguranca → `/arquitetonico/seguranca`
+## Detalhes Tecnicos
 
-### Resultado Esperado
-O usuario podera navegar de qualquer ponto do site ate as paginas de categoria (hubs) e de la ate as PDPs individuais, completando a arvore de navegacao dos silos.
+### Animacoes (identicias a homepage)
+- `fadeInUp`, `fadeInLeft`, `fadeInRight`, `scaleIn`, `stagger` — mesmas variantes do Index.tsx
+- `useScroll` + `useTransform` + `useSpring` para parallax no hero
+- `whileInView` com `viewport={{ once: true }}` em todas as secoes
 
-## O que NAO muda
-- Rotas no App.tsx (ja estao corretas)
-- PDPs individuais (ja existem)
-- Hubs de silo (ja existem)
-- ArqHubSolar redesenhado (ja funcional)
+### Estilos
+- Hero: `bg-carbon-gradient` + `bg-hero-texture` com parallax
+- Faixa accent: `bg-accent text-accent-foreground` com `font-extrabold uppercase tracking-widest`
+- Secoes alternam `bg-background` e `bg-carbon-gradient`
+- `separator-accent` entre todas as secoes
+- Cards de produto: layout 2 colunas (texto + placeholder imagem com icone Shield), alternando lado
+- Placeholder de imagem: `glass-card` com icone `Shield` centralizado + texto "Imagem do produto"
+
+### Arquivo editado
+- `src/pages/AutomotivoHubSeguranca.tsx` — reescrita completa (unico arquivo)
+
+### O que NAO muda
+- Rotas no App.tsx
+- PDPs individuais (SkinSafe8K.tsx, Antivandalismo13K.tsx, SkudoGuard.tsx, SkudoUltra.tsx)
+- Homepage, Header, outros hubs
+- Helmet SEO mantido e atualizado com a nova copy
 
