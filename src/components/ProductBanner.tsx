@@ -35,7 +35,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
   return (
-    <section ref={ref} className="relative min-h-[60vh] flex items-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[60vh] flex items-center overflow-hidden my-2">
       {/* Background: image or carbon gradient */}
       {imageSrc ? (
         <>
@@ -45,7 +45,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
             className="absolute inset-0 w-full h-full object-cover"
             style={{ scale: imgScale }}
           />
-          <div className={`absolute inset-0 ${alignment === 'right' ? 'bg-gradient-to-l from-primary/85 via-primary/60 to-transparent' : 'bg-gradient-to-r from-primary/85 via-primary/60 to-transparent'}`} />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background/30 to-transparent" />
         </>
       ) : (
         <>
@@ -68,7 +68,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className="bg-primary/80 backdrop-blur-md p-8 md:p-12 max-w-xl rounded-lg border border-primary-foreground/10"
+          className="bg-primary/75 backdrop-blur-md p-8 md:p-12 max-w-xl rounded-lg border border-primary-foreground/10"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">{title}</h2>
           <p className="text-primary-foreground/60 mb-8 font-light leading-relaxed">{description}</p>
