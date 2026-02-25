@@ -1,138 +1,75 @@
-# Reestruturacão PDPs em Silos de Comunicacao
+# Silo PPF Automotivo — Plano de Implementacao
 
-## Inventario Atual
+## Escopo
 
-**18 PDPs existentes** — todas intactas, com Helmet e Schema Markup:
+Criar 3 novos arquivos e editar App.tsx para adicionar o silo PPF na divisao automotiva.
 
+## Arquivos a Criar
 
-| Arquivo                 | Linhas | Status  |
-| ----------------------- | ------ | ------- |
-| `Antivandalismo13K.tsx` | 723    | Intacto |
-| `SkudoGuard.tsx`        | 784    | Intacto |
-| `SkudoUltra.tsx`        | 712    | Intacto |
-| `SkinSafe8K.tsx`        | 290    | Intacto |
-| `Matrix.tsx`            | 188    | Intacto |
-| `PolarizUltra.tsx`      | 168    | Intacto |
-| `VIP.tsx`               | 166    | Intacto |
-| `Eclipse.tsx`           | 166    | Intacto |
-| `Dark.tsx`              | 166    | Intacto |
-| `Clear70.tsx`           | 174    | Intacto |
-| `Orizzonte70.tsx`       | 133    | Intacto |
-| `Ultravioletti90.tsx`   | 130    | Intacto |
-| `Naturale.tsx`          | 130    | Intacto |
-| `Petrolio.tsx`          | 130    | Intacto |
-| `GrigioInvertito.tsx`   | 130    | Intacto |
-| `MetallicoArgento.tsx`  | 130    | Intacto |
-| `ReflessoDArgento.tsx`  | 130    | Intacto |
-| `SpecchiatoBronzo.tsx`  | 131    | Intacto |
+### 1. `src/pages/AutomotivoHubPPF.tsx`
 
+Hub da categoria PPF seguindo o mesmo layout de `AutomotivoHubSolar.tsx`:
 
-**5 PDPs novas** a criar do zero: ISSF4000, ISSF7000, Jateado, Whiteout, Blackout.
+- Helmet com title, description, canonical (`/automotivo/ppf`)
+- Hero section com badge PPF, titulo e subtitulo
+- Grid de cards dos 2 produtos: Phantom 6mil e Phantom 8mil
+- Cada card com link para a PDP respectiva
+- CTA WhatsApp no final
+- Dados dos cards: nome, espessura, tipo de acabamento, garantia
 
-## Implementacao
+### 2. `src/pages/AutomotivoPhantom6.tsx`
 
-### Fase 1 — Criar 23 novos arquivos de PDP
+PDP completa baseada no layout existente de `PPF.tsx` (composicao 5 camadas, propriedades fisicas, garantia, CTA):
 
-Cada novo arquivo sera uma copia completa e independente (sem wrappers) baseada no componente original, com as seguintes alteracoes:
+- Titulo: "INSULFILM™ Phantom 6mil"
+- Helmet com canonical `/automotivo/ppf/phantom-6mil`
+- schemaMarkup JSON-LD tipo Product
+- Espessura: 6 mil / ~150 microns
+- Acabamento: Transparente Gloss
+- Rota canonica: `/automotivo/ppf/phantom-6mil`
 
-- Nome do componente renomeado (ex: `Matrix` → `AutomotivoMatrix`)
-- `schemaMarkup.url` atualizado para a nova rota hierarquica
-- `og:url` atualizado para a nova rota hierarquica
-- Verificacao do formato "INSULFILM™ [NOME]" em titulo, h1, schema e OG
+### 3. `src/pages/AutomotivoPhantom8.tsx`
 
-**Automotivo Solar (5 arquivos):**
+PDP completa com mesmo layout:
 
+- Titulo: "INSULFILM™ Phantom 8mil"
+- Helmet com canonical `/automotivo/ppf/phantom-8mil`
+- schemaMarkup JSON-LD tipo Product
+- Espessura: 8 mil / ~200 microns
+- Acabamento: Transparente Gloss (espessura premium)
+- Rota canonica: `/automotivo/ppf/phantom-8mil`
 
-| Novo Arquivo            | Baseado Em         | Rota                              |
-| ----------------------- | ------------------ | --------------------------------- |
-| `AutomotivoMatrix.tsx`  | `Matrix.tsx`       | `/automotivo/solar/matrix`        |
-| `AutomotivoPolariz.tsx` | `PolarizUltra.tsx` | `/automotivo/solar/polariz-ultra` |
-| `AutomotivoVip.tsx`     | `Vip.tsx`          | `/automotivo/solar/vip`           |
-| `AutomotivoEclipse.tsx` | `Eclipse.tsx`      | `/automotivo/solar/eclipse`       |
-| `AutomotivoDark.tsx`    | `Dark.tsx`         | `/automotivo/solar/dark`          |
+## Edicao em App.tsx
 
+Adicionar 3 imports e 3 rotas apos as rotas de Seguranca Automotiva:
 
-**Automotivo Seguranca (4 arquivos):**
+```tsx
+import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
+import AutomotivoPhantom6 from "./pages/AutomotivoPhantom6";
+import AutomotivoPhantom8 from "./pages/AutomotivoPhantom8";
 
+{/* Divisão Automotiva — Hub PPF */}
+<Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
+<Route path="/automotivo/ppf/phantom-6mil" element={<AutomotivoPhantom6 />} />
+<Route path="/automotivo/ppf/phantom-8mil" element={<AutomotivoPhantom8 />} />
+```
 
-| Novo Arquivo                   | Baseado Em              | Rota                                      |
-| ------------------------------ | ----------------------- | ----------------------------------------- |
-| `AutomotivoSkinSafe.tsx`       | `SkinSafe8K.tsx`        | `/automotivo/seguranca/skinsafe8k`        |
-| `AutomotivoAntivandalismo.tsx` | `Antivandalismo13K.tsx` | `/automotivo/seguranca/antivandalismo13k` |
-| `AutomotivoSkudoGuard.tsx`     | `SkudoGuard.tsx`        | `/automotivo/seguranca/skudoguard`        |
-| `AutomotivoSkudoUltra.tsx`     | `SkudoUltra.tsx`        | `/automotivo/seguranca/skudoultra`        |
+Adicionar redirect da rota legada:
 
+```tsx
+<Route path="/ppf" element={<Navigate to="/automotivo/ppf" replace />} />
+```
 
-**Arquitetonico Solar (9 arquivos):**
+## O que NAO muda
 
+- `PPF.tsx` original permanece intacto (referenciado pelo redirect)
+- Homepage, Header, Footer, demais silos
+- Todas as outras rotas existentes
 
-| Novo Arquivo        | Baseado Em             | Rota                                      |
-| ------------------- | ---------------------- | ----------------------------------------- |
-| `ArqClear70.tsx`    | `Clear70.tsx`          | `/arquitetonico/solar/clear70`            |
-| `ArqOrizzonte.tsx`  | `Orizzonte70.tsx`      | `/arquitetonico/solar/orizzonte70`        |
-| `ArqUV90.tsx`       | `Ultravioletti90.tsx`  | `/arquitetonico/solar/ultravioletti90`    |
-| `ArqNaturale.tsx`   | `Naturale.tsx`         | `/arquitetonico/solar/naturale`           |
-| `ArqPetrolio.tsx`   | `Petrolio.tsx`         | `/arquitetonico/solar/petrolio`           |
-| `ArqGrigio.tsx`     | `GrigioInvertito.tsx`  | `/arquitetonico/solar/grigio-invertito`   |
-| `ArqMetallico.tsx`  | `MetallicoArgento.tsx` | `/arquitetonico/solar/metallico-argento`  |
-| `ArqReflesso.tsx`   | `ReflessoDArgento.tsx` | `/arquitetonico/solar/reflesso-d-argento` |
-| `ArqSpecchiato.tsx` | `SpecchiatoBronzo.tsx` | `/arquitetonico/solar/specchiato-bronzo`  |
+## Total
 
 
-**Arquitetonico Seguranca (2 arquivos — novos, sem base):**
-
-
-| Novo Arquivo               | Rota                                |
-| -------------------------- | ----------------------------------- |
-| `ArqSegurancaISSF4000.tsx` | `/arquitetonico/seguranca/issf4000` |
-| `ArqSegurancaISSF7000.tsx` | `/arquitetonico/seguranca/issf7000` |
-
-
-**Arquitetonico Decorativo (3 arquivos — novos, sem base):**
-
-
-| Novo Arquivo                | Rota                                 |
-| --------------------------- | ------------------------------------ |
-| `ArqDecorativoJateado.tsx`  | `/arquitetonico/decorativo/jateado`  |
-| `ArqDecorativoWhiteout.tsx` | `/arquitetonico/decorativo/whiteout` |
-| `ArqDecorativoBlackout.tsx` | `/arquitetonico/decorativo/blackout` |
-
-
-Os 5 novos produtos (ISSF4000, ISSF7000, Jateado, Whiteout, Blackout) usarao o mesmo layout premium das PDPs arquitetonicas existentes (hero + specs + features + CTA), com dados tecnicos placeholder.
-
-### Fase 2 — Criar 5 paginas Hub
-
-Cada hub tera: hero section, grid de cards dos produtos do silo com link para a PDP, e CTA de orcamento.
-
-
-| Arquivo                      | Rota                        | Produtos Listados                                                                       |
-| ---------------------------- | --------------------------- | --------------------------------------------------------------------------------------- |
-| `AutomotivoHubSolar.tsx`     | `/automotivo/solar`         | Matrix, Polariz Ultra, VIP, Eclipse, Dark                                               |
-| `AutomotivoHubSeguranca.tsx` | `/automotivo/seguranca`     | SkinSafe8K, Antivandalismo 13K, SkudoGuard, SkudoUltra                                  |
-| `ArqHubSolar.tsx`            | `/arquitetonico/solar`      | Clear70, Orizzonte70, UV90, Naturale, Petrolio, Grigio, Metallico, Reflesso, Specchiato |
-| `ArqHubSeguranca.tsx`        | `/arquitetonico/seguranca`  | ISSF4000, ISSF7000                                                                      |
-| `ArqHubDecorativo.tsx`       | `/arquitetonico/decorativo` | Jateado, Whiteout, Blackout                                                             |
-
-
-### Fase 3 — Atualizar App.tsx
-
-- Adicionar 28 novos imports (23 PDPs + 5 hubs)
-- Registrar rotas hierarquicas conforme especificado
-- Adicionar 18 redirects das rotas flat antigas para as novas (ex: `/matrix` → `/automotivo/solar/matrix`)
-- Manter todas as rotas nao-produto inalteradas
-
-### O que NAO muda
-
-- Homepage, Header, Footer, WhatsAppButton, LegalNotice
-- Paginas institucionais (QuemSomos, Franquias, Carreiras, etc.)
-- Paginas de categoria existentes (Automotivo.tsx, Residencial.tsx, Empresarial.tsx)
-- Frota, PPF, PhantomArquitetonico
-
-### Total de arquivos
-
-
-| Acao   | Quantidade                                                    |
-| ------ | ------------------------------------------------------------- |
-| Criar  | 28 arquivos (23 PDPs + 5 hubs)                                |
-| Editar | 1 arquivo (`App.tsx`)                                         |
-| Editar | 18 arquivos originais (atualizar URLs canonicas no schema/OG) |
+| Acao   | Quantidade          |
+| ------ | ------------------- |
+| Criar  | 3 arquivos          |
+| Editar | 1 arquivo (App.tsx) |
