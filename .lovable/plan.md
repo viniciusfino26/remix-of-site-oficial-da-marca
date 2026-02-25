@@ -1,48 +1,61 @@
 
 
-# Ajuste dos Banners: Espacamento e Overlay
+# Cores dos Quadrantes (Cards) nos ProductBanners + LegalNotice Global
 
-## Problema Identificado
+## Situação Atual
+- **LegalNotice** já está global em `App.tsx` (linha 194) — aparece em TODAS as páginas. Nenhuma mudança necessária.
+- **Todos os cards** dos ProductBanners usam a mesma cor: `bg-primary/75` (azul escuro uniforme).
 
-Analisando a referencia e o codigo atual, dois problemas:
+## Problema
+Na referência (Homepage-2.png e Automotivo_1.png), cada banner tem uma cor de card diferente:
 
-1. **Overlay azul cobrindo a imagem inteira**: O codigo atual aplica um gradiente `from-primary/85 via-primary/60 to-transparent` sobre TODA a imagem. Na referencia, nao existe esse gradiente — a foto aparece limpa e so o card de texto tem fundo semi-transparente.
+| Banner | Cor do Card (Referência) |
+|--------|--------------------------|
+| Películas Solares | Azul escuro/navy |
+| Segurança | **Laranja** |
+| Comerciais e Residenciais | Azul escuro/navy |
+| PPF | **Cinza escuro** |
 
-2. **Banners colados**: Os 4 banners ficam um encostado no outro sem respiro visual.
+## Alterações
 
-## Solucao
+### 1. `src/components/ProductBanner.tsx` — Adicionar prop `cardVariant`
 
-### 1. Remover o overlay gradiente full-width (ProductBanner.tsx)
+Nova prop opcional `cardVariant?: 'blue' | 'orange' | 'gray'` com default `'blue'`.
 
-Quando ha `imageSrc`, remover completamente o `<div>` com gradiente azul que cobre a imagem inteira. A imagem fica limpa. O contraste do texto ja e garantido pelo card `bg-primary/80 backdrop-blur-md` que existe sobre ele.
+Mapeamento de classes:
+- `'blue'` → `bg-[#1a3a6e]/85 backdrop-blur-md` (azul navy, como está hoje mas mais saturado)
+- `'orange'` → `bg-accent/85 backdrop-blur-md` (laranja INSULFILM™)
+- `'gray'` → `bg-neutral-800/85 backdrop-blur-md` (cinza escuro)
 
-**Antes:**
+A cor do texto e botão se ajustam:
+- Para `'orange'`: texto branco, botão com borda branca ou estilo invertido (botão branco com texto escuro)
+- Para `'blue'` e `'gray'`: mantém texto branco e botão laranja accent (como hoje)
+
+### 2. `src/pages/Index.tsx` — Aplicar as variantes corretas
+
 ```
-<div className="absolute inset-0 bg-gradient-to-l from-primary/85 via-primary/60 to-transparent" />
+ProductBanner Solar        → cardVariant="blue"
+ProductBanner Segurança    → cardVariant="orange"  
+ProductBanner Comercial    → cardVariant="blue"
+ProductBanner PPF          → cardVariant="gray"
 ```
 
-**Depois:** Removido. Apenas um gradiente sutil no bottom para transicao suave:
-```
-<div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background/30 to-transparent" />
-```
+### 3. Preparação para Automotivo.tsx (quando for reconstruído)
 
-### 2. Adicionar espacamento entre banners (ProductBanner.tsx)
-
-Adicionar `my-4` ou equivalente na section do banner para criar respiro visual entre cada um, similar a referencia que mostra uma faixa clara/cinza entre os banners.
-
-Alternativa: adicionar uma faixa separadora `bg-background` de ~8px entre os banners via espacamento no Index.tsx (e demais paginas). A abordagem mais limpa e adicionar `py-1` ou `gap` no componente.
-
-### 3. Card de texto — ajuste fino
-
-O card `bg-primary/80` fica como esta (corresponde a referencia). Ajustar opacidade para `bg-primary/75` para ficar levemente mais transparente e deixar a foto "respirar" por tras.
+Os mesmos valores serão usados:
+- Solar → `cardVariant="blue"`
+- Segurança → `cardVariant="orange"`
+- PPF → `cardVariant="gray"`
 
 ## Arquivos Alterados
 
-| Arquivo | Alteracao |
+| Arquivo | Alteração |
 |---------|-----------|
-| `src/components/ProductBanner.tsx` | Remover overlay gradiente quando ha imagem; adicionar espacamento via classe na section |
+| `src/components/ProductBanner.tsx` | Adicionar prop `cardVariant`, mapear 3 variantes de cor no card |
+| `src/pages/Index.tsx` | Passar `cardVariant` nos 4 ProductBanners |
 
-## Impacto
-
-Todos os banners de todas as paginas que usam `ProductBanner` com `imageSrc` serao afetados automaticamente (e corretamente) porque a mudanca e no componente compartilhado. Banners sem imagem (carbon-gradient) continuam identicos.
+## O que NÃO muda
+- LegalNotice (já está global)
+- Footer, Header, rotas
+- Efeitos parallax e espaçamento dos banners
 
