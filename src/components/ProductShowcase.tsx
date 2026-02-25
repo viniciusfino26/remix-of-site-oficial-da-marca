@@ -96,8 +96,12 @@ const ProductShowcase = ({
             <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
           </motion.div>
         ) : (
-          <div className="glass-card rounded-2xl aspect-[4/3] flex items-center justify-center">
-            {fallbackIcon}
+          <div className="glass-card rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
+            <motion.div
+              style={{ y: useTransform(scrollYProgress, [0, 1], [8, -8]) }}
+            >
+              {fallbackIcon}
+            </motion.div>
           </div>
         )}
       </motion.div>
