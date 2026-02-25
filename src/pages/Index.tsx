@@ -6,6 +6,7 @@ import { ArrowRight, Shield, Award, Globe, Cpu, Car, Building2, Eye, SunDim, Lay
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductBanner from '@/components/ProductBanner';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -198,6 +199,17 @@ const Index = () => {
         buttonIcon={Shield}
         link="/ppf"
         alignment="left"
+      />
+
+      {/* Parallax Break with Stats */}
+      <ParallaxBreak
+        minHeight="35vh"
+        stats={[
+          { value: '+40', label: 'Países' },
+          { value: '10M+', label: 'm² instalados' },
+          { value: '15', label: 'Anos de Garantia' },
+          { value: '#1', label: 'Marca Global' },
+        ]}
       />
 
       {/* Why INSULFILM */}

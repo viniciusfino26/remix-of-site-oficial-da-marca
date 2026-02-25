@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductShowcase from '@/components/ProductShowcase';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -124,6 +125,13 @@ const ArqHubDecorativo = () => (
           </div>
         </div>
       </section>
+
+      {/* ── PARALLAX BREAK ── */}
+      <ParallaxBreak minHeight="30vh" stats={[
+        { value: '3', label: 'Linhas Decorativas' },
+        { value: '100%', label: 'Reversível' },
+        { value: '∞', label: 'Possibilidades' },
+      ]} />
 
       {/* ── CASOS DE USO ── */}
       <section className="py-24 bg-muted/30">

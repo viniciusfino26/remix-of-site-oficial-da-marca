@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductShowcase from '@/components/ProductShowcase';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -105,6 +106,13 @@ const ArqHubSeguranca = () => (
           </div>
         </div>
       </section>
+
+      {/* ── PARALLAX BREAK ── */}
+      <ParallaxBreak minHeight="35vh" stats={[
+        { value: '4-7', label: 'mil de espessura' },
+        { value: '100%', label: 'Retenção de estilhaços' },
+        { value: 'ASTM', label: 'Certificação' },
+      ]} />
 
       {/* ── BENEFÍCIOS ── */}
       <section className="py-24 bg-muted/30">

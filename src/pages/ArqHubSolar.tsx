@@ -199,7 +199,11 @@ const ArqHubSolar = () => {
         </section>
 
         {/* ── PARALLAX BREAK ── */}
-        <ParallaxBreak imageSrc="/placeholder.svg" overlayOpacity={0.85} minHeight="40vh">
+        <ParallaxBreak minHeight="40vh" stats={[
+          { value: '95%', label: 'Rejeição IR' },
+          { value: '99%', label: 'Bloqueio UV' },
+          { value: '15+', label: 'Anos de Garantia' },
+        ]}>
           <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
             Tecnologia Nano Cerâmica de Última Geração
           </h2>
