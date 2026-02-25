@@ -174,11 +174,11 @@ const Automotivo = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* Intro Text */}
+      {/* Navegação por Silos */}
       <section className="py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
@@ -190,15 +190,42 @@ const Automotivo = () => {
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light italic mb-6">
               {t('automotivePage.productsSubtitle')}
             </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mb-10">
+            <motion.div variants={scaleIn} className="flex justify-center">
               <div className="separator-accent" />
             </motion.div>
-            <motion.div variants={fadeInUp}>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-10 py-6 shadow-premium">
-                <Car className="w-5 h-5" />
-                ENCONTRE O SEU INSULFILM IDEAL
-              </Button>
-            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+          >
+            {[
+              { icon: Sun, title: 'Controle Solar', desc: 'Películas de proteção solar com tecnologia avançada para máximo conforto térmico.', href: '/automotivo/solar' },
+              { icon: Shield, title: 'Segurança', desc: 'Proteção contra vandalismo e acidentes com películas de segurança certificadas.', href: '/automotivo/seguranca' },
+              { icon: Layers, title: 'PPF Phantom', desc: 'Proteção de pintura com filme transparente de alta performance e autocicatrizante.', href: '/automotivo/ppf' },
+            ].map((silo, i) => (
+              <motion.div key={i} variants={fadeInUp}>
+                <Link to={silo.href}>
+                  <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
+                    <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50 text-center cursor-pointer">
+                      <CardContent className="p-8">
+                        <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center">
+                          <silo.icon className="w-7 h-7 text-accent" />
+                        </div>
+                        <h3 className="text-lg font-extrabold text-foreground mb-2">{silo.title}</h3>
+                        <p className="text-sm text-muted-foreground font-light leading-relaxed mb-4">{silo.desc}</p>
+                        <span className="inline-flex items-center gap-1 text-sm font-bold text-accent">
+                          Ver produtos <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>

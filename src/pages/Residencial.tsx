@@ -4,8 +4,9 @@ import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-mo
 import {
   Sun, Thermometer, Eye, Shield, Palette, Sparkles, ShieldCheck, Award,
   Users, Home, Zap, Lock, CheckCircle, MessageCircle, Heart,
-  FileText, Layers, Star
+  FileText, Layers, Star, ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -68,36 +69,42 @@ const filmCategories = [
     title: 'Espelhadas',
     desc: 'Espelhamento intenso em ambos os lados para uma rejeição de calor espetacular. Diversas opções de cores externas com interior prata.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/SpecchiatoBronzo.jpg',
+    href: '/arquitetonico/solar',
   },
   {
     icon: Sun,
     title: 'Transparentes',
     desc: 'Quase imperceptível, mantém o design atual do projeto enquanto proporciona ótima redução de calor por sua tecnologia seletiva de absorção térmica.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Orizzonte80.jpg',
+    href: '/arquitetonico/solar',
   },
   {
     icon: Sparkles,
     title: 'Refletivas',
     desc: 'Alta refletividade externa para maximizar a rejeição de calor, com um interior neutro para facilitar a visibilidade externa.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Metallico.jpg',
+    href: '/arquitetonico/solar',
   },
   {
     icon: Palette,
     title: 'Neutras',
     desc: 'Visual natural de refletividade baixa ou moderada para aumentar o conforto térmico, sem destacar expressivamente a área envidraçada.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Naturale.jpg',
+    href: '/arquitetonico/solar',
   },
   {
     icon: Lock,
     title: 'Não Refletivas',
     desc: 'Visual escuro e não espelhado, proporcionando excelente privacidade e controle de luz que aumenta o conforto térmico.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/UltraVioletti90.jpg',
+    href: '/arquitetonico/solar',
   },
   {
     icon: Shield,
     title: 'Antivandalismo e Segurança',
     desc: 'Praticamente invisíveis, reforçam a resistência natural do vidro contra quebras acidentais ou criminosas e retêm os estilhaços do vidro quebrado.',
     image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Safety&Security.jpg',
+    href: '/arquitetonico/seguranca',
   },
 ];
 
@@ -270,31 +277,35 @@ const Residencial = () => {
           <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             {filmCategories.map((cat, i) => (
               <motion.div key={i} variants={fadeInUp}>
-                <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
-                  <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50 overflow-hidden">
-                    {/* Image with overlay */}
-                    <div className="relative aspect-[16/9] overflow-hidden">
-                      <img
-                        src={cat.image}
-                        alt={cat.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">
-                            <cat.icon className="w-4 h-4 text-accent" />
+                <Link to={cat.href}>
+                  <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
+                    <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50 overflow-hidden group cursor-pointer">
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <img
+                          src={cat.image}
+                          alt={cat.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">
+                              <cat.icon className="w-4 h-4 text-accent" />
+                            </div>
+                            <h3 className="text-lg font-extrabold text-primary-foreground">{cat.title}</h3>
                           </div>
-                          <h3 className="text-lg font-extrabold text-primary-foreground">{cat.title}</h3>
                         </div>
                       </div>
-                    </div>
-                    <CardContent className="p-5">
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed">{cat.desc}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                      <CardContent className="p-5">
+                        <p className="text-sm text-muted-foreground font-light leading-relaxed mb-3">{cat.desc}</p>
+                        <span className="inline-flex items-center gap-1 text-sm font-bold text-accent">
+                          Ver produtos <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
