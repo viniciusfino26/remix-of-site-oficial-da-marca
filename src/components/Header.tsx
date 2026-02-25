@@ -73,6 +73,7 @@ const Header = () => {
             { label: 'Controle Solar', href: '/arquitetonico/solar' },
             { label: 'Segurança', href: '/arquitetonico/seguranca' },
             { label: 'Decorativo', href: '/arquitetonico/decorativo' },
+            { label: 'Phantom Glass & Matte', href: '/phantom-arquitetonico' },
           ],
         },
         {
