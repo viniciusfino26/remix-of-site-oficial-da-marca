@@ -26,9 +26,9 @@ interface ProductBannerProps {
 }
 
 const cardVariantClasses = {
-  blue: 'bg-[#1a3a6e]/85 backdrop-blur-md',
-  orange: 'bg-accent/85 backdrop-blur-md',
-  gray: 'bg-neutral-800/85 backdrop-blur-md',
+  blue: 'bg-[#1a3a6e]/70 backdrop-blur-sm',
+  orange: 'bg-[#c45e1a]/70 backdrop-blur-sm',
+  gray: 'bg-neutral-800/70 backdrop-blur-sm',
 };
 
 const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link, alignment = 'right', imageSrc, cardVariant = 'blue' }: ProductBannerProps) => {
