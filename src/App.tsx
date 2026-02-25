@@ -16,6 +16,11 @@ import Antivandalismo13K from "./pages/Antivandalismo13K";
 import SkudoGuard from "./pages/SkudoGuard";
 import SkinSafe8K from "./pages/SkinSafe8K";
 import SkudoUltra from "./pages/SkudoUltra";
+import Matrix from "./pages/Matrix";
+import PolarizUltra from "./pages/PolarizUltra";
+import VIP from "./pages/VIP";
+import Eclipse from "./pages/Eclipse";
+import Dark from "./pages/Dark";
 import Residencial from "./pages/Residencial";
 import Lojas from "./pages/Lojas";
 import Parceiro from "./pages/Parceiro";
@@ -61,6 +66,11 @@ const App = () => (
           <Route path="/skudo-ultra" element={<SkudoUltra />} />
           <Route path="/frota" element={<Frota />} />
           <Route path="/ppf" element={<PPF />} />
+          <Route path="/matrix" element={<Matrix />} />
+          <Route path="/polariz-ultra" element={<PolarizUltra />} />
+          <Route path="/vip" element={<VIP />} />
+          <Route path="/eclipse" element={<Eclipse />} />
+          <Route path="/dark" element={<Dark />} />
 
           {/* Divisão Arquitetônica */}
           <Route path="/residencial" element={<Residencial />} />

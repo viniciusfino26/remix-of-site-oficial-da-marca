@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import {
   Shield, CheckCircle, Eye, Sun, Lock, Lightbulb,
@@ -116,7 +117,33 @@ const SkudoGuard = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "INSULFILM™ SkudoGuard",
+    "brand": { "@type": "Brand", "name": "INSULFILM™" },
+    "description": "Escudo forte e efetivo contra armas brancas. Estrutura de 16 mil com força de ruptura de 440 lbs/in. 10 anos de garantia.",
+    "image": "LINK_DA_IMAGEM_AQUI",
+    "url": "https://www.insulfilm.com.br/skudoguard",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Espessura", "value": "16 mil / 406,4 micras" },
+      { "@type": "PropertyValue", "name": "Força de Ruptura", "value": "440 lbs/in" },
+      { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
+    ]
+  };
+
   return (
+    <>
+      <Helmet>
+        <title>INSULFILM™ SkudoGuard | Segurança Superior Antivandalismo</title>
+        <meta name="description" content="Escudo forte e efetivo contra armas brancas. Estrutura de 16 mil com força de ruptura de 440 lbs/in. 10 anos de garantia." />
+        <meta property="og:title" content="INSULFILM™ SkudoGuard | Segurança Superior Antivandalismo" />
+        <meta property="og:description" content="Escudo forte e efetivo contra armas brancas. Estrutura de 16 mil com força de ruptura de 440 lbs/in. 10 anos de garantia." />
+        <meta property="og:type" content="product" />
+        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+        <meta property="og:url" content="https://www.insulfilm.com.br/skudoguard" />
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+      </Helmet>
     <main>
       {/* ═══ 1. HERO + VIDEO ═══ */}
       <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
@@ -750,6 +777,7 @@ const SkudoGuard = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 
