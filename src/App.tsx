@@ -46,6 +46,11 @@ import AutomotivoAntivandalismo from "./pages/AutomotivoAntivandalismo";
 import AutomotivoSkudoGuard from "./pages/AutomotivoSkudoGuard";
 import AutomotivoSkudoUltra from "./pages/AutomotivoSkudoUltra";
 
+/* ── Hub + PDPs Automotivo PPF ── */
+import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
+import AutomotivoPhantom6 from "./pages/AutomotivoPhantom6";
+import AutomotivoPhantom8 from "./pages/AutomotivoPhantom8";
+
 /* ── Hubs Arquitetônicos ── */
 import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
@@ -95,7 +100,7 @@ const App = () => (
           {/* Divisão Automotiva — Categoria */}
           <Route path="/automotivo" element={<Automotivo />} />
           <Route path="/frota" element={<Frota />} />
-          <Route path="/ppf" element={<PPF />} />
+          <Route path="/ppf" element={<Navigate to="/automotivo/ppf" replace />} />
 
           {/* Divisão Automotiva — Hubs de Silo */}
           <Route path="/automotivo/solar" element={<AutomotivoHubSolar />} />
@@ -112,6 +117,12 @@ const App = () => (
           <Route path="/automotivo/seguranca/skinsafe8k" element={<AutomotivoSkinSafe />} />
           <Route path="/automotivo/seguranca/antivandalismo13k" element={<AutomotivoAntivandalismo />} />
           <Route path="/automotivo/seguranca/skudoguard" element={<AutomotivoSkudoGuard />} />
+          <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
+
+          {/* Divisão Automotiva — Hub + PDPs PPF */}
+          <Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
+          <Route path="/automotivo/ppf/phantom-6mil" element={<AutomotivoPhantom6 />} />
+          <Route path="/automotivo/ppf/phantom-8mil" element={<AutomotivoPhantom8 />} />
           <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
 
           {/* Divisão Arquitetônica — Categorias */}
