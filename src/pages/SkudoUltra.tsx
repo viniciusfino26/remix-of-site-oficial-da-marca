@@ -11,6 +11,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -269,6 +270,12 @@ const SkudoUltra = () => {
           </motion.p>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="35vh" stats={[
+        { value: '24 mil', label: 'Espessura' },
+        { value: 'TETRA', label: 'Laminação' },
+        { value: '10 anos', label: 'Garantia' },
+      ]} />
 
       {/* ═══ 3. DESCRIÇÃO DO PRODUTO ═══ */}
       <section className="py-24 bg-background overflow-hidden">

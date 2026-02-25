@@ -9,6 +9,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -158,6 +159,12 @@ const SkinSafe8K = () => {
           </motion.div>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="35vh" stats={[
+        { value: '7 mil', label: 'Espessura' },
+        { value: '99%', label: 'Bloqueio UV' },
+        { value: '5 anos', label: 'Garantia' },
+      ]} />
 
       {/* ═══ 3. DESCRIÇÃO DO PRODUTO ═══ */}
       <section className="py-24 bg-background overflow-hidden">

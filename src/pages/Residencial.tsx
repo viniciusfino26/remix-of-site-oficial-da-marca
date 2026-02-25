@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParallaxBreakComponent from '@/components/ParallaxBreak';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -264,6 +265,12 @@ const Residencial = () => {
           </motion.div>
         </div>
       </section>
+
+      <ParallaxBreakComponent minHeight="35vh" stats={[
+        { value: '80%', label: 'Rejeição de Calor' },
+        { value: '99%', label: 'Bloqueio UV' },
+        { value: '30%', label: 'Economia Energia' },
+      ]} />
 
       {/* ═══ 3. NOSSAS PELÍCULAS — Cards com Fotos ═══ */}
       <section id="peliculas" className="py-24 bg-background overflow-hidden">

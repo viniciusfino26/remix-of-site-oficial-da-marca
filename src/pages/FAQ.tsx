@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -108,6 +109,11 @@ const FAQ = () => (
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
+
+    <ParallaxBreak minHeight="25vh" stats={[
+      { value: '5', label: 'Categorias' },
+      { value: '25+', label: 'Perguntas' },
+    ]} />
 
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 max-w-3xl">

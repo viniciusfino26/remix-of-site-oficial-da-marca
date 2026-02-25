@@ -11,6 +11,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -238,6 +239,12 @@ const Antivandalismo13KProposta = () => {
           </motion.p>
         </div>
       </section>
+
+      <ParallaxBreak minHeight="35vh" stats={[
+        { value: '12 mil', label: 'Espessura' },
+        { value: 'Dupla', label: 'Laminação' },
+        { value: '5 anos', label: 'Garantia' },
+      ]} />
 
       {/* ═══ 3. PRODUCT DESCRIPTION (original) ═══ */}
       <section className="py-24 bg-background overflow-hidden">

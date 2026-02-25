@@ -3,6 +3,7 @@ import { ShieldAlert, QrCode, FileCheck, AlertTriangle, MessageCircle } from 'lu
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -76,6 +77,11 @@ const AntiPirataria = () => (
         </motion.div>
       </div>
     </section>
+
+    <ParallaxBreak minHeight="30vh" stats={[
+      { value: '1987', label: 'Registro INPI' },
+      { value: 'QR Code', label: 'Verificação' },
+    ]} />
 
     <section className="py-24 bg-carbon-gradient">
       <div className="container mx-auto px-4">

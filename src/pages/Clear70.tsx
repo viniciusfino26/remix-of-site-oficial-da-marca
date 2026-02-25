@@ -5,6 +5,7 @@ import { Sun, Zap, Layers, Eye, CheckCircle, MessageCircle, Home } from 'lucide-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -115,6 +116,12 @@ const Clear70 = () => {
             </motion.div>
           </div>
         </section>
+
+        <ParallaxBreak minHeight="35vh" stats={[
+          { value: '72%', label: 'Transmissão de Luz' },
+          { value: '81%', label: 'Rejeição IR' },
+          { value: '99%', label: 'Bloqueio UV' },
+        ]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
