@@ -75,7 +75,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className={`${cardVariantClasses[cardVariant]} p-8 md:p-12 max-w-xl rounded-lg border border-white/10`}
+          className={`${cardVariantClasses[cardVariant]} p-8 md:p-12 max-w-xl min-h-[280px] flex flex-col justify-center rounded-lg border border-white/10`}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">{title}</h2>
           <p className="text-white/60 mb-8 font-light leading-relaxed">{description}</p>
