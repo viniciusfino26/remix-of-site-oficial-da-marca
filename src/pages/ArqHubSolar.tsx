@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, MessageCircle, ArrowRight, Shield, Award, Eye, Thermometer, Sparkles, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PageHero from '@/components/PageHero';
+import ProductShowcase from '@/components/ProductShowcase';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -23,6 +25,7 @@ type Category = {
   id: string;
   title: string;
   icon: React.ReactNode;
+  fallbackIcon: React.ReactNode;
   description: string;
   products: { name: string; path: string }[];
 };
@@ -32,6 +35,7 @@ const categories: Category[] = [
     id: 'alta-transparencia',
     title: 'Alta Transparência',
     icon: <Eye className="w-5 h-5" />,
+    fallbackIcon: <Eye className="w-24 h-24 text-accent/20" />,
     description: 'Para quem exige máximo bloqueio de calor, mas não quer alterar a fachada ou perder a luz natural. A verdadeira revolução da Nano Cerâmica.',
     products: [
       { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70' },
@@ -43,6 +47,7 @@ const categories: Category[] = [
     id: 'estetica-neutra',
     title: 'Estética Neutra',
     icon: <Sparkles className="w-5 h-5" />,
+    fallbackIcon: <Sparkles className="w-24 h-24 text-accent/20" />,
     description: 'Tecnologia Sputtered de bombardeamento iônico. Controle solar inteligente com uma tonalidade suave que respeita o design original da arquitetura.',
     products: [
       { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale' },
@@ -52,6 +57,7 @@ const categories: Category[] = [
     id: 'privacidade-espelhados',
     title: 'Privacidade e Espelhados',
     icon: <Shield className="w-5 h-5" />,
+    fallbackIcon: <Shield className="w-24 h-24 text-accent/20" />,
     description: 'A solução definitiva para grandes fachadas ensolaradas. Proporciona privacidade diurna rigorosa de fora para dentro e alívio térmico imediato.',
     products: [
       { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
@@ -63,6 +69,7 @@ const categories: Category[] = [
     id: 'fume-invertida',
     title: 'Estética Fumê e Invertida',
     icon: <Thermometer className="w-5 h-5" />,
+    fallbackIcon: <Thermometer className="w-24 h-24 text-accent/20" />,
     description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
     products: [
       { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' },
@@ -87,42 +94,20 @@ const ArqHubSolar = () => {
       </Helmet>
 
       <main>
-        {/* ── SEÇÃO 1: HERO ──────────────────────────────────────────── */}
-        <section className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
-          <div className="absolute inset-0 bg-hero-texture" />
-          <div className="container mx-auto px-4 pt-32 pb-24 relative z-10 text-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger}>
-              <motion.div variants={fadeInUp} className="flex justify-center mb-6">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                  <Sun className="w-3.5 h-3.5 mr-2" />Controle Solar Arquitetônico
-                </Badge>
-              </motion.div>
+        {/* ── HERO ── */}
+        <PageHero
+          title="Conforto Térmico e Design Sofisticado para o Seu Projeto"
+          subtitle="Reduza o calor extremo, elimine o ofuscamento e proteja seus móveis contra os raios UV sem abrir mão da estética. A tecnologia original INSULFILM™ oferece a solução exata para transformar a sua fachada, sacada ou ambiente corporativo em um espaço de bem-estar absoluto."
+          badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'Controle Solar Arquitetônico' }}
+          cta={{
+            text: 'Falar com um Especialista Arquitetônico',
+            href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de falar com um especialista em películas arquitetônicas INSULFILM™.')}`,
+            icon: <MessageCircle className="w-5 h-5" />,
+            external: true,
+          }}
+        />
 
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-6 max-w-4xl mx-auto leading-tight">
-                Conforto Térmico e Design Sofisticado para o Seu Projeto
-              </motion.h1>
-
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/70 font-light max-w-3xl mx-auto mb-10 leading-relaxed">
-                Reduza o calor extremo, elimine o ofuscamento e proteja seus móveis contra os raios UV sem abrir mão da estética. A tecnologia original INSULFILM™ oferece a solução exata para transformar a sua fachada, sacada ou ambiente corporativo em um espaço de bem-estar absoluto.
-              </motion.p>
-
-              <motion.div variants={scaleIn}>
-                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de falar com um especialista em películas arquitetônicas INSULFILM™.')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="w-5 h-5" />Falar com um Especialista Arquitetônico
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-        </section>
-
-        {/* ── SEÇÃO 2: FILTROS E CATEGORIZAÇÃO VISUAL ─────────────── */}
+        {/* ── CATEGORIAS COM SHOWCASES ── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -159,7 +144,7 @@ const ArqHubSolar = () => {
               ))}
             </motion.div>
 
-            {/* Category sections */}
+            {/* Category sections with ProductShowcase */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFilter ?? 'all'}
@@ -167,22 +152,23 @@ const ArqHubSolar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="space-y-20"
+                className="space-y-24"
               >
-                {visibleCategories.map((cat) => (
-                  <div key={cat.id}>
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="mb-8">
-                      <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-3">
-                        <span className="text-accent">{cat.icon}</span>
-                        <h3 className="text-2xl font-bold text-foreground">{cat.title}</h3>
-                      </motion.div>
-                      <motion.p variants={fadeInUp} className="text-muted-foreground font-light max-w-2xl">
-                        {cat.description}
-                      </motion.p>
-                    </motion.div>
+                {visibleCategories.map((cat, catIdx) => (
+                  <div key={cat.id} className="space-y-12">
+                    {/* Category showcase */}
+                    <ProductShowcase
+                      title={cat.title}
+                      description={cat.description}
+                      fallbackIcon={cat.fallbackIcon}
+                      link={cat.products[0]?.path || '#'}
+                      linkText="Explorar Categoria"
+                      reversed={catIdx % 2 !== 0}
+                    />
 
+                    {/* Product cards */}
                     <motion.div
-                      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl"
+                      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
@@ -191,8 +177,8 @@ const ArqHubSolar = () => {
                       {cat.products.map((p) => (
                         <motion.div key={p.path} variants={fadeInUp}>
                           <Link to={p.path}>
-                            <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                              <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-colors">
+                            <motion.div whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.3 }}>
+                              <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
                                 <CardContent className="p-8">
                                   <h4 className="text-lg font-extrabold text-primary-foreground mb-4">{p.name}</h4>
                                   <span className="text-accent font-bold text-sm flex items-center gap-1">
@@ -212,7 +198,17 @@ const ArqHubSolar = () => {
           </div>
         </section>
 
-        {/* ── SEÇÃO 3: PROVA SOCIAL E GARANTIA ───────────────────── */}
+        {/* ── PARALLAX BREAK ── */}
+        <ParallaxBreak imageSrc="/placeholder.svg" overlayOpacity={0.85} minHeight="40vh">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
+            Tecnologia Nano Cerâmica de Última Geração
+          </h2>
+          <p className="text-primary-foreground/70 text-lg font-light max-w-2xl mx-auto">
+            Rejeição de calor infravermelho superior a 95%, com transparência óptica incomparável.
+          </p>
+        </ParallaxBreak>
+
+        {/* ── PROVA SOCIAL ── */}
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center">
@@ -220,7 +216,7 @@ const ArqHubSolar = () => {
                 Tecnologia e Confiança de Quem Criou o Mercado
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-16 max-w-3xl mx-auto leading-relaxed">
-                Ao escolher a marca INSULFILM™, você investe em nanotecnologia testada globalmente. Produtos que não desbotam, não formam bolhas e oferecem as maiores garantias do mercado arquitetônico, aplicados exclusivamente por nossos especialistas certificados.
+                Ao escolher a marca INSULFILM™, você investe em nanotecnologia testada globalmente. Produtos que não desbotam, não formam bolhas e oferecem as maiores garantias do mercado arquitetônico.
               </motion.p>
 
               <motion.div variants={stagger} className="grid sm:grid-cols-3 gap-8">
@@ -240,7 +236,7 @@ const ArqHubSolar = () => {
           </div>
         </section>
 
-        {/* ── SEÇÃO 4: BOTTOM CTA ────────────────────────────────── */}
+        {/* ── BOTTOM CTA ── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-2xl mx-auto">
@@ -248,7 +244,7 @@ const ArqHubSolar = () => {
                 Qual é a película ideal para o seu vidro?
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
-                Cada projeto é único. Nossa engenharia e equipe de consultores estão prontas para analisar a sua planta, a incidência solar do seu imóvel e indicar a linha perfeita com o melhor custo-benefício.
+                Cada projeto é único. Nossa engenharia e equipe de consultores estão prontas para analisar a sua planta e indicar a linha perfeita.
               </motion.p>
               <motion.div variants={scaleIn}>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold text-lg px-12 py-7 rounded-xl shadow-premium-lg hover:shadow-premium transition-all uppercase tracking-wide">
