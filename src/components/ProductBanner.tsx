@@ -27,7 +27,7 @@ interface ProductBannerProps {
 
 const cardVariantClasses = {
   blue: 'bg-[#1a3a6e]/60 md:bg-[#1a3a6e]/70',
-  orange: 'bg-[#c45e1a]/50 md:bg-[#c45e1a]/65',
+  orange: 'bg-[#c45e1a]/40 md:bg-[#c45e1a]/50',
   gray: 'bg-neutral-800/45 md:bg-neutral-800/65',
 };
 
