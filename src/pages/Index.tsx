@@ -154,15 +154,17 @@ const Index = () => {
       </section>
 
       {/* Hero Video */}
-      <section className="relative min-h-[60vh] overflow-hidden my-2">
-        <motion.div className="absolute inset-0" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <iframe
-            src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
-            title="INSULFILM™"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] pointer-events-none"
-            loading="lazy"
-          />
+      <section className="relative overflow-hidden my-2">
+        <motion.div className="w-full" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              src="https://www.youtube.com/embed/C6sEdLl1R90?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=C6sEdLl1R90"
+              title="INSULFILM™"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              loading="lazy"
+            />
+          </div>
         </motion.div>
         <div className="absolute inset-0 z-10 cursor-default" />
       </section>
