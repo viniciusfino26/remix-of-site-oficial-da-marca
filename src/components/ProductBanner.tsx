@@ -22,9 +22,16 @@ interface ProductBannerProps {
   link: string;
   alignment?: 'left' | 'right';
   imageSrc?: string;
+  cardVariant?: 'blue' | 'orange' | 'gray';
 }
 
-const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link, alignment = 'right', imageSrc }: ProductBannerProps) => {
+const cardVariantClasses = {
+  blue: 'bg-[#1a3a6e]/85 backdrop-blur-md',
+  orange: 'bg-accent/85 backdrop-blur-md',
+  gray: 'bg-neutral-800/85 backdrop-blur-md',
+};
+
+const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link, alignment = 'right', imageSrc, cardVariant = 'blue' }: ProductBannerProps) => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -68,16 +75,24 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className="bg-primary/75 backdrop-blur-md p-8 md:p-12 max-w-xl rounded-lg border border-primary-foreground/10"
+          className={`${cardVariantClasses[cardVariant]} p-8 md:p-12 max-w-xl rounded-lg border border-white/10`}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">{title}</h2>
-          <p className="text-primary-foreground/60 mb-8 font-light leading-relaxed">{description}</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">{title}</h2>
+          <p className="text-white/60 mb-8 font-light leading-relaxed">{description}</p>
           <Link to={link}>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
-              <Icon className="w-4 h-4" />
-              {buttonText}
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            {cardVariant === 'orange' ? (
+              <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
+                <Icon className="w-4 h-4" />
+                {buttonText}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            ) : (
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
+                <Icon className="w-4 h-4" />
+                {buttonText}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            )}
           </Link>
         </motion.div>
       </div>

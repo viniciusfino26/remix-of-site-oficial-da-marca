@@ -177,6 +177,7 @@ const Index = () => {
         link="/automotivo"
         alignment="right"
         imageSrc={homeSolar}
+        cardVariant="blue"
       />
 
       <ProductBanner
@@ -187,6 +188,7 @@ const Index = () => {
         link="/antivandalismo13k"
         alignment="left"
         imageSrc={homeSeguranca}
+        cardVariant="orange"
       />
 
       <ProductBanner
@@ -197,6 +199,7 @@ const Index = () => {
         link="/residencial"
         alignment="right"
         imageSrc={homeComercial}
+        cardVariant="blue"
       />
 
       <ProductBanner
@@ -207,6 +210,7 @@ const Index = () => {
         link="/ppf"
         alignment="left"
         imageSrc={homePpf}
+        cardVariant="gray"
       />
 
       {/* Parallax Break with Stats */}
