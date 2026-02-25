@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import {
   Sun, Thermometer, Eye, Shield, Palette, Sparkles, ShieldCheck, Award,
@@ -136,6 +137,15 @@ const ParallaxSection = ({ imageUrl, children }: { imageUrl: string; children?: 
   </section>
 );
 
+const residencialSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa",
+  "description": "Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família.",
+  "url": "https://www.insulfilm.com.br/residencial",
+  "publisher": { "@type": "Brand", "name": "INSULFILM™" }
+};
+
 const Residencial = () => {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
@@ -146,6 +156,17 @@ const Residencial = () => {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
+    <>
+    <Helmet>
+      <title>INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa</title>
+      <meta name="description" content="Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família." />
+      <meta property="og:title" content="INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa" />
+      <meta property="og:description" content="Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+      <meta property="og:url" content="https://www.insulfilm.com.br/residencial" />
+      <script type="application/ld+json">{JSON.stringify(residencialSchema)}</script>
+    </Helmet>
     <main>
       {/* ═══ 1. HERO + VIDEO ═══ */}
       <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
@@ -560,6 +581,7 @@ const Residencial = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

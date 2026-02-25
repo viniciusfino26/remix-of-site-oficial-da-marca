@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Shield, Sparkles, Droplets, Eye, Layers, Sun, CheckCircle, ArrowRight, Gem, TreeDeciduous, Building, GlassWater, MessageCircle, ChevronDown, Home, UtensilsCrossed, Hotel, Briefcase, Quote, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -80,8 +81,28 @@ const faqs = [
   { q: 'É resistente com criança, pet ou muito movimento?', a: 'Sim. O Phantom é ideal para famílias com crianças e pets. Protege contra arranhões de unhas, marcas de brinquedos e derramamentos acidentais, mantendo a superfície sempre como nova.' },
 ];
 
+const phantomSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "INSULFILM™ Phantom Arquitetônico | PPF para Superfícies",
+  "description": "Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.",
+  "url": "https://www.insulfilm.com.br/phantom-arquitetonico",
+  "publisher": { "@type": "Brand", "name": "INSULFILM™" }
+};
+
 const PhantomArquitetonico = () => {
   return (
+    <>
+    <Helmet>
+      <title>INSULFILM™ Phantom Arquitetônico | PPF para Superfícies</title>
+      <meta name="description" content="Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <meta property="og:title" content="INSULFILM™ Phantom Arquitetônico | PPF para Superfícies" />
+      <meta property="og:description" content="Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+      <meta property="og:url" content="https://www.insulfilm.com.br/phantom-arquitetonico" />
+      <script type="application/ld+json">{JSON.stringify(phantomSchema)}</script>
+    </Helmet>
     <main>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-carbon-gradient">
@@ -662,6 +683,7 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
     </main>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Building2, Zap, Eye, Shield, Palette, Sun, Lock, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -30,8 +31,28 @@ const filmTypes = [
 
 const WHATSAPP = 'https://wa.me/5511976136911?text=Preciso%20de%20películas%20para%20minha%20empresa';
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "INSULFILM™ Empresarial | Películas para Escritórios e Fachadas",
+  "description": "Películas arquitetônicas profissionais para eficiência energética, segurança e design corporativo.",
+  "url": "https://www.insulfilm.com.br/empresarial",
+  "publisher": { "@type": "Brand", "name": "INSULFILM™" }
+};
+
 const Empresarial = () => (
-  <main>
+  <>
+    <Helmet>
+      <title>INSULFILM™ Empresarial | Películas para Escritórios e Fachadas</title>
+      <meta name="description" content="Películas arquitetônicas profissionais para eficiência energética, segurança e design corporativo." />
+      <meta property="og:title" content="INSULFILM™ Empresarial | Películas para Escritórios e Fachadas" />
+      <meta property="og:description" content="Películas arquitetônicas profissionais para eficiência energética, segurança e design corporativo." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+      <meta property="og:url" content="https://www.insulfilm.com.br/empresarial" />
+      <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+    </Helmet>
+    <main>
     <section className="relative min-h-[60vh] flex items-center bg-carbon-gradient overflow-hidden">
       <div className="absolute inset-0 bg-hero-texture" />
       <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">
@@ -124,6 +145,7 @@ const Empresarial = () => (
       </div>
     </section>
   </main>
+  </>
 );
 
 export default Empresarial;

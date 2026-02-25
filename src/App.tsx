@@ -31,6 +31,15 @@ import Frota from "./pages/Frota";
 import PPF from "./pages/PPF";
 import Empresarial from "./pages/Empresarial";
 import PhantomArquitetonico from "./pages/PhantomArquitetonico";
+import Clear70 from "./pages/Clear70";
+import Orizzonte70 from "./pages/Orizzonte70";
+import Ultravioletti90 from "./pages/Ultravioletti90";
+import Naturale from "./pages/Naturale";
+import Petrolio from "./pages/Petrolio";
+import GrigioInvertito from "./pages/GrigioInvertito";
+import MetallicoArgento from "./pages/MetallicoArgento";
+import ReflessoDArgento from "./pages/ReflessoDArgento";
+import SpecchiatoBronzo from "./pages/SpecchiatoBronzo";
 import Vendas from "./pages/Vendas";
 import SAC from "./pages/SAC";
 import FAQ from "./pages/FAQ";
@@ -76,6 +85,15 @@ const App = () => (
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/empresarial" element={<Empresarial />} />
           <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
+          <Route path="/clear70" element={<Clear70 />} />
+          <Route path="/orizzonte70" element={<Orizzonte70 />} />
+          <Route path="/ultravioletti90" element={<Ultravioletti90 />} />
+          <Route path="/naturale" element={<Naturale />} />
+          <Route path="/petrolio" element={<Petrolio />} />
+          <Route path="/grigio-invertito" element={<GrigioInvertito />} />
+          <Route path="/metallico-argento" element={<MetallicoArgento />} />
+          <Route path="/reflesso-dargento" element={<ReflessoDArgento />} />
+          <Route path="/specchiato-bronzo" element={<SpecchiatoBronzo />} />
 
           {/* Atendimento */}
           <Route path="/vendas" element={<Vendas />} />
