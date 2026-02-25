@@ -1,46 +1,48 @@
 
 
-# Integrar Imagens Reais nos 4 Banners da Home Page
+# Ajuste dos Banners: Espacamento e Overlay
 
-## Objetivo
-Replicar fielmente o layout da referencia (Homepage-2.png), usando as 4 imagens uploadadas como backgrounds dos ProductBanners existentes e ajustando os textos/botoes para corresponder exatamente a referencia.
+## Problema Identificado
 
-## Mapeamento de Imagens
+Analisando a referencia e o codigo atual, dois problemas:
 
-| Banner | Imagem | Alinhamento Texto |
-|--------|--------|-------------------|
-| Películas Solares | `Controle_solar.png` (Bentley prata) | Direita |
-| Proteção e Segurança Superior | `Proteção_e_segurança_superior.png` (arrombamento) | Esquerda |
-| Películas Comerciais e Residenciais | `Películas_Comerciais_e_Residenciais.png` (edificios) | Direita |
-| Proteção à Pintura (PPF) | `Proteção_de_Pintura_PPF.png` (carro verde) | Esquerda |
+1. **Overlay azul cobrindo a imagem inteira**: O codigo atual aplica um gradiente `from-primary/85 via-primary/60 to-transparent` sobre TODA a imagem. Na referencia, nao existe esse gradiente — a foto aparece limpa e so o card de texto tem fundo semi-transparente.
 
-## Alteracoes
+2. **Banners colados**: Os 4 banners ficam um encostado no outro sem respiro visual.
 
-### 1. Copiar 4 imagens para `src/assets/`
-- `user-uploads://Controle_solar.png` → `src/assets/home-solar.png`
-- `user-uploads://Proteção_e_segurança_superior.png` → `src/assets/home-seguranca.png`
-- `user-uploads://Películas_Comerciais_e_Residenciais.png` → `src/assets/home-comercial.png`
-- `user-uploads://Proteção_de_Pintura_PPF.png` → `src/assets/home-ppf.png`
+## Solucao
 
-### 2. Atualizar `src/pages/Index.tsx`
-- Importar as 4 imagens como modulos ES6
-- Passar `imageSrc` para cada `<ProductBanner />`
-- Ajustar textos e botoes para corresponder a referencia:
-  - Banner 1: titulo "Películas Solares", desc "Menos calor, mais conforto. Controle a claridade.", botao "Veja"
-  - Banner 2: titulo "Películas de Proteção e Segurança Superior", desc "Curta o seu caminho. Vidros muito mais seguros para você chegar lá.", botao "Conheça"
-  - Banner 3: titulo "Películas Comerciais e Residenciais", desc "Conforto e controle solar. Economia inteligente todos os dias, durante anos.", botao "Explore"
-  - Banner 4: titulo "Películas de Proteção à Pintura (PPF)", desc "Cobertura invisível, seu carro sempre novo e valorizado.", botao "Conheça"
+### 1. Remover o overlay gradiente full-width (ProductBanner.tsx)
 
-### 3. Ajustar `src/components/ProductBanner.tsx`
-- Refinar overlay gradient para melhor contraste com fotos reais: usar gradient direcional baseado no `alignment` (gradiente mais forte no lado do texto)
-- Quando `alignment === 'right'`: `bg-gradient-to-l from-primary/85 via-primary/60 to-transparent`
-- Quando `alignment === 'left'`: `bg-gradient-to-r from-primary/85 via-primary/60 to-transparent`
+Quando ha `imageSrc`, remover completamente o `<div>` com gradiente azul que cobre a imagem inteira. A imagem fica limpa. O contraste do texto ja e garantido pelo card `bg-primary/80 backdrop-blur-md` que existe sobre ele.
 
-## O que NAO muda
-- Hero section, ParallaxBreak, Why INSULFILM, Simulators
-- Rotas, Header, Footer
-- Efeitos parallax existentes no ProductBanner (scale na imagem, texture Y)
+**Antes:**
+```
+<div className="absolute inset-0 bg-gradient-to-l from-primary/85 via-primary/60 to-transparent" />
+```
 
-## Resultado
-Os 4 banners da home passam de fundos abstratos (carbon-gradient) para fotos de impacto full-width com caixas de texto semi-transparentes sobrepostas, replicando fielmente o layout da referencia dentro da estetica dark premium existente.
+**Depois:** Removido. Apenas um gradiente sutil no bottom para transicao suave:
+```
+<div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background/30 to-transparent" />
+```
+
+### 2. Adicionar espacamento entre banners (ProductBanner.tsx)
+
+Adicionar `my-4` ou equivalente na section do banner para criar respiro visual entre cada um, similar a referencia que mostra uma faixa clara/cinza entre os banners.
+
+Alternativa: adicionar uma faixa separadora `bg-background` de ~8px entre os banners via espacamento no Index.tsx (e demais paginas). A abordagem mais limpa e adicionar `py-1` ou `gap` no componente.
+
+### 3. Card de texto — ajuste fino
+
+O card `bg-primary/80` fica como esta (corresponde a referencia). Ajustar opacidade para `bg-primary/75` para ficar levemente mais transparente e deixar a foto "respirar" por tras.
+
+## Arquivos Alterados
+
+| Arquivo | Alteracao |
+|---------|-----------|
+| `src/components/ProductBanner.tsx` | Remover overlay gradiente quando ha imagem; adicionar espacamento via classe na section |
+
+## Impacto
+
+Todos os banners de todas as paginas que usam `ProductBanner` com `imageSrc` serao afetados automaticamente (e corretamente) porque a mudanca e no componente compartilhado. Banners sem imagem (carbon-gradient) continuam identicos.
 
