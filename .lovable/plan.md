@@ -1,68 +1,80 @@
 
 
-# Ajustes na Home: Video sem faixas pretas + Destaque de Logo/Slogan
+# Plano: Reestruturar a Página Automotivo com Banners de Produto (Estilo Home)
 
-## Problema 1: Video com faixas pretas
+## Objetivo
+Transformar o topo da página `/automotivo` para seguir o layout da referência (foto 4), substituindo os cards de ícones por **ProductBanners** com imagens full-bleed e cards semi-transparentes sobrepostos, mantendo todos os textos existentes.
 
-O video atualmente usa `aspect-video` (16:9) com iframe escalado a 110%. As faixas pretas vem do ratio do video do YouTube nao preencher o container. Os ProductBanners usam `min-h-[60vh]` com `object-cover` — o video precisa seguir o mesmo padrao.
+## Estrutura Proposta (de cima para baixo)
 
-**Solucao:** Trocar o container do video de `aspect-video` para o mesmo layout dos ProductBanners — `min-h-[60vh]` com overflow hidden e iframe escalado para cobrir 100% do espaco (scale ~130% para garantir cobertura total sem barras).
-
-### Alteracao em `src/pages/Index.tsx` (linhas 153-169):
-
-```tsx
-{/* Hero Video */}
-<section className="relative min-h-[60vh] overflow-hidden my-2">
-  <iframe
-    src="https://www.youtube.com/embed/C6sEdLl1R90?..."
-    title="INSULFILM™"
-    allow="..."
-    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] pointer-events-none"
-    loading="lazy"
-  />
-  <div className="absolute inset-0 z-10 cursor-default" />
-</section>
+```text
+┌─────────────────────────────────────────┐
+│  HERO (existente — mantido)             │
+│  "Películas Automotivas" + parallax     │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│  SEÇÃO TEXTO (fundo branco)             │
+│  Título + parágrafo descritivo          │
+│  (texto do productsTitle/Subtitle +     │
+│   copy da referência)                   │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│  BANNER 1 — Controle Solar             │
+│  Imagem: Design_sem_nome_2.png          │
+│  Card azul à direita                    │
+│  "Películas Solares para Vidros"        │
+│  → link /automotivo/solar               │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│  BANNER 2 — Segurança                  │
+│  Imagem: Design_sem_nome_3.png          │
+│  Card laranja à esquerda                │
+│  "Películas Antivandalismo e Segurança" │
+│  → link /automotivo/seguranca           │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│  BANNER 3 — PPF Phantom                │
+│  Imagem: Design_sem_nome_1.png          │
+│  Card cinza à direita                   │
+│  "Películas de Proteção de Pintura"     │
+│  → link /automotivo/ppf                 │
+└─────────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│  RESTANTE DA PÁGINA (mantido)           │
+│  Solar Products tabs, Parallax Break,   │
+│  Benefits, CTA, Differentials, FAQ      │
+└─────────────────────────────────────────┘
 ```
 
-Remove-se: `py-12`, `max-w-7xl`, `rounded-2xl`, `border`, `aspect-video` — tudo que criava um "quadro" ao redor do video. Agora fica full-bleed como os banners.
+## Alterações Técnicas
 
-## Problema 2: Destaque do Logo + Slogan + Website Oficial
+### 1. Copiar as 3 imagens para `src/assets/`
+- `Design_sem_nome_1.png` → `src/assets/auto-ppf.png`
+- `Design_sem_nome_2.png` → `src/assets/auto-solar.png`
+- `Design_sem_nome_3.png` → `src/assets/auto-seguranca.png`
 
-A imagem de referencia (image-4) mostra o logo INSULFILM com o slogan "A marca das peliculas" e "Website Oficial" sobre fundo navy. Isso substituira o banner fino atual (linha 78-85) por uma secao mais proeminente.
+### 2. Editar `src/pages/Automotivo.tsx`
+- Importar `ProductBanner` e as 3 imagens
+- **Substituir** a seção "Navegação por Silos" (linhas 178-232) — os 3 cards de ícones — por:
+  - Uma seção de texto em fundo branco com o título e parágrafo descritivo (matching a referência: "Customize o visual do seu carro com películas automotivas de alta performance para vidros e lataria." + copy completa)
+  - 3 componentes `ProductBanner` com os textos da referência:
+    1. Solar → `cardVariant="blue"`, `alignment="right"`, imagem `auto-solar.png`
+    2. Segurança → `cardVariant="orange"`, `alignment="left"`, imagem `auto-seguranca.png`
+    3. PPF → `cardVariant="gray"`, `alignment="right"`, imagem `auto-ppf.png`
+- Todo o restante da página (Solar Products, Parallax, Benefits, CTA, Differentials, FAQ) permanece intacto
 
-**Solucao:** Substituir o `<motion.div>` do banner por uma secao centrada com:
-- Logo INSULFILM (importado de `src/assets/logo-light.png` que ja existe)
-- Slogan "A marca das peliculas" em texto leve
-- "Website Oficial" abaixo
+### 3. Textos dos Banners (da referência)
+| Banner | Título | Descrição | Botão |
+|--------|--------|-----------|-------|
+| Solar | Películas Solares para Vidros | Vista seu carro e você com conforto e estética refinada sob medida. | EXPLORE |
+| Segurança | Películas Antivandalismo e Segurança para Vidros | Tranquilidade de verdade, somente com vidros reforçados e mais seguros. | CONHEÇA |
+| PPF | Películas de Proteção de Pintura (PPF) | Revestimento regenerativo para trafegar com sossego. Depois do dano, será tarde. | SAIBA MAIS |
 
-### Alteracao em `src/pages/Index.tsx` (linhas 77-85):
+### 4. Seção de Texto (espaço branco)
+Texto principal: **"Customize o visual do seu carro com películas automotivas de alta performance para vidros e lataria."**
+Parágrafo: "Com uma linha completa de soluções em películas, a INSULFILM™ oferece tudo o que você precisa para personalizar e proteger seu veículo e você. Nossas películas originais são fabricadas para lhe garantir uma experiência única em nitidez ótica com visual sofisticado, além de um duradouro desempenho técnico superior. Compare e comprove, sinta a diferença de películas concebidas para superar sua expectativa."
 
-```tsx
-{/* Banner Website Oficial */}
-<motion.div
-  className="bg-primary text-primary-foreground text-center py-6 flex flex-col items-center gap-2"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
->
-  <img src={logoLight} alt="INSULFILM™" className="h-12 w-auto" />
-  <p className="text-sm text-primary-foreground/70 font-light">A marca das peliculas</p>
-  <p className="text-xs uppercase tracking-[0.3em] font-semibold text-primary-foreground/50">Website Oficial</p>
-</motion.div>
-```
-
-Adicionar import do logo no topo: `import logoLight from '@/assets/logo-light.png';`
-
-**Nota sobre o logo:** O arquivo `src/assets/logo-light.png` ja existe no projeto. Se a qualidade nao for suficiente, sera necessario o usuario fornecer uma versao em alta resolucao (idealmente SVG ou PNG 2x).
-
-## Arquivos Alterados
-
-| Arquivo | Alteracao |
-|---------|-----------|
-| `src/pages/Index.tsx` | 1) Import logo-light. 2) Banner topo: logo + slogan + "Website Oficial". 3) Video: full-bleed min-h-[60vh] sem moldura, iframe 130% |
-
-## O que NAO muda
-- ProductBanner.tsx (ja esta correto)
-- Header, Footer, rotas
-- Demais secoes da home
+## Nenhum arquivo removido
+- Apenas `Automotivo.tsx` é editado
+- O componente `ProductBanner` já existe e é reutilizado sem alteração
 
