@@ -1,63 +1,67 @@
 
 
-# Redesign do Hub Controle Solar Arquitetonico
+# Diagnostico: Paginas de Categoria e PDP Inacessiveis
 
-## Resumo
+## Causa Raiz
 
-Reescrever `src/pages/ArqHubSolar.tsx` de uma pagina simples com grid flat de 9 cards para uma pagina de venda completa com 4 secoes distintas, filtros visuais por categoria estetica e copy de conversao.
+As paginas existem e as rotas estao registradas no `App.tsx`, mas **nenhuma delas esta linkada na navegacao do site**. O usuario nao consegue chegar ate elas porque:
 
-## Arquivo a editar
+### 1. Header (`src/components/Header.tsx`)
+O menu principal nao expoe os hubs de silo. Os links atuais sao:
 
-`src/pages/ArqHubSolar.tsx` — reescrita completa (1 arquivo).
-
-## Nova Estrutura do Componente
-
-### Secao 1 — Hero
-- H1: "Conforto Termico e Design Sofisticado para o Seu Projeto"
-- Subtitulo longo (vibe selling) sobre calor, UV, estetica
-- CTA hero: "Falar com um Especialista Arquitetonico" (WhatsApp)
-- Badge "Controle Solar Arquitetonico"
-
-### Secao 2 — Filtros e Categorizacao Visual
-- H2: "Como voce deseja transformar o seu ambiente?"
-- Texto de apoio
-- 4 categorias com estado de filtro ativo (useState), cada uma mostrando seus produtos em cards clicaveis:
-
-| Filtro | Produtos |
+| Menu Automotivo | Menu Arquitetonico |
 |---|---|
-| Alta Transparencia | Clear70, Orizzonte70, Ultravioletti90 |
-| Estetica Neutra | Naturale |
-| Privacidade e Espelhados | Metallico Argento, Reflesso d'Argento, Specchiato Bronzo |
-| Estetica Fume e Invertida | Petrolio, Grigio Invertito |
+| `/automotivo` | `/residencial` |
+| `/frota` | `/empresarial` |
+| `/ppf` (redirect) | `/phantom-arquitetonico` |
 
-- Cada filtro tera: titulo, texto descritivo, e grid de product cards
-- Os filtros serao botoes clicaveis que mostram/escondem os produtos da categoria (ou scroll-to, ou tabs)
-- Implementacao com `useState<string | null>` para filtro ativo, mostrando todos por default
+**Faltam**: `/automotivo/solar`, `/automotivo/seguranca`, `/automotivo/ppf`, `/arquitetonico/solar`, `/arquitetonico/seguranca`, `/arquitetonico/decorativo`
 
-### Secao 3 — Prova Social e Garantia
-- H2: "Tecnologia e Confianca de Quem Criou o Mercado"
-- Texto sobre nanotecnologia, garantia, aplicadores certificados
-- Icones visuais (Shield, Award, etc.)
+### 2. Automotivo.tsx (`src/pages/Automotivo.tsx`)
+A pagina mostra produtos diretamente em tabs, mas nao tem **nenhum link** para os hubs de silo (`/automotivo/solar`, `/automotivo/seguranca`, `/automotivo/ppf`) nem para as PDPs individuais.
 
-### Secao 4 — Bottom CTA
-- H2: "Qual e a pelicula ideal para o seu vidro?"
-- Texto sobre consultoria personalizada
-- Botao: "SOLICITE SEU ORCAMENTO AGORA" (WhatsApp)
+### 3. Residencial.tsx (`src/pages/Residencial.tsx`)
+A pagina exibe 6 categorias de peliculas como cards visuais, mas os cards **nao sao clicaveis** — nao tem `<Link>` para os hubs `/arquitetonico/solar`, `/arquitetonico/seguranca`, `/arquitetonico/decorativo`.
 
-## Detalhes Tecnicos
+## Plano de Correcao
 
-- Manter imports existentes (Helmet, motion, lucide, Card, Button, Badge, Link)
-- Adicionar `useState` do React para controle de filtro ativo
-- Adicionar icones: `Shield`, `Award`, `Eye`, `Thermometer`, `Sparkles` do lucide-react
-- Manter animacoes `fadeInUp`, `scaleIn`, `stagger` existentes
-- Manter Helmet SEO com canonical `/arquitetonico/solar`
-- Manter `WHATSAPP_NUMBER` constante
-- Todos os nomes de produto no formato "INSULFILM™ [NOME]"
-- Cards de produto com Link para as rotas existentes
+### Arquivo 1: `src/components/Header.tsx`
+Atualizar o `megaMenuItems` para incluir os hubs de silo como sub-itens:
+
+**Automotivo:**
+- Para Meu Carro → `/automotivo`
+- Para Minha Frota → `/frota`
+- Controle Solar → `/automotivo/solar`
+- Seguranca → `/automotivo/seguranca`
+- PPF Phantom → `/automotivo/ppf`
+
+**Arquitetonico:**
+- Para Minha Casa → `/residencial`
+- Para Minha Empresa → `/empresarial`
+- Controle Solar → `/arquitetonico/solar`
+- Seguranca → `/arquitetonico/seguranca`
+- Decorativo → `/arquitetonico/decorativo`
+- Protecao de Superficies → `/phantom-arquitetonico`
+
+### Arquivo 2: `src/pages/Automotivo.tsx`
+Adicionar uma secao de navegacao por silos com 3 cards clicaveis (Controle Solar, Seguranca, PPF) que linkam para os respectivos hubs. Cada card tera:
+- Icone representativo
+- Titulo do silo
+- Breve descricao
+- Link para o hub
+
+### Arquivo 3: `src/pages/Residencial.tsx`
+Transformar os 6 cards de `filmCategories` em links clicaveis:
+- Espelhadas, Transparentes, Refletivas, Neutras → `/arquitetonico/solar`
+- Nao Refletivas → `/arquitetonico/solar`
+- Antivandalismo e Seguranca → `/arquitetonico/seguranca`
+
+### Resultado Esperado
+O usuario podera navegar de qualquer ponto do site ate as paginas de categoria (hubs) e de la ate as PDPs individuais, completando a arvore de navegacao dos silos.
 
 ## O que NAO muda
-
-- Rotas no App.tsx (ja registradas)
-- PDPs individuais dos 9 produtos
-- Nenhum outro arquivo
+- Rotas no App.tsx (ja estao corretas)
+- PDPs individuais (ja existem)
+- Hubs de silo (ja existem)
+- ArqHubSolar redesenhado (ja funcional)
 
