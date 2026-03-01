@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Input } from '@/components/ui/input';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, ChevronRight, X, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, ChevronRight, X, ExternalLink, Search, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -112,6 +113,161 @@ const scaleIn = {
 
 const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
+};
+
+// ─── HAVERSINE DISTANCE ──────────────────────────────────────────────────
+function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos((lat1 * Math.PI) / 180) * Math.cos((lat2 * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// ─── CEP SEARCH ──────────────────────────────────────────────────────────
+interface CepSearchProps {
+  onResult: (coords: { lat: number; lng: number } | null) => void;
+}
+
+const CepSearch = ({ onResult }: CepSearchProps) => {
+  const [cep, setCep] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [foundAddress, setFoundAddress] = useState('');
+
+  const formatCep = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 8);
+    if (digits.length > 5) return `${digits.slice(0, 5)}-${digits.slice(5)}`;
+    return digits;
+  };
+
+  const searchCep = useCallback(async () => {
+    const digits = cep.replace(/\D/g, '');
+    if (digits.length !== 8) {
+      setError('Digite um CEP válido com 8 dígitos.');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setFoundAddress('');
+
+    try {
+      // 1. Get address from ViaCEP
+      const viaCepRes = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+      const viaCepData = await viaCepRes.json();
+
+      if (viaCepData.erro) {
+        setError('CEP não encontrado. Verifique e tente novamente.');
+        onResult(null);
+        setLoading(false);
+        return;
+      }
+
+      const { logradouro, bairro, localidade, uf } = viaCepData;
+      const addressParts = [logradouro, bairro, localidade, uf].filter(Boolean);
+      const query = addressParts.join(', ');
+      setFoundAddress(`${localidade}, ${uf}`);
+
+      // 2. Geocode with Nominatim (free, no API key)
+      const nominatimRes = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&countrycodes=br`,
+        { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
+      );
+      const nominatimData = await nominatimRes.json();
+
+      if (nominatimData.length > 0) {
+        const { lat, lon } = nominatimData[0];
+        onResult({ lat: parseFloat(lat), lng: parseFloat(lon) });
+      } else {
+        // Fallback: try city + state only
+        const fallbackQuery = `${localidade}, ${uf}, Brasil`;
+        const fallbackRes = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fallbackQuery)}&limit=1&countrycodes=br`,
+          { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
+        );
+        const fallbackData = await fallbackRes.json();
+        if (fallbackData.length > 0) {
+          onResult({ lat: parseFloat(fallbackData[0].lat), lng: parseFloat(fallbackData[0].lon) });
+        } else {
+          setError('Não foi possível localizar o endereço. Tente outro CEP.');
+          onResult(null);
+        }
+      }
+    } catch {
+      setError('Erro na busca. Verifique sua conexão e tente novamente.');
+      onResult(null);
+    } finally {
+      setLoading(false);
+    }
+  }, [cep, onResult]);
+
+  const clearSearch = () => {
+    setCep('');
+    setError('');
+    setFoundAddress('');
+    onResult(null);
+  };
+
+  return (
+    <div className="w-full">
+      <div className="flex gap-2">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+          <Input
+            type="text"
+            inputMode="numeric"
+            placeholder="Digite seu CEP (ex: 01310-100)"
+            value={cep}
+            onChange={(e) => { setCep(formatCep(e.target.value)); setError(''); }}
+            onKeyDown={(e) => e.key === 'Enter' && searchCep()}
+            className="pl-10 pr-4 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground/50 rounded-xl focus:border-accent focus:ring-accent/20"
+            maxLength={9}
+          />
+        </div>
+        <Button
+          onClick={searchCep}
+          disabled={loading}
+          className="h-12 px-6 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-xl shadow-md hover:shadow-lg transition-all gap-2"
+        >
+          {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+          Buscar
+        </Button>
+        {(foundAddress || error) && (
+          <Button
+            onClick={clearSearch}
+            variant="outline"
+            className="h-12 px-4 border-border/50 hover:border-accent/30 rounded-xl"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        )}
+      </div>
+
+      <AnimatePresence mode="wait">
+        {error && (
+          <motion.p
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            className="text-sm text-destructive mt-2 font-medium"
+          >
+            {error}
+          </motion.p>
+        )}
+        {foundAddress && !error && (
+          <motion.p
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            className="text-sm text-accent mt-2 font-medium"
+          >
+            📍 Mostrando lojas mais próximas de <span className="font-bold">{foundAddress}</span>
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 // ─── NAVIGATION PICKER ───────────────────────────────────────────────────
@@ -305,6 +461,15 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
 
 // ─── PÁGINA PRINCIPAL ─────────────────────────────────────────────────────
 const Lojas = () => {
+  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+
+  const sortedStores = useMemo(() => {
+    if (!userCoords) return STORES;
+    return [...STORES]
+      .map((s) => ({ ...s, distance: haversineKm(userCoords.lat, userCoords.lng, s.lat, s.lng) }))
+      .sort((a, b) => a.distance - b.distance);
+  }, [userCoords]);
+
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
@@ -355,6 +520,22 @@ const Lojas = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
+      {/* CEP Search Bar */}
+      <section className="py-8 md:py-12 border-b border-border/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-2xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <h2 className="text-lg font-bold text-foreground mb-1">Encontre a loja mais próxima</h2>
+            <p className="text-sm text-muted-foreground mb-5 font-light">Digite seu CEP para ordenar por proximidade</p>
+            <CepSearch onResult={setUserCoords} />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Store Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -365,9 +546,20 @@ const Lojas = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
           >
-            {STORES.map((store, i) => (
+            {sortedStores.map((store, i) => (
               <div key={store.id} id={store.id} className="scroll-mt-24">
                 <StoreCard store={store} index={i} />
+                {'distance' in store && typeof store.distance === 'number' && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="mt-2 text-center"
+                  >
+                    <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                      📍 ~{store.distance.toFixed(1)} km de você
+                    </span>
+                  </motion.div>
+                )}
               </div>
             ))}
           </motion.div>
