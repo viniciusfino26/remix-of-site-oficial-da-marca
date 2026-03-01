@@ -67,12 +67,11 @@ function AnimatedStat({ value, suffix, label }: { value: number; suffix: string;
   return (
     <div ref={ref} className="text-center">
       <span
-        className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent"
-        style={{ backgroundImage: BRAND_GRADIENT }}
+        className="text-4xl md:text-5xl font-extrabold text-accent drop-shadow-[0_0_20px_hsl(19,100%,56%,0.4)]"
       >
         {count}{suffix}
       </span>
-      <p className="text-xs md:text-sm text-primary-foreground/60 mt-1 font-medium uppercase tracking-wider">
+      <p className="text-xs md:text-sm text-primary-foreground/80 mt-2 font-semibold uppercase tracking-wider">
         {label}
       </p>
     </div>
@@ -192,16 +191,24 @@ const QuemSomos = () => {
               {t('about.heroText')}
             </motion.p>
 
-            {/* Animated Stats */}
-            <motion.div variants={fadeInUp} className="flex justify-center gap-8 md:gap-16 mt-12">
-              {heroStats.map((stat, i) => (
-                <AnimatedStat key={i} value={stat.value} suffix={stat.suffix} label={t(stat.labelKey)} />
-              ))}
-            </motion.div>
           </motion.div>
         </motion.div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        {/* Animated Stats - outside parallax fade */}
+        <motion.div
+          className="container mx-auto px-4 relative z-20 pb-24"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+        >
+          <div className="flex justify-center gap-8 md:gap-16">
+            {heroStats.map((stat, i) => (
+              <AnimatedStat key={i} value={stat.value} suffix={stat.suffix} label={t(stat.labelKey)} />
+            ))}
+          </div>
+        </motion.div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Seção Institucional */}
