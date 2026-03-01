@@ -154,19 +154,27 @@ const Index = () => {
       </section>
 
       {/* Hero Video */}
-      <section className="relative overflow-hidden">
-        <motion.div className="w-full" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-          <div className="relative w-full overflow-hidden bg-background" style={{ paddingBottom: 'clamp(40%, 45vw, 45%)' }}>
-            <iframe
-              src="https://www.youtube.com/embed/byVXGGxu4FA?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=byVXGGxu4FA"
-              title="INSULFILM™"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[48%] w-[115%] h-[140%] md:w-[105%] md:h-[125%] pointer-events-none"
-              loading="lazy"
-            />
+      <section className="relative bg-background py-8 md:py-12">
+        <motion.div
+          className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-border">
+            <div className="aspect-video relative">
+              <iframe
+                src="https://www.youtube.com/embed/byVXGGxu4FA?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=byVXGGxu4FA"
+                title="INSULFILM™"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="w-full h-full pointer-events-none"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 z-10 cursor-default" />
+            </div>
           </div>
         </motion.div>
-        <div className="absolute inset-0 z-10 cursor-default" />
       </section>
 
       {/* Product Banners */}
