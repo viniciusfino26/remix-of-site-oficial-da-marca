@@ -1,6 +1,13 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Sun, Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
+import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
+import autoSolarDark from '@/assets/auto-solar-dark.png';
+import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
+import autoSolarVip from '@/assets/auto-solar-vip.png';
+import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
+import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
+import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
+import autoSolarHero from '@/assets/auto-solar-hero.png';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -35,6 +42,7 @@ const products = [
     text: 'Proteção solar com foco em privacidade, controle da luminosidade excessiva e filtro elevado dos raios ultravioletas (UV). Oferece ótima nitidez ótica interna para dirigir, enquanto protege você e o carro dos efeitos indesejados à exposição solar direta.\n\nVisual: não refletivo, cor preta não opaca.',
     path: '/automotivo/solar/dark',
     id: 'dark',
+    image: autoSolarDark,
   },
   {
     name: 'INSULFILM™ Eclipse',
@@ -43,6 +51,7 @@ const products = [
     text: 'Proteção solar focada em privacidade, com melhor desempenho térmico e durabilidade prolongada. Cor estável e duradoura por sua construção em carbono puro verdadeiro. Filtra raios infravermelhos rejeitando o calor de forma avançada. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
     path: '/automotivo/solar/eclipse',
     id: 'eclipse',
+    image: autoSolarEclipse,
   },
   {
     name: 'INSULFILM™ Vip',
@@ -51,6 +60,7 @@ const products = [
     text: 'Película em carbono puro verdadeiro com rejeição de raios infravermelhos (IR) potencializada. Proteção solar com alta redução de calor e privacidade. Durabilidade prolongada com estabilidade de cor. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
     path: '/automotivo/solar/vip',
     id: 'vip',
+    image: autoSolarVip,
   },
   {
     name: 'INSULFILM™ Matrix',
@@ -60,6 +70,7 @@ const products = [
     text: 'Extra-classe. Película espectro seletiva, enriquecida por cerâmica incorporada em nano partículas especializadas para entregar a máxima proteção contra os raios infravermelhos do sol, tendo altíssima rejeição térmica, combinada a uma visibilidade interna de ultra definição.\n\nVisual: não refletivo, cor preta não opaca.',
     path: '/automotivo/solar/matrix',
     id: 'matrix',
+    image: autoSolarMatrix,
   },
   {
     name: 'INSULFILM™ Polariz Ultra',
@@ -68,6 +79,7 @@ const products = [
     text: 'Exclusiva. Película espectro seletiva híbrida: metalizada combinada à cerâmica, com estética visual polarizada e máximo desempenho de retenção de calor. Um visual refinado e alta tecnologia com ultra rejeição térmica em proteção contra os raios infravermelhos. Alta durabilidade e proteção. Excepcional visibilidade interna de ultra definição.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
     path: '/automotivo/solar/polariz-ultra',
     id: 'polariz',
+    image: autoSolarPolariz,
   },
 ];
 
@@ -107,10 +119,7 @@ const ProductSection = ({ product, index }: { product: typeof products[0]; index
 
   const imgBlock = (
     <motion.div variants={imgVariant}>
-      <div className="bg-gray-200 rounded-xl aspect-[4/3] flex flex-col items-center justify-center gap-3">
-        <Sun className="w-16 h-16 text-gray-400" />
-        <span className="text-sm text-gray-400">Imagem do produto</span>
-      </div>
+      <img src={product.image} alt={product.name} className="w-full rounded-xl aspect-[4/3] object-cover" loading="lazy" />
     </motion.div>
   );
 
@@ -150,11 +159,12 @@ const AutomotivoHubSolar = () => {
       <main>
         {/* ═══ HERO ═══ */}
         <section className="relative min-h-[60vh] flex items-center bg-gray-800 overflow-hidden">
-          <div className="absolute inset-0 bg-gray-700" />
+          <img src={autoSolarHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
           <div className="container mx-auto px-4 pt-28 pb-16 relative z-10 grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="inline-block bg-accent text-accent-foreground text-xs uppercase tracking-widest font-bold px-4 py-2 rounded mb-6">
-                <Sun className="w-3.5 h-3.5 inline mr-2" />Películas Premium · Sinta a diferença
+                Películas Premium · Sinta a diferença
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
                 Películas de Proteção Solar para Vidros Automotivos
@@ -171,7 +181,9 @@ const AutomotivoHubSolar = () => {
         </section>
 
         {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
-        <section className="py-14 bg-white border-b border-gray-100">
+        <section className="relative py-14 border-b border-gray-100 overflow-hidden">
+          <img src={autoSolarNavBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-white/85" />
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
               <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-gray-900 uppercase tracking-wider">
