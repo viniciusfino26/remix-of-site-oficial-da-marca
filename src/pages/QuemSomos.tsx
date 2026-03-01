@@ -289,7 +289,6 @@ const QuemSomos = () => {
       <ParallaxBreak minHeight="30vh" stats={[
         { value: '40+', label: 'Anos de Mercado' },
         { value: '#1', label: 'Marca do Brasil' },
-        { value: '+40', label: 'Países' },
       ]} />
 
       {/* Timeline */}
