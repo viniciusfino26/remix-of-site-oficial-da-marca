@@ -435,23 +435,25 @@ const QuemSomos = () => {
                 {t('about.timelineToday')}
               </motion.p>
             </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={scaleIn}
-              className="md:text-center mt-3"
-            >
-              <motion.p
-                className="text-xl md:text-2xl font-extrabold text-foreground max-w-2xl mx-auto ml-14 md:ml-auto"
-                whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                {t('about.timelineClosing')}
-              </motion.p>
-            </motion.div>
           </div>
+
+          {/* Closing statement - outside timeline */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={scaleIn}
+            className="text-center mt-12"
+          >
+            <motion.p
+              className="text-xl md:text-2xl font-extrabold text-foreground max-w-2xl mx-auto"
+              whileInView={{ opacity: [0, 1], y: [20, 0] }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              {t('about.timelineClosing')}
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
