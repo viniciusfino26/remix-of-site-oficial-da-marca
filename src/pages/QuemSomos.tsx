@@ -413,10 +413,10 @@ const QuemSomos = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={scaleIn}
-              className="relative flex flex-col items-start md:items-center"
+              className="relative flex items-center gap-4 justify-start md:justify-center"
             >
               <motion.div
-                className="w-6 h-6 rounded-full border-4 border-background z-10 ml-[7px] md:ml-0"
+                className="w-6 h-6 rounded-full border-4 border-background z-10 shrink-0 ml-[7px] md:ml-0"
                 style={{
                   background: BRAND_GRADIENT,
                   boxShadow: '0 0 20px hsl(19, 100%, 56%, 0.4), 0 0 40px hsl(19, 100%, 56%, 0.2)',
@@ -425,25 +425,31 @@ const QuemSomos = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2, type: 'spring' }}
               />
-              <div className="ml-14 md:ml-0 md:text-center mt-3">
-                <motion.p
-                  className="text-lg font-bold bg-clip-text text-transparent"
-                  style={{ backgroundImage: BRAND_GRADIENT }}
-                  whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  {t('about.timelineToday')}
-                </motion.p>
-                <motion.p
-                  className="text-xl md:text-2xl font-extrabold text-foreground mt-2 max-w-2xl mx-auto"
-                  whileInView={{ opacity: [0, 1], y: [20, 0] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  {t('about.timelineClosing')}
-                </motion.p>
-              </div>
+              <motion.p
+                className="text-lg font-bold bg-clip-text text-transparent"
+                style={{ backgroundImage: BRAND_GRADIENT }}
+                whileInView={{ opacity: [0, 1], x: [20, 0] }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                {t('about.timelineToday')}
+              </motion.p>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={scaleIn}
+              className="md:text-center mt-3"
+            >
+              <motion.p
+                className="text-xl md:text-2xl font-extrabold text-foreground max-w-2xl mx-auto ml-14 md:ml-auto"
+                whileInView={{ opacity: [0, 1], y: [20, 0] }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                {t('about.timelineClosing')}
+              </motion.p>
             </motion.div>
           </div>
         </div>
