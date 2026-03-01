@@ -158,56 +158,63 @@ const AutomotivoHubSolar = () => {
 
       <main>
         {/* ═══ HERO ═══ */}
-        <section className="relative min-h-[60vh] flex items-center bg-gray-800 overflow-hidden">
-          <img src={autoSolarHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="container mx-auto px-4 pt-28 pb-16 relative z-10 grid md:grid-cols-2 gap-10 items-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger}>
-              <motion.div variants={fadeInUp} className="inline-block bg-accent text-accent-foreground text-xs uppercase tracking-widest font-bold px-4 py-2 rounded mb-6">
-                Películas Premium · Sinta a diferença
-              </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        <section className="relative min-h-[60vh] flex items-end bg-gray-800 overflow-hidden">
+          <img src={autoSolarHero} alt="Película solar automotiva aplicada" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="container mx-auto px-4 pb-8 relative z-10 flex items-end justify-between w-full">
+            <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="inline-block bg-accent text-accent-foreground text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded">
+              Películas Premium · Sinta a diferença
+            </motion.div>
+            <span className="text-white/60 text-[11px] italic">Imagem meramente ilustrativa</span>
+          </div>
+        </section>
+
+        {/* ═══ INTRODUÇÃO ═══ */}
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+              <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
                 Películas de Proteção Solar para Vidros Automotivos
               </motion.h1>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-accent font-bold mb-4">
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl font-bold italic text-accent mb-6">
                 Muito além do simples escurecimento. Alta performance de verdade.
               </motion.p>
-              <motion.p variants={fadeInUp} className="text-white/70 leading-relaxed max-w-xl">
+              <motion.p variants={fadeInUp} className="text-gray-600 leading-relaxed">
                 Eleve sua experiência ao volante com o conforto e sofisticação das películas originais INSULFILM™. Desenvolvidas com tecnologia de ponta em polímeros e compostos óticos especiais, nossas super películas oferecem redução superior de calor, claridade e até +99% de proteção contra os raios UV.
               </motion.p>
             </motion.div>
-            <div className="hidden md:block" />
           </div>
         </section>
 
         {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
-        <section className="relative py-14 border-b border-gray-100 overflow-hidden">
+        <section className="relative py-14 overflow-hidden">
           <img src={autoSolarNavBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/85" />
-          <div className="container mx-auto px-4">
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
-              <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-gray-900 uppercase tracking-wider">
+              <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider">
                 Encontre o seu INSULFILM™ ideal
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-gray-500 mt-2">Conheça nossas películas</motion.p>
+              <motion.p variants={fadeInUp} className="text-white/60 mt-2">Conheça nossas películas</motion.p>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center items-center gap-3">
               {navTabs.map((tab, i) => (
                 <motion.div key={tab.label} variants={fadeInUp} className="flex items-center gap-3">
-                  {tab.label === 'Transparente' && <span className="text-gray-300 text-lg font-light">|</span>}
+                  {i > 0 && tab.label !== 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
+                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
                   <a href={tab.href}>
                     <Button
                       variant={i === 0 ? 'default' : 'outline'}
                       className={
                         i === 0
-                          ? 'bg-gray-900 text-white hover:bg-gray-800 font-bold rounded-full px-6'
-                          : 'border-gray-300 text-gray-700 hover:bg-gray-100 font-bold rounded-full px-6'
+                          ? 'bg-accent text-accent-foreground hover:bg-accent/90 font-bold rounded-full px-6'
+                          : 'border-white/30 text-white hover:bg-white/10 font-bold rounded-full px-6'
                       }
                     >
                       {tab.label}
                     </Button>
                   </a>
-                  {tab.label === 'Transparente' && <span className="text-gray-300 text-lg font-light">|</span>}
+                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
                 </motion.div>
               ))}
             </motion.div>
