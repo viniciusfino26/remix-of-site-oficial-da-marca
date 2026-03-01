@@ -525,6 +525,52 @@ const Lojas = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
+      {/* Arquitetônico Nacional */}
+      <section className="py-16 md:py-24 bg-carbon-gradient overflow-hidden">
+        <div className="absolute inset-0 bg-diagonal-texture" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            className="glass-card rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex gap-5 items-start">
+              <motion.div
+                className="w-16 h-16 rounded-2xl bg-accent/15 flex items-center justify-center flex-shrink-0 icon-ring-glow"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <Building2 className="w-8 h-8 text-accent" />
+              </motion.div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-2">
+                  Arquitetônico — Território Nacional
+                </p>
+                <h3 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-2">
+                  Películas para Residências e Empresas
+                </h3>
+                <p className="text-sm text-primary-foreground/50 max-w-md font-light leading-relaxed">
+                  Atendemos projetos residenciais e comerciais em todo o Brasil. Fale com um especialista arquitetônico para consultoria e orçamento.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/5511947721470?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+informações+sobre+películas+arquitetônicas."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => Analytics.whatsappClick('nacional', 'arquitetonico')}
+            >
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 whitespace-nowrap shadow-md hover:shadow-lg transition-all px-8 py-6 text-base rounded-xl">
+                <MessageCircle className="w-5 h-5" />
+                Falar com Especialista
+              </Button>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CEP Search Bar */}
       <section className="relative z-20 py-8 md:py-12 border-b border-border/30">
         <div className="container mx-auto px-4">
@@ -598,53 +644,7 @@ const Lojas = () => {
         { value: 'Nacional', label: 'Arq. em todo Brasil' },
       ]} />
 
-      {/* Arquitetônico Nacional */}
-      <section className="py-16 md:py-24 bg-carbon-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-diagonal-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className="glass-card rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex gap-5 items-start">
-              <motion.div
-                className="w-16 h-16 rounded-2xl bg-accent/15 flex items-center justify-center flex-shrink-0 icon-ring-glow"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Building2 className="w-8 h-8 text-accent" />
-              </motion.div>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-2">
-                  Arquitetônico — Território Nacional
-                </p>
-                <h3 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-2">
-                  Películas para Residências e Empresas
-                </h3>
-                <p className="text-sm text-primary-foreground/50 max-w-md font-light leading-relaxed">
-                  Atendemos projetos residenciais e comerciais em todo o Brasil. Fale com um especialista arquitetônico para consultoria e orçamento.
-                </p>
-              </div>
-            </div>
-            <a
-              href="https://wa.me/5511947721470?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+informações+sobre+películas+arquitetônicas."
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => Analytics.whatsappClick('nacional', 'arquitetonico')}
-            >
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 whitespace-nowrap shadow-md hover:shadow-lg transition-all px-8 py-6 text-base rounded-xl">
-                <MessageCircle className="w-5 h-5" />
-                Falar com Especialista
-              </Button>
-            </a>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* CTA Parceiro */}
       <section className="py-16 md:py-24 bg-carbon-gradient border-t border-border overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 text-center relative z-10">
