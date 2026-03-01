@@ -1,30 +1,30 @@
 
 
-## Plano: Adicionar imagens dos produtos no Hub Solar Automotivo
+## Plano: Refazer o inicio da página /automotivo/solar
 
-Copiar 7 imagens para `src/assets/` e aplicar no `AutomotivoHubSolar.tsx`:
+Ajustar o Hero e a seção introdutória para corresponder exatamente à referência.
 
-### Imagens e mapeamento
+### Mudanças em `src/pages/AutomotivoHubSolar.tsx`
 
-| Arquivo enviado | Destino em `src/assets/` | Uso |
-|---|---|---|
-| `DARK_1.png` | `auto-solar-dark.png` | Produto Dark |
-| `ECLIPSE_1.png` | `auto-solar-eclipse.png` | Produto Eclipse |
-| `Fotos_LP_-_VIP_1.png` | `auto-solar-vip.png` | Produto Vip |
-| `MATRIX_1.png` | `auto-solar-matrix.png` | Produto Matrix |
-| `POLARIZ_ULTRA_1.png` | `auto-solar-polariz.png` | Produto Polariz Ultra |
-| `Encontre_o_insulfilm_ideal.png` | `auto-solar-nav-bg.png` | Background da seção "Encontre o seu INSULFILM™ ideal" |
-| `header.png` | `auto-solar-hero.png` | Background do Hero |
+**1. Hero (linhas 161-181)**
+- Remover o grid de 2 colunas — o hero da referência mostra apenas a imagem de fundo com um badge laranja posicionado no canto inferior esquerdo
+- Badge "Películas Premium / Sinta a diferença" fica sobreposto à imagem, alinhado à esquerda, com fundo accent sólido
+- Adicionar texto "Imagem meramente ilustrativa" no canto inferior direito em texto pequeno branco
+- Remover título, subtítulo e parágrafo do hero — eles ficam na seção branca abaixo
 
-### Alterações em `src/pages/AutomotivoHubSolar.tsx`
+**2. Nova seção de texto introdutório (entre hero e navegação)**
+- Fundo branco, container com padding generoso
+- Título: "Películas de Proteção Solar para Vidros Automotivos" em `text-gray-900 font-extrabold`
+- Subtítulo em itálico accent/azul escuro: "*Muito além do simples escurecimento. Alta performance de verdade.*"
+- Parágrafo descritivo: "Eleve sua experiência ao volante com o conforto e sofisticação das películas originais INSULFILM™..." (texto já existente, mover para cá)
 
-1. **Imports**: Adicionar 7 imports de imagem do `@/assets/`
+**3. Navegação (linhas 184-215)**
+- Manter estrutura atual mas remover o overlay branco (`bg-white/85`) — na referência a seção de navegação tem fundo escuro com a imagem de fundo visível
+- Título "ENCONTRE O SEU INSULFILM™ IDEAL" em branco sobre fundo escuro
+- Subtítulo "Conheça nossas películas" em cinza claro
+- Tabs com texto branco, tab ativa (Dark) com fundo accent laranja em vez de `bg-gray-900`
+- Separadores `|` entre todos os tabs (não só ao redor de Transparente)
 
-2. **Produtos** (linhas 30-72): Adicionar campo `image` em cada produto apontando para o import correspondente
-
-3. **ProductSection** (linhas 108-115): Substituir o placeholder cinza com icone `Sun` por uma tag `<img>` usando `product.image`, com `object-cover` e `rounded-xl aspect-[4/3]`
-
-4. **Hero** (linhas 152-171): Substituir `bg-gray-700` pelo `auto-solar-hero.png` como background image com overlay escuro semi-transparente
-
-5. **Navegação** (linhas 174-203): Adicionar `auto-solar-nav-bg.png` como background da seção com overlay claro para manter legibilidade dos textos
+### Arquivo alterado
+- `src/pages/AutomotivoHubSolar.tsx`
 
