@@ -83,6 +83,7 @@ const heroStats = [
   { value: 40, suffix: '+', labelKey: 'about.statYears' },
   { value: 4, suffix: '', labelKey: 'about.statStores' },
   { value: 15, suffix: '+', labelKey: 'about.statPioneering' },
+  { value: 15, suffix: '+', labelKey: 'about.statSearched' },
 ];
 
 const timelineData = [
