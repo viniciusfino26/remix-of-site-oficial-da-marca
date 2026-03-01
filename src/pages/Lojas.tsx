@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
+import arqNacionalBg from '@/assets/arq-nacional-bg.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import ParallaxBreak from '@/components/ParallaxBreak';
@@ -526,8 +527,11 @@ const Lojas = () => {
       </section>
 
       {/* Arquitetônico Nacional */}
-      <section className="py-16 md:py-24 bg-carbon-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-diagonal-texture" />
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={arqNacionalBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             className="glass-card rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
