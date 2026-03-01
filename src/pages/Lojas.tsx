@@ -521,7 +521,7 @@ const Lojas = () => {
       </section>
 
       {/* CEP Search Bar */}
-      <section className="py-8 md:py-12 border-b border-border/30">
+      <section className="relative z-20 py-8 md:py-12 border-b border-border/30">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-2xl mx-auto text-center"
