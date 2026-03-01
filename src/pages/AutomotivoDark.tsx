@@ -3,7 +3,8 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Sun, Zap, Layers, Shield, CheckCircle, MessageCircle, Car, Eye } from 'lucide-react';
+import { Sun, Zap, Layers, Shield, CheckCircle, MessageCircle, Eye } from 'lucide-react';
+import productImage from '@/assets/auto-solar-dark.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -142,8 +143,8 @@ const AutomotivoDark = () => {
                 </motion.ul>
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-                <div className="aspect-[4/3] rounded-2xl bg-muted/10 border border-border/20 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground/30"><Car className="w-16 h-16 mx-auto mb-3 opacity-30" /><p className="text-sm">Imagem do produto</p></div>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                  <img src={productImage} alt="INSULFILM™ Dark" className="w-full h-full object-cover rounded-2xl" />
                 </div>
               </motion.div>
             </div>
