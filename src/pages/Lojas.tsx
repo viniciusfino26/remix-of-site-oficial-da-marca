@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, ChevronRight } from 'lucide-react';
+import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, ChevronRight, Map, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -19,6 +20,8 @@ const STORES = [
     whatsapp: 'https://wa.me/5511965719291?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
     whatsappNum: '(11) 96571-9291',
     maps: 'https://maps.app.goo.gl/kp2ZXLpyx6VZhmF18',
+    lat: -23.5279,
+    lng: -46.6658,
     embed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.6658!3d-23.5279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMxJzQwLjQiUyA0NsKwMzknNTYuOSJX!5e0!3m2!1spt!2sbr!4v1700000000000',
     hours: [
       { days: 'Segunda à Sexta', time: '08h às 18h' },
@@ -41,6 +44,8 @@ const STORES = [
     whatsapp: 'https://wa.me/5511991774718?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
     whatsappNum: '(11) 99177-4718',
     maps: 'https://maps.app.goo.gl/hQVwpxD5bros7et19',
+    lat: -23.4669,
+    lng: -46.6367,
     embed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.6367!3d-23.4669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI4JzUxLjMiUyA0NsKwMzgnMTIuNiJX!5e0!3m2!1spt!2sbr!4v1700000000000',
     hours: [
       { days: 'Segunda à Sexta', time: '08h às 18h' },
@@ -63,6 +68,8 @@ const STORES = [
     whatsapp: 'https://wa.me/5511947721470?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
     whatsappNum: '(11) 94772-1470',
     maps: 'https://maps.app.goo.gl/D3q6jHM5BzFh8Xkj7',
+    lat: -23.5614,
+    lng: -46.6565,
     embed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.6565!3d-23.5614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjAiUyA0NsKwMzknMjMuNCJX!5e0!3m2!1spt!2sbr!4v1700000000000',
     hours: [
       { days: 'Segunda à Sexta', time: '08h às 18h' },
@@ -85,6 +92,8 @@ const STORES = [
     whatsapp: 'https://wa.me/5511934313285?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
     whatsappNum: '(11) 93431-3285',
     maps: 'https://maps.app.goo.gl/p9SuG84D9a9Kdt5z5',
+    lat: -23.6114,
+    lng: -46.6658,
     embed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-46.6658!3d-23.6114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM2JzQxLjAiUyA0NsKwMzknNTYuOSJX!5e0!3m2!1spt!2sbr!4v1700000000000',
     hours: [
       { days: 'Segunda à Sexta', time: '08h às 18h' },
@@ -106,6 +115,81 @@ const fadeInUp = {
 
 const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
+  const [open, setOpen] = useState(false);
+  const { lat, lng, name } = store;
+  const encodedName = encodeURIComponent(`INSULFILM™ ${name}`);
+
+  const navOptions = [
+    {
+      label: 'Google Maps',
+      icon: '🗺️',
+      url: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=&travelmode=driving`,
+    },
+    {
+      label: 'Waze',
+      icon: '🚗',
+      url: `https://waze.com/ul?ll=${lat},${lng}&navigate=yes&q=${encodedName}`,
+    },
+    {
+      label: 'Apple Maps',
+      icon: '🍎',
+      url: `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d&t=m`,
+    },
+  ];
+
+  return (
+    <div className="relative">
+      <Button
+        size="sm"
+        variant="outline"
+        className="w-full gap-1.5 text-xs"
+        onClick={() => setOpen(!open)}
+      >
+        <Navigation className="w-3.5 h-3.5" />
+        Como chegar
+      </Button>
+      <AnimatePresence>
+        {open && (
+          <>
+            <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: 8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 8, scale: 0.95 }}
+              transition={{ duration: 0.15 }}
+              className="absolute bottom-full left-0 right-0 mb-2 z-50 bg-card border border-border rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="flex items-center justify-between px-3 py-2 border-b border-border">
+                <span className="text-xs font-semibold text-muted-foreground">Abrir com:</span>
+                <button onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+              {navOptions.map((opt) => (
+                <a
+                  key={opt.label}
+                  href={opt.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-3 py-2.5 hover:bg-muted/50 transition-colors text-sm text-foreground"
+                  onClick={() => {
+                    setOpen(false);
+                    Analytics.mapDirectionsClick(store.id);
+                  }}
+                >
+                  <span className="text-base">{opt.icon}</span>
+                  {opt.label}
+                </a>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 // ─── STORE CARD ───────────────────────────────────────────────────────────
@@ -190,7 +274,7 @@ const StoreCard = ({ store }: { store: typeof STORES[0] }) => {
             >
               <Button
                 size="sm"
-                className="w-full bg-green-600 hover:bg-green-500 text-white font-bold gap-2"
+                className="w-full bg-[hsl(142,72%,29%)] hover:bg-[hsl(142,72%,35%)] text-primary-foreground font-bold gap-2"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp {store.whatsappNum}
@@ -211,22 +295,9 @@ const StoreCard = ({ store }: { store: typeof STORES[0] }) => {
                   </Button>
                 </a>
               )}
-              <a
-                href={store.maps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={store.phone ? 'flex-none' : 'flex-1'}
-                onClick={() => Analytics.mapDirectionsClick(store.id)}
-              >
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="w-full gap-1.5 text-xs"
-                >
-                  <Navigation className="w-3.5 h-3.5" />
-                  Como chegar
-                </Button>
-              </a>
+              <div className={store.phone ? 'flex-none' : 'flex-1'}>
+                <NavigationPicker store={store} />
+              </div>
             </div>
           </div>
         </CardContent>
