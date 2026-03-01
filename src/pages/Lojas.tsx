@@ -465,9 +465,14 @@ const Lojas = () => {
 
   const sortedStores = useMemo(() => {
     if (!userCoords) return STORES;
-    return [...STORES]
+    const withDistance = [...STORES]
       .map((s) => ({ ...s, distance: haversineKm(userCoords.lat, userCoords.lng, s.lat, s.lng) }))
       .sort((a, b) => a.distance - b.distance);
+    
+    // Show closest store + any others within 5km of it (nearby cluster)
+    const closest = withDistance[0].distance;
+    const NEARBY_THRESHOLD = 5; // km
+    return withDistance.filter((s) => s.distance <= closest + NEARBY_THRESHOLD);
   }, [userCoords]);
 
   return (
@@ -539,8 +544,29 @@ const Lojas = () => {
       {/* Store Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+          {userCoords && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center mb-8"
+            >
+              <p className="text-sm text-muted-foreground font-light mb-3">
+                {sortedStores.length === 1
+                  ? 'Loja mais próxima de você:'
+                  : `${sortedStores.length} lojas próximas de você:`}
+              </p>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-accent hover:text-accent hover:bg-accent/10 text-xs"
+                onClick={() => setUserCoords(null)}
+              >
+                Ver todas as unidades
+              </Button>
+            </motion.div>
+          )}
           <motion.div
-            className="grid md:grid-cols-2 gap-8 lg:gap-10"
+            className={`grid gap-8 lg:gap-10 ${sortedStores.length === 1 ? 'max-w-xl mx-auto' : 'md:grid-cols-2'}`}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
