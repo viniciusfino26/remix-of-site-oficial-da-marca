@@ -102,7 +102,7 @@ const ArqHubSolar = () => {
         {/* ── HERO ── */}
         <PageHero
           title="Conforto Térmico e Design Sofisticado para o Seu Projeto"
-          subtitle="Reduza o calor extremo, elimine o ofuscamento e proteja seus móveis contra os raios UV sem abrir mão da estética. A tecnologia original INSULFILM™ oferece a solução exata para transformar a sua fachada, sacada ou ambiente corporativo em um espaço de bem-estar absoluto."
+          subtitle="A INSULFILM™ oferece a maior variedade em películas arquitetônicas para melhor desempenho de painéis de vidros em projetos residenciais e comerciais."
           badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'Controle Solar Arquitetônico' }}
           cta={{
             text: 'Falar com um Especialista Arquitetônico',
