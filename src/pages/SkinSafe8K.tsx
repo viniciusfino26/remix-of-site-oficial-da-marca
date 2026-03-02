@@ -7,7 +7,7 @@ import {
   Award, FileText, MessageCircle,
   Layers, Zap, Wrench, ArrowRight,
   AlertTriangle, HeartCrack, UserX, Thermometer,
-  Sparkles, Lock, Lightbulb, Play
+  Sparkles, Lock, Lightbulb
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -143,12 +143,16 @@ const SkinSafe8K = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-primary-foreground/10">
-            <div className="aspect-video bg-primary-foreground/5 flex items-center justify-center">
-              <div className="text-center text-primary-foreground/30">
-                <Play className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                <p className="text-sm font-light">Vídeo em breve</p>
-              </div>
-            </div>
+            <video
+              className="w-full aspect-video object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              disablePictureInPicture
+              src="https://www.insulfilm.com.br/automotivo/__videos/Antivandalismo--Video-Estilhacamento-2.mp4"
+            />
           </div>
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
