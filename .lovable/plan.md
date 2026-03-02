@@ -2,20 +2,12 @@
 
 ## Problem
 
-The `ProductShowcase` component (`src/components/ProductShowcase.tsx`) has a bug: when `imageSrc` is provided, it renders a container div but **no `<img>` element** inside it. Lines 88-95 are blank -- the image tag was accidentally removed or never added.
+The title change from "Estética Não Refletiva" to "Não Refletivas" (done in an earlier edit) was lost — likely overwritten when the ProductShowcase image fix was applied. The current file still shows `title: 'Estética Não Refletiva'` on line 75.
 
 ## Fix
 
-Add the missing `<img>` tag inside the `imageSrc` conditional block in `ProductShowcase.tsx` (around line 89):
+Update line 75 in `src/pages/ArqHubSolar.tsx`:
+- Change `title: 'Estética Não Refletiva'` → `title: 'Não Refletivas'`
 
-```tsx
-<img
-  src={imageSrc}
-  alt={title}
-  className="w-full h-full object-cover"
-  loading="lazy"
-/>
-```
-
-This is a one-line fix in a single file. The images are already correctly imported and passed from `ArqHubSolar.tsx` -- they just aren't being rendered.
+Single line change, single file.
 
