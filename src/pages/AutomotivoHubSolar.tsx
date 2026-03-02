@@ -189,7 +189,7 @@ const AutomotivoHubSolar = () => {
         {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
         <section className="relative py-14 overflow-hidden">
           <img src={autoSolarNavBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/40" />
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
               <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider">
