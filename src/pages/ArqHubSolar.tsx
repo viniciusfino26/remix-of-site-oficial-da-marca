@@ -72,7 +72,7 @@ const categories: Category[] = [
 },
 {
   id: 'fume-invertida',
-  title: 'Não Refletivas',
+  title: 'Estética Não Refletiva',
   icon: <Thermometer className="w-5 h-5" />,
   imageSrc: arqSolarFume,
   description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
@@ -119,8 +119,8 @@ const ArqHubSolar = () => {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
                 Como você deseja transformar o seu ambiente?
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-                Escolha a estética ideal para o seu vidro e descubra as películas com a tecnologia certa para a sua necessidade.
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">Transforme sua área envidraçada em uma experiência com muito mais conforto e sofisticação.
+
               </motion.p>
             </motion.div>
 
