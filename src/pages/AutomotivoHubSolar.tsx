@@ -98,19 +98,19 @@ const ProductSection = ({ product, index }: { product: typeof products[0]; index
 
   const textBlock = (
     <motion.div variants={textVariant} className="flex flex-col justify-center">
-      <div className="flex items-center gap-2 text-gray-500 text-sm mb-1">
+      <div className="flex items-center gap-2 text-muted-foreground text-sm mb-1">
         <Settings className="w-4 h-4" />
         <span>{product.tech}</span>
-        <span className="text-gray-300">|</span>
+        <span className="text-muted-foreground/40">|</span>
         <span>{product.serie}</span>
       </div>
-      <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">{product.name}</h3>
+      <h3 className="text-2xl md:text-3xl font-extrabold text-primary mb-3">{product.name}</h3>
       {product.highlight && (
         <p className="text-accent font-bold text-base mb-3">{product.highlight}</p>
       )}
-      <p className="text-gray-600 leading-relaxed whitespace-pre-line mb-6">{product.text}</p>
+      <p className="text-muted-foreground leading-relaxed whitespace-pre-line mb-6">{product.text}</p>
       <Link to={product.path}>
-        <Button variant="outline" className="border-gray-800 text-gray-800 hover:bg-gray-900 hover:text-white font-bold gap-2 rounded-lg px-6 transition-all">
+        <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold gap-2 rounded-lg px-6 transition-all">
           EXPLORE <ArrowRight className="w-4 h-4" />
         </Button>
       </Link>
@@ -173,13 +173,13 @@ const AutomotivoHubSolar = () => {
         <section className="bg-white py-16">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+              <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary mb-4 leading-tight">
                 Películas de Proteção Solar para Vidros Automotivos
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl font-bold italic text-accent mb-6">
                 Muito além do simples escurecimento. Alta performance de verdade.
               </motion.p>
-              <motion.p variants={fadeInUp} className="text-gray-600 leading-relaxed">
+              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed">
                 Eleve sua experiência ao volante com o conforto e sofisticação das películas originais INSULFILM™. Desenvolvidas com tecnologia de ponta em polímeros e compostos óticos especiais, nossas super películas oferecem redução superior de calor, claridade e até +99% de proteção contra os raios UV.
               </motion.p>
             </motion.div>
@@ -228,7 +228,7 @@ const AutomotivoHubSolar = () => {
               <div key={p.id}>
                 <ProductSection product={p} index={i} />
                 {i < products.length - 1 && (
-                  <div className="border-b border-gray-200" />
+                  <div className="border-b border-border" />
                 )}
               </div>
             ))}
@@ -236,18 +236,18 @@ const AutomotivoHubSolar = () => {
         </section>
 
         {/* ═══ BENEFÍCIOS ═══ */}
-        <section className="py-20 bg-white border-t border-gray-100">
+        <section className="py-20 bg-white border-t border-border">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center gap-12 md:gap-16 mb-10">
               {benefits.map((b) => (
                 <motion.div key={b.title} variants={fadeInUp} className="flex flex-col items-center text-center max-w-[160px]">
                   <b.icon className="w-10 h-10 text-accent mb-3" />
-                  <span className="text-xs font-bold text-gray-800 uppercase tracking-wide leading-tight">{b.title}</span>
+                  <span className="text-xs font-bold text-primary uppercase tracking-wide leading-tight">{b.title}</span>
                 </motion.div>
               ))}
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center">
-              <div className="inline-flex items-center gap-2 text-gray-600 text-sm font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 text-muted-foreground text-sm font-bold uppercase tracking-wider">
                 <Award className="w-5 h-5 text-accent" />
                 Pacote completo de garantias · Certificado individual
               </div>
