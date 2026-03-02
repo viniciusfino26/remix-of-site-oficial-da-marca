@@ -67,7 +67,8 @@ const categories: Category[] = [
   products: [
   { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
   { name: "INSULFILM™ Reflesso d'Argento", path: '/arquitetonico/solar/reflesso-d-argento' },
-  { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' }]
+  { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' },
+  { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }]
 
 },
 {
@@ -77,8 +78,7 @@ const categories: Category[] = [
   imageSrc: arqSolarFume,
   description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
   products: [
-  { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' },
-  { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }]
+  { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' }]
 
 }];
 
