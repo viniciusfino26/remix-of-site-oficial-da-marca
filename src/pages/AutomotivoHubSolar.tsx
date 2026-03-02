@@ -238,10 +238,10 @@ const AutomotivoHubSolar = () => {
         {/* ═══ BENEFÍCIOS ═══ */}
         <section className="py-20 bg-white border-t border-border">
           <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center gap-12 md:gap-16 mb-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-6 mb-10 max-w-5xl mx-auto">
               {benefits.map((b) => (
-                <motion.div key={b.title} variants={fadeInUp} className="flex flex-col items-center text-center max-w-[160px]">
-                  <b.icon className="w-10 h-10 text-accent mb-3" />
+                <motion.div key={b.title} variants={fadeInUp} className="flex flex-col items-center text-center">
+                  <b.icon className="w-10 h-10 text-accent mb-3" strokeWidth={1.5} />
                   <span className="text-xs font-bold text-primary uppercase tracking-wide leading-tight">{b.title}</span>
                 </motion.div>
               ))}
