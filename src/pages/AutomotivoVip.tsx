@@ -95,6 +95,17 @@ const AutomotivoVip = () => {
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
 
+        <section className="py-16 bg-background overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                <img src={productImage} alt="INSULFILM™ VIP" className="w-full h-full object-cover rounded-2xl" />
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
+            </motion.div>
+          </div>
+        </section>
+
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -124,27 +135,20 @@ const AutomotivoVip = () => {
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-                <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Carbono de Verdade, Performance de Verdade</motion.h2>
-                <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                  A INSULFILM™ VIP utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
-                </motion.p>
-                <motion.ul className="space-y-4" variants={stagger}>
-                  {['Carbono real — cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
-                    <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                      <span className="text-primary-foreground font-medium">{text}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </motion.div>
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img src={productImage} alt="INSULFILM™ VIP" className="w-full h-full object-cover rounded-2xl" />
-                </div>
-              </motion.div>
-            </div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Carbono de Verdade, Performance de Verdade</motion.h2>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
+                A INSULFILM™ VIP utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
+              </motion.p>
+              <motion.ul className="space-y-4" variants={stagger}>
+                {['Carbono real — cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
+                  <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <span className="text-primary-foreground font-medium">{text}</span>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
           </div>
         </section>
 
