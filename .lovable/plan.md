@@ -1,24 +1,22 @@
 
 
-## Plano: Adicionar fotos dos produtos nas páginas individuais
+## Plano: Trocar textos pretos/cinza por azul (primary) na página /automotivo/solar
 
-Usar as mesmas imagens já salvas em `src/assets/` (do hub solar) nos placeholders de cada página de produto.
+A página usa `text-gray-900`, `text-gray-800`, `text-gray-600`, `text-gray-500` enquanto as demais páginas usam o azul escuro do tema (`text-primary`, `text-foreground`, `text-muted-foreground`). O `primary` do projeto é `hsl(224 100% 19%)` — azul marinho.
 
-### Mapeamento
+### Alterações em `src/pages/AutomotivoHubSolar.tsx`
 
-| Página | Arquivo | Imagem |
+| De | Para | Onde |
 |---|---|---|
-| AutomotivoDark.tsx | `auto-solar-dark.png` | Placeholder linha 144-147 |
-| AutomotivoEclipse.tsx | `auto-solar-eclipse.png` | Placeholder linha 141-144 |
-| AutomotivoVip.tsx | `auto-solar-vip.png` | Placeholder linha 141-144 |
-| AutomotivoMatrix.tsx | `auto-solar-matrix.png` | Placeholder linha 151-158 |
-| AutomotivoPolariz.tsx | `auto-solar-polariz.png` | Placeholder linha 143-146 |
-| Dark.tsx | `auto-solar-dark.png` | Placeholder linha ~144-147 |
+| `text-gray-900` | `text-primary` | Títulos h1, h3 dos produtos |
+| `text-gray-800` | `text-primary` | Benefícios, botão EXPLORE (texto e borda) |
+| `text-gray-600` | `text-muted-foreground` | Parágrafos, garantias |
+| `text-gray-500` | `text-muted-foreground` | Metadata de tecnologia/série |
+| `text-gray-300` | `text-muted-foreground/40` | Separador `|` na metadata |
+| `border-gray-800` | `border-primary` | Botão EXPLORE |
+| `hover:bg-gray-900` | `hover:bg-primary` | Botão EXPLORE hover |
+| `border-gray-200` | `border-border` | Separadores entre produtos |
+| `border-gray-100` | `border-border` | Borda da seção benefícios |
 
-### Alterações por arquivo (mesmo padrão em todos)
-
-1. **Import**: Adicionar `import productImage from '@/assets/auto-solar-{nome}.png'`
-2. **Placeholder**: Substituir o `<div>` cinza com icone `Car` por `<img src={productImage} alt="INSULFILM™ {Nome}" className="w-full h-full object-cover rounded-2xl" />`
-
-6 arquivos alterados, mesma mudança mecânica em cada um.
+Todas as mudanças no mesmo arquivo, sem alterar estrutura ou layout.
 
