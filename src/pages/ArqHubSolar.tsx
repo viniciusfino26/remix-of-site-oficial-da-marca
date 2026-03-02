@@ -72,7 +72,7 @@ const categories: Category[] = [
   },
   {
     id: 'fume-invertida',
-    title: 'Estética Fumê e Invertida',
+    title: 'Estética Não Refletiva',
     icon: <Thermometer className="w-5 h-5" />,
     imageSrc: arqSolarFume,
     description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
