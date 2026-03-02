@@ -1,132 +1,63 @@
-import { useRef } from 'react';
-import ParallaxBreak from '@/components/ParallaxBreak';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, ShieldCheck, ShieldAlert, Swords, MessageCircle, ArrowRight, MapPin, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PageHero from '@/components/PageHero';
+import ProductShowcase from '@/components/ProductShowcase';
+import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.85 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
-const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const WHATSAPP_NUMBER = '5511999999999';
 
-const navCards = [
-  { icon: ShieldCheck, title: 'Proteção em Acidentes', desc: 'Evite a projeção direta de estilhaços contra os ocupantes', anchor: '#protecao' },
-  { icon: ShieldAlert, title: 'Proteção Antivandalismo', desc: 'Escudo contra atos de vandalismo e estilhaços em choques', anchor: '#protecao' },
-  { icon: Swords, title: 'Defesa', desc: 'Verdadeiros escudos muito mais resistentes a impactos agressivos de invasão', anchor: '#defesa' },
-];
-
-const protecaoProducts = [
-  {
-    name: 'INSULFILM™ SkinSafe8K',
-    subtitle: 'PROTEÇÃO CONTRA ACIDENTES.',
-    text: 'Em caso de quebras acidentais provocadas por impactos, ou quebra espontânea, falhas mecânicas ou choques térmicos — a película retém os fragmentos, evitando a projeção direta contra os ocupantes do veículo.',
-    path: '/automotivo/seguranca/skinsafe8k',
-  },
-  {
-    name: 'INSULFILM™ Antivandalismo 13K',
-    subtitle: 'PROTEÇÃO CONTRA ATOS DE VANDALISMO.',
-    text: 'Película projetada com alta tecnologia. Dificulta invasões rápidas e retém estilhaços em quebras acidentais. O escudo contra a quebra do vidro por abordagens rápidas e premeditadas. Torna o vidro principal uma barreira resistente a impactos.',
-    path: '/automotivo/seguranca/antivandalismo13k',
-  },
-];
-
-const defesaProducts = [
-  {
-    name: 'INSULFILM™ SkudoGuard',
-    subtitle: 'MAIS QUE ANTIVANDALISMO, SEGURANÇA SUPERIOR FORTE E EFETIVA.',
-    text: 'Mais proteção contra agressões, a película SkudoGuard torna o vidro com uma barreira espessa, limitando o acesso imediato nas primeiras tentativas, desestimulando a ação. Retém a projeção direta de estilhaços em acidentes. Torna a transposição um forte escudo de difícil ruptura antes e, principalmente, após a quebra do vidro.',
-    path: '/automotivo/seguranca/skudoguard',
-  },
-  {
-    name: 'INSULFILM™ SkudoUltra',
-    subtitle: 'EXTREMA SEGURANÇA. BLINDAGEM CONTRA ARMAS BRANCAS.',
-    text: 'O máximo em blindagem com filmes, aplicável aos vidros laterais do carro. Máxima proteção diante de múltiplas e severos ataques. Transforma os vidros do seu carro num escudo com altíssima resistência pós quebra para uma invasão com impacto pesado e contínuo. Excepcional blindagem contra estilhaços de vidro.',
-    path: '/automotivo/seguranca/skudoultra',
-  },
-];
-
-const ProductRow = ({ product, index, reversed }: { product: typeof protecaoProducts[0]; index: number; reversed: boolean }) => {
-  const textVariant = reversed ? fadeInRight : fadeInLeft;
-  const imgVariant = reversed ? fadeInLeft : fadeInRight;
-
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
-      variants={stagger}
-      className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${index > 0 ? 'mt-20' : ''}`}
-    >
-      {reversed ? (
-        <>
-          {/* Image first */}
-          <motion.div variants={imgVariant} className="order-2 md:order-1">
-            <div className="glass-card rounded-2xl aspect-[4/3] flex flex-col items-center justify-center gap-3">
-              <Shield className="w-16 h-16 text-accent/40" />
-              <span className="text-sm text-muted-foreground">Imagem do produto</span>
-            </div>
-          </motion.div>
-          {/* Text second */}
-          <motion.div variants={textVariant} className="order-1 md:order-2">
-            <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-2">{product.name}</h3>
-            <p className="text-accent font-bold uppercase tracking-widest text-sm mb-4">{product.subtitle}</p>
-            <p className="text-muted-foreground font-light leading-relaxed mb-6">{product.text}</p>
-            <Link to={product.path}>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 rounded-xl shadow-md hover:shadow-lg transition-all">
-                VEJA <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </motion.div>
-        </>
-      ) : (
-        <>
-          {/* Text first */}
-          <motion.div variants={textVariant}>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-foreground mb-2">{product.name}</h3>
-            <p className="text-accent font-bold uppercase tracking-widest text-sm mb-4">{product.subtitle}</p>
-            <p className="text-muted-foreground font-light leading-relaxed mb-6">{product.text}</p>
-            <Link to={product.path}>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 rounded-xl shadow-md hover:shadow-lg transition-all">
-                VEJA <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </motion.div>
-          {/* Image second */}
-          <motion.div variants={imgVariant}>
-            <div className="glass-card rounded-2xl aspect-[4/3] flex flex-col items-center justify-center gap-3">
-              <Shield className="w-16 h-16 text-accent/40" />
-              <span className="text-sm text-muted-foreground">Imagem do produto</span>
-            </div>
-          </motion.div>
-        </>
-      )}
-    </motion.div>
-  );
+type Category = {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  products: { name: string; path: string }[];
 };
 
+const categories: Category[] = [
+  {
+    id: 'protecao',
+    title: 'Proteção',
+    icon: <ShieldCheck className="w-5 h-5" />,
+    description: 'Películas que retêm os fragmentos de vidro em caso de quebras acidentais, evitando a projeção direta contra os ocupantes do veículo. Proteção contra acidentes e atos de vandalismo.',
+    products: [
+      { name: 'INSULFILM™ SkinSafe8K', path: '/automotivo/seguranca/skinsafe8k' },
+      { name: 'INSULFILM™ Antivandalismo 13K', path: '/automotivo/seguranca/antivandalismo13k' },
+    ],
+  },
+  {
+    id: 'defesa',
+    title: 'Defesa',
+    icon: <Swords className="w-5 h-5" />,
+    description: 'Verdadeiros escudos muito mais resistentes a impactos agressivos de invasão. Películas projetadas para transformar os vidros do seu carro numa barreira de altíssima resistência pós-quebra.',
+    products: [
+      { name: 'INSULFILM™ SkudoGuard', path: '/automotivo/seguranca/skudoguard' },
+      { name: 'INSULFILM™ SkudoUltra', path: '/automotivo/seguranca/skudoultra' },
+    ],
+  },
+];
+
 const AutomotivoHubSeguranca = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const textureY = useSpring(useTransform(scrollYProgress, [0, 1], [0, -60]), { stiffness: 60, damping: 20 });
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const visibleCategories = activeFilter
+    ? categories.filter((c) => c.id === activeFilter)
+    : categories;
 
   return (
     <>
@@ -137,31 +68,20 @@ const AutomotivoHubSeguranca = () => {
       </Helmet>
 
       <main>
-        {/* ═══ HERO ═══ */}
-        <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
-          <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: textureY }} />
-          <div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger}>
-              <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                  <Shield className="w-3.5 h-3.5 mr-2" />Proteção e Segurança
-                </Badge>
-              </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 max-w-4xl mx-auto leading-tight">
-                Proteja-se das incertezas no caminho. Dirija confiante de chegar lá com proteção e segurança de verdade.
-              </motion.h1>
-              <motion.p variants={fadeInUp} className="text-base md:text-lg text-primary-foreground/60 font-light max-w-3xl mx-auto leading-relaxed">
-                Conheça as películas automotivas de Proteção, Antivandalismo e Defesa originais INSULFILM™. Desenvolvidas com engenharia de ponta e polímeros sintéticos de alta performance elástica, nossas películas oferecem muito mais resistência para você rodar com tranquilidade e segurança total do seu carro, uma fortaleza, repelindo os vidros contra acidentes e ataques criminosos.
-              </motion.p>
-              <motion.div variants={scaleIn} className="flex justify-center mt-8">
-                <div className="separator-accent" />
-              </motion.div>
-            </motion.div>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-        </section>
+        {/* ── HERO ── */}
+        <PageHero
+          title="Proteja-se das incertezas no caminho. Dirija confiante de chegar lá com proteção e segurança de verdade."
+          subtitle="Conheça as películas automotivas de Proteção, Antivandalismo e Defesa originais INSULFILM™. Desenvolvidas com engenharia de ponta e polímeros sintéticos de alta performance elástica, nossas películas oferecem muito mais resistência para você rodar com tranquilidade e segurança total do seu carro, uma fortaleza, repelindo os vidros contra acidentes e ataques criminosos."
+          badge={{ icon: <Shield className="w-3.5 h-3.5" />, text: 'Proteção e Segurança' }}
+          cta={{
+            text: 'Falar com um Especialista',
+            href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre as películas de segurança automotiva INSULFILM™.')}`,
+            icon: <MessageCircle className="w-5 h-5" />,
+            external: true,
+          }}
+        />
 
-        {/* ═══ FAIXA DE DESTAQUE ═══ */}
+        {/* ── FAIXA DE DESTAQUE ── */}
         <section className="bg-background">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="container mx-auto px-4 py-10 text-center">
             <p className="text-muted-foreground text-sm md:text-base font-light mb-6">
@@ -175,53 +95,94 @@ const AutomotivoHubSeguranca = () => {
           </motion.div>
         </section>
 
-        {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
+        {/* ── CATEGORIAS COM SHOWCASES ── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
-              <motion.h3 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground uppercase tracking-wider">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
                 Encontre o seu INSULFILM™ ideal
-              </motion.h3>
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
+                Escolha o nível de proteção que você precisa para o seu veículo.
+              </motion.p>
             </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {navCards.map((c) => (
-                <motion.a key={c.title} href={c.anchor} variants={fadeInUp}>
-                  <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                    <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-colors text-center">
-                      <CardContent className="p-8 flex flex-col items-center gap-4">
-                        <c.icon className="w-10 h-10 text-accent" />
-                        <h4 className="text-lg font-extrabold text-foreground">{c.title}</h4>
-                        <p className="text-sm text-muted-foreground font-light">{c.desc}</p>
-                        <span className="text-accent font-bold text-sm flex items-center gap-1 mt-2">
-                          Saiba Mais <ArrowRight className="w-4 h-4" />
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </motion.a>
+
+            {/* Filter buttons */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center gap-3 mb-16">
+              <motion.div variants={fadeInUp}>
+                <Button
+                  variant={activeFilter === null ? 'default' : 'outline'}
+                  onClick={() => setActiveFilter(null)}
+                  className="rounded-full px-6 py-2"
+                >
+                  Todos
+                </Button>
+              </motion.div>
+              {categories.map((cat) => (
+                <motion.div key={cat.id} variants={fadeInUp}>
+                  <Button
+                    variant={activeFilter === cat.id ? 'default' : 'outline'}
+                    onClick={() => setActiveFilter(activeFilter === cat.id ? null : cat.id)}
+                    className="rounded-full px-6 py-2 gap-2"
+                  >
+                    {cat.icon}
+                    {cat.title}
+                  </Button>
+                </motion.div>
               ))}
             </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn} className="flex justify-center mt-16">
-              <div className="separator-accent" />
-            </motion.div>
-          </div>
-        </section>
 
-        {/* ═══ PELÍCULAS DE PROTEÇÃO ═══ */}
-        <section id="protecao" className="py-24 bg-carbon-gradient relative overflow-hidden">
-          <div className="absolute inset-0 bg-hero-texture opacity-30" />
-          <div className="container mx-auto px-4 relative z-10">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground">
-                Películas de Proteção
-              </motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-6">
-                <div className="separator-accent" />
+            {/* Category sections with ProductShowcase */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeFilter ?? 'all'}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                className="space-y-24"
+              >
+                {visibleCategories.map((cat, catIdx) => (
+                  <div key={cat.id} className="space-y-12">
+                    {/* Category showcase */}
+                    <ProductShowcase
+                      title={cat.title}
+                      description={cat.description}
+                      fallbackIcon={<Shield className="w-16 h-16 text-accent/40" />}
+                      link={cat.products[0]?.path || '#'}
+                      linkText="Explorar Categoria"
+                      reversed={catIdx % 2 !== 0}
+                    />
+
+                    {/* Product cards */}
+                    <motion.div
+                      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={stagger}
+                    >
+                      {cat.products.map((p) => (
+                        <motion.div key={p.path} variants={fadeInUp}>
+                          <Link to={p.path}>
+                            <motion.div whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.3 }}>
+                              <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
+                                <CardContent className="p-8">
+                                  <h4 className="text-lg font-extrabold mb-4 text-primary">{p.name}</h4>
+                                  <span className="text-accent font-bold text-sm flex items-center gap-1">
+                                    Ver detalhes <ArrowRight className="w-4 h-4" />
+                                  </span>
+                                </CardContent>
+                              </Card>
+                            </motion.div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+                ))}
               </motion.div>
-            </motion.div>
-            {protecaoProducts.map((p, i) => (
-              <ProductRow key={p.path} product={p} index={i} reversed={i % 2 !== 0} />
-            ))}
+            </AnimatePresence>
           </div>
         </section>
 
@@ -232,24 +193,7 @@ const AutomotivoHubSeguranca = () => {
           { value: 'Certificado', label: 'de Fábrica' },
         ]} />
 
-        {/* ═══ PELÍCULAS DE DEFESA ═══ */}
-        <section id="defesa" className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground">
-                Películas de Defesa
-              </motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-6">
-                <div className="separator-accent" />
-              </motion.div>
-            </motion.div>
-            {defesaProducts.map((p, i) => (
-              <ProductRow key={p.path} product={p} index={i} reversed={i % 2 !== 0} />
-            ))}
-          </div>
-        </section>
-
-        {/* ═══ CTA FINAL ═══ */}
+        {/* ── CTA FINAL ── */}
         <section className="py-24 bg-carbon-gradient relative overflow-hidden">
           <div className="absolute inset-0 bg-hero-texture opacity-30" />
           <div className="container mx-auto px-4 relative z-10 text-center">
