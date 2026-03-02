@@ -149,7 +149,6 @@ const SkinSafe8K = () => {
               muted
               loop
               playsInline
-              controls
               disablePictureInPicture
               src="https://www.insulfilm.com.br/automotivo/__videos/Antivandalismo--Video-Estilhacamento-2.mp4"
             />
