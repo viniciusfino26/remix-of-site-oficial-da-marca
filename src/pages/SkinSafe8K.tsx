@@ -245,6 +245,26 @@ const SkinSafe8K = () => {
               </motion.div>
             ))}
           </motion.div>
+      </div>
+      </section>
+
+      {/* ═══ CTA — PROTEGER MINHA PELE ═══ */}
+      <section className="py-16 bg-carbon-gradient overflow-hidden relative">
+        <div className="absolute inset-0 bg-diagonal-texture" />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div className="text-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light text-lg mb-6">
+              Uma prevenção simples que pode evitar lesões sérias.
+            </motion.p>
+            <motion.div variants={scaleIn}>
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de proteger minha pele com a película INSULFILM SkinSafe8K.')}`} target="_blank" rel="noopener noreferrer">
+                  <ArrowRight className="w-5 h-5" />
+                  PROTEGER MINHA PELE
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -290,6 +310,34 @@ const SkinSafe8K = () => {
                   <p className="text-primary-foreground/60 font-light text-sm">Combinação da SkinSafe8K com película solar nos vidros laterais e traseiro. Une proteção contra estilhaços com rejeição de calor, bloqueio UV total e privacidade.</p>
                 </CardContent>
               </Card>
+            </motion.div>
+          </motion.div>
+
+          {/* Linhas solares compatíveis */}
+          <motion.div className="max-w-4xl mx-auto mt-12" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
+            <motion.div variants={fadeInUp} className="glass-card rounded-2xl p-8 text-center">
+              <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
+              <h3 className="text-lg font-extrabold text-primary-foreground mb-3">Compatível com todas as linhas solares automotivas</h3>
+              <p className="text-primary-foreground/60 font-light text-sm mb-6 max-w-2xl mx-auto">
+                A SkinSafe8K pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { name: 'Dark', gen: '2ª Geração — Pigmentada', href: '/automotivo/solar/dark' },
+                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
+                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
+                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
+                ].map((line) => (
+                  <a key={line.name} href={line.href} className="group">
+                    <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
+                      <Sun className="w-3.5 h-3.5 mr-2" />
+                      <span className="font-bold">{line.name}</span>
+                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
+                    </Badge>
+                  </a>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </div>
