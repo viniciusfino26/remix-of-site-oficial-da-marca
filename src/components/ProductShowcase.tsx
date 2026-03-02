@@ -86,12 +86,12 @@ const ProductShowcase = ({
           className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-premium-lg"
           style={{ y: imgY }}>
 
-            
-
-
-
-
-
+            <img
+              src={imageSrc}
+              alt={title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
 
             <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
           </motion.div> :
