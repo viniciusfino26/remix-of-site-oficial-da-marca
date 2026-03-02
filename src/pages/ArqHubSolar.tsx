@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductShowcase from '@/components/ProductShowcase';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import arqSolarTransparencia from '@/assets/arq-solar-alta-transparencia.png';
+import arqSolarNeutra from '@/assets/arq-solar-estetica-neutra.png';
+import arqSolarFume from '@/assets/arq-solar-fume-invertida.png';
+import arqSolarEspelhados from '@/assets/arq-solar-privacidade-espelhados.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -25,7 +29,8 @@ type Category = {
   id: string;
   title: string;
   icon: React.ReactNode;
-  fallbackIcon: React.ReactNode;
+  imageSrc?: string;
+  fallbackIcon?: React.ReactNode;
   description: string;
   products: { name: string; path: string }[];
 };
@@ -35,7 +40,7 @@ const categories: Category[] = [
     id: 'alta-transparencia',
     title: 'Alta Transparência',
     icon: <Eye className="w-5 h-5" />,
-    fallbackIcon: <Eye className="w-24 h-24 text-accent/20" />,
+    imageSrc: arqSolarTransparencia,
     description: 'Para quem exige máximo bloqueio de calor, mas não quer alterar a fachada ou perder a luz natural. A verdadeira revolução da Nano Cerâmica.',
     products: [
       { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70' },
@@ -47,7 +52,7 @@ const categories: Category[] = [
     id: 'estetica-neutra',
     title: 'Estética Neutra',
     icon: <Sparkles className="w-5 h-5" />,
-    fallbackIcon: <Sparkles className="w-24 h-24 text-accent/20" />,
+    imageSrc: arqSolarNeutra,
     description: 'Tecnologia Sputtered de bombardeamento iônico. Controle solar inteligente com uma tonalidade suave que respeita o design original da arquitetura.',
     products: [
       { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale' },
@@ -57,7 +62,7 @@ const categories: Category[] = [
     id: 'privacidade-espelhados',
     title: 'Privacidade e Espelhados',
     icon: <Shield className="w-5 h-5" />,
-    fallbackIcon: <Shield className="w-24 h-24 text-accent/20" />,
+    imageSrc: arqSolarEspelhados,
     description: 'A solução definitiva para grandes fachadas ensolaradas. Proporciona privacidade diurna rigorosa de fora para dentro e alívio térmico imediato.',
     products: [
       { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
@@ -69,7 +74,7 @@ const categories: Category[] = [
     id: 'fume-invertida',
     title: 'Estética Fumê e Invertida',
     icon: <Thermometer className="w-5 h-5" />,
-    fallbackIcon: <Thermometer className="w-24 h-24 text-accent/20" />,
+    imageSrc: arqSolarFume,
     description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
     products: [
       { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' },
@@ -160,6 +165,7 @@ const ArqHubSolar = () => {
                     <ProductShowcase
                       title={cat.title}
                       description={cat.description}
+                      imageSrc={cat.imageSrc}
                       fallbackIcon={cat.fallbackIcon}
                       link={cat.products[0]?.path || '#'}
                       linkText="Explorar Categoria"
