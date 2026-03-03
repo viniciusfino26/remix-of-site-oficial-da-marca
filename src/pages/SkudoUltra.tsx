@@ -2,10 +2,10 @@ import { useRef, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import {
-  Shield, CheckCircle, Eye, Lock,
+  Shield, CheckCircle, Eye, Lock, Sun,
   Award, FileText, RefreshCw, MessageCircle, Swords,
   Layers, ArrowRight, BookOpen, Wrench, Zap,
-  AlertTriangle, HeartCrack, UserX, Quote, Heart, ShieldAlert, Users, ShieldCheck
+  AlertTriangle, HeartCrack, UserX, Quote, Heart, ShieldAlert, Users, ShieldCheck, Sparkles
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -693,7 +693,39 @@ const SkudoUltra = () => {
         </div>
       </section>
 
-      {/* ═══ 12. CTA FINAL ═══ */}
+      {/* ═══ 12. APLICABILIDADE — LINHAS SOLARES ═══ */}
+      <section className="py-24 bg-carbon-gradient overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
+            <motion.div variants={fadeInUp} className="glass-card rounded-2xl p-8 text-center">
+              <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
+              <h3 className="text-lg font-extrabold text-primary-foreground mb-3">Compatível com todas as linhas solares automotivas</h3>
+              <p className="text-primary-foreground/60 font-light text-sm mb-6 max-w-2xl mx-auto">
+                A SkudoUltra pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { name: 'Dark', gen: '2ª Geração — Pigmentada', href: '/automotivo/solar/dark' },
+                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
+                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
+                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
+                ].map((line) => (
+                  <a key={line.name} href={line.href} className="group">
+                    <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
+                      <Sun className="w-3.5 h-3.5 mr-2" />
+                      <span className="font-bold">{line.name}</span>
+                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
+                    </Badge>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══ 13. CTA FINAL ═══ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
