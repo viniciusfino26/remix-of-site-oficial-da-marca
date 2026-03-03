@@ -1,37 +1,13 @@
 
 
-## Plano: Adicionar seção "Aplicabilidade" nas páginas de segurança
+## Plano: Corrigir layout do hero da página Quem Somos
 
-Adicionar o quadro de compatibilidade com as linhas solares (igual ao da SkinSafe8K) nas 3 páginas de segurança: Antivandalismo13K, SkudoGuard e SkudoUltra.
+### Problema
+A seção hero usa `flex items-center` sem `flex-col`, fazendo o conteúdo de texto e as estatísticas ficarem lado a lado (espremidos) em vez de empilhados verticalmente como na referência.
 
-### O que será feito
+### Alterações em `src/pages/QuemSomos.tsx`
 
-Inserir uma nova seção antes do CTA final em cada página, com:
-- Icone `Sparkles` centralizado
-- Titulo adaptado ao nome do produto (ex: "A Antivandalismo 13K pode ser combinada...")
-- 5 badges clicáveis com links para as linhas solares (Dark, Eclipse, Vip, Matrix, Polariz Ultra)
-- Mesmo estilo `glass-card` usado na SkinSafe8K
-
-### Arquivos alterados
-
-1. **`src/pages/Antivandalismo13K.tsx`** — inserir seção entre o Glossário (seção 13) e o CTA final (seção 14), ~linha 706. Adicionar import `Sparkles, Sun` se necessário.
-
-2. **`src/pages/SkudoGuard.tsx`** — inserir seção entre o Glossário (seção 14) e o CTA final (seção 15), ~linha 767. Adicionar import `Sparkles, Sun`.
-
-3. **`src/pages/SkudoUltra.tsx`** — inserir seção entre o Glossário (seção 11) e o CTA final (seção 12), ~linha 694. Adicionar import `Sparkles, Sun`.
-
-### Conteúdo da seção (idêntico nas 3, apenas o nome do produto muda)
-
-```text
-Compatível com todas as linhas solares automotivas
-A [NomeProduto] pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:
-
-[Dark — 2ª Geração — Pigmentada]
-[Eclipse — 3ª Geração — Carbono]
-[Vip — 3ª Geração evoluída — Carbono-Cerâmica]
-[Matrix — 4ª Geração — Cerâmica]
-[Polariz Ultra — 5ª Geração — Cerâmica Metalizada]
-```
-
-Cada badge será um link para a respectiva página solar, usando o mesmo padrão visual da SkinSafe8K (glass-card + Badge com icone Sun).
+1. **Linha 165** — Adicionar `flex-col` à seção hero para empilhar texto + stats verticalmente
+2. **Linha 204** — Mudar o container de stats de `flex` para `grid grid-cols-2 md:grid-cols-4` com `gap-6 md:gap-12` para distribuir melhor no mobile (2 colunas) e desktop (4 colunas)
+3. **Ajustar padding** do container de stats para `pb-16 md:pb-24` para melhor espaçamento no mobile
 
