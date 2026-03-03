@@ -1,15 +1,15 @@
 // src/components/SchemaOrg.tsx
 // Dados estruturados Schema.org para Google Rich Results + LLMs
-// Cobre: Organization, LocalBusiness (4 unidades), FAQPage, Product, BreadcrumbList
+// Cobre: Organization, LocalBusiness (4 centros autorizados), FAQPage, Product, BreadcrumbList
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// ─── DADOS DAS UNIDADES ────────────────────────────────────────────────────
+// ─── DADOS DOS CENTROS AUTORIZADOS ────────────────────────────────────────
 const STORES = [
   {
-    name: 'INSULFILM™ Oficial — Unidade Pacaembu',
-    description: 'Loja Oficial INSULFILM™ Zona Oeste de São Paulo. Películas automotivas e PPF.',
+    name: 'INSULFILM™ — Centro Autorizado Pacaembu',
+    description: 'Centro Autorizado INSULFILM™ Zona Oeste de São Paulo. Películas automotivas e PPF.',
     address: {
       streetAddress: 'Av. Pacaembu, 77',
       addressLocality: 'Barra Funda',
@@ -25,8 +25,8 @@ const STORES = [
     maps: 'https://maps.app.goo.gl/kp2ZXLpyx6VZhmF18',
   },
   {
-    name: 'INSULFILM™ Oficial — Unidade Santana',
-    description: 'Loja Oficial INSULFILM™ Zona Norte de São Paulo. Películas automotivas e PPF.',
+    name: 'INSULFILM™ — Centro Autorizado Santana',
+    description: 'Centro Autorizado INSULFILM™ Zona Norte de São Paulo. Películas automotivas e PPF.',
     address: {
       streetAddress: 'Av. Engenheiro Caetano Álvares, 5727',
       addressLocality: 'Imirim',
@@ -42,8 +42,8 @@ const STORES = [
     maps: 'https://maps.app.goo.gl/hQVwpxD5bros7et19',
   },
   {
-    name: 'INSULFILM™ Oficial — Unidade Av. Paulista',
-    description: 'Loja Oficial INSULFILM™ Centro de São Paulo, no Shopping Cidade São Paulo.',
+    name: 'INSULFILM™ — Centro Autorizado Av. Paulista',
+    description: 'Centro Autorizado INSULFILM™ Centro de São Paulo, no Shopping Cidade São Paulo.',
     address: {
       streetAddress: 'Rua São Carlos do Pinhal, 627',
       addressLocality: 'Bela Vista',
@@ -59,8 +59,8 @@ const STORES = [
     maps: 'https://maps.app.goo.gl/D3q6jHM5BzFh8Xkj7',
   },
   {
-    name: 'INSULFILM™ Oficial — Unidade Moema',
-    description: 'Loja Oficial INSULFILM™ Zona Sul de São Paulo. Películas automotivas e PPF.',
+    name: 'INSULFILM™ — Centro Autorizado Moema',
+    description: 'Centro Autorizado INSULFILM™ Zona Sul de São Paulo. Películas automotivas e PPF.',
     address: {
       streetAddress: 'Av. Moreira Guimarães, 1254',
       addressLocality: 'Moema',
@@ -154,7 +154,7 @@ const homeFaqSchema = {
       name: 'O que é INSULFILM™?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'INSULFILM™ é a marca original e registrada de películas para vidros no Brasil, fundada em 1986. Não é um termo genérico — é uma empresa com mais de 35 anos de mercado, 4 unidades em São Paulo e rede nacional de parceiros autorizados.',
+        text: 'INSULFILM™ é a marca original e registrada de películas para vidros no Brasil, fundada em 1986. Não é um termo genérico — é uma empresa com mais de 35 anos de mercado, 4 Centros Autorizados em São Paulo e rede nacional de parceiros autorizados.',
       },
     },
     {
@@ -175,10 +175,10 @@ const homeFaqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Onde tem loja INSULFILM em São Paulo?',
+      name: 'Onde tem Centro Autorizado INSULFILM em São Paulo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Há 4 unidades oficiais: Pacaembu (Zona Oeste — Av. Pacaembu, 77), Santana (Zona Norte — Av. Eng. Caetano Álvares, 5727), Av. Paulista (Centro — Shopping Cidade SP) e Moema (Zona Sul — Av. Moreira Guimarães, 1254). Todas funcionam seg–sex 08h–18h e sáb 09h–15h.',
+        text: 'Há 4 Centros Autorizados: Pacaembu (Zona Oeste — Av. Pacaembu, 77), Santana (Zona Norte — Av. Eng. Caetano Álvares, 5727), Av. Paulista (Centro — Shopping Cidade SP) e Moema (Zona Sul — Av. Moreira Guimarães, 1254). Todos funcionam seg–sex 08h–18h e sáb 09h–15h.',
       },
     },
     {
@@ -252,7 +252,7 @@ const breadcrumbMap: Record<string, { name: string; url: string }[]> = {
   ],
   '/lojas': [
     { name: 'INSULFILM™', url: 'https://www.insulfilm.com.br' },
-    { name: 'Lojas Oficiais', url: 'https://www.insulfilm.com.br/lojas' },
+    { name: 'Centros Autorizados', url: 'https://www.insulfilm.com.br/lojas' },
   ],
   '/institucional': [
     { name: 'INSULFILM™', url: 'https://www.insulfilm.com.br' },
@@ -301,7 +301,7 @@ const SchemaOrg = () => {
     // Organization — em todas as páginas
     injectSchema('schema-organization', organizationSchema);
 
-    // LocalBusiness das 4 lojas — em todas as páginas
+    // LocalBusiness dos 4 centros autorizados — em todas as páginas
     localBusinessSchemas.forEach((schema, i) => {
       injectSchema(`schema-store-${i}`, schema);
     });

@@ -20,7 +20,7 @@ const channels = [
   { icon: MessageCircle, title: 'WhatsApp', desc: 'Atendimento rápido via WhatsApp de segunda a sábado.', action: 'Falar pelo WhatsApp', href: 'https://wa.me/5511976136911', external: true },
   { icon: Phone, title: 'Telefone', desc: 'Ligue para nossa central de vendas: (11) 97613-6911', action: 'Ligar Agora', href: 'tel:+5511976136911', external: true },
   { icon: Mail, title: 'E-mail', desc: 'Envie sua consulta por e-mail: vendas@insulfilm.com.br', action: 'Enviar E-mail', href: 'mailto:vendas@insulfilm.com.br', external: true },
-  { icon: MapPin, title: 'Lojas Físicas', desc: 'Encontre a loja INSULFILM™ mais próxima de você.', action: 'Ver Lojas', href: '/lojas', external: false },
+  { icon: MapPin, title: 'Centros Autorizados', desc: 'Encontre o Centro Autorizado INSULFILM™ mais próximo de você.', action: 'Ver Centros Autorizados', href: '/lojas', external: false },
 ];
 
 const Vendas = () => (

@@ -27,7 +27,7 @@ const warranties = [
 const steps = [
   { icon: FileText, title: 'Nota Fiscal', desc: 'Apresente a nota fiscal da compra e aplicação.' },
   { icon: CheckCircle, title: 'Certificado', desc: 'Tenha em mãos o certificado de autenticidade com QR Code.' },
-  { icon: MessageCircle, title: 'Contato', desc: 'Entre em contato com a loja aplicadora ou nossa central.' },
+  { icon: MessageCircle, title: 'Contato', desc: 'Entre em contato com o centro autorizado aplicador ou nossa central.' },
   { icon: ShieldCheck, title: 'Análise', desc: 'Nossa equipe analisa e providencia a reposição quando aplicável.' },
 ];
 

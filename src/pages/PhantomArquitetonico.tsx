@@ -636,7 +636,7 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ ENCONTRE UMA LOJA ═══════════════════════ */}
+      {/* ═══════════════════════ ENCONTRE UM CENTRO AUTORIZADO ═══════════════════════ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-3xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -645,15 +645,15 @@ const PhantomArquitetonico = () => {
                 <MapPin className="w-8 h-8 text-accent" />
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
-                Encontre uma Loja <span className="text-accent">INSULFILM</span>
+                Encontre um Centro Autorizado <span className="text-accent">INSULFILM</span>
               </h2>
               <p className="text-lg text-primary-foreground/60 font-light mb-8 max-w-xl mx-auto">
-                Encontre nossas lojas oficiais em todo o Brasil e tenha acesso ao que há de melhor em proteção e sofisticação.
+                Encontre nossos Centros Autorizados em todo o Brasil e tenha acesso ao que há de melhor em proteção e sofisticação.
               </p>
               <Link to="/lojas">
                 <Button size="lg" variant="outline" className="border-accent/40 text-accent hover:bg-accent hover:text-accent-foreground font-bold text-base px-8 transition-all">
                   <MapPin className="w-5 h-5" />
-                  Ver Lojas Próximas
+                  Ver Centros Autorizados
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>

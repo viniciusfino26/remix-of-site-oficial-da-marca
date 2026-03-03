@@ -209,7 +209,7 @@ const AutomotivoHubSeguranca = () => {
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-wrap justify-center gap-4">
                 <Button asChild variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-bold text-base px-8 py-6 rounded-xl">
-                  <Link to="/lojas"><MapPin className="w-5 h-5" />Lojas Oficiais</Link>
+                  <Link to="/lojas"><MapPin className="w-5 h-5" />Centros Autorizados</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-bold text-base px-8 py-6 rounded-xl">
                   <Link to="/parceiro"><Users className="w-5 h-5" />Seja um Aplicador</Link>

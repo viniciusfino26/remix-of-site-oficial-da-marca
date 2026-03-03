@@ -73,14 +73,14 @@ const faqCategories = [
     title: 'Garantia',
     faqs: [
       { q: 'Como sei se a película é original?', a: 'Toda película INSULFILM™ original possui certificado de autenticidade com QR Code verificável. Compre apenas de revendedores autorizados.' },
-      { q: 'Como aciono a garantia?', a: 'Entre em contato com a loja onde fez a aplicação ou com nossa Central de Atendimento via WhatsApp. É necessário apresentar a nota fiscal e o certificado de autenticidade.' },
+      { q: 'Como aciono a garantia?', a: 'Entre em contato com o centro autorizado onde fez a aplicação ou com nossa Central de Atendimento via WhatsApp. É necessário apresentar a nota fiscal e o certificado de autenticidade.' },
       { q: 'O que a garantia cobre?', a: 'A garantia cobre defeitos de fabricação como descoloração, bolhas, descascamento e delaminação. Não cobre danos causados por mau uso ou acidentes.' },
     ],
   },
   {
     title: 'Geral',
     faqs: [
-      { q: 'Onde encontro uma loja INSULFILM™?', a: 'Acesse nossa página "Onde Encontrar" para localizar lojas oficiais, aplicadores autorizados e concessionárias credenciadas em São Paulo.' },
+      { q: 'Onde encontro um Centro Autorizado INSULFILM™?', a: 'Acesse nossa página "Onde Encontrar" para localizar Centros Autorizados, aplicadores credenciados e concessionárias em São Paulo.' },
       { q: 'Como me torno um parceiro/franqueado?', a: 'Acesse nossa página "Seja Parceiro" ou entre em contato via WhatsApp com nossa equipe comercial para conhecer as opções de parceria.' },
     ],
   },
