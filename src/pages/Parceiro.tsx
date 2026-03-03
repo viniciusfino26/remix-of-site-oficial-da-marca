@@ -88,7 +88,7 @@ const Parceiro = () => (
     </section>
 
     <ParallaxBreak minHeight="25vh" stats={[
-      { value: '4', label: 'Lojas em SP' },
+      { value: '4', label: 'Centros Autorizados' },
       { value: 'Nacional', label: 'Arq. em todo Brasil' },
     ]} />
 

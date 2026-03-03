@@ -177,7 +177,7 @@ const ArqHubSeguranca = () => (
                 </a>
               </Button>
               <Button asChild variant="outline" className="font-bold text-lg px-10 py-7 rounded-xl border-accent/30 hover:border-accent text-foreground transition-all">
-                <Link to="/lojas">Lojas Oficiais</Link>
+                <Link to="/lojas">Centros Autorizados</Link>
               </Button>
             </motion.div>
           </motion.div>

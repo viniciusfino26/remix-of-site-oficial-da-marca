@@ -85,7 +85,7 @@
     "heroQuestion": "Por qual motivo quase todo mundo chama de \"insulfilm\" as películas de proteção solar?",
     "heroText": "A INSULFILM™ é a primeira e mais reconhecida marca de películas do Brasil para vidros automotivos e arquitetônicos. São mais de 35 anos inovando em películas para vidros e superfícies metálicas. Desde 1988 a INSULFILM™ revolucionou a forma como os brasileiros convivem com seus ambientes envidraçados, transformando essa experiência em conforto e proteção com sofisticação.",
     "statYears": "Anos de Mercado",
-    "statStores": "Lojas em SP",
+    "statStores": "Centros Autorizados",
     "statPioneering": "Pioneirismos",
     "statSearched": "Anos como Marca Mais Pesquisada",
     "timelineTitle": "Nossa História",
@@ -104,11 +104,11 @@
       "e1997": "Primeira a oferecer películas fabricadas pelo sistema OEM com características próprias para o clima brasileiro.",
       "e1998": "Lideramos a mudança no setor ao apoiar diretamente a regulamentação do Contran para liberação da comercialização de películas automotivas.",
       "e2000": "Primeira a oferecer películas automotivas de proteção antivandalismo e segurança no Brasil — INSULFILM™ Blindado.",
-      "e2001": "Primeira marca de películas a abrir uma loja oficial para atendimento direto ao consumidor final — Loja Oficial INSULFILM™ Água Branca, SP.",
+      "e2001": "Primeira marca de películas a abrir um centro autorizado oficial para atendimento direto ao consumidor final — Centro Autorizado INSULFILM™ Água Branca, SP.",
       "e2001b": "Primeira a sacar os vidros do carro para aplicação de películas de proteção antivandalismo.",
       "e2008": "Primeira a oferecer película automotiva com efeito fotocromático e tecnologia superior para bloquear o calor — INSULFILM™ Elite.",
       "e2011": "Primeiro projeto arquitetônico do Brasil com películas para vidros customizadas para resistência balística.",
-      "e2012": "Venda da primeira franquia de serviços de película para vidros no Brasil — Loja Oficial INSULFILM™ Ribeirão Preto.",
+      "e2012": "Venda da primeira franquia de serviços de película para vidros no Brasil — Centro Autorizado INSULFILM™ Ribeirão Preto.",
       "e2018": "Primeira a oferecer películas com tecnologia de alta definição — INSULFILM™ Elite.",
       "e2019": "Lançamento da película premium de proteção à pintura (PPF) — INSULFILM™ Phantom®8mil.",
       "e2024": "Lançamento da tecnologia de ultra definição — INSULFILM™ LT Polariz e LT Matrix.",
@@ -383,7 +383,7 @@
         "desc": "Garantia de fábrica com rastreabilidade completa e verificação anti-pirataria.",
         "item1": "Certificado de autenticidade com QR Code verificável.",
         "item2": "Garantia contra descoloração, bolhas e descascamento.",
-        "item3": "Rede nacional de lojas autorizadas para acionamento da garantia."
+        "item3": "Rede nacional de centros autorizados para acionamento da garantia."
       }
     },
     "faqTitle": "Perguntas Frequentes",
@@ -410,11 +410,11 @@
   },
   "storeLocator": {
     "title": "Onde Encontrar",
-    "subtitle": "Lojas oficiais e aplicadores autorizados em São Paulo",
-    "officialStores": "Lojas Oficiais",
+    "subtitle": "Centros Autorizados e aplicadores em São Paulo",
+    "officialStores": "Centros Autorizados",
     "authorizedInstallers": "Autorizados Oficiais",
     "dealerships": "Concessionárias Credenciadas",
-    "archOfficial": "Loja Oficial Arquitetônico",
+    "archOfficial": "Centro Autorizado Arquitetônico",
     "archAuthorized": "Autorizados Oficiais Arquitetônico",
     "findNearest": "Encontrar mais próximo"
   },
