@@ -1,44 +1,77 @@
 
 
-## Plano: Corrigir texto invisível nas páginas restantes
+## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
 
-### Problema
-Ainda existem **20+ páginas de produto** com o mesmo problema: cards de especificações técnicas em seções `bg-background` (fundo claro) usando `text-primary-foreground` (texto branco/claro), tornando o conteúdo invisível.
+### Duas alterações principais
 
-### Regra (mesma de antes)
-- Seções `bg-carbon-gradient` (escuro) → manter `text-primary-foreground`
-- Seções `bg-background` (claro) → trocar para `text-foreground` / `text-muted-foreground`
+**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
 
-### Arquivos a corrigir (spec cards em `bg-background`)
+**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
 
-Todos seguem o mesmo padrão de correção nas linhas dos cards:
-- `text-primary-foreground/60 font-medium mb-1` → `text-muted-foreground font-medium mb-1`
-- `font-extrabold text-primary-foreground` (valor) → `font-extrabold text-foreground`
+### Arquivos a alterar
 
-| # | Arquivo |
-|---|---------|
-| 1 | `GrigioInvertito.tsx` |
-| 2 | `MetallicoArgento.tsx` |
-| 3 | `Naturale.tsx` |
-| 4 | `Orizzonte70.tsx` |
-| 5 | `SpecchiatoBronzo.tsx` |
-| 6 | `ReflessoDArgento.tsx` |
-| 7 | `Petrolio.tsx` |
-| 8 | `Clear70.tsx` |
-| 9 | `Dark.tsx` |
-| 10 | `Eclipse.tsx` |
-| 11 | `Matrix.tsx` |
-| 12 | `VIP.tsx` |
-| 13 | `PolarizUltra.tsx` |
-| 14 | `AutomotivoDark.tsx` |
-| 15 | `AutomotivoMatrix.tsx` |
-| 16 | `AutomotivoPolariz.tsx` |
-| 17 | `AutomotivoVip.tsx` |
-| 18 | `ArqSegurancaISSF4000.tsx` |
-| 19 | `ArqSegurancaISSF7000.tsx` |
+#### `src/pages/Lojas.tsx` (maior volume)
+- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
+- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
+- Hero: "Lojas Oficiais" → "Centros Autorizados"
+- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
+- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
+- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
+- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
+- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
+- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
+- **Remover** o campo `services` dos 4 objetos STORES
+- **Remover** o bloco de renderização dos services badges (linhas 411-418)
 
-### Escopo
-- Corrigir apenas elementos dentro de seções com `bg-background`
-- Seções com `bg-carbon-gradient` permanecem inalteradas (hero, seções escuras)
-- Mesma correção mecânica aplicada nas 10 páginas anteriores
+#### `src/pages/Vendas.tsx`
+- "Lojas Físicas" → "Centros Autorizados"
+- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
+- "Ver Lojas" → "Ver Centros Autorizados"
+
+#### `src/pages/Parceiro.tsx`
+- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+
+#### `src/pages/FAQ.tsx`
+- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
+- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
+
+#### `src/pages/PhantomArquitetonico.tsx`
+- "Encontre uma Loja" → "Encontre um Centro Autorizado"
+- "lojas oficiais" → "Centros Autorizados"
+- "Ver Lojas Próximas" → "Ver Centros Autorizados"
+
+#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
+
+#### `src/pages/AutomotivoHubSeguranca.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
+
+#### `src/pages/Garantia.tsx`
+- "loja aplicadora" → "centro autorizado aplicador"
+
+#### `src/components/SchemaOrg.tsx`
+- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
+- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
+- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
+- Comentário "lojas" → "centros autorizados"
+
+#### `src/i18n/locales/pt.json`
+- "Lojas em SP" → "Centros Autorizados"
+- "loja oficial" → "centro autorizado oficial" (timeline)
+- "lojas autorizadas" → "centros autorizados"
+- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
+- "Lojas Oficiais" → "Centros Autorizados"
+- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
+
+#### `src/i18n/locales/en.json`
+- "Stores in SP" → "Authorized Centers"
+- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
+- "authorized stores" → "authorized centers"
+
+#### `src/i18n/locales/es.json`
+- Equivalentes em espanhol
+
+#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
+
+#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
 
