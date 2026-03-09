@@ -98,7 +98,7 @@ const dangerCards = [
   { icon: UserX, titleKey: 'av13kP.danger.children', descKey: 'av13kP.danger.childrenDesc' },
 ];
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const Antivandalismo13K = () => {
   const { t } = useTranslation();

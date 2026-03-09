@@ -13,7 +13,7 @@ const fadeInRight = { hidden: { opacity: 0, x: 60 }, visible: { opacity: 1, x: 0
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Híbrida Fumê (Charcoal)' },
   { icon: Sun, label: 'Rejeição de IR', value: 'Até 42%' },

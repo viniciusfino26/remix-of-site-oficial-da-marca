@@ -69,7 +69,7 @@ const opticalBenefits = [
   { icon: Lightbulb, title: 'Conforto Visual', desc: 'Reduz reflexos e melhora o conforto visual em conjunto com a película solar.' },
 ];
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const SkinSafe8K = () => {
   const { t } = useTranslation();
