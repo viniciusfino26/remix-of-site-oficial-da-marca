@@ -91,8 +91,8 @@ const Empresarial = () => (
                     <b.icon className="w-7 h-7 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-extrabold text-primary-foreground mb-2">{b.title}</h3>
-                    <p className="text-sm text-primary-foreground/60 font-light leading-relaxed">{b.desc}</p>
+                    <h3 className="text-lg font-extrabold text-foreground mb-2">{b.title}</h3>
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed">{b.desc}</p>
                   </div>
                 </CardContent>
               </Card>

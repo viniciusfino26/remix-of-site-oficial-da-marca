@@ -62,8 +62,8 @@ const Vendas = () => (
                   <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                     <c.icon className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-extrabold text-primary-foreground mb-2">{c.title}</h3>
-                  <p className="text-sm text-primary-foreground/60 font-light mb-6">{c.desc}</p>
+                  <h3 className="text-xl font-extrabold text-foreground mb-2">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground font-light mb-6">{c.desc}</p>
                   {c.external ? (
                     <a href={c.href} target="_blank" rel="noopener noreferrer">
                       <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold">{c.action}</Button>
