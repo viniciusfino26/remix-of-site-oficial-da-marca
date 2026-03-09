@@ -18,7 +18,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const products = [
   {

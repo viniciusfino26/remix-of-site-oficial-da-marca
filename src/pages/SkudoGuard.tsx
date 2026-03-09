@@ -105,7 +105,7 @@ const techDifferentials = [
   { icon: Eye, title: 'Nitidez Óptica Cristal', desc: 'Apesar da proteção superior, mantém transparência total e claridade visual sem distorções.' },
 ];
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const SkudoGuard = () => {
   const heroRef = useRef<HTMLElement>(null);

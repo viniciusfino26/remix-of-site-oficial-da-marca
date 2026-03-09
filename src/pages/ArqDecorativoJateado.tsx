@@ -25,7 +25,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Poliéster Fosco' },

@@ -96,7 +96,7 @@ const comparison = [
   { label: 'Tecnologia', guard: 'Tripla camada + adesivo performance', ultra: 'TETRA camada + adesivo extremo' },
 ];
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const SkudoUltra = () => {
   const heroRef = useRef<HTMLElement>(null);
