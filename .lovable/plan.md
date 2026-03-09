@@ -1,77 +1,74 @@
+## Plano: Corrigir números de WhatsApp por segmento
+
+### Regra
+
+- **Automotivo** → `5511976136911`
+- **Arquitetônico** → `5511936182746`
+
+### Situação atual
+
+35 arquivos + WhatsAppButton usam o placeholder `5511999999999`. Apenas `AutomotivoHubPPF.tsx` já tem o número automotivo correto.
+
+### Classificação e correções
+
+**Automotivo (`5511976136911`) — 13 arquivos:**
 
 
-## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
+| Arquivo                                             | Motivo             |
+| --------------------------------------------------- | ------------------ |
+| `Automotivo.tsx`                                    | Hub automotivo     |
+| `AutomotivoHubSolar.tsx`                            | Hub solar auto     |
+| `AutomotivoHubSeguranca.tsx`                        | Hub segurança auto |
+| `AutomotivoDark.tsx`                                | Produto auto       |
+| `AutomotivoEclipse.tsx`                             | Produto auto       |
+| `AutomotivoMatrix.tsx`                              | Produto auto       |
+| `AutomotivoPolariz.tsx`                             | Produto auto       |
+| `AutomotivoVip.tsx`                                 | Produto auto       |
+| `AutomotivoAntivandalismo.tsx`                      | Produto auto       |
+| `AutomotivoSkudoGuard.tsx`                          | Produto auto       |
+| `AutomotivoSkudoUltra.tsx`                          | Produto auto       |
+| `AutomotivoSkinSafe.tsx`                            | Produto auto       |
+| `AutomotivoPhantom6.tsx` / `AutomotivoPhantom8.tsx` | PPF auto           |
 
-### Duas alterações principais
 
-**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
+**Arquitetônico (`5511936182746`) — 22+ arquivos:**
 
-**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
 
-### Arquivos a alterar
+| Arquivo                     | Motivo            |
+| --------------------------- | ----------------- |
+| `Residencial.tsx`           | Arq residencial   |
+| `ArqHubSolar.tsx`           | Hub solar arq     |
+| `ArqHubSeguranca.tsx`       | Hub segurança arq |
+| `ArqHubDecorativo.tsx`      | Hub decorativo    |
+| `Clear70.tsx`               | Produto arq       |
+| `Dark.tsx`                  | Produto arq       |
+| `Eclipse.tsx`               | Produto arq       |
+| `Matrix.tsx`                | Produto arq       |
+| `VIP.tsx`                   | Produto arq       |
+| `PolarizUltra.tsx`          | Produto arq       |
+| `Naturale.tsx`              | Produto arq       |
+| `Orizzonte70.tsx`           | Produto arq       |
+| `Petrolio.tsx`              | Produto arq       |
+| `GrigioInvertito.tsx`       | Produto arq       |
+| `MetallicoArgento.tsx`      | Produto arq       |
+| `ReflessoDArgento.tsx`      | Produto arq       |
+| `SpecchiatoBronzo.tsx`      | Produto arq       |
+| `Ultravioletti90.tsx`       | Produto arq       |
+| `ArqSegurancaISSF4000.tsx`  | Segurança arq     |
+| `ArqSegurancaISSF7000.tsx`  | Segurança arq     |
+| `ArqDecorativoJateado.tsx`  | Decorativo        |
+| `ArqDecorativoBlackout.tsx` | Decorativo        |
+| `ArqDecorativoWhiteout.tsx` | Decorativo        |
+| `Antivandalismo13K.tsx`     | Segurança arq     |
+| `PhantomArquitetonico.tsx`  | PPF arq           |
+| `SkinSafe8K.tsx`            | Segurança arq     |
+| `SkudoGuard.tsx`            | Segurança arq     |
+| `SkudoUltra.tsx`            | Segurança arq     |
 
-#### `src/pages/Lojas.tsx` (maior volume)
-- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
-- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
-- Hero: "Lojas Oficiais" → "Centros Autorizados"
-- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
-- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
-- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
-- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
-- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
-- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
-- **Remover** o campo `services` dos 4 objetos STORES
-- **Remover** o bloco de renderização dos services badges (linhas 411-418)
 
-#### `src/pages/Vendas.tsx`
-- "Lojas Físicas" → "Centros Autorizados"
-- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
-- "Ver Lojas" → "Ver Centros Autorizados"
+**Botão flutuante global (**`WhatsAppButton.tsx`**):**  
+Será usado o do automotivo `5511976136911`,  pois será uma central de atendimento. E depois o chatbot que vamos colocar dentro do site, vai atender ambas as divisões e será feito transbordo para cada divisão que o cliente desejar. 
 
-#### `src/pages/Parceiro.tsx`
-- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+### Alteração
 
-#### `src/pages/FAQ.tsx`
-- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
-- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
-
-#### `src/pages/PhantomArquitetonico.tsx`
-- "Encontre uma Loja" → "Encontre um Centro Autorizado"
-- "lojas oficiais" → "Centros Autorizados"
-- "Ver Lojas Próximas" → "Ver Centros Autorizados"
-
-#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
-
-#### `src/pages/AutomotivoHubSeguranca.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
-
-#### `src/pages/Garantia.tsx`
-- "loja aplicadora" → "centro autorizado aplicador"
-
-#### `src/components/SchemaOrg.tsx`
-- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
-- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
-- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
-- Comentário "lojas" → "centros autorizados"
-
-#### `src/i18n/locales/pt.json`
-- "Lojas em SP" → "Centros Autorizados"
-- "loja oficial" → "centro autorizado oficial" (timeline)
-- "lojas autorizadas" → "centros autorizados"
-- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
-- "Lojas Oficiais" → "Centros Autorizados"
-- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
-
-#### `src/i18n/locales/en.json`
-- "Stores in SP" → "Authorized Centers"
-- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
-- "authorized stores" → "authorized centers"
-
-#### `src/i18n/locales/es.json`
-- Equivalentes em espanhol
-
-#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
-
-#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
-
+Cada arquivo: trocar `const WHATSAPP_NUMBER = '5511999999999'` pelo número correspondente ao segmento.
