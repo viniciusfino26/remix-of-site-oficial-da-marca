@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MessageCircle, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
 import logoDark from '@/assets/logo-dark.png';
