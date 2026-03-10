@@ -401,6 +401,25 @@ const PhantomArquitetonico = () => {
               <img src={phantomSolutionThickness} alt="Película Phantom - 180 microns de espessura premium" className="w-full object-contain bg-muted/10" />
             </motion.div>
 
+            <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
+              {[
+                { value: '180μ', label: 'Espessura' },
+                { value: '∞', label: 'Invisibilidade' },
+                { value: '5 Anos', label: 'Garantia' },
+                { value: '360°', label: 'Proteção Total' },
+                { value: 'UV', label: 'Bloqueio' },
+              ].map((spec) => (
+                <div key={spec.label} className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-5 text-center">
+                  <span className="block text-2xl md:text-3xl font-extrabold text-accent mb-1">{spec.value}</span>
+                  <span className="text-sm text-primary-foreground/60 font-medium">{spec.label}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.p variants={fadeInUp} className="text-center text-primary-foreground/50 text-base font-light max-w-3xl mx-auto">
+              Preserva exatamente o visual original de qualquer superfície — com uma camada de proteção invisível de engenharia avançada.
+            </motion.p>
+
           </motion.div>
         </div>
       </section>
