@@ -37,8 +37,8 @@ const megaMenus: MegaMenu[] = [
         title: 'Proteção e Segurança',
         href: '/automotivo/seguranca',
         products: [
-          { label: 'SkinSafe 8K', href: '/automotivo/seguranca/skinsafe-8k' },
-          { label: 'Antivandalismo', href: '/automotivo/seguranca/antivandalismo-13k' },
+          { label: 'SkinSafe 8K', href: '/automotivo/seguranca/skinsafe8k' },
+          { label: 'Antivandalismo', href: '/automotivo/seguranca/antivandalismo13k' },
           { label: 'SkudoGuard', href: '/automotivo/seguranca/skudoguard' },
           { label: 'SkudoUltra', href: '/automotivo/seguranca/skudoultra' },
         ],
