@@ -1,162 +1,119 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Menu, ChevronDown, Shield, Car, Building2, Headphones } from 'lucide-react';
+import { Menu, ChevronDown, ChevronRight, Car, Building2, MapPin, Handshake, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
-import { Separator } from '@/components/ui/separator';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import logoDark from '@/assets/logo-dark.png';
 
-interface NavItem { label: string; href: string }
-interface NavSection { title: string; items: NavItem[] }
-interface NavMenu {
+interface SubProduct { label: string; href: string }
+interface Category { title: string; href: string; products: SubProduct[] }
+interface MegaMenu {
   key: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
-  sections?: NavSection[];
-  items?: NavItem[];
+  categories: Category[];
+  sidebar: SubProduct[];
 }
 
-const languages = [
-  { code: 'pt', label: 'PT', flag: '🇧🇷' },
-  { code: 'en', label: 'EN', flag: '🇺🇸' },
-  { code: 'es', label: 'ES', flag: '🇪🇸' },
+const megaMenus: MegaMenu[] = [
+  {
+    key: 'automotive',
+    label: 'Automotivo',
+    icon: Car,
+    categories: [
+      {
+        title: 'Películas Solares',
+        href: '/automotivo/solar',
+        products: [
+          { label: 'Dark', href: '/automotivo/solar/dark' },
+          { label: 'Eclipse', href: '/automotivo/solar/eclipse' },
+          { label: 'VIP', href: '/automotivo/solar/vip' },
+          { label: 'Polariz Ultra', href: '/automotivo/solar/polariz-ultra' },
+          { label: 'Matrix', href: '/automotivo/solar/matrix' },
+        ],
+      },
+      {
+        title: 'Proteção e Segurança',
+        href: '/automotivo/seguranca',
+        products: [
+          { label: 'SkinSafe 8K', href: '/automotivo/seguranca/skinsafe-8k' },
+          { label: 'Antivandalismo', href: '/automotivo/seguranca/antivandalismo-13k' },
+          { label: 'SkudoGuard', href: '/automotivo/seguranca/skudoguard' },
+          { label: 'SkudoUltra', href: '/automotivo/seguranca/skudoultra' },
+        ],
+      },
+      {
+        title: 'PPF — Proteção de Pintura',
+        href: '/automotivo/ppf',
+        products: [
+          { label: 'Phantom 6 mil', href: '/automotivo/ppf/phantom-6' },
+          { label: 'Phantom 8 mil', href: '/automotivo/ppf/phantom-8' },
+        ],
+      },
+    ],
+    sidebar: [
+      { label: 'Ver tudo em Automotivo', href: '/automotivo' },
+      { label: 'Atendimento Frota', href: '/frota' },
+    ],
+  },
+  {
+    key: 'architecture',
+    label: 'Arquitetônico',
+    icon: Building2,
+    categories: [
+      {
+        title: 'Controle Solar',
+        href: '/arquitetonico/solar',
+        products: [
+          { label: 'Clear 70', href: '/arquitetonico/solar/clear-70' },
+          { label: 'Orizzonte 70', href: '/arquitetonico/solar/orizzonte-70' },
+          { label: 'UV 90', href: '/arquitetonico/solar/uv-90' },
+          { label: 'Naturale', href: '/arquitetonico/solar/naturale' },
+          { label: 'Petrólio', href: '/arquitetonico/solar/petrolio' },
+          { label: 'Grigio Invertito', href: '/arquitetonico/solar/grigio-invertito' },
+          { label: 'Metallico Argento', href: '/arquitetonico/solar/metallico-argento' },
+          { label: 'Reflesso D\'Argento', href: '/arquitetonico/solar/reflesso-dargento' },
+          { label: 'Specchiato Bronzo', href: '/arquitetonico/solar/specchiato-bronzo' },
+        ],
+      },
+      {
+        title: 'Proteção e Segurança',
+        href: '/arquitetonico/seguranca',
+        products: [
+          { label: 'ISSF 4000', href: '/arquitetonico/seguranca/issf-4000' },
+          { label: 'ISSF 7000', href: '/arquitetonico/seguranca/issf-7000' },
+        ],
+      },
+      {
+        title: 'Decorativo',
+        href: '/arquitetonico/decorativo',
+        products: [
+          { label: 'Jateado', href: '/arquitetonico/decorativo/jateado' },
+          { label: 'Whiteout', href: '/arquitetonico/decorativo/whiteout' },
+          { label: 'Blackout', href: '/arquitetonico/decorativo/blackout' },
+        ],
+      },
+    ],
+    sidebar: [
+      { label: 'Ver tudo em Arquitetônico', href: '/arquitetonico' },
+      { label: 'Projetos Empresariais', href: '/empresarial' },
+    ],
+  },
 ];
 
+const fixedLinks = [
+  { label: 'Lojas', href: '/lojas', icon: MapPin },
+  { label: 'Parceiro', href: '/parceiro', icon: Handshake },
+  { label: 'Quem Somos', href: '/quem-somos', icon: Users },
+];
+
+const WHATSAPP_URL = 'https://wa.me/5511976136911?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20instala%C3%A7%C3%A3o.';
+
 const Header = () => {
-  const { t, i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const megaMenuItems: NavMenu[] = [
-    {
-      key: 'brand',
-      label: t('nav.brand'),
-      icon: Shield,
-      items: [
-        { label: t('nav.whoWeAre'), href: '/quem-somos' },
-        { label: t('nav.franchising'), href: '/franquias' },
-        { label: t('nav.careers'), href: '/carreiras' },
-        { label: t('nav.antiPiracy'), href: '/anti-pirataria' },
-      ],
-    },
-    {
-      key: 'automotive',
-      label: t('nav.automotive'),
-      icon: Car,
-      sections: [
-        {
-          title: 'Nossas Linhas',
-          items: [
-            { label: 'Controle Solar', href: '/automotivo/solar' },
-            { label: 'Segurança', href: '/automotivo/seguranca' },
-            { label: 'PPF Phantom', href: '/automotivo/ppf' },
-          ],
-        },
-        {
-          title: 'Atendimento Especializado',
-          items: [
-            { label: t('nav.forMyCar'), href: '/automotivo' },
-            { label: t('nav.forMyFleet'), href: '/frota' },
-          ],
-        },
-      ],
-    },
-    {
-      key: 'architecture',
-      label: t('nav.architecture'),
-      icon: Building2,
-      sections: [
-        {
-          title: 'Nossas Linhas',
-          items: [
-            { label: 'Controle Solar', href: '/arquitetonico/solar' },
-            { label: 'Segurança', href: '/arquitetonico/seguranca' },
-            { label: 'Decorativo', href: '/arquitetonico/decorativo' },
-            { label: 'Phantom Glass & Matte', href: '/phantom-arquitetonico' },
-          ],
-        },
-        {
-          title: 'Soluções por Ambiente',
-          items: [
-            { label: t('nav.forMyHome'), href: '/residencial' },
-            { label: t('nav.forMyCompany'), href: '/empresarial' },
-          ],
-        },
-      ],
-    },
-    {
-      key: 'support',
-      label: t('nav.support'),
-      icon: Headphones,
-      items: [
-        { label: t('nav.salesCentral'), href: '/vendas' },
-        { label: t('nav.sac'), href: '/sac' },
-        { label: t('nav.faq'), href: '/faq' },
-        { label: t('nav.warranty'), href: '/garantia' },
-        { label: t('nav.storeLocator'), href: '/lojas' },
-      ],
-    },
-  ];
-
-  const renderDropdownItems = (items: NavItem[]) =>
-    items.map((item) => (
-      <Link
-        key={item.href}
-        to={item.href}
-        className="block px-4 py-3 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-lg transition-all duration-200"
-      >
-        {item.label}
-      </Link>
-    ));
-
-  const renderDropdownContent = (menu: NavMenu) => {
-    if (menu.sections) {
-      return menu.sections.map((section, idx) => (
-        <div key={section.title}>
-          {idx > 0 && <Separator className="my-2" />}
-          <p className="px-4 pt-2 pb-1 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-            {section.title}
-          </p>
-          {renderDropdownItems(section.items)}
-        </div>
-      ));
-    }
-    return renderDropdownItems(menu.items ?? []);
-  };
-
-  const renderMobileContent = (menu: NavMenu) => {
-    if (menu.sections) {
-      return menu.sections.map((section, idx) => (
-        <div key={section.title}>
-          {idx > 0 && <Separator className="my-1.5" />}
-          <p className="px-3 pt-2 pb-1 text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest">
-            {section.title}
-          </p>
-          {section.items.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      ));
-    }
-    return (menu.items ?? []).map((item) => (
-      <Link
-        key={item.href}
-        to={item.href}
-        className="block px-3 py-2.5 text-sm text-foreground/70 hover:text-accent hover:bg-muted rounded-md transition-colors"
-        onClick={() => setMobileOpen(false)}
-      >
-        {item.label}
-      </Link>
-    ));
-  };
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   return (
     <>
@@ -173,7 +130,8 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
-              {megaMenuItems.map((menu) => (
+              {/* Mega-menu items */}
+              {megaMenus.map((menu) => (
                 <div
                   key={menu.key}
                   className="relative"
@@ -190,39 +148,71 @@ const Header = () => {
                   </button>
 
                   {openMenu === menu.key && (
-                    <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-premium-lg border border-border p-2 z-50 animate-fade-in-up">
-                      {renderDropdownContent(menu)}
+                    <div className="absolute top-full left-0 mt-1 w-[600px] bg-card rounded-xl shadow-premium-lg border border-border z-50 animate-fade-in">
+                      <div className="grid grid-cols-[1fr_200px]">
+                        {/* Left column — categories */}
+                        <div className="p-4 space-y-4">
+                          {menu.categories.map((cat) => (
+                            <div key={cat.href}>
+                              <Link
+                                to={cat.href}
+                                className="text-sm font-bold text-foreground hover:text-accent transition-colors flex items-center gap-1"
+                              >
+                                {cat.title}
+                                <ChevronRight className="w-3 h-3" />
+                              </Link>
+                              <div className="flex flex-wrap gap-x-3 gap-y-1 mt-1.5">
+                                {cat.products.map((p) => (
+                                  <Link
+                                    key={p.href}
+                                    to={p.href}
+                                    className="text-xs text-muted-foreground hover:text-accent transition-colors"
+                                  >
+                                    {p.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Right column — sidebar */}
+                        <div className="bg-muted/50 rounded-r-xl p-4 flex flex-col gap-2 border-l border-border">
+                          {menu.sidebar.map((link) => (
+                            <Link
+                              key={link.href}
+                              to={link.href}
+                              className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
               ))}
+
+              {/* Fixed links */}
+              {fixedLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                >
+                  <link.icon className="w-4 h-4" />
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
-            {/* Right side: Language + CTA + Mobile */}
+            {/* Right side: CTA + Mobile */}
             <div className="flex items-center gap-3">
-              {/* Language Selector */}
-              <div className="flex items-center gap-1 bg-primary-foreground/10 rounded-lg p-1">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => i18n.changeLanguage(lang.code)}
-                    className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
-                      i18n.language === lang.code
-                        ? 'bg-accent text-accent-foreground shadow-sm'
-                        : 'text-primary-foreground/70 hover:text-primary-foreground'
-                    }`}
-                    aria-label={`Switch to ${lang.label}`}
-                  >
-                    <span>{lang.flag}</span>
-                    <span className="hidden sm:inline">{lang.label}</span>
-                  </button>
-                ))}
-              </div>
-
               {/* CTA Desktop */}
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" className="hidden lg:block">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden lg:block">
                 <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xs shadow-sm hover:shadow-md transition-all duration-200">
-                  {t('nav.becomePartner')}
+                  Agendar
                 </Button>
               </a>
 
@@ -233,23 +223,85 @@ const Header = () => {
                     <Menu className="w-5 h-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-card border-border w-80">
+                <SheetContent side="right" className="bg-card border-border w-80 overflow-y-auto">
                   <SheetTitle className="text-foreground text-lg font-bold mb-6">
                     <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(5000%) hue-rotate(220deg)' }} />
                   </SheetTitle>
-                  <nav className="flex flex-col gap-2">
-                    {megaMenuItems.map((menu) => (
-                      <div key={menu.key}>
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">
-                          {menu.label}
-                        </p>
-                        {renderMobileContent(menu)}
-                      </div>
+                  <nav className="flex flex-col gap-1">
+                    {/* Mega-menu collapsibles */}
+                    {megaMenus.map((menu) => (
+                      <Collapsible
+                        key={menu.key}
+                        open={mobileExpanded === menu.key}
+                        onOpenChange={(open) => setMobileExpanded(open ? menu.key : null)}
+                      >
+                        <CollapsibleTrigger className="flex items-center justify-between w-full px-3 py-2.5 text-sm font-semibold text-foreground hover:bg-muted rounded-md transition-colors">
+                          <span className="flex items-center gap-2">
+                            <menu.icon className="w-4 h-4" />
+                            {menu.label}
+                          </span>
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === menu.key ? 'rotate-180' : ''}`} />
+                        </CollapsibleTrigger>
+                        <CollapsibleContent className="animate-accordion-down">
+                          <div className="pl-3 pb-2 space-y-3">
+                            {menu.categories.map((cat) => (
+                              <div key={cat.href}>
+                                <Link
+                                  to={cat.href}
+                                  className="block px-3 py-1.5 text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {cat.title}
+                                </Link>
+                                <div className="pl-6 space-y-0.5">
+                                  {cat.products.map((p) => (
+                                    <Link
+                                      key={p.href}
+                                      to={p.href}
+                                      className="block py-1 text-xs text-muted-foreground hover:text-accent transition-colors"
+                                      onClick={() => setMobileOpen(false)}
+                                    >
+                                      {p.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                            <div className="border-t border-border pt-2 pl-3 space-y-1">
+                              {menu.sidebar.map((link) => (
+                                <Link
+                                  key={link.href}
+                                  to={link.href}
+                                  className="block py-1 text-xs font-medium text-accent hover:text-accent/80 transition-colors"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {link.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
                     ))}
+
+                    {/* Fixed links */}
+                    {fixedLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        to={link.href}
+                        className="flex items-center gap-2 px-3 py-2.5 text-sm font-semibold text-foreground hover:bg-muted rounded-md transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        <link.icon className="w-4 h-4" />
+                        {link.label}
+                      </Link>
+                    ))}
+
+                    {/* CTA */}
                     <div className="pt-4 px-3">
-                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
                         <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                          {t('nav.becomePartner')}
+                          Agendar
                         </Button>
                       </a>
                     </div>
