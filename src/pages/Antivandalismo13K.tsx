@@ -714,7 +714,7 @@ const Antivandalismo13K = () => {
               <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
               <h3 className="text-lg font-extrabold text-primary-foreground mb-3">{t('av13k.compatTitle', 'Compatível com todas as linhas solares automotivas')}</h3>
               <p className="text-primary-foreground/60 font-light text-sm mb-6 max-w-2xl mx-auto">
-                {t('av13k.compatDesc', 'A Antivandalismo 13K pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:')}
+                {t('av13k.compatDesc', 'A Antivandalismo13K pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:')}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
