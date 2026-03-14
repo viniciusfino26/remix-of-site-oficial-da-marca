@@ -1,58 +1,77 @@
-## Plano: Mega-menu no Header.tsx
 
-**Arquivo alterado:** `src/components/Header.tsx` (reescrita completa)
 
-Não será necessário criar MegaMenu.tsx separado — o Header atual já contém toda a lógica de dropdown e a complexidade adicional não justifica um arquivo extra.
+## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
 
-### Estrutura Desktop
+### Duas alterações principais
 
-A navbar terá 5 itens principais + CTA:
+**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
 
-1. **Automotivo** (hover → mega-dropdown largo com 2 colunas)
-  - Coluna esquerda: 3 categorias com sub-produtos inline
-    - Películas Solares → `/automotivo/solar` + 5 sub-links (Dark, Eclipse, VIP, Polariz Ultra, Matrix)
-    - Proteção e Segurança → `/automotivo/seguranca` + 4 sub-links
-    - PPF → `/automotivo/ppf` + 2 sub-links
-  - Coluna direita: links de contexto
-    - "Ver tudo em Automotivo" → `/automotivo`
-    - "Atendimento Frota" → `/frota`
-2. **Arquitetônico** (hover → mega-dropdown largo com 2 colunas)
-  - Coluna esquerda: 3 categorias com sub-produtos inline
-    - Controle Solar → `/arquitetonico/solar` + 9 sub-links
-    - Proteção e Segurança → `/arquitetonico/seguranca` + 2 sub-links
-    - Decorativo → `/arquitetonico/decorativo` + 3 sub-links
-  - Coluna direita:
-    - "Ver tudo em Arquitetônico" → `/arquitetonico`
-    - "Projetos Empresariais" → `/empresarial`
-3. **Lojas** → `/lojas` (link direto, sem dropdown)
-4. **Parceiro** → `/parceiro` (link direto)
-5. **Quem Somos** → `/quem-somos` (link direto)
+**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
 
-**CTA:** botão dourado "Agendar" → WhatsApp `5511976136911`
+### Arquivos a alterar
 
-### Dropdown Design
+#### `src/pages/Lojas.tsx` (maior volume)
+- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
+- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
+- Hero: "Lojas Oficiais" → "Centros Autorizados"
+- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
+- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
+- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
+- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
+- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
+- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
+- **Remover** o campo `services` dos 4 objetos STORES
+- **Remover** o bloco de renderização dos services badges (linhas 411-418)
 
-- Largura: `w-[600px]` para Automotivo/Arquitetônico
-- Layout: `grid grid-cols-[1fr_200px]`
-- Categorias com título bold + sub-produtos em texto menor e cor muted
-- Coluna direita com fundo levemente diferente (`bg-muted/50`)
-- Animação: classes existentes `animate-fade-in` do tailwind config
-- Fecha ao `onMouseLeave`
+#### `src/pages/Vendas.tsx`
+- "Lojas Físicas" → "Centros Autorizados"
+- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
+- "Ver Lojas" → "Ver Centros Autorizados"
 
-### Mobile
+#### `src/pages/Parceiro.tsx`
+- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
 
-- Sheet existente mantido
-- Automotivo e Arquitetônico usam Collapsible (já disponível) para expandir sub-itens
-- Sub-produtos indentados com `pl-6`
-- Links diretos (Lojas, Parceiro, Quem Somos) como itens simples
-- CTA "Agendar" no final
+#### `src/pages/FAQ.tsx`
+- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
+- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
 
-### Remoção
+#### `src/pages/PhantomArquitetonico.tsx`
+- "Encontre uma Loja" → "Encontre um Centro Autorizado"
+- "lojas oficiais" → "Centros Autorizados"
+- "Ver Lojas Próximas" → "Ver Centros Autorizados"
 
-- Remove os menus "A Marca" e "Suporte" do header (itens redistribuídos: Lojas e Quem Somos vão para links fixos, demais acessíveis via footer)
-  &nbsp;
+#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
 
-### Preservado
+#### `src/pages/AutomotivoHubSeguranca.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
 
-- Logo, accent stripe, `bg-glass`, `nav-link-premium` classes
-- Nenhum arquivo em `/pages`, App.tsx ou Footer.tsx alterado
+#### `src/pages/Garantia.tsx`
+- "loja aplicadora" → "centro autorizado aplicador"
+
+#### `src/components/SchemaOrg.tsx`
+- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
+- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
+- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
+- Comentário "lojas" → "centros autorizados"
+
+#### `src/i18n/locales/pt.json`
+- "Lojas em SP" → "Centros Autorizados"
+- "loja oficial" → "centro autorizado oficial" (timeline)
+- "lojas autorizadas" → "centros autorizados"
+- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
+- "Lojas Oficiais" → "Centros Autorizados"
+- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
+
+#### `src/i18n/locales/en.json`
+- "Stores in SP" → "Authorized Centers"
+- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
+- "authorized stores" → "authorized centers"
+
+#### `src/i18n/locales/es.json`
+- Equivalentes em espanhol
+
+#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
+
+#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
+
