@@ -38,7 +38,7 @@ const categories = [
   {
     icon: Layers,
     title: 'PPF — Proteção de Pintura',
-    description: 'Phantom 6 mil e Phantom 8 mil — proteção de pintura premium com auto-regeneração.',
+    description: 'Phantom 6 mil e Phantom 8 mil — proteção de pintura premium.',
     href: '/automotivo/ppf',
     accent: 'from-violet-500/20 to-purple-500/10',
   },
