@@ -24,7 +24,7 @@ const categories = [
   {
     icon: Sun,
     title: 'Películas Solares',
-    description: 'Dark, Eclipse, VIP, Polariz Ultra, Matrix — do básico ao cerâmico.',
+    description: 'Dark, Eclipse, Vip, Polariz Ultra, Matrix — do básico ao cerâmico.',
     href: '/automotivo/solar',
     accent: 'from-amber-500/20 to-orange-500/10',
   },
