@@ -1,77 +1,71 @@
 
 
-## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
+## Plano: Componente Breadcrumb com Schema JSON-LD + integração em ~30 páginas
 
-### Duas alterações principais
+### PASSO 1 — Criar `src/components/Breadcrumb.tsx`
 
-**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
+Componente que recebe `items: Array<{ label: string; href?: string }>`:
+- Renderiza itens separados por `›` usando `Link` do react-router-dom
+- Último item sem link (página atual, `font-medium text-foreground`)
+- Injeta `BreadcrumbList` JSON-LD no `<head>` via `react-helmet-async`
+- Estilo: `container mx-auto px-4 pt-24 pb-2`, texto `text-xs text-muted-foreground`
 
-**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
+### PASSO 2 — Substituir breadcrumbs existentes nos hubs
 
-### Arquivos a alterar
+Páginas que **já possuem** breadcrumb inline (remover o bloco antigo, substituir pelo novo componente):
 
-#### `src/pages/Lojas.tsx` (maior volume)
-- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
-- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
-- Hero: "Lojas Oficiais" → "Centros Autorizados"
-- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
-- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
-- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
-- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
-- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
-- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
-- **Remover** o campo `services` dos 4 objetos STORES
-- **Remover** o bloco de renderização dos services badges (linhas 411-418)
+| Página | Tipo atual | Items |
+|--------|-----------|-------|
+| Automotivo.tsx | shadcn Breadcrumb | Home → Automotivo |
+| AutomotivoHubSolar.tsx | nav manual ChevronRight | Home → Automotivo → Películas Solares |
+| AutomotivoHubSeguranca.tsx | nav manual ChevronRight | Home → Automotivo → Proteção e Segurança |
+| AutomotivoHubPPF.tsx | nav manual ChevronRight | Home → Automotivo → PPF |
+| Arquitetonico.tsx | nenhum | Home → Arquitetônico |
+| ArqHubSolar.tsx | shadcn Breadcrumb | Home → Arquitetônico → Controle Solar |
+| ArqHubSeguranca.tsx | shadcn Breadcrumb | Home → Arquitetônico → Proteção e Segurança |
+| ArqHubDecorativo.tsx | shadcn Breadcrumb | Home → Arquitetônico → Decorativo |
 
-#### `src/pages/Vendas.tsx`
-- "Lojas Físicas" → "Centros Autorizados"
-- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
-- "Ver Lojas" → "Ver Centros Autorizados"
+### PASSO 3 — Adicionar breadcrumb nas PDPs automotivas
 
-#### `src/pages/Parceiro.tsx`
-- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+Inserir `<Breadcrumb items={[...]} />` logo após `<main>` em cada PDP (sem alterar nenhum outro conteúdo):
 
-#### `src/pages/FAQ.tsx`
-- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
-- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
+| Arquivo fonte | Items |
+|--------------|-------|
+| AutomotivoDark.tsx | Home → Automotivo → Películas Solares → Dark |
+| AutomotivoEclipse.tsx | ...Solares → Eclipse |
+| AutomotivoVip.tsx | ...Solares → VIP |
+| AutomotivoPolariz.tsx | ...Solares → Polariz Ultra |
+| AutomotivoMatrix.tsx | ...Solares → Matrix |
+| SkinSafe8K.tsx | Home → Automotivo → Proteção e Segurança → SkinSafe 8K |
+| Antivandalismo13K.tsx | ...Segurança → Antivandalismo 13K |
+| SkudoGuard.tsx | ...Segurança → SkudoGuard |
+| SkudoUltra.tsx | ...Segurança → SkudoUltra |
+| AutomotivoPhantom6.tsx | Home → Automotivo → PPF → Phantom 6 mil |
+| AutomotivoPhantom8.tsx | ...PPF → Phantom 8 mil |
 
-#### `src/pages/PhantomArquitetonico.tsx`
-- "Encontre uma Loja" → "Encontre um Centro Autorizado"
-- "lojas oficiais" → "Centros Autorizados"
-- "Ver Lojas Próximas" → "Ver Centros Autorizados"
+### PASSO 4 — Adicionar breadcrumb nas PDPs arquitetônicas
 
-#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
+| Arquivo fonte | Items |
+|--------------|-------|
+| Clear70.tsx | Home → Arquitetônico → Controle Solar → Clear 70 |
+| Orizzonte70.tsx | ...Solar → Orizzonte 70 |
+| Ultravioletti90.tsx | ...Solar → Ultravioletti 90 |
+| Naturale.tsx | ...Solar → Naturale |
+| Petrolio.tsx | ...Solar → Petrólio |
+| GrigioInvertito.tsx | ...Solar → Grigio Invertito |
+| MetallicoArgento.tsx | ...Solar → Metallico Argento |
+| ReflessoDArgento.tsx | ...Solar → Reflesso D'Argento |
+| SpecchiatoBronzo.tsx | ...Solar → Specchiato Bronzo |
+| ArqSegurancaISSF4000.tsx | Home → Arquitetônico → Proteção e Segurança → ISSF 4000 |
+| ArqSegurancaISSF7000.tsx | ...Segurança → ISSF 7000 |
+| ArqDecorativoJateado.tsx | Home → Arquitetônico → Decorativo → Jateado |
+| ArqDecorativoWhiteout.tsx | ...Decorativo → Whiteout |
+| ArqDecorativoBlackout.tsx | ...Decorativo → Blackout |
 
-#### `src/pages/AutomotivoHubSeguranca.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
+### Regras
 
-#### `src/pages/Garantia.tsx`
-- "loja aplicadora" → "centro autorizado aplicador"
-
-#### `src/components/SchemaOrg.tsx`
-- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
-- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
-- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
-- Comentário "lojas" → "centros autorizados"
-
-#### `src/i18n/locales/pt.json`
-- "Lojas em SP" → "Centros Autorizados"
-- "loja oficial" → "centro autorizado oficial" (timeline)
-- "lojas autorizadas" → "centros autorizados"
-- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
-- "Lojas Oficiais" → "Centros Autorizados"
-- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
-
-#### `src/i18n/locales/en.json`
-- "Stores in SP" → "Authorized Centers"
-- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
-- "authorized stores" → "authorized centers"
-
-#### `src/i18n/locales/es.json`
-- Equivalentes em espanhol
-
-#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
-
-#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
+- Nenhum conteúdo existente alterado — apenas inserção do `<Breadcrumb />` e remoção de breadcrumbs antigos inline
+- Re-export files (ArqClear70.tsx, AutomotivoSkinSafe.tsx, etc.) não são alterados
+- App.tsx, Footer.tsx, Header.tsx intocados
+- Total: 1 arquivo criado + ~30 arquivos com inserção mínima
 
