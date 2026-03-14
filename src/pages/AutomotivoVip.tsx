@@ -86,7 +86,7 @@ const AutomotivoVip = () => {
                 </Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                INSULFILM™ VIP
+                INSULFILM™ Vip
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
                 {t('automotivePage.vip.desc')}
