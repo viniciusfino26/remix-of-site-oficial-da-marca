@@ -170,7 +170,7 @@ const homeFaqSchema = {
       name: 'INSULFILM tem proteção antivandalismo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O INSULFILM™ Antivandalismo 13K oferece proteção contra quebras, arrombamentos e vandalismo, com resistência à tensão de ≥ 165 MPa e garantia de fábrica de 5 anos.',
+        text: 'Sim. O INSULFILM™ Antivandalismo13K oferece proteção contra quebras, arrombamentos e vandalismo, com resistência à tensão de ≥ 165 MPa e garantia de fábrica de 5 anos.',
       },
     },
     {
@@ -217,7 +217,7 @@ const automotiveFaqSchema = {
       name: 'Qual película INSULFILM é indicada para o meu carro?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Para conforto térmico máximo: Polaris (nano cerâmica, até 72% rejeição). Para boa performance: Vip ou Eclipse (linha carbono). Para segurança: Antivandalismo 13K. Para proteção de pintura: Phantom PPF. Nossa equipe oferece consultoria técnica personalizada.',
+        text: 'Para conforto térmico máximo: Polaris (nano cerâmica, até 72% rejeição). Para boa performance: Vip ou Eclipse (linha carbono). Para segurança: Antivandalismo13K. Para proteção de pintura: Phantom PPF. Nossa equipe oferece consultoria técnica personalizada.',
       },
     },
     {

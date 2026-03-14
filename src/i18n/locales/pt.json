@@ -16,8 +16,8 @@
     "sac": "SAC",
     "storeLocator": "Onde Encontrar",
     "becomePartner": "Seja Parceiro",
-    "antiVandalism": "Antivandalismo 13K",
-    "antiVandalismProposal": "Antivandalismo 13K — Proposta",
+    "antiVandalism": "Antivandalismo13K",
+    "antiVandalismProposal": "Antivandalismo13K — Proposta",
     "products": "Produtos",
     "legislation": "Legislação",
     "warranty": "Garantia",
@@ -309,7 +309,7 @@
       "warranty": "Garantia de Fábrica"
     },
     "antivandal": {
-      "name": "INSULFILM™ Antivandalismo 13K",
+      "name": "INSULFILM™ Antivandalismo13K",
       "category": "Segurança",
       "serie": "Safety & Security",
       "heat": "Proteção Total",
@@ -389,7 +389,7 @@
     "faqTitle": "Perguntas Frequentes",
     "faq1": {
       "q": "Qual película é indicada para o meu carro?",
-      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
+      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
     },
     "faq2": {
       "q": "A película escurece muito o vidro?",
@@ -422,7 +422,7 @@
     "heroBadge": "Película de Proteção",
     "heroSubtitle": "PROTEÇÃO CONTRA ATOS DE VANDALISMO",
     "descTitle": "Proteção que vai além do vidro",
-    "descText": "A película INSULFILM™ Antivandalismo 13K é composta por múltiplas camadas de poliéster de alta resistência com adesivo especial, que combinadas ao vidro temperado formam uma barreira protetora contra impactos, tentativas de arrombamento e atos de vandalismo.",
+    "descText": "A película INSULFILM™ Antivandalismo13K é composta por múltiplas camadas de poliéster de alta resistência com adesivo especial, que combinadas ao vidro temperado formam uma barreira protetora contra impactos, tentativas de arrombamento e atos de vandalismo.",
     "benefit1": "Barreira protetora após a quebra do vidro",
     "benefit2": "Proteção em situações acidentais ou atos de depredação",
     "benefit3": "Não interfere em sinais de celulares e eletrônicos",
@@ -493,7 +493,7 @@
       "solarContent": "VLT (Visible Light Transmission): porcentagem de luz visível que atravessa a película. Rejeição UV: capacidade de bloquear raios ultravioleta. Nitidez Óptica: qualidade de transparência e claridade visual da película aplicada."
     },
     "ctaTitle": "Proteja seu veículo agora",
-    "ctaSubtitle": "Solicite um orçamento para a película Antivandalismo 13K e tenha a proteção que seu veículo merece.",
+    "ctaSubtitle": "Solicite um orçamento para a película Antivandalismo13K e tenha a proteção que seu veículo merece.",
     "ctaButton": "Solicitar Orçamento",
     "ctaDisclaimer": "INSULFILM™ é marca registrada. Todos os direitos reservados."
   },
@@ -822,7 +822,7 @@
     "catWarranty": "Garantia",
     "catGeneral": "Geral",
     "auto1Q": "Qual película é indicada para o meu carro?",
-    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
+    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
     "solar1Q": "A película escurece muito o vidro?",
     "solar1A": "Cada linha possui diferentes níveis de transmissão de luz visível (VLT). Oferecemos opções desde tonalidades leves até escurecimento máximo permitido pela legislação CONTRAN.",
     "solar2Q": "A película pode ser aplicada no para-brisa?",
@@ -914,7 +914,7 @@
     "w3Product": "LT Polariz / LT Matrix",
     "w3Period": "Garantia Vitalícia",
     "w3Coverage": "Cobertura total contra defeitos de fabricação",
-    "w4Product": "Antivandalismo 13K",
+    "w4Product": "Antivandalismo13K",
     "w4Period": "5 Anos",
     "w4Coverage": "Defeitos de fabricação + reposição em sinistro",
     "w5Product": "SkudoGuard / SkudoUltra",

@@ -16,8 +16,8 @@
     "sac": "Customer Service",
     "storeLocator": "Store Locator",
     "becomePartner": "Become a Partner",
-    "antiVandalism": "Anti-Vandalism 13K",
-    "antiVandalismProposal": "Anti-Vandalism 13K — Proposal",
+    "antiVandalism": "Anti-Vandalism13K",
+    "antiVandalismProposal": "Anti-Vandalism13K — Proposal",
     "products": "Products",
     "ppf": "PPF",
     "warranty": "Warranty",
@@ -191,7 +191,7 @@
       "warranty": "Premium Lifetime Warranty"
     },
     "antivandal": {
-      "name": "INSULFILM™ Anti-Vandalism 13K",
+      "name": "INSULFILM™ Anti-Vandalism13K",
       "category": "Security",
       "serie": "Safety & Security",
       "heat": "Total Protection",
@@ -251,7 +251,7 @@
     "faqTitle": "Frequently Asked Questions",
     "faq1": {
       "q": "Which film is recommended for my car?",
-      "a": "The choice depends on your needs. For thermal comfort, we recommend the Eclipse or Vip line. For security, the Anti-Vandalism 13K. For paint protection, the Phantom PPF. Our team can help with technical consulting."
+      "a": "The choice depends on your needs. For thermal comfort, we recommend the Eclipse or Vip line. For security, the Anti-Vandalism13K. For paint protection, the Phantom PPF. Our team can help with technical consulting."
     },
     "faq2": {
       "q": "Does the film darken the glass too much?",
@@ -274,7 +274,7 @@
     "heroBadge": "Protection Film",
     "heroSubtitle": "PROTECTION AGAINST VANDALISM",
     "descTitle": "Protection beyond the glass",
-    "descText": "The INSULFILM™ Anti-Vandalism 13K film is composed of multiple layers of high-resistance polyester with special adhesive, which combined with tempered glass form a protective barrier against impacts, break-in attempts and acts of vandalism.",
+    "descText": "The INSULFILM™ Anti-Vandalism13K film is composed of multiple layers of high-resistance polyester with special adhesive, which combined with tempered glass form a protective barrier against impacts, break-in attempts and acts of vandalism.",
     "benefit1": "Protective barrier after glass breakage",
     "benefit2": "Protection in accidental situations or acts of vandalism",
     "benefit3": "Does not interfere with cell phone and electronic signals",
@@ -345,7 +345,7 @@
       "solarContent": "VLT (Visible Light Transmission): percentage of visible light passing through the film. UV Rejection: ability to block ultraviolet rays. Optical Clarity: transparency and visual clarity quality of the applied film."
     },
     "ctaTitle": "Protect your vehicle now",
-    "ctaSubtitle": "Request a quote for the Anti-Vandalism 13K film and get the protection your vehicle deserves.",
+    "ctaSubtitle": "Request a quote for the Anti-Vandalism13K film and get the protection your vehicle deserves.",
     "ctaButton": "Request a Quote",
     "ctaDisclaimer": "INSULFILM™ is a registered trademark. All rights reserved."
   },
@@ -691,7 +691,7 @@
     "catWarranty": "Warranty",
     "catGeneral": "General",
     "auto1Q": "Which film is recommended for my car?",
-    "auto1A": "The choice depends on your needs. For maximum thermal comfort, we recommend the LT Polariz or LT Matrix. For good performance with value, the LT Vip or LT Eclipse. For security, the Anti-Vandalism 13K or SkudoGuard. For paint protection, the Phantom® PPF.",
+    "auto1A": "The choice depends on your needs. For maximum thermal comfort, we recommend the LT Polariz or LT Matrix. For good performance with value, the LT Vip or LT Eclipse. For security, the Anti-Vandalism13K or SkudoGuard. For paint protection, the Phantom® PPF.",
     "solar1Q": "Does the film darken the glass too much?",
     "solar1A": "Each line has different visible light transmission (VLT) levels. We offer options from light tints to maximum darkening allowed by CONTRAN legislation.",
     "solar2Q": "Can the film be applied to the windshield?",
@@ -783,7 +783,7 @@
     "w3Product": "LT Polariz / LT Matrix",
     "w3Period": "Lifetime Warranty",
     "w3Coverage": "Full coverage against manufacturing defects",
-    "w4Product": "Anti-Vandalism 13K",
+    "w4Product": "Anti-Vandalism13K",
     "w4Period": "5 Years",
     "w4Coverage": "Manufacturing defects + replacement in case of incident",
     "w5Product": "SkudoGuard / SkudoUltra",

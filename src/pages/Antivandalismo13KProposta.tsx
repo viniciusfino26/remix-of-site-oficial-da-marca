@@ -128,7 +128,7 @@ const Antivandalismo13KProposta = () => {
               </Badge>
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-              INSULFILM™ Antivandalismo 13K
+              INSULFILM™ Antivandalismo13K
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
               {t('av13k.heroSubtitle')}
@@ -149,7 +149,7 @@ const Antivandalismo13KProposta = () => {
             <div className="aspect-video relative">
               <iframe
                 src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=nGBNE0FG-8Q"
-                title="INSULFILM™ Antivandalismo 13K"
+                title="INSULFILM™ Antivandalismo13K"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 className="w-full h-full pointer-events-none"
                 loading="lazy"
@@ -480,7 +480,7 @@ const Antivandalismo13KProposta = () => {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-8 py-5 rounded-xl shadow-premium hover:shadow-premium-lg transition-all"
               >
                 <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de proteger meu veículo e minha família com a película Antivandalismo 13K.')}`}
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de proteger meu veículo e minha família com a película Antivandalismo13K.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -690,7 +690,7 @@ const Antivandalismo13KProposta = () => {
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">{t('av13k.ctaSubtitle')}</motion.p>
             <motion.div variants={scaleIn}>
               <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo 13K.')}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo13K.')}`} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   {t('av13k.ctaButton')}
                 </a>
