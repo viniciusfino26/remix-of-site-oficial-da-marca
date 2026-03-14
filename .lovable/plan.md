@@ -1,77 +1,35 @@
 
 
-## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
+## Plano: Reescrever `src/pages/Automotivo.tsx` como hub principal
 
-### Duas alterações principais
+**Arquivo alterado:** apenas `src/pages/Automotivo.tsx`
 
-**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
+A página atual (~560 linhas) com tabs de produtos solares, seções alternadas e benefícios será substituída por um hub limpo de categoria, seguindo o padrão dos hubs já implementados.
 
-**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
+### Estrutura da nova página
 
-### Arquivos a alterar
+1. **Breadcrumb** — Home › Automotivo
 
-#### `src/pages/Lojas.tsx` (maior volume)
-- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
-- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
-- Hero: "Lojas Oficiais" → "Centros Autorizados"
-- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
-- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
-- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
-- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
-- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
-- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
-- **Remover** o campo `services` dos 4 objetos STORES
-- **Remover** o bloco de renderização dos services badges (linhas 411-418)
+2. **PageHero** — título "Películas Automotivas INSULFILM™ — São Paulo", badge "Automotivo", subtítulo sobre a divisão automotiva, CTA "Agendar Instalação" via WhatsApp
 
-#### `src/pages/Vendas.tsx`
-- "Lojas Físicas" → "Centros Autorizados"
-- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
-- "Ver Lojas" → "Ver Centros Autorizados"
+3. **Grid de 3 cards grandes de categoria** (`md:grid-cols-3`), cada um com ícone (Sun/Shield/Layers), nome, descrição de 2 linhas e botão "Explorar":
+   - Películas Solares → `/automotivo/solar` — "Dark, Eclipse, Vip, Polariz Ultra, Matrix — do clássico ao cerâmico"
+   - Proteção e Segurança → `/automotivo/seguranca` — "SkinSafe 8K, Antivandalismo, SkudoGuard, SkudoUltra"
+   - PPF — Proteção de Pintura → `/automotivo/ppf` — "Phantom 6 mil e Phantom 8 mil — proteção de pintura premium"
 
-#### `src/pages/Parceiro.tsx`
-- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+4. **ParallaxBreak** com stats (+40 Países, 5 Gerações, #1 Marca)
 
-#### `src/pages/FAQ.tsx`
-- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
-- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
+5. **"Por que escolher INSULFILM™"** — 4 diferenciais em grid `md:grid-cols-4` com ícone + título + descrição curta (Tecnologia de Ponta, Rede Autorizada, Garantia de Fábrica, Instalação Profissional)
 
-#### `src/pages/PhantomArquitetonico.tsx`
-- "Encontre uma Loja" → "Encontre um Centro Autorizado"
-- "lojas oficiais" → "Centros Autorizados"
-- "Ver Lojas Próximas" → "Ver Centros Autorizados"
+6. **Centros Autorizados** — 4 cards com dados reais de Moema, Paulista, Santana e Pacaembu (endereço resumido + zona + botão "Ver Centro Autorizado" linkando para `/lojas`)
 
-#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
+7. **FAQ** — Accordion com 4 perguntas gerais sobre películas automotivas
 
-#### `src/pages/AutomotivoHubSeguranca.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
+8. **CTA final** — "Agendar Instalação" com WhatsApp (`5511976136911`)
 
-#### `src/pages/Garantia.tsx`
-- "loja aplicadora" → "centro autorizado aplicador"
+### Componentes reutilizados
+`PageHero`, `Card`/`CardContent`, `Button`, `Badge`, `Accordion`, `Breadcrumb`, `ParallaxBreak`, Framer Motion animations (`fadeInUp`, `stagger`)
 
-#### `src/components/SchemaOrg.tsx`
-- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
-- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
-- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
-- Comentário "lojas" → "centros autorizados"
-
-#### `src/i18n/locales/pt.json`
-- "Lojas em SP" → "Centros Autorizados"
-- "loja oficial" → "centro autorizado oficial" (timeline)
-- "lojas autorizadas" → "centros autorizados"
-- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
-- "Lojas Oficiais" → "Centros Autorizados"
-- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
-
-#### `src/i18n/locales/en.json`
-- "Stores in SP" → "Authorized Centers"
-- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
-- "authorized stores" → "authorized centers"
-
-#### `src/i18n/locales/es.json`
-- Equivalentes em espanhol
-
-#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
-
-#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
+### O que NÃO será alterado
+App.tsx, nenhuma PDP, nenhum hub automotivo filho, nenhum outro arquivo
 
