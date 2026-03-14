@@ -23,8 +23,8 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 const WHATSAPP_NUMBER = '5511976136911';
 
 const products = [
-  { name: 'INSULFILM™ SkinSafe 8K', tag: 'Proteção', thickness: '8 mil', desc: 'Película de proteção que retém fragmentos de vidro em caso de quebra acidental, evitando projeção contra os ocupantes do veículo.', path: '/automotivo/seguranca/skinsafe8k' },
-  { name: 'INSULFILM™ Antivandalismo 13K', tag: 'Antivandalismo', thickness: '13 mil', desc: 'Proteção reforçada contra atos de vandalismo e tentativas de quebra. Maior espessura para resistência superior a impactos.', path: '/automotivo/seguranca/antivandalismo13k' },
+  { name: 'INSULFILM™ SkinSafe8K', tag: 'Proteção', thickness: '8 mil', desc: 'Película de proteção que retém fragmentos de vidro em caso de quebra acidental, evitando projeção contra os ocupantes do veículo.', path: '/automotivo/seguranca/skinsafe8k' },
+  { name: 'INSULFILM™ Antivandalismo13K', tag: 'Antivandalismo', thickness: '13 mil', desc: 'Proteção reforçada contra atos de vandalismo e tentativas de quebra. Maior espessura para resistência superior a impactos.', path: '/automotivo/seguranca/antivandalismo13k' },
   { name: 'INSULFILM™ SkudoGuard', tag: 'Defesa', thickness: '16 mil', desc: 'Escudo de alta resistência pós-quebra. Projetada para transformar os vidros do carro numa barreira contra invasões.', path: '/automotivo/seguranca/skudoguard' },
   { name: 'INSULFILM™ SkudoUltra', tag: 'Defesa Premium', thickness: '22 mil', desc: 'Máxima resistência a impactos agressivos. Verdadeiro escudo blindado em película, com a maior espessura da linha de segurança.', path: '/automotivo/seguranca/skudoultra' },
 ];
