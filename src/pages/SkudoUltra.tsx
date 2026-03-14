@@ -137,6 +137,7 @@ const SkudoUltra = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
     <main>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Proteção e Segurança', href: '/automotivo/seguranca' }, { label: 'SkudoUltra' }]} />
       {/* ═══ 1. HERO + VIDEO ═══ */}
       <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />

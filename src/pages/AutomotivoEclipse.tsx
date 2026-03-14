@@ -73,6 +73,7 @@ const AutomotivoEclipse = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
+        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Películas Solares', href: '/automotivo/solar' }, { label: 'Eclipse' }]} />
         <section ref={heroRef} className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
           <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>

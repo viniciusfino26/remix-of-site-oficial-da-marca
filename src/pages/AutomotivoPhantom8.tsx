@@ -72,6 +72,7 @@ const AutomotivoPhantom8 = () => (
       <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
     </Helmet>
     <main>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'PPF', href: '/automotivo/ppf' }, { label: 'Phantom 8 mil' }]} />
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
