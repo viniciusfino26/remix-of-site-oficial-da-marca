@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 import { Analytics } from '@/components/Analytics';
 
 const WA = '5511976136911';
@@ -72,18 +72,7 @@ const Automotivo = () => (
       <meta name="description" content="Películas automotivas INSULFILM™ em São Paulo. Linha solar (Dark, Eclipse, VIP, Polariz, Matrix), segurança (SkudoGuard, SkudoUltra) e PPF Phantom. 4 centros autorizados." />
     </Helmet>
 
-    {/* Breadcrumb */}
-    <div className="bg-primary">
-      <div className="container mx-auto px-4 pt-24 pb-2">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem><BreadcrumbLink asChild><Link to="/" className="text-primary-foreground/60 hover:text-primary-foreground">Home</Link></BreadcrumbLink></BreadcrumbItem>
-            <BreadcrumbSeparator className="text-primary-foreground/40" />
-            <BreadcrumbItem><BreadcrumbPage className="text-primary-foreground">Automotivo</BreadcrumbPage></BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
-    </div>
+    <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo' }]} />
 
     {/* Hero */}
     <PageHero

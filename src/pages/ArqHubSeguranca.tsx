@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 import PageHero from '@/components/PageHero';
 import ParallaxBreak from '@/components/ParallaxBreak';
 
@@ -55,28 +55,7 @@ const ArqHubSeguranca = () => {
       </Helmet>
 
       <main>
-        {/* ── BREADCRUMB ── */}
-        <div className="container mx-auto px-4 pt-28 pb-2">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/arquitetonico">Arquitetônico</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Proteção e Segurança</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
+        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Arquitetônico', href: '/arquitetonico' }, { label: 'Proteção e Segurança' }]} />
 
         {/* ── HERO ── */}
         <PageHero

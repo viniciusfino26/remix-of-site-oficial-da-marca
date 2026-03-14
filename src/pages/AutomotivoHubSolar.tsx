@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Sun, MessageCircle, ArrowRight, ChevronRight } from 'lucide-react';
+import { Sun, MessageCircle, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import PageHero from '@/components/PageHero';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -54,18 +55,7 @@ const AutomotivoHubSolar = () => (
     </Helmet>
 
     <main>
-      {/* Breadcrumb */}
-      <div className="bg-background border-b border-border">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <Link to="/automotivo" className="hover:text-foreground transition-colors">Automotivo</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-foreground font-medium">Películas Solares</span>
-          </nav>
-        </div>
-      </div>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Películas Solares' }]} />
 
       {/* Hero */}
       <PageHero

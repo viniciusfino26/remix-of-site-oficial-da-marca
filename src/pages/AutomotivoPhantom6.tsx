@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -72,6 +73,7 @@ const AutomotivoPhantom6 = () => (
       <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
     </Helmet>
     <main>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'PPF', href: '/automotivo/ppf' }, { label: 'Phantom 6 mil' }]} />
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
