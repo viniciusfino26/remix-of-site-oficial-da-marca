@@ -61,9 +61,9 @@ const VIP = () => {
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ VIP | Película de Carbono Alta Performance</title>
+        <title>INSULFILM™ Vip | Película de Carbono Alta Performance</title>
         <meta name="description" content="Estabilidade de cor superior com carbono. Rejeição de até 65% dos raios infravermelhos (IR) e 5 anos de garantia." />
-        <meta property="og:title" content="INSULFILM™ VIP | Película de Carbono Alta Performance" />
+        <meta property="og:title" content="INSULFILM™ Vip | Película de Carbono Alta Performance" />
         <meta property="og:description" content="Estabilidade de cor superior com carbono. Rejeição de até 65% dos raios infravermelhos (IR) e 5 anos de garantia." />
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
