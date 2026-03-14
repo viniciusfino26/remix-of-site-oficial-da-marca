@@ -116,7 +116,7 @@ const Antivandalismo13K = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "INSULFILM™ Antivandalismo 13K",
+    "name": "INSULFILM™ Antivandalismo13K",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia.",
     "image": "LINK_DA_IMAGEM_AQUI",
