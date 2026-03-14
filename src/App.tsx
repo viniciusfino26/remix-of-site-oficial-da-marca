@@ -129,6 +129,7 @@ const App = () => (
           <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
 
           {/* Divisão Arquitetônica — Categorias */}
+          <Route path="/arquitetonico" element={<Arquitetonico />} />
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/empresarial" element={<Empresarial />} />
           <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
