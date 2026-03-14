@@ -28,7 +28,7 @@ const megaMenus: MegaMenu[] = [
         products: [
           { label: 'Dark', href: '/automotivo/solar/dark' },
           { label: 'Eclipse', href: '/automotivo/solar/eclipse' },
-          { label: 'VIP', href: '/automotivo/solar/vip' },
+          { label: 'Vip', href: '/automotivo/solar/vip' },
           { label: 'Matrix', href: '/automotivo/solar/matrix' },
           { label: 'Polariz Ultra', href: '/automotivo/solar/polariz-ultra' },
         ],

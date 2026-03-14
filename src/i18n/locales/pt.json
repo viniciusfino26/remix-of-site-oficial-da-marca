@@ -179,7 +179,7 @@
       "warranty": "Garantia de Fábrica Estendida"
     },
     "ltVip": {
-      "name": "INSULFILM™ LT VIP",
+      "name": "INSULFILM™ LT Vip",
       "category": "Premium Performance",
       "serie": "Carbono Extra",
       "heat": "Até 58%",
@@ -219,7 +219,7 @@
       "warranty": "Garantia de Fábrica Estendida"
     },
     "vip": {
-      "name": "INSULFILM™ LT VIP",
+      "name": "INSULFILM™ LT Vip",
       "category": "Premium Performance",
       "serie": "Carbono Extra",
       "heat": "Até 58%",
@@ -389,7 +389,7 @@
     "faqTitle": "Perguntas Frequentes",
     "faq1": {
       "q": "Qual película é indicada para o meu carro?",
-      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
+      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
     },
     "faq2": {
       "q": "A película escurece muito o vidro?",
@@ -822,7 +822,7 @@
     "catWarranty": "Garantia",
     "catGeneral": "Geral",
     "auto1Q": "Qual película é indicada para o meu carro?",
-    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
+    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT Vip ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
     "solar1Q": "A película escurece muito o vidro?",
     "solar1A": "Cada linha possui diferentes níveis de transmissão de luz visível (VLT). Oferecemos opções desde tonalidades leves até escurecimento máximo permitido pela legislação CONTRAN.",
     "solar2Q": "A película pode ser aplicada no para-brisa?",
@@ -908,7 +908,7 @@
     "w1Product": "LT Dark",
     "w1Period": "Garantia de Fábrica",
     "w1Coverage": "Descoloração, bolhas e descascamento",
-    "w2Product": "LT Eclipse / LT VIP",
+    "w2Product": "LT Eclipse / LT Vip",
     "w2Period": "Garantia Estendida",
     "w2Coverage": "Descoloração, bolhas, descascamento e desbotamento",
     "w3Product": "LT Polariz / LT Matrix",

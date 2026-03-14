@@ -162,7 +162,7 @@ const homeFaqSchema = {
       name: 'Qual a melhor película INSULFILM para calor?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A linha Polaris (nano cerâmica, até 72% de rejeição de calor) é a de maior performance térmica. Para custo-benefício, a linha VIP (carbono extra, até 58%) é excelente. A Dark oferece até 39% de rejeição com custo-benefício imbatível.',
+        text: 'A linha Polaris (nano cerâmica, até 72% de rejeição de calor) é a de maior performance térmica. Para custo-benefício, a linha Vip (carbono extra, até 58%) é excelente. A Dark oferece até 39% de rejeição com custo-benefício imbatível.',
       },
     },
     {
@@ -217,7 +217,7 @@ const automotiveFaqSchema = {
       name: 'Qual película INSULFILM é indicada para o meu carro?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Para conforto térmico máximo: Polaris (nano cerâmica, até 72% rejeição). Para boa performance: VIP ou Eclipse (linha carbono). Para segurança: Antivandalismo 13K. Para proteção de pintura: Phantom PPF. Nossa equipe oferece consultoria técnica personalizada.',
+        text: 'Para conforto térmico máximo: Polaris (nano cerâmica, até 72% rejeição). Para boa performance: Vip ou Eclipse (linha carbono). Para segurança: Antivandalismo 13K. Para proteção de pintura: Phantom PPF. Nossa equipe oferece consultoria técnica personalizada.',
       },
     },
     {
