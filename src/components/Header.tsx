@@ -66,9 +66,9 @@ const megaMenus: MegaMenu[] = [
         title: 'Controle Solar',
         href: '/arquitetonico/solar',
         products: [
-          { label: 'Clear 70', href: '/arquitetonico/solar/clear-70' },
-          { label: 'Orizzonte 70', href: '/arquitetonico/solar/orizzonte-70' },
-          { label: 'UV 90', href: '/arquitetonico/solar/uv-90' },
+          { label: 'Clear 70', href: '/arquitetonico/solar/clear70' },
+          { label: 'Orizzonte 70', href: '/arquitetonico/solar/orizzonte70' },
+          { label: 'Ultravioletti 90', href: '/arquitetonico/solar/ultravioletti90' },
           { label: 'Naturale', href: '/arquitetonico/solar/naturale' },
           { label: 'Petrólio', href: '/arquitetonico/solar/petrolio' },
           { label: 'Grigio Invertito', href: '/arquitetonico/solar/grigio-invertito' },
