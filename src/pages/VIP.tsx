@@ -153,7 +153,7 @@ const VIP = () => {
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">Solicite um orçamento e descubra o melhor custo-benefício em película de carbono.</motion.p>
               <motion.div variants={scaleIn}>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película INSULFILM VIP.')}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película INSULFILM Vip.')}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5" />Solicitar Orçamento
                   </a>
                 </Button>
