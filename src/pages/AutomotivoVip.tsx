@@ -140,7 +140,7 @@ const AutomotivoVip = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Carbono de Verdade, Performance de Verdade</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                A INSULFILM™ VIP utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
+                A INSULFILM™ Vip utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
                 {['Carbono real — cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
