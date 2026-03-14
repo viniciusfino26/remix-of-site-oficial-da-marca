@@ -24,21 +24,21 @@ const categories = [
   {
     icon: Sun,
     title: 'Películas Solares',
-    description: 'Dark, Eclipse, Vip, Polariz Ultra, Matrix — do clássico ao cerâmico.',
+    description: 'Dark, Eclipse, VIP, Polariz Ultra, Matrix — do básico ao cerâmico.',
     href: '/automotivo/solar',
     accent: 'from-amber-500/20 to-orange-500/10',
   },
   {
     icon: Shield,
     title: 'Proteção e Segurança',
-    description: 'SkinSafe 8K, Antivandalismo, SkudoGuard, SkudoUltra — blindagem para vidros.',
+    description: 'SkinSafe 8K, Antivandalismo, SkudoGuard, SkudoUltra.',
     href: '/automotivo/seguranca',
     accent: 'from-blue-500/20 to-cyan-500/10',
   },
   {
     icon: Layers,
     title: 'PPF — Proteção de Pintura',
-    description: 'Phantom 6 mil e Phantom 8 mil — proteção de pintura premium com auto-regeneração.',
+    description: 'Phantom 6 mil e Phantom 8 mil — proteção de pintura premium.',
     href: '/automotivo/ppf',
     accent: 'from-violet-500/20 to-purple-500/10',
   },
@@ -156,7 +156,7 @@ const Automotivo = () => (
           Centros Autorizados em São Paulo
         </motion.h2>
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          4 unidades estrategicamente localizadas para atender você com excelência.
+          4 centros autorizados estrategicamente localizados para atender você com excelência.
         </motion.p>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {centros.map((c) => (
