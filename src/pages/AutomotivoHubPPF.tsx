@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import PageHero from '@/components/PageHero';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
