@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Layers, Zap, Eye, Shield, CheckCircle, MessageCircle, Building2 } from 'lucide-react';
