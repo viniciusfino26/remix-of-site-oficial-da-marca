@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
+import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
