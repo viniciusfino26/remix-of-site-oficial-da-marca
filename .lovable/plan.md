@@ -1,30 +1,77 @@
-## Plano: Reescrever `src/pages/ArqHubSolar.tsx` como hub de categoria solar
 
-**Arquivo alterado:** apenas `src/pages/ArqHubSolar.tsx`
 
-### Estrutura da nova página
+## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
 
-1. **Breadcrumb** — Home › Arquitetônico › Controle Solar (usando componentes `Breadcrumb` do shadcn + `Link` do react-router)
-2. **Hero** — título "Controle Solar Arquitetônico", texto introdutório sobre rejeição térmica, bloqueio UV e eficiência energética. Usa `PageHero` existente com badge "Controle Solar"
-3. **Grid de 9 produtos** — `grid md:grid-cols-3 gap-6`, cada card com `Card`/`CardContent`, nome do produto, subtítulo técnico curto e `Button` "Ver produto" com `Link`:
-  - Clear 70 — Nano Cerâmica de alta transparência
-  - Orizzonte 70 — Nano Cerâmica com Visão panorâmica com extremo controle térmico
-  - Ultravioletti 90 — Bloqueio UV máximo com claridade
-  - Naturale — Estética neutra com tecnologia Sputtered
-  - Petrólio — Tonalidade preta não refletiva
-  - Grigio Invertito — Privacidade com acabamento espelhado invertido
-  - Metallico Argento — Espelhado prata premium
-  - Reflesso D'Argento — Reflexão prateada de alta rejeição
-  - Specchiato Bronzo — Refletivo bronze sofisticado e premium
-4. **FAQ** — `Accordion` do shadcn com 5 perguntas sobre controle solar arquitetônico
-5. **CTA final** — "Solicitar orçamento" com botão WhatsApp (mesmo número `5511936182746`)
+### Duas alterações principais
 
-### Padrão visual
+**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
 
-- Framer Motion: `fadeInUp`, `scaleIn`, `stagger` (mesmo padrão existente)
-- Componentes: `PageHero`, `Card`, `CardContent`, `Button`, `Accordion`, `Breadcrumb`, `ParallaxBreak`
-- Nenhum componente novo será criado
+**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
 
-### O que NÃO será alterado
+### Arquivos a alterar
 
-- App.tsx, nenhuma PDP, nenhum outro arquivo
+#### `src/pages/Lojas.tsx` (maior volume)
+- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
+- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
+- Hero: "Lojas Oficiais" → "Centros Autorizados"
+- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
+- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
+- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
+- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
+- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
+- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
+- **Remover** o campo `services` dos 4 objetos STORES
+- **Remover** o bloco de renderização dos services badges (linhas 411-418)
+
+#### `src/pages/Vendas.tsx`
+- "Lojas Físicas" → "Centros Autorizados"
+- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
+- "Ver Lojas" → "Ver Centros Autorizados"
+
+#### `src/pages/Parceiro.tsx`
+- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+
+#### `src/pages/FAQ.tsx`
+- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
+- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
+
+#### `src/pages/PhantomArquitetonico.tsx`
+- "Encontre uma Loja" → "Encontre um Centro Autorizado"
+- "lojas oficiais" → "Centros Autorizados"
+- "Ver Lojas Próximas" → "Ver Centros Autorizados"
+
+#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
+
+#### `src/pages/AutomotivoHubSeguranca.tsx`
+- "Lojas Oficiais" → "Centros Autorizados"
+
+#### `src/pages/Garantia.tsx`
+- "loja aplicadora" → "centro autorizado aplicador"
+
+#### `src/components/SchemaOrg.tsx`
+- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
+- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
+- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
+- Comentário "lojas" → "centros autorizados"
+
+#### `src/i18n/locales/pt.json`
+- "Lojas em SP" → "Centros Autorizados"
+- "loja oficial" → "centro autorizado oficial" (timeline)
+- "lojas autorizadas" → "centros autorizados"
+- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
+- "Lojas Oficiais" → "Centros Autorizados"
+- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
+
+#### `src/i18n/locales/en.json`
+- "Stores in SP" → "Authorized Centers"
+- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
+- "authorized stores" → "authorized centers"
+
+#### `src/i18n/locales/es.json`
+- Equivalentes em espanhol
+
+#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
+
+#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
+
