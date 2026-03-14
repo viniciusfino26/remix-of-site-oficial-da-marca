@@ -73,6 +73,7 @@ const Arquitetonico = () => {
 
   return (
     <main>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Arquitetônico' }]} />
       {/* Hero */}
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />

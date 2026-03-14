@@ -43,18 +43,7 @@ const AutomotivoHubPPF = () => (
     </Helmet>
 
     <main>
-      {/* Breadcrumb */}
-      <div className="bg-background border-b border-border">
-        <div className="container mx-auto px-4 py-3">
-          <nav className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <Link to="/automotivo" className="hover:text-foreground transition-colors">Automotivo</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-foreground font-medium">PPF</span>
-          </nav>
-        </div>
-      </div>
+      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'PPF' }]} />
 
       {/* Hero */}
       <PageHero

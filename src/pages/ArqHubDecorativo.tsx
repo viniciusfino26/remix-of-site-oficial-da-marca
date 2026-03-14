@@ -52,28 +52,7 @@ const ArqHubDecorativo = () => {
       </Helmet>
 
       <main>
-        {/* ── BREADCRUMB ── */}
-        <div className="container mx-auto px-4 pt-28 pb-2">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/arquitetonico">Arquitetônico</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Decorativo</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
+        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Arquitetônico', href: '/arquitetonico' }, { label: 'Decorativo' }]} />
 
         {/* ── HERO ── */}
         <PageHero
