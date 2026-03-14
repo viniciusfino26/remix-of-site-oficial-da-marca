@@ -101,7 +101,7 @@ const AutomotivoVip = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ VIP" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Vip" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
