@@ -690,7 +690,7 @@ const Antivandalismo13KProposta = () => {
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">{t('av13k.ctaSubtitle')}</motion.p>
             <motion.div variants={scaleIn}>
               <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo 13K.')}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo13K.')}`} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   {t('av13k.ctaButton')}
                 </a>

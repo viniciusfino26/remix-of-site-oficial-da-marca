@@ -30,7 +30,7 @@ const products = [
 ];
 
 const faqs = [
-  { q: 'Qual a diferença entre película de proteção e película de defesa?', a: 'As películas de proteção (SkinSafe 8K e Antivandalismo 13K) retêm estilhaços em caso de quebra, protegendo os ocupantes. As de defesa (SkudoGuard e SkudoUltra) vão além: criam uma barreira de altíssima resistência pós-quebra, dificultando invasões e ataques criminosos.' },
+  { q: 'Qual a diferença entre película de proteção e película de defesa?', a: 'As películas de proteção (SkinSafe8K e Antivandalismo13K) retêm estilhaços em caso de quebra, protegendo os ocupantes. As de defesa (SkudoGuard e SkudoUltra) vão além: criam uma barreira de altíssima resistência pós-quebra, dificultando invasões e ataques criminosos.' },
   { q: 'A película de segurança altera a aparência do vidro?', a: 'Não. As películas de segurança INSULFILM™ são transparentes e não alteram a estética original do veículo. Elas mantêm a transparência do vidro e não comprometem a garantia de montadora.' },
   { q: 'Qual a espessura ideal para o meu veículo?', a: 'Depende do nível de proteção desejado: 8 mil para proteção básica contra estilhaços, 13 mil para antivandalismo, e 16 a 22 mil para defesa contra invasões. Um especialista pode recomendar a melhor opção para o seu perfil de uso.' },
   { q: 'A película de segurança pode ser combinada com película solar?', a: 'Sim. É possível aplicar película solar sobre a película de segurança, combinando proteção contra estilhaços/invasão com conforto térmico e privacidade. Consulte um centro autorizado para a melhor combinação.' },
