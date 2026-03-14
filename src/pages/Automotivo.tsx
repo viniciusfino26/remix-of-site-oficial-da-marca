@@ -31,7 +31,7 @@ const categories = [
   {
     icon: Shield,
     title: 'Proteção e Segurança',
-    description: 'SkinSafe8K, Antivandalismo, SkudoGuard, SkudoUltra.',
+    description: 'SkinSafe8K, Antivandalismo13K, SkudoGuard, SkudoUltra.',
     href: '/automotivo/seguranca',
     accent: 'from-blue-500/20 to-cyan-500/10',
   },
