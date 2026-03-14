@@ -170,7 +170,7 @@ const homeFaqSchema = {
       name: 'INSULFILM tem proteção antivandalismo?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Sim. O INSULFILM™ Antivandalismo 13K oferece proteção contra quebras, arrombamentos e vandalismo, com resistência à tensão de ≥ 165 MPa e garantia de fábrica de 5 anos.',
+        text: 'Sim. O INSULFILM™ Antivandalismo13K oferece proteção contra quebras, arrombamentos e vandalismo, com resistência à tensão de ≥ 165 MPa e garantia de fábrica de 5 anos.',
       },
     },
     {
