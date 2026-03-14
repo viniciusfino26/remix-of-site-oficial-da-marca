@@ -31,7 +31,7 @@ const categories = [
   {
     icon: Shield,
     title: 'Proteção e Segurança',
-    description: 'SkinSafe 8K, Antivandalismo, SkudoGuard, SkudoUltra — blindagem para vidros.',
+    description: 'SkinSafe 8K, Antivandalismo, SkudoGuard, SkudoUltra.',
     href: '/automotivo/seguranca',
     accent: 'from-blue-500/20 to-cyan-500/10',
   },
