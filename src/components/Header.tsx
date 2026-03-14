@@ -73,7 +73,7 @@ const megaMenus: MegaMenu[] = [
           { label: 'Petrólio', href: '/arquitetonico/solar/petrolio' },
           { label: 'Grigio Invertito', href: '/arquitetonico/solar/grigio-invertito' },
           { label: 'Metallico Argento', href: '/arquitetonico/solar/metallico-argento' },
-          { label: 'Reflesso D\'Argento', href: '/arquitetonico/solar/reflesso-dargento' },
+          { label: 'Reflesso D\'Argento', href: '/arquitetonico/solar/reflesso-d-argento' },
           { label: 'Specchiato Bronzo', href: '/arquitetonico/solar/specchiato-bronzo' },
         ],
       },
