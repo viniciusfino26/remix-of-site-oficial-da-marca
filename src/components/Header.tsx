@@ -47,8 +47,8 @@ const megaMenus: MegaMenu[] = [
         title: 'PPF — Proteção de Pintura',
         href: '/automotivo/ppf',
         products: [
-          { label: 'Phantom 6 mil', href: '/automotivo/ppf/phantom-6' },
-          { label: 'Phantom 8 mil', href: '/automotivo/ppf/phantom-8' },
+          { label: 'Phantom 6 mil', href: '/automotivo/ppf/phantom-6mil' },
+          { label: 'Phantom 8 mil', href: '/automotivo/ppf/phantom-8mil' },
         ],
       },
     ],
