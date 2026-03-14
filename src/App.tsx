@@ -30,6 +30,7 @@ import FAQ from "./pages/FAQ";
 import Garantia from "./pages/Garantia";
 import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
+import Arquitetonico from "./pages/Arquitetonico";
 
 /* ── Hubs Automotivos ── */
 import AutomotivoHubSolar from "./pages/AutomotivoHubSolar";
