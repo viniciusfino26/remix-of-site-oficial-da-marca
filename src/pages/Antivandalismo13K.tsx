@@ -131,7 +131,7 @@ const Antivandalismo13K = () => {
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Antivandalismo 13K | Segurança Automotiva Reforçada</title>
+        <title>INSULFILM™ Antivandalismo13K | Segurança Automotiva Reforçada</title>
         <meta name="description" content="Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia." />
         <meta property="og:title" content="INSULFILM™ Antivandalismo 13K | Segurança Automotiva Reforçada" />
         <meta property="og:description" content="Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia." />
