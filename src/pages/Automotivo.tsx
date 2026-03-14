@@ -156,7 +156,7 @@ const Automotivo = () => (
           Centros Autorizados em São Paulo
         </motion.h2>
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          4 unidades estrategicamente localizadas para atender você com excelência.
+          4 centros autorizados estrategicamente localizados para atender você com excelência.
         </motion.p>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {centros.map((c) => (
