@@ -81,8 +81,8 @@ const megaMenus: MegaMenu[] = [
         title: 'Proteção e Segurança',
         href: '/arquitetonico/seguranca',
         products: [
-          { label: 'ISSF 4000', href: '/arquitetonico/seguranca/issf-4000' },
-          { label: 'ISSF 7000', href: '/arquitetonico/seguranca/issf-7000' },
+          { label: 'ISSF 4000', href: '/arquitetonico/seguranca/issf4000' },
+          { label: 'ISSF 7000', href: '/arquitetonico/seguranca/issf7000' },
         ],
       },
       {
