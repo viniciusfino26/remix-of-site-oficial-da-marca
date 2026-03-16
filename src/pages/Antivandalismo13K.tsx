@@ -6,14 +6,13 @@ import {
   Shield, CheckCircle, Eye, Sun, Lock, Lightbulb,
   Award, FileText, RefreshCw, MessageCircle, Flame, CircleDot, Sword,
   Layers, ArrowRight, BookOpen, Wrench, Zap,
-  AlertTriangle, HeartCrack, UserX, Quote, Heart, ShieldAlert, Users, Sparkles
+  AlertTriangle, HeartCrack, UserX, Quote, Heart, ShieldAlert, Users
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -99,7 +98,7 @@ const dangerCards = [
   { icon: UserX, titleKey: 'av13kP.danger.children', descKey: 'av13kP.danger.childrenDesc' },
 ];
 
-const WHATSAPP_NUMBER = '5511936182746';
+const WHATSAPP_NUMBER = '5511999999999';
 
 const Antivandalismo13K = () => {
   const { t } = useTranslation();
@@ -116,7 +115,7 @@ const Antivandalismo13K = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "INSULFILM™ Antivandalismo13K",
+    "name": "INSULFILM™ Antivandalismo 13K",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia.",
     "image": "LINK_DA_IMAGEM_AQUI",
@@ -131,9 +130,9 @@ const Antivandalismo13K = () => {
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Antivandalismo13K | Segurança Automotiva Reforçada</title>
+        <title>INSULFILM™ Antivandalismo 13K | Segurança Automotiva Reforçada</title>
         <meta name="description" content="Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia." />
-        <meta property="og:title" content="INSULFILM™ Antivandalismo13K | Segurança Automotiva Reforçada" />
+        <meta property="og:title" content="INSULFILM™ Antivandalismo 13K | Segurança Automotiva Reforçada" />
         <meta property="og:description" content="Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia." />
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
@@ -141,7 +140,6 @@ const Antivandalismo13K = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
     <main>
-      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Proteção e Segurança', href: '/automotivo/seguranca' }, { label: 'Antivandalismo13K' }]} />
       {/* ═══ 1. HERO + VIDEO ═══ */}
       <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
@@ -157,7 +155,7 @@ const Antivandalismo13K = () => {
               </Badge>
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-              INSULFILM™ Antivandalismo13K
+              INSULFILM™ Antivandalismo 13K
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
               {t('av13k.heroSubtitle')}
@@ -178,7 +176,7 @@ const Antivandalismo13K = () => {
             <div className="aspect-video relative">
               <iframe
                 src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=nGBNE0FG-8Q"
-                title="INSULFILM™ Antivandalismo13K"
+                title="INSULFILM™ Antivandalismo 13K"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 className="w-full h-full pointer-events-none"
                 loading="lazy"
@@ -504,7 +502,7 @@ const Antivandalismo13K = () => {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-8 py-5 rounded-xl shadow-premium hover:shadow-premium-lg transition-all"
               >
                 <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de proteger meu veículo e minha família com a película Antivandalismo13K.')}`}
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de proteger meu veículo e minha família com a película Antivandalismo 13K.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -706,39 +704,7 @@ const Antivandalismo13K = () => {
         </div>
       </section>
 
-      {/* ═══ 14. APLICABILIDADE — LINHAS SOLARES ═══ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
-            <motion.div variants={fadeInUp} className="glass-card rounded-2xl p-8 text-center">
-              <Sparkles className="w-8 h-8 text-accent mx-auto mb-4" />
-              <h3 className="text-lg font-extrabold text-primary-foreground mb-3">{t('av13k.compatTitle', 'Compatível com todas as linhas solares automotivas')}</h3>
-              <p className="text-primary-foreground/60 font-light text-sm mb-6 max-w-2xl mx-auto">
-                {t('av13k.compatDesc', 'A Antivandalismo13K pode ser combinada com todas as nossas linhas de proteção solar automotiva para oferecer proteção completa:')}
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  { name: 'Dark', gen: '2ª Geração — Pigmentada', href: '/automotivo/solar/dark' },
-                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
-                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
-                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
-                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
-                ].map((line) => (
-                  <a key={line.name} href={line.href} className="group">
-                    <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
-                      <Sun className="w-3.5 h-3.5 mr-2" />
-                      <span className="font-bold">{line.name}</span>
-                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
-                    </Badge>
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 15. CTA FINAL ═══ */}
+      {/* ═══ 14. CTA FINAL ═══ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -746,7 +712,7 @@ const Antivandalismo13K = () => {
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">{t('av13k.ctaSubtitle')}</motion.p>
             <motion.div variants={scaleIn}>
               <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo13K.')}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película Antivandalismo 13K.')}`} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   {t('av13k.ctaButton')}
                 </a>

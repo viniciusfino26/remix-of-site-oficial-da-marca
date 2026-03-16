@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import { Sun, MessageCircle, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, MessageCircle, ArrowRight, Shield, Award, Eye, Thermometer, Sparkles, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 import PageHero from '@/components/PageHero';
+import ProductShowcase from '@/components/ProductShowcase';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import arqSolarTransparencia from '@/assets/arq-solar-alta-transparencia.png';
+import arqSolarNeutra from '@/assets/arq-solar-estetica-neutra.png';
+import arqSolarFume from '@/assets/arq-solar-fume-invertida.png';
+import arqSolarEspelhados from '@/assets/arq-solar-privacidade-espelhados.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -19,116 +23,193 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511936182746';
+const WHATSAPP_NUMBER = '5511999999999';
 
-const products = [
-  { name: 'INSULFILM™ Clear 70', subtitle: 'Nano Cerâmica de alta transparência', path: '/arquitetonico/solar/clear70' },
-  { name: 'INSULFILM™ Orizzonte 70', subtitle: 'Nano Cerâmica com visão panorâmica com extremo controle térmico', path: '/arquitetonico/solar/orizzonte70' },
-  { name: 'INSULFILM™ Ultravioletti 90', subtitle: 'Bloqueio UV máximo com claridade', path: '/arquitetonico/solar/ultravioletti90' },
-  { name: 'INSULFILM™ Naturale', subtitle: 'Estética neutra com tecnologia Sputtered', path: '/arquitetonico/solar/naturale' },
-  { name: 'INSULFILM™ Petrólio', subtitle: 'Tonalidade preta não refletiva', path: '/arquitetonico/solar/petrolio' },
-  { name: 'INSULFILM™ Grigio Invertito', subtitle: 'Privacidade com acabamento espelhado invertido', path: '/arquitetonico/solar/grigio-invertito' },
-  { name: 'INSULFILM™ Metallico Argento', subtitle: 'Espelhado prata premium', path: '/arquitetonico/solar/metallico-argento' },
-  { name: "INSULFILM™ Reflesso D'Argento", subtitle: 'Reflexão prateada de alta rejeição', path: '/arquitetonico/solar/reflesso-d-argento' },
-  { name: 'INSULFILM™ Specchiato Bronzo', subtitle: 'Refletivo bronze sofisticado e premium', path: '/arquitetonico/solar/specchiato-bronzo' },
-];
+type Category = {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+  imageSrc?: string;
+  fallbackIcon?: React.ReactNode;
+  description: string;
+  products: {name: string;path: string;}[];
+};
 
-const faqs = [
-  {
-    question: 'O que é uma película de controle solar arquitetônico?',
-    answer: 'É uma película aplicada diretamente nos vidros de edifícios e residências que reduz a entrada de calor infravermelho e radiação ultravioleta, proporcionando conforto térmico, economia de energia e proteção dos interiores contra desbotamento.'
-  },
-  {
-    question: 'Qual a diferença entre películas refletivas e não refletivas?',
-    answer: 'Películas refletivas possuem acabamento espelhado que proporciona alta rejeição de calor e privacidade diurna. Películas não refletivas mantêm a aparência natural do vidro com tonalidade suave, oferecendo controle térmico sem alterar significativamente a estética da fachada.'
-  },
-  {
-    question: 'A película de controle solar escurece o ambiente interno?',
-    answer: 'Depende do modelo escolhido. Películas de alta transparência como a Clear 70 e Orizzonte 70 bloqueiam até 95% do calor infravermelho sem reduzir significativamente a luminosidade natural. Já modelos refletivos ou de tonalidade escura oferecem maior controle de claridade.'
-  },
-  {
-    question: 'Quanto tempo dura uma película arquitetônica INSULFILM™?',
-    answer: 'As películas INSULFILM™ possuem garantia de até 15 anos contra desbotamento, bolhas e descolamento. Com aplicação profissional e manutenção adequada, a vida útil pode superar 20 anos.'
-  },
-  {
-    question: 'A película de controle solar ajuda a economizar energia?',
-    answer: 'Sim. Ao reduzir a entrada de calor nos ambientes, a película diminui a necessidade de uso de ar-condicionado, podendo gerar economia de até 30% no consumo de energia elétrica destinada à climatização.'
-  },
-];
+const categories: Category[] = [
+{
+  id: 'alta-transparencia',
+  title: 'Alta Transparência',
+  icon: <Eye className="w-5 h-5" />,
+  imageSrc: arqSolarTransparencia,
+  description: 'Para quem exige máximo bloqueio de calor, mas não quer alterar a fachada ou perder a luz natural. A verdadeira revolução da Nano Cerâmica.',
+  products: [
+  { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70' },
+  { name: 'INSULFILM™ Orizzonte70', path: '/arquitetonico/solar/orizzonte70' },
+  { name: 'INSULFILM™ Ultravioletti90', path: '/arquitetonico/solar/ultravioletti90' }]
+
+},
+{
+  id: 'estetica-neutra',
+  title: 'Estética Neutra',
+  icon: <Sparkles className="w-5 h-5" />,
+  imageSrc: arqSolarNeutra,
+  description: 'Tecnologia Sputtered de bombardeamento iônico. Controle solar inteligente com uma tonalidade suave que respeita o design original da arquitetura.',
+  products: [
+  { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale' }]
+
+},
+{
+  id: 'privacidade-espelhados',
+  title: 'Privacidade e Espelhados',
+  icon: <Shield className="w-5 h-5" />,
+  imageSrc: arqSolarEspelhados,
+  description: 'A solução definitiva para grandes fachadas ensolaradas. Proporciona privacidade diurna rigorosa de fora para dentro e alívio térmico imediato.',
+  products: [
+  { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
+  { name: "INSULFILM™ Reflesso d'Argento", path: '/arquitetonico/solar/reflesso-d-argento' },
+  { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' },
+  { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }]
+
+},
+{
+  id: 'fume-invertida',
+  title: 'Não Refletivas',
+  icon: <Thermometer className="w-5 h-5" />,
+  imageSrc: arqSolarFume,
+  description: 'O visual preto sofisticado (charcoal) ou a privacidade inteligente (espelhado fora, fumê dentro). Ideal para controle de claridade e redução de ofuscamento.',
+  products: [
+  { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' }]
+
+}];
+
 
 const ArqHubSolar = () => {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const visibleCategories = activeFilter ?
+  categories.filter((c) => c.id === activeFilter) :
+  categories;
+
   return (
     <>
       <Helmet>
         <title>Películas de Controle Solar Arquitetônico | INSULFILM™</title>
-        <meta name="description" content="Conheça a linha completa de películas de controle solar INSULFILM™ para arquitetura. Rejeição térmica superior, bloqueio UV e eficiência energética para seu projeto." />
+        <meta name="description" content="Conforto térmico e design sofisticado para o seu projeto. Reduza o calor, elimine o ofuscamento e proteja contra UV com a tecnologia INSULFILM™." />
         <link rel="canonical" href="https://www.insulfilm.com.br/arquitetonico/solar" />
       </Helmet>
 
       <main>
-        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Arquitetônico', href: '/arquitetonico' }, { label: 'Controle Solar' }]} />
-
         {/* ── HERO ── */}
         <PageHero
-          title="Controle Solar Arquitetônico"
-          subtitle="Películas de última geração com rejeição térmica de até 95%, bloqueio UV de 99% e máxima eficiência energética. Reduza o consumo de climatização e transforme o conforto dos seus ambientes envidraçados."
-          badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'Controle Solar' }}
+          title="Conforto Térmico e Design Sofisticado para o Seu Projeto"
+          subtitle="A INSULFILM™ oferece a maior variedade em películas arquitetônicas para melhor desempenho de painéis de vidros em projetos residenciais e comerciais."
+          badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'Controle Solar Arquitetônico' }}
           cta={{
-            text: 'Falar com um Especialista',
-            href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de falar com um especialista em películas de controle solar arquitetônico INSULFILM™.')}`,
+            text: 'Falar com um Especialista Arquitetônico',
+            href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de falar com um especialista em películas arquitetônicas INSULFILM™.')}`,
             icon: <MessageCircle className="w-5 h-5" />,
             external: true
-          }}
-        />
+          }} />
 
-        {/* ── GRID DE PRODUTOS ── */}
+
+        {/* ── CATEGORIAS COM SHOWCASES ── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-                Conheça Nossa Linha Completa
+                Como você deseja transformar o seu ambiente?
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-                9 soluções de controle solar para cada tipo de projeto arquitetônico.
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">Transforme sua área envidraçada em uma experiência com muito mais conforto e sofisticação.
+
               </motion.p>
             </motion.div>
 
-            <motion.div
-              className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={stagger}
-            >
-              {products.map((p) => (
-                <motion.div key={p.path} variants={fadeInUp}>
-                  <Link to={p.path} className="block h-full">
-                    <motion.div whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.3 }} className="h-full">
-                      <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
-                        <CardContent className="p-8 flex flex-col justify-between h-full">
-                          <div>
-                            <h3 className="text-lg font-extrabold mb-2 text-primary">{p.name}</h3>
-                            <p className="text-muted-foreground text-sm font-light mb-6">{p.subtitle}</p>
-                          </div>
-                          <span className="text-accent font-bold text-sm flex items-center gap-1">
-                            Ver produto <ArrowRight className="w-4 h-4" />
-                          </span>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  </Link>
+            {/* Filter buttons */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center gap-3 mb-16">
+              <motion.div variants={fadeInUp}>
+                <Button
+                  variant={activeFilter === null ? 'default' : 'outline'}
+                  onClick={() => setActiveFilter(null)}
+                  className="rounded-full px-6 py-2">
+
+                  Todos
+                </Button>
+              </motion.div>
+              {categories.map((cat) =>
+              <motion.div key={cat.id} variants={fadeInUp}>
+                  <Button
+                  variant={activeFilter === cat.id ? 'default' : 'outline'}
+                  onClick={() => setActiveFilter(activeFilter === cat.id ? null : cat.id)}
+                  className="rounded-full px-6 py-2 gap-2">
+
+                    {cat.icon}
+                    {cat.title}
+                  </Button>
                 </motion.div>
-              ))}
+              )}
             </motion.div>
+
+            {/* Category sections with ProductShowcase */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeFilter ?? 'all'}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                className="space-y-24">
+
+                {visibleCategories.map((cat, catIdx) =>
+                <div key={cat.id} className="space-y-12">
+                    {/* Category showcase */}
+                    <ProductShowcase
+                    title={cat.title}
+                    description={cat.description}
+                    imageSrc={cat.imageSrc}
+                    fallbackIcon={cat.fallbackIcon}
+                    link={cat.products[0]?.path || '#'}
+                    linkText="Explorar Categoria"
+                    reversed={catIdx % 2 !== 0} />
+
+
+                    {/* Product cards */}
+                    <motion.div
+                    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={stagger}>
+
+                      {cat.products.map((p) =>
+                    <motion.div key={p.path} variants={fadeInUp}>
+                          <Link to={p.path}>
+                            <motion.div whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.3 }}>
+                              <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
+                                <CardContent className="p-8">
+                                  <h4 className="text-lg font-extrabold mb-4 text-primary">{p.name}</h4>
+                                  <span className="text-accent font-bold text-sm flex items-center gap-1">
+                                    Ver detalhes <ArrowRight className="w-4 h-4" />
+                                  </span>
+                                </CardContent>
+                              </Card>
+                            </motion.div>
+                          </Link>
+                        </motion.div>
+                    )}
+                    </motion.div>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
 
         {/* ── PARALLAX BREAK ── */}
         <ParallaxBreak minHeight="40vh" stats={[
-          { value: '95%', label: 'Rejeição IR' },
-          { value: '99%', label: 'Bloqueio UV' },
-          { value: '15+', label: 'Anos de Garantia' }
-        ]}>
+        { value: '95%', label: 'Rejeição IR' },
+        { value: '99%', label: 'Bloqueio UV' },
+        { value: '15+', label: 'Anos de Garantia' }]
+        }>
           <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
             Tecnologia Nano Cerâmica de Última Geração
           </h2>
@@ -137,49 +218,52 @@ const ArqHubSolar = () => {
           </p>
         </ParallaxBreak>
 
-        {/* ── FAQ ── */}
+        {/* ── PROVA SOCIAL ── */}
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-12 text-center">
-                Perguntas Frequentes
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+                Tecnologia e Confiança de Quem Criou o Mercado
               </motion.h2>
-              <motion.div variants={fadeInUp}>
-                <Accordion type="single" collapsible className="w-full">
-                  {faqs.map((faq, i) => (
-                    <AccordionItem key={i} value={`faq-${i}`}>
-                      <AccordionTrigger className="text-left text-base font-semibold">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground font-light leading-relaxed">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-16 max-w-3xl mx-auto leading-relaxed">
+                Ao escolher a marca INSULFILM™, você investe em nanotecnologia testada globalmente. Produtos que não desbotam, não formam bolhas e oferecem as maiores garantias do mercado arquitetônico.
+              </motion.p>
+
+              <motion.div variants={stagger} className="grid sm:grid-cols-3 gap-8">
+                {[
+                { icon: <Shield className="w-8 h-8" />, title: 'Garantia Líder', text: 'As maiores garantias do segmento arquitetônico' },
+                { icon: <Award className="w-8 h-8" />, title: 'Aplicadores Certificados', text: 'Rede exclusiva de especialistas treinados' },
+                { icon: <CheckCircle className="w-8 h-8" />, title: 'Nanotecnologia Global', text: 'Testada e aprovada em mais de 40 países' }].
+                map((item) =>
+                <motion.div key={item.title} variants={fadeInUp} className="flex flex-col items-center gap-3">
+                    <div className="text-accent">{item.icon}</div>
+                    <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm font-light">{item.text}</p>
+                  </motion.div>
+                )}
               </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* ── CTA FINAL ── */}
+        {/* ── BOTTOM CTA ── */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-2xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-                Solicite seu Orçamento
+                Qual é a película ideal para o seu vidro?
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
-                Cada projeto é único. Nossa equipe de consultores está pronta para analisar a sua planta e indicar a película ideal.
+                Cada projeto é único. Nossa engenharia e equipe de consultores estão prontas para analisar a sua planta e indicar a linha perfeita.
               </motion.p>
               <motion.div variants={scaleIn}>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold text-lg px-12 py-7 rounded-xl shadow-premium-lg hover:shadow-premium transition-all uppercase tracking-wide">
                   <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para películas de controle solar arquitetônico INSULFILM™.')}`}
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para películas arquitetônicas INSULFILM™.')}`}
                     target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="w-5 h-5" />Solicitar Orçamento Agora
+                    rel="noopener noreferrer">
+
+                    <MessageCircle className="w-5 h-5" />Solicite seu Orçamento Agora
                   </a>
                 </Button>
               </motion.div>
@@ -187,8 +271,8 @@ const ArqHubSolar = () => {
           </div>
         </section>
       </main>
-    </>
-  );
+    </>);
+
 };
 
 export default ArqHubSolar;

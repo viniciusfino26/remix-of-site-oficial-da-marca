@@ -162,7 +162,7 @@ const QuemSomos = () => {
   return (
     <main>
       {/* Hero Institucional */}
-      <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
         <motion.div className="absolute inset-0" style={{ y: heroGlowY }}>
           <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-glow-pulse" />
@@ -196,12 +196,12 @@ const QuemSomos = () => {
 
         {/* Animated Stats - outside parallax fade */}
         <motion.div
-          className="container mx-auto px-4 relative z-20 pb-16 md:pb-24"
+          className="container mx-auto px-4 relative z-20 pb-24"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 w-full max-w-3xl mx-auto">
+          <div className="flex justify-center gap-8 md:gap-16">
             {heroStats.map((stat, i) => (
               <AnimatedStat key={i} value={stat.value} suffix={stat.suffix} label={t(stat.labelKey)} />
             ))}

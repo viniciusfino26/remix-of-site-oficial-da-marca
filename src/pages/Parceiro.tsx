@@ -72,8 +72,8 @@ const Parceiro = () => (
             <motion.div key={i} variants={fadeInUp}>
               <Card className="glass-card rounded-2xl h-full">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-extrabold text-foreground mb-3">{p.title}</h3>
-                  <p className="text-muted-foreground font-light mb-6">{p.desc}</p>
+                  <h3 className="text-xl font-extrabold text-primary-foreground mb-3">{p.title}</h3>
+                  <p className="text-primary-foreground/60 font-light mb-6">{p.desc}</p>
                   <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
                     <Button className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold">
                       <MessageCircle className="w-4 h-4 mr-2" /> Fale Conosco
@@ -88,7 +88,7 @@ const Parceiro = () => (
     </section>
 
     <ParallaxBreak minHeight="25vh" stats={[
-      { value: '4', label: 'Centros Autorizados' },
+      { value: '4', label: 'Lojas em SP' },
       { value: 'Nacional', label: 'Arq. em todo Brasil' },
     ]} />
 

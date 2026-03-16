@@ -9,13 +9,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Analytics } from '@/components/Analytics';
 
-// ─── DADOS DOS CENTROS AUTORIZADOS ──────────────────────────────────────────
+// ─── DADOS DAS LOJAS ──────────────────────────────────────────────────────
 const STORES = [
   {
     id: 'paulista',
     zone: 'Zona Central',
     zoneBadge: 'Av. Paulista · Bela Vista',
-    name: 'Centro Autorizado Av. Paulista',
+    name: 'Unidade Av. Paulista',
     address: 'Shopping Cidade São Paulo\nR. São Carlos do Pinhal, 627 — Bela Vista, SP\nEstacionamento: 5º Subsolo',
     phone: null as string | null,
     phoneTel: null as string | null,
@@ -30,13 +30,14 @@ const STORES = [
       { days: 'Sábado', time: '09h às 15h' },
       { days: 'Domingo', time: 'Fechado' },
     ],
+    services: ['Películas Automotivas', 'PPF Phantom', 'Antivandalismo 13K', 'Consultoria Técnica'],
     note: 'Estacionamento disponível no 5º Subsolo do shopping.',
   },
   {
     id: 'moema',
     zone: 'Zona Sul',
     zoneBadge: 'Moema',
-    name: 'Centro Autorizado Moema',
+    name: 'Unidade Moema',
     address: 'Av. Moreira Guimarães, 1.254\nMoema — São Paulo, SP',
     phone: '(11) 2626-0949',
     phoneTel: '+551126260949',
@@ -51,13 +52,14 @@ const STORES = [
       { days: 'Sábado', time: '09h às 15h' },
       { days: 'Domingo', time: 'Fechado' },
     ],
+    services: ['Películas Automotivas', 'PPF Phantom', 'Antivandalismo 13K', 'Consultoria Técnica'],
     note: null as string | null,
   },
   {
     id: 'pacaembu',
     zone: 'Zona Oeste',
     zoneBadge: 'Pacaembu · Barra Funda',
-    name: 'Centro Autorizado Pacaembu',
+    name: 'Unidade Pacaembu',
     address: 'Av. Pacaembu, 77\nBarra Funda — São Paulo, SP',
     phone: '(11) 4062-0098',
     phoneTel: '+551140620098',
@@ -72,13 +74,14 @@ const STORES = [
       { days: 'Sábado', time: '09h às 15h' },
       { days: 'Domingo', time: 'Fechado' },
     ],
+    services: ['Películas Automotivas', 'PPF Phantom', 'Antivandalismo 13K', 'Consultoria Técnica'],
     note: null as string | null,
   },
   {
     id: 'santana',
     zone: 'Zona Norte',
     zoneBadge: 'Santana · Imirim',
-    name: 'Centro Autorizado Santana',
+    name: 'Unidade Santana',
     address: 'Av. Eng. Caetano Álvares, 5727\nImirim — São Paulo, SP',
     phone: '(11) 2122-4260',
     phoneTel: '+551121224260',
@@ -93,6 +96,7 @@ const STORES = [
       { days: 'Sábado', time: '09h às 15h' },
       { days: 'Domingo', time: 'Fechado' },
     ],
+    services: ['Películas Automotivas', 'PPF Phantom', 'Antivandalismo 13K', 'Consultoria Técnica'],
     note: null as string | null,
   },
 ];
@@ -259,7 +263,7 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
             exit={{ opacity: 0, y: -4 }}
             className="text-sm text-accent mt-2 font-medium"
           >
-            📍 Mostrando Centros Autorizados mais próximos de <span className="font-bold">{foundAddress}</span>
+            📍 Mostrando lojas mais próximas de <span className="font-bold">{foundAddress}</span>
           </motion.p>
         )}
       </AnimatePresence>
@@ -404,6 +408,14 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
               </div>
             </div>
 
+            {/* Services */}
+            <div className="flex flex-wrap gap-1.5">
+              {store.services.map((s) => (
+                <span key={s} className="text-[10px] uppercase tracking-wider font-semibold bg-primary/5 text-muted-foreground px-2.5 py-1 rounded-full border border-border/50">
+                  {s}
+                </span>
+              ))}
+            </div>
 
             {/* Divider */}
             <div className="h-px bg-border/50" />
@@ -481,14 +493,14 @@ const Lojas = () => {
             variants={stagger}
           >
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-5 font-semibold">
-              INSULFILM™ — Centros Autorizados
+              INSULFILM™ — Lojas Oficiais
             </motion.p>
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-primary-foreground leading-[0.95] tracking-tight mb-6">
               ONDE NOS<br />
               <span className="text-accent">ENCONTRAR</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-primary-foreground/60 font-light max-w-xl leading-relaxed">
-              4 Centros Autorizados em São Paulo com atendimento especializado e consultores técnicos certificados.
+              4 unidades em São Paulo com atendimento especializado e consultores técnicos certificados.
             </motion.p>
 
             <motion.div variants={scaleIn} className="flex justify-start mt-6">
@@ -572,7 +584,7 @@ const Lojas = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <h2 className="text-lg font-bold text-foreground mb-1">Encontre o Centro Autorizado mais próximo</h2>
+            <h2 className="text-lg font-bold text-foreground mb-1">Encontre a loja mais próxima</h2>
             <p className="text-sm text-muted-foreground mb-5 font-light">Digite seu CEP para ordenar por proximidade</p>
             <CepSearch onResult={setUserCoords} />
           </motion.div>
@@ -590,8 +602,8 @@ const Lojas = () => {
             >
               <p className="text-sm text-muted-foreground font-light mb-3">
                 {sortedStores.length === 1
-                  ? 'Centro Autorizado mais próximo de você:'
-                  : `${sortedStores.length} Centros Autorizados próximos de você:`}
+                  ? 'Loja mais próxima de você:'
+                  : `${sortedStores.length} lojas próximas de você:`}
               </p>
               <Button
                 variant="ghost"
@@ -599,7 +611,7 @@ const Lojas = () => {
                 className="text-accent hover:text-accent hover:bg-accent/10 text-xs"
                 onClick={() => setUserCoords(null)}
               >
-                Ver todos os Centros Autorizados
+                Ver todas as unidades
               </Button>
             </motion.div>
           )}
@@ -631,7 +643,7 @@ const Lojas = () => {
       </section>
 
       <ParallaxBreak minHeight="25vh" stats={[
-        { value: '4', label: 'Centros Autorizados' },
+        { value: '4', label: 'Unidades em SP' },
         { value: '6', label: 'Dias por Semana' },
         { value: 'Nacional', label: 'Arq. em todo Brasil' },
       ]} />
@@ -647,7 +659,7 @@ const Lojas = () => {
             variants={stagger}
           >
             <motion.p variants={fadeInUp} className="text-xs uppercase tracking-[0.3em] text-accent font-bold mb-4">
-              Quer ter o seu próprio Centro Autorizado?
+              Quer ter a sua própria unidade?
             </motion.p>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-5">
               TORNE-SE UM PARCEIRO OFICIAL

@@ -8,7 +8,6 @@ import productImage from '@/assets/auto-solar-matrix.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,7 +27,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511976136911';
+const WHATSAPP_NUMBER = '5511999999999';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Nano Cerâmica' },
@@ -74,7 +73,6 @@ const AutomotivoMatrix = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
-        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Películas Solares', href: '/automotivo/solar' }, { label: 'Matrix' }]} />
         <section ref={heroRef} className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
           <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
@@ -99,22 +97,15 @@ const AutomotivoMatrix = () => {
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
 
-        <section className="py-16 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Matrix" className="w-full h-full object-cover rounded-2xl" />
-              </div>
-              <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
-            </motion.div>
-          </div>
-        </section>
-
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+                Especificações Técnicas
+              </motion.h2>
+              <motion.div variants={scaleIn} className="flex justify-center mt-4">
+                <div className="separator-accent" />
+              </motion.div>
             </motion.div>
             <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               {specs.map((s, i) => (
@@ -122,9 +113,11 @@ const AutomotivoMatrix = () => {
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
                     <Card className="glass-card rounded-2xl h-full text-center">
                       <CardContent className="p-8">
-                        <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
+                        <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                          <s.icon className="w-7 h-7 text-accent" />
+                        </div>
+                        <p className="text-sm text-primary-foreground/60 font-medium mb-1">{s.label}</p>
+                        <p className="text-xl font-extrabold text-primary-foreground">{s.value}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -139,20 +132,29 @@ const AutomotivoMatrix = () => {
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Proteção Solar de Alto Desempenho</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                A INSULFILM™ Matrix utiliza nano cerâmica verdadeira para oferecer máxima rejeição de calor sem interferir em sinais eletrônicos. Ideal para quem busca o melhor em conforto térmico e clareza visual.
-              </motion.p>
-              <motion.ul className="space-y-4" variants={stagger}>
-                {['Nano cerâmica verdadeira — sem metal', 'Rejeição de até 75% dos raios infravermelhos', 'Não interfere em GPS, celular ou pedágios', 'Garantia de 10 anos contra desbotamento'].map((text, i) => (
-                  <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                    <span className="text-primary-foreground font-medium">{text}</span>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+                <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">
+                  Proteção Solar de Alto Desempenho
+                </motion.h2>
+                <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
+                  A INSULFILM™ Matrix utiliza nano cerâmica verdadeira para oferecer máxima rejeição de calor sem interferir em sinais eletrônicos. Ideal para quem busca o melhor em conforto térmico e clareza visual.
+                </motion.p>
+                <motion.ul className="space-y-4" variants={stagger}>
+                  {['Nano cerâmica verdadeira — sem metal', 'Rejeição de até 75% dos raios infravermelhos', 'Não interfere em GPS, celular ou pedágios', 'Garantia de 10 anos contra desbotamento'].map((text, i) => (
+                    <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                      <span className="text-primary-foreground font-medium">{text}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                  <img src={productImage} alt="INSULFILM™ Matrix" className="w-full h-full object-cover rounded-2xl" />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

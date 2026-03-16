@@ -26,7 +26,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511936182746';
+const WHATSAPP_NUMBER = '5511999999999';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Carbono Alta Performance' },
@@ -46,7 +46,7 @@ const VIP = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "INSULFILM™ Vip",
+    "name": "INSULFILM™ VIP",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Estabilidade de cor superior com carbono. Rejeição de até 65% dos raios infravermelhos (IR) e 5 anos de garantia.",
     "image": "LINK_DA_IMAGEM_AQUI",
@@ -61,9 +61,9 @@ const VIP = () => {
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Vip | Película de Carbono Alta Performance</title>
+        <title>INSULFILM™ VIP | Película de Carbono Alta Performance</title>
         <meta name="description" content="Estabilidade de cor superior com carbono. Rejeição de até 65% dos raios infravermelhos (IR) e 5 anos de garantia." />
-        <meta property="og:title" content="INSULFILM™ Vip | Película de Carbono Alta Performance" />
+        <meta property="og:title" content="INSULFILM™ VIP | Película de Carbono Alta Performance" />
         <meta property="og:description" content="Estabilidade de cor superior com carbono. Rejeição de até 65% dos raios infravermelhos (IR) e 5 anos de garantia." />
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
@@ -82,7 +82,7 @@ const VIP = () => {
                 </Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                INSULFILM™ Vip
+                INSULFILM™ VIP
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
                 {t('automotivePage.vip.desc')}
@@ -106,8 +106,8 @@ const VIP = () => {
                     <Card className="glass-card rounded-2xl h-full text-center">
                       <CardContent className="p-8">
                         <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
+                        <p className="text-sm text-primary-foreground/60 font-medium mb-1">{s.label}</p>
+                        <p className="text-xl font-extrabold text-primary-foreground">{s.value}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -126,7 +126,7 @@ const VIP = () => {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Carbono de Verdade, Performance de Verdade</motion.h2>
                 <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                  A INSULFILM™ Vip utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
+                  A INSULFILM™ VIP utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
                 </motion.p>
                 <motion.ul className="space-y-4" variants={stagger}>
                   {['Carbono real — cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
@@ -149,11 +149,11 @@ const VIP = () => {
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Escolha a película Vip</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Escolha a película VIP</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">Solicite um orçamento e descubra o melhor custo-benefício em película de carbono.</motion.p>
               <motion.div variants={scaleIn}>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película INSULFILM Vip.')}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película INSULFILM VIP.')}`} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5" />Solicitar Orçamento
                   </a>
                 </Button>

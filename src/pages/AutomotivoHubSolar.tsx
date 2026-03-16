@@ -1,184 +1,274 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Sun, MessageCircle, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
+import autoSolarDark from '@/assets/auto-solar-dark.png';
+import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
+import autoSolarVip from '@/assets/auto-solar-vip.png';
+import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
+import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
+import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
+import autoSolarHero from '@/assets/auto-solar-hero.png';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import PageHero from '@/components/PageHero';
-import ParallaxBreak from '@/components/ParallaxBreak';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
+};
+const fadeInRight = {
+  hidden: { opacity: 0, x: 40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511976136911';
+const navTabs = [
+  { label: 'Dark', href: '#dark' },
+  { label: 'Eclipse', href: '#eclipse' },
+  { label: 'Vip', href: '#vip' },
+  { label: 'Matrix', href: '#matrix' },
+  { label: 'Transparente', href: '#matrix' },
+  { label: 'Polariz Ultra', href: '#polariz' },
+];
 
 const products = [
-  { name: 'INSULFILM™ Dark', tag: 'Standard Dyed', gen: '2ª Geração — Pigmentada', desc: 'Proteção solar com foco em privacidade e controle da luminosidade. Filtro elevado de raios UV com ótima nitidez ótica interna.', path: '/automotivo/solar/dark' },
-  { name: 'INSULFILM™ Eclipse', tag: 'Nano Carbon', gen: '3ª Geração — Carbono', desc: 'Melhor desempenho térmico com carbono puro verdadeiro. Cor estável, durabilidade prolongada e rejeição avançada de raios IR.', path: '/automotivo/solar/eclipse' },
-  { name: 'INSULFILM™ Vip', tag: 'Carbon Plus', gen: '3ª Geração evoluída — Carbono-Cerâmica', desc: 'Carbono puro com rejeição de infravermelho potencializada. Alta redução de calor, privacidade e estabilidade de cor superior.', path: '/automotivo/solar/vip' },
-  { name: 'INSULFILM™ Polariz Ultra', tag: 'Hybrid Ceramic', gen: '5ª Geração — Cerâmica Metalizada', desc: 'Híbrida metalizada + cerâmica com visual polarizado. Ultra rejeição térmica e excepcional visibilidade interna de alta definição.', path: '/automotivo/solar/polariz-ultra' },
-  { name: 'INSULFILM™ Matrix', tag: 'True Ceramic', gen: '4ª Geração — Cerâmica', desc: 'Extra-classe. Espectro seletiva com nano cerâmica para máxima rejeição térmica. Disponível transparente ou escura. Ultra definição ótica.', path: '/automotivo/solar/matrix' },
+  {
+    name: 'INSULFILM™ Dark',
+    tech: 'Tecnologia: 2ª Geração',
+    serie: 'Série: Pigmentada',
+    text: 'Proteção solar com foco em privacidade, controle da luminosidade excessiva e filtro elevado dos raios ultravioletas (UV). Oferece ótima nitidez ótica interna para dirigir, enquanto protege você e o carro dos efeitos indesejados à exposição solar direta.\n\nVisual: não refletivo, cor preta não opaca.',
+    path: '/automotivo/solar/dark',
+    id: 'dark',
+    image: autoSolarDark,
+  },
+  {
+    name: 'INSULFILM™ Eclipse',
+    tech: 'Tecnologia: 3ª Geração',
+    serie: 'Série: Carbono',
+    text: 'Proteção solar focada em privacidade, com melhor desempenho térmico e durabilidade prolongada. Cor estável e duradoura por sua construção em carbono puro verdadeiro. Filtra raios infravermelhos rejeitando o calor de forma avançada. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
+    path: '/automotivo/solar/eclipse',
+    id: 'eclipse',
+    image: autoSolarEclipse,
+  },
+  {
+    name: 'INSULFILM™ Vip',
+    tech: 'Tecnologia: 3ª Geração evoluída',
+    serie: 'Série: Carbono-Cerâmica, extra rejeição IR',
+    text: 'Película em carbono puro verdadeiro com rejeição de raios infravermelhos (IR) potencializada. Proteção solar com alta redução de calor e privacidade. Durabilidade prolongada com estabilidade de cor. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
+    path: '/automotivo/solar/vip',
+    id: 'vip',
+    image: autoSolarVip,
+  },
+  {
+    name: 'INSULFILM™ Matrix',
+    tech: 'Tecnologia: 4ª Geração',
+    serie: 'Série: Cerâmica, máxima rejeição IR',
+    highlight: 'Transparente ou escura, você escolhe.',
+    text: 'Extra-classe. Película espectro seletiva, enriquecida por cerâmica incorporada em nano partículas especializadas para entregar a máxima proteção contra os raios infravermelhos do sol, tendo altíssima rejeição térmica, combinada a uma visibilidade interna de ultra definição.\n\nVisual: não refletivo, cor preta não opaca.',
+    path: '/automotivo/solar/matrix',
+    id: 'matrix',
+    image: autoSolarMatrix,
+  },
+  {
+    name: 'INSULFILM™ Polariz Ultra',
+    tech: 'Tecnologia: 5ª Geração',
+    serie: 'Série: Cerâmica metalizada',
+    text: 'Exclusiva. Película espectro seletiva híbrida: metalizada combinada à cerâmica, com estética visual polarizada e máximo desempenho de retenção de calor. Um visual refinado e alta tecnologia com ultra rejeição térmica em proteção contra os raios infravermelhos. Alta durabilidade e proteção. Excepcional visibilidade interna de ultra definição.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
+    path: '/automotivo/solar/polariz-ultra',
+    id: 'polariz',
+    image: autoSolarPolariz,
+  },
 ];
 
-const comparison = [
-  { name: 'Dark', ir: 'Moderada', uv: '+99%', tech: 'Pigmentada (Dyed)' },
-  { name: 'Eclipse', ir: 'Avançada', uv: '+99%', tech: 'Nano Carbono' },
-  { name: 'Vip', ir: 'Alta', uv: '+99%', tech: 'Carbono-Cerâmica' },
-  { name: 'Polariz Ultra', ir: 'Ultra', uv: '+99%', tech: 'Cerâmica Metalizada' },
-  { name: 'Matrix', ir: 'Máxima', uv: '+99%', tech: 'Cerâmica Pura' },
+const benefits = [
+  { icon: Thermometer, title: 'MÁXIMA REJEIÇÃO DE CALOR, RAIOS UV E IR' },
+  { icon: Eye, title: 'EXCELENTE VISIBILIDADE INTERNA' },
+  { icon: ShieldCheck, title: 'PRIVACIDADE E SEGURANÇA VISUAL' },
+  { icon: Wifi, title: 'CELULARES E ELETRÔNICOS' },
+  { icon: Gem, title: 'DESIGN SOFISTICADO' },
 ];
 
-const faqs = [
-  { q: 'Qual a diferença entre película pigmentada e cerâmica?', a: 'A película pigmentada (Dark) usa corantes para escurecimento e proteção básica. Já a cerâmica (Matrix) utiliza nano partículas que rejeitam muito mais calor sem depender da tonalidade, oferecendo desempenho térmico superior mesmo em versões mais claras.' },
-  { q: 'Película solar automotiva interfere no sinal do celular ou GPS?', a: 'Películas não metalizadas como Dark, Eclipse, Vip e Matrix não interferem em sinais eletrônicos. A Polariz Ultra, por conter componente metalizado, pode causar atenuação mínima em alguns casos, mas foi projetada para minimizar esse efeito.' },
-  { q: 'Quanto tempo dura uma película solar INSULFILM™?', a: 'A durabilidade varia conforme a linha: a Dark tem garantia de fábrica padrão, enquanto Eclipse, Vip, Matrix e Polariz Ultra possuem garantias estendidas de até 10 anos, dependendo do produto e das condições de uso e manutenção.' },
-  { q: 'Posso aplicar película solar no para-brisa?', a: 'Sim, a linha Matrix possui versões de alta transparência (70% VLT) homologadas para aplicação no para-brisa, mantendo a rejeição térmica elevada sem comprometer a visibilidade exigida por lei.' },
-  { q: 'Qual película solar rejeita mais calor?', a: 'A Matrix (cerâmica pura) e a Polariz Ultra (cerâmica metalizada) oferecem os maiores índices de rejeição de calor da linha INSULFILM™, sendo ideais para quem busca o máximo conforto térmico no veículo.' },
-];
+const ProductSection = ({ product, index }: { product: typeof products[0]; index: number }) => {
+  const reversed = index % 2 !== 0;
+  const textVariant = reversed ? fadeInRight : fadeInLeft;
+  const imgVariant = reversed ? fadeInLeft : fadeInRight;
 
-const AutomotivoHubSolar = () => (
-  <>
-    <Helmet>
-      <title>Películas de Proteção Solar Automotivo | INSULFILM™</title>
-      <meta name="description" content="Películas de proteção solar automotiva INSULFILM™: Dark, Eclipse, Vip, Matrix e Polariz Ultra. Redução de calor, proteção UV e design sofisticado." />
-      <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/solar" />
-    </Helmet>
+  const textBlock = (
+    <motion.div variants={textVariant} className="flex flex-col justify-center">
+      <div className="flex items-center gap-2 text-muted-foreground text-sm mb-1">
+        <Settings className="w-4 h-4" />
+        <span>{product.tech}</span>
+        <span className="text-muted-foreground/40">|</span>
+        <span>{product.serie}</span>
+      </div>
+      <h3 className="text-2xl md:text-3xl font-extrabold text-primary mb-3">{product.name}</h3>
+      {product.highlight && (
+        <p className="text-accent font-bold text-base mb-3">{product.highlight}</p>
+      )}
+      <p className="text-muted-foreground leading-relaxed whitespace-pre-line mb-6">{product.text}</p>
+      <Link to={product.path}>
+        <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold gap-2 rounded-lg px-6 transition-all">
+          EXPLORE <ArrowRight className="w-4 h-4" />
+        </Button>
+      </Link>
+    </motion.div>
+  );
 
-    <main>
-      <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Películas Solares' }]} />
+  const imgBlock = (
+    <motion.div variants={imgVariant}>
+      <img src={product.image} alt={product.name} className="w-full rounded-xl aspect-[4/3] object-cover" loading="lazy" />
+    </motion.div>
+  );
 
-      {/* Hero */}
-      <PageHero
-        title="Películas Solares Automotivas INSULFILM™"
-        subtitle="Muito além do simples escurecimento. Tecnologia de ponta em polímeros e compostos óticos especiais para redução superior de calor, claridade e até +99% de proteção contra raios UV. Da 2ª à 5ª geração, escolha o nível de performance ideal para o seu veículo."
-        badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'Proteção Solar' }}
-        cta={{
-          text: 'Agendar Instalação',
-          href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar a instalação de película solar automotiva INSULFILM™.')}`,
-          icon: <MessageCircle className="w-5 h-5" />,
-          external: true,
-        }}
-      />
+  return (
+    <motion.div
+      id={product.id}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-80px' }}
+      variants={stagger}
+      className="grid md:grid-cols-2 gap-10 md:gap-16 items-center py-16"
+    >
+      {reversed ? (
+        <>
+          <div className="order-2 md:order-1">{imgBlock}</div>
+          <div className="order-1 md:order-2">{textBlock}</div>
+        </>
+      ) : (
+        <>
+          {textBlock}
+          {imgBlock}
+        </>
+      )}
+    </motion.div>
+  );
+};
 
-      {/* Grid de produtos */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Encontre o seu INSULFILM™ ideal</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">Do essencial ao topo de linha — cada película é projetada para uma necessidade específica.</motion.p>
-          </motion.div>
+const AutomotivoHubSolar = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Películas de Proteção Solar Automotivo | INSULFILM™</title>
+        <meta name="description" content="Películas de proteção solar automotiva INSULFILM™: Dark, Eclipse, Vip, Matrix e Polariz Ultra. Redução de calor, proteção UV e design sofisticado." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/solar" />
+      </Helmet>
 
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            {products.map((p) => (
-              <motion.div key={p.path} variants={fadeInUp}>
-                <Link to={p.path}>
-                  <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }}>
-                    <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
-                      <CardContent className="p-8">
-                        <Badge variant="secondary" className="mb-3 text-xs uppercase tracking-widest">{p.tag}</Badge>
-                        <h3 className="text-xl font-extrabold text-foreground mb-1">{p.name}</h3>
-                        <p className="text-xs text-muted-foreground mb-3">{p.gen}</p>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
-                        <span className="text-accent font-bold text-sm flex items-center gap-1">
-                          Ver detalhes <ArrowRight className="w-4 h-4" />
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Comparativo */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">Comparativo Rápido</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground font-light">Veja as principais diferenças entre as linhas.</motion.p>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 px-4 font-bold text-foreground">Produto</th>
-                  <th className="text-center py-3 px-4 font-bold text-foreground">Rejeição IR</th>
-                  <th className="text-center py-3 px-4 font-bold text-foreground">Proteção UV</th>
-                  <th className="text-center py-3 px-4 font-bold text-foreground">Tecnologia</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.map((row) => (
-                  <tr key={row.name} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
-                    <td className="py-3 px-4 font-bold text-foreground">{row.name}</td>
-                    <td className="py-3 px-4 text-center text-muted-foreground">{row.ir}</td>
-                    <td className="py-3 px-4 text-center text-muted-foreground">{row.uv}</td>
-                    <td className="py-3 px-4 text-center text-muted-foreground">{row.tech}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ParallaxBreak */}
-      <ParallaxBreak minHeight="25vh" stats={[
-        { value: '5', label: 'Gerações de Tecnologia' },
-        { value: '+99%', label: 'Proteção UV' },
-        { value: '10+', label: 'Anos de Garantia' },
-      ]} />
-
-      {/* FAQ */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">Perguntas Frequentes</motion.h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`}>
-                  <AccordionTrigger className="text-left font-bold text-foreground">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-carbon-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-hero-texture opacity-30" />
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-2xl mx-auto">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Agende sua Instalação</motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-primary-foreground/60 font-light mb-8">Fale com um especialista e escolha a película ideal para o seu veículo.</motion.p>
-            <motion.div variants={scaleIn}>
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de agendar a instalação de película solar automotiva INSULFILM™.')}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5" />Agendar Instalação
-                </a>
-              </Button>
+      <main>
+        {/* ═══ HERO ═══ */}
+        <section className="relative min-h-[60vh] flex items-end bg-gray-800 overflow-hidden">
+          <img src={autoSolarHero} alt="Película solar automotiva aplicada" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="container mx-auto px-4 pb-8 relative z-10 flex items-end justify-between w-full">
+            <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="inline-block bg-accent text-accent-foreground text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded">
+              Películas Premium · Sinta a diferença
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-    </main>
-  </>
-);
+            <span className="text-white/60 text-[11px] italic">Imagem meramente ilustrativa</span>
+          </div>
+        </section>
+
+        {/* ═══ INTRODUÇÃO ═══ */}
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+              <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary mb-4 leading-tight">
+                Películas de Proteção Solar para Vidros Automotivos
+              </motion.h1>
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl font-bold italic text-accent mb-6">
+                Muito além do simples escurecimento. Alta performance de verdade.
+              </motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground leading-relaxed">
+                Eleve sua experiência ao volante com o conforto e sofisticação das películas originais INSULFILM™. Desenvolvidas com tecnologia de ponta em polímeros e compostos óticos especiais, nossas super películas oferecem redução superior de calor, claridade e até +99% de proteção contra os raios UV.
+              </motion.p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
+        <section className="relative py-14 overflow-hidden">
+          <img src={autoSolarNavBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
+              <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider">
+                Encontre o seu INSULFILM™ ideal
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-white/60 mt-2">Conheça nossas películas</motion.p>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center items-center gap-3">
+              {navTabs.map((tab, i) => (
+                <motion.div key={tab.label} variants={fadeInUp} className="flex items-center gap-3">
+                  {i > 0 && tab.label !== 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
+                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
+                  <a href={tab.href}>
+                    <Button
+                      variant={i === 0 ? 'default' : 'outline'}
+                      className={
+                        i === 0
+                          ? 'bg-accent text-accent-foreground hover:bg-accent/90 font-bold rounded-full px-6'
+                          : 'border-white/30 text-white hover:bg-white/10 font-bold rounded-full px-6'
+                      }
+                    >
+                      {tab.label}
+                    </Button>
+                  </a>
+                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ═══ PRODUTOS ═══ */}
+        <section className="bg-white">
+          <div className="container mx-auto px-4">
+            {products.map((p, i) => (
+              <div key={p.id}>
+                <ProductSection product={p} index={i} />
+                {i < products.length - 1 && (
+                  <div className="border-b border-border" />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══ BENEFÍCIOS ═══ */}
+        <section className="py-20 bg-white border-t border-border">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center gap-12 md:gap-16 mb-10">
+              {benefits.map((b) => (
+                <motion.div key={b.title} variants={fadeInUp} className="flex flex-col items-center text-center max-w-[160px]">
+                  <b.icon className="w-10 h-10 text-accent mb-3" />
+                  <span className="text-xs font-bold text-primary uppercase tracking-wide leading-tight">{b.title}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center">
+              <div className="inline-flex items-center gap-2 text-muted-foreground text-sm font-bold uppercase tracking-wider">
+                <Award className="w-5 h-5 text-accent" />
+                Pacote completo de garantias · Certificado individual
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ═══ CTA FINAL ═══ */}
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-accent py-6">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-accent-foreground font-extrabold text-base md:text-lg uppercase tracking-wider">
+              Exija as películas originais INSULFILM™!
+            </p>
+            <p className="text-accent-foreground/80 text-sm mt-1">
+              Sofisticação e Proteção Solar de verdade para você e a sua família.
+            </p>
+          </div>
+        </motion.section>
+      </main>
+    </>
+  );
+};
 
 export default AutomotivoHubSolar;

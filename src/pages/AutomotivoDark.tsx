@@ -8,7 +8,6 @@ import productImage from '@/assets/auto-solar-dark.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,7 +27,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511976136911';
+const WHATSAPP_NUMBER = '5511999999999';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Pigmentada Não Refletiva' },
@@ -74,7 +73,6 @@ const AutomotivoDark = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
-        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Automotivo', href: '/automotivo' }, { label: 'Películas Solares', href: '/automotivo/solar' }, { label: 'Dark' }]} />
         <section ref={heroRef} className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
           <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
@@ -97,17 +95,6 @@ const AutomotivoDark = () => {
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
 
-        <section className="py-16 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Dark" className="w-full h-full object-cover rounded-2xl" />
-              </div>
-              <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
-            </motion.div>
-          </div>
-        </section>
-
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -121,8 +108,8 @@ const AutomotivoDark = () => {
                     <Card className="glass-card rounded-2xl h-full text-center">
                       <CardContent className="p-8">
                         <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
+                        <p className="text-sm text-primary-foreground/60 font-medium mb-1">{s.label}</p>
+                        <p className="text-xl font-extrabold text-primary-foreground">{s.value}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -140,20 +127,27 @@ const AutomotivoDark = () => {
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">O Clássico que Nunca Sai de Moda</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                A INSULFILM™ Dark é a película de escurecimento mais popular do Brasil. Não refletiva e com excelente redução de claridade, ela garante privacidade e proteção UV com o melhor preço do mercado.
-              </motion.p>
-              <motion.ul className="space-y-4" variants={stagger}>
-                {['Película pigmentada não refletiva', 'Privacidade máxima para seu veículo', 'Filtro de até 95% dos raios UV', 'Garantia de 2 anos'].map((text, i) => (
-                  <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
-                    <span className="text-primary-foreground font-medium">{text}</span>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+                <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">O Clássico que Nunca Sai de Moda</motion.h2>
+                <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
+                  A INSULFILM™ Dark é a película de escurecimento mais popular do Brasil. Não refletiva e com excelente redução de claridade, ela garante privacidade e proteção UV com o melhor preço do mercado.
+                </motion.p>
+                <motion.ul className="space-y-4" variants={stagger}>
+                  {['Película pigmentada não refletiva', 'Privacidade máxima para seu veículo', 'Filtro de até 95% dos raios UV', 'Garantia de 2 anos'].map((text, i) => (
+                    <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                      <span className="text-primary-foreground font-medium">{text}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </motion.div>
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                  <img src={productImage} alt="INSULFILM™ Dark" className="w-full h-full object-cover rounded-2xl" />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 

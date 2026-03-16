@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import PageBreadcrumb from '@/components/PageBreadcrumb';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -26,7 +25,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511936182746';
+const WHATSAPP_NUMBER = '5511999999999';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Nano Cerâmica Transparente' },
@@ -70,7 +69,6 @@ const Clear70 = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
-        <PageBreadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Arquitetônico', href: '/arquitetonico' }, { label: 'Controle Solar', href: '/arquitetonico/solar' }, { label: 'Clear 70' }]} />
         <section ref={heroRef} className="relative min-h-[60vh] flex flex-col items-center justify-center bg-carbon-gradient overflow-hidden">
           <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
@@ -108,8 +106,8 @@ const Clear70 = () => {
                         <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                           <s.icon className="w-7 h-7 text-accent" />
                         </div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
+                        <p className="text-sm text-primary-foreground/60 font-medium mb-1">{s.label}</p>
+                        <p className="text-xl font-extrabold text-primary-foreground">{s.value}</p>
                       </CardContent>
                     </Card>
                   </motion.div>

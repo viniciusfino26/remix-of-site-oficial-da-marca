@@ -222,7 +222,16 @@ const Index = () => {
         cardVariant="gray"
       />
 
-
+      {/* Parallax Break with Stats */}
+      <ParallaxBreak
+        minHeight="35vh"
+        stats={[
+          { value: '+40', label: 'Países' },
+          { value: '10M+', label: 'm² instalados' },
+          { value: '15', label: 'Anos de Garantia' },
+          { value: '#1', label: 'Marca Global' },
+        ]}
+      />
 
       {/* Why INSULFILM */}
       <section ref={whyRef} id="why-insulfilm" className="relative py-14 md:py-24 bg-carbon-gradient overflow-hidden">

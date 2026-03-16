@@ -132,7 +132,7 @@ const differentials = [
   },
 ];
 
-const WHATSAPP_NUMBER = '5511936182746';
+const WHATSAPP_NUMBER = '5511999999999';
 
 /* ── Parallax Section Component ── */
 const ParallaxSection = ({ imageUrl, children }: { imageUrl: string; children?: React.ReactNode }) => (
