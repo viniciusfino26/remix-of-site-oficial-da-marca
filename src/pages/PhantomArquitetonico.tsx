@@ -129,7 +129,7 @@ const PhantomArquitetonico = () => {
             </motion.p>
             <motion.div variants={scaleIn}>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a película Phantom para proteção de superfícies arquitetônicas."
+                href="https://wa.me/5511936182746?text=Olá! Gostaria de saber mais sobre a película Phantom para proteção de superfícies arquitetônicas."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -401,24 +401,25 @@ const PhantomArquitetonico = () => {
               <img src={phantomSolutionThickness} alt="Película Phantom - 180 microns de espessura premium" className="w-full object-contain bg-muted/10" />
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
               {[
-                { value: '180μ', label: 'Espessura premium para máxima proteção' },
-                { value: '∞', label: 'Invisibilidade de nível industrial' },
-                { value: '5 Anos', label: 'Garantia de fábrica' },
-                { value: '360°', label: 'Resistência contra químicos e radiação UV' },
-                { value: 'UV', label: 'Proteção contra desbotamento e degradação' },
-              ].map((spec, i) => (
-                <div key={i} className="glass-card p-5 rounded-xl text-center">
-                  <p className="text-2xl font-extrabold text-accent mb-1">{spec.value}</p>
-                  <p className="text-xs text-primary-foreground/60 font-light">{spec.label}</p>
+                { value: '180μ', label: 'Espessura' },
+                { value: '∞', label: 'Invisibilidade' },
+                { value: '5 Anos', label: 'Garantia' },
+                { value: '360°', label: 'Proteção Total' },
+                { value: 'UV', label: 'Bloqueio' },
+              ].map((spec) => (
+                <div key={spec.label} className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-5 text-center">
+                  <span className="block text-2xl md:text-3xl font-extrabold text-accent mb-1">{spec.value}</span>
+                  <span className="text-sm text-primary-foreground/60 font-medium">{spec.label}</span>
                 </div>
               ))}
             </motion.div>
 
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 font-light mt-8 text-sm text-center">
-              Preserva exatamente o visual e o toque original da superfície.
+            <motion.p variants={fadeInUp} className="text-center text-primary-foreground/50 text-base font-light max-w-3xl mx-auto">
+              Preserva exatamente o visual original de qualquer superfície — com uma camada de proteção invisível de engenharia avançada.
             </motion.p>
+
           </motion.div>
         </div>
       </section>
@@ -636,7 +637,7 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ ENCONTRE UMA LOJA ═══════════════════════ */}
+      {/* ═══════════════════════ ENCONTRE UM CENTRO AUTORIZADO ═══════════════════════ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-3xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -645,15 +646,15 @@ const PhantomArquitetonico = () => {
                 <MapPin className="w-8 h-8 text-accent" />
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
-                Encontre uma Loja <span className="text-accent">INSULFILM</span>
+                Encontre um Centro Autorizado <span className="text-accent">INSULFILM</span>
               </h2>
               <p className="text-lg text-primary-foreground/60 font-light mb-8 max-w-xl mx-auto">
-                Encontre nossas lojas oficiais em todo o Brasil e tenha acesso ao que há de melhor em proteção e sofisticação.
+                Encontre nossos Centros Autorizados em todo o Brasil e tenha acesso ao que há de melhor em proteção e sofisticação.
               </p>
               <Link to="/lojas">
                 <Button size="lg" variant="outline" className="border-accent/40 text-accent hover:bg-accent hover:text-accent-foreground font-bold text-base px-8 transition-all">
                   <MapPin className="w-5 h-5" />
-                  Ver Lojas Próximas
+                  Ver Centros Autorizados
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
@@ -675,7 +676,7 @@ const PhantomArquitetonico = () => {
 
             <motion.div variants={scaleIn}>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre a película Phantom para proteção de superfícies arquitetônicas."
+                href="https://wa.me/5511936182746?text=Olá! Gostaria de saber mais sobre a película Phantom para proteção de superfícies arquitetônicas."
                 target="_blank"
                 rel="noopener noreferrer"
               >

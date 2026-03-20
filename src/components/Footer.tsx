@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MessageCircle, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
 import logoDark from '@/assets/logo-dark.png';
@@ -80,7 +80,7 @@ const Footer = () => {
               {t('footer.followUs')}
             </h3>
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/insulfilmoriginal" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_instagram', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="Instagram">
+              <a href="https://www.instagram.com/insulfilm.oficial" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_instagram', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="https://www.facebook.com/insulfilmoriginal" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_facebook', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="Facebook">
@@ -88,6 +88,12 @@ const Footer = () => {
               </a>
               <a href="https://www.youtube.com/INSULFILMMaximizado" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_youtube', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="YouTube">
                 <Youtube className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/company/insulfilm" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_brand', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="LinkedIn - Marca">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/in/franciscofino" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_profile', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="LinkedIn - Francisco Fino">
+                <Linkedin className="w-5 h-5" />
               </a>
               <a href="https://wa.me/5511976136911" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.whatsappClick('geral', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="WhatsApp">
                 <MessageCircle className="w-5 h-5" />

@@ -25,7 +25,7 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511936182746';
 
 const specs = [
   { icon: Zap, label: 'Tecnologia', value: 'Nano Cerâmica Transparente' },
@@ -106,8 +106,8 @@ const Clear70 = () => {
                         <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                           <s.icon className="w-7 h-7 text-accent" />
                         </div>
-                        <p className="text-sm text-primary-foreground/60 font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-primary-foreground">{s.value}</p>
+                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
+                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
