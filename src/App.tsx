@@ -59,6 +59,9 @@ import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
 import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
+/* ── PDP Automotivo Solar — Polariz (novo) ── */
+import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
+
 /* ── PDPs Arquitetônico Solar ── */
 import ArqClear70 from "./pages/ArqClear70";
 import ArqOrizzonte from "./pages/ArqOrizzonte";
@@ -110,11 +113,12 @@ const App = () => (
           <Route path="/automotivo/seguranca" element={<AutomotivoHubSeguranca />} />
 
           {/* Divisão Automotiva — PDPs Solar */}
+          <Route path="/automotivo/solar/dark" element={<AutomotivoDark />} />
+          <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
+          <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
+          <Route path="/automotivo/solar/polariz" element={<AutomotivoSolarPolariz />} />
           <Route path="/automotivo/solar/matrix" element={<AutomotivoMatrix />} />
           <Route path="/automotivo/solar/polariz-ultra" element={<AutomotivoPolariz />} />
-          <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
-          <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
-          <Route path="/automotivo/solar/dark" element={<AutomotivoDark />} />
 
           {/* Divisão Automotiva — PDPs Segurança */}
           <Route path="/automotivo/seguranca/skinsafe8k" element={<AutomotivoSkinSafe />} />
