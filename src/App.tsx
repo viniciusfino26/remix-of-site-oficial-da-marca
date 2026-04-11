@@ -133,6 +133,9 @@ const App = () => (
           <Route path="/empresarial" element={<Empresarial />} />
           <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
 
+          {/* Divisão Arquitetônica — Hub Principal */}
+          <Route path="/arquitetonico" element={<Arquitetonico />} />
+
           {/* Divisão Arquitetônica — Hubs de Silo */}
           <Route path="/arquitetonico/solar" element={<ArqHubSolar />} />
           <Route path="/arquitetonico/seguranca" element={<ArqHubSeguranca />} />
