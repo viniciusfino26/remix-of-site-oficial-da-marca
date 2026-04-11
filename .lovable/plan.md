@@ -1,70 +1,95 @@
+## Plan: Rewrite 9 Solar Architectural PDPs + Create Phantom Gloss PDP
 
-
-## Plan: Rewrite /arquitetonico + /residencial + /empresarial
-
-Three pages to rewrite following the Automotivo hub pattern (Hero → Text block → ProductBanners with expanded text → Cards → FAQ → CTA).
+All 9 existing solar PDPs (~137 lines each) will be fully rewritten to the new comprehensive structure. One new Phantom Gloss PDP will be created. The Phantom Matte PDP content was not provided in the document (cut off), so it will not be included.
 
 ---
 
-### 1. Rewrite `src/pages/Arquitetonico.tsx` (full rewrite)
+### Structure per PDP (matching AutomotivoDark pattern)
 
-**Structure (mirrors Automotivo.tsx pattern):**
-- **SEO/Helmet**: Updated title, meta description, OG tags, Twitter cards, and triple JSON-LD schema (CollectionPage + ItemList with 4 items including Phantom SPF + FAQPage with 4 questions)
-- **Hero**: Using existing PageHero component with H1: "O vidro que deveria proteger você está te custando caro todos os dias." Badge: "DIVISÃO ARQUITETÔNICA — INSULFILM™"
-- **Text section** (below hero): H2 "Películas arquitetônicas INSULFILM™ — para quem mora bem e trabalha bem" + 3 paragraphs of vibe-selling copy + trademark disclaimer in bold
-- **4x ProductBanner** sections, each followed by an expanded text block:
-  1. Solar (right/blue) → expanded H2 + Performance/Premium lines listing
-  2. Seguranca (left/orange) → expanded H2 + ISSF products
-  3. Decorativo (right/blue) → expanded H2 + Jateado/Whiteout/Blackout
-  4. Phantom SPF (left/gray) → expanded H2 + Gloss/Matte details
-- **Residencial/Empresarial cards** (2-col grid): H2 "Para residências ou para o seu espaço comercial?" with two glass-cards linking to /residencial and /empresarial
-- **GEO/LLM semantic block**: Trademark/provenance text
-- **FAQ section**: 6 questions with Accordion component
-- **CTA final**: Two buttons → /contato + /rede/lojas-oficiais
-- **Footer disclaimer**: Trademark notice
+Each page follows this layout:
 
-No images needed — ProductBanner without `imageSrc` renders the carbon gradient background (existing behavior).
+1. **Helmet** — Title, meta description, canonical, OG, Twitter, JSON-LD Product schema
+2. **Hero** — Carbon gradient, badge (Performance/Premium/SPF), H1 as headline, subtitle
+3. **Trademark block** — Mandatory disclaimer after hero
+4. **Positioning section** — H2 + narrative paragraphs about the product
+5. **Specs cards** — 4 glass-cards with icon/label/value
+6. **Tech table** — Full ficha técnica with all versions
+7. **ParallaxBreak** — Key stats
+8. **Benefits section** — Checklist with CheckCircle icons
+9. **Differentials section** — H3 blocks explaining technical advantages
+10. **Comparative table** (where applicable) — vs other products in line
+11. **Use cases / "Para qual projeto"** — Specific application guidance
+12. **Reinforcement block** — Brand authority text
+13. **CTA final** — `/contato` + upgrade CTA where applicable
+14. **Legal footer** — Trademark notice
 
----
-
-### 2. Rewrite `src/pages/Residencial.tsx` (full rewrite, ~600 lines → ~400 lines)
-
-**Structure:**
-- **SEO/Helmet**: Title "INSULFILM™ Residencial | Películas para Janelas e Fachadas de Casa", breadcrumb schema (Home > Arquitetônico > Residencial)
-- **Hero** via PageHero: H1 "Você investiu no imóvel. O sol está cobrando o preço todo dia."
-- **Text section**: H2 about comfort vs visual, trademark disclaimer
-- **4x ProductBanner + expanded text**:
-  1. Solar Residencial (right/blue) → Clear70, Orizzonte70, Reflesso/Specchiato for pergolados
-  2. Privacidade (left/orange) → Grigio Invertito, Petrolio
-  3. Proteção UV (right/blue) → Ultravioletti90
-  4. Phantom SPF (left/gray) → Gloss/Matte
-- **CTA final**: /contato + /rede/lojas-oficiais
-- **Footer disclaimer**
+All CTAs point to `/contato` (no WhatsApp links). No route changes needed.
 
 ---
 
-### 3. Rewrite `src/pages/Empresarial.tsx` (full rewrite, ~138 lines → ~400 lines)
+### Files to rewrite (9 files)
 
-**Structure:**
-- **SEO/Helmet**: Title "INSULFILM™ Empresarial | Películas para Escritórios e Espaços Comerciais", breadcrumb schema (Home > Arquitetônico > Empresarial)
-- **Hero** via PageHero: H1 "Postos de trabalho perto do vidro. Temperatura fora do padrão. Conta de energia que não fecha."
-- **Text section**: H2 about OPEX/NR17/productivity, trademark disclaimer
-- **4x ProductBanner + expanded text**:
-  1. Solar Comercial (right/blue) → Clear70, Orizzonte70, Petrolio + NR17 compliance
-  2. Privacidade Corporativa (left/orange) → Grigio Invertito for meeting rooms
-  3. Segurança Comercial (right/blue) → ISSF4000/ISSF7000
-  4. Phantom SPF Comercial (left/gray) → showrooms/reception
-- **CTA final**: /contato + /rede/lojas-oficiais
-- **Footer disclaimer**
+
+| #   | File                   | Product            | Line        | Tech                 | Key Spec                     |
+| --- | ---------------------- | ------------------ | ----------- | -------------------- | ---------------------------- |
+| 1   | `Clear70.tsx`          | Clear70            | Performance | Nano Ceramic         | 81% IR, 72% luz, 5yr         |
+| 2   | `GrigioInvertito.tsx`  | Grigio Invertito   | Performance | Vapor-Coated Al      | 75% IR, 15% luz, 3yr         |
+| 3   | `Petrolio.tsx`         | Petrolio           | Performance | Hybrid               | 42% IR, 3 versions, 3yr      |
+| 4   | `ReflessoDArgento.tsx` | Reflesso d'Argento | Performance | Vapor-Coated Al      | 80% IR, pergolado, 3yr       |
+| 5   | `Orizzonte70.tsx`      | Orizzonte70        | Premium     | Premium Nano Ceramic | 93% IR, 68% luz, 10yr        |
+| 6   | `Ultravioletti90.tsx`  | Ultravioletti90    | Premium     | UV Concentrated      | 88% luz, incolor, 5yr        |
+| 7   | `Naturale.tsx`         | Naturale           | Premium     | Neutral Sputtered    | 4 versions, 81% IR max, 10yr |
+| 8   | `MetallicoArgento.tsx` | Metallico Argento  | Premium     | Vapor-Coated Al      | 86% IR, 3 versions, 10yr     |
+| 9   | `SpecchiatoBronzo.tsx` | Specchiato Bronzo  | Premium     | Sputtered Nichrome   | 72% IR, 3 versions, 10yr     |
+
+
+### File to create (1 file)
+
+
+| #   | File               | Product       | Route                          |
+| --- | ------------------ | ------------- | ------------------------------ |
+| 10  | `PhantomGloss.tsx` | Phantom Gloss | `/arquitetonico/phantom-gloss` |
+
+
+### Route addition in App.tsx
+
+- Add route: `/arquitetonico/phantom-gloss` → `PhantomGloss`
+- Import new component
+
+### Re-export files (already exist, no changes needed)
+
+`ArqClear70.tsx`, `ArqGrigio.tsx`, `ArqPetrolio.tsx`, `ArqReflesso.tsx`, `ArqOrizzonte.tsx`, `ArqUV90.tsx`, `ArqNaturale.tsx`, `ArqMetallico.tsx`, `ArqSpecchiato.tsx` — all re-export from the main files.
 
 ---
 
-### Technical notes
+### Key content changes per product
 
-- All three pages use the same components: `PageHero`, `ProductBanner`, `Accordion`, `Card`, `Button`, `Badge`, `motion` variants
-- No new components needed — reuses existing `ProductBanner` (without `imageSrc` = carbon gradient fallback)
-- No route changes needed — all 3 routes already exist in App.tsx
-- All CTAs point to internal routes (`/contato`, `/rede/lojas-oficiais`), no WhatsApp links
-- All copy is hardcoded in Portuguese (no i18n keys for these pages, matching Automotivo pattern)
-- Existing PDPs and other pages are untouched
+**Clear70**: Add positioning narrative, tech table (single version), benefits checklist, differentials (nano ceramic, 72% light, low reflectivity, stability), "Para qual projeto" section with upgrade note to Premium line.
 
+**Grigio Invertito**: Add inverted mirroring positioning, tech table (single version 15%), differentials (inverted mirroring, 75% IR, natural light), positioning note vs Petrolio and Metallico Argento.
+
+**Petrolio**: Add hybrid technology narrative, tech table (3 versions: 35/20/05), comparative table vs Clear70 and Grigio Invertito, differentials (hybrid, no mirror effect, optical clarity).
+
+**Reflesso d'Argento**: Add "inspired by Metallico Argento" positioning, pergolado compatibility, differentials (80% IR, accessible mirrored aesthetic), upgrade CTA to Metallico Argento.
+
+**Orizzonte70**: Add "category apart" positioning, comparative table vs Clear70, differentials (93% IR, last-gen nano ceramic, 10yr stability, full electronic compatibility).
+
+**Ultravioletti90**: Add "invisible protection" positioning, specific use cases (museums, clinics, showrooms, panoramic residences), note about low IR (16%) with redirect to Orizzonte70/Naturale for thermal needs.
+
+**Naturale**: Add 4-version positioning, "how to choose" guide table, differentials (ion bombardment, scalability, 81% IR at version 20).
+
+**Metallico Argento**: Add max performance positioning, comparative table vs Reflesso and Grigio Invertito, 3 versions (50/35/20), differentials (86% IR, 80% total energy, mirrored finish).
+
+**Specchiato Bronzo**: Add balanced reflectivity positioning, 3 versions (35/25/15), differentials (Sputtered Nichrome, comfort-focused, bronze tone, pergolado compatible).
+
+**Phantom Gloss**: New page — SPF positioning, problem/solution narrative, 5-layer composition, technical specs (180μ, temperature range), compatible materials list. Content from provided prompt (cut off at materials section — will complete with logical continuation).
+
+---
+
+### Implementation order
+
+Due to the volume (10 files, each ~250-350 lines), this will be implemented in batches:
+
+1. Performance line: Clear70, Grigio Invertito, Petrolio, Reflesso d'Argento
+2. Premium line: Orizzonte70, Ultravioletti90, Naturale, Metallico Argento, Specchiato Bronzo
+3. Phantom Gloss + App.tsx route
