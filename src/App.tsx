@@ -53,7 +53,8 @@ import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
 import AutomotivoPhantom6 from "./pages/AutomotivoPhantom6";
 import AutomotivoPhantom8 from "./pages/AutomotivoPhantom8";
 
-/* ── Hubs Arquitetônicos ── */
+/* ── Hub + Hubs Arquitetônicos ── */
+import Arquitetonico from "./pages/Arquitetonico";
 import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
 import ArqHubDecorativo from "./pages/ArqHubDecorativo";
@@ -131,6 +132,9 @@ const App = () => (
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/empresarial" element={<Empresarial />} />
           <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
+
+          {/* Divisão Arquitetônica — Hub Principal */}
+          <Route path="/arquitetonico" element={<Arquitetonico />} />
 
           {/* Divisão Arquitetônica — Hubs de Silo */}
           <Route path="/arquitetonico/solar" element={<ArqHubSolar />} />
