@@ -64,7 +64,8 @@ const categories: Category[] = [
     products: [
       { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
       { name: "INSULFILM™ Reflesso d'Argento", path: '/arquitetonico/solar/reflesso-d-argento' },
-      { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' }
+      { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' },
+      { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }
     ]
   },
   {
@@ -90,9 +91,30 @@ const ArqHubSolar = () => {
   return (
     <>
       <Helmet>
-        <title>Películas Solares Arquitetônicas | INSULFILM™</title>
-        <meta name="description" content="Películas solares INSULFILM™ para fachadas, sacadas e janelas — controle de calor, proteção UV e eficiência energética para residências e espaços comerciais." />
-        <link rel="canonical" href="https://www.insulfilm.com.br/arquitetonico/solar" />
+        <title>INSULFILM™ Solar Arquitetônico | Películas para Fachadas e Janelas</title>
+        <meta name="description" content="Películas solares arquitetônicas INSULFILM™ — controle térmico para fachadas, sacadas e janelas de residências e espaços comerciais. Alta Transparência, Neutras, Espelhadas e Não Refletivas." />
+        <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="INSULFILM™ Solar Arquitetônico | Películas para Fachadas e Janelas" />
+        <meta property="og:description" content="Películas solares INSULFILM™ para fachadas, sacadas e janelas. Linha completa: Alta Transparência, Estética Neutra, Espelhados e Não Refletivas." />
+        <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/solar" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Películas Solares Arquitetônicas INSULFILM™",
+          "description": "Linha completa de películas solares arquitetônicas INSULFILM™ para fachadas, sacadas e janelas.",
+          "url": "https://insulfilm.com.br/arquitetonico/solar",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "INSULFILM™", "item": "https://insulfilm.com.br" },
+              { "@type": "ListItem", "position": 2, "name": "Arquitetônico", "item": "https://insulfilm.com.br/arquitetonico" },
+              { "@type": "ListItem", "position": 3, "name": "Solar", "item": "https://insulfilm.com.br/arquitetonico/solar" }
+            ]
+          }
+        })}</script>
       </Helmet>
 
       <main>
