@@ -1,24 +1,27 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Sun, Palette, Layers, Eye, CheckCircle, MessageCircle, Home } from 'lucide-react';
+import { Zap, Eye, Sun, Shield, CheckCircle, MessageCircle, ArrowRight, Building2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
-const fadeInRight = { hidden: { opacity: 0, x: 60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511936182746';
 const specs = [
-  { icon: Palette, label: 'Estética', value: 'Refletiva Espelhada' },
-  { icon: Sun, label: 'Rejeição de IR', value: 'Até 80%' },
-  { icon: Eye, label: 'Privacidade', value: 'Diurna' },
-  { icon: Layers, label: 'Categoria', value: 'Arquitetônica' },
+  { icon: Zap, label: 'Tecnologia', value: 'Vapor-Coated Al' },
+  { icon: Eye, label: 'Transmissão de Luz', value: '20%' },
+  { icon: Sun, label: 'Rejeição de IR', value: '80%' },
+  { icon: Shield, label: 'Garantia', value: '3 anos' },
+];
+
+const techTable = [
+  { version: "Reflesso d'Argento 20", privacy: 'Muito Alto', light: '20%', ir: '80%', uv: '>99%', energy: '78%' },
 ];
 
 const ReflessoDArgento = () => {
@@ -32,24 +35,25 @@ const ReflessoDArgento = () => {
     "@context": "https://schema.org", "@type": "Product",
     "name": "INSULFILM™ Reflesso d'Argento",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Solução arquitetônica refletiva eficaz para privacidade diurna. Acabamento espelhado que rejeita 80% do calor infravermelho.",
-    "image": "LINK_DA_IMAGEM_AQUI", "url": "https://www.insulfilm.com.br/reflesso-dargento",
+    "description": "Película arquitetônica espelhada com 80% de rejeição de IR e privacidade diurna. Aplicável em fachadas e pergolados. Marca registrada.",
+    "url": "https://insulfilm.com.br/arquitetonico/solar/reflesso-d-argento",
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Estética", "value": "Refletiva Espelhada" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho (IR)", "value": "Até 80%" }
+      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Vapor-Coated Aluminium Film" },
+      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "80%" },
+      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 3 anos" }
     ]
   };
 
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Reflesso d'Argento | Película Arquitetônica de Controle Solar</title>
-        <meta name="description" content="Solução arquitetônica refletiva eficaz para privacidade diurna. Acabamento espelhado que rejeita 80% do calor infravermelho." />
-        <meta property="og:title" content="INSULFILM™ Reflesso d'Argento | Película Arquitetônica de Controle Solar" />
-        <meta property="og:description" content="Solução arquitetônica refletiva eficaz para privacidade diurna. Acabamento espelhado que rejeita 80% do calor infravermelho." />
+        <title>INSULFILM™ Reflesso d'Argento | Película Espelhada Arquitetônica | Alta Privacidade</title>
+        <meta name="description" content="INSULFILM™ Reflesso d'Argento — película arquitetônica espelhada com 80% de rejeição de IR e privacidade diurna. Aplicável em fachadas e pergolados. Marca registrada." />
+        <meta property="og:title" content="INSULFILM™ Reflesso d'Argento | Película Espelhada Arquitetônica" />
+        <meta property="og:description" content="Eficiência térmica imediata. Visual espelhado. Privacidade durante o dia." />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
-        <meta property="og:url" content="https://www.insulfilm.com.br/reflesso-dargento" />
+        <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/solar/reflesso-d-argento" />
+        <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar/reflesso-d-argento" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
@@ -58,14 +62,41 @@ const ReflessoDArgento = () => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Home className="w-3.5 h-3.5 mr-2" />Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Performance</Badge>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Reflesso d'Argento</motion.h1>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Solução arquitetônica refletiva eficaz para privacidade diurna. Acabamento espelhado que rejeita 80% do calor infravermelho.</motion.p>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
+                Eficiência térmica imediata. Visual espelhado. Privacidade durante o dia.
+              </motion.h1>
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
+                A INSULFILM™ Reflesso d'Argento foi desenvolvida para fachadas comerciais, residências e estruturas envidraçadas que exigem alto desempenho térmico com estética espelhada — unindo conforto, privacidade diurna e proteção UV em uma solução de excelente custo-benefício.
+              </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        </section>
+
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4">
+            <p className="text-sm text-muted-foreground/70 font-light max-w-3xl mx-auto text-center italic">
+              Muitas pessoas utilizam o termo "insulfilm" ou "insulfilme" para se referir a películas para vidro. Esse é um uso popular. INSULFILM™ é marca registrada, com titularidade exclusiva e referência no segmento. O uso da marca por terceiros não é autorizado.
+            </p>
+          </div>
+        </section>
+
+        <section className="py-24 bg-carbon-gradient overflow-hidden relative">
+          <div className="absolute inset-0 bg-diagonal-texture" />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Inspirada na tecnologia Metallico Argento. Desempenho acessível com eficiência real.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
+                A INSULFILM™ Reflesso d'Argento foi desenvolvida a partir da tecnologia da linha Metallico Argento — entregando desempenho térmico elevado, privacidade diurna e estética espelhada com uma proposta de excelente custo-benefício.
+              </motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed">
+                Com rejeição de infravermelho de 80% e bloqueio UV &gt;99%, é uma solução de alto desempenho para fachadas, pergolados e coberturas envidraçadas com alta exposição solar.
+              </motion.p>
+            </motion.div>
+          </div>
         </section>
 
         <section className="py-24 bg-background overflow-hidden">
@@ -88,45 +119,122 @@ const ReflessoDArgento = () => {
           </div>
         </section>
 
-        <ParallaxBreak minHeight="35vh" stats={[
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
+              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Ficha Técnica</motion.h3>
+              <motion.div variants={fadeInUp} className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-border">
+                    <th className="text-left py-3 px-4 font-bold text-foreground">Versão</th>
+                    <th className="text-center py-3 px-4 font-bold text-foreground">Privacidade</th>
+                    <th className="text-center py-3 px-4 font-bold text-foreground">Luz Visível</th>
+                    <th className="text-center py-3 px-4 font-bold text-foreground">Infravermelho</th>
+                    <th className="text-center py-3 px-4 font-bold text-foreground">UV</th>
+                    <th className="text-center py-3 px-4 font-bold text-foreground">Energia Solar</th>
+                  </tr></thead>
+                  <tbody>
+                    {techTable.map((row) => (
+                      <tr key={row.version} className="border-b border-border/50">
+                        <td className="py-3 px-4 font-semibold text-foreground">{row.version}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.privacy}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.light}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.ir}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.uv}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.energy}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </motion.div>
+              <p className="text-xs text-muted-foreground/60 text-center mt-4">Quanto menor o grau de transparência, maior a refletividade percebida após a aplicação. Garantia: até 3 anos. Consulte condições.</p>
+            </motion.div>
+          </div>
+        </section>
+
+        <ParallaxBreak minHeight="25vh" stats={[
           { value: '80%', label: 'Rejeição IR' },
-          { value: 'Espelhada', label: 'Refletiva' },
-          { value: 'Diurna', label: 'Privacidade' },
+          { value: '78%', label: 'Energia Solar Rejeitada' },
+          { value: '>99%', label: 'Bloqueio UV' },
         ]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-                <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Controle Solar Refletivo</motion.h2>
-                <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">A Reflesso d'Argento é uma solução refletiva eficaz que combina privacidade diurna com alta rejeição de calor, ideal para projetos que precisam de controle solar sem comprometer a estética.</motion.p>
-                <motion.ul className="space-y-4" variants={stagger}>
-                  {['Acabamento espelhado refletivo elegante', 'Privacidade diurna eficaz', 'Rejeição de até 80% dos raios infravermelhos', 'Solução ideal para fachadas e envidraçamentos'].map((text, i) => (
-                    <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" /><span className="text-primary-foreground font-medium">{text}</span></motion.li>
-                  ))}
-                </motion.ul>
-              </motion.div>
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-                <div className="aspect-[4/3] rounded-2xl bg-muted/10 border border-border/20 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground/30"><Home className="w-16 h-16 mx-auto mb-3 opacity-30" /><p className="text-sm">Imagem do produto</p></div>
-                </div>
-              </motion.div>
-            </div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-8">Principais Benefícios</motion.h2>
+              <motion.ul className="space-y-4" variants={stagger}>
+                {[
+                  'Conforto térmico imediato: 80% de rejeição de infravermelhos',
+                  'Visual moderno e elegante: acabamento espelhado que valoriza o imóvel',
+                  'Privacidade diurna: bloqueio visual externo durante o dia',
+                  'Proteção contra desbotamento de móveis e objetos',
+                  'Aplicável em pergolados e coberturas de vidro',
+                ].map((text, i) => (
+                  <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <span className="text-primary-foreground font-medium">{text}</span>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-background overflow-hidden">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-10">Diferenciais Técnicos</motion.h2>
+              <div className="space-y-8">
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-xl font-bold text-foreground mb-2">80% de rejeição de infravermelho</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">Um dos maiores índices da linha Performance — desempenho térmico de alto nível com resultado perceptível mesmo em fachadas de alta exposição.</p>
+                </motion.div>
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Aplicação em pergolados e coberturas</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">Diferente de outras películas da linha Performance, a Reflesso d'Argento é indicada para teto de vidro e pergolados — versatilidade técnica que amplia as opções de projeto.</p>
+                </motion.div>
+                <motion.div variants={fadeInUp}>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Estética espelhada acessível</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">Inspira-se na tecnologia Metallico Argento — entregando visual espelhado com custo-benefício superior para projetos com maior metragem ou orçamento otimizado.</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-background">
+          <div className="container mx-auto px-4">
+            <p className="text-sm text-muted-foreground/70 font-light max-w-3xl mx-auto text-center">
+              Películas para vidro existem em diversos níveis. INSULFILM™ é a marca registrada que estabeleceu o padrão de qualidade e aplicação no segmento arquitetônico no Brasil. Escolher corretamente é uma decisão técnica.
+            </p>
           </div>
         </section>
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Solicite um Orçamento</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">Controle solar eficaz com a Reflesso d'Argento.</motion.p>
-              <motion.div variants={scaleIn}>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Desempenho espelhado com procedência garantida.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
+                A INSULFILM™ Reflesso d'Argento representa o desempenho da linha espelhada com a procedência e garantia da marca registrada que criou o padrão do segmento.
+              </motion.p>
+              <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de saber mais sobre a película INSULFILM Reflesso d'Argento.")}`} target="_blank" rel="noopener noreferrer"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</a>
+                  <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Atendimento</Link>
+                </Button>
+                <Button asChild variant="outline" className="font-bold text-lg px-8 py-6 rounded-xl">
+                  <Link to="/arquitetonico/solar/metallico-argento">Conheça o Metallico Argento <ArrowRight className="w-4 h-4" /></Link>
                 </Button>
               </motion.div>
             </motion.div>
+          </div>
+        </section>
+
+        <section className="py-8 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <p className="text-xs text-muted-foreground/50 text-center">
+              INSULFILM™ é marca registrada, protegida pela Lei de Propriedade Industrial (Lei nº 9.279/96). O uso do termo por terceiros não possui autorização da titular.
+            </p>
           </div>
         </section>
       </main>
