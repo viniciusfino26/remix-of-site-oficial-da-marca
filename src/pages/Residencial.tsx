@@ -1,606 +1,264 @@
-import { useRef, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
-import {
-  Sun, Thermometer, Eye, Shield, Palette, Sparkles, ShieldCheck, Award,
-  Users, Home, Zap, Lock, CheckCircle, MessageCircle, Heart,
-  FileText, Layers, Star, ArrowRight
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { Sun, Shield, Eye, MessageCircle, ArrowRight, MapPin, Home, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import ParallaxBreakComponent from '@/components/ParallaxBreak';
+import { Link } from 'react-router-dom';
+import PageHero from '@/components/PageHero';
+import ProductBanner from '@/components/ProductBanner';
 
-/* ── animation variants ── */
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.85 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
-const emotionalFade = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
+const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
-/* ── CountUp ── */
-const CountUp = ({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 1200;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { start = target; clearInterval(timer); }
-      setDisplay(start);
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isInView, target]);
-
-  return <span ref={ref}>{prefix}{display}{suffix}</span>;
-};
-
-/* ── Data ── */
-const problemCards = [
-  { icon: Thermometer, stat: 80, suffix: '%', label: 'de rejeição de calor solar nos ambientes internos' },
-  { icon: Sun, stat: 99, suffix: '%', label: 'de bloqueio dos raios ultravioleta nocivos' },
-  { icon: Zap, stat: 30, suffix: '%', label: 'de economia na conta de energia elétrica' },
-];
-
-const filmCategories = [
-  {
-    icon: Eye,
-    title: 'Espelhadas',
-    desc: 'Espelhamento intenso em ambos os lados para uma rejeição de calor espetacular. Diversas opções de cores externas com interior prata.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/SpecchiatoBronzo.jpg',
-    href: '/arquitetonico/solar',
-  },
-  {
-    icon: Sun,
-    title: 'Transparentes',
-    desc: 'Quase imperceptível, mantém o design atual do projeto enquanto proporciona ótima redução de calor por sua tecnologia seletiva de absorção térmica.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Orizzonte80.jpg',
-    href: '/arquitetonico/solar',
-  },
-  {
-    icon: Sparkles,
-    title: 'Refletivas',
-    desc: 'Alta refletividade externa para maximizar a rejeição de calor, com um interior neutro para facilitar a visibilidade externa.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Metallico.jpg',
-    href: '/arquitetonico/solar',
-  },
-  {
-    icon: Palette,
-    title: 'Neutras',
-    desc: 'Visual natural de refletividade baixa ou moderada para aumentar o conforto térmico, sem destacar expressivamente a área envidraçada.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Naturale.jpg',
-    href: '/arquitetonico/solar',
-  },
-  {
-    icon: Lock,
-    title: 'Não Refletivas',
-    desc: 'Visual escuro e não espelhado, proporcionando excelente privacidade e controle de luz que aumenta o conforto térmico.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/UltraVioletti90.jpg',
-    href: '/arquitetonico/solar',
-  },
-  {
-    icon: Shield,
-    title: 'Antivandalismo e Segurança',
-    desc: 'Praticamente invisíveis, reforçam a resistência natural do vidro contra quebras acidentais ou criminosas e retêm os estilhaços do vidro quebrado.',
-    image: 'https://www.insulfilmarquitetonico.com.br/__imagens/linhas--apresentacao/Safety&Security.jpg',
-    href: '/arquitetonico/seguranca',
-  },
-];
-
-const benefits = [
-  { icon: Thermometer, title: 'Redução de Calor e Economia', desc: 'Até 80% de rejeição do calor solar, reduzindo drasticamente o uso do ar-condicionado e os custos com energia elétrica.' },
-  { icon: Eye, title: 'Privacidade e Redução de Claridade', desc: 'Controle da visibilidade externa sem perder a iluminação natural. Mais privacidade para sua família durante o dia.' },
-  { icon: Shield, title: 'Proteção contra Estilhaços', desc: 'Em caso de quebra acidental, a película retém os fragmentos de vidro, protegendo crianças e animais de estimação.' },
-  { icon: Palette, title: 'Manutenção do Design', desc: 'Películas que se integram à arquitetura, preservando a estética ou personalizando fachadas e janelas.' },
-  { icon: Sun, title: 'Anti-desbotamento', desc: 'Até 99% de bloqueio UV que protege móveis, pisos, cortinas e obras de arte contra desbotamento e envelhecimento precoce.' },
-];
-
-const differentials = [
-  {
-    icon: Users, title: 'Atendimento Pré-venda',
-    items: ['Especialistas em conforto térmico e acústico', 'Diagnóstico personalizado do seu ambiente', 'Especificação técnica sob medida para cada projeto'],
-  },
-  {
-    icon: Award, title: 'Produto de Alto Desempenho',
-    items: ['Películas OEM com tecnologia de ponta', 'Famílias Performance e Premium', 'Garantia certificada com lastro industrial'],
-  },
-  {
-    icon: ShieldCheck, title: 'Serviço de Aplicação',
-    items: ['Aplicadores credenciados e treinados', 'Proteção completa do ambiente durante instalação', 'Certificado individual por projeto'],
-  },
-];
-
-const WHATSAPP_NUMBER = '5511936182746';
-
-/* ── Parallax Section Component ── */
-const ParallaxSection = ({ imageUrl, children }: { imageUrl: string; children?: React.ReactNode }) => (
-  <section
-    className="bg-parallax relative min-h-[200px] md:min-h-[300px] flex items-center justify-center"
-    style={{ backgroundImage: `url(${imageUrl})` }}
-  >
-    <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/70" />
-    {children && <div className="relative z-10 container mx-auto px-4 py-16 text-center">{children}</div>}
-  </section>
-);
-
-const residencialSchema = {
+const schemaData = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa",
-  "description": "Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família.",
-  "url": "https://www.insulfilm.com.br/residencial",
-  "publisher": { "@type": "Brand", "name": "INSULFILM™" }
+  "@type": "CollectionPage",
+  "name": "Películas Arquitetônicas Residenciais INSULFILM™",
+  "description": "Soluções INSULFILM™ para residências — controle solar, privacidade, segurança e proteção de superfícies para apartamentos e casas.",
+  "url": "https://insulfilm.com.br/residencial",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "INSULFILM™", "item": "https://insulfilm.com.br" },
+      { "@type": "ListItem", "position": 2, "name": "Arquitetônico", "item": "https://insulfilm.com.br/arquitetonico" },
+      { "@type": "ListItem", "position": 3, "name": "Residencial", "item": "https://insulfilm.com.br/residencial" }
+    ]
+  }
 };
 
-const Residencial = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
-  const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
-  const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
-
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-
-  return (
-    <>
+const Residencial = () => (
+  <>
     <Helmet>
-      <title>INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa</title>
-      <meta name="description" content="Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família." />
-      <meta property="og:title" content="INSULFILM™ Residencial | Películas Arquitetônicas para sua Casa" />
-      <meta property="og:description" content="Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família." />
+      <title>INSULFILM™ Residencial | Películas para Janelas e Fachadas de Casa</title>
+      <meta name="description" content="O calor que sufoca, o sofá que desbotou, o apartamento exposto para a rua. Películas INSULFILM™ para residências resolvem isso — com garantia documentada." />
+      <link rel="canonical" href="https://insulfilm.com.br/residencial" />
+      <meta name="robots" content="index, follow" />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
-      <meta property="og:url" content="https://www.insulfilm.com.br/residencial" />
-      <script type="application/ld+json">{JSON.stringify(residencialSchema)}</script>
+      <meta property="og:url" content="https://insulfilm.com.br/residencial" />
+      <meta property="og:title" content="INSULFILM™ Residencial | Películas para Janelas e Fachadas de Casa" />
+      <meta property="og:description" content="O calor que sufoca, o sofá que desbotou, o apartamento exposto. Películas INSULFILM™ para residências resolvem isso." />
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:site_name" content="INSULFILM™" />
+      <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
     </Helmet>
+
     <main>
-      {/* ═══ 1. HERO + VIDEO ═══ */}
-      <section ref={heroRef} className="relative min-h-[70vh] flex flex-col items-center bg-carbon-gradient overflow-hidden">
-        <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
-        <motion.div className="container mx-auto px-4 pt-32 pb-8 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
-          <motion.div initial="hidden" animate="visible" variants={stagger}>
-            <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-              <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                <Home className="w-3.5 h-3.5 mr-2" />
-                Películas Arquitetônicas
-              </Badge>
-            </motion.div>
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-              Películas originais INSULFILM™
-            </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
-              Desempenho surpreendente para projetos residenciais. Conforto, economia e proteção para sua família.
-            </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-6">
-              <div className="separator-accent" />
-            </motion.div>
-            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 mt-8">
-              {[
-                { label: 'Nossas Películas', target: 'peliculas' },
-                { label: 'Benefícios', target: 'beneficios' },
-                { label: 'Diferenciais', target: 'diferenciais' },
-              ].map(btn => (
-                <Button key={btn.target} variant="ghost" size="sm" className="border border-primary-foreground/20 text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-lg" onClick={() => scrollTo(btn.target)}>
-                  {btn.label}
-                </Button>
-              ))}
-            </motion.div>
-          </motion.div>
-        </motion.div>
+      {/* ── HERO ── */}
+      <PageHero
+        title="Você investiu no imóvel. O sol está cobrando o preço todo dia."
+        subtitle="Fachadas envidraçadas vendem imóveis. E depois cobram o preço em calor, conta de energia e mobiliário que desbota. Películas INSULFILM™ resolvem esse paradoxo."
+        badge={{ icon: <Home className="w-3.5 h-3.5" />, text: 'PELÍCULAS RESIDENCIAIS — INSULFILM™' }}
+        cta={{ text: 'Falar com um Especialista', href: '/contato', icon: <MessageCircle className="w-5 h-5" /> }}
+      />
 
-        <motion.div className="mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10 w-full max-w-7xl" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-primary-foreground/10">
-            <div className="aspect-video relative">
-              <iframe
-                src="https://www.youtube.com/embed/paCtipjRfPI?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=paCtipjRfPI"
-                title="INSULFILM™ Películas Arquitetônicas"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                className="w-full h-full pointer-events-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 z-10 cursor-default" />
-            </div>
-          </div>
-        </motion.div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-      </section>
-
-      {/* ═══ 2. O PROBLEMA ═══ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden relative">
-        <div className="absolute inset-0 bg-diagonal-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.div variants={emotionalFade} className="flex justify-center mb-4">
-              <Thermometer className="w-10 h-10 text-accent" />
-            </motion.div>
-            <motion.h2 variants={emotionalFade} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
-              O Problema Mora em Casa
+      {/* ── TEXTO DE APRESENTAÇÃO ── */}
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="max-w-4xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+              Películas para residências INSULFILM™ — para quem não aceita escolher entre conforto e visual.
             </motion.h2>
-            <motion.p variants={emotionalFade} className="text-primary-foreground/60 text-lg font-light max-w-2xl mx-auto">
-              Calor excessivo, conta de luz alta, móveis desbotando, falta de privacidade. Sua casa deveria ser seu refúgio — não uma fonte de desconforto.
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              Fachadas envidraçadas vendem imóveis. Sacadas com vista são o argumento principal de dezenas de lançamentos. E depois da compra, o morador descobre o outro lado: o calor que acumula, a conta de energia que não fecha, o sofá que desbota antes da hora e o apartamento em andar baixo que se sente exposto para a rua o tempo todo.
             </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4">
-              <div className="separator-accent" />
-            </motion.div>
-          </motion.div>
-
-          <motion.div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            {problemCards.map((card, i) => (
-              <motion.div key={i} variants={emotionalFade}>
-                <Card className="glass-card rounded-2xl text-center h-full">
-                  <CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                      <card.icon className="w-7 h-7 text-accent" />
-                    </div>
-                    <p className="text-5xl md:text-6xl font-extrabold text-accent mb-3">
-                      <CountUp target={card.stat} prefix="até " suffix={card.suffix} />
-                    </p>
-                    <p className="text-primary-foreground/70 font-light text-sm">{card.label}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <ParallaxBreakComponent minHeight="35vh" stats={[
-        { value: '80%', label: 'Rejeição de Calor' },
-        { value: '99%', label: 'Bloqueio UV' },
-        { value: '30%', label: 'Economia Energia' },
-      ]} />
-
-      {/* ═══ 3. NOSSAS PELÍCULAS — Cards com Fotos ═══ */}
-      <section id="peliculas" className="py-24 bg-background overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nossas Películas</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">6 categorias de películas para cada necessidade do seu projeto arquitetônico</motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            {filmCategories.map((cat, i) => (
-              <motion.div key={i} variants={fadeInUp}>
-                <Link to={cat.href}>
-                  <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
-                    <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-transparent hover:border-t-accent/50 overflow-hidden group cursor-pointer">
-                      <div className="relative aspect-[16/9] overflow-hidden">
-                        <img
-                          src={cat.image}
-                          alt={cat.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">
-                              <cat.icon className="w-4 h-4 text-accent" />
-                            </div>
-                            <h3 className="text-lg font-extrabold text-primary-foreground">{cat.title}</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <CardContent className="p-5">
-                        <p className="text-sm text-muted-foreground font-light leading-relaxed mb-3">{cat.desc}</p>
-                        <span className="inline-flex items-center gap-1 text-sm font-bold text-accent">
-                          Ver produtos <ArrowRight className="w-4 h-4" />
-                        </span>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 4. PARALLAX — Residências ═══ */}
-      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/Arquitetonico--Casas--Interior--G.jpg">
-        <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={emotionalFade} className="text-2xl md:text-4xl font-extrabold text-primary-foreground max-w-3xl mx-auto leading-tight">
-          Conforto térmico e proteção UV para todos os ambientes da sua residência
-        </motion.p>
-      </ParallaxSection>
-
-      {/* ═══ 5. PRINCIPAIS BENEFÍCIOS ═══ */}
-      <section id="beneficios" className="py-24 bg-carbon-gradient overflow-hidden relative">
-        <div className="absolute inset-0 bg-hero-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Principais Benefícios</motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light max-w-2xl mx-auto">Transforme o conforto e a proteção da sua residência</motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            {benefits.map((b, i) => (
-              <motion.div key={i} variants={fadeInUp}>
-                <Card className="glass-card rounded-2xl h-full">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                      <b.icon className="w-6 h-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-extrabold text-primary-foreground mb-1">{b.title}</h3>
-                      <p className="text-sm text-primary-foreground/60 font-light leading-relaxed">{b.desc}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 6. CTA INTERMEDIÁRIO ═══ */}
-      <section className="py-16 bg-carbon-gradient overflow-hidden relative">
-        <div className="absolute inset-0 bg-diagonal-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div className="text-center max-w-xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={emotionalFade} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-4">
-              Transforme sua residência. Fale com um especialista.
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              A INSULFILM™ resolve esse paradoxo sem obras, sem perda de luminosidade e sem alterar a fachada — com películas técnicas para vidros residenciais que trabalham silenciosamente, todos os dias.
             </motion.p>
-            <motion.p variants={emotionalFade} className="text-primary-foreground/60 font-light mb-6">
-              Conforto térmico, economia de energia e proteção para quem você ama — tudo começa com uma consulta gratuita.
+            <motion.p variants={fadeInUp} className="text-sm text-muted-foreground/80 font-semibold italic">
+              Muitas pessoas utilizam o termo "insulfilm" para se referir a películas para vidro. INSULFILM™ é marca registrada, com titularidade exclusiva. O uso da marca por terceiros não é autorizado.
             </motion.p>
-            <motion.div variants={scaleIn}>
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base px-8 py-5 rounded-xl shadow-premium hover:shadow-premium-lg transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre as películas arquitetônicas INSULFILM para minha residência.')}`} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5" />
-                  Falar com Especialista
-                </a>
-              </Button>
-            </motion.div>
+            <motion.div variants={scaleIn} className="flex justify-center mt-8"><div className="separator-accent" /></motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ 7. NOSSOS DIFERENCIAIS ═══ */}
-      <section id="diferenciais" className="py-24 bg-background overflow-hidden">
+      {/* ── BANNER 1: SOLAR RESIDENCIAL ── */}
+      <ProductBanner
+        title="Películas Solares para Residências"
+        description="O ar-condicionado nunca descansa. O cômodo com vidro amplo é o primeiro a esquentar e o último a resfriar. Com películas solares INSULFILM™, o calor é bloqueado antes de entrar — e a conta de energia sente a diferença."
+        buttonText="EXPLORE"
+        buttonIcon={Sun}
+        link="/arquitetonico/solar"
+        alignment="right"
+        cardVariant="blue"
+      />
+
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nossos Diferenciais</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">Do diagnóstico à instalação, cada etapa é pensada para entregar o melhor resultado</motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
-            {differentials.map((diff, i) => (
-              <motion.div key={i} variants={i === 0 ? fadeInLeft : i === 2 ? fadeInRight : fadeInUp}>
-                <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-accent/30">
-                    <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4">
-                        <diff.icon className="w-6 h-6 text-accent" />
-                      </div>
-                      <h3 className="text-lg font-extrabold text-foreground mb-4">{diff.title}</h3>
-                      <ul className="space-y-3">
-                        {diff.items.map((item, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground font-light">
-                            <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 8. FAMÍLIAS DE PRODUTOS ═══ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden relative">
-        <div className="absolute inset-0 bg-hero-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Famílias de Produtos</motion.h2>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeInLeft}>
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                <Card className="glass-card rounded-2xl h-full">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
-                      <Layers className="w-8 h-8 text-accent" />
-                    </div>
-                    <h3 className="text-xl font-extrabold text-primary-foreground mb-3">Performance</h3>
-                    <p className="text-primary-foreground/60 font-light leading-relaxed">
-                      Películas eficientes e econômicas. Excelente custo-benefício com desempenho comprovado para projetos residenciais.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-            <motion.div variants={fadeInRight}>
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                <Card className="glass-card rounded-2xl h-full border-2 border-accent/30">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
-                      <Star className="w-8 h-8 text-accent" />
-                    </div>
-                    <h3 className="text-xl font-extrabold text-primary-foreground mb-3">Premium</h3>
-                    <p className="text-primary-foreground/60 font-light leading-relaxed">
-                      Máximo desempenho e maior durabilidade. Tecnologia avançada para projetos que exigem o melhor em conforto e proteção.
-                    </p>
-                    <Badge className="mt-4 bg-accent/20 text-accent border-accent/30 text-xs">Recomendado</Badge>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 9. GARANTIA CERTIFICADA ═══ */}
-      <section className="py-24 bg-background overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div className="max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={emotionalFade}>
-            <Card className="rounded-2xl border-2 border-accent/20 shadow-premium-lg overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(19 100% 56% / 0.03), hsl(224 100% 19% / 0.03))' }}>
-              <CardContent className="p-8 md:p-12">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Award className="w-10 h-10 text-accent" />
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-extrabold text-foreground mb-3">Garantia Certificada</h3>
-                    <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                      Cada projeto recebe um certificado individual com garantia de lastro industrial. Cobertura para o produto e para o serviço de instalação.
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      {[
-                        { icon: FileText, label: 'Certificado individual' },
-                        { icon: Shield, label: 'Garantia do produto' },
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm text-accent font-bold">
-                          <item.icon className="w-4 h-4" />
-                          {item.label}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══ 9.5. CLIENTES QUE CONFIAM ═══ */}
-      <section className="py-20 bg-background overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
-              Clientes que confiam na INSULFILM™
+          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+              O calor entra pelo vidro. A solução também.
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light mb-6">
-              Grandes projetos em todo o Brasil
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              Cada fachada envidraçada sem proteção é uma fonte de ganho de calor direto. No verão, o cômodo que deveria ser o mais agradável da casa se torna o mais sufocante. As películas solares INSULFILM™ bloqueiam os raios infravermelhos antes que atravessem o vidro — com opções que vão de 45% a 93% de rejeição, sem escurecer o ambiente e sem alterar a aparência da fachada.
             </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mb-8"><div className="separator-accent" /></motion.div>
+            <motion.div variants={fadeInUp} className="mb-4">
+              <h3 className="text-lg font-extrabold text-foreground mb-1">Para apartamentos com restrição de condomínio:</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">A Clear70 é incolor e de baixíssima refletividade — compatível com as regulamentações mais rígidas de fachada residencial, com 81% de rejeição IR.</p>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="mb-4">
+              <h3 className="text-lg font-extrabold text-foreground mb-1">Para quem quer o máximo com vidro claro:</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">A Orizzonte70 entrega 93% de rejeição de infravermelho com 68% de luz visível — o mais alto índice disponível em película não metalizada, com 10 anos de garantia.</p>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="mb-6">
+              <h3 className="text-lg font-extrabold text-foreground mb-1">Para fachadas com pergolado ou cobertura de vidro:</h3>
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">O Reflesso d'Argento e o Specchiato Bronzo são aprovados para teto de vidro — onde a incidência solar é perpendicular e o calor é máximo.</p>
+            </motion.div>
+            <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mb-4">
+              <strong>Garantia:</strong> de 3 a 10 anos dependendo do produto. Consulte condições com um dos nossos especialistas.
+            </motion.p>
             <motion.div variants={fadeInUp}>
-              <img
-                src="https://d335luupugsy2.cloudfront.net/cms/files/538892/1757442209/$1chrfqbj4ma"
-                alt="Clientes que confiam na INSULFILM"
-                className="mx-auto max-w-4xl w-full rounded-xl shadow-premium"
-                loading="lazy"
-              />
+              <Link to="/arquitetonico/solar" className="text-accent font-bold text-sm flex items-center gap-1 hover:underline">
+                Ver todos os produtos solares <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ 10. PARALLAX — Escritórios/Fachadas ═══ */}
-      <ParallaxSection imageUrl="https://www.insulfilmarquitetonico.com.br/__imagens/solucoes/fachadas-exclusivas.jpg" />
+      {/* ── BANNER 2: PRIVACIDADE ── */}
+      <ProductBanner
+        title="Privacidade sem abrir mão da luz"
+        description="Andar baixo. Vizinhança próxima. Rua movimentada. A sensação de estar sempre exposto afeta o bem-estar dentro de casa — e a solução não pode ser fechar as cortinas para sempre."
+        buttonText="CONHEÇA"
+        buttonIcon={Eye}
+        link="/arquitetonico/solar/grigio-invertito"
+        alignment="left"
+        cardVariant="orange"
+      />
 
-      {/* ═══ 11. PROTEJA SUA CASA E SUA FAMÍLIA ═══ */}
-      <section className="py-24 bg-background overflow-hidden">
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.div variants={emotionalFade} className="flex justify-center mb-4">
-              <Heart className="w-10 h-10 text-accent" />
-            </motion.div>
-            <motion.h2 variants={emotionalFade} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              Proteja Sua Casa e Sua Família
+          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+              Você não deveria precisar fechar as cortinas para ter privacidade.
             </motion.h2>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-          </motion.div>
-
-          <motion.div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeInLeft}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-premium-lg">
-                <img
-                  src="https://www.insulfilmarquitetonico.com.br/__imagens/Arquitetonico--Casas--Interior--G.jpg"
-                  alt="Interior de residência com películas arquitetônicas INSULFILM"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInRight} className="space-y-6">
-              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Shield className="w-8 h-8 text-accent shrink-0 mt-1" />
-                    <div>
-                      <p className="text-foreground font-medium leading-relaxed mb-3">
-                        Crianças brincando perto de janelas, móveis expostos ao sol intenso, pele vulnerável à radiação UV dentro de casa. Sua família merece um ambiente seguro e confortável.
-                      </p>
-                      <p className="text-muted-foreground font-light text-sm leading-relaxed">
-                        As películas INSULFILM bloqueiam até 99% dos raios UV, reduzem o calor em até 80% e protegem contra estilhaços em caso de quebra acidental do vidro.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-premium-hover rounded-2xl border-l-4 border-l-accent/50">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Sun className="w-8 h-8 text-accent shrink-0 mt-1" />
-                    <p className="text-muted-foreground font-light leading-relaxed">
-                      Móveis, pisos de madeira, cortinas e obras de arte são protegidos contra desbotamento e envelhecimento precoce. Sua casa mantém a beleza por muito mais tempo.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              A Grigio Invertito cria uma barreira visual externa durante o dia — quando a luminosidade de fora é maior do que a de dentro. Você enxerga a rua. A rua não enxerga a sua sala.
+            </motion.p>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              Para projetos que valorizam estética preta contemporânea, o Petrolio entrega tom preto sofisticado sem efeito espelhado com tecnologia híbrida — durabilidade superior às películas tingidas convencionais.
+            </motion.p>
+            <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mb-4">
+              <strong>Garantia:</strong> de 3 anos dependendo do produto. Consulte condições com um dos nossos especialistas.
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link to="/arquitetonico/solar" className="text-accent font-bold text-sm flex items-center gap-1 hover:underline">
+                Ver opções de privacidade <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ 12. CTA FINAL ═══ */}
-      <section className="py-24 bg-carbon-gradient overflow-hidden relative">
-        <div className="absolute inset-0 bg-hero-texture" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Faça Seu Orçamento Agora</motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">
-              Conforto, economia e proteção para sua família. Fale com um especialista e transforme sua residência.
+      {/* ── BANNER 3: PROTEÇÃO UV ── */}
+      <ProductBanner
+        title="O que está dentro também precisa de proteção"
+        description="A radiação UV não aquece e não aparece. Mas desbota o sofá, degrada o couro, amarela as cortinas e acumula dano na pele dos moradores sem que ninguém perceba — até ver o resultado depois de anos."
+        buttonText="SAIBA MAIS"
+        buttonIcon={Sun}
+        link="/arquitetonico/solar/ultravioletti90"
+        alignment="right"
+        cardVariant="blue"
+      />
+
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+              O desgaste UV é acumulativo. E silencioso.
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              Sofás, tapetes, pisos de madeira, obras de arte, cortinas — tudo isso tem um inimigo invisível que entra pelos vidros mesmo nos dias nublados: a radiação ultravioleta. Com 99% de bloqueio UV em todas as linhas INSULFILM™, o interior da residência fica protegido da principal causa de desbotamento precoce — sem alterar a luminosidade do ambiente.
             </motion.p>
-            <motion.div variants={scaleIn}>
-              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de fazer um orçamento de películas INSULFILM para minha residência.')}`} target="_blank" rel="noopener noreferrer">
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              A Ultravioletti90 é totalmente incolor — 88% de transmissão de luz, aparência de vidro sem película. A proteção que ninguém vê.
+            </motion.p>
+            <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mb-4">
+              <strong>Garantia:</strong> de 3 a 10 anos dependendo do produto. Consulte condições com um dos nossos especialistas.
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link to="/arquitetonico/solar" className="text-accent font-bold text-sm flex items-center gap-1 hover:underline">
+                Ver opções de proteção UV <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── BANNER 4: PHANTOM SPF ── */}
+      <ProductBanner
+        title="INSULFILM™ Phantom SPF — o projeto que custou caro merece durar"
+        description="O mármore da bancada. O lacado matte do armário. A madeira polida do piso. Cada um desses acabamentos tem um custo real — e o uso diário começa a cobrar silenciosamente desde o primeiro dia."
+        buttonText="SAIBA MAIS"
+        buttonIcon={Layers}
+        link="/phantom-arquitetonico"
+        alignment="left"
+        cardVariant="gray"
+      />
+
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
+              Preservar é sempre mais inteligente do que restaurar.
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
+              O INSULFILM™ Phantom SPF cria uma camada de proteção invisível sobre superfícies de alto padrão — sem alterar visual, toque ou acabamento. <strong>Phantom Gloss</strong> para superfícies brilhosas. <strong>Phantom Matte</strong> para superfícies fosco. <strong>Garantia: 5 anos.</strong> Consulte condições com um dos nossos especialistas.
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Link to="/phantom-arquitetonico" className="text-accent font-bold text-sm flex items-center gap-1 hover:underline">
+                Ver linha Phantom SPF <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── CTA FINAL ── */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-2xl mx-auto">
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+              O conforto que a sua casa deveria ter — desde o primeiro dia.
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-10 leading-relaxed">
+              Atendimento nacional. Orientação especializada antes da aplicação. Garantia documentada depois.
+            </motion.p>
+            <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold text-lg px-12 py-7 rounded-xl shadow-premium-lg hover:shadow-premium transition-all uppercase tracking-wide">
+                <Link to="/contato">
                   <MessageCircle className="w-5 h-5" />
-                  Falar com Especialista
-                </a>
+                  Falar com um Especialista
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="font-bold text-lg px-10 py-7 rounded-xl">
+                <Link to="/rede/lojas-oficiais">
+                  <MapPin className="w-5 h-5" />
+                  Encontrar Loja Oficial
+                </Link>
               </Button>
             </motion.div>
-            <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/40 mt-6 font-light">Atendimento via WhatsApp. Resposta rápida de segunda a sábado.</motion.p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── FOOTER DISCLAIMER ── */}
+      <section className="py-6 bg-muted/20 border-t border-border/20">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-xs text-muted-foreground/60 font-light">
+            INSULFILM™ é marca registrada, protegida pela Lei de Propriedade Industrial (Lei nº 9.279/96). O uso do termo "insulfilm" por terceiros não possui autorização da titular.
+          </p>
         </div>
       </section>
     </main>
-    </>
-  );
-};
+  </>
+);
 
 export default Residencial;
