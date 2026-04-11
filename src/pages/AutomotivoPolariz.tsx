@@ -1,25 +1,17 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
-import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Sun, Zap, Layers, Shield, CheckCircle, MessageCircle } from 'lucide-react';
+import { Zap, Layers, Shield, Sun, CheckCircle, MessageCircle, Sparkles } from 'lucide-react';
 import productImage from '@/assets/auto-solar-polariz.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
-};
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } },
 };
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.85 },
@@ -27,17 +19,32 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const WHATSAPP_NUMBER = '5511976136911';
-
 const specs = [
-  { icon: Zap, label: 'Tecnologia', value: 'Híbrida Metal-Cerâmica' },
-  { icon: Layers, label: 'Série', value: 'Ultra Definition' },
+  { icon: Zap, label: 'Construção', value: 'Híbrida Metal-Cerâmica' },
+  { icon: Layers, label: 'Tecnologia Ótica', value: 'Ultra Definition' },
   { icon: Sun, label: 'Rejeição de IR', value: 'Até 75%' },
   { icon: Shield, label: 'Garantia', value: '10 anos' },
 ];
 
-const AutomotivoPolariz = () => {
-  const { t } = useTranslation();
+const techTable = [
+  { version: 'Polariz Ultra 15', privacy: 'Médio', light: '15%', ir: '75%', uv: '>99%', energy: '65%' },
+  { version: 'Polariz Ultra 05', privacy: 'Alto', light: '05%', ir: '75%', uv: '>99%', energy: '70%' },
+];
+
+const hybridBenefits = [
+  { title: 'Metal precioso', text: 'Entrega o visual polarizado exclusivo e amplifica a capacidade de rejeição energética total.' },
+  { title: 'Nano cerâmica', text: 'Garante estabilidade de cor, preservação dos sinais eletrônicos e durabilidade estrutural superior.' },
+  { title: 'O resultado', text: 'O produto de maior desempenho absoluto da linha INSULFILM™ — com estética que nenhuma outra tecnologia replica.' },
+];
+
+const targetProfiles = [
+  'Veículos de alto valor que merecem o melhor disponível',
+  'Clientes que já conhecem a linha Solar Premium e buscam o patamar superior',
+  'Perfis que valorizam estética diferenciada combinada a desempenho máximo',
+  'Quem compreende que o mais alto investimento em película representa décadas de proteção',
+];
+
+const AutomotivoPolarizUltra = () => {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -49,12 +56,11 @@ const AutomotivoPolariz = () => {
     "@type": "Product",
     "name": "INSULFILM™ Polariz Ultra",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Proteção solar com visual polarizado elegante. Híbrida metal-cerâmica com 75% de rejeição de IR e 10 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
-    "url": "https://www.insulfilm.com.br/automotivo/solar/polariz-ultra",
+    "description": "O mais alto nível em proteção solar INSULFILM™. Construção híbrida exclusiva — metal precioso e cerâmica em nano partículas.",
+    "url": "https://insulfilm.com.br/automotivo/solar/polariz-ultra",
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Híbrida Metal-Cerâmica" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho (IR)", "value": "Até 75%" },
+      { "@type": "PropertyValue", "name": "Construção", "value": "Ultra Performance Hybrid Metal-Ceramic" },
+      { "@type": "PropertyValue", "name": "Rejeição IR", "value": "Até 75%" },
       { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
     ]
   };
@@ -62,14 +68,13 @@ const AutomotivoPolariz = () => {
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Polariz Ultra | Película Automotiva Híbrida</title>
-        <meta name="description" content="Proteção solar com visual polarizado elegante. Híbrida metal-cerâmica com 75% de rejeição de IR e 10 anos de garantia." />
-        <meta property="og:title" content="INSULFILM™ Polariz Ultra | Película Automotiva Híbrida" />
-        <meta property="og:description" content="Proteção solar com visual polarizado elegante. Híbrida metal-cerâmica com 75% de rejeição de IR e 10 anos de garantia." />
+        <title>INSULFILM™ Polariz Ultra | Topo da Linha Solar Premium</title>
+        <meta name="description" content="A INSULFILM™ Polariz Ultra é construída com tecnologia híbrida exclusiva — metal precioso e cerâmica — para o máximo absoluto em rejeição térmica e estética." />
+        <meta property="og:title" content="INSULFILM™ Polariz Ultra | Topo da Linha Solar Premium" />
+        <meta property="og:description" content="O mais alto nível em proteção solar disponível na linha INSULFILM™." />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
-        <meta property="og:url" content="https://www.insulfilm.com.br/automotivo/solar/polariz-ultra" />
-        <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/solar/polariz-ultra" />
+        <meta property="og:url" content="https://insulfilm.com.br/automotivo/solar/polariz-ultra" />
+        <link rel="canonical" href="https://insulfilm.com.br/automotivo/solar/polariz-ultra" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
@@ -79,19 +84,17 @@ const AutomotivoPolariz = () => {
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
                 <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                  <Zap className="w-3.5 h-3.5 mr-2" />
-                  Híbrida Metal-Cerâmica
+                  <Sparkles className="w-3.5 h-3.5 mr-2" />
+                  Solar Premium — Topo de Linha
                 </Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                INSULFILM™ Polariz Ultra
+                O mais alto nível em proteção solar disponível na linha INSULFILM™.
               </motion.h1>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
-                {t('automotivePage.polarizUltra.desc')}
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
+                A INSULFILM™ Polariz Ultra é construída com tecnologia híbrida exclusiva — metal precioso e cerâmica em nano partículas — para quem exige o máximo absoluto em rejeição térmica, estética e desempenho.
               </motion.p>
-              <motion.div variants={scaleIn} className="flex justify-center mt-6">
-                <div className="separator-accent" />
-              </motion.div>
+              <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
@@ -101,7 +104,7 @@ const AutomotivoPolariz = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Polariz Ultra" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Polariz Ultra — Híbrida Metal-Cerâmica" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -132,18 +135,68 @@ const AutomotivoPolariz = () => {
           </div>
         </section>
 
-        <ParallaxBreak minHeight="25vh" stats={[{ value: '5ª', label: 'Geração' }, { value: 'Vitalícia', label: 'Garantia' }]} />
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
+              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Ficha Técnica</motion.h3>
+              <motion.div variants={fadeInUp} className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="text-left py-3 px-4 font-bold text-foreground">Versão</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">Privacidade</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">Luz Visível</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">IR Rejeitado</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">UV</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">Energia Solar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {techTable.map((row) => (
+                      <tr key={row.version} className="border-b border-border/50">
+                        <td className="py-3 px-4 font-semibold text-foreground">{row.version}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.privacy}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.light}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.ir}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.uv}</td>
+                        <td className="text-center py-3 px-4 text-muted-foreground">{row.energy}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </motion.div>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-xs mt-4 text-center">Visual: Polarizado elegante, tom grafite, baixa refletividade, não opaco | Aplicabilidade: Vidros laterais e traseiro</motion.p>
+            </motion.div>
+          </div>
+        </section>
 
+        <ParallaxBreak minHeight="25vh" stats={[
+          { value: '75%', label: 'Rejeição IR' },
+          { value: '70%', label: 'Energia Solar' },
+          { value: '10', label: 'Anos Garantia' },
+        ]} />
+
+        {/* ── POSICIONAMENTO ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Visual Polarizado com Máxima Proteção</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Construção híbrida exclusiva. Uma experiência inigualável.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
+                A INSULFILM™ Polariz Ultra não é apenas o topo da linha Solar Premium. É uma categoria à parte dentro do portfólio INSULFILM™.
+              </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                A Polariz Ultra combina a sofisticação do visual polarizado com a eficiência da tecnologia híbrida metal-cerâmica. O resultado é uma película que oferece excelente rejeição de calor e um acabamento visual único.
+                Sua construção híbrida — metal precioso combinado a cerâmica em nano partículas — entrega o que nenhuma outra tecnologia alcança simultaneamente: máxima rejeição térmica, nitidez ótica de ultra definição e estética polarizada elegante em tom grafite, não opaco.
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
-                {['Tecnologia híbrida metal-cerâmica exclusiva', 'Rejeição de até 75% dos raios infravermelhos', 'Visual polarizado elegante e sofisticado', 'Garantia de 10 anos contra desbotamento'].map((text, i) => (
+                {[
+                  'Rejeição de calor: máxima — perceptível na pele',
+                  'Privacidade externa: visual polarizado de alta elegância',
+                  'Dirigibilidade interna: claro por dentro — nitidez Ultra Definition',
+                  'Conforto visual: eliminação total do ofuscamento',
+                  'Construção híbrida exclusiva: metal precioso + nano cerâmica',
+                  'Não interfere em sinais de celulares e demais eletrônicos',
+                ].map((text, i) => (
                   <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                     <span className="text-primary-foreground font-medium">{text}</span>
@@ -154,16 +207,53 @@ const AutomotivoPolariz = () => {
           </div>
         </section>
 
+        {/* ── DIFERENÇA HÍBRIDA ── */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
+              <motion.h3 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-10 text-center">A diferença da construção híbrida</motion.h3>
+              <motion.div variants={stagger} className="grid md:grid-cols-3 gap-8">
+                {hybridBenefits.map((b) => (
+                  <motion.div key={b.title} variants={fadeInUp} className="text-center">
+                    <h4 className="text-lg font-bold text-foreground mb-3">{b.title}</h4>
+                    <p className="text-muted-foreground text-sm font-light leading-relaxed">{b.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── PARA QUEM É ── */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto">
+              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Para quem é a Polariz Ultra</motion.h3>
+              <motion.ul className="space-y-4" variants={stagger}>
+                {targetProfiles.map((text, i) => (
+                  <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <span className="text-foreground font-medium">{text}</span>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── CTA FINAL ── */}
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Eleve o padrão do seu veículo</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">Solicite um orçamento e conheça a Polariz Ultra de perto.</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">O padrão máximo em proteção solar.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
+                Para quem não encontra o suficiente em nenhuma outra opção. Acesso por consulta especializada.
+              </motion.p>
               <motion.div variants={scaleIn}>
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a película INSULFILM™ Polariz Ultra.')}`} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5" />Solicitar Orçamento
-                  </a>
+                  <Link to="/contato">
+                    <MessageCircle className="w-5 h-5" />Agendar Consulta com Especialista
+                  </Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -174,4 +264,4 @@ const AutomotivoPolariz = () => {
   );
 };
 
-export default AutomotivoPolariz;
+export default AutomotivoPolarizUltra;
