@@ -75,8 +75,7 @@ const categories: Category[] = [
     imageSrc: arqSolarFume,
     description: 'Estética preta sem refletividade intensa ou privacidade invertida com visual fumê elegante — para quem busca controle de claridade e redução de ofuscamento sem o efeito espelhado.',
     products: [
-      { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' },
-      { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }
+      { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' }
     ]
   }
 ];
