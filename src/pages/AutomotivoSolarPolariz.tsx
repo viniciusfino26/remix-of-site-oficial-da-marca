@@ -23,7 +23,7 @@ const specs = [
   { icon: Zap, label: 'Construção', value: 'Metalizada' },
   { icon: Layers, label: 'Tecnologia Ótica', value: 'Ultra Definition' },
   { icon: Sun, label: 'Rejeição de IR', value: 'Até 75%' },
-  { icon: Shield, label: 'Garantia', value: '5+5 anos' },
+  { icon: Shield, label: 'Garantia', value: '5 anos' },
 ];
 
 const techTable = [
@@ -43,12 +43,12 @@ const AutomotivoSolarPolariz = () => {
     "@type": "Product",
     "name": "INSULFILM™ Polariz",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película metalizada Solar Premium com rejeição de IR de 75%, estética polarizada e garantia estendida de até 10 anos.",
+    "description": "Película metalizada Solar Premium com rejeição de IR de 75%, estética polarizada e garantia de 5 anos.",
     "url": "https://insulfilm.com.br/automotivo/solar/polariz",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Construção", "value": "Metalizada" },
       { "@type": "PropertyValue", "name": "Rejeição IR", "value": "Até 75%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "5+5 anos (desbotamento)" }
+      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
     ]
   };
 
@@ -181,7 +181,7 @@ const AutomotivoSolarPolariz = () => {
                   'Privacidade externa: mais escuro por fora',
                   'Nitidez ótica aprimorada: tecnologia Ultra Definition',
                   'Proteção UV >99% — eficácia contra câncer de pele',
-                  'Garantia estendida de até 10 anos contra desbotamento',
+                  'Garantia de 5 anos',
                 ].map((text, i) => (
                   <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
@@ -196,12 +196,9 @@ const AutomotivoSolarPolariz = () => {
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto text-center">
-              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-4">Garantia de 5+5 Anos</motion.h3>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-4">
-                5 anos: Falha adesiva | Desbotamento | Mudança de cor | Efeito neblina
-              </motion.p>
+              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-4">Garantia de 5 Anos</motion.h3>
               <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">
-                + Garantia extra de 5 anos contra desbotamento — totalizando 10 anos de proteção do investimento.
+                Falha adesiva | Desbotamento | Mudança de cor | Efeito neblina
               </motion.p>
             </motion.div>
           </div>
