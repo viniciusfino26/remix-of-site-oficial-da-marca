@@ -1,77 +1,35 @@
 
 
-## Plano: Renomear "Unidade/Loja" para "Centro Autorizado" + remover serviços dos cards
+## Plano: Reescrita da página ArqHubSolar com preservação das imagens atuais
 
-### Duas alterações principais
+Arquivo: `src/pages/ArqHubSolar.tsx`
 
-**1. Substituir toda referência a "loja(s)" e "unidade(s)" por "Centro(s) Autorizado(s)" em todo o site**
+As 4 imagens de categoria que já estão no projeto serão mantidas exatamente como estão:
+- `arq-solar-alta-transparencia.png`
+- `arq-solar-estetica-neutra.png`
+- `arq-solar-fume-invertida.png`
+- `arq-solar-privacidade-espelhados.png`
 
-**2. Remover os badges de produtos/serviços dos cards na página /lojas** (a linha `services` e o bloco que renderiza os badges "Películas Automotivas", "PPF Phantom", etc.)
+### Alterações (somente texto e estrutura):
 
-### Arquivos a alterar
+1. **Hero** — Novos textos conforme o prompt aprovado:
+   - Badge: "PELÍCULAS SOLARES ARQUITETÔNICAS — INSULFILM™"
+   - H1: "O vidro que você tem não é o problema. O calor que ele deixa entrar, é."
+   - Subtítulo atualizado
+   - CTA: "Falar com um Especialista" → link interno `/contato`
 
-#### `src/pages/Lojas.tsx` (maior volume)
-- Nomes das stores: "Unidade Av. Paulista" → "Centro Autorizado Av. Paulista" (4 stores)
-- Comentário "DADOS DAS LOJAS" → "DADOS DOS CENTROS AUTORIZADOS"
-- Hero: "Lojas Oficiais" → "Centros Autorizados"
-- Subtítulo: "4 unidades em São Paulo" → "4 Centros Autorizados em São Paulo"
-- CEP search: "Encontre a loja mais próxima" → "Encontre o Centro Autorizado mais próximo"
-- Resultado CEP: "lojas mais próximas" → "Centros Autorizados mais próximos"
-- "Ver todas as unidades" → "Ver todos os Centros Autorizados"
-- ParallaxBreak: "Unidades em SP" → "Centros Autorizados"
-- CTA: "Quer ter a sua própria unidade?" mantém sentido ou → "Quer ter o seu próprio Centro Autorizado?"
-- **Remover** o campo `services` dos 4 objetos STORES
-- **Remover** o bloco de renderização dos services badges (linhas 411-418)
+2. **Seção de categorias** — Novos títulos e descrições:
+   - H2: "Cada fachada tem uma necessidade. Cada necessidade tem uma película."
+   - Descrições atualizadas para cada categoria
+   - Adicionar `INSULFILM™ Grigio Invertito` à categoria "Não Refletivas"
 
-#### `src/pages/Vendas.tsx`
-- "Lojas Físicas" → "Centros Autorizados"
-- "Encontre a loja INSULFILM™ mais próxima" → "Encontre o Centro Autorizado INSULFILM™ mais próximo"
-- "Ver Lojas" → "Ver Centros Autorizados"
+3. **Remover** seções ParallaxBreak e "Tecnologia e Confiança"
 
-#### `src/pages/Parceiro.tsx`
-- ParallaxBreak: "Lojas em SP" → "Centros Autorizados"
+4. **Adicionar** bloco semântico de marca (disclaimer INSULFILM™)
 
-#### `src/pages/FAQ.tsx`
-- "loja onde fez a aplicação" → "centro autorizado onde fez a aplicação"
-- "loja INSULFILM™" → "Centro Autorizado INSULFILM™"
+5. **CTA final** — Links internos para `/contato` e `/rede/lojas-oficiais`
 
-#### `src/pages/PhantomArquitetonico.tsx`
-- "Encontre uma Loja" → "Encontre um Centro Autorizado"
-- "lojas oficiais" → "Centros Autorizados"
-- "Ver Lojas Próximas" → "Ver Centros Autorizados"
+6. **SEO** — Title e description atualizados
 
-#### `src/pages/ArqHubSeguranca.tsx` e `src/pages/ArqHubDecorativo.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
-
-#### `src/pages/AutomotivoHubSeguranca.tsx`
-- "Lojas Oficiais" → "Centros Autorizados"
-
-#### `src/pages/Garantia.tsx`
-- "loja aplicadora" → "centro autorizado aplicador"
-
-#### `src/components/SchemaOrg.tsx`
-- "Loja Oficial INSULFILM™" → "Centro Autorizado INSULFILM™" nas descriptions
-- "Lojas Oficiais" no breadcrumb → "Centros Autorizados"
-- "Onde tem loja INSULFILM" → "Onde tem Centro Autorizado INSULFILM"
-- Comentário "lojas" → "centros autorizados"
-
-#### `src/i18n/locales/pt.json`
-- "Lojas em SP" → "Centros Autorizados"
-- "loja oficial" → "centro autorizado oficial" (timeline)
-- "lojas autorizadas" → "centros autorizados"
-- storeLocator subtítulo: "Lojas oficiais" → "Centros Autorizados"
-- "Lojas Oficiais" → "Centros Autorizados"
-- "Loja Oficial Arquitetônico" → "Centro Autorizado Arquitetônico"
-
-#### `src/i18n/locales/en.json`
-- "Stores in SP" → "Authorized Centers"
-- "Official INSULFILM™ Store" → "Official INSULFILM™ Authorized Center"
-- "authorized stores" → "authorized centers"
-
-#### `src/i18n/locales/es.json`
-- Equivalentes em espanhol
-
-#### `src/components/Footer.tsx` — sem mudança de texto (usa i18n key `nav.storeLocator` que já diz "Onde Encontrar")
-
-#### Nota: A rota `/lojas` permanece inalterada (URL não muda)
+Nenhuma imagem será alterada ou substituída.
 
