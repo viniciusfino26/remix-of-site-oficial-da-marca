@@ -3,7 +3,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Zap, Layers, Shield, Sun, CheckCircle, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
-import productImage from '@/assets/auto-solar-matrix.png';
+import productImage from '@/assets/auto-solar-polariz.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -20,35 +20,18 @@ const scaleIn = {
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const specs = [
-  { icon: Zap, label: 'Construção', value: 'Nano Cerâmica' },
+  { icon: Zap, label: 'Construção', value: 'Metalizada' },
   { icon: Layers, label: 'Tecnologia Ótica', value: 'Ultra Definition' },
   { icon: Sun, label: 'Rejeição de IR', value: 'Até 75%' },
-  { icon: Shield, label: 'Garantia', value: '10 anos' },
+  { icon: Shield, label: 'Garantia', value: '5+5 anos' },
 ];
 
 const techTable = [
-  { version: 'Matrix 70', privacy: 'Baixo', light: '70%', ir: '75%', uv: '>99%', energy: '44%' },
-  { version: 'Matrix 35', privacy: 'Médio', light: '35%', ir: '67%', uv: '>99%', energy: '55%' },
-  { version: 'Matrix 15', privacy: 'Médio Alto', light: '15%', ir: '67%', uv: '>99%', energy: '60%' },
-  { version: 'Matrix 05', privacy: 'Alto', light: '05%', ir: '67%', uv: '>99%', energy: '62%' },
+  { version: 'Polariz 15', privacy: 'Médio', light: '15%', ir: '75%', uv: '>99%', energy: '65%' },
+  { version: 'Polariz 05', privacy: 'Alto', light: '05%', ir: '75%', uv: '>99%', energy: '70%' },
 ];
 
-const compareTable = [
-  { attr: 'Construção', eclipse: 'Carbono', matrix: 'Nano Cerâmica' },
-  { attr: 'Rejeição IR', eclipse: '30%', matrix: '67–75%' },
-  { attr: 'Energia solar rejeitada', eclipse: '45%', matrix: '62%' },
-  { attr: 'Proteção UV', eclipse: '99%', matrix: '>99%' },
-  { attr: 'Tecnologia ótica', eclipse: 'High Definition', matrix: 'Ultra Definition' },
-  { attr: 'Garantia', eclipse: '5 anos', matrix: '10 anos' },
-];
-
-const ceramicBenefits = [
-  { title: 'Estabilidade de cor superior', text: 'Nano cerâmica não desbota, não altera tonalidade — mantém aparência e desempenho por toda a vida útil garantida.' },
-  { title: 'Rejeição de IR sem metalização', text: 'Bloqueia até 75% do infravermelho sem qualquer componente metálico — eliminando o risco de interferência em eletrônicos embarcados.' },
-  { title: 'Garantia de 10 anos', text: 'A robustez da construção cerâmica sustenta a maior cobertura de garantia da linha Solar Premium não metalizada.' },
-];
-
-const AutomotivoMatrix = () => {
+const AutomotivoPolariз = () => {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -58,27 +41,27 @@ const AutomotivoMatrix = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "INSULFILM™ Matrix",
+    "name": "INSULFILM™ Polariz",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Tecnologia cerâmica de última geração. Até 75% de rejeição de IR, nitidez Ultra Definition e garantia de 10 anos.",
-    "url": "https://insulfilm.com.br/automotivo/solar/matrix",
+    "description": "Película metalizada Solar Premium com rejeição de IR de 75%, estética polarizada e garantia estendida de até 10 anos.",
+    "url": "https://insulfilm.com.br/automotivo/solar/polariz",
     "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Construção", "value": "High Performance Ceramic Color Stable" },
+      { "@type": "PropertyValue", "name": "Construção", "value": "Metalizada" },
       { "@type": "PropertyValue", "name": "Rejeição IR", "value": "Até 75%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
+      { "@type": "PropertyValue", "name": "Garantia", "value": "5+5 anos (desbotamento)" }
     ]
   };
 
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Matrix | Película Nano Cerâmica Solar Premium</title>
-        <meta name="description" content="A INSULFILM™ Matrix é construída em nano partículas de cerâmica verdadeira — até 75% de rejeição de IR, nitidez Ultra Definition e garantia de 10 anos." />
-        <meta property="og:title" content="INSULFILM™ Matrix | Película Nano Cerâmica Solar Premium" />
-        <meta property="og:description" content="Tecnologia cerâmica de última geração. Máxima rejeição com visual não refletivo." />
+        <title>INSULFILM™ Polariz | Película Metalizada Solar Premium</title>
+        <meta name="description" content="A INSULFILM™ Polariz é a película metalizada que inaugura a linha Solar Premium — rejeição de IR de 75%, estética polarizada e garantia estendida de até 10 anos." />
+        <meta property="og:title" content="INSULFILM™ Polariz | Película Metalizada Solar Premium" />
+        <meta property="og:description" content="Estética polarizada. Rejeição térmica de 62%. O ponto de entrada da linha Solar Premium." />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://insulfilm.com.br/automotivo/solar/matrix" />
-        <link rel="canonical" href="https://insulfilm.com.br/automotivo/solar/matrix" />
+        <meta property="og:url" content="https://insulfilm.com.br/automotivo/solar/polariz" />
+        <link rel="canonical" href="https://insulfilm.com.br/automotivo/solar/polariz" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
@@ -93,10 +76,10 @@ const AutomotivoMatrix = () => {
                 </Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                Tecnologia cerâmica de última geração. Máxima rejeição com visual não refletivo.
+                Estética polarizada. Rejeição térmica de 62%. O ponto de entrada da linha Solar Premium.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Matrix é construída em nano partículas de cerâmica verdadeira — com estabilidade de cor superior, alta rejeição de calor e nitidez ótica Ultra Definition em tom preto não refletivo.
+                A INSULFILM™ Polariz é a película metalizada que inaugura a linha de maior desempenho — com redução de calor superior, estética polarizada elegante e nitidez ótica aprimorada.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -108,7 +91,7 @@ const AutomotivoMatrix = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Matrix — Nano Cerâmica" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Polariz — Metalizada Premium" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -150,7 +133,7 @@ const AutomotivoMatrix = () => {
                       <th className="text-left py-3 px-4 font-bold text-foreground">Versão</th>
                       <th className="text-center py-3 px-4 font-bold text-foreground">Privacidade</th>
                       <th className="text-center py-3 px-4 font-bold text-foreground">Luz Visível</th>
-                      <th className="text-center py-3 px-4 font-bold text-foreground">IR Rejeitado</th>
+                      <th className="text-center py-3 px-4 font-bold text-foreground">Infravermelho</th>
                       <th className="text-center py-3 px-4 font-bold text-foreground">UV</th>
                       <th className="text-center py-3 px-4 font-bold text-foreground">Energia Solar</th>
                     </tr>
@@ -169,7 +152,7 @@ const AutomotivoMatrix = () => {
                   </tbody>
                 </table>
               </motion.div>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-xs mt-4 text-center">Aplicabilidade: Vidros laterais, traseiro e para-brisa</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-xs mt-4 text-center">Aplicabilidade: Vidros laterais e traseiro</motion.p>
             </motion.div>
           </div>
         </section>
@@ -177,30 +160,28 @@ const AutomotivoMatrix = () => {
         <ParallaxBreak minHeight="25vh" stats={[
           { value: '75%', label: 'Rejeição IR' },
           { value: '>99%', label: 'Proteção UV' },
-          { value: '10', label: 'Anos Garantia' },
+          { value: '10', label: 'Anos Total' },
         ]} />
 
-        {/* ── POSICIONAMENTO ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Cerâmica verdadeira. Uma categoria à parte.</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Quando a linha convencional não é suficiente.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A INSULFILM™ Matrix não é uma evolução da linha carbono. É uma categoria tecnológica distinta.
+                A INSULFILM™ Polariz foi desenvolvida para quem busca um nível de proteção térmica e estética que a linha carbono não alcança.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                Construída em nano partículas de cerâmica verdadeira, a Matrix entrega o que as películas convencionais não conseguem: máxima rejeição de infravermelho com estabilidade de cor excepcional, visual clássico em tom preto não refletivo e a mais alta nitidez ótica disponível na linha não metalizada.
+                Com redução de calor de até 62% via filtro infravermelho, proteção UV superior a 99% e visual polarizado de alta elegância, a Polariz é o produto para quem compreende que película de alto desempenho é um investimento em qualidade de vida.
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Calor: alta rejeição, perceptível na pele',
-                  'Privacidade externa: escuro por fora',
-                  'Dirigibilidade interna: claro por dentro',
-                  'Conforto visual: elimina o ofuscamento',
-                  'Rejeição de até 75% dos raios infravermelhos (IR)',
-                  'Estabilidade de cor superior — tecnologia cerâmica',
-                  'Não interfere em sinais de celulares e demais eletrônicos',
+                  'Rejeição de calor: máxima — perceptível na pele',
+                  'Redução de calor de até 62% via filtro infravermelho',
+                  'Privacidade externa: mais escuro por fora',
+                  'Nitidez ótica aprimorada: tecnologia Ultra Definition',
+                  'Proteção UV >99% — eficácia contra câncer de pele',
+                  'Garantia estendida de até 10 anos contra desbotamento',
                 ].map((text, i) => (
                   <motion.li key={i} variants={fadeInUp} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
@@ -212,59 +193,26 @@ const AutomotivoMatrix = () => {
           </div>
         </section>
 
-        {/* ── POR QUE CERÂMICA ── */}
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
-              <motion.h3 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground mb-10 text-center">Por que cerâmica faz diferença</motion.h3>
-              <motion.div variants={stagger} className="grid md:grid-cols-3 gap-8">
-                {ceramicBenefits.map((b) => (
-                  <motion.div key={b.title} variants={fadeInUp} className="text-center">
-                    <h4 className="text-lg font-bold text-foreground mb-3">{b.title}</h4>
-                    <p className="text-muted-foreground text-sm font-light leading-relaxed">{b.text}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── COMPARATIVO ── */}
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto">
-              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Comparativo com a Eclipse</motion.h3>
-              <motion.div variants={fadeInUp} className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left py-3 px-4 font-bold text-foreground"></th>
-                      <th className="text-center py-3 px-4 text-muted-foreground">Eclipse</th>
-                      <th className="text-center py-3 px-4 font-bold text-accent">Matrix 05</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {compareTable.map((row) => (
-                      <tr key={row.attr} className="border-b border-border/50">
-                        <td className="py-3 px-4 font-medium text-foreground">{row.attr}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.eclipse}</td>
-                        <td className="text-center py-3 px-4 font-bold text-foreground">{row.matrix}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto text-center">
+              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-4">Garantia de 5+5 Anos</motion.h3>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-4">
+                5 anos: Falha adesiva | Desbotamento | Mudança de cor | Efeito neblina
+              </motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">
+                + Garantia extra de 5 anos contra desbotamento — totalizando 10 anos de proteção do investimento.
+              </motion.p>
             </motion.div>
           </div>
         </section>
 
-        {/* ── CTA FINAL ── */}
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Tecnologia cerâmica de última geração.</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">A entrada na linha de maior desempenho.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                10 anos de garantia e o mais alto padrão de proteção solar com visual não refletivo.
+                Rejeição térmica, estética e cobertura de garantia que a linha convencional não alcança.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
@@ -273,8 +221,8 @@ const AutomotivoMatrix = () => {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="font-bold text-lg px-8 py-6 rounded-xl">
-                  <Link to="/automotivo/solar/polariz-ultra">
-                    Conheça a Polariz Ultra <ArrowRight className="w-4 h-4" />
+                  <Link to="/automotivo/solar/matrix">
+                    Conheça a Matrix <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </motion.div>
@@ -286,4 +234,4 @@ const AutomotivoMatrix = () => {
   );
 };
 
-export default AutomotivoMatrix;
+export default AutomotivoPolariз;
