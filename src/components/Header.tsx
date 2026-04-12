@@ -34,10 +34,13 @@ const Header = () => {
       label: t('nav.brand'),
       icon: Shield,
       items: [
-        { label: t('nav.whoWeAre'), href: '/quem-somos' },
-        { label: t('nav.franchising'), href: '/franquias' },
-        { label: t('nav.careers'), href: '/carreiras' },
-        { label: t('nav.antiPiracy'), href: '/anti-pirataria' },
+        { label: 'Sobre a INSULFILM™', href: '/marca/sobre' },
+        { label: 'O que é INSULFILM', href: '/marca/o-que-e' },
+        { label: 'Marca Registrada', href: '/marca/marca-registrada' },
+        { label: 'Autenticidade e Padrão', href: '/marca/autenticidade' },
+        { label: 'Tecnologia', href: '/marca/tecnologia' },
+        { label: 'Presença da Marca', href: '/marca/presenca' },
+        { label: 'História', href: '/marca/historia' },
       ],
     },
     {
