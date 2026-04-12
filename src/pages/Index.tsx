@@ -286,59 +286,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Simulators */}
-      <section id="simulators" className="py-14 md:py-24 bg-background overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-14"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            variants={stagger}
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-              {t('simulators.title')}
-            </motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light">
-              {t('simulators.subtitle')}
-            </motion.p>
-            <motion.div variants={scaleIn} className="flex justify-center mt-4">
-              <div className="separator-accent" />
-            </motion.div>
-          </motion.div>
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={stagger}
-          >
-            {simulators.map((sim, i) => (
-              <motion.div key={sim.id} variants={i === 0 ? fadeInLeft : i === 2 ? fadeInRight : scaleIn}>
-                <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
-                  <Card id={sim.id} className="bg-gradient-to-br from-card to-muted/50 border-border hover:border-accent/20 transition-all duration-300 h-full rounded-xl shadow-sm hover:shadow-premium">
-                    <CardContent className="p-10 text-center flex flex-col items-center justify-center min-h-[260px]">
-                      <motion.div
-                        className="w-18 h-18 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-5"
-                        whileHover={{ rotate: 12, scale: 1.1 }}
-                        transition={{ type: 'spring', stiffness: 200 }}
-                      >
-                        <sim.icon className="w-9 h-9 text-muted-foreground" />
-                      </motion.div>
-                      <h3 className="text-lg font-extrabold text-foreground mb-2">{sim.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-5 font-light">{sim.desc}</p>
-                      <span className="shimmer text-xs uppercase tracking-widest text-accent font-bold px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20">
-                        {t('simulators.comingSoon')}
-                      </span>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+
     </main>
   );
 };
