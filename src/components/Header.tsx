@@ -236,11 +236,13 @@ const Header = () => {
                     <Menu className="w-5 h-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-card border-border w-80">
-                  <SheetTitle className="text-foreground text-lg font-bold mb-6">
-                    <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(5000%) hue-rotate(220deg)' }} />
-                  </SheetTitle>
-                  <nav className="flex flex-col gap-2">
+                <SheetContent side="right" className="bg-card border-border w-[85vw] max-w-sm p-0 flex flex-col h-full">
+                  <div className="flex-shrink-0 p-4 pb-2 border-b border-border">
+                    <SheetTitle className="text-foreground text-lg font-bold">
+                      <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto brightness-0" style={{ filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) saturate(5000%) hue-rotate(220deg)' }} />
+                    </SheetTitle>
+                  </div>
+                  <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 flex flex-col gap-1.5">
                     {megaMenuItems.map((menu) => (
                       <div key={menu.key}>
                         <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">
@@ -249,14 +251,14 @@ const Header = () => {
                         {renderMobileContent(menu)}
                       </div>
                     ))}
-                    <div className="pt-4 px-3">
-                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
-                        <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                          {t('nav.becomePartner')}
-                        </Button>
-                      </a>
-                    </div>
                   </nav>
+                  <div className="flex-shrink-0 p-4 border-t border-border">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
+                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                        {t('nav.becomePartner')}
+                      </Button>
+                    </a>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
