@@ -13,6 +13,13 @@ import PageNavigation from "./components/PageNavigation";
 
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
+import MarcaSobre from "./pages/MarcaSobre";
+import MarcaOQueE from "./pages/MarcaOQueE";
+import MarcaRegistrada from "./pages/MarcaRegistrada";
+import MarcaAutenticidade from "./pages/MarcaAutenticidade";
+import MarcaTecnologia from "./pages/MarcaTecnologia";
+import MarcaPresenca from "./pages/MarcaPresenca";
+import MarcaHistoria from "./pages/MarcaHistoria";
 import Automotivo from "./pages/Automotivo";
 import Residencial from "./pages/Residencial";
 import Lojas from "./pages/Lojas";
@@ -100,11 +107,18 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* Marca */}
-          <Route path="/quem-somos" element={<QuemSomos />} />
-          <Route path="/institucional" element={<Navigate to="/quem-somos" replace />} />
+          <Route path="/marca/sobre" element={<MarcaSobre />} />
+          <Route path="/marca/o-que-e" element={<MarcaOQueE />} />
+          <Route path="/marca/marca-registrada" element={<MarcaRegistrada />} />
+          <Route path="/marca/autenticidade" element={<MarcaAutenticidade />} />
+          <Route path="/marca/tecnologia" element={<MarcaTecnologia />} />
+          <Route path="/marca/presenca" element={<MarcaPresenca />} />
+          <Route path="/marca/historia" element={<MarcaHistoria />} />
+          <Route path="/quem-somos" element={<Navigate to="/marca/sobre" replace />} />
+          <Route path="/institucional" element={<Navigate to="/marca/sobre" replace />} />
+          <Route path="/anti-pirataria" element={<Navigate to="/marca/autenticidade" replace />} />
           <Route path="/franquias" element={<Franquias />} />
           <Route path="/carreiras" element={<Carreiras />} />
-          <Route path="/anti-pirataria" element={<AntiPirataria />} />
 
           {/* Divisão Automotiva — Categoria */}
           <Route path="/automotivo" element={<Automotivo />} />
@@ -201,8 +215,8 @@ const App = () => (
           <Route path="/metallico-argento" element={<Navigate to="/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/reflesso-dargento" element={<Navigate to="/arquitetonico/solar/reflesso-d-argento" replace />} />
           <Route path="/specchiato-bronzo" element={<Navigate to="/arquitetonico/solar/specchiato-bronzo" replace />} />
-          <Route path="/aviso_legal" element={<Navigate to="/anti-pirataria" replace />} />
-          <Route path="/aviso-legal" element={<Navigate to="/anti-pirataria" replace />} />
+          <Route path="/aviso_legal" element={<Navigate to="/marca/autenticidade" replace />} />
+          <Route path="/aviso-legal" element={<Navigate to="/marca/autenticidade" replace />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
