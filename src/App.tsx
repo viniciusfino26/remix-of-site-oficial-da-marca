@@ -215,8 +215,8 @@ const App = () => (
           <Route path="/metallico-argento" element={<Navigate to="/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/reflesso-dargento" element={<Navigate to="/arquitetonico/solar/reflesso-d-argento" replace />} />
           <Route path="/specchiato-bronzo" element={<Navigate to="/arquitetonico/solar/specchiato-bronzo" replace />} />
-          <Route path="/aviso_legal" element={<Navigate to="/anti-pirataria" replace />} />
-          <Route path="/aviso-legal" element={<Navigate to="/anti-pirataria" replace />} />
+          <Route path="/aviso_legal" element={<Navigate to="/marca/autenticidade" replace />} />
+          <Route path="/aviso-legal" element={<Navigate to="/marca/autenticidade" replace />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
