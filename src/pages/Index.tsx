@@ -226,7 +226,7 @@ const Index = () => {
       <ParallaxBreak
         minHeight="35vh"
         stats={[
-          { value: '+40', label: 'Países' },
+          { value: '4M+', label: 'Vendidos' },
           { value: '10M+', label: 'm² instalados' },
           { value: '15', label: 'Anos de Garantia' },
           { value: '#1', label: 'Marca Global' },
