@@ -82,6 +82,9 @@ import ArqDecorativoJateado from "./pages/ArqDecorativoJateado";
 import ArqDecorativoWhiteout from "./pages/ArqDecorativoWhiteout";
 import ArqDecorativoBlackout from "./pages/ArqDecorativoBlackout";
 
+/* ── PDP Arquitetônico Phantom SPF ── */
+import PhantomGloss from "./pages/PhantomGloss";
+
 import "./i18n";
 
 const queryClient = new QueryClient();
@@ -164,6 +167,9 @@ const App = () => (
           <Route path="/arquitetonico/decorativo/jateado" element={<ArqDecorativoJateado />} />
           <Route path="/arquitetonico/decorativo/whiteout" element={<ArqDecorativoWhiteout />} />
           <Route path="/arquitetonico/decorativo/blackout" element={<ArqDecorativoBlackout />} />
+
+          {/* Divisão Arquitetônica — Phantom SPF */}
+          <Route path="/arquitetonico/phantom-gloss" element={<PhantomGloss />} />
 
           {/* Atendimento */}
           <Route path="/vendas" element={<Vendas />} />
