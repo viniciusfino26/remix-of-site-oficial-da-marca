@@ -245,7 +245,7 @@ const Header = () => {
                   <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 flex flex-col gap-1.5">
                     {megaMenuItems.map((menu) => (
                       <div key={menu.key}>
-                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 py-2">
+                        <p className="text-xs font-bold text-primary uppercase tracking-wider px-3 py-2">
                           {menu.label}
                         </p>
                         {renderMobileContent(menu)}
