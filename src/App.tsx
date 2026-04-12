@@ -168,6 +168,9 @@ const App = () => (
           <Route path="/arquitetonico/decorativo/whiteout" element={<ArqDecorativoWhiteout />} />
           <Route path="/arquitetonico/decorativo/blackout" element={<ArqDecorativoBlackout />} />
 
+          {/* Divisão Arquitetônica — Phantom SPF */}
+          <Route path="/arquitetonico/phantom-gloss" element={<PhantomGloss />} />
+
           {/* Atendimento */}
           <Route path="/vendas" element={<Vendas />} />
           <Route path="/sac" element={<SAC />} />
