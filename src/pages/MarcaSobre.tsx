@@ -128,6 +128,7 @@ const MarcaSobre = () => (
                 { icon: Instagram, label: 'Instagram', value: '@insulfilm.oficial', href: 'https://instagram.com/insulfilm.oficial' },
                 { icon: Youtube, label: 'YouTube', value: 'insulfilmoficial', href: 'https://youtube.com/insulfilmoficial' },
                 { icon: Linkedin, label: 'LinkedIn', value: 'INSULFILM', href: 'https://linkedin.com/company/insulfilm' },
+                { icon: Linkedin, label: 'LinkedIn', value: 'Fundador', href: '#' },
                 { icon: Twitter, label: 'X (Twitter)', value: 'Canal oficial', href: '#' },
               ].map((ch) => (
                 <a key={ch.label} href={ch.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-accent/50 transition-colors">
