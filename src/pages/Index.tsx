@@ -229,7 +229,7 @@ const Index = () => {
           { value: `${new Date().getFullYear() - 1986}+`, label: 'Anos' },
           { value: '4Mi', label: 'm² instalados' },
           { value: '15', label: 'Anos de Garantia' },
-          { value: '#1', label: 'Marca mais conhecida' },
+          { value: '#1', label: 'Mais conhecida nacionalmente' },
         ]}
       />
 
