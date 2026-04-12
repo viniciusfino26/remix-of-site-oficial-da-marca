@@ -352,7 +352,7 @@ const Automotivo = () => {
 
       {/* Parallax Break */}
       <ParallaxBreak minHeight="30vh" stats={[
-        { value: '+40', label: 'Países' },
+        { value: '4M+', label: 'Vendidos' },
         { value: '5', label: 'Gerações de Tecnologia' },
         { value: '#1', label: 'Marca no Brasil' },
       ]} />
