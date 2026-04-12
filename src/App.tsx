@@ -82,6 +82,9 @@ import ArqDecorativoJateado from "./pages/ArqDecorativoJateado";
 import ArqDecorativoWhiteout from "./pages/ArqDecorativoWhiteout";
 import ArqDecorativoBlackout from "./pages/ArqDecorativoBlackout";
 
+/* ── PDP Arquitetônico Phantom SPF ── */
+import PhantomGloss from "./pages/PhantomGloss";
+
 import "./i18n";
 
 const queryClient = new QueryClient();
