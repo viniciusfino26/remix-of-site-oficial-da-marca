@@ -1,16 +1,13 @@
+import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import { Clock, Award } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Clock, Award, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } }
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
-};
 
 interface TimelineEvent {
   year: string;
@@ -62,6 +59,22 @@ const eras: { era: string; label: string; events: TimelineEvent[] }[] = [
 
 const MarcaHistoria = () => {
   const ano = new Date().getFullYear();
+  const [activeEra, setActiveEra] = useState(0);
+  const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  const handleEraChange = (index: number) => {
+    setActiveEra(index);
+    setExpandedEvent(null);
+    timelineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const toggleEvent = (id: string) => {
+    setExpandedEvent(prev => prev === id ? null : id);
+  };
+
+  const progress = ((activeEra + 1) / (eras.length + 1)) * 100; // +1 for "Hoje"
+  const isHoje = activeEra === eras.length;
 
   return (
     <>
@@ -112,102 +125,203 @@ const MarcaHistoria = () => {
           </div>
         </section>
 
-        {/* Separator */}
         <div className="flex justify-center">
           <div className="separator-accent w-20" />
         </div>
 
-        {/* Timeline */}
-        <section className="py-16 md:py-24">
+        {/* Interactive Timeline */}
+        <section className="py-16 md:py-24" ref={timelineRef}>
           <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-16">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">No Brasil, pioneirismo em películas é conosco</h2>
-              <p className="text-foreground/60 font-light max-w-2xl mx-auto">Cada marco reforça nosso compromisso com inovação, qualidade e liderança.</p>
+              <p className="text-foreground/60 font-light max-w-2xl mx-auto">Clique nas eras para explorar cada fase da nossa história.</p>
             </motion.div>
 
-            <div className="max-w-5xl mx-auto">
-              {eras.map((era, eraIdx) => (
-                <div key={era.era} className="mb-16 last:mb-0">
-                  {/* Era Header */}
-                  <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                    className="flex items-center gap-4 mb-10"
+            {/* Sticky Era Navigation */}
+            <div className="sticky top-16 z-30 py-4 -mx-4 px-4 backdrop-blur-xl bg-background/80 border-b border-border/50 mb-12">
+              <div className="max-w-4xl mx-auto">
+                {/* Nav Buttons */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleEraChange(Math.max(0, activeEra - 1))}
+                    disabled={activeEra === 0}
+                    className="shrink-0 p-2 rounded-lg text-foreground/40 hover:text-accent disabled:opacity-20 transition-colors"
+                    aria-label="Era anterior"
                   >
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 border border-accent/20">
-                      <Award className="w-5 h-5 text-accent" />
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <div className="flex-1 overflow-x-auto scrollbar-hide">
+                    <div className="flex gap-2 min-w-max justify-center">
+                      {eras.map((era, i) => (
+                        <button
+                          key={era.era}
+                          onClick={() => handleEraChange(i)}
+                          className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap ${
+                            activeEra === i
+                              ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/25'
+                              : 'bg-muted text-foreground/60 hover:bg-muted/80 hover:text-foreground'
+                          }`}
+                        >
+                          {era.era}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => handleEraChange(eras.length)}
+                        className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap ${
+                          isHoje
+                            ? 'bg-accent text-accent-foreground shadow-lg shadow-accent/25'
+                            : 'bg-muted text-foreground/60 hover:bg-muted/80 hover:text-foreground'
+                        }`}
+                      >
+                        Hoje
+                      </button>
                     </div>
-                    <div>
-                      <span className="text-accent font-extrabold text-lg">{era.era}</span>
-                      <p className="text-foreground/60 text-sm font-light">{era.label}</p>
+                  </div>
+
+                  <button
+                    onClick={() => handleEraChange(Math.min(eras.length, activeEra + 1))}
+                    disabled={activeEra === eras.length}
+                    className="shrink-0 p-2 rounded-lg text-foreground/40 hover:text-accent disabled:opacity-20 transition-colors"
+                    aria-label="Próxima era"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="mt-3 h-1 bg-muted rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full bg-accent rounded-full"
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline Content */}
+            <div className="max-w-4xl mx-auto min-h-[400px]">
+              <AnimatePresence mode="wait">
+                {!isHoje ? (
+                  <motion.div
+                    key={eras[activeEra].era}
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -30 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  >
+                    {/* Era Header */}
+                    <div className="flex items-center gap-4 mb-10">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 border border-accent/20">
+                        <Award className="w-5 h-5 text-accent" />
+                      </div>
+                      <div>
+                        <span className="text-accent font-extrabold text-xl">{eras[activeEra].era}</span>
+                        <p className="text-foreground/60 text-sm font-light">{eras[activeEra].label}</p>
+                      </div>
+                    </div>
+
+                    {/* Events */}
+                    <div className="relative pl-8">
+                      {/* Vertical line */}
+                      <div className="absolute left-3 top-0 bottom-0 w-px bg-border" />
+
+                      {eras[activeEra].events.map((event, idx) => {
+                        const eventId = `${activeEra}-${idx}`;
+                        const isExpanded = expandedEvent === eventId;
+                        return (
+                          <motion.div
+                            key={eventId}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.1, duration: 0.4 }}
+                            className="relative mb-6 last:mb-0"
+                          >
+                            {/* Dot */}
+                            <div className={`absolute -left-5 top-4 w-3.5 h-3.5 rounded-full border-2 border-background shadow-sm z-10 transition-colors duration-300 ${isExpanded ? 'bg-accent scale-125' : 'bg-accent/60'}`} />
+
+                            {/* Card */}
+                            <button
+                              onClick={() => toggleEvent(eventId)}
+                              className="w-full text-left glass-card rounded-xl p-5 bg-card border border-border hover:border-accent/30 transition-all duration-300 group cursor-pointer"
+                            >
+                              <div className="flex items-start justify-between gap-4">
+                                <div className="flex-1">
+                                  <span className="text-accent font-extrabold text-sm">{event.year}</span>
+                                  <h3 className="text-foreground font-bold mt-1 group-hover:text-accent transition-colors">{event.title}</h3>
+                                </div>
+                                <ChevronDown className={`w-5 h-5 text-foreground/40 shrink-0 mt-1 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-accent' : ''}`} />
+                              </div>
+
+                              <AnimatePresence>
+                                {isExpanded && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="overflow-hidden"
+                                  >
+                                    <p className="text-foreground/70 text-sm leading-relaxed mt-3 pt-3 border-t border-border/50">
+                                      {event.description}
+                                    </p>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </button>
+                          </motion.div>
+                        );
+                      })}
                     </div>
                   </motion.div>
-
-                  {/* Events */}
-                  <div className="relative pl-8 md:pl-0">
-                    {/* Vertical line */}
-                    <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-                    {era.events.map((event, idx) => {
-                      const isLeft = idx % 2 === 0;
-                      return (
-                        <motion.div
-                          key={`${era.era}-${idx}`}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true, margin: '-50px' }}
-                          variants={scaleIn}
-                          className={`relative mb-8 last:mb-0 md:flex md:items-start ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                        >
-                          {/* Dot */}
-                          <div className="absolute left-1.5 md:left-1/2 top-3 w-3.5 h-3.5 rounded-full bg-accent border-2 border-background shadow-sm md:-translate-x-1/2 z-10" />
-
-                          {/* Content */}
-                          <div className={`ml-8 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'}`}>
-                            <div className="glass-card rounded-xl p-5 card-premium-hover bg-card border border-border">
-                              <span className="text-accent font-extrabold text-sm">{event.year}</span>
-                              <h3 className="text-foreground font-bold mt-1 mb-2">{event.title}</h3>
-                              <p className="text-foreground/70 text-sm leading-relaxed">{event.description}</p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
+                ) : (
+                  <motion.div
+                    key="hoje"
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -30 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  >
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <div className="absolute inset-0 bg-carbon-gradient" />
+                      <div className="absolute inset-0 bg-hero-texture" />
+                      <div className="relative z-10 p-10 md:p-14 text-center">
+                        <span className="text-accent font-extrabold text-lg tracking-wide">Hoje</span>
+                        <p className="text-primary-foreground text-xl md:text-2xl font-light leading-relaxed mt-4">
+                          Seguimos liderando a evolução tecnológica do mercado de películas no Brasil, antecipando tendências e garantindo que cada inovação entregue mais segurança, conforto e sofisticação.
+                        </p>
+                        <p className="text-accent font-extrabold text-lg md:text-xl mt-6">
+                          A INSULFILM™ não protege vidros, protege você.
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </section>
 
-        {/* Hoje */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="max-w-3xl mx-auto"
-            >
-              <div className="relative overflow-hidden rounded-2xl">
-                <div className="absolute inset-0 bg-carbon-gradient" />
-                <div className="absolute inset-0 bg-hero-texture" />
-                <div className="relative z-10 p-10 md:p-14 text-center">
-                  <span className="text-accent font-extrabold text-lg tracking-wide">Hoje</span>
-                  <p className="text-primary-foreground text-xl md:text-2xl font-light leading-relaxed mt-4">
-                    Seguimos liderando a evolução tecnológica do mercado de películas no Brasil, antecipando tendências e garantindo que cada inovação entregue mais segurança, conforto e sofisticação.
-                  </p>
-                  <p className="text-accent font-extrabold text-lg md:text-xl mt-6">
-                    A INSULFILM™ não protege vidros, protege você.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+        {/* SEO: All content rendered in DOM for crawlers (visually hidden) */}
+        <div className="sr-only" aria-hidden="false">
+          <h2>Linha do Tempo Completa — INSULFILM™</h2>
+          {eras.map((era) => (
+            <div key={era.era}>
+              <h3>{era.era} — {era.label}</h3>
+              {era.events.map((event, idx) => (
+                <article key={idx}>
+                  <h4>{event.year} — {event.title}</h4>
+                  <p>{event.description}</p>
+                </article>
+              ))}
+            </div>
+          ))}
+          <div>
+            <h3>Hoje</h3>
+            <p>Seguimos liderando a evolução tecnológica do mercado de películas no Brasil, antecipando tendências e garantindo que cada inovação entregue mais segurança, conforto e sofisticação. A INSULFILM™ não protege vidros, protege você.</p>
           </div>
-        </section>
+        </div>
 
         {/* Disclaimer */}
         <section className="py-8 bg-muted border-t border-border">
