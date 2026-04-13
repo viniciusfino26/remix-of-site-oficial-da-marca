@@ -39,11 +39,6 @@ const MarcaTecnologia = () => {
           subtitle={t('marca.tecnologia.heroSubtitle')}
           badge={{ icon: <Cpu className="w-4 h-4" />, text: t('marca.tecnologia.badge') }}
         />
-                {t('marca.tecnologia.heroSubtitle')}
-              </motion.p>
-            </motion.div>
-          </div>
-        </section>
 
         {/* Applications */}
         <section className="py-16 md:py-24">
