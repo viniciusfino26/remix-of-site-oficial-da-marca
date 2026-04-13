@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, AlertCircle } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
+const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+
 const MarcaRegistrada = () => {
   const { t } = useTranslation();
 

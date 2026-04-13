@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { BadgeCheck, CheckCircle } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
+const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+
 const MarcaAutenticidade = () => {
   const { t } = useTranslation();
 
