@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import autoSolarImg from '@/assets/auto-solar.png';
 import autoSegurancaImg from '@/assets/auto-seguranca.png';
@@ -38,79 +38,8 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-interface SolarProduct {
-  id: string;
-  nameKey: string;
-  categoryKey: string;
-  specs: { icon: typeof Sun; labelKey: string; valueKey: string }[];
-  descKey: string;
-  warrantyKey: string;
-  accent?: boolean;
-}
 
-const solarProducts: SolarProduct[] = [
-  {
-    id: 'dark',
-    nameKey: 'automotivePage.dark.name',
-    categoryKey: 'automotivePage.dark.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.dark.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.dark.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.dark.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.dark.type' },
-    ],
-    descKey: 'automotivePage.dark.desc',
-    warrantyKey: 'automotivePage.dark.warranty',
-  },
-  {
-    id: 'eclipse',
-    nameKey: 'automotivePage.eclipse.name',
-    categoryKey: 'automotivePage.eclipse.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.eclipse.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.eclipse.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.eclipse.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.eclipse.type' },
-    ],
-    descKey: 'automotivePage.eclipse.desc',
-    warrantyKey: 'automotivePage.eclipse.warranty',
-    accent: true,
-  },
-  {
-    id: 'vip',
-    nameKey: 'automotivePage.vip.name',
-    categoryKey: 'automotivePage.vip.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.vip.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.vip.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.vip.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.vip.type' },
-    ],
-    descKey: 'automotivePage.vip.desc',
-    warrantyKey: 'automotivePage.vip.warranty',
-    accent: true,
-  },
-  {
-    id: 'polaris',
-    nameKey: 'automotivePage.polaris.name',
-    categoryKey: 'automotivePage.polaris.category',
-    specs: [
-      { icon: Layers, labelKey: 'automotivePage.specSerie', valueKey: 'automotivePage.polaris.serie' },
-      { icon: Sun, labelKey: 'automotivePage.specHeat', valueKey: 'automotivePage.polaris.heat' },
-      { icon: Zap, labelKey: 'automotivePage.specTech', valueKey: 'automotivePage.polaris.tech' },
-      { icon: Shield, labelKey: 'automotivePage.specType', valueKey: 'automotivePage.polaris.type' },
-    ],
-    descKey: 'automotivePage.polaris.desc',
-    warrantyKey: 'automotivePage.polaris.warranty',
-  },
-];
 
-const solarTabs = [
-  { id: 'dark', label: 'Dark' },
-  { id: 'eclipse', label: 'Eclipse' },
-  { id: 'vip', label: 'VIP' },
-  { id: 'polaris', label: 'Polariz Ultra' },
-];
 
 const benefits = [
   { icon: Sun, title: 'Máxima Redução de Calor', desc: 'Raios UV e IR' },
@@ -237,118 +166,8 @@ const Automotivo = () => {
         cardVariant="gray"
       />
 
-      {/* Solar Products — Tabs + Alternating Sections */}
-      <section className="bg-background overflow-hidden">
-        <div className="container mx-auto px-4 mb-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <div className="flex flex-wrap justify-center gap-3">
-              {solarTabs.map((tab) => (
-                <a
-                  key={tab.id}
-                  href={`#product-${tab.id}`}
-                  className="px-6 py-3 rounded-lg bg-muted hover:bg-accent hover:text-accent-foreground text-foreground font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-premium"
-                >
-                  {tab.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
 
-        {solarProducts.map((product, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <section
-              key={product.id}
-              id={`product-${product.id}`}
-              className={`py-20 overflow-hidden ${isEven ? 'bg-background' : 'bg-carbon-gradient'}`}
-            >
-              <div className="container mx-auto px-4">
-                <motion.div
-                  className="grid md:grid-cols-2 items-center gap-12"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: '-80px' }}
-                  variants={stagger}
-                >
-                  {/* Text Column */}
-                  <motion.div
-                    variants={isEven ? fadeInLeft : fadeInRight}
-                    className={isEven ? 'order-1' : 'order-1 md:order-2'}
-                  >
-                    <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">
-                      {t(product.categoryKey)}
-                    </span>
-                    <h3 className={`text-3xl md:text-4xl font-extrabold mb-4 ${isEven ? 'text-foreground' : 'text-primary-foreground'}`}>
-                      INSULFILM™ {t(product.nameKey)}
-                    </h3>
 
-                    <div className="grid grid-cols-2 gap-3 mb-6">
-                      {product.specs.map((spec, si) => (
-                        <motion.div
-                          key={si}
-                          className={`flex items-center gap-2 rounded-lg p-3 ${isEven ? 'bg-muted/50' : 'bg-primary-foreground/5'}`}
-                          whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center shrink-0">
-                            <spec.icon className={`w-4 h-4 ${isEven ? 'text-primary' : 'text-accent'}`} />
-                          </div>
-                          <div className="min-w-0">
-                            <p className={`text-[10px] uppercase tracking-wider ${isEven ? 'text-muted-foreground' : 'text-primary-foreground/50'}`}>
-                              {t(spec.labelKey)}
-                            </p>
-                            <p className={`text-xs font-bold truncate ${isEven ? 'text-foreground' : 'text-primary-foreground'}`}>
-                              {t(spec.valueKey)}
-                            </p>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-
-                    <p className={`text-sm font-light mb-5 leading-relaxed ${isEven ? 'text-muted-foreground' : 'text-primary-foreground/60'}`}>
-                      {t(product.descKey)}
-                    </p>
-
-                    <div className={`flex items-center gap-2 mb-6 text-xs font-semibold ${isEven ? 'text-accent' : 'text-accent'}`}>
-                      <Award className="w-4 h-4" />
-                      {t(product.warrantyKey)}
-                    </div>
-
-                    <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-sm hover:shadow-md transition-all">
-                      <MessageCircle className="w-4 h-4" />
-                      {t('automotivePage.cta')}
-                    </Button>
-                  </motion.div>
-
-                  {/* Image Column */}
-                  <motion.div
-                    variants={isEven ? fadeInRight : fadeInLeft}
-                    className={isEven ? 'order-2' : 'order-2 md:order-1'}
-                  >
-                    <motion.div
-                      className={`rounded-xl aspect-[4/3] flex items-center justify-center overflow-hidden ${isEven ? 'bg-carbon-gradient' : 'bg-primary-foreground/5'}`}
-                      whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                    >
-                      <div className="bg-hero-texture absolute inset-0 opacity-30" />
-                      <div className="text-center relative z-10 p-8">
-                        <Car className={`w-16 h-16 mx-auto mb-4 ${isEven ? 'text-accent/40' : 'text-accent/30'}`} />
-                        <p className={`text-sm font-bold uppercase tracking-widest ${isEven ? 'text-primary-foreground/40' : 'text-primary-foreground/30'}`}>
-                          {t(product.nameKey)}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </section>
-          );
-        })}
-      </section>
 
       {/* Parallax Break */}
       <ParallaxBreak minHeight="30vh" stats={[
