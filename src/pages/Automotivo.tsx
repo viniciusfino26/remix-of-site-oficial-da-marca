@@ -37,7 +37,7 @@ const scaleIn = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
-
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 
 
