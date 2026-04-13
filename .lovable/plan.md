@@ -1,32 +1,22 @@
 
 
-## Padronizar Hero de Todas as Páginas /marca/* com PageHero
+## Remover Produtos Solares da Página /automotivo
 
-### Problema
-As 6 páginas da seção Marca usam um hero inline com `bg-gradient-to-br from-[hsl(...)]` e um SVG base64 como textura — estilo diferente das demais páginas do site que usam o componente `PageHero` com `bg-carbon-gradient` + `bg-hero-texture` + parallax scroll + fade gradient inferior.
+### O que será removido
 
-A página `/marca/historia` já usa o padrão correto (carbon-gradient + hero-texture inline). As demais 6 precisam ser migradas.
+1. **Arrays de dados** — `solarProducts` (linhas 51-106) e `solarTabs` (linhas 108-113) que definem Dark, Eclipse, VIP e Polariz Ultra
+2. **Tabs de navegação** — Botões "DARK", "ECLIPSE", "VIP", "POLARIZ ULTRA" (linhas 240-261)
+3. **Seções alternadas de produto** — Os blocos alternados com specs, imagem placeholder e CTA de cada produto (linhas 263-351)
 
-### Solução
-Substituir o hero customizado de cada página pelo componente `PageHero`, que já tem: parallax scroll, badge com ícone, título, subtítulo, gradiente de transição para o fundo branco, e animações stagger/fadeInUp/scaleIn.
+### O que permanece
 
-### Páginas Alteradas (6 arquivos)
+- Hero
+- Texto introdutório
+- 3 ProductBanners (Solares, Segurança, PPF) — que já linkam para os hubs específicos
+- ParallaxBreak
+- Benefícios, Diferenciais, Centros Autorizados, FAQ e CTA final
 
-| Página | Badge Icon | Badge Text | Título | Subtítulo |
-|--------|-----------|------------|--------|-----------|
-| `MarcaSobre.tsx` | Shield | t('marca.sobre.badge') | t('marca.sobre.heroTitle') | t('marca.sobre.heroSubtitle') |
-| `MarcaRegistrada.tsx` | ShieldCheck | t('marca.registrada.badge') | t('marca.registrada.heroTitle') | t('marca.registrada.heroSubtitle') |
-| `MarcaOQueE.tsx` | HelpCircle | t('marca.oQuee.badge') | t('marca.oQuee.heroTitle') | t('marca.oQuee.heroSubtitle') |
-| `MarcaAutenticidade.tsx` | BadgeCheck | t('marca.autenticidade.badge') | t('marca.autenticidade.heroTitle') | t('marca.autenticidade.heroSubtitle') |
-| `MarcaPresenca.tsx` | Globe | t('marca.presenca.badge') | t('marca.presenca.heroTitle') | t('marca.presenca.heroSubtitle') |
-| `MarcaTecnologia.tsx` | Cpu | t('marca.tecnologia.badge') | t('marca.tecnologia.heroTitle') | t('marca.tecnologia.heroSubtitle') |
+### Arquivo alterado
 
-### O que muda em cada arquivo
-1. Adicionar `import PageHero from '@/components/PageHero'`
-2. Remover o bloco `<section>` do hero inline (com o SVG base64 e gradient)
-3. Substituir por `<PageHero title={...} subtitle={...} badge={{ icon: <Icon />, text: ... }} />`
-4. Todo o conteúdo textual permanece inalterado
-
-### Resultado
-Todas as páginas do site passam a usar o mesmo padrão visual de hero (carbon-gradient + hero-texture + parallax), garantindo consistência para páginas atuais e futuras.
+- `src/pages/Automotivo.tsx` — Remoção das seções e imports não utilizados (`Tabs`, `TabsContent`, `TabsList`, `TabsTrigger`, interface `SolarProduct`)
 
