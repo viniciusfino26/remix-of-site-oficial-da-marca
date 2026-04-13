@@ -13,9 +13,9 @@ const MarcaSobre = () => {
     { icon: ExternalLink, label: t('marca.sobre.chSite'), value: 'www.insulfilm.com', href: 'https://www.insulfilm.com' },
     { icon: Instagram, label: t('marca.sobre.chInstagram'), value: '@insulfilm.oficial', href: 'https://instagram.com/insulfilm.oficial' },
     { icon: Youtube, label: t('marca.sobre.chYoutube'), value: 'insulfilmoficial', href: 'https://youtube.com/insulfilmoficial' },
-    { icon: Linkedin, label: t('marca.sobre.chLinkedin'), value: 'INSULFILM', href: 'https://linkedin.com/company/insulfilm' },
-    { icon: Linkedin, label: t('marca.sobre.chLinkedin'), value: t('marca.sobre.chLinkedinFounder'), href: '#' },
-    { icon: Twitter, label: 'X (Twitter)', value: t('marca.sobre.chTwitter'), href: '#' },
+    { icon: Linkedin, label: t('marca.sobre.chLinkedin'), value: 'INSULFILM™', href: 'https://www.linkedin.com/company/insulfilm™' },
+    { icon: Linkedin, label: t('marca.sobre.chLinkedin'), value: t('marca.sobre.chLinkedinFounder'), href: 'https://www.linkedin.com/in/franciscofino' },
+    { icon: Twitter, label: 'X (Twitter)', value: t('marca.sobre.chTwitter'), href: 'https://x.com/insulfilm' },
   ];
 
   const stores = [
