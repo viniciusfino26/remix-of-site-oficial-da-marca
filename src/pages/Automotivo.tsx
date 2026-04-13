@@ -3,7 +3,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import ProductBanner from '@/components/ProductBanner';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Users, MessageCircle, ArrowRight, Eye, Smartphone, Star } from 'lucide-react';
+import { Car, Sun, Zap, Shield, Layers, Award, CheckCircle, Wrench, Users, Eye, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
