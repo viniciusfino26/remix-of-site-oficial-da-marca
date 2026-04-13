@@ -208,7 +208,7 @@ const AutomotivoHubSolar = () => {
                       className={
                         i === 0
                           ? 'bg-accent text-accent-foreground hover:bg-accent/90 font-bold rounded-full px-6'
-                          : 'border-white/30 text-white hover:bg-white/10 font-bold rounded-full px-6'
+                          : 'border-white/30 bg-transparent text-white hover:bg-white/10 font-bold rounded-full px-6'
                       }
                     >
                       {tab.label}
