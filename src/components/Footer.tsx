@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, MessageCircle, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
@@ -7,28 +7,30 @@ import logoDark from '@/assets/logo-dark.png';
 
 const Footer = () => {
   const { t } = useTranslation();
-
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   return (
     <footer className="bg-carbon-gradient text-primary-foreground" role="contentinfo">
       <div className="accent-stripe" />
 
-      {/* CTA Banner */}
-      <section id="partner-cta" className="border-b border-primary-foreground/10">
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h2 className="text-2xl md:text-4xl font-extrabold mb-3 tracking-tight">
-            {t('cta.partnerTitle')}
-          </h2>
-          <p className="text-primary-foreground/60 mb-4 max-w-lg mx-auto font-light text-lg">
-            {t('cta.partnerSubtitle')}
-          </p>
-          <div className="separator-accent mx-auto mb-8" />
-          <Link to="/parceiro" onClick={() => Analytics.ctaClick('Quero Ser Parceiro', 'footer')}>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-md hover:shadow-lg transition-all duration-300">
-              {t('cta.partnerButton')}
-            </Button>
-          </Link>
-        </div>
-      </section>
+      {isHome && (
+        <section id="partner-cta" className="border-b border-primary-foreground/10">
+          <div className="container mx-auto px-4 py-16 text-center">
+            <h2 className="text-2xl md:text-4xl font-extrabold mb-3 tracking-tight">
+              {t('cta.partnerTitle')}
+            </h2>
+            <p className="text-primary-foreground/60 mb-4 max-w-lg mx-auto font-light text-lg">
+              {t('cta.partnerSubtitle')}
+            </p>
+            <div className="separator-accent mx-auto mb-8" />
+            <Link to="/parceiro" onClick={() => Analytics.ctaClick('Quero Ser Parceiro', 'footer')}>
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-md hover:shadow-lg transition-all duration-300">
+                {t('cta.partnerButton')}
+              </Button>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Footer Links */}
       <div className="container mx-auto px-4 py-14">
