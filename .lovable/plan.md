@@ -1,35 +1,32 @@
-## Redesign Completo — Página /marca/historia
 
-### Objetivo
 
-Reescrever a página com o conteúdo fornecido pelo usuário: texto introdutório + linha do tempo visual com todos os marcos históricos, agrupados por década.
+## Padronizar Hero de Todas as Páginas /marca/* com PageHero
 
-### Estrutura da Nova Página
+### Problema
+As 6 páginas da seção Marca usam um hero inline com `bg-gradient-to-br from-[hsl(...)]` e um SVG base64 como textura — estilo diferente das demais páginas do site que usam o componente `PageHero` com `bg-carbon-gradient` + `bg-hero-texture` + parallax scroll + fade gradient inferior.
 
-**1. Hero** — Carbon-gradient com badge "Nossa História", título impactante, subtítulo sobre os quase 40 anos de pioneirismo.
+A página `/marca/historia` já usa o padrão correto (carbon-gradient + hero-texture inline). As demais 6 precisam ser migradas.
 
-**2. Seção Introdutória** — Os 3 parágrafos fornecidos pelo usuário (por que chamam de "insulfilm", história da marca, inovação além das películas).
+### Solução
+Substituir o hero customizado de cada página pelo componente `PageHero`, que já tem: parallax scroll, badge com ícone, título, subtítulo, gradiente de transição para o fundo branco, e animações stagger/fadeInUp/scaleIn.
 
-**3. Timeline Visual** — Linha do tempo vertical animada com Framer Motion, agrupada em 4 eras:
+### Páginas Alteradas (6 arquivos)
 
-- **1980–1990**: Nascimento e pioneirismo (1986/1988, 1996, 1997, 1998)
-- **2000–2010**: Expansão e regulamentação (2000, 2001, 2002, 2008)
-- **2010–2020**: Inovação e alto desempenho (2011, 2012, 2018, 2019)
-- **2020–2025**: Futuro da proteção (2024, 2025)
+| Página | Badge Icon | Badge Text | Título | Subtítulo |
+|--------|-----------|------------|--------|-----------|
+| `MarcaSobre.tsx` | Shield | t('marca.sobre.badge') | t('marca.sobre.heroTitle') | t('marca.sobre.heroSubtitle') |
+| `MarcaRegistrada.tsx` | ShieldCheck | t('marca.registrada.badge') | t('marca.registrada.heroTitle') | t('marca.registrada.heroSubtitle') |
+| `MarcaOQueE.tsx` | HelpCircle | t('marca.oQuee.badge') | t('marca.oQuee.heroTitle') | t('marca.oQuee.heroSubtitle') |
+| `MarcaAutenticidade.tsx` | BadgeCheck | t('marca.autenticidade.badge') | t('marca.autenticidade.heroTitle') | t('marca.autenticidade.heroSubtitle') |
+| `MarcaPresenca.tsx` | Globe | t('marca.presenca.badge') | t('marca.presenca.heroTitle') | t('marca.presenca.heroSubtitle') |
+| `MarcaTecnologia.tsx` | Cpu | t('marca.tecnologia.badge') | t('marca.tecnologia.heroTitle') | t('marca.tecnologia.heroSubtitle') |
 
-Cada marco terá: ano destacado em accent, título em negrito, descrição. A linha vertical central conecta os pontos com dots animados. Layout alternado (esquerda/direita) em desktop, linear em mobile.
+### O que muda em cada arquivo
+1. Adicionar `import PageHero from '@/components/PageHero'`
+2. Remover o bloco `<section>` do hero inline (com o SVG base64 e gradient)
+3. Substituir por `<PageHero title={...} subtitle={...} badge={{ icon: <Icon />, text: ... }} />`
+4. Todo o conteúdo textual permanece inalterado
 
-**4. Bloco "Hoje"** — Card glass premium com a frase de fechamento: "A INSULFILM™ não protege vidros, protege você."
+### Resultado
+Todas as páginas do site passam a usar o mesmo padrão visual de hero (carbon-gradient + hero-texture + parallax), garantindo consistência para páginas atuais e futuras.
 
-**5. Disclaimer** — Bloco discreto com texto de marca registrada conforme regras do projeto.
-
-### Arquivo Alterado
-
-- `**src/pages/MarcaHistoria.tsx**` — Reescrita completa com textos hardcoded em PT-BR (sem i18n), timeline visual com animações staggered.
-
-### Padrões Visuais
-
-- Animações: fadeInUp, stagger com viewport trigger
-- Visual: bg-carbon-gradient no hero, glass-card nos marcos, separator-accent
-- Nomenclatura: INSULFILM™ sempre com ™ e espaço antes do nome do produto
-- Todos os textos exatamente como fornecidos pelo usuário
