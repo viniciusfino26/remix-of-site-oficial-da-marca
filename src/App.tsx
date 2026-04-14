@@ -121,10 +121,32 @@ import ArqComSpecchiato from "./pages/arq/comercial/solar/SpecchiatoBronzo";
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
 import ArqSegurancaISSF7000 from "./pages/ArqSegurancaISSF7000";
 
+/* ── PDPs Arquitetônico Segurança — Residencial ── */
+import ArqResISSF4000 from "./pages/arq/residencial/seguranca/ISSF4000";
+import ArqResISSF7000 from "./pages/arq/residencial/seguranca/ISSF7000";
+
+/* ── PDPs Arquitetônico Segurança — Comercial ── */
+import ArqComISSF4000 from "./pages/arq/comercial/seguranca/ISSF4000";
+import ArqComISSF7000 from "./pages/arq/comercial/seguranca/ISSF7000";
+
 /* ── PDPs Arquitetônico Decorativo ── */
 import ArqDecorativoJateado from "./pages/ArqDecorativoJateado";
 import ArqDecorativoWhiteout from "./pages/ArqDecorativoWhiteout";
 import ArqDecorativoBlackout from "./pages/ArqDecorativoBlackout";
+
+/* ── PDPs Arquitetônico Decorativo — Residencial ── */
+import ArqResJateado from "./pages/arq/residencial/decorativo/Jateado";
+import ArqResWhiteout from "./pages/arq/residencial/decorativo/Whiteout";
+import ArqResBlackout from "./pages/arq/residencial/decorativo/Blackout";
+
+/* ── PDPs Arquitetônico Decorativo — Comercial ── */
+import ArqComJateado from "./pages/arq/comercial/decorativo/Jateado";
+import ArqComWhiteout from "./pages/arq/comercial/decorativo/Whiteout";
+import ArqComBlackout from "./pages/arq/comercial/decorativo/Blackout";
+
+/* ── PDPs Arquitetônico SPF — Residencial + Comercial ── */
+import ArqResPhantom from "./pages/arq/residencial/spf/Phantom";
+import ArqComPhantom from "./pages/arq/comercial/spf/Phantom";
 
 /* ── PDP Arquitetônico Phantom SPF ── */
 import PhantomGloss from "./pages/PhantomGloss";
@@ -247,16 +269,38 @@ const App = () => (
           <Route path="/arquitetonico/solar/reflesso-d-argento" element={<Navigate to="/arquitetonico/residencial/solar/reflesso-d-argento" replace />} />
           <Route path="/arquitetonico/solar/specchiato-bronzo" element={<Navigate to="/arquitetonico/residencial/solar/specchiato-bronzo" replace />} />
 
-          {/* Divisão Arquitetônica — PDPs Segurança */}
+          {/* Divisão Arquitetônica — PDPs Segurança (legado) */}
           <Route path="/arquitetonico/seguranca/issf4000" element={<ArqSegurancaISSF4000 />} />
           <Route path="/arquitetonico/seguranca/issf7000" element={<ArqSegurancaISSF7000 />} />
 
-          {/* Divisão Arquitetônica — PDPs Decorativo */}
+          {/* Divisão Arquitetônica — PDPs Segurança Residencial */}
+          <Route path="/arquitetonico/residencial/seguranca/issf4000" element={<ArqResISSF4000 />} />
+          <Route path="/arquitetonico/residencial/seguranca/issf7000" element={<ArqResISSF7000 />} />
+
+          {/* Divisão Arquitetônica — PDPs Segurança Comercial */}
+          <Route path="/arquitetonico/comercial/seguranca/issf4000" element={<ArqComISSF4000 />} />
+          <Route path="/arquitetonico/comercial/seguranca/issf7000" element={<ArqComISSF7000 />} />
+
+          {/* Divisão Arquitetônica — PDPs Decorativo (legado) */}
           <Route path="/arquitetonico/decorativo/jateado" element={<ArqDecorativoJateado />} />
           <Route path="/arquitetonico/decorativo/whiteout" element={<ArqDecorativoWhiteout />} />
           <Route path="/arquitetonico/decorativo/blackout" element={<ArqDecorativoBlackout />} />
 
-          {/* Divisão Arquitetônica — Phantom SPF */}
+          {/* Divisão Arquitetônica — PDPs Decorativo Residencial */}
+          <Route path="/arquitetonico/residencial/decorativo/jateado" element={<ArqResJateado />} />
+          <Route path="/arquitetonico/residencial/decorativo/whiteout" element={<ArqResWhiteout />} />
+          <Route path="/arquitetonico/residencial/decorativo/blackout" element={<ArqResBlackout />} />
+
+          {/* Divisão Arquitetônica — PDPs Decorativo Comercial */}
+          <Route path="/arquitetonico/comercial/decorativo/jateado" element={<ArqComJateado />} />
+          <Route path="/arquitetonico/comercial/decorativo/whiteout" element={<ArqComWhiteout />} />
+          <Route path="/arquitetonico/comercial/decorativo/blackout" element={<ArqComBlackout />} />
+
+          {/* Divisão Arquitetônica — PDPs SPF Residencial + Comercial */}
+          <Route path="/arquitetonico/residencial/spf/phantom" element={<ArqResPhantom />} />
+          <Route path="/arquitetonico/comercial/spf/phantom" element={<ArqComPhantom />} />
+
+          {/* Divisão Arquitetônica — Phantom SPF (legado) */}
           <Route path="/arquitetonico/phantom-gloss" element={<PhantomGloss />} />
 
           {/* Atendimento */}

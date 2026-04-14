@@ -125,4 +125,85 @@ export const copyBySegment: Record<string, ProductSegmentCopy> = {
       benefits: ['Diferenciação arquitetônica', 'Desempenho térmico', 'Visual sofisticado'],
     },
   },
+
+  /* ── Segurança ── */
+  issf4000: {
+    residencial: {
+      h1: 'Proteção para a família. Vidros que não se tornam armas.',
+      description: 'Película de segurança INSULFILM™ ISSF4000 para residências. Retém estilhaços, protege crianças e idosos contra acidentes com vidro.',
+      benefits: ['Proteção da família', 'Retenção de estilhaços', 'Transparência total'],
+    },
+    comercial: {
+      h1: 'Segurança patrimonial. Conformidade garantida.',
+      description: 'Película de segurança INSULFILM™ ISSF4000 para edificações comerciais. Conformidade com normas de segurança e proteção contra vandalismo.',
+      benefits: ['Conformidade normativa', 'Proteção patrimonial', 'Anti-vandalismo'],
+    },
+  },
+
+  issf7000: {
+    residencial: {
+      h1: 'Reforço máximo. Sua casa é sua fortaleza.',
+      description: 'Película de segurança reforçada INSULFILM™ ISSF7000 para residências. Barreira anti-invasão e proteção contra explosões.',
+      benefits: ['Barreira anti-invasão', 'Proteção contra explosões', 'Segurança reforçada'],
+    },
+    comercial: {
+      h1: 'Blindagem estrutural para edificações críticas.',
+      description: 'Película de segurança reforçada INSULFILM™ ISSF7000 para edificações corporativas e comerciais. Proteção de alto nível contra invasões e explosões.',
+      benefits: ['Blindagem estrutural', 'Anti-invasão reforçado', 'Certificação ASTM'],
+    },
+  },
+
+  /* ── Decorativo ── */
+  jateado: {
+    residencial: {
+      h1: 'Privacidade elegante para banheiros e suítes.',
+      description: 'Película decorativa INSULFILM™ Jateado para residências. Efeito vidro fosco com luminosidade natural preservada.',
+      benefits: ['Privacidade com luz', 'Estética sofisticada', 'Sem obra civil'],
+    },
+    comercial: {
+      h1: 'Divisórias e salas de reunião com privacidade profissional.',
+      description: 'Película decorativa INSULFILM™ Jateado para escritórios e clínicas. Privacidade visual sem bloquear iluminação.',
+      benefits: ['Privacidade corporativa', 'Sem obra', 'Identidade visual'],
+    },
+  },
+
+  whiteout: {
+    residencial: {
+      h1: 'Bloqueio total de visibilidade. Branco puro.',
+      description: 'Película decorativa INSULFILM™ Whiteout para residências. Privacidade absoluta em áreas íntimas com luz difusa.',
+      benefits: ['Privacidade absoluta', 'Luz difusa', 'Acabamento clean'],
+    },
+    comercial: {
+      h1: 'Áreas técnicas com privacidade total.',
+      description: 'Película decorativa INSULFILM™ Whiteout para ambientes corporativos. Bloqueio total de visibilidade em laboratórios, CPDs e salas técnicas.',
+      benefits: ['Privacidade total', 'Áreas técnicas', 'Sem manutenção'],
+    },
+  },
+
+  blackout: {
+    residencial: {
+      h1: 'Escuridão total para o quarto perfeito.',
+      description: 'Película decorativa INSULFILM™ Blackout para residências. Bloqueio total de luz para quartos, home cinemas e ambientes que exigem escuridão.',
+      benefits: ['Bloqueio total de luz', 'Home cinema', 'Qualidade do sono'],
+    },
+    comercial: {
+      h1: 'Escuridão controlada para estúdios e vitrines.',
+      description: 'Película decorativa INSULFILM™ Blackout para ambientes comerciais. Ideal para estúdios fotográficos, quartos escuros e vitrines.',
+      benefits: ['Estúdios profissionais', 'Bloqueio total', 'Vitrines controladas'],
+    },
+  },
+
+  /* ── SPF ── */
+  phantom: {
+    residencial: {
+      h1: 'Superfícies protegidas. Acabamento sempre novo.',
+      description: 'Película de proteção de superfícies INSULFILM™ Phantom para residências. Protege bancadas, portas e revestimentos contra riscos e desgaste.',
+      benefits: ['Proteção contra riscos', 'Preservação de acabamento', 'Remoção sem resíduo'],
+    },
+    comercial: {
+      h1: 'Reduza custos de manutenção. Proteja superfícies de alto tráfego.',
+      description: 'Película de proteção de superfícies INSULFILM™ Phantom para edificações comerciais. Elevadores, balcões e revestimentos protegidos contra o uso intenso.',
+      benefits: ['Redução de manutenção', 'Alto tráfego protegido', 'ROI comprovado'],
+    },
+  },
 };

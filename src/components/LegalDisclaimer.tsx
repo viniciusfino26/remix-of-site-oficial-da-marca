@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -17,7 +18,9 @@ const LegalDisclaimer = () => (
     <p className="text-xs md:text-sm text-muted-foreground/70 leading-relaxed font-light">
       O termo "insulfilm" é utilizado popularmente para se referir a películas para vidro.{' '}
       <span className="font-semibold text-foreground/80">INSULFILM™ é marca registrada brasileira</span>, pioneira no segmento desde 1986.{' '}
-      O uso da marca por terceiros não é autorizado.
+      O uso da marca por terceiros não é autorizado.{' '}
+      <Link to="/sobre/o-que-e-insulfilm" className="text-accent hover:underline">O que é INSULFILM™?</Link>{' · '}
+      <Link to="/marca/autenticidade" className="text-accent hover:underline">Autenticidade</Link>
     </p>
   </motion.aside>
 );
