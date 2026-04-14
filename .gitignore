@@ -26,3 +26,6 @@ dist-ssr
 *.pem
 *.key
 *.p12
+.env
+.env.development
+.env.production
