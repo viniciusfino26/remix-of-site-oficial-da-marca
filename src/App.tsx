@@ -69,7 +69,7 @@ import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 /* ── PDP Automotivo Solar — Polariz (novo) ── */
 import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
 
-/* ── PDPs Arquitetônico Solar ── */
+/* ── PDPs Arquitetônico Solar (legado — re-exports) ── */
 import ArqClear70 from "./pages/ArqClear70";
 import ArqOrizzonte from "./pages/ArqOrizzonte";
 import ArqUV90 from "./pages/ArqUV90";
@@ -79,6 +79,28 @@ import ArqGrigio from "./pages/ArqGrigio";
 import ArqMetallico from "./pages/ArqMetallico";
 import ArqReflesso from "./pages/ArqReflesso";
 import ArqSpecchiato from "./pages/ArqSpecchiato";
+
+/* ── PDPs Arquitetônico Solar — Residencial ── */
+import ArqResClear70 from "./pages/arq/residencial/solar/Clear70";
+import ArqResOrizzonte70 from "./pages/arq/residencial/solar/Orizzonte70";
+import ArqResUV90 from "./pages/arq/residencial/solar/Ultravioletti90";
+import ArqResNaturale from "./pages/arq/residencial/solar/Naturale";
+import ArqResPetrolio from "./pages/arq/residencial/solar/Petrolio";
+import ArqResGrigio from "./pages/arq/residencial/solar/GrigioInvertito";
+import ArqResMetallico from "./pages/arq/residencial/solar/MetallicoArgento";
+import ArqResReflesso from "./pages/arq/residencial/solar/ReflessoDArgento";
+import ArqResSpecchiato from "./pages/arq/residencial/solar/SpecchiatoBronzo";
+
+/* ── PDPs Arquitetônico Solar — Comercial ── */
+import ArqComClear70 from "./pages/arq/comercial/solar/Clear70";
+import ArqComOrizzonte70 from "./pages/arq/comercial/solar/Orizzonte70";
+import ArqComUV90 from "./pages/arq/comercial/solar/Ultravioletti90";
+import ArqComNaturale from "./pages/arq/comercial/solar/Naturale";
+import ArqComPetrolio from "./pages/arq/comercial/solar/Petrolio";
+import ArqComGrigio from "./pages/arq/comercial/solar/GrigioInvertito";
+import ArqComMetallico from "./pages/arq/comercial/solar/MetallicoArgento";
+import ArqComReflesso from "./pages/arq/comercial/solar/ReflessoDArgento";
+import ArqComSpecchiato from "./pages/arq/comercial/solar/SpecchiatoBronzo";
 
 /* ── PDPs Arquitetônico Segurança ── */
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
