@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductBanner from '@/components/ProductBanner';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import LegalDisclaimer from '@/components/LegalDisclaimer';
 import homeSolar from '@/assets/home-solar.png';
 import homeSeguranca from '@/assets/home-seguranca.png';
 import homeComercial from '@/assets/home-comercial.png';
@@ -285,8 +286,12 @@ const Index = () => {
         </div>
       </section>
 
-
-
+      {/* Legal Disclaimer */}
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4">
+          <LegalDisclaimer />
+        </div>
+      </section>
     </main>
   );
 };

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Shield, ExternalLink, MapPin, Instagram, Youtube, Linkedin, Twitter } from 'lucide-react';
 import PageHero from '@/components/PageHero';
+import LegalDisclaimer from '@/components/LegalDisclaimer';
 
 const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -133,6 +134,10 @@ const MarcaSobre = () => {
             </motion.div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4">
+          <LegalDisclaimer />
+        </div>
 
         {/* Footer */}
         <section className="py-8 bg-muted border-t border-border">
