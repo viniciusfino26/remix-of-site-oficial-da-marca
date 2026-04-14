@@ -240,6 +240,11 @@ const App = () => (
           <Route path="/lojas" element={<Lojas />} />
           <Route path="/privacidade" element={<Privacidade />} />
 
+          {/* Sobre — Blindagem Jurídica */}
+          <Route path="/sobre/o-que-e-insulfilm" element={<SobreOQueEInsulfilm />} />
+          <Route path="/sobre/insulfilm-marca-registrada" element={<SobreInsulfilmMarcaRegistrada />} />
+          <Route path="/legal/marca-registrada" element={<LegalMarcaRegistrada />} />
+
           {/* Parceiro */}
           <Route path="/parceiro" element={<Parceiro />} />
 
