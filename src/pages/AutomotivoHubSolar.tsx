@@ -29,9 +29,10 @@ const navTabs = [
   { label: 'Dark', href: '#dark' },
   { label: 'Eclipse', href: '#eclipse' },
   { label: 'Vip', href: '#vip' },
+  { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Transparente', href: '#matrix' },
-  { label: 'Polariz Ultra', href: '#polariz' },
+  { label: 'Polariz Ultra', href: '#polariz-ultra' },
 ];
 
 const products = [
