@@ -1,0 +1,1 @@
+DROP POLICY "Videos are publicly accessible" ON storage.objects;
