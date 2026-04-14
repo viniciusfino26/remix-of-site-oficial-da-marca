@@ -8,6 +8,9 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import LegalDisclaimer from '@/components/LegalDisclaimer';
+import { copyBySegment, type Segment } from '@/content/copyBySegment';
+
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -27,7 +30,12 @@ const techTable = [
   { version: 'Specchiato Bronzo 15', privacy: 'Muito Alto', light: '20%', ir: '72%', uv: '>99%', energy: '70%' },
 ];
 
-const SpecchiatoBronzo = () => {
+const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
+
+  const segmentPath = segment ? `/${segment}` : '';
+  const copy = segment ? copyBySegment['specchiato-bronzo']?.[segment] : undefined;
+  const baseCanonical = `https://insulfilm.com.br/arquitetonico${segmentPath}/solar/specchiato-bronzo`;
+
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -39,7 +47,7 @@ const SpecchiatoBronzo = () => {
     "name": "INSULFILM™ Specchiato Bronzo",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Película espelhada bronze com tecnologia Sputtered Nichrome, até 72% de rejeição IR e conforto visual interno preservado. Garantia 10 anos.",
-    "url": "https://insulfilm.com.br/arquitetonico/solar/specchiato-bronzo",
+    "url": baseCanonical,
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Tecnologia", "value": "Sputtered Nichrome Film" },
       { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "Até 72%" },
@@ -53,11 +61,11 @@ const SpecchiatoBronzo = () => {
       <Helmet>
         <title>INSULFILM™ Specchiato Bronzo | Película Espelhada Bronze | Refletividade Equilibrada</title>
         <meta name="description" content="INSULFILM™ Specchiato Bronzo — película espelhada bronze com tecnologia Sputtered Nichrome, até 72% de rejeição IR e conforto visual interno preservado. Garantia 10 anos." />
-        <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar/specchiato-bronzo" />
+        <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Specchiato Bronzo | Película Espelhada Bronze" />
         <meta property="og:description" content="INSULFILM™ Specchiato Bronzo — película espelhada bronze com tecnologia Sputtered Nichrome e até 72% de rejeição IR." />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/solar/specchiato-bronzo" />
+        <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
@@ -70,7 +78,9 @@ const SpecchiatoBronzo = () => {
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
                 <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Specchiato Bronzo — eficiência solar com estética espelhada equilibrada e suave</motion.h1>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
+                {copy?.h1 || `INSULFILM™ Specchiato Bronzo — eficiência solar com estética espelhada equilibrada e suave`}
+              </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Alto desempenho térmico. Sem o espelho intenso do lado interno.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>

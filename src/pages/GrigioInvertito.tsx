@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import LegalDisclaimer from '@/components/LegalDisclaimer';
+import { copyBySegment, type Segment } from '@/content/copyBySegment';
+
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -24,7 +27,12 @@ const techTable = [
   { version: 'Grigio Invertito 15', privacy: 'Muito Alto', light: '15%', ir: '75%', uv: '>99%', energy: '70%' },
 ];
 
-const GrigioInvertito = () => {
+const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
+
+  const segmentPath = segment ? `/${segment}` : '';
+  const copy = segment ? copyBySegment['grigio-invertito']?.[segment] : undefined;
+  const baseCanonical = `https://insulfilm.com.br/arquitetonico${segmentPath}/solar/grigio-invertito`;
+
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -36,7 +44,7 @@ const GrigioInvertito = () => {
     "name": "INSULFILM™ Grigio Invertito",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Película arquitetônica com espelhamento invertido. Privacidade externa durante o dia, visibilidade interna preservada. Marca registrada.",
-    "url": "https://insulfilm.com.br/arquitetonico/solar/grigio-invertito",
+    "url": baseCanonical,
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Tecnologia", "value": "Vapor-Coated Aluminium Film" },
       { "@type": "PropertyValue", "name": "Transmissão de Luz", "value": "15%" },
@@ -53,8 +61,8 @@ const GrigioInvertito = () => {
         <meta property="og:title" content="INSULFILM™ Grigio Invertito | Película Espelhada Invertida" />
         <meta property="og:description" content="Visual moderno por fora. Amplitude iluminada por dentro. Privacidade externa durante o dia." />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/solar/grigio-invertito" />
-        <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar/grigio-invertito" />
+        <meta property="og:url" content={baseCanonical} />
+        <link rel="canonical" href={baseCanonical} />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
@@ -66,7 +74,7 @@ const GrigioInvertito = () => {
                 <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Performance</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                Visual moderno por fora. Amplitude iluminada por dentro.
+                {copy?.h1 || `Visual moderno por fora. Amplitude iluminada por dentro.`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
                 A INSULFILM™ Grigio Invertito foi desenvolvida para fachadas e ambientes que exigem privacidade externa durante o dia sem abrir mão de luminosidade interna — com estética fumê espelhada de alto impacto visual.
@@ -79,9 +87,7 @@ const GrigioInvertito = () => {
 
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
-            <p className="text-sm text-muted-foreground/70 font-light max-w-3xl mx-auto text-center italic">
-              Muitas pessoas utilizam o termo "insulfilm" ou "insulfilme" para se referir a películas para vidro. Esse é um uso popular. INSULFILM™ é marca registrada, com titularidade exclusiva e referência no segmento. O uso da marca por terceiros não é autorizado.
-            </p>
+            <LegalDisclaimer />
           </div>
         </section>
 
