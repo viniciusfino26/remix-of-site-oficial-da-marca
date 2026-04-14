@@ -148,7 +148,6 @@ const App = () => (
           <Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
           <Route path="/automotivo/ppf/phantom-6mil" element={<AutomotivoPhantom6 />} />
           <Route path="/automotivo/ppf/phantom-8mil" element={<AutomotivoPhantom8 />} />
-          <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
 
           {/* Divisão Arquitetônica — Categorias */}
           <Route path="/residencial" element={<Residencial />} />
