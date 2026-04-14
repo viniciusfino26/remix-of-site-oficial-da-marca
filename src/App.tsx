@@ -69,6 +69,18 @@ import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
 import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
+/* ── Hubs Segmentados — Residencial + Comercial ── */
+import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
+import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
+import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
+import ArqResidencialHubSeguranca from "./pages/ArqResidencialHubSeguranca";
+import ArqResidencialHubDecorativo from "./pages/ArqResidencialHubDecorativo";
+import ArqResidencialHubSPF from "./pages/ArqResidencialHubSPF";
+import ArqComercialHubSolar from "./pages/ArqComercialHubSolar";
+import ArqComercialHubSeguranca from "./pages/ArqComercialHubSeguranca";
+import ArqComercialHubDecorativo from "./pages/ArqComercialHubDecorativo";
+import ArqComercialHubSPF from "./pages/ArqComercialHubSPF";
+
 /* ── PDP Automotivo Solar — Polariz (novo) ── */
 import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
 
