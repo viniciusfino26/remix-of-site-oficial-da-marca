@@ -8,6 +8,9 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import LegalDisclaimer from '@/components/LegalDisclaimer';
+import { copyBySegment, type Segment } from '@/content/copyBySegment';
+
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -35,7 +38,12 @@ const guideTable = [
   { need: 'Alta privacidade e máxima performance térmica', version: 'Naturale 20' },
 ];
 
-const Naturale = () => {
+const Naturale = ({ segment }: { segment?: Segment }) => {
+
+  const segmentPath = segment ? `/${segment}` : '';
+  const copy = segment ? copyBySegment['naturale']?.[segment] : undefined;
+  const baseCanonical = `https://insulfilm.com.br/arquitetonico${segmentPath}/solar/naturale`;
+
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -47,7 +55,7 @@ const Naturale = () => {
     "name": "INSULFILM™ Naturale",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos. Discrição que transforma.",
-    "url": "https://insulfilm.com.br/arquitetonico/solar/naturale",
+    "url": baseCanonical,
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Tecnologia", "value": "Neutral Sputtered Film" },
       { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "Até 81%" },
@@ -61,11 +69,11 @@ const Naturale = () => {
       <Helmet>
         <title>INSULFILM™ Naturale | Película Neutra Premium | Bombardeamento Iônico | 4 Versões</title>
         <meta name="description" content="INSULFILM™ Naturale — película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos. Discrição que transforma." />
-        <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar/naturale" />
+        <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Naturale | Película Neutra Premium | 4 Versões" />
         <meta property="og:description" content="INSULFILM™ Naturale — película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos." />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/solar/naturale" />
+        <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
@@ -78,7 +86,9 @@ const Naturale = () => {
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
                 <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Naturale — discrição que transforma, clareza que protege</motion.h1>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
+                {copy?.h1 || `INSULFILM™ Naturale — discrição que transforma, clareza que protege`}
+              </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Proteção real. Estética preservada. Para projetos que não abrem mão dos dois.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
