@@ -1,0 +1,55 @@
+/*
+  HTTP Security Headers
+  Configure security headers for all responses
+*/
+
+/*
+  Strict Transport Security (HSTS)
+  Forces HTTPS connections for 1 year, includes subdomains
+*/
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/*
+  Content Security Policy (CSP)
+  Restricts sources of content to prevent XSS and data injection
+*/
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.lovable.app https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+/*
+  X-Frame-Options
+  Prevents clickjacking by disallowing iframe embedding
+*/
+X-Frame-Options: DENY
+
+/*
+  X-Content-Type-Options
+  Prevents MIME type sniffing
+*/
+X-Content-Type-Options: nosniff
+
+/*
+  Referrer-Policy
+  Controls referrer information sent with requests
+*/
+Referrer-Policy: strict-origin-when-cross-origin
+
+/*
+  Permissions-Policy
+  Restricts browser features/APIs usage
+*/
+Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+/*
+  X-XSS-Protection
+  Legacy XSS filter (defense in depth)
+*/
+X-XSS-Protection: 1; mode=block
+
+/*
+  Cache Control for sensitive files
+  Prevent caching of sensitive resources
+*/
+/cache-control
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
