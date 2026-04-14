@@ -226,8 +226,8 @@ const Index = () => {
       <ParallaxBreak
         minHeight="35vh"
         stats={[
-          { value: `${new Date().getFullYear() - 1986}+`, label: 'Anos' },
-          { value: '+4Mi', label: 'm² instalados' },
+          { value: 'Quase 40 anos', label: 'de história no brasil' },
+          { value: '+4Mi', label: 'm² aplicados' },
           { value: '#1', label: 'Marca mais conhecida nacionalmente' },
         ]}
       />
