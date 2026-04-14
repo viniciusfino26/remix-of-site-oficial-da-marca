@@ -215,6 +215,8 @@ const App = () => (
           <Route path="/specchiato-bronzo" element={<Navigate to="/arquitetonico/solar/specchiato-bronzo" replace />} />
           <Route path="/aviso_legal" element={<Navigate to="/marca/autenticidade" replace />} />
           <Route path="/aviso-legal" element={<Navigate to="/marca/autenticidade" replace />} />
+          <Route path="/automotivo/ppf/phantom-6mil" element={<Navigate to="/automotivo/ppf/phantom-gloss" replace />} />
+          <Route path="/automotivo/ppf/phantom-8mil" element={<Navigate to="/automotivo/ppf/phantom-gloss" replace />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
