@@ -9,7 +9,6 @@ import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
 import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
 import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
 import autoSolarHero from '@/assets/auto-solar-hero.png';
-import autoSolarHero from '@/assets/auto-solar-hero.png';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
