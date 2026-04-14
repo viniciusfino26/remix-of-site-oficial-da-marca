@@ -1,0 +1,4 @@
+Contact: mailto:security@insulfilm.com.br
+Expires: 2026-12-31T23:59:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://insulfilm.com.br/.well-known/security.txt
