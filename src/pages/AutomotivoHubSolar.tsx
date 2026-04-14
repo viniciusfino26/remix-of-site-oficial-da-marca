@@ -4,9 +4,11 @@ import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings }
 import autoSolarDark from '@/assets/auto-solar-dark.png';
 import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
 import autoSolarVip from '@/assets/auto-solar-vip.png';
+import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
 import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
 import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
 import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
+import autoSolarHero from '@/assets/auto-solar-hero.png';
 import autoSolarHero from '@/assets/auto-solar-hero.png';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -64,6 +66,15 @@ const products = [
     image: autoSolarVip,
   },
   {
+    name: 'INSULFILM™ Polariz',
+    tech: 'Tecnologia: 4ª Geração',
+    serie: 'Série: Cerâmica metalizada',
+    text: 'Película espectro seletiva híbrida com estética visual polarizada e alto desempenho de retenção de calor. Visual refinado com tecnologia avançada de rejeição térmica e proteção contra raios infravermelhos.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
+    path: '/automotivo/solar/polariz',
+    id: 'polariz',
+    image: autoSolarPolarizSolar,
+  },
+  {
     name: 'INSULFILM™ Matrix',
     tech: 'Tecnologia: 4ª Geração',
     serie: 'Série: Cerâmica, máxima rejeição IR',
@@ -79,7 +90,7 @@ const products = [
     serie: 'Série: Cerâmica metalizada',
     text: 'Exclusiva. Película espectro seletiva híbrida: metalizada combinada à cerâmica, com estética visual polarizada e máximo desempenho de retenção de calor. Um visual refinado e alta tecnologia com ultra rejeição térmica em proteção contra os raios infravermelhos. Alta durabilidade e proteção. Excepcional visibilidade interna de ultra definição.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
     path: '/automotivo/solar/polariz-ultra',
-    id: 'polariz',
+    id: 'polariz-ultra',
     image: autoSolarPolariz,
   },
 ];
