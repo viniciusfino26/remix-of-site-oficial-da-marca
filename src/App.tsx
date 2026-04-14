@@ -10,6 +10,7 @@ import LegalNotice from "./components/LegalNotice";
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingCTA from "./components/FloatingCTA";
 import PageNavigation from "./components/PageNavigation";
+import { CookieBanner } from "./components/CookieBanner";
 
 import Index from "./pages/Index";
 import QuemSomos from "./pages/QuemSomos";
@@ -225,6 +226,7 @@ const App = () => (
         <WhatsAppButton />
         <FloatingCTA />
         <PageNavigation />
+        <CookieBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

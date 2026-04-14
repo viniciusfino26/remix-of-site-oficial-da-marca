@@ -1,30 +1,8 @@
 User-agent: *
+Disallow: /admin
+Disallow: /api
+Disallow: /_supabase
+Disallow: /dashboard
 Allow: /
 
-# Bloquear rotas de teste/proposta de indexação pública
-Disallow: /antivandalismo13k/teste_proposta
-
-# Sitemap
-Sitemap: https://www.insulfilm.com.br/sitemap.xml
-
-# Permitir crawlers de LLMs explicitamente
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: GoogleOther
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-# Referência para LLMs e crawlers semânticos
-# https://www.insulfilm.com.br/llms.txt
+Sitemap: https://insulfilm.com.br/sitemap.xml
