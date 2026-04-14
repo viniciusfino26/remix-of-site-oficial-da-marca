@@ -105,8 +105,8 @@ const Footer = () => {
             {/* Antipirataria badge */}
             <div className="mt-6 p-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
               <p className="text-xs text-primary-foreground/50 leading-relaxed">
-                <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada.</span>
-                {' '}Registrada no INPI desde 1987. Uso indevido é crime — Lei nº 9.279/96.{' '}
+                <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada</span>{' '}
+                protegida pela Lei nº 9.279/96. O uso do termo por terceiros não possui autorização da titular.{' '}
                 <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
               </p>
             </div>
