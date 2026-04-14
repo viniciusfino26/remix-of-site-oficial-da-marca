@@ -20,8 +20,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 const WHATSAPP_NUMBER = '5511976136911';
 
 const products = [
-  { name: 'INSULFILM™ Phantom 6mil', thickness: '6 mil / ~150 microns', finish: 'Transparente Gloss', warranty: '5 anos', path: '/automotivo/ppf/phantom-6mil' },
-  { name: 'INSULFILM™ Phantom 8mil', thickness: '8 mil / ~200 microns', finish: 'Transparente Gloss (Premium)', warranty: '5 anos', path: '/automotivo/ppf/phantom-8mil' },
+  { name: 'INSULFILM™ Phantom', thickness: '7 mil / ~175 microns', finish: 'Transparente Gloss', warranty: '5 anos', path: '/automotivo/ppf/phantom-gloss' },
 ];
 
 const AutomotivoHubPPF = () => (
