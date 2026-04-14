@@ -69,6 +69,18 @@ import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
 import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
+/* ── Hubs Segmentados — Residencial + Comercial ── */
+import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
+import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
+import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
+import ArqResidencialHubSeguranca from "./pages/ArqResidencialHubSeguranca";
+import ArqResidencialHubDecorativo from "./pages/ArqResidencialHubDecorativo";
+import ArqResidencialHubSPF from "./pages/ArqResidencialHubSPF";
+import ArqComercialHubSolar from "./pages/ArqComercialHubSolar";
+import ArqComercialHubSeguranca from "./pages/ArqComercialHubSeguranca";
+import ArqComercialHubDecorativo from "./pages/ArqComercialHubDecorativo";
+import ArqComercialHubSPF from "./pages/ArqComercialHubSPF";
+
 /* ── PDP Automotivo Solar — Polariz (novo) ── */
 import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
 
@@ -180,13 +192,28 @@ const App = () => (
           {/* Divisão Arquitetônica — Hub Principal */}
           <Route path="/arquitetonico" element={<Arquitetonico />} />
 
+          {/* Divisão Arquitetônica — Hubs Segmentados */}
+          <Route path="/arquitetonico/residencial" element={<ArquitetonicoResidencial />} />
+          <Route path="/arquitetonico/comercial" element={<ArquitetonicoComercial />} />
+
           {/* Divisão Arquitetônica — Hubs de Silo (legado, mantidos temporariamente) */}
           <Route path="/arquitetonico/solar" element={<Navigate to="/arquitetonico/residencial/solar" replace />} />
           <Route path="/arquitetonico/seguranca" element={<ArqHubSeguranca />} />
           <Route path="/arquitetonico/decorativo" element={<ArqHubDecorativo />} />
 
-          {/* Divisão Arquitetônica — Residencial Solar */}
-          <Route path="/arquitetonico/residencial/solar" element={<ArqHubSolar />} />
+          {/* Divisão Arquitetônica — Residencial Hubs de Categoria */}
+          <Route path="/arquitetonico/residencial/solar" element={<ArqResidencialHubSolar />} />
+          <Route path="/arquitetonico/residencial/seguranca" element={<ArqResidencialHubSeguranca />} />
+          <Route path="/arquitetonico/residencial/decorativo" element={<ArqResidencialHubDecorativo />} />
+          <Route path="/arquitetonico/residencial/spf" element={<ArqResidencialHubSPF />} />
+
+          {/* Divisão Arquitetônica — Comercial Hubs de Categoria */}
+          <Route path="/arquitetonico/comercial/solar" element={<ArqComercialHubSolar />} />
+          <Route path="/arquitetonico/comercial/seguranca" element={<ArqComercialHubSeguranca />} />
+          <Route path="/arquitetonico/comercial/decorativo" element={<ArqComercialHubDecorativo />} />
+          <Route path="/arquitetonico/comercial/spf" element={<ArqComercialHubSPF />} />
+
+          {/* Divisão Arquitetônica — Residencial Solar PDPs */}
           <Route path="/arquitetonico/residencial/solar/clear70" element={<ArqResClear70 />} />
           <Route path="/arquitetonico/residencial/solar/orizzonte70" element={<ArqResOrizzonte70 />} />
           <Route path="/arquitetonico/residencial/solar/ultravioletti90" element={<ArqResUV90 />} />
