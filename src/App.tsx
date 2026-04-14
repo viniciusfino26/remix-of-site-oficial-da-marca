@@ -38,6 +38,9 @@ import FAQ from "./pages/FAQ";
 import Garantia from "./pages/Garantia";
 import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
+import SobreOQueEInsulfilm from "./pages/SobreOQueEInsulfilm";
+import SobreInsulfilmMarcaRegistrada from "./pages/SobreInsulfilmMarcaRegistrada";
+import LegalMarcaRegistrada from "./pages/LegalMarcaRegistrada";
 
 /* ── Hubs Automotivos ── */
 import AutomotivoHubSolar from "./pages/AutomotivoHubSolar";
@@ -236,6 +239,11 @@ const App = () => (
           <Route path="/garantia" element={<Garantia />} />
           <Route path="/lojas" element={<Lojas />} />
           <Route path="/privacidade" element={<Privacidade />} />
+
+          {/* Sobre — Blindagem Jurídica */}
+          <Route path="/sobre/o-que-e-insulfilm" element={<SobreOQueEInsulfilm />} />
+          <Route path="/sobre/insulfilm-marca-registrada" element={<SobreInsulfilmMarcaRegistrada />} />
+          <Route path="/legal/marca-registrada" element={<LegalMarcaRegistrada />} />
 
           {/* Parceiro */}
           <Route path="/parceiro" element={<Parceiro />} />
