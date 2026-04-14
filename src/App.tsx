@@ -56,10 +56,9 @@ import AutomotivoAntivandalismo from "./pages/AutomotivoAntivandalismo";
 import AutomotivoSkudoGuard from "./pages/AutomotivoSkudoGuard";
 import AutomotivoSkudoUltra from "./pages/AutomotivoSkudoUltra";
 
-/* ── Hub + PDPs Automotivo PPF ── */
+/* ── Hub + PDP Automotivo PPF ── */
 import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
-import AutomotivoPhantom6 from "./pages/AutomotivoPhantom6";
-import AutomotivoPhantom8 from "./pages/AutomotivoPhantom8";
+import AutomotivoPhantomGloss from "./pages/AutomotivoPhantomGloss";
 
 /* ── Hub + Hubs Arquitetônicos ── */
 import Arquitetonico from "./pages/Arquitetonico";
@@ -144,10 +143,9 @@ const App = () => (
           <Route path="/automotivo/seguranca/skudoguard" element={<AutomotivoSkudoGuard />} />
           <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
 
-          {/* Divisão Automotiva — Hub + PDPs PPF */}
+          {/* Divisão Automotiva — Hub + PDP PPF */}
           <Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
-          <Route path="/automotivo/ppf/phantom-6mil" element={<AutomotivoPhantom6 />} />
-          <Route path="/automotivo/ppf/phantom-8mil" element={<AutomotivoPhantom8 />} />
+          <Route path="/automotivo/ppf/phantom-gloss" element={<AutomotivoPhantomGloss />} />
 
           {/* Divisão Arquitetônica — Categorias */}
           <Route path="/residencial" element={<Residencial />} />
@@ -217,6 +215,8 @@ const App = () => (
           <Route path="/specchiato-bronzo" element={<Navigate to="/arquitetonico/solar/specchiato-bronzo" replace />} />
           <Route path="/aviso_legal" element={<Navigate to="/marca/autenticidade" replace />} />
           <Route path="/aviso-legal" element={<Navigate to="/marca/autenticidade" replace />} />
+          <Route path="/automotivo/ppf/phantom-6mil" element={<Navigate to="/automotivo/ppf/phantom-gloss" replace />} />
+          <Route path="/automotivo/ppf/phantom-8mil" element={<Navigate to="/automotivo/ppf/phantom-gloss" replace />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
