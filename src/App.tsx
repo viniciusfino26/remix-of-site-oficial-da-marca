@@ -38,6 +38,9 @@ import FAQ from "./pages/FAQ";
 import Garantia from "./pages/Garantia";
 import NotFound from "./pages/NotFound";
 import Privacidade from "./pages/Privacidade";
+import SobreOQueEInsulfilm from "./pages/SobreOQueEInsulfilm";
+import SobreInsulfilmMarcaRegistrada from "./pages/SobreInsulfilmMarcaRegistrada";
+import LegalMarcaRegistrada from "./pages/LegalMarcaRegistrada";
 
 /* ── Hubs Automotivos ── */
 import AutomotivoHubSolar from "./pages/AutomotivoHubSolar";
