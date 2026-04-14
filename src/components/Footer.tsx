@@ -81,24 +81,30 @@ const Footer = () => {
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">
               {t('footer.followUs')}
             </h3>
-            <div className="flex gap-3">
-              <a href="https://www.instagram.com/insulfilm.oficial" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_instagram', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="Instagram">
+            <div className="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/insulfilm.oficial" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_instagram', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">Instagram</span>
               </a>
-              <a href="https://www.facebook.com/insulfilmoriginal" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_facebook', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="Facebook">
+              <a href="https://www.facebook.com/insulfilmoriginal" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_facebook', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">Facebook</span>
               </a>
-              <a href="https://www.youtube.com/INSULFILMMaximizado" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_youtube', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="YouTube">
+              <a href="https://www.youtube.com/@insulfilmoficial" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_youtube', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="YouTube">
                 <Youtube className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">YouTube</span>
               </a>
-              <a href="https://www.linkedin.com/company/insulfilm" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_brand', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="LinkedIn - Marca">
+              <a href="https://www.linkedin.com/company/insulfilm™" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_brand', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="LinkedIn - Empresa">
                 <Linkedin className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">LinkedIn: Empresa</span>
               </a>
-              <a href="https://www.linkedin.com/in/franciscofino" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_profile', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="LinkedIn - Francisco Fino">
+              <a href="https://www.linkedin.com/in/francisco-fino-2032a03b/" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.ctaClick('social_linkedin_profile', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="LinkedIn - Fundador">
                 <Linkedin className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">LinkedIn: Fundador</span>
               </a>
-              <a href="https://wa.me/5511976136911" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.whatsappClick('geral', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15" aria-label="WhatsApp">
+              <a href="https://wa.me/5511976136911" target="_blank" rel="noopener noreferrer" onClick={() => Analytics.whatsappClick('geral', 'footer')} className="social-icon-premium p-2.5 rounded-lg bg-primary-foreground/10 text-primary-foreground/60 hover:text-accent hover:bg-accent/15 flex items-center gap-2" aria-label="WhatsApp">
                 <MessageCircle className="w-5 h-5" />
+                <span className="text-xs font-medium hidden sm:inline">WhatsApp</span>
               </a>
             </div>
 
