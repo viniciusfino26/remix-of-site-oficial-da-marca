@@ -33,14 +33,25 @@ const AutomotivoHubSeguranca = () => {
 
       <main>
 
-        {/* ═══ HERO — foto + bloco laranja vazando ═══ */}
+        {/* ═══ HERO — foto + gradiente ═══ */}
         <section className="relative w-full bg-gray-900 overflow-x-hidden">
           <img
             src={autoSeguranca}
             alt="Películas de proteção e segurança automotiva INSULFILM™"
-            className="block w-full h-[200px] md:h-[240px] object-cover"
+            className="block w-full h-[280px] md:h-[380px] object-cover object-center"
           />
-          <span className="absolute right-3 bottom-2 text-white/60 text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
+          {/* Gradiente sutil para melhorar leitura */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent" />
+          {/* Texto sobre o hero */}
+          <div className="absolute bottom-6 left-0 right-0 container mx-auto px-4">
+            <div className="max-w-lg">
+              <p className="text-white/70 text-xs uppercase tracking-widest font-semibold mb-1">INSULFILM™ Segurança Automotiva</p>
+              <h1 className="text-white font-extrabold text-xl md:text-3xl leading-tight drop-shadow-lg">
+                Películas de Proteção e Segurança
+              </h1>
+            </div>
+          </div>
+          <span className="absolute right-3 bottom-2 text-white/50 text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>
             Imagem meramente ilustrativa
           </span>
         </section>
@@ -197,21 +208,21 @@ const AutomotivoHubSeguranca = () => {
                     </Button>
                   </Link>
                   <Link to="/automotivo/seguranca/antivandalismo13k">
-                    <Button size="sm" variant="outline" className="border-white/20 text-primary-foreground hover:bg-white/10 font-bold text-xs rounded-full px-4">
+                    <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">
                       Antivandalismo13K
                     </Button>
                   </Link>
                 </div>
               </motion.div>
 
-              {/* Segurança Superior */}
+              {/* Películas de Defesa */}
               <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}
                 className="bg-[#1a3a6e]/60 md:bg-[#1a3a6e]/70 border border-white/10 rounded-lg p-6"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Swords className="w-5 h-5 text-accent" />
-                  <h3 className="text-primary-foreground font-extrabold text-base">Segurança Superior</h3>
+                  <h3 className="text-primary-foreground font-extrabold text-base">Películas de Defesa</h3>
                 </div>
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
                   Verdadeiros escudos muito mais resistentes a tentativas de invasão.
@@ -221,6 +232,11 @@ const AutomotivoHubSeguranca = () => {
                   <Link to="/automotivo/seguranca/skudoguard">
                     <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">
                       SkudoGuard
+                    </Button>
+                  </Link>
+                  <Link to="/automotivo/seguranca/skudoultra">
+                    <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">
+                      SkudoUltra
                     </Button>
                   </Link>
                 </div>
@@ -245,6 +261,10 @@ const AutomotivoHubSeguranca = () => {
               className="grid md:grid-cols-2 gap-8 items-center mb-16"
             >
               <motion.div variants={fadeInLeft} className="space-y-3">
+                {/* Tarja de linha */}
+                <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm">
+                  <ShieldCheck className="w-3.5 h-3.5" /> Proteção Básica
+                </div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™SkinSafe8K</p>
                 <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">PROTEÇÃO CONTRA ACIDENTES.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -276,6 +296,10 @@ const AutomotivoHubSeguranca = () => {
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">
+                {/* Tarja de linha */}
+                <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm">
+                  <ShieldCheck className="w-3.5 h-3.5" /> Proteção Reforçada
+                </div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™Antivandalismo13K</p>
                 <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">PROTEÇÃO CONTRA ATOS DE VANDALISMO.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -307,6 +331,10 @@ const AutomotivoHubSeguranca = () => {
               className="grid md:grid-cols-2 gap-8 items-center mb-16"
             >
               <motion.div variants={fadeInLeft} className="space-y-3">
+                {/* Tarja de linha */}
+                <div className="inline-flex items-center gap-2 bg-accent text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm">
+                  <Swords className="w-3.5 h-3.5" /> Defesa Superior
+                </div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™SkudoGuard</p>
                 <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">MAIS ANTIVANDALISMO. SEGURANÇA FORTE E EFETIVA.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -341,6 +369,10 @@ const AutomotivoHubSeguranca = () => {
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">
+                {/* Tarja de linha */}
+                <div className="inline-flex items-center gap-2 bg-red-700 text-white text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm">
+                  <Swords className="w-3.5 h-3.5" /> Defesa Extrema
+                </div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™SkudoUltra</p>
                 <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">EXTREMA SEGURANÇA. BLINDAGEM CONTRA ARMAS BRANCAS.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
