@@ -168,7 +168,7 @@ const Header = () => {
 
       <header className="fixed top-[3px] left-0 right-0 z-50 bg-glass" role="banner">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-24 lg:h-32">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group shrink-0">
               <img
