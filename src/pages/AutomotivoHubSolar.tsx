@@ -173,20 +173,20 @@ const AutomotivoHubSolar = () => {
           <img
             src={autoSolarHero}
             alt="Película solar automotiva aplicada"
-            className="block w-full h-[200px] md:h-[220px] object-cover"
+            className="block w-full h-[200px] md:h-[210px] object-cover"
           />
-          {/* Bloco laranja no canto inferior esquerdo, sobreposto à foto */}
+          {/* Badge laranja - alinhado ao fundo da imagem, à esquerda */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="absolute left-0 bottom-0 bg-accent text-white pl-6 md:pl-10 pr-12 md:pr-20 py-4 md:py-5"
+            className="absolute left-0 bottom-0 bg-accent text-accent-foreground pl-6 md:pl-10 pr-12 md:pr-20 py-4 md:py-5"
           >
             <p className="text-xl md:text-2xl font-extrabold leading-tight tracking-tight">Películas Premium</p>
-            <p className="text-sm md:text-base font-semibold leading-tight mt-1 text-white/90">Sinta a diferença</p>
+            <p className="text-sm md:text-base font-light leading-tight mt-1">Sinta a diferença</p>
           </motion.div>
-          {/* Legenda canto inferior direito */}
-          <span className="absolute right-3 bottom-2 text-white/60 text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
+          {/* Crédito inferior direito */}
+          <span className="absolute right-3 bottom-2 text-white text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
             Imagem meramente ilustrativa
           </span>
         </section>
