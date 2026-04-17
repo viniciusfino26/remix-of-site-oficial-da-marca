@@ -148,11 +148,9 @@ const SkinSafe8K = () => {
           <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-primary-foreground/10">
             <video
               className="w-full aspect-video object-cover"
-              autoPlay
-              muted
-              loop
+              controls
               playsInline
-              disablePictureInPicture
+              preload="metadata"
               src="https://www.insulfilm.com.br/automotivo/__videos/Antivandalismo--Video-Estilhacamento-2.mp4"
             />
           </div>
