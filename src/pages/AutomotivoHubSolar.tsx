@@ -169,21 +169,21 @@ const AutomotivoHubSolar = () => {
 
       <main>
         {/* ═══ HERO ═══ */}
-        <section className="relative w-full bg-gray-800 overflow-hidden">
+        <section className="relative w-full overflow-hidden bg-gray-800">
           <img
             src={autoSolarHero}
             alt="Película solar automotiva aplicada"
             className="block w-full h-[200px] md:h-[220px] object-cover"
           />
-          {/* Bloco laranja sobreposto à foto, vazando para baixo */}
+          {/* Bloco laranja no canto inferior esquerdo, sobreposto à foto */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="absolute left-0 bottom-0 translate-y-1/2 z-20 bg-[#c45e1a]/40 md:bg-[#c45e1a]/50 border border-white/10 rounded-r-lg pl-6 md:pl-10 pr-10 md:pr-16 py-4 md:py-5 text-white"
+            className="absolute left-0 bottom-0 bg-accent text-white pl-6 md:pl-10 pr-12 md:pr-20 py-4 md:py-5"
           >
             <p className="text-xl md:text-2xl font-extrabold leading-tight tracking-tight">Películas Premium</p>
-            <p className="text-sm md:text-base font-light leading-tight mt-1 text-white/80">Sinta a diferença</p>
+            <p className="text-sm md:text-base font-semibold leading-tight mt-1 text-white/90">Sinta a diferença</p>
           </motion.div>
           {/* Legenda canto inferior direito */}
           <span className="absolute right-3 bottom-2 text-white/60 text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
@@ -192,7 +192,7 @@ const AutomotivoHubSolar = () => {
         </section>
 
         {/* ═══ INTRODUÇÃO ═══ */}
-        <section className="bg-white pt-16 pb-16" style={{ position: 'relative' }}>
+        <section className="bg-white py-16">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary mb-4 leading-tight">
