@@ -114,13 +114,16 @@ const AutomotivoHubSeguranca = () => {
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInLeft}
               >
                 <div
-                  className="relative w-full bg-black/40 border border-white/10 rounded-lg flex items-center justify-center"
+                  className="relative w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden"
                   style={{ aspectRatio: '16/9' }}
                 >
-                  <div className="text-center text-white/50">
-                    <Play className="w-10 h-10 mx-auto mb-2 text-white/30" />
-                    <p className="text-xs font-semibold uppercase tracking-widest">Espaço para vídeo 16:9<br/>divide a tela entre vídeo e<br/>escrita para melhorar a responsividade</p>
-                  </div>
+                  <video
+                    src="/videos/auto-seguranca-marginal.mp4"
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
               </motion.div>
 
