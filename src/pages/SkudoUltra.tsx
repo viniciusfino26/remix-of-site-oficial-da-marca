@@ -320,11 +320,13 @@ const SkudoUltra = () => {
               </motion.ul>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-              <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                  <p className="text-sm">Imagem do produto</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
+                <img
+                  src={autoSkudoUltra}
+                  alt="Vidro automotivo após múltiplos impactos resistido pela película INSULFILM™ SkudoUltra — blindagem extrema contra armas brancas"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
