@@ -169,15 +169,26 @@ const AutomotivoHubSolar = () => {
 
       <main>
         {/* ═══ HERO ═══ */}
-        <section className="relative min-h-[60vh] flex items-end bg-gray-800 overflow-hidden">
-          <img src={autoSolarHero} alt="Película solar automotiva aplicada" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="container mx-auto px-4 pb-8 relative z-10 flex items-end justify-between w-full">
-            <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="inline-block bg-accent text-accent-foreground text-xs uppercase tracking-widest font-bold px-5 py-2.5 rounded">
-              Películas Premium · Sinta a diferença
-            </motion.div>
-            <span className="text-white/60 text-[11px] italic">Imagem meramente ilustrativa</span>
-          </div>
+        <section className="relative w-full overflow-hidden bg-gray-800">
+          <img
+            src={autoSolarHero}
+            alt="Película solar automotiva aplicada"
+            className="block w-full h-auto max-h-[260px] md:max-h-[280px] object-cover"
+          />
+          {/* Badge laranja inferior esquerdo */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="absolute left-0 bottom-6 md:bottom-8 bg-accent text-accent-foreground px-8 md:px-10 py-4 md:py-5 shadow-lg"
+          >
+            <p className="text-xl md:text-2xl font-extrabold leading-tight">Películas Premium</p>
+            <p className="text-base md:text-lg font-light leading-tight">Sinta a diferença</p>
+          </motion.div>
+          {/* Crédito inferior direito */}
+          <span className="absolute right-4 bottom-3 text-white/80 text-[11px] italic">
+            Imagem meramente ilustrativa
+          </span>
         </section>
 
         {/* ═══ INTRODUÇÃO ═══ */}
