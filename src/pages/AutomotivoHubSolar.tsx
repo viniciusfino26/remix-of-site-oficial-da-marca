@@ -180,7 +180,7 @@ const AutomotivoHubSolar = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="absolute left-0 bottom-6 md:bottom-8 bg-accent text-accent-foreground px-8 md:px-10 py-4 md:py-5 shadow-lg"
+            className="absolute left-0 bottom-6 md:bottom-8 bg-accent/90 text-accent-foreground px-8 md:px-10 py-4 md:py-5 shadow-lg backdrop-blur-sm"
           >
             <p className="text-xl md:text-2xl font-extrabold leading-tight">Películas Premium</p>
             <p className="text-base md:text-lg font-light leading-tight">Sinta a diferença</p>
