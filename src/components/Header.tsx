@@ -168,13 +168,13 @@ const Header = () => {
 
       <header className="fixed top-[3px] left-0 right-0 z-50 bg-glass" role="banner">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-24 lg:h-32">
+          <div className="flex items-center justify-between h-32 lg:h-44">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group shrink-0">
               <img
                 src={logoDark}
                 alt="INSULFILM™ — A marca das películas"
-                className="h-20 lg:h-28 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+                className="h-28 lg:h-40 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
               />
             </Link>
 
