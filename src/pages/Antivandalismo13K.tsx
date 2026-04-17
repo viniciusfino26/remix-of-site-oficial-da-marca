@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -118,7 +119,7 @@ const Antivandalismo13K = () => {
     "name": "INSULFILM™ Antivandalismo 13K",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
+    "image": `https://www.insulfilm.com.br${autoAntivandalismo13K}`,
     "url": "https://www.insulfilm.com.br/antivandalismo13k",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Espessura", "value": "12 mil / 304,8 micras" },
@@ -135,7 +136,7 @@ const Antivandalismo13K = () => {
         <meta property="og:title" content="INSULFILM™ Antivandalismo 13K | Segurança Automotiva Reforçada" />
         <meta property="og:description" content="Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia." />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+        <meta property="og:image" content={`https://www.insulfilm.com.br${autoAntivandalismo13K}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/antivandalismo13k" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
@@ -293,11 +294,13 @@ const Antivandalismo13K = () => {
               </motion.ul>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-              <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                  <p className="text-sm">{t('av13k.imagePlaceholder')}</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
+                <img
+                  src={autoAntivandalismo13K}
+                  alt="Marginal armado com taco abordando veículo à noite — cenário de risco contido pela película INSULFILM™ Antivandalismo13K"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
