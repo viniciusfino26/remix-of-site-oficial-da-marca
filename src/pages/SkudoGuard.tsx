@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -124,7 +125,7 @@ const SkudoGuard = () => {
     "name": "INSULFILM™ SkudoGuard",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Escudo forte e efetivo contra armas brancas. Estrutura de 16 mil com força de ruptura de 440 lbs/in. 10 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
+    "image": `https://www.insulfilm.com.br${autoSkudoGuard}`,
     "url": "https://www.insulfilm.com.br/skudoguard",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Espessura", "value": "16 mil / 406,4 micras" },
@@ -141,7 +142,7 @@ const SkudoGuard = () => {
         <meta property="og:title" content="INSULFILM™ SkudoGuard | Segurança Superior Antivandalismo" />
         <meta property="og:description" content="Escudo forte e efetivo contra armas brancas. Estrutura de 16 mil com força de ruptura de 440 lbs/in. 10 anos de garantia." />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+        <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkudoGuard}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/skudoguard" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
@@ -314,11 +315,13 @@ const SkudoGuard = () => {
               </motion.ul>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-              <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                  <p className="text-sm">Imagem do produto</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
+                <img
+                  src={autoSkudoGuard}
+                  alt="Tentativa de invasão criminosa em vidro lateral de veículo — barreira de defesa INSULFILM™ SkudoGuard contra arrombamento"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>

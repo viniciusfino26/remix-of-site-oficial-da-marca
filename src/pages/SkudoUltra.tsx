@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -115,7 +116,7 @@ const SkudoUltra = () => {
     "name": "INSULFILM™ SkudoUltra",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "A proteção máxima para seus vidros laterais. Película de 24 mil com tetra laminação e 10 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
+    "image": `https://www.insulfilm.com.br${autoSkudoUltra}`,
     "url": "https://www.insulfilm.com.br/skudo-ultra",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Espessura", "value": "24 mil / 609,6 micras" },
@@ -132,7 +133,7 @@ const SkudoUltra = () => {
         <meta property="og:title" content="INSULFILM™ SkudoUltra | Blindagem Extrema Contra Armas Brancas" />
         <meta property="og:description" content="A proteção máxima para seus vidros laterais. Película de 24 mil com tetra laminação e 10 anos de garantia." />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
+        <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkudoUltra}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/skudo-ultra" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
