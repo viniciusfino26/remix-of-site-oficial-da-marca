@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LegalNotice from "./components/LegalNotice";
+
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingCTA from "./components/FloatingCTA";
 import PageNavigation from "./components/PageNavigation";
@@ -345,7 +345,6 @@ const App = () => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <LegalNotice />
         <Footer />
         <WhatsAppButton />
         <FloatingCTA />
