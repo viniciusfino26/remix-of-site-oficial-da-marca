@@ -46,15 +46,6 @@ const AutomotivoHubSeguranca = () => {
           />
           {/* Gradiente sutil para melhorar leitura */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-transparent to-transparent" />
-          {/* Texto sobre o hero */}
-          <div className="absolute bottom-6 left-0 right-0 container mx-auto px-4">
-            <div className="max-w-lg">
-              <p className="text-white/70 text-xs uppercase tracking-widest font-semibold mb-1">INSULFILM™ Segurança Automotiva</p>
-              <h1 className="text-white font-extrabold text-xl md:text-3xl leading-tight drop-shadow-lg">
-                Películas de Proteção e Segurança
-              </h1>
-            </div>
-          </div>
           <span className="absolute right-3 bottom-2 text-white/50 text-[10px] italic" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>
             Imagem meramente ilustrativa
           </span>
