@@ -13,6 +13,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -89,6 +90,7 @@ const SkinSafe8K = () => {
     "name": "INSULFILM™ SkinSafe8K",
     "brand": { "@type": "Brand", "name": "INSULFILM™" },
     "description": "Película de proteção (7 mil / 177,8 micras) para laminação do vidro em quebras acidentais. Minimiza a projeção de estilhaços contra os ocupantes. 5 anos de garantia.",
+    "image": `https://www.insulfilm.com.br${autoSkinSafe8K}`,
     "url": "https://www.insulfilm.com.br/skinsafe8k",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Espessura", "value": "7 mil / 177,8 micras" },
@@ -102,6 +104,7 @@ const SkinSafe8K = () => {
       <Helmet>
         <title>INSULFILM™ SkinSafe8K | Proteção Contra Estilhaços</title>
         <meta name="description" content="Película de proteção (7 mil) para laminação do vidro em quebras acidentais. Minimiza a projeção de estilhaços contra os ocupantes. 5 anos de garantia." />
+        <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkinSafe8K}`} />
         <meta property="og:title" content="INSULFILM™ SkinSafe8K | Proteção Contra Estilhaços" />
         <meta property="og:description" content="Película de proteção para laminação do vidro em quebras acidentais. Minimiza a projeção de estilhaços contra os ocupantes." />
         <meta property="og:type" content="product" />
@@ -193,11 +196,13 @@ const SkinSafe8K = () => {
               </motion.ul>
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
-              <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
-                  <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                  <p className="text-sm">Imagem em breve</p>
-                </div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
+                <img
+                  src={autoSkinSafe8K}
+                  alt="Vidro automotivo estilhaçado retido pela película INSULFILM™ SkinSafe8K — proteção contra projeção de fragmentos"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>
