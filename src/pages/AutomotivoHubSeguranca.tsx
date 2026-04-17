@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import autoSeguranca from '@/assets/auto-seguranca.png';
 import homeSeguranca from '@/assets/home-seguranca.png';
+import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
+import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
+import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
+import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -281,10 +285,10 @@ const AutomotivoHubSeguranca = () => {
                   </Button>
                 </Link>
               </motion.div>
-              {/* Placeholder foto */}
+              {/* Foto SkinSafe8K */}
               <motion.div variants={fadeInRight}>
-                <div className="w-full rounded-xl bg-muted border border-border flex items-center justify-center" style={{ aspectRatio: '4/3' }}>
-                  <p className="text-muted-foreground/50 text-xs uppercase tracking-widest text-center px-4">Espaço para foto do produto</p>
+                <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
+                  <img src={autoSkinSafe8K} alt="INSULFILM™ SkinSafe8K — proteção contra estilhaços" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
@@ -294,10 +298,10 @@ const AutomotivoHubSeguranca = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              {/* Placeholder foto — lado esquerdo */}
+              {/* Foto Antivandalismo13K — lado esquerdo */}
               <motion.div variants={fadeInLeft} className="order-2 md:order-1">
-                <div className="w-full rounded-xl bg-muted border border-border flex items-center justify-center" style={{ aspectRatio: '4/3' }}>
-                  <p className="text-muted-foreground/50 text-xs uppercase tracking-widest text-center px-4">Espaço para foto do produto</p>
+                <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
+                  <img src={autoAntivandalismo13K} alt="INSULFILM™ Antivandalismo13K — proteção contra atos de vandalismo" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">
@@ -354,10 +358,10 @@ const AutomotivoHubSeguranca = () => {
                   </Button>
                 </Link>
               </motion.div>
-              {/* Placeholder foto */}
+              {/* Foto SkudoGuard */}
               <motion.div variants={fadeInRight}>
-                <div className="w-full rounded-xl bg-muted border border-border flex items-center justify-center" style={{ aspectRatio: '4/3' }}>
-                  <p className="text-muted-foreground/50 text-xs uppercase tracking-widest text-center px-4">Espaço para foto do produto</p>
+                <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
+                  <img src={autoSkudoGuard} alt="INSULFILM™ SkudoGuard — defesa superior contra invasão" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
@@ -367,10 +371,10 @@ const AutomotivoHubSeguranca = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              {/* Placeholder foto — lado esquerdo */}
+              {/* Foto SkudoUltra — lado esquerdo */}
               <motion.div variants={fadeInLeft} className="order-2 md:order-1">
-                <div className="w-full rounded-xl bg-muted border border-border flex items-center justify-center" style={{ aspectRatio: '4/3' }}>
-                  <p className="text-muted-foreground/50 text-xs uppercase tracking-widest text-center px-4">Espaço para foto do produto</p>
+                <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
+                  <img src={autoSkudoUltra} alt="INSULFILM™ SkudoUltra — extrema segurança contra armas brancas" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">
