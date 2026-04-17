@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import autoSolarHero from '@/assets/auto-solar-hero.png';
+import legislacaoCarro from '@/assets/legislacao-carro-transparencias.png';
 
 /* ── Animações ── */
 const fadeInUp = {
@@ -288,7 +288,7 @@ const Legislacao = () => (
             <motion.div variants={fadeInRight}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-secondary">
                 <img
-                  src={autoSolarHero}
+                  src={legislacaoCarro}
                   alt="Demonstração das transparências permitidas em películas automotivas INSULFILM™"
                   className="w-full h-full object-cover"
                 />
@@ -297,12 +297,7 @@ const Legislacao = () => (
                   <p className="text-white text-sm font-semibold">Transparências automotivas INSULFILM™</p>
                   <p className="text-white/60 text-xs mt-0.5">Imagem meramente ilustrativa</p>
                 </div>
-                {/* Badge de placeholder para foto real */}
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-accent text-accent-foreground text-xs font-bold">
-                    Atualizar foto
-                  </Badge>
-                </div>
+
               </div>
             </motion.div>
           </motion.div>
