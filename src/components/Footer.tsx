@@ -35,50 +35,114 @@ const Footer = () => {
       {/* Footer Links */}
       <div className="container mx-auto px-4 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
-          {/* Institucional */}
+
+          {/* MARCA */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">
-              {t('footer.institutional')}
+              Marca
             </h3>
             <ul className="space-y-3">
-              <li><Link to="/quem-somos" onClick={() => Analytics.ctaClick('Quem Somos', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.whoWeAre')}</Link></li>
-              <li><Link to="/franquias" onClick={() => Analytics.ctaClick('Franquias', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.franchising')}</Link></li>
-              <li><Link to="/carreiras" onClick={() => Analytics.ctaClick('Carreiras', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.careers')}</Link></li>
-              <li><Link to="/anti-pirataria" onClick={() => Analytics.ctaClick('Anti-Pirataria', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.antiPiracy')}</Link></li>
+              <li>
+                <Link to="/quem-somos" onClick={() => Analytics.ctaClick('Quem Somos', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.whoWeAre')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/anti-pirataria" onClick={() => Analytics.ctaClick('Autenticidade INSULFILM', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  Autenticidade INSULFILM™
+                </Link>
+              </li>
+              <li>
+                <Link to="/anti-pirataria" onClick={() => Analytics.ctaClick('Anti-Pirataria', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.antiPiracy')}
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Linhas de Produto */}
+          {/* SOLUÇÕES */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">
-              {t('footer.productLines')}
+              Soluções
             </h3>
             <ul className="space-y-3">
-              <li><Link to="/automotivo" onClick={() => Analytics.ctaClick('Para Meu Carro', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.forMyCar')}</Link></li>
-              <li><Link to="/frota" onClick={() => Analytics.ctaClick('Para Minha Frota', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.forMyFleet')}</Link></li>
-              <li><Link to="/residencial" onClick={() => Analytics.ctaClick('Para Minha Residência', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.forMyHome')}</Link></li>
-              <li><Link to="/empresarial" onClick={() => Analytics.ctaClick('Para Minha Empresa', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.forMyCompany')}</Link></li>
+              <li>
+                <Link to="/automotivo" onClick={() => Analytics.ctaClick('Automotivo', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.automotive', 'Automotivo')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/residencial" onClick={() => Analytics.ctaClick('Residencial', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  Residencial
+                </Link>
+              </li>
+              <li>
+                <Link to="/empresarial" onClick={() => Analytics.ctaClick('Comercial', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  Comercial
+                </Link>
+              </li>
+              <li>
+                <Link to="/frota" onClick={() => Analytics.ctaClick('Frotas', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  Frotas
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Suporte */}
+          {/* SUPORTE */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">
               {t('footer.support')}
             </h3>
             <ul className="space-y-3">
-              <li><Link to="/vendas" onClick={() => Analytics.ctaClick('Central de Vendas', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.salesCentral')}</Link></li>
-              <li><Link to="/sac" onClick={() => Analytics.ctaClick('SAC', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.sac')}</Link></li>
-              <li><Link to="/faq" onClick={() => Analytics.ctaClick('FAQ', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.faq')}</Link></li>
-              <li><Link to="/garantia" onClick={() => Analytics.ctaClick('Garantia', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.warranty')}</Link></li>
-              <li><Link to="/lojas" onClick={() => Analytics.storeLocatorClick('footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.storeLocator')}</Link></li>
-              <li><Link to="/parceiro" onClick={() => Analytics.ctaClick('Seja Parceiro', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">{t('nav.becomePartner')}</Link></li>
+              <li>
+                <Link to="/lojas" onClick={() => Analytics.storeLocatorClick('footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.storeLocator')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/legislacao" onClick={() => Analytics.ctaClick('Legislação', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.legislation', 'Legislação')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/sac" onClick={() => Analytics.ctaClick('SAC', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.sac')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" onClick={() => Analytics.ctaClick('FAQ', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.faq')}
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Redes Sociais + Logo */}
+          {/* NEGÓCIOS */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest mb-5 text-primary-foreground/90">
+              Negócios
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/vendas" onClick={() => Analytics.ctaClick('Central de Vendas', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.salesCentral')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/parceiro" onClick={() => Analytics.ctaClick('Seja Parceiro', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.becomePartner')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/carreiras" onClick={() => Analytics.ctaClick('Trabalhe Conosco', 'footer')} className="text-sm text-primary-foreground/50 hover:text-accent transition-colors duration-200">
+                  {t('nav.careers')}
+                </Link>
+              </li>
+            </ul>
+
+            {/* Redes Sociais */}
+            <h3 className="text-sm font-bold uppercase tracking-widest mt-8 mb-4 text-primary-foreground/90">
               {t('footer.followUs')}
             </h3>
             <div className="flex flex-wrap gap-3">
@@ -107,19 +171,21 @@ const Footer = () => {
                 <span className="text-xs font-medium hidden sm:inline">WhatsApp</span>
               </a>
             </div>
+          </div>
 
-            {/* Antipirataria badge */}
-            <div className="mt-6 p-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
-              <p className="text-xs text-primary-foreground/50 leading-relaxed">
-                <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada</span>{' '}
-                protegida pela Lei nº 9.279/96. O uso do termo por terceiros não possui autorização da titular.{' '}
-                <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
-              </p>
-            </div>
+        </div>
 
-            <div className="mt-6">
-              <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto opacity-60" />
-            </div>
+        {/* Antipirataria badge + Logo */}
+        <div className="mt-10 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="flex-1 p-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
+            <p className="text-xs text-primary-foreground/50 leading-relaxed">
+              <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada</span>{' '}
+              protegida pela Lei nº 9.279/96. O uso do termo por terceiros não possui autorização da titular.{' '}
+              <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
+            </p>
+          </div>
+          <div>
+            <img src={logoDark} alt="INSULFILM™" className="h-8 w-auto opacity-60" />
           </div>
         </div>
       </div>
