@@ -233,7 +233,7 @@ const AutomotivoHubSolar = () => {
         </section>
 
         {/* ═══ PRODUTOS ═══ */}
-        <section className="bg-white">
+        <section className="bg-white overflow-x-hidden">
           <div className="container mx-auto px-4">
             {products.map((p, i) => (
               <div key={p.id}>
