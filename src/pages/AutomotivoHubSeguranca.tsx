@@ -82,16 +82,18 @@ const AutomotivoHubSeguranca = () => {
             >
               Veja como é fácil a quebra do vidro comum com a cerâmica da vela do carro com uma película solar comum aplicada.
             </motion.p>
-            {/* Espaço reservado para vídeo 16:9 */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-              className="relative w-full bg-black/40 border border-white/10 rounded-lg flex items-center justify-center"
+              className="relative w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden"
               style={{ aspectRatio: '16/9' }}
             >
-              <div className="text-center text-white/50">
-                <Play className="w-12 h-12 mx-auto mb-3 text-white/30" />
-                <p className="text-sm font-semibold uppercase tracking-widest">ESPAÇO PARA O VÍDEO 16:9</p>
-              </div>
+              <video
+                src="/videos/auto-seguranca.mp4"
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              />
             </motion.div>
           </div>
         </section>
