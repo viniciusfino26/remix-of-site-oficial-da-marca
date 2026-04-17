@@ -294,8 +294,7 @@ const Legislacao = () => (
                 />
                 {/* Overlay com legenda */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                  <p className="text-white text-sm font-semibold">Transparências automotivas INSULFILM™</p>
-                  <p className="text-white/60 text-xs mt-0.5">Imagem meramente ilustrativa</p>
+                  <p className="text-white/60 text-xs">Imagem meramente ilustrativa</p>
                 </div>
 
               </div>
