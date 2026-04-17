@@ -41,6 +41,7 @@ import Privacidade from "./pages/Privacidade";
 import SobreOQueEInsulfilm from "./pages/SobreOQueEInsulfilm";
 import SobreInsulfilmMarcaRegistrada from "./pages/SobreInsulfilmMarcaRegistrada";
 import LegalMarcaRegistrada from "./pages/LegalMarcaRegistrada";
+import Legislacao from "./pages/Legislacao";
 
 /* ── Hubs Automotivos ── */
 import AutomotivoHubSolar from "./pages/AutomotivoHubSolar";
@@ -304,6 +305,7 @@ const App = () => (
           <Route path="/arquitetonico/phantom-gloss" element={<PhantomGloss />} />
 
           {/* Atendimento */}
+          <Route path="/legislacao" element={<Legislacao />} />
           <Route path="/vendas" element={<Vendas />} />
           <Route path="/sac" element={<SAC />} />
           <Route path="/faq" element={<FAQ />} />
