@@ -414,7 +414,7 @@ const AutomotivoHubSeguranca = () => {
                 </Button>
               </a>
               <Link to="/lojas">
-                <Button size="sm" variant="outline" className="border-white/40 text-white hover:bg-white/10 font-bold rounded-full px-6 gap-2">
+                <Button size="sm" variant="outline" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-accent font-bold rounded-full px-6 gap-2">
                   <Shield className="w-4 h-4" /> Centros Autorizados
                 </Button>
               </Link>
