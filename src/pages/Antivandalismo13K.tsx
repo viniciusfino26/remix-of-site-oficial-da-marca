@@ -176,9 +176,9 @@ const Antivandalismo13K = () => {
           <div className="relative rounded-2xl overflow-hidden shadow-premium-lg border border-primary-foreground/10">
             <div className="aspect-video relative">
               <iframe
-                src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playlist=nGBNE0FG-8Q"
+                src="https://www.youtube.com/embed/nGBNE0FG-8Q?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&disablekb=1&controls=0&autoplay=1&mute=1&loop=1&playsinline=1&playlist=nGBNE0FG-8Q"
                 title="INSULFILM™ Antivandalismo 13K"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; encrypted-media; picture-in-picture"
                 className="w-full h-full pointer-events-none"
                 loading="lazy"
               />

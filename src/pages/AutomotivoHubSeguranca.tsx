@@ -85,9 +85,12 @@ const AutomotivoHubSeguranca = () => {
               <video
                 src="/videos/auto-seguranca.mp4"
                 className="w-full h-full object-cover"
-                controls
+                autoPlay
+                muted
+                loop
                 playsInline
-                preload="metadata"
+                preload="auto"
+                disablePictureInPicture
               />
             </motion.div>
           </div>
@@ -115,9 +118,12 @@ const AutomotivoHubSeguranca = () => {
                   <video
                     src="/videos/auto-seguranca-marginal.mp4"
                     className="w-full h-full object-cover"
-                    controls
+                    autoPlay
+                    muted
+                    loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
+                    disablePictureInPicture
                   />
                 </div>
               </motion.div>
