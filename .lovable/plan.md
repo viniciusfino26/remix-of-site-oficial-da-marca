@@ -1,22 +1,40 @@
 
 
-## Remover Produtos Solares da Página /automotivo
+## Plano: Substituir conteúdo de `/marca/tecnologia`
 
-### O que será removido
+Vou reescrever `src/pages/MarcaTecnologia.tsx` com o novo texto, mantendo a estética premium (PageHero, glassmorphism, Framer Motion, ícones Lucide) e removendo a dependência de chaves i18n antigas — texto agora hardcoded em PT-BR conforme aprovado.
 
-1. **Arrays de dados** — `solarProducts` (linhas 51-106) e `solarTabs` (linhas 108-113) que definem Dark, Eclipse, VIP e Polariz Ultra
-2. **Tabs de navegação** — Botões "DARK", "ECLIPSE", "VIP", "POLARIZ ULTRA" (linhas 240-261)
-3. **Seções alternadas de produto** — Os blocos alternados com specs, imagem placeholder e CTA de cada produto (linhas 263-351)
+### Estrutura da nova página
 
-### O que permanece
+1. **PageHero** (mantém)
+   - Badge: "Plataforma Tecnológica" (ícone `Cpu`)
+   - Título: "Tecnologias INSULFILM™"
+   - Subtítulo: "Engenharia aplicada ao controle solar, proteção e performance"
 
-- Hero
-- Texto introdutório
-- 3 ProductBanners (Solares, Segurança, PPF) — que já linkam para os hubs específicos
-- ParallaxBreak
-- Benefícios, Diferenciais, Centros Autorizados, FAQ e CTA final
+2. **Intro** — parágrafo curto sobre marca registrada + engenharia de materiais
 
-### Arquivo alterado
+3. **Plataforma Tecnológica** (3 cards em grid `md:grid-cols-3`)
+   - Controle Solar (`Sun`) — 4 bullets
+   - Segurança e Proteção (`ShieldCheck`) — 3 bullets
+   - Alta Transparência Arquitetônica (`Eye`) — 3 bullets
 
-- `src/pages/Automotivo.tsx` — Remoção das seções e imports não utilizados (`Tabs`, `TabsContent`, `TabsList`, `TabsTrigger`, interface `SolarProduct`)
+4. **Engenharia de Construção** (card com 4 bullets, ícone `Layers`)
+
+5. **Processo O&M** (card destaque accent, ícone `Cog`)
+   - Subtítulo: "Controle industrial e padronização"
+
+6. **Essência da Marca** (bloco final destaque, ícone `ShieldCheck`)
+   - "INSULFILM™ não é um termo genérico. É uma marca registrada que representa tecnologia, controle e padrão."
+
+### Detalhes técnicos
+
+- Remover imports não usados (`Car`, `Home`, `Building2`, `Thermometer`, `Lock`, `Gauge`)
+- Adicionar: `Layers`, `Cog`
+- Substituir `useTranslation` → texto hardcoded (copy aprovado, conforme regra de imutabilidade)
+- Manter Helmet com SEO atualizado refletindo o novo conteúdo
+- Manter padrão visual: `bg-card border border-border rounded-2xl`, accent em ícones, animações `fadeInUp`/`stagger`
+- Cards com lista de tecnologias usando `<ul>` com bullets estilizados (ponto accent)
+
+### Arquivo afetado
+- `src/pages/MarcaTecnologia.tsx` (reescrita completa)
 
