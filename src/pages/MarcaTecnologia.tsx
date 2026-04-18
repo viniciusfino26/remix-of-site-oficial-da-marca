@@ -122,7 +122,7 @@ const MarcaTecnologia = () => {
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3">{bloco.title}</h3>
                     <p className="text-foreground/70 text-sm leading-relaxed mb-5">{bloco.desc}</p>
-                    <ul className="space-y-2.5 mt-auto">
+                    <ul className="space-y-2.5">
                       {bloco.items.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-foreground/80 text-sm">
                           <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
