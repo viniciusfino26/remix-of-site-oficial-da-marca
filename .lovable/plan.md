@@ -1,40 +1,70 @@
 
 
-## Plano: Substituir conteúdo de `/marca/tecnologia`
+## Plano: Implementar RD Station Marketing em todo o site
 
-Vou reescrever `src/pages/MarcaTecnologia.tsx` com o novo texto, mantendo a estética premium (PageHero, glassmorphism, Framer Motion, ícones Lucide) e removendo a dependência de chaves i18n antigas — texto agora hardcoded em PT-BR conforme aprovado.
+Vou integrar o **RD Station Marketing** globalmente para rastreamento de leads, com integração futura ao CRM BIZU via lead scoring/conversão nativa do RD.
 
-### Estrutura da nova página
+### Como funciona o RD Station Marketing
 
-1. **PageHero** (mantém)
-   - Badge: "Plataforma Tecnológica" (ícone `Cpu`)
-   - Título: "Tecnologias INSULFILM™"
-   - Subtítulo: "Engenharia aplicada ao controle solar, proteção e performance"
+O RD oferece dois mecanismos principais:
 
-2. **Intro** — parágrafo curto sobre marca registrada + engenharia de materiais
+1. **Script de rastreamento (RD Station Tracking)** — JS global injetado em todas as páginas. Rastreia visitas, sessões, origem (UTM), comportamento e identifica leads quando preenchem formulários.
+2. **Conversões** — quando um lead converte (formulário, WhatsApp click, CTA), os dados vão para o RD, que então pode enviar automaticamente para o **CRM BIZU** via integração nativa ou Zapier/webhook.
 
-3. **Plataforma Tecnológica** (3 cards em grid `md:grid-cols-3`)
-   - Controle Solar (`Sun`) — 4 bullets
-   - Segurança e Proteção (`ShieldCheck`) — 3 bullets
-   - Alta Transparência Arquitetônica (`Eye`) — 3 bullets
+### O que preciso de você
 
-4. **Engenharia de Construção** (card com 4 bullets, ícone `Layers`)
+Para ativar, preciso do **Token público do RD Station** (também chamado de "RD Station UA" ou "Public Token"). Você encontra em:
 
-5. **Processo O&M** (card destaque accent, ícone `Cog`)
-   - Subtítulo: "Controle industrial e padronização"
+> RD Station Marketing → Configurações → Integrações → API → "Token Público"
 
-6. **Essência da Marca** (bloco final destaque, ícone `ShieldCheck`)
-   - "INSULFILM™ não é um termo genérico. É uma marca registrada que representa tecnologia, controle e padrão."
+É um código tipo: `a1b2c3d4e5f6...` (32 caracteres).
 
-### Detalhes técnicos
+### Arquitetura da implementação
 
-- Remover imports não usados (`Car`, `Home`, `Building2`, `Thermometer`, `Lock`, `Gauge`)
-- Adicionar: `Layers`, `Cog`
-- Substituir `useTranslation` → texto hardcoded (copy aprovado, conforme regra de imutabilidade)
-- Manter Helmet com SEO atualizado refletindo o novo conteúdo
-- Manter padrão visual: `bg-card border border-border rounded-2xl`, accent em ícones, animações `fadeInUp`/`stagger`
-- Cards com lista de tecnologias usando `<ul>` com bullets estilizados (ponto accent)
+**1. Componente global `RDStationTracking.tsx`** (novo)
+- Injeta o script oficial `https://d335luupugsy2.cloudfront.net/js/loader-scripts/{TOKEN}-loader.js` no `<head>`
+- Carregado via `react-helmet-async` (já temos `HelmetProvider` no `main.tsx`)
+- Rastreia automaticamente pageviews em SPA via `useLocation` (dispara `RdIntegration.pageView()` a cada mudança de rota)
 
-### Arquivo afetado
-- `src/pages/MarcaTecnologia.tsx` (reescrita completa)
+**2. Integração no `App.tsx`**
+- Adicionar `<RDStationTracking />` dentro do `<BrowserRouter>` (ao lado do `<ScrollToTop />`)
+
+**3. Helper `src/lib/rdstation.ts`** (novo)
+- Função `trackConversion(identifier, leadData)` para disparar conversões manuais
+- Função `trackEvent(name, payload)` para eventos customizados
+- Tipagens TypeScript para `window.RdIntegration`
+
+**4. Pontos de conversão automática** (sem alterar copy)
+- **WhatsAppButton** → dispara conversão `whatsapp-click` ao clicar
+- **FloatingCTA** → dispara conversão `cta-flutuante-click`
+- Demais formulários (Vendas, SAC, Parceiro) podem ser instrumentados depois
+
+### Integração com CRM BIZU
+
+O RD Station possui **integração nativa com diversos CRMs** via marketplace. Para o **BIZU**:
+
+- **Opção A (recomendada):** Configurar dentro do RD Station: *Integrações → Marketplace → buscar "BIZU"*. Se disponível, conecta direto.
+- **Opção B (universal):** Usar **Zapier/Make** com gatilho "Novo Lead no RD Station" → ação "Criar Lead no BIZU".
+- **Opção C (custom):** Webhook do RD Station apontando para um Edge Function (Lovable Cloud) que chama a API do BIZU. Requer credenciais da API BIZU.
+
+> Esta etapa é configurada **no painel do RD Station**, não no código do site. O site apenas alimenta o RD com leads — o RD se encarrega de empurrar para o CRM.
+
+### Privacidade (LGPD)
+
+- O script será carregado **somente após consentimento de cookies** (já temos `CookieBanner.tsx`)
+- Verificar consentimento via `localStorage` antes de injetar o script
+- Documentar uso do RD Station em `/privacidade`
+
+### Arquivos afetados
+
+- `src/components/RDStationTracking.tsx` (novo)
+- `src/lib/rdstation.ts` (novo, helper + tipos)
+- `src/App.tsx` (adicionar componente global)
+- `src/components/WhatsAppButton.tsx` (instrumentação de conversão)
+- `src/components/FloatingCTA.tsx` (instrumentação de conversão)
+- `src/pages/Privacidade.tsx` (atualizar política — opcional)
+
+### Próximo passo
+
+Após sua aprovação, vou solicitar o **Token Público do RD Station** via `add_secret` (armazenado de forma segura) e finalizar a integração. Sobre o BIZU, depois te oriento na configuração dentro do painel do RD.
 
