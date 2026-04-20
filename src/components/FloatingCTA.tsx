@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackConversion } from '@/lib/rdstation';
 
 const FloatingCTA = () => {
   const [visible, setVisible] = useState(false);
@@ -24,6 +25,7 @@ const FloatingCTA = () => {
         >
           <Link
             to="/lojas"
+            onClick={() => trackConversion('cta-flutuante-especialista', { source: 'floating-cta' })}
             className="flex items-center gap-2 bg-accent text-accent-foreground font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all duration-300"
           >
             <MapPin className="w-4 h-4" />
