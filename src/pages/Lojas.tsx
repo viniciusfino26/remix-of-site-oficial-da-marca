@@ -616,7 +616,7 @@ const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; i
                   </a>
                 )}
                 <div className={store.phone ? 'flex-none' : 'flex-1'}>
-                  <NavigationPicker store={store} />
+                  <NavigationPicker store={store} searchContext={searchContext} />
                 </div>
               </div>
             </div>
