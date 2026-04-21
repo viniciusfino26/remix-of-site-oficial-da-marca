@@ -671,7 +671,7 @@ const Lojas = () => {
           >
             <h2 className="text-lg font-bold text-foreground mb-1">Encontre o Centro Autorizado mais próximo</h2>
             <p className="text-sm text-muted-foreground mb-5 font-light">Digite seu CEP para ordenar por proximidade</p>
-            <CepSearch onResult={setUserCoords} />
+            <CepSearch onResult={setSearchResult} />
           </motion.div>
         </div>
       </section>
@@ -679,22 +679,28 @@ const Lojas = () => {
       {/* Store Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          {userCoords && (
+          {searchResult && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center mb-8"
             >
-              <p className="text-sm text-muted-foreground font-light mb-3">
+              <p className="text-sm text-muted-foreground font-light mb-2">
                 {sortedStores.length === 1
                   ? 'Centro Autorizado mais próximo de você:'
                   : `${sortedStores.length} Centros Autorizados próximos de você:`}
               </p>
+              {searchResult.zoneInfo && (
+                <p className="text-xs text-accent/80 font-medium mb-3">
+                  Identificamos sua região como <span className="font-bold">Zona {searchResult.zoneInfo.zone}</span>
+                  {searchResult.precision === 'prefix' && ' (localização aproximada por CEP)'}
+                </p>
+              )}
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-accent hover:text-accent hover:bg-accent/10 text-xs"
-                onClick={() => setUserCoords(null)}
+                onClick={() => setSearchResult(null)}
               >
                 Ver todos os Centros Autorizados
               </Button>
@@ -707,22 +713,31 @@ const Lojas = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
           >
-            {sortedStores.map((store, i) => (
-              <div key={store.id} id={store.id} className="scroll-mt-24">
-                <StoreCard store={store} index={i} />
-                {'distance' in store && typeof store.distance === 'number' && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="mt-2 text-center"
-                  >
-                    <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
-                      📍 ~{store.distance.toFixed(1)} km de você
-                    </span>
-                  </motion.div>
-                )}
-              </div>
-            ))}
+            {sortedStores.map((store, i) => {
+              const hasDistance = 'distance' in store && typeof store.distance === 'number';
+              const isRecommended = 'isRecommended' in store && store.isRecommended === true;
+              return (
+                <div key={store.id} id={store.id} className="scroll-mt-24">
+                  <StoreCard store={store} index={i} />
+                  {hasDistance && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="mt-2 flex flex-wrap items-center justify-center gap-2"
+                    >
+                      {isRecommended && (
+                        <span className="text-xs font-bold text-accent-foreground bg-accent px-3 py-1 rounded-full shadow-md">
+                          ⭐ Recomendado para sua zona
+                        </span>
+                      )}
+                      <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                        📍 ~{store.distance.toFixed(1)} km de você
+                      </span>
+                    </motion.div>
+                  )}
+                </div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
