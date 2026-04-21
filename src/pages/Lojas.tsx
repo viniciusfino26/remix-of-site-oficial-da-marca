@@ -474,9 +474,20 @@ const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; s
 };
 
 // ─── STORE CARD ───────────────────────────────────────────────────────────
-const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number }) => {
+const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; index: number; searchContext?: SearchContext }) => {
+  const handleViewportEnter = () => {
+    if (!searchContext) return;
+    Analytics.storeCardView({
+      store_id: store.id,
+      zone: store.zone,
+      is_recommended: searchContext.isRecommended,
+      distance_km: searchContext.distance,
+      precision: searchContext.precision,
+      search_zone: searchContext.zone,
+    });
+  };
   return (
-    <motion.div variants={fadeInUp} custom={index}>
+    <motion.div variants={fadeInUp} custom={index} onViewportEnter={handleViewportEnter} viewport={{ once: true, amount: 0.4 }}>
       <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
         <Card className="overflow-hidden glass-card hover:border-accent/20 transition-all duration-300 rounded-xl group">
           {/* Accent stripe top */}
