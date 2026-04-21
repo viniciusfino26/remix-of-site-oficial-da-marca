@@ -390,7 +390,15 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
 };
 
 // ─── NAVIGATION PICKER ───────────────────────────────────────────────────
-const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
+interface SearchContext {
+  precision: CepSearchResult['precision'];
+  zone: string | null;
+  isRecommended: boolean;
+  distance: number | null;
+  position: number;
+}
+
+const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; searchContext?: SearchContext }) => {
   const [open, setOpen] = useState(false);
   const { lat, lng, name } = store;
   const encodedName = encodeURIComponent(`INSULFILM™ ${name}`);
@@ -436,7 +444,21 @@ const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-4 py-3 hover:bg-accent/10 transition-colors text-sm text-foreground group"
-                  onClick={() => { setOpen(false); Analytics.mapDirectionsClick(store.id); }}
+                  onClick={() => {
+                    setOpen(false);
+                    Analytics.mapDirectionsClick(store.id);
+                    Analytics.storeCardClick({
+                      store_id: store.id,
+                      zone: store.zone,
+                      cta_type: 'map_provider',
+                      map_provider: opt.label,
+                      is_recommended: searchContext?.isRecommended,
+                      distance_km: searchContext?.distance ?? null,
+                      precision: searchContext?.precision,
+                      search_zone: searchContext?.zone ?? null,
+                      position_in_list: searchContext?.position,
+                    });
+                  }}
                 >
                   <span className="text-base">{opt.icon}</span>
                   <span className="font-medium">{opt.label}</span>
