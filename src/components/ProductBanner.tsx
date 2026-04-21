@@ -78,7 +78,7 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           className={`${cardVariantClasses[cardVariant]} p-5 sm:p-8 md:p-12 max-w-xl min-h-[180px] md:min-h-[280px] flex flex-col justify-center rounded-lg border border-white/10`}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 md:mb-4">{title}</h2>
-          <p className="text-sm sm:text-base text-white/60 mb-5 md:mb-8 font-light leading-relaxed">{description}</p>
+          <p className="text-sm sm:text-base text-white/90 mb-5 md:mb-8 font-normal leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">{description}</p>
           <Link to={link}>
             {cardVariant === 'orange' ? (
               <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
