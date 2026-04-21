@@ -101,7 +101,7 @@ const Index = () => {
             variants={stagger}
           >
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-6 font-semibold">
-              INSULFILM™
+              {"\n"}
             </motion.p>
             <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-primary-foreground leading-tight tracking-tight">
               {t('hero.tagline')}
