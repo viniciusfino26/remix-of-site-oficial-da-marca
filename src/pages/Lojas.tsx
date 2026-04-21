@@ -487,7 +487,7 @@ const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; s
                     });
                   }}
                 >
-                  <span className="text-base">{opt.icon}</span>
+                  <opt.Icon />
                   <span className="font-medium">{opt.label}</span>
                   <ExternalLink className="w-3 h-3 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
