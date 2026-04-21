@@ -1,91 +1,71 @@
 
 
-## Plano: Eventos de Analytics na página `/lojas`
+## Plano: Padronizar tamanho dos quadrantes (azul, laranja, cinza) em todas as páginas
 
-Instrumentar `src/pages/Lojas.tsx` com eventos GA4/GTM (via `Analytics`/`trackEvent` já existentes em `src/components/Analytics.tsx`) para medir busca por CEP e interação com cards de Centros Autorizados.
+### Problema
+Os 4 banners de produto na home (e nas páginas `/arquitetonico`, `/empresarial`) usam o componente `ProductBanner`, mas hoje cada card tem altura/largura/tipografia ligeiramente diferentes porque:
+- O `min-h-[180px]/[280px]` permite que o card cresça conforme o conteúdo (título de 2 linhas vs. 4 linhas).
+- Títulos mais longos quebram em mais linhas → card maior.
+- Descrições com tamanhos diferentes empurram o botão para baixo de forma desigual.
+- Não há `max-w` nem `min-w` rígido — o card respeita só `max-w-xl`.
 
-### Eventos a disparar
+### Solução: simetria absoluta
 
-**1. `cep_search` — quando o usuário busca um CEP**
-Disparado em `CepSearch.searchCep()` ao final, com sucesso ou falha.
+Editar **somente** `src/components/ProductBanner.tsx` (afeta automaticamente Index, Arquitetonico, Empresarial e qualquer outra página que use o componente — sem precisar tocar em copy).
 
-Payload:
-- `cep_prefix` (3 dígitos — nunca o CEP completo, evita PII)
-- `status`: `success` | `not_found` | `error`
-- `precision`: `exact` | `street` | `prefix` | `city`
-- `zone`: `Centro` | `Norte` | `Sul` | `Leste` | `Oeste` | `null`
-- `recommended_store`: id da loja recomendada pelo prefixo (ou `null`)
-- `closest_store`: id da loja mais próxima (calculada após resultado)
-- `closest_distance_km`: número arredondado a 1 casa
-- `results_count`: quantos cards serão exibidos após filtro
+**1. Card com dimensões fixas**
+- Largura fixa: `w-full max-w-xl` → trocar por `w-full sm:w-[36rem]` (576px) com `max-w-full` para mobile.
+- Altura fixa: substituir `min-h-[180px] md:min-h-[280px]` por `h-[320px] md:h-[360px]` (mesma altura sempre, em todas as variantes).
 
-**2. `cep_search_invalid` — CEP com menos de 8 dígitos**
-Quando o usuário clica buscar com CEP incompleto. Payload: `cep_length`.
+**2. Tipografia idêntica entre os 3 variants (azul/laranja/cinza)**
+- Título: travar em `text-2xl md:text-3xl` (sem `sm:text-3xl md:text-4xl` que escala diferente).
+- Descrição: travar em `text-sm md:text-base` com `line-clamp-3` para impedir que descrições longas estourem o card.
+- Título com `line-clamp-2` para garantir no máximo 2 linhas.
 
-**3. `store_card_view` — card recomendado/mais próximo entrou em viewport**
-Disparado uma única vez por busca, no card com `isRecommended` ou primeiro da lista, via `whileInView` ou `useEffect` no `StoreCard` quando há `distance`. Payload: `store_id`, `zone`, `is_recommended`, `distance_km`, `precision`, `search_zone`.
+**3. Layout interno consistente**
+- `flex flex-col justify-between` (em vez de `justify-center`) para que: título no topo, descrição no meio, botão sempre alinhado na base — mesma posição em todos os cards.
+- Padding uniforme: `p-6 md:p-8` (sem o salto `p-5 sm:p-8 md:p-12`).
 
-**4. `store_card_click` — clique em qualquer CTA do card** (com origem)
-Já existem `Analytics.whatsappClick` e `Analytics.storeLocatorClick`. Vamos **enriquecer** as chamadas dentro de `StoreCard` para incluir contexto da busca quando houver:
-- `store_id`, `zone`, `cta_type` (`whatsapp` | `phone` | `directions` | `map_provider`), `is_recommended`, `distance_km`, `precision`, `search_zone`, `position_in_list`.
+**4. Botão padronizado**
+- Mesmo tamanho/altura em todas as variantes (`h-11 px-6`), independente do `cardVariant`.
 
-Para isso, `StoreCard` recebe duas novas props opcionais: `searchContext?: { precision; zone; isRecommended; distance; position }`.
+### Detalhes técnicos
 
-**5. `store_zone_chip_click` — chips de zona no hero** (`#paulista`, `#moema`, etc.)
-Payload: `zone`, `store_id`. Reaproveita `Analytics.storeLocatorClick` adicionando `zone` no payload via `trackEvent` direto.
+Arquivo único: `src/components/ProductBanner.tsx`
 
-### Implementação técnica
-
-**`src/components/Analytics.tsx`** — adicionar 3 helpers tipados no objeto `Analytics`:
-
-```ts
-cepSearch: (params: {
-  cep_prefix: string;
-  status: 'success' | 'not_found' | 'error';
-  precision?: 'exact' | 'street' | 'prefix' | 'city';
-  zone?: string | null;
-  recommended_store?: string | null;
-  closest_store?: string | null;
-  closest_distance_km?: number | null;
-  results_count?: number;
-}) => trackEvent('cep_search', params),
-
-cepSearchInvalid: (cepLength: number) =>
-  trackEvent('cep_search_invalid', { cep_length: cepLength }),
-
-storeCardView: (params: { store_id; zone; is_recommended; distance_km; precision; search_zone }) =>
-  trackEvent('store_card_view', params),
-
-storeCardClick: (params: { store_id; zone; cta_type; is_recommended?; distance_km?; precision?; search_zone?; position_in_list? }) =>
-  trackEvent('store_card_click', params),
+Mudanças no `motion.div` do card (linhas ~80-94):
+```tsx
+className={`${cardVariantClasses[cardVariant]} 
+  p-6 md:p-8 
+  w-full sm:w-[36rem] max-w-full 
+  h-[320px] md:h-[360px] 
+  flex flex-col justify-between 
+  rounded-lg border border-white/10`}
 ```
 
-**`src/pages/Lojas.tsx`** — alterações:
+Título:
+```tsx
+<h2 className="text-2xl md:text-3xl font-extrabold text-white line-clamp-2">{title}</h2>
+```
 
-1. **`CepSearch`**: depois de definir o `result`, calcular `closest_store` e `closest_distance_km` com `haversineKm` sobre `STORES`, e chamar `Analytics.cepSearch({...})`. Para os caminhos de erro (CEP inválido no ViaCEP, exception, geocoding totalmente falho), disparar com `status: 'not_found'` ou `'error'`. CEP < 8 dígitos → `Analytics.cepSearchInvalid(digits.length)`.
+Descrição:
+```tsx
+<p className="text-sm md:text-base text-white/60 font-light leading-relaxed line-clamp-3">{description}</p>
+```
 
-2. **`StoreCard`**: aceitar `searchContext?` opcional. Usar `useInView` (do framer-motion) ou `whileInView`/`onViewportEnter` para disparar `storeCardView` UMA vez por mudança de busca. Substituir os `onClick` dos CTAs (WhatsApp, telefone, NavigationPicker) por `Analytics.storeCardClick({...})` enriquecido. Manter chamadas legadas (`whatsappClick`, `mapDirectionsClick`) para não quebrar dashboards existentes — disparamos os dois.
+Botão (remover diferença de cor/padding entre variantes só na **dimensão** — a cor permanece variando azul/laranja/cinza por design, mas tamanho idêntico):
+```tsx
+<Button className="... h-11 px-6 text-sm font-bold">
+```
 
-3. **Loop de render dos cards** (linha ~716): passar `searchContext` derivado do `searchResult` + posição `i`.
+### Páginas afetadas (automaticamente, sem editar copy)
+- `/` (Index) — 4 banners
+- `/arquitetonico` — 4 banners
+- `/empresarial` — 4 banners
 
-4. **Chips de zona no hero**: adicionar `onClick` chamando `trackEvent('store_zone_chip_click', { zone, store_id })`.
+### Validação
+Após a aplicação, abrir `/`, `/arquitetonico` e `/empresarial` em mobile (375px) e desktop (1280px) e conferir visualmente que os 4 cards têm altura/largura/posição do botão idênticas.
 
-### Privacidade / LGPD
-
-- **Nunca enviar CEP completo** ao GA4 — apenas `cep_prefix` (3 dígitos), suficiente para análise regional sem identificar pessoa.
-- Eventos só disparam após `Analytics` injetar GTM/GA4 (sem dependência adicional aqui — `trackEvent` já é no-op se `gtag`/`dataLayer` indisponíveis).
-- Nenhum dado pessoal (rua, nome, endereço retornado pelo ViaCEP) vai para o analytics.
-
-### Arquivos afetados
-
-- `src/components/Analytics.tsx` — adicionar 4 helpers
-- `src/pages/Lojas.tsx` — instrumentar `CepSearch`, `StoreCard`, chips de zona e loop de render
-
-### Como validar depois de implementado
-
-1. Abrir DevTools → Network (filtro `collect?v=2`) ou usar GA4 DebugView.
-2. Buscar CEP `01310-100` → ver `cep_search` com `status=success`, `zone=Centro`, `precision=exact|street|prefix`.
-3. Buscar `99999-999` → ver `cep_search` com `status=not_found`.
-4. Clicar no card recomendado → ver `store_card_view` (1x) e `store_card_click` com `cta_type=whatsapp` e `is_recommended=true`.
-5. Clicar em chip de zona no hero → ver `store_zone_chip_click`.
+### Arquivos editados
+- `src/components/ProductBanner.tsx` (único)
 
