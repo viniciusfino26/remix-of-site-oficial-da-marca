@@ -403,10 +403,37 @@ const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; s
   const { lat, lng, name } = store;
   const encodedName = encodeURIComponent(`INSULFILM™ ${name}`);
 
+  const GoogleMapsIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+      <path fill="#34A853" d="M12 2C7.58 2 4 5.58 4 10c0 5.25 7 12 8 12s8-6.75 8-12c0-4.42-3.58-8-8-8z" opacity=".15"/>
+      <path fill="#1A73E8" d="M5.46 4.93C6.92 3.12 9.32 2 12 2c2.13 0 4.07.83 5.5 2.18L13.4 8.28a3.99 3.99 0 0 0-5.12.46L5.46 4.93z"/>
+      <path fill="#EA4335" d="M5.46 4.93A7.97 7.97 0 0 0 4 10c0 1.49.42 2.99 1.07 4.43l3.21-3.21A4 4 0 0 1 8 10c0-1.04.4-2.07 1.18-2.85L5.46 4.93z"/>
+      <path fill="#FBBC04" d="M12 14a4 4 0 0 1-3.72-2.78l-3.21 3.21C6.6 17.71 9.5 22 12 22V14z"/>
+      <path fill="#34A853" d="M12 22c2.5 0 8-6.75 8-12 0-2.16-.86-4.13-2.25-5.57L13.4 8.28A4 4 0 0 1 16 10c0 2.43-2.39 5.97-4 8v4z"/>
+    </svg>
+  );
+  const WazeIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+      <path fill="#33CCFF" d="M20.54 12.6c.61-1.32.79-2.86.36-4.42-.95-3.41-4.27-5.6-7.8-5.18C9.69 3.41 7 6.41 7 10v.83c0 .68-.21 1.34-.6 1.9l-1.16 1.65c-.6.85.01 2.02 1.05 2.02h.92a3.5 3.5 0 0 0 6.78 0h1.06a3.5 3.5 0 0 0 6.78 0c.84 0 1.45-.81 1.21-1.62l-.5-1.65a2 2 0 0 1-.01-1z"/>
+      <circle cx="10" cy="9" r="1" fill="#fff"/>
+      <circle cx="15" cy="9" r="1" fill="#fff"/>
+      <path fill="none" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" d="M10.5 12c.4.6 1 1 1.5 1s1.1-.4 1.5-1"/>
+      <circle cx="9" cy="18" r="1.5" fill="#1f2937"/>
+      <circle cx="16" cy="18" r="1.5" fill="#1f2937"/>
+    </svg>
+  );
+  const AppleMapsIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" fill="#F2F2F7"/>
+      <path fill="#FF3B30" d="m12 5 2.2 4.6L19 11l-3.8 2.6L16 19l-4-2.8L8 19l.8-5.4L5 11l4.8-1.4z"/>
+      <circle cx="12" cy="12" r="1.6" fill="#fff"/>
+    </svg>
+  );
+
   const navOptions = [
-    { label: 'Google Maps', icon: '🗺️', url: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving` },
-    { label: 'Waze', icon: '🚗', url: `https://waze.com/ul?ll=${lat},${lng}&navigate=yes&q=${encodedName}` },
-    { label: 'Apple Maps', icon: '🍎', url: `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d&t=m` },
+    { label: 'Google Maps', Icon: GoogleMapsIcon, url: `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving` },
+    { label: 'Waze', Icon: WazeIcon, url: `https://waze.com/ul?ll=${lat},${lng}&navigate=yes&q=${encodedName}` },
+    { label: 'Apple Maps', Icon: AppleMapsIcon, url: `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d&t=m` },
   ];
 
   return (
@@ -460,7 +487,7 @@ const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; s
                     });
                   }}
                 >
-                  <span className="text-base">{opt.icon}</span>
+                  <opt.Icon />
                   <span className="font-medium">{opt.label}</span>
                   <ExternalLink className="w-3 h-3 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
