@@ -569,7 +569,19 @@ const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; i
                 href={store.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => Analytics.whatsappClick(store.zone, 'geral')}
+                onClick={() => {
+                  Analytics.whatsappClick(store.zone, 'geral');
+                  Analytics.storeCardClick({
+                    store_id: store.id,
+                    zone: store.zone,
+                    cta_type: 'whatsapp',
+                    is_recommended: searchContext?.isRecommended,
+                    distance_km: searchContext?.distance ?? null,
+                    precision: searchContext?.precision,
+                    search_zone: searchContext?.zone ?? null,
+                    position_in_list: searchContext?.position,
+                  });
+                }}
               >
                 <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all">
                   <MessageCircle className="w-4 h-4" />
@@ -584,7 +596,19 @@ const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; i
                       size="sm"
                       variant="outline"
                       className="w-full gap-1.5 text-xs border-border/50 hover:border-accent/30 hover:bg-accent/5 transition-all"
-                      onClick={() => Analytics.storeLocatorClick(store.id)}
+                      onClick={() => {
+                        Analytics.storeLocatorClick(store.id);
+                        Analytics.storeCardClick({
+                          store_id: store.id,
+                          zone: store.zone,
+                          cta_type: 'phone',
+                          is_recommended: searchContext?.isRecommended,
+                          distance_km: searchContext?.distance ?? null,
+                          precision: searchContext?.precision,
+                          search_zone: searchContext?.zone ?? null,
+                          position_in_list: searchContext?.position,
+                        });
+                      }}
                     >
                       <Phone className="w-3.5 h-3.5 text-accent" />
                       {store.phone}
