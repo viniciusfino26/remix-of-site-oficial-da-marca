@@ -7,7 +7,7 @@ import { MapPin, Clock, Phone, MessageCircle, Navigation, Building2, Car, Chevro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Analytics } from '@/components/Analytics';
+import { Analytics, trackEvent } from '@/components/Analytics';
 import { getCepZoneInfo, type CepZoneInfo } from '@/lib/cepZones';
 
 // ─── DADOS DOS CENTROS AUTORIZADOS ──────────────────────────────────────────
@@ -198,12 +198,40 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
     const digits = cep.replace(/\D/g, '');
     if (digits.length !== 8) {
       setError('Digite um CEP válido com 8 dígitos.');
+      Analytics.cepSearchInvalid(digits.length);
       return;
     }
+
+    const cepPrefix = digits.slice(0, 3);
 
     setLoading(true);
     setError('');
     setFoundAddress('');
+
+    const emitSearchAnalytics = (
+      result: CepSearchResult | null,
+      status: 'success' | 'not_found' | 'error'
+    ) => {
+      let closestStore: string | null = null;
+      let closestDistance: number | null = null;
+      if (result) {
+        const sorted = [...STORES]
+          .map((s) => ({ id: s.id, dist: haversineKm(result.coords.lat, result.coords.lng, s.lat, s.lng) }))
+          .sort((a, b) => a.dist - b.dist);
+        closestStore = sorted[0].id;
+        closestDistance = Math.round(sorted[0].dist * 10) / 10;
+      }
+      Analytics.cepSearch({
+        cep_prefix: cepPrefix,
+        status,
+        precision: result?.precision,
+        zone: result?.zoneInfo?.zone ?? null,
+        recommended_store: result?.zoneInfo?.recommendedStoreId ?? null,
+        closest_store: closestStore,
+        closest_distance_km: closestDistance,
+        results_count: result ? STORES.length : 0,
+      });
+    };
 
     try {
       // ESTRATÉGIA 1: Busca prefixo CEP (fallback infalível para SP capital)
@@ -218,17 +246,20 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
         if (zoneInfo) {
           const display = `Zona ${zoneInfo.zone} · ${zoneInfo.district}`;
           setFoundAddress(display);
-          onResult({
+          const result: CepSearchResult = {
             coords: { lat: zoneInfo.lat, lng: zoneInfo.lng },
             zoneInfo,
             precision: 'prefix',
             foundAddress: display,
-          });
+          };
+          onResult(result);
+          emitSearchAnalytics(result, 'success');
           setLoading(false);
           return;
         }
         setError('CEP não encontrado. Verifique e tente novamente.');
         onResult(null);
+        emitSearchAnalytics(null, 'not_found');
         setLoading(false);
         return;
       }
@@ -273,14 +304,18 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
       }
 
       if (coords) {
-        onResult({ coords, zoneInfo, precision, foundAddress: displayAddress });
+        const result: CepSearchResult = { coords, zoneInfo, precision, foundAddress: displayAddress };
+        onResult(result);
+        emitSearchAnalytics(result, 'success');
       } else {
         setError('Não foi possível localizar o endereço. Tente outro CEP.');
         onResult(null);
+        emitSearchAnalytics(null, 'not_found');
       }
     } catch {
       setError('Erro na busca. Verifique sua conexão e tente novamente.');
       onResult(null);
+      emitSearchAnalytics(null, 'error');
     } finally {
       setLoading(false);
     }
@@ -355,7 +390,15 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
 };
 
 // ─── NAVIGATION PICKER ───────────────────────────────────────────────────
-const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
+interface SearchContext {
+  precision: CepSearchResult['precision'];
+  zone: string | null;
+  isRecommended: boolean;
+  distance: number | null;
+  position: number;
+}
+
+const NavigationPicker = ({ store, searchContext }: { store: typeof STORES[0]; searchContext?: SearchContext }) => {
   const [open, setOpen] = useState(false);
   const { lat, lng, name } = store;
   const encodedName = encodeURIComponent(`INSULFILM™ ${name}`);
@@ -401,7 +444,21 @@ const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-4 py-3 hover:bg-accent/10 transition-colors text-sm text-foreground group"
-                  onClick={() => { setOpen(false); Analytics.mapDirectionsClick(store.id); }}
+                  onClick={() => {
+                    setOpen(false);
+                    Analytics.mapDirectionsClick(store.id);
+                    Analytics.storeCardClick({
+                      store_id: store.id,
+                      zone: store.zone,
+                      cta_type: 'map_provider',
+                      map_provider: opt.label,
+                      is_recommended: searchContext?.isRecommended,
+                      distance_km: searchContext?.distance ?? null,
+                      precision: searchContext?.precision,
+                      search_zone: searchContext?.zone ?? null,
+                      position_in_list: searchContext?.position,
+                    });
+                  }}
                 >
                   <span className="text-base">{opt.icon}</span>
                   <span className="font-medium">{opt.label}</span>
@@ -417,9 +474,20 @@ const NavigationPicker = ({ store }: { store: typeof STORES[0] }) => {
 };
 
 // ─── STORE CARD ───────────────────────────────────────────────────────────
-const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number }) => {
+const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; index: number; searchContext?: SearchContext }) => {
+  const handleViewportEnter = () => {
+    if (!searchContext) return;
+    Analytics.storeCardView({
+      store_id: store.id,
+      zone: store.zone,
+      is_recommended: searchContext.isRecommended,
+      distance_km: searchContext.distance,
+      precision: searchContext.precision,
+      search_zone: searchContext.zone,
+    });
+  };
   return (
-    <motion.div variants={fadeInUp} custom={index}>
+    <motion.div variants={fadeInUp} custom={index} onViewportEnter={handleViewportEnter} viewport={{ once: true, amount: 0.4 }}>
       <motion.div whileHover={{ y: -6, transition: { duration: 0.3 } }}>
         <Card className="overflow-hidden glass-card hover:border-accent/20 transition-all duration-300 rounded-xl group">
           {/* Accent stripe top */}
@@ -501,7 +569,19 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
                 href={store.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => Analytics.whatsappClick(store.zone, 'geral')}
+                onClick={() => {
+                  Analytics.whatsappClick(store.zone, 'geral');
+                  Analytics.storeCardClick({
+                    store_id: store.id,
+                    zone: store.zone,
+                    cta_type: 'whatsapp',
+                    is_recommended: searchContext?.isRecommended,
+                    distance_km: searchContext?.distance ?? null,
+                    precision: searchContext?.precision,
+                    search_zone: searchContext?.zone ?? null,
+                    position_in_list: searchContext?.position,
+                  });
+                }}
               >
                 <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all">
                   <MessageCircle className="w-4 h-4" />
@@ -516,7 +596,19 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
                       size="sm"
                       variant="outline"
                       className="w-full gap-1.5 text-xs border-border/50 hover:border-accent/30 hover:bg-accent/5 transition-all"
-                      onClick={() => Analytics.storeLocatorClick(store.id)}
+                      onClick={() => {
+                        Analytics.storeLocatorClick(store.id);
+                        Analytics.storeCardClick({
+                          store_id: store.id,
+                          zone: store.zone,
+                          cta_type: 'phone',
+                          is_recommended: searchContext?.isRecommended,
+                          distance_km: searchContext?.distance ?? null,
+                          precision: searchContext?.precision,
+                          search_zone: searchContext?.zone ?? null,
+                          position_in_list: searchContext?.position,
+                        });
+                      }}
                     >
                       <Phone className="w-3.5 h-3.5 text-accent" />
                       {store.phone}
@@ -524,7 +616,7 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
                   </a>
                 )}
                 <div className={store.phone ? 'flex-none' : 'flex-1'}>
-                  <NavigationPicker store={store} />
+                  <NavigationPicker store={store} searchContext={searchContext} />
                 </div>
               </div>
             </div>
@@ -598,6 +690,10 @@ const Lojas = () => {
                 <a
                   key={store.id}
                   href={`#${store.id}`}
+                  onClick={() => {
+                    Analytics.storeLocatorClick(store.id);
+                    trackEvent('store_zone_chip_click', { zone: store.zone, store_id: store.id });
+                  }}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground/50 hover:text-accent bg-primary-foreground/5 hover:bg-accent/10 px-4 py-2 rounded-full border border-primary-foreground/10 hover:border-accent/30 transition-all duration-300"
                 >
                   <MapPin className="w-3 h-3" />
@@ -716,9 +812,18 @@ const Lojas = () => {
             {sortedStores.map((store, i) => {
               const distance = 'distance' in store && typeof store.distance === 'number' ? store.distance : null;
               const isRecommended = 'isRecommended' in store && store.isRecommended === true;
+              const searchContext: SearchContext | undefined = searchResult
+                ? {
+                    precision: searchResult.precision,
+                    zone: searchResult.zoneInfo?.zone ?? null,
+                    isRecommended,
+                    distance,
+                    position: i,
+                  }
+                : undefined;
               return (
                 <div key={store.id} id={store.id} className="scroll-mt-24">
-                  <StoreCard store={store} index={i} />
+                  <StoreCard store={store} index={i} searchContext={searchContext} />
                   {distance !== null && (
                     <motion.div
                       initial={{ opacity: 0 }}

@@ -106,6 +106,41 @@ export const Analytics = {
 
   mapDirectionsClick: (unidade: string) =>
     trackEvent('directions_click', { store_name: unidade }),
+
+  cepSearch: (params: {
+    cep_prefix: string;
+    status: 'success' | 'not_found' | 'error';
+    precision?: 'exact' | 'street' | 'prefix' | 'city';
+    zone?: string | null;
+    recommended_store?: string | null;
+    closest_store?: string | null;
+    closest_distance_km?: number | null;
+    results_count?: number;
+  }) => trackEvent('cep_search', params),
+
+  cepSearchInvalid: (cepLength: number) =>
+    trackEvent('cep_search_invalid', { cep_length: cepLength }),
+
+  storeCardView: (params: {
+    store_id: string;
+    zone: string;
+    is_recommended: boolean;
+    distance_km: number | null;
+    precision?: string;
+    search_zone?: string | null;
+  }) => trackEvent('store_card_view', params),
+
+  storeCardClick: (params: {
+    store_id: string;
+    zone: string;
+    cta_type: 'whatsapp' | 'phone' | 'directions' | 'map_provider';
+    is_recommended?: boolean;
+    distance_km?: number | null;
+    precision?: string;
+    search_zone?: string | null;
+    position_in_list?: number;
+    map_provider?: string;
+  }) => trackEvent('store_card_click', params),
 };
 
 const AnalyticsProvider = () => {
