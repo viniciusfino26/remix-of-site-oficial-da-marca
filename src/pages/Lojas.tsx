@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Analytics } from '@/components/Analytics';
+import { getCepZoneInfo, type CepZoneInfo } from '@/lib/cepZones';
 
 // ─── DADOS DOS CENTROS AUTORIZADOS ──────────────────────────────────────────
 const STORES = [
@@ -122,8 +123,63 @@ function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
 }
 
 // ─── CEP SEARCH ──────────────────────────────────────────────────────────
+interface CepSearchResult {
+  coords: { lat: number; lng: number };
+  zoneInfo: CepZoneInfo | null;
+  precision: 'exact' | 'street' | 'prefix' | 'city';
+  foundAddress: string;
+}
+
 interface CepSearchProps {
-  onResult: (coords: { lat: number; lng: number } | null) => void;
+  onResult: (result: CepSearchResult | null) => void;
+}
+
+// ─── GEOCODING HELPERS ──────────────────────────────────────────────────
+async function geocodeAwesomeApi(cep: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(`https://cep.awesomeapi.com.br/json/${cep}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data?.lat && data?.lng) {
+      return { lat: parseFloat(data.lat), lng: parseFloat(data.lng) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+async function geocodeBrasilApi(cep: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const lat = data?.location?.coordinates?.latitude;
+    const lng = data?.location?.coordinates?.longitude;
+    if (lat && lng) {
+      return { lat: parseFloat(lat), lng: parseFloat(lng) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+async function geocodeNominatim(query: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&countrycodes=br`,
+      { headers: { 'Accept-Language': 'pt-BR' } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.length > 0) {
+      return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 const CepSearch = ({ onResult }: CepSearchProps) => {
@@ -150,11 +206,27 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
     setFoundAddress('');
 
     try {
-      // 1. Get address from ViaCEP
+      // ESTRATÉGIA 1: Busca prefixo CEP (fallback infalível para SP capital)
+      const zoneInfo = getCepZoneInfo(digits);
+
+      // Busca dados do endereço via ViaCEP
       const viaCepRes = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
       const viaCepData = await viaCepRes.json();
 
       if (viaCepData.erro) {
+        // CEP inválido — se for prefixo SP conhecido, usa mesmo assim
+        if (zoneInfo) {
+          const display = `Zona ${zoneInfo.zone} · ${zoneInfo.district}`;
+          setFoundAddress(display);
+          onResult({
+            coords: { lat: zoneInfo.lat, lng: zoneInfo.lng },
+            zoneInfo,
+            precision: 'prefix',
+            foundAddress: display,
+          });
+          setLoading(false);
+          return;
+        }
         setError('CEP não encontrado. Verifique e tente novamente.');
         onResult(null);
         setLoading(false);
@@ -162,34 +234,49 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
       }
 
       const { logradouro, bairro, localidade, uf } = viaCepData;
-      const addressParts = [logradouro, bairro, localidade, uf].filter(Boolean);
-      const query = addressParts.join(', ');
-      setFoundAddress(`${localidade}, ${uf}`);
+      const displayAddress = bairro && localidade
+        ? `${bairro}, ${localidade}/${uf}`
+        : `${localidade}, ${uf}`;
+      setFoundAddress(displayAddress);
 
-      // 2. Geocode with Nominatim (free, no API key)
-      const nominatimRes = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&countrycodes=br`,
-        { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
-      );
-      const nominatimData = await nominatimRes.json();
+      // ESTRATÉGIA 2: Geocoding em cascata (AwesomeAPI → BrasilAPI → Nominatim preciso)
+      let coords: { lat: number; lng: number } | null = null;
+      let precision: CepSearchResult['precision'] = 'city';
 
-      if (nominatimData.length > 0) {
-        const { lat, lon } = nominatimData[0];
-        onResult({ lat: parseFloat(lat), lng: parseFloat(lon) });
+      // Tenta AwesomeAPI primeiro (CEP-específico, retorna lat/lng do CEP)
+      coords = await geocodeAwesomeApi(digits);
+      if (coords) precision = 'exact';
+
+      // Tenta BrasilAPI
+      if (!coords) {
+        coords = await geocodeBrasilApi(digits);
+        if (coords) precision = 'exact';
+      }
+
+      // Tenta Nominatim com query precisa: rua + bairro + cidade
+      if (!coords && logradouro && bairro) {
+        const preciseQuery = `${logradouro}, ${bairro}, ${localidade}, ${uf}, Brasil`;
+        coords = await geocodeNominatim(preciseQuery);
+        if (coords) precision = 'street';
+      }
+
+      // ESTRATÉGIA 3: Fallback infalível — usa prefixo CEP em vez do centro de SP
+      if (!coords && zoneInfo) {
+        coords = { lat: zoneInfo.lat, lng: zoneInfo.lng };
+        precision = 'prefix';
+      }
+
+      // Último recurso: geocoding por cidade (para CEPs fora de SP capital)
+      if (!coords) {
+        coords = await geocodeNominatim(`${localidade}, ${uf}, Brasil`);
+        precision = 'city';
+      }
+
+      if (coords) {
+        onResult({ coords, zoneInfo, precision, foundAddress: displayAddress });
       } else {
-        // Fallback: try city + state only
-        const fallbackQuery = `${localidade}, ${uf}, Brasil`;
-        const fallbackRes = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fallbackQuery)}&limit=1&countrycodes=br`,
-          { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
-        );
-        const fallbackData = await fallbackRes.json();
-        if (fallbackData.length > 0) {
-          onResult({ lat: parseFloat(fallbackData[0].lat), lng: parseFloat(fallbackData[0].lon) });
-        } else {
-          setError('Não foi possível localizar o endereço. Tente outro CEP.');
-          onResult(null);
-        }
+        setError('Não foi possível localizar o endereço. Tente outro CEP.');
+        onResult(null);
       }
     } catch {
       setError('Erro na busca. Verifique sua conexão e tente novamente.');
@@ -450,19 +537,29 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
 
 // ─── PÁGINA PRINCIPAL ─────────────────────────────────────────────────────
 const Lojas = () => {
-  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [searchResult, setSearchResult] = useState<CepSearchResult | null>(null);
 
   const sortedStores = useMemo(() => {
-    if (!userCoords) return STORES;
+    if (!searchResult) return STORES;
+    const { coords, zoneInfo } = searchResult;
     const withDistance = [...STORES]
-      .map((s) => ({ ...s, distance: haversineKm(userCoords.lat, userCoords.lng, s.lat, s.lng) }))
-      .sort((a, b) => a.distance - b.distance);
-    
-    // Show closest store + any others within 5km of it (nearby cluster)
+      .map((s) => ({
+        ...s,
+        distance: haversineKm(coords.lat, coords.lng, s.lat, s.lng),
+        isRecommended: zoneInfo?.recommendedStoreId === s.id,
+      }))
+      .sort((a, b) => {
+        // Loja recomendada pela zona vem primeiro
+        if (a.isRecommended && !b.isRecommended) return -1;
+        if (!a.isRecommended && b.isRecommended) return 1;
+        return a.distance - b.distance;
+      });
+
+    // Mostra a loja mais próxima/recomendada + qualquer outra dentro de 5km
     const closest = withDistance[0].distance;
     const NEARBY_THRESHOLD = 5; // km
-    return withDistance.filter((s) => s.distance <= closest + NEARBY_THRESHOLD);
-  }, [userCoords]);
+    return withDistance.filter((s) => s.isRecommended || s.distance <= closest + NEARBY_THRESHOLD);
+  }, [searchResult]);
 
   return (
     <main className="min-h-screen bg-background">
@@ -574,7 +671,7 @@ const Lojas = () => {
           >
             <h2 className="text-lg font-bold text-foreground mb-1">Encontre o Centro Autorizado mais próximo</h2>
             <p className="text-sm text-muted-foreground mb-5 font-light">Digite seu CEP para ordenar por proximidade</p>
-            <CepSearch onResult={setUserCoords} />
+            <CepSearch onResult={setSearchResult} />
           </motion.div>
         </div>
       </section>
@@ -582,22 +679,28 @@ const Lojas = () => {
       {/* Store Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          {userCoords && (
+          {searchResult && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="text-center mb-8"
             >
-              <p className="text-sm text-muted-foreground font-light mb-3">
+              <p className="text-sm text-muted-foreground font-light mb-2">
                 {sortedStores.length === 1
                   ? 'Centro Autorizado mais próximo de você:'
                   : `${sortedStores.length} Centros Autorizados próximos de você:`}
               </p>
+              {searchResult.zoneInfo && (
+                <p className="text-xs text-accent/80 font-medium mb-3">
+                  Identificamos sua região como <span className="font-bold">Zona {searchResult.zoneInfo.zone}</span>
+                  {searchResult.precision === 'prefix' && ' (localização aproximada por CEP)'}
+                </p>
+              )}
               <Button
                 variant="ghost"
                 size="sm"
                 className="text-accent hover:text-accent hover:bg-accent/10 text-xs"
-                onClick={() => setUserCoords(null)}
+                onClick={() => setSearchResult(null)}
               >
                 Ver todos os Centros Autorizados
               </Button>
@@ -610,22 +713,31 @@ const Lojas = () => {
             viewport={{ once: true, margin: '-60px' }}
             variants={stagger}
           >
-            {sortedStores.map((store, i) => (
-              <div key={store.id} id={store.id} className="scroll-mt-24">
-                <StoreCard store={store} index={i} />
-                {'distance' in store && typeof store.distance === 'number' && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="mt-2 text-center"
-                  >
-                    <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
-                      📍 ~{store.distance.toFixed(1)} km de você
-                    </span>
-                  </motion.div>
-                )}
-              </div>
-            ))}
+            {sortedStores.map((store, i) => {
+              const distance = 'distance' in store && typeof store.distance === 'number' ? store.distance : null;
+              const isRecommended = 'isRecommended' in store && store.isRecommended === true;
+              return (
+                <div key={store.id} id={store.id} className="scroll-mt-24">
+                  <StoreCard store={store} index={i} />
+                  {distance !== null && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="mt-2 flex flex-wrap items-center justify-center gap-2"
+                    >
+                      {isRecommended && (
+                        <span className="text-xs font-bold text-accent-foreground bg-accent px-3 py-1 rounded-full shadow-md">
+                          ⭐ Recomendado para sua zona
+                        </span>
+                      )}
+                      <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                        📍 ~{distance.toFixed(1)} km de você
+                      </span>
+                    </motion.div>
+                  )}
+                </div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
