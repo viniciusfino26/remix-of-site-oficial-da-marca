@@ -812,9 +812,18 @@ const Lojas = () => {
             {sortedStores.map((store, i) => {
               const distance = 'distance' in store && typeof store.distance === 'number' ? store.distance : null;
               const isRecommended = 'isRecommended' in store && store.isRecommended === true;
+              const searchContext: SearchContext | undefined = searchResult
+                ? {
+                    precision: searchResult.precision,
+                    zone: searchResult.zoneInfo?.zone ?? null,
+                    isRecommended,
+                    distance,
+                    position: i,
+                  }
+                : undefined;
               return (
                 <div key={store.id} id={store.id} className="scroll-mt-24">
-                  <StoreCard store={store} index={i} />
+                  <StoreCard store={store} index={i} searchContext={searchContext} />
                   {distance !== null && (
                     <motion.div
                       initial={{ opacity: 0 }}
