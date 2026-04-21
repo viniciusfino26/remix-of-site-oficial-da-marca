@@ -707,10 +707,10 @@ const Lojas = () => {
             </motion.div>
           )}
           <motion.div
+            key={searchResult ? 'filtered' : 'all'}
             className={`grid gap-8 lg:gap-10 ${sortedStores.length === 1 ? 'max-w-xl mx-auto' : 'md:grid-cols-2'}`}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
+            animate="visible"
             variants={stagger}
           >
             {sortedStores.map((store, i) => {
