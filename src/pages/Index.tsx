@@ -76,18 +76,6 @@ const Index = () => {
 
   return (
     <main>
-      {/* Banner Website Oficial */}
-      <motion.div
-        className="bg-primary text-primary-foreground text-center py-6 flex flex-col items-center gap-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <img src={logoLight} alt="INSULFILM™" className="h-12 w-auto" />
-        <p className="text-sm text-primary-foreground/70 font-light">A marca das películas</p>
-        <p className="text-xs uppercase tracking-[0.3em] font-semibold text-primary-foreground/50">Website Oficial</p>
-      </motion.div>
-
       {/* Hero Section */}
       <section ref={heroRef} id="hero" className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
         {/* Geometric texture with parallax */}
@@ -105,7 +93,7 @@ const Index = () => {
           />
         </motion.div>
 
-        <motion.div className="container mx-auto px-4 pt-24 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
+        <motion.div className="container mx-auto px-4 pt-10 md:pt-14 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
           <motion.div
             className="text-center max-w-4xl mx-auto"
             initial="hidden"
@@ -115,7 +103,7 @@ const Index = () => {
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-6 font-semibold">
               INSULFILM™
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 sm:mb-6 text-primary-foreground leading-[0.95] tracking-tight">
+            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-primary-foreground leading-tight tracking-tight">
               {t('hero.tagline')}
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl text-primary-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto font-light leading-relaxed px-2">
@@ -123,29 +111,8 @@ const Index = () => {
             </motion.p>
 
             {/* Decorative separator */}
-            <motion.div variants={scaleIn} className="flex justify-center mb-10">
+            <motion.div variants={scaleIn} className="flex justify-center">
               <div className="separator-accent" />
-            </motion.div>
-
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/automotivo">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 w-full sm:w-auto shadow-md hover:shadow-lg transition-all duration-300">
-                  <Car className="w-4 h-4" />
-                  {t('hero.ctaCar')}
-                </Button>
-              </Link>
-              <Link to="/residencial">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-semibold gap-2 w-full sm:w-auto backdrop-blur-sm">
-                  <Building2 className="w-4 h-4" />
-                  {t('hero.ctaHome')}
-                </Button>
-              </Link>
-              <Link to="/parceiro">
-                <Button size="lg" variant="ghost" className="text-accent hover:text-accent hover:bg-accent/10 font-semibold gap-2 w-full sm:w-auto">
-                  {t('hero.ctaPartner')}
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
             </motion.div>
           </motion.div>
         </motion.div>
