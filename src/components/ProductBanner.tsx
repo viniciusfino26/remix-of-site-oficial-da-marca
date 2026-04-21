@@ -75,19 +75,19 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className={`${cardVariantClasses[cardVariant]} p-5 sm:p-8 md:p-12 max-w-xl min-h-[180px] md:min-h-[280px] flex flex-col justify-center rounded-lg border border-white/10`}
+          className={`${cardVariantClasses[cardVariant]} p-6 md:p-8 w-full sm:w-[36rem] max-w-full h-[320px] md:h-[360px] flex flex-col justify-between rounded-lg border border-white/10`}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 md:mb-4">{title}</h2>
-          <p className="text-sm sm:text-base text-white/60 mb-5 md:mb-8 font-light leading-relaxed">{description}</p>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white line-clamp-2">{title}</h2>
+          <p className="text-sm md:text-base text-white/60 font-light leading-relaxed line-clamp-3">{description}</p>
           <Link to={link}>
             {cardVariant === 'orange' ? (
-              <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
+              <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300 h-11 px-6 text-sm">
                 <Icon className="w-4 h-4" />
                 {buttonText}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             ) : (
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300 h-11 px-6 text-sm">
                 <Icon className="w-4 h-4" />
                 {buttonText}
                 <ArrowRight className="w-4 h-4" />
