@@ -198,12 +198,40 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
     const digits = cep.replace(/\D/g, '');
     if (digits.length !== 8) {
       setError('Digite um CEP válido com 8 dígitos.');
+      Analytics.cepSearchInvalid(digits.length);
       return;
     }
+
+    const cepPrefix = digits.slice(0, 3);
 
     setLoading(true);
     setError('');
     setFoundAddress('');
+
+    const emitSearchAnalytics = (
+      result: CepSearchResult | null,
+      status: 'success' | 'not_found' | 'error'
+    ) => {
+      let closestStore: string | null = null;
+      let closestDistance: number | null = null;
+      if (result) {
+        const sorted = [...STORES]
+          .map((s) => ({ id: s.id, dist: haversineKm(result.coords.lat, result.coords.lng, s.lat, s.lng) }))
+          .sort((a, b) => a.dist - b.dist);
+        closestStore = sorted[0].id;
+        closestDistance = Math.round(sorted[0].dist * 10) / 10;
+      }
+      Analytics.cepSearch({
+        cep_prefix: cepPrefix,
+        status,
+        precision: result?.precision,
+        zone: result?.zoneInfo?.zone ?? null,
+        recommended_store: result?.zoneInfo?.recommendedStoreId ?? null,
+        closest_store: closestStore,
+        closest_distance_km: closestDistance,
+        results_count: result ? STORES.length : 0,
+      });
+    };
 
     try {
       // ESTRATÉGIA 1: Busca prefixo CEP (fallback infalível para SP capital)
@@ -218,17 +246,20 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
         if (zoneInfo) {
           const display = `Zona ${zoneInfo.zone} · ${zoneInfo.district}`;
           setFoundAddress(display);
-          onResult({
+          const result: CepSearchResult = {
             coords: { lat: zoneInfo.lat, lng: zoneInfo.lng },
             zoneInfo,
             precision: 'prefix',
             foundAddress: display,
-          });
+          };
+          onResult(result);
+          emitSearchAnalytics(result, 'success');
           setLoading(false);
           return;
         }
         setError('CEP não encontrado. Verifique e tente novamente.');
         onResult(null);
+        emitSearchAnalytics(null, 'not_found');
         setLoading(false);
         return;
       }
@@ -273,14 +304,18 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
       }
 
       if (coords) {
-        onResult({ coords, zoneInfo, precision, foundAddress: displayAddress });
+        const result: CepSearchResult = { coords, zoneInfo, precision, foundAddress: displayAddress };
+        onResult(result);
+        emitSearchAnalytics(result, 'success');
       } else {
         setError('Não foi possível localizar o endereço. Tente outro CEP.');
         onResult(null);
+        emitSearchAnalytics(null, 'not_found');
       }
     } catch {
       setError('Erro na busca. Verifique sua conexão e tente novamente.');
       onResult(null);
+      emitSearchAnalytics(null, 'error');
     } finally {
       setLoading(false);
     }
