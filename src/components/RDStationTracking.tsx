@@ -11,7 +11,11 @@ import { trackPageView, hasConsent } from "@/lib/rdstation";
  * - Token configurado via VITE_RD_STATION_TOKEN (build-time).
  */
 
-const RD_TOKEN = import.meta.env.VITE_RD_STATION_TOKEN as string | undefined;
+// Token público do RD Station Marketing — exposto no HTML do loader oficial,
+// portanto seguro para versionar no código (não é credencial sensível).
+const RD_TOKEN =
+  (import.meta.env.VITE_RD_STATION_TOKEN as string | undefined) ||
+  "733b056b-078f-48e3-a869-f6fb92c9707e";
 const SCRIPT_ID = "rd-station-loader";
 const CONSENT_KEY = "insulfilm_cookie_consent";
 
