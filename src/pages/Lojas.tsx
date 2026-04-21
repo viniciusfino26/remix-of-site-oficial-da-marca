@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Analytics } from '@/components/Analytics';
+import { getCepZoneInfo, type CepZoneInfo } from '@/lib/cepZones';
 
 // ─── DADOS DOS CENTROS AUTORIZADOS ──────────────────────────────────────────
 const STORES = [
