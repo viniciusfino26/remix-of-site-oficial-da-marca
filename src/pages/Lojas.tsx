@@ -714,12 +714,12 @@ const Lojas = () => {
             variants={stagger}
           >
             {sortedStores.map((store, i) => {
-              const hasDistance = 'distance' in store && typeof store.distance === 'number';
+              const distance = 'distance' in store && typeof store.distance === 'number' ? store.distance : null;
               const isRecommended = 'isRecommended' in store && store.isRecommended === true;
               return (
                 <div key={store.id} id={store.id} className="scroll-mt-24">
                   <StoreCard store={store} index={i} />
-                  {hasDistance && (
+                  {distance !== null && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -731,7 +731,7 @@ const Lojas = () => {
                         </span>
                       )}
                       <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
-                        📍 ~{store.distance.toFixed(1)} km de você
+                        📍 ~{distance.toFixed(1)} km de você
                       </span>
                     </motion.div>
                   )}
