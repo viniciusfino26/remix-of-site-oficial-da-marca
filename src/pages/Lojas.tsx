@@ -690,6 +690,10 @@ const Lojas = () => {
                 <a
                   key={store.id}
                   href={`#${store.id}`}
+                  onClick={() => {
+                    Analytics.storeLocatorClick(store.id);
+                    trackEvent('store_zone_chip_click', { zone: store.zone, store_id: store.id });
+                  }}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground/50 hover:text-accent bg-primary-foreground/5 hover:bg-accent/10 px-4 py-2 rounded-full border border-primary-foreground/10 hover:border-accent/30 transition-all duration-300"
                 >
                   <MapPin className="w-3 h-3" />
