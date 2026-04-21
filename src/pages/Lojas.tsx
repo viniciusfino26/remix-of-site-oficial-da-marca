@@ -537,19 +537,29 @@ const StoreCard = ({ store, index }: { store: typeof STORES[0]; index: number })
 
 // ─── PÁGINA PRINCIPAL ─────────────────────────────────────────────────────
 const Lojas = () => {
-  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [searchResult, setSearchResult] = useState<CepSearchResult | null>(null);
 
   const sortedStores = useMemo(() => {
-    if (!userCoords) return STORES;
+    if (!searchResult) return STORES;
+    const { coords, zoneInfo } = searchResult;
     const withDistance = [...STORES]
-      .map((s) => ({ ...s, distance: haversineKm(userCoords.lat, userCoords.lng, s.lat, s.lng) }))
-      .sort((a, b) => a.distance - b.distance);
-    
-    // Show closest store + any others within 5km of it (nearby cluster)
+      .map((s) => ({
+        ...s,
+        distance: haversineKm(coords.lat, coords.lng, s.lat, s.lng),
+        isRecommended: zoneInfo?.recommendedStoreId === s.id,
+      }))
+      .sort((a, b) => {
+        // Loja recomendada pela zona vem primeiro
+        if (a.isRecommended && !b.isRecommended) return -1;
+        if (!a.isRecommended && b.isRecommended) return 1;
+        return a.distance - b.distance;
+      });
+
+    // Mostra a loja mais próxima/recomendada + qualquer outra dentro de 5km
     const closest = withDistance[0].distance;
     const NEARBY_THRESHOLD = 5; // km
-    return withDistance.filter((s) => s.distance <= closest + NEARBY_THRESHOLD);
-  }, [userCoords]);
+    return withDistance.filter((s) => s.isRecommended || s.distance <= closest + NEARBY_THRESHOLD);
+  }, [searchResult]);
 
   return (
     <main className="min-h-screen bg-background">
