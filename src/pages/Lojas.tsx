@@ -123,8 +123,63 @@ function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
 }
 
 // ─── CEP SEARCH ──────────────────────────────────────────────────────────
+interface CepSearchResult {
+  coords: { lat: number; lng: number };
+  zoneInfo: CepZoneInfo | null;
+  precision: 'exact' | 'street' | 'prefix' | 'city';
+  foundAddress: string;
+}
+
 interface CepSearchProps {
-  onResult: (coords: { lat: number; lng: number } | null) => void;
+  onResult: (result: CepSearchResult | null) => void;
+}
+
+// ─── GEOCODING HELPERS ──────────────────────────────────────────────────
+async function geocodeAwesomeApi(cep: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(`https://cep.awesomeapi.com.br/json/${cep}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data?.lat && data?.lng) {
+      return { lat: parseFloat(data.lat), lng: parseFloat(data.lng) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+async function geocodeBrasilApi(cep: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const lat = data?.location?.coordinates?.latitude;
+    const lng = data?.location?.coordinates?.longitude;
+    if (lat && lng) {
+      return { lat: parseFloat(lat), lng: parseFloat(lng) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+async function geocodeNominatim(query: string): Promise<{ lat: number; lng: number } | null> {
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&countrycodes=br`,
+      { headers: { 'Accept-Language': 'pt-BR' } }
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.length > 0) {
+      return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 const CepSearch = ({ onResult }: CepSearchProps) => {
@@ -151,11 +206,27 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
     setFoundAddress('');
 
     try {
-      // 1. Get address from ViaCEP
+      // ESTRATÉGIA 1: Busca prefixo CEP (fallback infalível para SP capital)
+      const zoneInfo = getCepZoneInfo(digits);
+
+      // Busca dados do endereço via ViaCEP
       const viaCepRes = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
       const viaCepData = await viaCepRes.json();
 
       if (viaCepData.erro) {
+        // CEP inválido — se for prefixo SP conhecido, usa mesmo assim
+        if (zoneInfo) {
+          const display = `Zona ${zoneInfo.zone} · ${zoneInfo.district}`;
+          setFoundAddress(display);
+          onResult({
+            coords: { lat: zoneInfo.lat, lng: zoneInfo.lng },
+            zoneInfo,
+            precision: 'prefix',
+            foundAddress: display,
+          });
+          setLoading(false);
+          return;
+        }
         setError('CEP não encontrado. Verifique e tente novamente.');
         onResult(null);
         setLoading(false);
@@ -163,34 +234,49 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
       }
 
       const { logradouro, bairro, localidade, uf } = viaCepData;
-      const addressParts = [logradouro, bairro, localidade, uf].filter(Boolean);
-      const query = addressParts.join(', ');
-      setFoundAddress(`${localidade}, ${uf}`);
+      const displayAddress = bairro && localidade
+        ? `${bairro}, ${localidade}/${uf}`
+        : `${localidade}, ${uf}`;
+      setFoundAddress(displayAddress);
 
-      // 2. Geocode with Nominatim (free, no API key)
-      const nominatimRes = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1&countrycodes=br`,
-        { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
-      );
-      const nominatimData = await nominatimRes.json();
+      // ESTRATÉGIA 2: Geocoding em cascata (AwesomeAPI → BrasilAPI → Nominatim preciso)
+      let coords: { lat: number; lng: number } | null = null;
+      let precision: CepSearchResult['precision'] = 'city';
 
-      if (nominatimData.length > 0) {
-        const { lat, lon } = nominatimData[0];
-        onResult({ lat: parseFloat(lat), lng: parseFloat(lon) });
+      // Tenta AwesomeAPI primeiro (CEP-específico, retorna lat/lng do CEP)
+      coords = await geocodeAwesomeApi(digits);
+      if (coords) precision = 'exact';
+
+      // Tenta BrasilAPI
+      if (!coords) {
+        coords = await geocodeBrasilApi(digits);
+        if (coords) precision = 'exact';
+      }
+
+      // Tenta Nominatim com query precisa: rua + bairro + cidade
+      if (!coords && logradouro && bairro) {
+        const preciseQuery = `${logradouro}, ${bairro}, ${localidade}, ${uf}, Brasil`;
+        coords = await geocodeNominatim(preciseQuery);
+        if (coords) precision = 'street';
+      }
+
+      // ESTRATÉGIA 3: Fallback infalível — usa prefixo CEP em vez do centro de SP
+      if (!coords && zoneInfo) {
+        coords = { lat: zoneInfo.lat, lng: zoneInfo.lng };
+        precision = 'prefix';
+      }
+
+      // Último recurso: geocoding por cidade (para CEPs fora de SP capital)
+      if (!coords) {
+        coords = await geocodeNominatim(`${localidade}, ${uf}, Brasil`);
+        precision = 'city';
+      }
+
+      if (coords) {
+        onResult({ coords, zoneInfo, precision, foundAddress: displayAddress });
       } else {
-        // Fallback: try city + state only
-        const fallbackQuery = `${localidade}, ${uf}, Brasil`;
-        const fallbackRes = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fallbackQuery)}&limit=1&countrycodes=br`,
-          { headers: { 'User-Agent': 'INSULFILM-Website/1.0' } }
-        );
-        const fallbackData = await fallbackRes.json();
-        if (fallbackData.length > 0) {
-          onResult({ lat: parseFloat(fallbackData[0].lat), lng: parseFloat(fallbackData[0].lon) });
-        } else {
-          setError('Não foi possível localizar o endereço. Tente outro CEP.');
-          onResult(null);
-        }
+        setError('Não foi possível localizar o endereço. Tente outro CEP.');
+        onResult(null);
       }
     } catch {
       setError('Erro na busca. Verifique sua conexão e tente novamente.');
