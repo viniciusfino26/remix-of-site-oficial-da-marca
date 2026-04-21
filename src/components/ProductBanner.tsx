@@ -75,11 +75,16 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
           viewport={{ once: true, margin: '-80px' }}
           variants={alignment === 'right' ? fadeInRight : fadeInLeft}
           whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-          className={`${cardVariantClasses[cardVariant]} p-6 md:p-8 w-full sm:w-[36rem] max-w-full h-[320px] md:h-[360px] flex flex-col justify-between rounded-lg border border-white/10`}
+          className={`${cardVariantClasses[cardVariant]} p-6 md:p-8 w-full sm:w-[36rem] max-w-full h-[320px] md:h-[360px] grid gap-4 md:gap-5 rounded-lg border border-white/10`}
+          style={{ gridTemplateRows: '4.5rem 5.25rem 2.75rem' }}
         >
-          <h2 className="text-2xl md:text-3xl font-extrabold text-white line-clamp-2">{title}</h2>
-          <p className="text-sm md:text-base text-white/60 font-light leading-relaxed line-clamp-3">{description}</p>
-          <Link to={link}>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white line-clamp-2 leading-tight m-0 self-start">
+            {title}
+          </h2>
+          <p className="text-sm md:text-base text-white/60 font-light leading-relaxed line-clamp-3 m-0 self-start">
+            {description}
+          </p>
+          <Link to={link} className="self-end">
             {cardVariant === 'orange' ? (
               <Button className="bg-white hover:bg-white/90 text-neutral-900 font-bold gap-2 shadow-md hover:shadow-lg transition-all duration-300 h-11 px-6 text-sm">
                 <Icon className="w-4 h-4" />
