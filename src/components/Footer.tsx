@@ -4,6 +4,7 @@ import { Facebook, Instagram, Youtube, MessageCircle, Linkedin } from 'lucide-re
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
 import logoDark from '@/assets/logo-dark.png';
+import logoDarkCropped from '@/assets/logo-dark-cropped.png';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -185,7 +186,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="-mt-2 sm:-mt-3 max-w-full flex justify-center">
-            <img src={logoDark} alt="INSULFILM™" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
+            <img src={logoDarkCropped} alt="INSULFILM™" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
           </div>
         </div>
       </div>
