@@ -1,95 +1,103 @@
 
 Objetivo
-Criar uma nova seção de prova social na página `/arquitetonico` com carrossel horizontal infinito de logos, usando todos os logos da imagem enviada, em fundo branco, com movimento contínuo e suave, alta nitidez e comportamento responsivo.
 
-Melhor posição na página
-Posicionamento recomendado: após a seção de credenciais institucionais e antes do primeiro bloco de soluções arquitetônicas.
+Refatorar a seção de logos em `/arquitetonico` para sair do formato de faixa única “blocada” e virar um carrossel institucional em dois andares, com logos individuais lado a lado, movimento contínuo em direções opostas, velocidade maior e visual mais próximo da referência enviada.
 
-Por que essa posição faz mais sentido:
-- mantém a hero e a introdução focadas em dor, contexto e autoridade da marca;
-- usa os logos como prova social no momento em que o lead já entendeu a proposta e precisa de validação;
-- funciona como ponte visual elegante entre a parte institucional e a navegação pelas soluções;
-- o fundo branco do carrossel cria um respiro premium entre blocos mais densos, chamando atenção sem parecer promocional.
+Direção visual aprovada
 
-O que será construído
-1. Nova seção institucional de logos
-- Fundo branco sólido para destacar os logos.
-- Título curto e institucional, em linha com a página.
-- Subtítulo opcional e discreto, sem exagero comercial.
-- Estrutura isolada para que a seção possa ser reposicionada facilmente dentro de `/arquitetonico`.
+- Os logos poderão ser convertidos para uma cor neutra preta para reduzir competição visual com a página.
+- O fundo da seção continuará branco para destacar as marcas com leitura limpa e premium.
+- A intenção será institucional, não promocional: menos peso visual no topo da seção e mais protagonismo para o carrossel.
 
-2. Carrossel horizontal contínuo em loop infinito
-- Movimento automático, suave e constante.
-- Velocidade baixa para média.
-- Loop visual sem “tranco”, usando duplicação da trilha de logos para continuidade real.
-- Sem setas, sem paginação e sem aparência de slider promocional.
+O que será alterado
 
-3. Tratamento dos logos
-- Usar todos os logos presentes na imagem enviada.
-- Recortar cada logo como asset individual.
-- Remover o fundo branco para gerar arquivos com transparência.
-- Preservar proporção original de cada marca.
-- Aplicar limite de altura consistente, sem distorção, corte ou compressão.
-- Manter nitidez com export em boa resolução e renderização com `object-contain`.
+1. Nova estrutura do carrossel
+- Substituir a imagem-strip única atual por logos individuais transparentes.
+- Organizar os logos em duas trilhas horizontais independentes.
+- Linha superior: logos entrando pela direita e saindo pela esquerda.
+- Linha inferior: logos entrando pela esquerda e saindo pela direita.
+- Duplicar cada trilha no DOM para formar loop contínuo sem salto perceptível.
 
-Abordagem técnica
-1. Preparação dos assets
-- Extrair os logos da arte enviada e salvá-los como arquivos individuais transparentes.
-- Armazenar os arquivos em `src/assets/` para importação tipada e melhor bundling.
-- Montar uma lista de logos em array local com `src`, `alt`, largura/altura relativas e eventual ajuste fino por marca.
+2. Tratamento dos logos
+- Extrair todos os logos da imagem enviada em arquivos individuais.
+- Remover fundo branco e salvar com transparência real.
+- Aplicar versão monocromática preta/neutra para uniformizar a seção e evitar excesso de ruído visual.
+- Preservar proporção original com `object-contain`.
+- Ajustar largura/escala por logo apenas quando necessário para equilibrar marcas muito largas ou compactas.
+- Não usar mais a composição raster inteira como faixa única.
 
-2. Implementação do carrossel
-- Criar um componente dedicado, por exemplo `ArchitecturalLogoCarousel`.
-- Usar uma trilha CSS animada com `transform: translateX(...)` e keyframes, em vez do carousel interativo atual.
-- Duplicar a sequência de logos no DOM para obter loop visual infinito e contínuo.
-- Usar máscara/gradiente suave nas laterais, se necessário, para entrada e saída mais elegante.
-- Respeitar `prefers-reduced-motion` para acessibilidade, reduzindo ou pausando a animação.
+3. Componente `ArchitecturalLogoCarousel`
+- Refatorar `src/components/ArchitecturalLogoCarousel.tsx` para trabalhar com um array de logos e metadados.
+- Dividir o conjunto em duas linhas com distribuição equilibrada.
+- Manter `title` e `description` como props, mas reduzir seu protagonismo visual se necessário para deixar o carrossel mais forte.
+- Aplicar `aria-hidden` apenas nas cópias duplicadas de cada trilha.
+- Manter estrutura desacoplada para permitir reposicionamento futuro na página.
 
-3. Responsividade
-- Desktop: logos com mais respiro e trilha longa.
-- Mobile: reduzir altura visual, manter legibilidade e evitar logos minúsculos.
-- Ajustar gaps e altura máxima por breakpoint para preservar leitura.
+4. CSS e animações
+- Remover a animação única atual baseada em `animate-logo-marquee`.
+- Criar duas animações dedicadas em `src/index.css`, por exemplo:
+  - `logo-marquee-left`
+  - `logo-marquee-right`
+- Usar `transform: translate3d(...)` para suavidade e melhor performance.
+- Aumentar a velocidade para cerca de 2x em relação ao estado atual, mantendo leitura confortável.
+- Preservar compatibilidade com `prefers-reduced-motion`, pausando ou desativando o movimento.
 
-4. Integração em `/arquitetonico`
-- Inserir a nova seção em `src/pages/Arquitetonico.tsx` logo após a seção de credenciais e antes do `ProductBanner` de soluções.
-- Manter a implementação desacoplada para permitir reposicionamento simples depois, se desejado.
-
-Direção visual
-- Visual clean, corporativo e premium.
-- Fundo branco com bordas/sombras muito sutis ou nenhuma, dependendo do equilíbrio com a página.
-- Logos como protagonistas; texto de apoio discreto.
-- Nada de efeitos chamativos sobre os logos.
-- Seção pensada como prova social institucional, não como vitrine promocional.
-
-Copy sugerida da seção
-- Título:
-  - Marcas e projetos que confiaram em soluções INSULFILM™
-- Apoio curto:
-  - Aplicações em ambientes corporativos, institucionais, comerciais e de alto fluxo.
-
-Se preferir, essa copy pode ser ainda mais neutra para deixar o foco quase todo nos logos.
+5. Integração na página
+- Manter a seção posicionada após o bloco de credenciais institucionais e antes de `#solucoes-arquitetonicas`.
+- Esse ponto continua sendo o mais forte para jornada do lead: autoridade primeiro, prova social em seguida, soluções depois.
 
 Arquivos envolvidos
-- `src/pages/Arquitetonico.tsx`
-  - inserir a nova seção no ponto recomendado.
-- Novo componente, por exemplo:
-  - `src/components/ArchitecturalLogoCarousel.tsx`
-- Novos assets transparentes:
-  - `src/assets/architectural-logos/*`
 
-Cuidados importantes
-- Não usar a imagem montada diretamente como faixa única se o objetivo é fundo transparente por logo e máxima qualidade.
-- Cada logo será isolado individualmente para evitar fundo branco embutido e permitir melhor responsividade.
-- Como a arte enviada já é uma composição raster, a nitidez final dependerá da qualidade do material original; a implementação vai preservar ao máximo, sem comprimir nem distorcer.
-- Se algum logo ficar limitado pela resolução da imagem-base, a solução ideal futura é substituir por originais vetoriais ou PNGs oficiais, mantendo a mesma estrutura do carrossel.
+- `src/components/ArchitecturalLogoCarousel.tsx`
+  - refatorar para duas trilhas e logos individuais
+- `src/index.css`
+  - substituir animação única por duas animações opostas
+- `src/pages/Arquitetonico.tsx`
+  - manter a seção no ponto atual, com eventual ajuste fino de espaçamento
+- `src/assets/architectural-logos/*`
+  - novos assets individuais transparentes e neutralizados em preto
+
+Detalhes técnicos
+
+- Estrutura sugerida dos dados:
+```ts
+type LogoItem = {
+  src: string;
+  alt: string;
+  className?: string;
+};
+```
+
+- Estrutura visual sugerida:
+```text
+[título opcional mais discreto]
+
+[ faixa 1 -> -> -> -> ]
+[ <- <- <- faixa 2  ]
+```
+
+- Estratégia de loop:
+  - renderizar a sequência original + cópia da mesma sequência em cada linha;
+  - animar exatamente metade da largura útil da trilha;
+  - usar gaps fixos e consistentes para não gerar trancos visuais.
+
+- Tratamento de cor:
+  - priorizar logos em preto sólido ou preto suavizado;
+  - preservar contraste e legibilidade sobre branco;
+  - evitar tons de marca muito chamativos nessa seção.
 
 Validação após implementação
-- Conferir se todos os logos da imagem foram contemplados.
-- Validar transparência real dos logos.
-- Verificar loop contínuo sem salto perceptível.
-- Testar legibilidade em desktop e mobile.
-- Confirmar que nenhum logo foi cortado, achatado ou pixelado por CSS.
-- Garantir que a seção harmoniza com o restante da página e reforça confiança antes das soluções.
+
+- Confirmar que a seção não parece mais uma faixa única “blocada”.
+- Verificar duas linhas contínuas com leitura clara e respiro consistente.
+- Validar os sentidos opostos corretos entre linha superior e inferior.
+- Confirmar velocidade mais rápida que a atual, mas ainda legível.
+- Garantir que todos os logos da imagem foram contemplados.
+- Verificar transparência real dos assets.
+- Testar desktop e mobile sem corte, distorção ou compressão.
+- Confirmar que os logos em preto não roubam atenção da página, mas reforçam autoridade visual.
+- Garantir loop contínuo sem salto perceptível.
 
 Resultado esperado
-A página `/arquitetonico` ganhará uma seção forte de prova social, elegante e escaneável, que transmite escala e credibilidade da marca INSULFILM™ no segmento arquitetônico, chamando atenção do lead no ponto certo da jornada sem quebrar o visual premium da página.
+
+A seção passará a ter aparência mais sofisticada, fluida e institucional, com duas faixas de logos em sentidos opostos, maior dinamismo, menos sensação de bloco único e melhor integração visual com a página `/arquitetonico`.
