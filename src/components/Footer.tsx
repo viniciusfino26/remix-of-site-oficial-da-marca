@@ -185,7 +185,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="mt-5 sm:mt-6 max-w-full">
-            <img src={logoDark} alt="INSULFILM™" className="w-[min(18rem,72vw)] sm:w-[20rem] lg:w-[22rem] h-auto opacity-60" />
+            <img src={logoDark} alt="INSULFILM™" className="w-[min(18rem,72vw)] sm:w-[20rem] lg:w-[22rem] h-auto" />
           </div>
         </div>
       </div>
