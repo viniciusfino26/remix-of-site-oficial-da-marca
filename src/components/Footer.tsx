@@ -185,7 +185,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="shrink-0 self-start sm:self-center">
-            <img src={logoDark} alt="INSULFILM™" className="h-[clamp(3rem,7vw,5rem)] w-auto opacity-60" />
+            <img src={logoDark} alt="INSULFILM™" className="h-14 sm:h-16 lg:h-20 w-auto opacity-60" />
           </div>
         </div>
       </div>
