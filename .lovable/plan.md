@@ -1,63 +1,95 @@
 
 Objetivo
-Ajustar a seção de credenciais em `/arquitetonico` para remover a redundância visual dos números grandes (“1988”, “2000”, “+3 milhões m²”) e dar mais destaque aos títulos institucionais que fazem mais sentido na leitura: “Desde 1988”, “Pioneirismo desde 2000” e “+3 milhões m² aplicados”.
+Criar uma nova seção de prova social na página `/arquitetonico` com carrossel horizontal infinito de logos, usando todos os logos da imagem enviada, em fundo branco, com movimento contínuo e suave, alta nitidez e comportamento responsivo.
 
-O que será alterado
-1. Revisão da hierarquia visual dos 3 cards principais
-- Remover o destaque principal isolado de:
-  - 1988
-  - 2000
-  - +3 milhões m²
-- Inverter a hierarquia entre `highlight` e `title` nesses cards para que o texto mais completo vire o elemento principal.
-- Resultado esperado:
-  - “Desde 1988” passa a ser o headline principal do card 1
-  - “Pioneirismo desde 2000” passa a ser o headline principal do card 2
-  - “+3 milhões m² aplicados” passa a ser o headline principal do card 3
+Melhor posição na página
+Posicionamento recomendado: após a seção de credenciais institucionais e antes do primeiro bloco de soluções arquitetônicas.
 
-2. Novo papel dos textos auxiliares
-- Os destaques numéricos deixam de ser o elemento dominante.
-- Para evitar repetição, cada card terá uma única camada principal de leitura forte.
-- O texto de apoio continua abaixo, preservando os fatos aprovados:
-  - Primeira empresa de películas de controle solar no Brasil.
-  - Primeira da América Latina a oferecer películas de segurança para automóveis e construção civil.
-  - Experiência acumulada em projetos com soluções da marca INSULFILM™.
+Por que essa posição faz mais sentido:
+- mantém a hero e a introdução focadas em dor, contexto e autoridade da marca;
+- usa os logos como prova social no momento em que o lead já entendeu a proposta e precisa de validação;
+- funciona como ponte visual elegante entre a parte institucional e a navegação pelas soluções;
+- o fundo branco do carrossel cria um respiro premium entre blocos mais densos, chamando atenção sem parecer promocional.
 
-3. Ajuste da estrutura de dados
-No arquivo `src/pages/Arquitetonico.tsx`:
-- Revisar o array `architecturalCredentials`
-- Simplificar os campos dos 3 primeiros cards para evitar duplicidade entre `title` e `highlight`
-- Manter os dois últimos cards (“Portfólio Arquitetônico” e “Treinamento e Homologação”) com a lógica atual ou ajustar levemente para manter consistência visual da grade
+O que será construído
+1. Nova seção institucional de logos
+- Fundo branco sólido para destacar os logos.
+- Título curto e institucional, em linha com a página.
+- Subtítulo opcional e discreto, sem exagero comercial.
+- Estrutura isolada para que a seção possa ser reposicionada facilmente dentro de `/arquitetonico`.
 
-4. Ajuste do markup dos cards
-- Atualizar a renderização para que:
-  - o título principal seja o elemento de maior peso tipográfico
-  - o texto secundário, quando existir, apareça como apoio, e não como repetição do título
-- Se necessário, tornar o `highlight` opcional no componente local da seção, exibindo-o apenas quando ele agregar valor real
+2. Carrossel horizontal contínuo em loop infinito
+- Movimento automático, suave e constante.
+- Velocidade baixa para média.
+- Loop visual sem “tranco”, usando duplicação da trilha de logos para continuidade real.
+- Sem setas, sem paginação e sem aparência de slider promocional.
+
+3. Tratamento dos logos
+- Usar todos os logos presentes na imagem enviada.
+- Recortar cada logo como asset individual.
+- Remover o fundo branco para gerar arquivos com transparência.
+- Preservar proporção original de cada marca.
+- Aplicar limite de altura consistente, sem distorção, corte ou compressão.
+- Manter nitidez com export em boa resolução e renderização com `object-contain`.
+
+Abordagem técnica
+1. Preparação dos assets
+- Extrair os logos da arte enviada e salvá-los como arquivos individuais transparentes.
+- Armazenar os arquivos em `src/assets/` para importação tipada e melhor bundling.
+- Montar uma lista de logos em array local com `src`, `alt`, largura/altura relativas e eventual ajuste fino por marca.
+
+2. Implementação do carrossel
+- Criar um componente dedicado, por exemplo `ArchitecturalLogoCarousel`.
+- Usar uma trilha CSS animada com `transform: translateX(...)` e keyframes, em vez do carousel interativo atual.
+- Duplicar a sequência de logos no DOM para obter loop visual infinito e contínuo.
+- Usar máscara/gradiente suave nas laterais, se necessário, para entrada e saída mais elegante.
+- Respeitar `prefers-reduced-motion` para acessibilidade, reduzindo ou pausando a animação.
+
+3. Responsividade
+- Desktop: logos com mais respiro e trilha longa.
+- Mobile: reduzir altura visual, manter legibilidade e evitar logos minúsculos.
+- Ajustar gaps e altura máxima por breakpoint para preservar leitura.
+
+4. Integração em `/arquitetonico`
+- Inserir a nova seção em `src/pages/Arquitetonico.tsx` logo após a seção de credenciais e antes do `ProductBanner` de soluções.
+- Manter a implementação desacoplada para permitir reposicionamento simples depois, se desejado.
 
 Direção visual
-- Manter o estilo clean, institucional e premium já aplicado
-- Preservar:
-  - fundo claro
-  - bordas sutis
-  - sombra leve
-  - ícones discretos
-  - respiro interno generoso
-- Reforçar escaneabilidade:
-  - headline principal mais legível
-  - menos ruído visual
-  - leitura mais direta no desktop e no mobile
+- Visual clean, corporativo e premium.
+- Fundo branco com bordas/sombras muito sutis ou nenhuma, dependendo do equilíbrio com a página.
+- Logos como protagonistas; texto de apoio discreto.
+- Nada de efeitos chamativos sobre os logos.
+- Seção pensada como prova social institucional, não como vitrine promocional.
+
+Copy sugerida da seção
+- Título:
+  - Marcas e projetos que confiaram em soluções INSULFILM™
+- Apoio curto:
+  - Aplicações em ambientes corporativos, institucionais, comerciais e de alto fluxo.
+
+Se preferir, essa copy pode ser ainda mais neutra para deixar o foco quase todo nos logos.
 
 Arquivos envolvidos
 - `src/pages/Arquitetonico.tsx`
-  - ajustar o conteúdo do array `architecturalCredentials`
-  - atualizar a hierarquia tipográfica dos cards
-  - remover a redundância visual dos números destacados
+  - inserir a nova seção no ponto recomendado.
+- Novo componente, por exemplo:
+  - `src/components/ArchitecturalLogoCarousel.tsx`
+- Novos assets transparentes:
+  - `src/assets/architectural-logos/*`
+
+Cuidados importantes
+- Não usar a imagem montada diretamente como faixa única se o objetivo é fundo transparente por logo e máxima qualidade.
+- Cada logo será isolado individualmente para evitar fundo branco embutido e permitir melhor responsividade.
+- Como a arte enviada já é uma composição raster, a nitidez final dependerá da qualidade do material original; a implementação vai preservar ao máximo, sem comprimir nem distorcer.
+- Se algum logo ficar limitado pela resolução da imagem-base, a solução ideal futura é substituir por originais vetoriais ou PNGs oficiais, mantendo a mesma estrutura do carrossel.
 
 Validação após implementação
-- Confirmar que os cards 1, 2 e 3 não repetem mais a mesma informação em duas camadas
-- Verificar que “Desde 1988”, “Pioneirismo desde 2000” e “+3 milhões m² aplicados” ficaram como principais pontos de atenção
-- Garantir consistência com a estética atual da página
-- Validar legibilidade no mobile, principalmente no card de “+3 milhões m² aplicados”
+- Conferir se todos os logos da imagem foram contemplados.
+- Validar transparência real dos logos.
+- Verificar loop contínuo sem salto perceptível.
+- Testar legibilidade em desktop e mobile.
+- Confirmar que nenhum logo foi cortado, achatado ou pixelado por CSS.
+- Garantir que a seção harmoniza com o restante da página e reforça confiança antes das soluções.
 
 Resultado esperado
-A seção continuará forte e institucional, mas com uma hierarquia mais inteligente: menos redundância, mais clareza e mais destaque para as credenciais completas que realmente comunicam autoridade.
+A página `/arquitetonico` ganhará uma seção forte de prova social, elegante e escaneável, que transmite escala e credibilidade da marca INSULFILM™ no segmento arquitetônico, chamando atenção do lead no ponto certo da jornada sem quebrar o visual premium da página.
