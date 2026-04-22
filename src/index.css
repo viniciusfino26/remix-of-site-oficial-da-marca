@@ -205,11 +205,11 @@
   }
 
   .animate-logo-marquee-left {
-    animation: logo-marquee-left 36s linear infinite;
+    animation: logo-marquee-left 43.2s linear infinite;
   }
 
   .animate-logo-marquee-right {
-    animation: logo-marquee-right 36s linear infinite;
+    animation: logo-marquee-right 43.2s linear infinite;
   }
 
   @keyframes logo-marquee-left {
