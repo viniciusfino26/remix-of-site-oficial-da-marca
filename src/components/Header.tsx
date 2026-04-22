@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 import logoDark from '@/assets/logo-dark.png';
+import flagBr from '@/assets/flag-br.svg';
+import flagUs from '@/assets/flag-us.svg';
+import flagEs from '@/assets/flag-es.svg';
 
 interface NavItem { label: string; href: string }
 interface NavSection { title: string; items: NavItem[] }
@@ -18,9 +21,9 @@ interface NavMenu {
 }
 
 const languages = [
-  { code: 'pt', label: 'PT', flag: '🇧🇷' },
-  { code: 'en', label: 'EN', flag: '🇺🇸' },
-  { code: 'es', label: 'ES', flag: '🇪🇸' },
+  { code: 'pt', label: 'PT', flag: flagBr, alt: 'Brasil' },
+  { code: 'en', label: 'EN', flag: flagUs, alt: 'United States' },
+  { code: 'es', label: 'ES', flag: flagEs, alt: 'España' },
 ];
 
 const Header = () => {
@@ -208,20 +211,20 @@ const Header = () => {
             {/* Right side: Language + CTA + Mobile */}
             <div className="flex items-center gap-3">
               {/* Language Selector */}
-              <div className="flex items-center gap-1 bg-primary-foreground/10 rounded-lg p-1">
+              <div className="flex items-center gap-1 bg-primary-foreground/10 rounded-lg p-1 shrink-0">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => i18n.changeLanguage(lang.code)}
-                    className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                    className={`flex items-center gap-1.5 px-2.5 py-1.5 min-w-[3.5rem] sm:min-w-[4.25rem] text-xs font-medium rounded-md transition-all duration-200 ${
                       i18n.language === lang.code
                         ? 'bg-accent text-accent-foreground shadow-sm'
                         : 'text-primary-foreground/70 hover:text-primary-foreground'
                     }`}
                     aria-label={`Switch to ${lang.label}`}
                   >
-                    <span>{lang.flag}</span>
-                    <span className="hidden sm:inline">{lang.label}</span>
+                    <img src={lang.flag} alt={lang.alt} className="h-3.5 w-3.5 rounded-full object-cover shrink-0" loading="lazy" />
+                    <span>{lang.label}</span>
                   </button>
                 ))}
               </div>
