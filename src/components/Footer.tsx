@@ -176,15 +176,15 @@ const Footer = () => {
         </div>
 
         {/* Antipirataria badge + Logo */}
-        <div className="mt-10 pt-8 border-t border-primary-foreground/10">
-          <div className="max-w-4xl p-4 sm:p-5 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
-            <p className="text-xs text-primary-foreground/50 leading-relaxed">
+        <div className="mt-10 pt-8 border-t border-primary-foreground/10 flex flex-col items-center">
+          <div className="w-full max-w-4xl px-4 py-3 sm:px-5 sm:py-3.5 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
+            <p className="text-xs sm:text-sm text-center text-primary-foreground/50 leading-relaxed">
               <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada</span>{' '}
               protegida pela Lei nº 9.279/96. O uso do termo por terceiros não possui autorização da titular.{' '}
               <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
             </p>
           </div>
-          <div className="mt-5 sm:mt-6 max-w-full">
+          <div className="mt-4 sm:mt-5 max-w-full flex justify-center">
             <img src={logoDark} alt="INSULFILM™" className="w-[min(18rem,72vw)] sm:w-[20rem] lg:w-[22rem] h-auto" />
           </div>
         </div>
