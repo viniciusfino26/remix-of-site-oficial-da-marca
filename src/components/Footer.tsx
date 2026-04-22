@@ -185,7 +185,7 @@ const Footer = () => {
               <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
             </p>
           </div>
-          <div className="-mt-2 sm:-mt-3 max-w-full flex justify-center">
+          <div className="mt-1 sm:mt-2 max-w-full flex justify-center">
             <img src={logoDarkCropped} alt="INSULFILM™" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
           </div>
         </div>
