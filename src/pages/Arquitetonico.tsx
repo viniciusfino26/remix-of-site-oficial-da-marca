@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductBanner from '@/components/ProductBanner';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import homeVideo from '@/assets/home-video.mp4';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -111,16 +112,18 @@ const Arquitetonico = () => (
               Muitas pessoas utilizam o termo "insulfilm" para se referir a películas para vidro. INSULFILM™ é marca registrada, com titularidade exclusiva. O uso da marca por terceiros não é autorizado.
             </motion.p>
             <motion.div variants={fadeInUp} className="mt-8 overflow-hidden rounded-lg border border-border/30 bg-muted/20 shadow-premium">
-              <div className="relative w-full overflow-hidden" style={{ paddingTop: '56.25%' }}>
-                <iframe
-                  className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/paCtipjRfPI"
-                  title="Vídeo INSULFILM™ Arquitetônico"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
+              <div className="aspect-video w-full overflow-hidden">
+                <video
+                  className="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                >
+                  <source src={homeVideo} type="video/mp4" />
+                </video>
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="flex justify-center mt-8"><div className="separator-accent" /></motion.div>
