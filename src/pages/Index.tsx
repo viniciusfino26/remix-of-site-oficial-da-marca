@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowRight, Shield, Award, Globe, Cpu, Car, Building2, Eye, SunDim, Layers } from 'lucide-react';
+import { ArrowRight, Shield, Award, Cpu, Car, Building2, Eye, SunDim, Layers, Fingerprint, Headset } from 'lucide-react';
 import logoLight from '@/assets/logo-light.png';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -64,8 +64,8 @@ const Index = () => {
   const whyItems = [
     { icon: Cpu, title: t('why.tech'), desc: t('why.techDesc') },
     { icon: Award, title: t('why.warranty'), desc: t('why.warrantyDesc') },
-    { icon: Shield, title: t('why.authentic'), desc: t('why.authenticDesc') },
-    { icon: Globe, title: t('why.global'), desc: t('why.globalDesc') },
+    { icon: Fingerprint, title: t('why.authentic'), desc: t('why.authenticDesc') },
+    { icon: Headset, title: t('why.consulting'), desc: t('why.consultingDesc') },
   ];
 
   const simulators = [

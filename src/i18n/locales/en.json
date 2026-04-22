@@ -44,15 +44,15 @@
   },
   "why": {
     "title": "Why INSULFILM™?",
-    "subtitle": "Differentials that make the difference",
-    "tech": "Advanced Technology",
-    "techDesc": "Films developed with the most advanced solar rejection and protection technologies.",
+    "subtitle": "Differentials that reinforce the choice for original products.",
+    "tech": "High-Performance Technology",
+    "techDesc": "Films developed for protection, comfort, and performance.",
     "warranty": "Factory Warranty",
-    "warrantyDesc": "All products come with factory warranty against defects and discoloration.",
-    "authentic": "Guaranteed Authenticity",
-    "authenticDesc": "Anti-piracy system with authenticity verification on every product.",
-    "global": "Global Presence",
-    "globalDesc": "Worldwide network of authorized dealers and certified installers."
+    "warrantyDesc": "Products backed by factory warranty, according to the line and application conditions.",
+    "authentic": "Verifiable Authenticity",
+    "authenticDesc": "Identification system that reinforces product originality with ID and Manufacturing Lot.",
+    "consulting": "Consultative Service",
+    "consultingDesc": "Specialized guidance to support specification, purchase, and application with more confidence."
   },
   "simulators": {
     "title": "Interactive Simulators",
