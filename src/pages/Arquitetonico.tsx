@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductBanner from '@/components/ProductBanner';
+import ArchitecturalLogoCarousel from '@/components/ArchitecturalLogoCarousel';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import homeVideo from '@/assets/home-video.mp4';
 
@@ -230,6 +231,8 @@ const Arquitetonico = () => (
           </motion.div>
         </div>
       </section>
+
+      <ArchitecturalLogoCarousel />
 
       {/* ── BANNER 1: SOLAR ── */}
       <div id="solucoes-arquitetonicas" className="scroll-mt-24" />
