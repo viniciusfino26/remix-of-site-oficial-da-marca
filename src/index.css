@@ -204,6 +204,20 @@
     box-shadow: 0 0 0 4px hsl(19 100% 56% / 0.1), 0 0 0 8px hsl(19 100% 56% / 0.05);
   }
 
+  .animate-logo-marquee {
+    animation: logo-marquee 72s linear infinite;
+  }
+
+  @keyframes logo-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(calc(-50% - 1rem), 0, 0);
+    }
+  }
+
   /* Parallax background */
   .bg-parallax {
     background-attachment: fixed;
