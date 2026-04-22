@@ -103,10 +103,10 @@ const Index = () => {
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-6 font-semibold">
               {"\n"}
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold mb-5 sm:mb-7 text-primary-foreground leading-[0.92] tracking-tight text-balance max-w-5xl mx-auto">
+            <motion.h1 variants={fadeInUp} className="text-[clamp(2.75rem,6vw,5.5rem)] font-extrabold mb-5 sm:mb-7 text-primary-foreground leading-[0.92] tracking-tight text-balance max-w-5xl mx-auto">
               {t('hero.tagline')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] text-primary-foreground/85 mb-6 sm:mb-8 max-w-4xl mx-auto font-normal leading-relaxed px-2 sm:px-4 text-balance">
+            <motion.p variants={fadeInUp} className="text-[clamp(1.125rem,2.4vw,1.75rem)] text-primary-foreground/85 mb-6 sm:mb-8 max-w-4xl mx-auto font-normal leading-relaxed px-2 sm:px-4 text-balance">
               {t('hero.subtitle')}
             </motion.p>
 
