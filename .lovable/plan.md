@@ -1,35 +1,89 @@
 
+Objetivo
+Adicionar uma nova seção institucional de credenciais na página `/arquitetonico`, em uma posição de maior equilíbrio visual e conversão, com aparência premium, leitura rápida e forte percepção de autoridade para a marca INSULFILM™ no segmento arquitetônico.
 
-## Plano: Melhorar contraste dos subtítulos nos quadrantes coloridos
+Posicionamento
+Inserir a nova seção entre o bloco inicial de apresentação da página e o primeiro `ProductBanner` (Solar). Esse ponto preserva a hero e a introdução já existentes, depois eleva a autoridade da marca antes da navegação pelas soluções arquitetônicas.
 
-O subtítulo dos banners coloridos (azul, laranja, cinza) na home está com baixo contraste (`text-white/60`), prejudicando legibilidade — especialmente sobre o card laranja com transparência.
+O que será construído
+1. Nova seção “Credenciais da marca no segmento arquitetônico”
+- Título:
+  - Credenciais da marca no segmento arquitetônico
+- Subtítulo:
+  - Projetos arquitetônicos pedem mais do que película. Pedem experiência, escala e respaldo técnico.
+- Fundo claro e premium (`bg-background`) para contraste com a hero dark e boa escaneabilidade.
+- Introdução visual limpa, com hierarquia forte e separador sutil já compatível com o design atual.
 
-### Mudança
+2. Grade institucional com 5 cards
+Criar uma grade responsiva com bastante respiro:
+- Mobile: 1 coluna
+- Tablet: 2 colunas
+- Desktop: composição equilibrada em 2 ou 3 colunas, com o card “+3 milhões m² aplicados” recebendo maior peso visual
 
-**Arquivo único:** `src/components/ProductBanner.tsx` (componente reutilizado em todos os `ProductBanner` da home `/` — afeta automaticamente todos os 4 quadrantes: Solares, Segurança, Comerciais, PPF).
+Cards:
+- Desde 1988
+  - Primeira empresa de películas de controle solar no Brasil.
+- Pioneirismo desde 2000
+  - Primeira da América Latina a oferecer películas de segurança para automóveis e construção civil.
+- +3 milhões m² aplicados
+  - Experiência acumulada em projetos com soluções da marca INSULFILM™.
+- Portfólio Arquitetônico
+  - Soluções para controle solar, segurança, privacidade e conforto.
+- Treinamento e Homologação
+  - Serviço especializado com treinamento e homologação de fábrica.
 
-**Linha 81 — subtítulo (description):**
-- De: `text-white/60 ... font-light`
-- Para: `text-white/90 ... font-normal` + leve sombra de texto para garantir leitura mesmo em fundos claros: `drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]`
+3. Tratamento visual dos cards
+- Cards com borda sutil, fundo claro, sombra premium leve e cantos consistentes com o restante do site
+- Destaque visual maior para:
+  - 1988
+  - 2000
+  - +3 milhões m²
+- Uso de ícones discretos e institucionais, coerentes com Lucide e com o restante do projeto
+- Sem aparência promocional agressiva, sem glow exagerado e sem linguagem de “quem somos”
 
-Aumentar de 60% para 90% de opacidade + peso `normal` (em vez de `light`) deixa a frase nítida sem mudar o tom visual premium dos cards. O `drop-shadow` sutil garante contraste mesmo quando a imagem de fundo varia.
+4. CTA ao final da seção
+- Botão:
+  - Conheça as soluções arquitetônicas
+- Link interno para a navegação arquitetônica mais adequada na própria página/categoria
+- Posicionamento centralizado ao final da seção para preparar o avanço do lead
 
-### Por que apenas este arquivo
+Abordagem de design
+- Manter padrão visual já adotado em `/arquitetonico`:
+  - tipografia forte nos títulos
+  - descrições em `text-muted-foreground`
+  - animações suaves com Framer Motion
+  - espaçamento generoso
+- Evitar glassmorphism escuro aqui, porque a nova seção precisa funcionar como “respiro institucional” entre blocos de venda
+- Reforçar credibilidade com números e marcos históricos como elementos visuais principais
 
-`ProductBanner` é o componente compartilhado usado pelos 4 quadrantes da home (linhas 149–191 de `Index.tsx`). Ajustando o componente, as 4 frases ficam mais visíveis de uma só vez, mantendo consistência visual.
+Ícones sugeridos
+- Desde 1988: `Landmark` ou `BadgeCheck`
+- Pioneirismo desde 2000: `Flag` ou `Trophy`
+- +3 milhões m² aplicados: `Ruler`, `Grid2x2` ou `Building2`
+- Portfólio Arquitetônico: `Layers` ou `PanelsTopLeft`
+- Treinamento e Homologação: `GraduationCap`, `ShieldCheck` ou `ClipboardCheck`
 
-Outras ocorrências de `text-white/60` encontradas:
-- `Legislacao.tsx` linha 297 — legenda "Imagem meramente ilustrativa" (não é o mesmo padrão visual)
-- `AutomotivoHubSolar.tsx` linha 220 — subtítulo de seção dentro de fundo escuro (já tem contraste suficiente)
+Arquivos envolvidos
+- `src/pages/Arquitetonico.tsx`
+  - Inserir a nova seção no fluxo da página
+  - Adicionar estrutura de dados dos 5 cards
+  - Importar os ícones necessários
+  - Implementar CTA e animações de entrada
 
-Esses dois NÃO seguem o padrão dos retângulos coloridos do screenshot e ficam fora do escopo.
+Decisões de implementação
+- Não alterar a copy já aprovada dos blocos existentes
+- Não substituir a introdução atual; a nova seção entra como reforço institucional
+- Não criar componente global novo se a seção for exclusiva desta página; manter a implementação local para evitar abstração prematura
+- Se a composição ficar muito longa no mobile, o CTA será colocado abaixo da grade com espaçamento reduzido e leitura preservada
 
-### Resultado esperado
+Validação após implementação
+- Conferir equilíbrio visual entre hero, introdução, nova seção e primeiro banner
+- Validar escaneabilidade no mobile
+- Confirmar consistência de linguagem:
+  - INSULFILM™ sempre como marca
+  - sem claims novos
+  - sem alteração dos fatos fornecidos
+- Verificar que a seção funciona como credencial institucional e não como bloco promocional
 
-- "Menos calor, mais conforto. Controle a claridade." (azul) — totalmente legível
-- "Curta o seu caminho. Vidros muito mais seguros para você chegar lá." (laranja) — sem mais lavagem
-- "Conforto e controle solar. Economia inteligente todos os dias, durante anos." (azul) — nítida
-- "Cobertura invisível, seu carro sempre novo e valorizado." (cinza) — destaque correto
-
-Títulos (`text-white`) e botões permanecem inalterados. Nenhuma copy é alterada — apenas contraste/peso da fonte.
-
+Resultado esperado
+A página `/arquitetonico` ganhará um bloco de autoridade claro e elegante, que contextualiza rapidamente a força da marca no segmento arquitetônico, aumenta confiança e prepara o usuário para explorar as soluções e avançar no CTA.
