@@ -71,21 +71,18 @@ const architecturalCredentials = [
   {
     title: 'Desde 1988',
     description: 'Primeira empresa de películas de controle solar no Brasil.',
-    highlight: '1988',
     icon: Landmark,
     className: 'xl:col-span-3',
   },
   {
     title: 'Pioneirismo desde 2000',
     description: 'Primeira da América Latina a oferecer películas de segurança para automóveis e construção civil.',
-    highlight: '2000',
     icon: Trophy,
     className: 'xl:col-span-3',
   },
   {
     title: '+3 milhões m² aplicados',
     description: 'Experiência acumulada em projetos com soluções da marca INSULFILM™.',
-    highlight: '+3 milhões m²',
     icon: Building2,
     className: 'md:col-span-2 xl:col-span-6',
     featured: true,
@@ -202,12 +199,20 @@ const Arquitetonico = () => (
                     <CardContent className="flex h-full flex-col gap-6 p-6 md:p-8">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className={`text-foreground ${featured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-extrabold`}>
-                            {highlight}
-                          </p>
-                          <h3 className="mt-3 text-xl font-extrabold text-foreground md:text-2xl">
-                            {title}
-                          </h3>
+                          {highlight ? (
+                            <>
+                              <p className={`text-foreground ${featured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-extrabold`}>
+                                {highlight}
+                              </p>
+                              <h3 className="mt-3 text-xl font-extrabold text-foreground md:text-2xl">
+                                {title}
+                              </h3>
+                            </>
+                          ) : (
+                            <h3 className={`text-foreground ${featured ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'} font-extrabold leading-tight`}>
+                              {title}
+                            </h3>
+                          )}
                         </div>
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-border/70 bg-secondary text-foreground">
                           <Icon className="h-5 w-5" />
