@@ -93,9 +93,9 @@ const Index = () => {
           />
         </motion.div>
 
-        <motion.div className="container mx-auto px-4 pt-10 md:pt-14 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
+        <motion.div className="container mx-auto px-4 pt-8 md:pt-12 relative z-10" style={{ y: heroTextY, opacity: heroOpacity }}>
           <motion.div
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-6xl mx-auto"
             initial="hidden"
             animate="visible"
             variants={stagger}
@@ -103,10 +103,10 @@ const Index = () => {
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-6 font-semibold">
               {"\n"}
             </motion.p>
-            <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 text-primary-foreground leading-tight tracking-tight">
+            <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-extrabold mb-5 sm:mb-7 text-primary-foreground leading-[0.92] tracking-tight text-balance max-w-5xl mx-auto">
               {t('hero.tagline')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl text-primary-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto font-light leading-relaxed px-2">
+            <motion.p variants={fadeInUp} className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] text-primary-foreground/85 mb-6 sm:mb-8 max-w-4xl mx-auto font-normal leading-relaxed px-2 sm:px-4 text-balance">
               {t('hero.subtitle')}
             </motion.p>
 
