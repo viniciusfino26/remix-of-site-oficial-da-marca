@@ -227,14 +227,6 @@ const Arquitetonico = () => (
               ))}
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-10 flex justify-center md:mt-14">
-              <Button asChild size="lg" className="min-w-[280px] font-bold">
-                <a href="#solucoes-arquitetonicas">
-                  Conheça as soluções arquitetônicas
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-            </motion.div>
           </motion.div>
         </div>
       </section>
