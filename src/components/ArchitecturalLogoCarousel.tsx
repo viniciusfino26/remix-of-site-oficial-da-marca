@@ -9,7 +9,6 @@ type ArchitecturalLogoCarouselProps = {
 type LogoItem = {
   src: string;
   alt: string;
-  className?: string;
 };
 
 const logoModules = import.meta.glob('@/assets/architectural-logos/*.png', {
@@ -22,11 +21,6 @@ const logoEntries = Object.entries(logoModules).sort(([pathA], [pathB]) => pathA
 const logoItems: LogoItem[] = logoEntries.map(([path, src], index) => ({
   src,
   alt: `Logo institucional ${index + 1} aplicado em projetos arquitetônicos com soluções INSULFILM™.`,
-  className: cn(
-    index % 9 === 0 && 'w-[11rem] md:w-[13rem]',
-    index % 7 === 0 && 'w-[8.5rem] md:w-[10rem]',
-    index % 5 === 0 && 'w-[7.5rem] md:w-[8.5rem]',
-  ),
 }));
 
 const topRowLogos = logoItems.filter((_, index) => index % 2 === 0);
@@ -51,12 +45,12 @@ const LogoTrack = ({
         {logos.map((logo, index) => (
           <div
             key={`${direction}-${copyIndex}-${index}`}
-            className="flex h-16 w-[8rem] shrink-0 items-center justify-center md:h-20 md:w-[10rem]"
+            className="flex h-20 shrink-0 items-center justify-center px-2 py-1 md:h-24 md:px-3"
           >
             <img
               src={logo.src}
               alt={copyIndex === 0 ? logo.alt : ''}
-              className={cn('max-h-11 w-auto max-w-full select-none object-contain md:max-h-14', logo.className)}
+              className="max-h-[3.25rem] w-auto max-w-none select-none object-contain md:max-h-[4.25rem]"
               loading={copyIndex === 0 && index < 6 ? 'eager' : 'lazy'}
               decoding="async"
               draggable={false}
@@ -88,7 +82,7 @@ const ArchitecturalLogoCarousel = ({
           </p>
         </div>
 
-        <div className="relative mt-10 overflow-hidden rounded-lg border border-border/60 bg-card px-3 py-5 shadow-premium md:mt-12 md:px-5 md:py-6">
+        <div className="relative mt-10 overflow-hidden rounded-lg border border-border/60 bg-card px-3 py-6 shadow-premium md:mt-12 md:px-5 md:py-7">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-card via-card/90 to-transparent md:w-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-card via-card/90 to-transparent md:w-20" />
 
