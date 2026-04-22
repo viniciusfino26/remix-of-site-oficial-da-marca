@@ -110,6 +110,19 @@ const Arquitetonico = () => (
             <motion.p variants={fadeInUp} className="text-sm text-muted-foreground/80 font-semibold italic">
               Muitas pessoas utilizam o termo "insulfilm" para se referir a películas para vidro. INSULFILM™ é marca registrada, com titularidade exclusiva. O uso da marca por terceiros não é autorizado.
             </motion.p>
+            <motion.div variants={fadeInUp} className="mt-8 overflow-hidden rounded-lg border border-border/30 bg-muted/20 shadow-premium">
+              <div className="relative w-full overflow-hidden" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/paCtipjRfPI"
+                  title="Vídeo INSULFILM™ Arquitetônico"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </motion.div>
             <motion.div variants={scaleIn} className="flex justify-center mt-8"><div className="separator-accent" /></motion.div>
           </motion.div>
         </div>
