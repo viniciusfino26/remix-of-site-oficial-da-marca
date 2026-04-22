@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Sun, Shield, Layers, MessageCircle, ArrowRight, MapPin, Building2, Home } from 'lucide-react';
+import { Sun, Shield, Layers, MessageCircle, ArrowRight, MapPin, Building2, Home, Landmark, Trophy, ShieldCheck } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -67,6 +67,45 @@ const faqs = [
   { q: 'Película pode ser aplicada em pergolado ou cobertura de vidro?', a: 'Sim — algumas linhas são indicadas para isso. O Metallico Argento, o Reflesso d\'Argento e o Specchiato Bronzo são aprovados para teto de vidro e pergolados. Fale com um especialista para confirmar a indicação correta para o seu projeto.' },
 ];
 
+const architecturalCredentials = [
+  {
+    title: 'Desde 1988',
+    description: 'Primeira empresa de películas de controle solar no Brasil.',
+    highlight: '1988',
+    icon: Landmark,
+    className: 'xl:col-span-3',
+  },
+  {
+    title: 'Pioneirismo desde 2000',
+    description: 'Primeira da América Latina a oferecer películas de segurança para automóveis e construção civil.',
+    highlight: '2000',
+    icon: Trophy,
+    className: 'xl:col-span-3',
+  },
+  {
+    title: '+3 milhões m² aplicados',
+    description: 'Experiência acumulada em projetos com soluções da marca INSULFILM™.',
+    highlight: '+3 milhões m²',
+    icon: Building2,
+    className: 'md:col-span-2 xl:col-span-6',
+    featured: true,
+  },
+  {
+    title: 'Portfólio Arquitetônico',
+    description: 'Soluções para controle solar, segurança, privacidade e conforto.',
+    highlight: 'Soluções técnicas',
+    icon: Layers,
+    className: 'xl:col-span-6',
+  },
+  {
+    title: 'Treinamento e Homologação',
+    description: 'Serviço especializado com treinamento e homologação de fábrica.',
+    highlight: 'Respaldo técnico',
+    icon: ShieldCheck,
+    className: 'xl:col-span-6',
+  },
+];
+
 const Arquitetonico = () => (
   <>
     <Helmet>
@@ -131,7 +170,72 @@ const Arquitetonico = () => (
         </div>
       </section>
 
+      <section className="bg-background py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="mx-auto max-w-6xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.div variants={fadeInUp} className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+                Autoridade arquitetônica
+              </p>
+              <h2 className="text-3xl font-extrabold text-foreground md:text-5xl">
+                Credenciais da marca no segmento arquitetônico
+              </h2>
+              <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground md:text-lg">
+                Projetos arquitetônicos pedem mais do que película. Pedem experiência, escala e respaldo técnico.
+              </p>
+            </motion.div>
+
+            <motion.div variants={stagger} className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-12">
+              {architecturalCredentials.map(({ title, description, highlight, icon: Icon, className, featured }) => (
+                <motion.div key={title} variants={fadeInUp} className={className}>
+                  <Card
+                    className={`h-full border-border/60 bg-card shadow-premium transition-transform duration-300 hover:-translate-y-1 ${
+                      featured ? 'bg-muted/30' : ''
+                    }`}
+                  >
+                    <CardContent className="flex h-full flex-col gap-6 p-6 md:p-8">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <p className={`text-foreground ${featured ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-extrabold`}>
+                            {highlight}
+                          </p>
+                          <h3 className="mt-3 text-xl font-extrabold text-foreground md:text-2xl">
+                            {title}
+                          </h3>
+                        </div>
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-border/70 bg-secondary text-foreground">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                      </div>
+                      <p className={`leading-relaxed text-muted-foreground ${featured ? 'max-w-2xl text-base md:text-lg' : 'text-sm md:text-base'}`}>
+                        {description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="mt-10 flex justify-center md:mt-14">
+              <Button asChild size="lg" className="min-w-[280px] font-bold">
+                <a href="#solucoes-arquitetonicas">
+                  Conheça as soluções arquitetônicas
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── BANNER 1: SOLAR ── */}
+      <div id="solucoes-arquitetonicas" className="scroll-mt-24" />
       <ProductBanner
         title="Películas Solares para Vidros"
         description="O calor acumulado pelo vidro não espera o verão. Ele está lá todo dia — sobrecarregando o ar-condicionado, tornando certos cômodos inabitáveis e chegando na sua conta de energia todo mês."
