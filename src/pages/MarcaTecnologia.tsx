@@ -9,66 +9,65 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 const plataforma = [
   {
     icon: Sun,
-    title: 'Controle Solar',
-    desc: 'Tecnologias voltadas à redução de calor e radiação, mantendo conforto e visibilidade.',
+    title: 'Controle solar',
+    desc: 'Tecnologias voltadas a controlar calor, luz e radiação no vidro, com equilíbrio entre desempenho térmico e visibilidade.',
     items: [
-      'Películas pigmentadas (privacidade e controle de luz)',
-      'Tecnologia Carbono (estabilidade e rejeição térmica)',
-      'Nanocerâmica IR (alta performance térmica com transparência)',
-      'Híbridas metal-cerâmicas (máxima eficiência)',
+      'Rejeição térmica e bloqueio de infravermelho',
+      'Controle de ofuscamento e luz visível',
+      'Bloqueio de radiação UV',
     ],
   },
   {
     icon: ShieldCheck,
-    title: 'Segurança e Proteção',
-    desc: 'Tecnologias que aumentam a resistência do vidro e controlam seu comportamento após impacto.',
+    title: 'Segurança e proteção',
+    desc: 'Tecnologias que reforçam o comportamento do vidro e contribuem para a previsibilidade em situações de impacto.',
     items: [
       'Estruturas multicamadas de alta resistência',
       'Retenção de estilhaços',
-      'Redução de acesso imediato',
+      'Reforço do comportamento do vidro',
     ],
   },
   {
     icon: Eye,
-    title: 'Alta Transparência Arquitetônica',
-    desc: 'Tecnologias invisíveis que controlam calor sem alterar a estética do vidro.',
+    title: 'Alta transparência',
+    desc: 'Soluções que preservam a estética do vidro, mantendo a aparência original com desempenho técnico controlado.',
     items: [
       'Alta transmissão de luz',
-      'Bloqueio de calor e UV',
+      'Bloqueio térmico e de UV',
       'Preservação da fachada e do ambiente',
     ],
   },
 ];
 
 const engenharia = [
-  'Base em poliéster (PET) de alta performance',
+  'Base em poliéster de alta performance',
   'Estruturas multicamadas',
   'Tecnologias avançadas de deposição',
-  'Combinação de materiais orgânicos e inorgânicos',
+  'Combinação de materiais com funções complementares',
 ];
 
 const MarcaTecnologia = () => {
   return (
     <>
       <Helmet>
-        <title>Tecnologias INSULFILM™ | Engenharia em Películas para Vidros</title>
+        <title>Tecnologia INSULFILM™ | Engenharia Aplicada ao Vidro</title>
         <meta
           name="description"
-          content="INSULFILM™ é marca registrada. Conheça as tecnologias de controle solar, segurança e alta transparência arquitetônica desenvolvidas com engenharia de materiais."
+          content="A INSULFILM™ organiza suas soluções a partir de tecnologias de engenharia de materiais para atuar sobre calor, luz, radiação e comportamento do vidro."
         />
         <link rel="canonical" href="https://insulfilm.com.br/marca/tecnologia" />
-        <meta property="og:title" content="Tecnologias INSULFILM™ | Engenharia em Películas para Vidros" />
+        <meta property="og:title" content="Tecnologia INSULFILM™ | Engenharia Aplicada ao Vidro" />
         <meta
           property="og:description"
-          content="Engenharia aplicada ao controle solar, proteção e performance. Plataforma tecnológica INSULFILM™."
+          content="Sua base de engenharia, homologação, padrão técnico e a reputação construída ao longo do tempo."
         />
         <meta property="og:url" content="https://insulfilm.com.br/marca/tecnologia" />
       </Helmet>
 
       <main className="min-h-screen bg-background">
         <PageHero
-          title="Tecnologias INSULFILM™"
-          subtitle="Engenharia aplicada ao controle solar, proteção e performance"
+          title="Tecnologia INSULFILM™"
+          subtitle="Engenharia aplicada ao vidro — base técnica que sustenta a reputação da marca."
           badge={{ icon: <Cpu className="w-4 h-4" />, text: 'Plataforma Tecnológica' }}
         />
 
