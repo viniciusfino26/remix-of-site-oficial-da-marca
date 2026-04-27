@@ -81,7 +81,7 @@ const MarcaTecnologia = () => {
               transition={{ duration: 0.6 }}
               className="text-foreground/80 text-lg md:text-xl leading-relaxed"
             >
-              A INSULFILM™ é uma marca registrada que organiza suas soluções a partir de tecnologias avançadas de engenharia de materiais, desenvolvidas para controlar calor, luz, radiação e resistência do vidro.
+              A INSULFILM™ organiza suas soluções a partir de tecnologias de engenharia de materiais desenvolvidas para atuar sobre calor, luz, radiação e comportamento do vidro. O desempenho não depende apenas do material — ele resulta da combinação entre tecnologia, escolha adequada da solução, aplicação qualificada e controle técnico.
             </motion.p>
           </div>
         </section>
@@ -100,13 +100,13 @@ const MarcaTecnologia = () => {
                 variants={fadeInUp}
                 className="text-3xl md:text-4xl font-black text-foreground mb-4 text-center"
               >
-                Plataforma Tecnológica
+                Plataforma tecnológica
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
                 className="text-foreground/70 text-center mb-12 max-w-2xl mx-auto"
               >
-                As soluções INSULFILM™ são estruturadas em três frentes principais.
+                A INSULFILM™ estrutura sua plataforma tecnológica em três frentes complementares.
               </motion.p>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -154,11 +154,11 @@ const MarcaTecnologia = () => {
                     <Layers className="w-6 h-6 text-accent" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-black text-foreground">
-                    Engenharia de Construção
+                    Estrutura técnica das soluções
                   </h2>
                 </div>
                 <p className="text-foreground/70 mb-6">
-                  As películas INSULFILM™ são desenvolvidas com:
+                  A construção das soluções INSULFILM™ pode envolver:
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {engenharia.map((item) => (
@@ -188,14 +188,14 @@ const MarcaTecnologia = () => {
                   <Cog className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-black text-foreground">Processo O&amp;M</h2>
+                  <h2 className="text-2xl md:text-3xl font-black text-foreground">Processo e padronização</h2>
                   <p className="text-accent text-sm font-semibold uppercase tracking-wider mt-1">
-                    Controle industrial e padronização
+                    Homologação, seleção técnica e controle de execução
                   </p>
                 </div>
               </div>
               <p className="text-foreground/80 leading-relaxed text-lg">
-                A INSULFILM™ opera com um sistema de homologação industrial (O&amp;M), garantindo que todas as soluções sigam padrões rigorosos de qualidade, desempenho e consistência.
+                A INSULFILM™ opera com critérios de homologação, seleção técnica e controle de execução voltados à consistência de desempenho entre diferentes aplicações. Essa base técnica impacta a percepção do cliente porque conecta origem, construção e resultado — a reputação da marca não depende apenas do que se comunica, mas do que se confirma na entrega.
               </p>
             </motion.div>
           </div>
@@ -214,13 +214,13 @@ const MarcaTecnologia = () => {
                 <ShieldCheck className="w-7 h-7 text-accent" />
               </div>
               <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-4">
-                Essência da Marca
+                Essência
               </p>
               <p className="text-2xl md:text-3xl font-black text-foreground leading-tight mb-4">
-                INSULFILM™ não é um termo genérico.
+                INSULFILM™ não é termo genérico.
               </p>
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                É uma marca registrada que representa tecnologia, controle e padrão.
+                É uma marca registrada associada a tecnologia controlada, padrão técnico, reputação construída e resultado validado.
               </p>
             </motion.div>
           </div>
