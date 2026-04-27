@@ -1,103 +1,89 @@
 
-Objetivo
+## Objetivo
 
-Refatorar a seção de logos em `/arquitetonico` para sair do formato de faixa única “blocada” e virar um carrossel institucional em dois andares, com logos individuais lado a lado, movimento contínuo em direções opostas, velocidade maior e visual mais próximo da referência enviada.
+Replicar **identicamente** o conteúdo textual da seção "Marca" do site oficial `insulfilm.com.br/marca` e suas 5 ramificações nas páginas equivalentes do site em construção. **Apenas textos** — design, layout, componentes, animações, cores e tipografia permanecem exatamente como estão hoje.
 
-Direção visual aprovada
+## Mapeamento de páginas (origem → destino)
 
-- Os logos poderão ser convertidos para uma cor neutra preta para reduzir competição visual com a página.
-- O fundo da seção continuará branco para destacar as marcas com leitura limpa e premium.
-- A intenção será institucional, não promocional: menos peso visual no topo da seção e mais protagonismo para o carrossel.
+| Página externa | Página no nosso projeto | Rota |
+|---|---|---|
+| `/marca/` (Visão Geral) | `src/pages/MarcaSobre.tsx` | `/marca` |
+| `/marca/o-que-e-insulfilm` | `src/pages/MarcaOQueE.tsx` | `/marca/o-que-e-insulfilm` |
+| `/marca/historia` | `src/pages/MarcaHistoria.tsx` | `/marca/historia` |
+| `/marca/tecnologia` | `src/pages/MarcaTecnologia.tsx` | `/marca/tecnologia` |
+| `/marca/autenticidade` | `src/pages/MarcaAutenticidade.tsx` | `/marca/autenticidade` |
+| `/marca/marca-registrada` | `src/pages/MarcaRegistrada.tsx` | `/marca/marca-registrada` |
 
-O que será alterado
+## O que será feito em cada página
 
-1. Nova estrutura do carrossel
-- Substituir a imagem-strip única atual por logos individuais transparentes.
-- Organizar os logos em duas trilhas horizontais independentes.
-- Linha superior: logos entrando pela direita e saindo pela esquerda.
-- Linha inferior: logos entrando pela esquerda e saindo pela direita.
-- Duplicar cada trilha no DOM para formar loop contínuo sem salto perceptível.
+Para cada uma das 6 páginas:
 
-2. Tratamento dos logos
-- Extrair todos os logos da imagem enviada em arquivos individuais.
-- Remover fundo branco e salvar com transparência real.
-- Aplicar versão monocromática preta/neutra para uniformizar a seção e evitar excesso de ruído visual.
-- Preservar proporção original com `object-contain`.
-- Ajustar largura/escala por logo apenas quando necessário para equilibrar marcas muito largas ou compactas.
-- Não usar mais a composição raster inteira como faixa única.
+1. **Preservar 100% da estrutura visual atual**: hero, seções, cards, ícones, animações framer-motion, tokens de cor/tipografia, breakpoints, ParallaxBreak, CTAs, Footer, SEO/Helmet shell.
+2. **Substituir somente os textos** dos seguintes elementos:
+   - Título e subtítulo do hero
+   - Títulos de seções (h2/h3)
+   - Parágrafos descritivos
+   - Itens de listas (bullets)
+   - Citações em destaque (blockquotes)
+   - FAQ (perguntas e respostas)
+   - Cards de "Explore mais sobre a marca" (títulos, descrições e links já existentes)
+3. **Atualizar metadados SEO** (title, description, canonical) para refletir o conteúdo novo.
 
-3. Componente `ArchitecturalLogoCarousel`
-- Refatorar `src/components/ArchitecturalLogoCarousel.tsx` para trabalhar com um array de logos e metadados.
-- Dividir o conjunto em duas linhas com distribuição equilibrada.
-- Manter `title` e `description` como props, mas reduzir seu protagonismo visual se necessário para deixar o carrossel mais forte.
-- Aplicar `aria-hidden` apenas nas cópias duplicadas de cada trilha.
-- Manter estrutura desacoplada para permitir reposicionamento futuro na página.
+## Estrutura textual a aplicar (resumo por página)
 
-4. CSS e animações
-- Remover a animação única atual baseada em `animate-logo-marquee`.
-- Criar duas animações dedicadas em `src/index.css`, por exemplo:
-  - `logo-marquee-left`
-  - `logo-marquee-right`
-- Usar `transform: translate3d(...)` para suavidade e melhor performance.
-- Aumentar a velocidade para cerca de 2x em relação ao estado atual, mantendo leitura confortável.
-- Preservar compatibilidade com `prefers-reduced-motion`, pausando ou desativando o movimento.
+### 1. MarcaSobre.tsx — "A Marca INSULFILM™"
+- Hero: "A Marca INSULFILM™" / "Protegendo pessoas em ambientes com vidro."
+- Seções: O que é a INSULFILM™ · O que a marca representa (lista de benefícios) · Mais do que produto (lista do sistema) · Reputação e construção da marca · O uso do termo "insulfilm" · Tese central ("INSULFILM™ não existe para proteger o vidro. Existe para proteger as pessoas que estão por trás dele.")
+- FAQ: 3 perguntas
+- Explore: cards para O que é · História · Tecnologia · Autenticidade · Marca registrada
 
-5. Integração na página
-- Manter a seção posicionada após o bloco de credenciais institucionais e antes de `#solucoes-arquitetonicas`.
-- Esse ponto continua sendo o mais forte para jornada do lead: autoridade primeiro, prova social em seguida, soluções depois.
+### 2. MarcaOQueE.tsx — "O que é INSULFILM™"
+- Seções: O termo "insulfilm" no uso cotidiano · O esclarecimento necessário · A categoria correta (películas técnicas para vidro) · O que é a INSULFILM™ · Por que essa distinção importa · Reputação e leitura correta no ambiente digital · Síntese final
+- FAQ: 3 perguntas
+- Explore: cards para Visão Geral · História · Autenticidade · Marca registrada
 
-Arquivos envolvidos
+### 3. MarcaHistoria.tsx — "História da INSULFILM™"
+- Seções: Uma trajetória ligada ao desenvolvimento do segmento · Uma presença construída no tempo (lista) · História e reputação
+- Linha do tempo editorial: Década de 1980 · Década de 1990 · Anos 2000 · Anos 2010 em diante
+- Citação de fechamento
+- Explore: cards para Visão Geral · Pioneirismo · Presença e Autoridade · Tecnologia
 
-- `src/components/ArchitecturalLogoCarousel.tsx`
-  - refatorar para duas trilhas e logos individuais
-- `src/index.css`
-  - substituir animação única por duas animações opostas
-- `src/pages/Arquitetonico.tsx`
-  - manter a seção no ponto atual, com eventual ajuste fino de espaçamento
-- `src/assets/architectural-logos/*`
-  - novos assets individuais transparentes e neutralizados em preto
+### 4. MarcaTecnologia.tsx — "Tecnologia INSULFILM™"
+- Seções: Engenharia aplicada ao vidro · Plataforma tecnológica (controle solar, segurança e proteção, alta transparência) · Estrutura técnica das soluções · Processo e padronização · Tecnologia como origem da reputação · Reputação e uso indevido de associações tecnológicas · Essência
+- Explore: cards para Visão Geral · Autenticidade · Marca registrada
 
-Detalhes técnicos
+### 5. MarcaAutenticidade.tsx — "Autenticidade e Padrão"
+- Seções: O que define o padrão INSULFILM™ · A diferença entre uso genérico e marca registrada · O que a autenticidade muda na prática · Autenticidade e reputação · Como reconhecer a comunicação oficial
+- Citação: "Ao buscar INSULFILM™, o cliente busca um padrão específico de produto, aplicação, reputação e validação."
+- FAQ: 2 perguntas
+- Explore: cards para Visão Geral · Tecnologia · Marca registrada · O que é INSULFILM™
 
-- Estrutura sugerida dos dados:
-```ts
-type LogoItem = {
-  src: string;
-  alt: string;
-  className?: string;
-};
-```
+### 6. MarcaRegistrada.tsx — "Marca Registrada"
+- Seções: Proteção concedida · O que essa proteção significa · Proteção da reputação da marca · O uso popular do termo · Clareza para o consumidor e para o ambiente digital
+- Citação: "INSULFILM™ é marca registrada. Sua proteção jurídica reforça a identidade construída ao longo do tempo."
+- FAQ: 2 perguntas
+- Explore: cards para Visão Geral · Autenticidade · O que é INSULFILM™ · Aviso Legal
 
-- Estrutura visual sugerida:
-```text
-[título opcional mais discreto]
+## Detalhes técnicos
 
-[ faixa 1 -> -> -> -> ]
-[ <- <- <- faixa 2  ]
-```
+- Edição apenas em `src/pages/Marca*.tsx` (6 arquivos). Sem alteração em rotas (`App.tsx`), Header/Footer, componentes compartilhados, `index.css`, `tailwind.config.ts`.
+- Manter exatamente os mesmos componentes (`PageHero`, `Card`, `motion.div`, ícones lucide-react, `ParallaxBreak`, etc.) e suas props de estilo.
+- Atualizar `<Helmet>` de cada página (title, meta description, canonical) com base no novo título principal.
+- Citações em destaque devem reproduzir as aspas e quebras de linha originais.
+- Listas de bullets devem manter o componente visual já usado no projeto, apenas trocando os itens.
+- Os cards de "Explore mais" reusam links internos já existentes (`/marca/historia`, `/marca/tecnologia`, etc.). O card "Aviso Legal" (na MarcaRegistrada) aponta para `/legal/marca-registrada` (rota já existente).
+- Conformidade com `mem://brand/nomenclatura-produtos` e `mem://brand/diretrizes-comunicacao`: manter `INSULFILM™` com símbolo, capitalização correta, e termos jurídicos da marca preservados.
 
-- Estratégia de loop:
-  - renderizar a sequência original + cópia da mesma sequência em cada linha;
-  - animar exatamente metade da largura útil da trilha;
-  - usar gaps fixos e consistentes para não gerar trancos visuais.
+## Fora do escopo
 
-- Tratamento de cor:
-  - priorizar logos em preto sólido ou preto suavizado;
-  - preservar contraste e legibilidade sobre branco;
-  - evitar tons de marca muito chamativos nessa seção.
+- Sem mudanças visuais (cores, fontes, espaçamentos, animações).
+- Sem criação ou remoção de páginas/rotas.
+- Sem ajustes em imagens, ícones ou vídeos.
+- Sem alterações em outras seções do site (Arquitetônico, Automotivo, etc.).
 
-Validação após implementação
+## Critério de aceite
 
-- Confirmar que a seção não parece mais uma faixa única “blocada”.
-- Verificar duas linhas contínuas com leitura clara e respiro consistente.
-- Validar os sentidos opostos corretos entre linha superior e inferior.
-- Confirmar velocidade mais rápida que a atual, mas ainda legível.
-- Garantir que todos os logos da imagem foram contemplados.
-- Verificar transparência real dos assets.
-- Testar desktop e mobile sem corte, distorção ou compressão.
-- Confirmar que os logos em preto não roubam atenção da página, mas reforçam autoridade visual.
-- Garantir loop contínuo sem salto perceptível.
-
-Resultado esperado
-
-A seção passará a ter aparência mais sofisticada, fluida e institucional, com duas faixas de logos em sentidos opostos, maior dinamismo, menos sensação de bloco único e melhor integração visual com a página `/arquitetonico`.
+- As 6 páginas exibem o conteúdo textual idêntico ao do site `insulfilm.com.br/marca` (e suas 5 sub-rotas).
+- O design (estrutura, cores, tipografia, animações, breakpoints) permanece visualmente igual ao atual.
+- Navegação e links internos entre as páginas Marca continuam funcionando.
+- SEO (title/description/canonical) atualizado em cada página.

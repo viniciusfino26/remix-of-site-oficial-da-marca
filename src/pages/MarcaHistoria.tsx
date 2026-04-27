@@ -79,11 +79,11 @@ const MarcaHistoria = () => {
   return (
     <>
       <Helmet>
-        <title>Nossa História — INSULFILM™ | Pioneira em Películas desde 1986</title>
-        <meta name="description" content="Conheça a trajetória da INSULFILM™, a primeira e mais reconhecida marca de películas do Brasil. Quase 40 anos de inovação em proteção solar, segurança e conforto." />
+        <title>História da INSULFILM™ | Trajetória Pioneira desde 1986</title>
+        <meta name="description" content="A trajetória da INSULFILM™ se conecta à formação e ao desenvolvimento do segmento de películas para vidro no Brasil — continuidade, padrão técnico e reputação construída ao longo das décadas." />
         <link rel="canonical" href="https://insulfilm.com.br/marca/historia" />
-        <meta property="og:title" content="Nossa História — INSULFILM™" />
-        <meta property="og:description" content="Pioneira em películas para vidros desde 1986. Conheça nossa linha do tempo de inovação." />
+        <meta property="og:title" content="História da INSULFILM™" />
+        <meta property="og:description" content="Uma trajetória ligada ao desenvolvimento do segmento de películas técnicas para vidro no Brasil." />
         <meta property="og:url" content="https://insulfilm.com.br/marca/historia" />
       </Helmet>
 
@@ -95,13 +95,13 @@ const MarcaHistoria = () => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl mx-auto text-center">
               <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-accent/10 text-accent border border-accent/20 px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold mb-6">
-                <Clock className="w-4 h-4" /> Nossa História
+                <Clock className="w-4 h-4" /> História da INSULFILM™
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground mb-6 leading-tight">
-                {ano - 1986}+ Anos Liderando a Inovação em Películas
+                Uma trajetória ligada ao desenvolvimento do segmento
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl font-light text-primary-foreground/70">
-                A primeira e mais reconhecida marca de películas do Brasil para vidros automotivos e arquitetônicos.
+                {ano - 1986}+ anos associando a marca à introdução de soluções, à evolução das aplicações e ao amadurecimento técnico do mercado de películas para vidro no Brasil.
               </motion.p>
             </motion.div>
           </div>
@@ -113,13 +113,13 @@ const MarcaHistoria = () => {
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto space-y-8">
               <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-foreground">
-                Por qual motivo quase todo mundo chama de "insulfilm" as películas de proteção solar?
+                Uma presença construída no tempo
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-foreground/80 text-lg leading-relaxed">
-                A INSULFILM™ é a primeira e mais reconhecida marca de películas do Brasil para vidros automotivos e arquitetônicos. São quase {ano - 1986} anos inovando em películas para vidros e superfícies metálicas.
+                Desde sua origem, a INSULFILM™ esteve associada à introdução de soluções, à evolução das aplicações e ao amadurecimento técnico do mercado de películas para vidro no Brasil. Ao longo das décadas, a marca consolidou sua presença com base em continuidade de atuação, adaptação tecnológica, expansão de contextos de aplicação e desenvolvimento de padrões de execução.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-foreground/80 text-lg leading-relaxed">
-                Desde 1988 a INSULFILM™ revolucionou a forma como os brasileiros convivem com seus ambientes envidraçados, transformando essa experiência em conforto e proteção com sofisticação. Nossa inovação vai além das películas, é tecnologia de ponta à serviço do seu bem-estar diário.
+                A história da INSULFILM™ também explica a construção de sua reputação. Ao longo do tempo, a continuidade de presença, a evolução técnica e a consistência de atuação contribuíram para que a marca fosse reconhecida não apenas por seu nome, mas pela confiança associada ao que representa. Essa reputação não surge de uma afirmação publicitária — ela se forma pela repetição coerente de desempenho, presença e reconhecimento ao longo das décadas.
               </motion.p>
             </motion.div>
           </div>
@@ -133,8 +133,8 @@ const MarcaHistoria = () => {
         <section className="py-16 md:py-24" ref={timelineRef}>
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">No Brasil, pioneirismo em películas é conosco</h2>
-              <p className="text-foreground/60 font-light max-w-2xl mx-auto">Clique nas eras para explorar cada fase da nossa história.</p>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-4">Linha do tempo editorial</h2>
+              <p className="text-foreground/60 font-light max-w-2xl mx-auto">Clique nas eras para explorar cada fase da trajetória da marca.</p>
             </motion.div>
 
             {/* Sticky Era Navigation */}
@@ -289,10 +289,10 @@ const MarcaHistoria = () => {
                       <div className="relative z-10 p-10 md:p-14 text-center">
                         <span className="text-accent font-extrabold text-lg tracking-wide">Hoje</span>
                         <p className="text-primary-foreground text-xl md:text-2xl font-light leading-relaxed mt-4">
-                          Seguimos liderando a evolução tecnológica do mercado de películas no Brasil, antecipando tendências e garantindo que cada inovação entregue mais segurança, conforto e sofisticação.
+                          Ao acompanhar e influenciar a evolução do segmento, a INSULFILM™ consolidou uma identidade associada a proteção, confiança, reputação e resultado.
                         </p>
                         <p className="text-accent font-extrabold text-lg md:text-xl mt-6">
-                          A INSULFILM™ não protege vidros, protege você.
+                          INSULFILM™ não existe para proteger o vidro. Existe para proteger as pessoas que estão por trás dele.
                         </p>
                       </div>
                     </div>
