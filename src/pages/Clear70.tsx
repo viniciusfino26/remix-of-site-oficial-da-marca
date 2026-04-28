@@ -164,11 +164,6 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        <ParallaxBreak minHeight="25vh" stats={[
-          { value: '72%', label: 'Transmissão de Luz' },
-          { value: '81%', label: 'Rejeição IR' },
-          { value: '>99%', label: 'Bloqueio UV' },
-        ]} />
 
         {/* ── BENEFITS ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
