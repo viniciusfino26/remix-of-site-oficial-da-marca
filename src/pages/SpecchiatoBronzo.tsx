@@ -125,59 +125,19 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        {/* ── SPECS CARDS ── */}
-        <section className="py-24 bg-card/30 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-            </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}><motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <Card className="glass-card rounded-2xl h-full text-center"><CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                    <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                    <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                  </CardContent></Card>
-                </motion.div></motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── TECH TABLE ── */}
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-8 text-center">Ficha Técnica Completa</motion.h2>
-              <motion.div variants={fadeInUp} className="overflow-x-auto">
-                <Table>
-                  <TableHeader><TableRow className="border-accent/20">
-                    <TableHead className="text-accent font-bold">Versão</TableHead>
-                    <TableHead>Privacidade</TableHead><TableHead>Luz Visível</TableHead>
-                    <TableHead>IR Rejeitado</TableHead><TableHead>UV Rejeitado</TableHead><TableHead>Energia Solar</TableHead>
-                  </TableRow></TableHeader>
-                  <TableBody>
-                    {techTable.map((row, i) => (
-                      <TableRow key={i}><TableCell className="font-bold text-foreground">{row.version}</TableCell>
-                        <TableCell>{row.privacy}</TableCell><TableCell>{row.light}</TableCell>
-                        <TableCell className="text-accent font-semibold">{row.ir}</TableCell><TableCell>{row.uv}</TableCell><TableCell>{row.energy}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </motion.div>
-              <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mt-4">Quanto menor o grau de transparência, maior a refletividade percebida após a aplicação. Garantia: até 10 anos. Consulte condições com um dos nossos especialistas.</motion.p>
-            </motion.div>
-          </div>
-        </section>
-
-        <ParallaxBreak minHeight="35vh" stats={[
-          { value: '72%', label: 'Rejeição IR' },
-          { value: 'Bronze', label: 'Acabamento' },
-          { value: '10 anos', label: 'Garantia' },
-        ]} />
+        {/* ── TECH SPECS HIGHLIGHT ── */}
+        <TechSpecsHighlight
+          title="Ficha Técnica Specchiato Bronzo"
+          subtitle="Acabamento bronze espelhado com alta performance térmica."
+          highlights={[
+            { value: '72%', label: 'Rejeição IR', sublabel: 'Calor bloqueado' },
+            { value: 'Bronze', label: 'Acabamento', sublabel: 'Espelhado' },
+            { value: '>99%', label: 'Bloqueio UV', sublabel: 'Proteção total' },
+            { value: '10 anos', label: 'Garantia', sublabel: 'INSULFILM™' },
+          ]}
+          techTable={techTable}
+          warrantyNote="Quanto menor o grau de transparência, maior a refletividade percebida após a aplicação. Garantia: até 10 anos. Consulte condições com um Centro Autorizado."
+        />
 
         {/* ── BENEFITS ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">

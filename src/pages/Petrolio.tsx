@@ -127,64 +127,19 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-            </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}><motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <Card className="glass-card rounded-2xl h-full text-center"><CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                    <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                    <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                  </CardContent></Card>
-                </motion.div></motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
-              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Ficha Técnica</motion.h3>
-              <motion.div variants={fadeInUp} className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead><tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 font-bold text-foreground">Versão</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Privacidade</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Luz Visível</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Infravermelho</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">UV</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Energia Solar</th>
-                  </tr></thead>
-                  <tbody>
-                    {techTable.map((row) => (
-                      <tr key={row.version} className="border-b border-border/50">
-                        <td className="py-3 px-4 font-semibold text-foreground">{row.version}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.privacy}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.light}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.ir}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.uv}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.energy}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </motion.div>
-              <p className="text-xs text-muted-foreground/60 text-center mt-4">Garantia: até 3 anos. Consulte condições.</p>
-            </motion.div>
-          </div>
-        </section>
-
-        <ParallaxBreak minHeight="25vh" stats={[
-          { value: '42%', label: 'Rejeição IR (máx.)' },
-          { value: '3', label: 'Versões' },
-          { value: '>99%', label: 'Bloqueio UV' },
-        ]} />
+        {/* ── TECH SPECS HIGHLIGHT ── */}
+        <TechSpecsHighlight
+          title="Ficha Técnica Petrolio"
+          subtitle="Estética preta sofisticada com controle solar real."
+          highlights={[
+            { value: '42%', label: 'Rejeição IR', sublabel: 'até (versão 05)' },
+            { value: '52%', label: 'Energia Solar', sublabel: 'Rejeitada' },
+            { value: '>99%', label: 'Bloqueio UV', sublabel: 'Proteção total' },
+            { value: '3 anos', label: 'Garantia', sublabel: 'INSULFILM™' },
+          ]}
+          techTable={techTable}
+          warrantyNote="Garantia: até 3 anos. Consulte condições com um Centro Autorizado."
+        />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />
