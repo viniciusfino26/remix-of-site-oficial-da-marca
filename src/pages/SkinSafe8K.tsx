@@ -17,6 +17,7 @@ import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -529,6 +530,7 @@ const SkinSafe8K = () => {
           </motion.div>
         </div>
       </section>
+      <PDPFaqSection slug="skinsafe8k" />
     </main>
     </>
   );

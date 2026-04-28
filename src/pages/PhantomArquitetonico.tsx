@@ -11,6 +11,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 
 import phantomSolutionThickness from '@/assets/phantom-solution-thickness.png';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 // ═══════════════════════ ANIMATION VARIANTS ═══════════════════════
 
@@ -695,6 +696,7 @@ const PhantomArquitetonico = () => {
           </motion.div>
         </div>
       </section>
+      <PDPFaqSection slug="phantom-arquitetonico" />
     </main>
     </>
   );

@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -181,6 +182,7 @@ const PolarizUltra = () => {
             </motion.div>
           </div>
         </section>
+        <PDPFaqSection slug="polariz-ultra" />
       </main>
     </>
   );
