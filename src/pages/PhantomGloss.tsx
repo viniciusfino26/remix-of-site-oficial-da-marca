@@ -75,12 +75,12 @@ const PhantomGloss = () => {
         <TLDR
           question="O que é o PPF INSULFILM™ Phantom Gloss?"
           answer="O INSULFILM™ Phantom Gloss é uma película de proteção de pintura (PPF) com tecnologia auto-regenerativa que recupera microriscos com calor e protege a pintura contra impactos, insetos e contaminantes."
-          context="Acabamento brilhante premium com 10 anos de garantia, ideal para preservar a pintura original do veículo."
+          context="Acabamento brilhante premium com 5 anos de garantia, ideal para preservar a pintura original do veículo."
           specs={[
             { label: 'Tipo', value: 'PPF — Paint Protection Film' },
             { label: 'Acabamento', value: 'Gloss' },
             { label: 'Tecnologia', value: 'Auto-regenerativa' },
-            { label: 'Garantia', value: '10 anos' },
+            { label: 'Garantia', value: '5 anos' },
           ]}
         />
 

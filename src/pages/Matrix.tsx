@@ -54,7 +54,7 @@ const Matrix = () => {
     "url": "https://www.insulfilm.com.br/matrix",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Tecnologia", "value": "Nano Cerâmica" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho (IR)", "value": "Até 75%" },
+      { "@type": "PropertyValue", "name": "Rejeição de IR", "value": "Até 75%" },
       { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
     ]
   };

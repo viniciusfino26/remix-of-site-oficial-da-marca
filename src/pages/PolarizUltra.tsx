@@ -54,7 +54,7 @@ const PolarizUltra = () => {
     "url": "https://www.insulfilm.com.br/polariz-ultra",
     "additionalProperty": [
       { "@type": "PropertyValue", "name": "Tecnologia", "value": "Híbrida Metal-Cerâmica" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho (IR)", "value": "Até 75%" },
+      { "@type": "PropertyValue", "name": "Rejeição de IR", "value": "Até 75%" },
       { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
     ]
   };

@@ -100,7 +100,7 @@ const Eclipse = () => {
           context="Indicada para quem busca acabamento neutro e durável sem desbotamento, com 5 anos de garantia de fábrica."
           specs={[
             { label: 'Tecnologia', value: 'Carbon Color Stable' },
-            { label: 'Filtro de IR', value: '30%' },
+            { label: 'Rejeição de IR', value: 'Até 30%' },
             { label: 'Bloqueio UV', value: '99%' },
             { label: 'Garantia', value: '5 anos' },
           ]}

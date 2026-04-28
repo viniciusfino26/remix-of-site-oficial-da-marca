@@ -20,10 +20,10 @@ const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, sc
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const specs = [
-  { icon: Zap, label: 'Tecnologia', value: 'Bombardeamento Iônico' },
+  { icon: Zap, label: 'Tecnologia', value: 'Sputtered Neutra' },
   { icon: Eye, label: 'Versões', value: '4 opções' },
   { icon: Sun, label: 'Rejeição de IR', value: 'Até 81%' },
-  { icon: Layers, label: 'Garantia', value: '10 anos' },
+  { icon: Layers, label: 'Garantia', value: 'Até 10 anos' },
 ];
 
 const techTable = [

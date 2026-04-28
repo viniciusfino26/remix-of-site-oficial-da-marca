@@ -19,10 +19,10 @@ const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, sc
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const specs = [
-  { icon: Zap, label: 'Tecnologia', value: 'Vapor-Coated Al' },
+  { icon: Zap, label: 'Tecnologia', value: 'Sputtered Invertida' },
   { icon: Eye, label: 'Transmissão de Luz', value: '15%' },
   { icon: Sun, label: 'Rejeição de IR', value: '75%' },
-  { icon: Shield, label: 'Garantia', value: '3 anos' },
+  { icon: Shield, label: 'Garantia', value: 'Até 3 anos' },
 ];
 
 const techTable = [
