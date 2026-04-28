@@ -58,7 +58,7 @@ const PhantomGloss = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('phantom-gloss'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
-          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+          {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>
       <main>
