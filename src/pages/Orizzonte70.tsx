@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -107,6 +108,17 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
           ]}
         />
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="Película arquitetônica INSULFILM™ Orizzonte70 cerâmica premium em vidraça corporativa"
+              icon={Building2}
+              variant="light"
+            />
+          </div>
+        </section>
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">
           <div className="container mx-auto px-4 max-w-4xl">

@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -98,6 +99,17 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
         />
 
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="Película arquitetônica refletiva INSULFILM™ Reflesso d'Argento em vidraça corporativa"
+              icon={Building2}
+              variant="light"
+            />
+          </div>
+        </section>
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
             <LegalDisclaimer />

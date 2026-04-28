@@ -13,6 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
 
 /* ── animation variants ── */
@@ -199,6 +200,17 @@ const SkudoUltra = () => {
         ]}
       />
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="Película de segurança automotiva INSULFILM™ SkudoUltra com tetra laminação 24 mil"
+              icon={Shield}
+              variant="light"
+            />
+          </div>
+        </section>
       {/* ═══ 2. A REALIDADE DA VIOLÊNCIA ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">
         <div className="absolute inset-0 bg-diagonal-texture" />
