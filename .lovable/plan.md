@@ -24,6 +24,13 @@ TLDR ↔ Specs Cards ↔ Product Schema com valores idênticos. Nomenclatura té
 - Resultado: Rich Snippets com estrelas no SERP, Offer estruturada, citação rica em LLMs (3 idiomas).
 - Zero mudança visual.
 
+## Fase 6 — Enxugamento visual + destaque de índices decisores (concluída)
+- Criado `src/components/TechSpecsHighlight.tsx` — bloco unificado com KPIs gigantes (texto 5xl→7xl em accent), glow radial, glass-card e Ficha Técnica completa abaixo (opcional).
+- 18 PDPs primárias: removido tripla redundância (Specs Cards + Tech Table + ParallaxBreak) → substituído por **único** `TechSpecsHighlight` em fundo `bg-carbon-gradient` com parallax sutil nos números.
+- PhantomGloss: variante inline (ficha técnica key/value, sem `techTable` padrão).
+- Antivandalismo13K, SkinSafe8K, SkudoGuard, SkudoUltra, PhantomArquitetonico mantidas como estavam (já enxutas, têm narrativa emocional própria).
+- Justificativa: índices (Rejeição IR, UV, Luz Visível) são fator decisor de compra — agora visualmente impossíveis de ignorar.
+
 ## Single Source of Truth
 Atualização de qualquer spec deve refletir em 5 lugares:
-TLDR, Specs Cards (UI), `pdpProducts.ts` (Product Schema trilíngue), `pdpFAQs.ts` (FAQ trilíngue) e `PDPFaqSection`.
+TLDR, `TechSpecsHighlight` (UI destacado), `pdpProducts.ts` (Product Schema trilíngue), `pdpFAQs.ts` (FAQ trilíngue) e `PDPFaqSection`.

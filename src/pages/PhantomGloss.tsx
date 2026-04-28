@@ -142,56 +142,62 @@ const PhantomGloss = () => {
           </div>
         </section>
 
-        {/* ── SPECS CARDS ── */}
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
+        {/* ── TECH SPECS HIGHLIGHT ── */}
+        <section className="relative py-24 bg-carbon-gradient overflow-hidden">
+          <div className="absolute inset-0 bg-diagonal-texture opacity-50" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-30 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, hsl(19 100% 56% / 0.25), transparent 70%)' }} />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div className="text-center mb-12 max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+              <motion.span variants={fadeInUp} className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-bold mb-4">Performance Comprovada</motion.span>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4 leading-[1.05]">Ficha Técnica Phantom Gloss</motion.h2>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-base md:text-lg font-light">Surface Protection Film de 5 camadas. Os índices que comprovam a proteção.</motion.p>
+              <motion.div variants={fadeInUp} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}><motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <Card className="glass-card rounded-2xl h-full text-center"><CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                    <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                    <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                  </CardContent></Card>
-                </motion.div></motion.div>
+
+            {/* Highlight KPIs */}
+            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+              {[
+                { value: '180μ', label: 'Espessura', sublabel: '7 mil de proteção' },
+                { value: '5', label: 'Camadas', sublabel: 'Composição Premium' },
+                { value: '355', label: 'lbs/in', sublabel: 'Força para rompimento' },
+                { value: '5 anos', label: 'Garantia', sublabel: 'Anti-amarelamento' },
+              ].map((stat, i) => (
+                <motion.div key={i} variants={fadeInUp} className="relative group">
+                  <div className="absolute inset-0 bg-accent/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative h-full glass-card rounded-3xl p-8 md:p-10 text-center border border-accent/20 hover:border-accent/40 transition-colors">
+                    <p className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-accent leading-none mb-3 tracking-tight">{stat.value}</p>
+                    <p className="text-sm md:text-base text-primary-foreground font-bold uppercase tracking-wider mb-1">{stat.label}</p>
+                    <p className="text-xs text-primary-foreground/50 font-light">{stat.sublabel}</p>
+                  </div>
+                </motion.div>
               ))}
             </motion.div>
-          </div>
-        </section>
 
-        {/* ── TECHNICAL DETAILS ── */}
-        <section className="py-24 bg-card/30 overflow-hidden">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-8">Ficha Técnica</motion.h2>
-              <div className="space-y-4">
-                {[
-                  { label: 'Produto', value: 'INSULFILM™ Phantom Gloss — Surface Protection Film' },
-                  { label: 'Espessura total', value: '7 mil (≈ 180 microns)' },
-                  { label: 'Força do adesivo', value: '≥15N/25mm' },
-                  { label: 'Força para rompimento', value: '≈355 lbs/in' },
-                  { label: 'Resistência à temperatura', value: '-35°C a 116°C' },
-                ].map((item, i) => (
-                  <motion.div key={i} variants={fadeInUp} className="flex justify-between items-center py-3 border-b border-border/30">
-                    <span className="text-muted-foreground font-medium">{item.label}</span>
-                    <span className="text-foreground font-bold">{item.value}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mt-6">Garantia: 5 anos contra rachaduras, formação de bolhas e amarelamento causados por defeitos na fabricação.</motion.p>
+            {/* Detalhes técnicos completos */}
+            <motion.div className="max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
+              <motion.div variants={fadeInUp} className="rounded-2xl border border-primary-foreground/10 bg-background/30 backdrop-blur-md p-6 md:p-8">
+                <div className="space-y-3">
+                  {[
+                    { label: 'Produto', value: 'INSULFILM™ Phantom Gloss — Surface Protection Film' },
+                    { label: 'Espessura total', value: '7 mil (≈ 180 microns)' },
+                    { label: 'Força do adesivo', value: '≥15N/25mm' },
+                    { label: 'Força para rompimento', value: '≈355 lbs/in' },
+                    { label: 'Resistência à temperatura', value: '-35°C a 116°C' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex justify-between items-center py-3 border-b border-primary-foreground/10 last:border-b-0">
+                      <span className="text-primary-foreground/60 font-medium text-sm">{item.label}</span>
+                      <span className="text-primary-foreground font-bold text-sm md:text-base">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/50 text-center mt-4 italic">
+                Garantia: 5 anos contra rachaduras, formação de bolhas e amarelamento causados por defeitos na fabricação.
+              </motion.p>
             </motion.div>
           </div>
         </section>
-
-        <ParallaxBreak minHeight="35vh" stats={[
-          { value: '180μ', label: 'Espessura' },
-          { value: '5 camadas', label: 'Composição' },
-          { value: '5 anos', label: 'Garantia' },
-        ]} />
 
         {/* ── 5-LAYER COMPOSITION ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
