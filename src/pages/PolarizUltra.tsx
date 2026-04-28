@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';

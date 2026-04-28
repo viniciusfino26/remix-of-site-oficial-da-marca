@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -95,6 +96,19 @@ const Matrix = () => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        {/* ═══ TL;DR — GEO/LLM-first ═══ */}
+        <TLDR
+          question="O que é a película INSULFILM™ Matrix?"
+          answer="A INSULFILM™ Matrix é a película automotiva premium da linha Ultra Definition, fabricada com nanotecnologia cerâmica verdadeira que rejeita até 75% dos raios infravermelhos sem interferir em sinais de GPS, celular ou rádio."
+          context="Indicada para motoristas que buscam o máximo conforto térmico, clareza visual e durabilidade, com 10 anos de garantia de fábrica."
+          specs={[
+            { label: 'Tecnologia', value: 'Nano Cerâmica' },
+            { label: 'Rejeição de IR', value: 'Até 75%' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Garantia', value: '10 anos' },
+          ]}
+        />
 
         {/* ═══ SPECS ═══ */}
         <section className="py-24 bg-background overflow-hidden">
