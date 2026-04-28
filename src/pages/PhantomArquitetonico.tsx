@@ -85,8 +85,8 @@ const faqs = [
 const phantomSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "INSULFILM™ Phantom Arquitetônico | PPF para Superfícies",
-  "description": "Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.",
+  "name": "INSULFILM™ Phantom Arquitetônico | SPF para Superfícies",
+  "description": "Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.",
   "url": "https://www.insulfilm.com.br/phantom-arquitetonico",
   "publisher": { "@type": "Brand", "name": "INSULFILM™" }
 };
@@ -95,10 +95,10 @@ const PhantomArquitetonico = () => {
   return (
     <>
     <Helmet>
-      <title>INSULFILM™ Phantom Arquitetônico | PPF para Superfícies</title>
-      <meta name="description" content="Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
-      <meta property="og:title" content="INSULFILM™ Phantom Arquitetônico | PPF para Superfícies" />
-      <meta property="og:description" content="Película de proteção de superfícies (PPF) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <title>INSULFILM™ Phantom Arquitetônico | SPF para Superfícies</title>
+      <meta name="description" content="Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <meta property="og:title" content="INSULFILM™ Phantom Arquitetônico | SPF para Superfícies" />
+      <meta property="og:description" content="Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
       <meta property="og:url" content="https://www.insulfilm.com.br/phantom-arquitetonico" />
