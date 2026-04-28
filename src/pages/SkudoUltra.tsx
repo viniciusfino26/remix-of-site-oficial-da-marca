@@ -15,6 +15,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -138,6 +139,10 @@ const SkudoUltra = () => {
         <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkudoUltra}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/skudo-ultra" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('skudo-ultra'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
     <main>
       {/* ═══ 1. HERO + VIDEO ═══ */}

@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -146,6 +147,10 @@ const SkudoGuard = () => {
         <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkudoGuard}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/skudoguard" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('skudoguard'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
     <main>
       {/* ═══ 1. HERO + VIDEO ═══ */}

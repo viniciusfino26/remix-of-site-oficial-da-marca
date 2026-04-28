@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -54,6 +55,10 @@ const PhantomGloss = () => {
         <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/phantom-gloss" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('phantom-gloss'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
       <main>
         {/* ── HERO ── */}

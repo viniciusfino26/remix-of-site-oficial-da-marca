@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ParallaxBreak from '@/components/ParallaxBreak';
 
 import phantomSolutionThickness from '@/assets/phantom-solution-thickness.png';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 // ═══════════════════════ ANIMATION VARIANTS ═══════════════════════
 
@@ -103,6 +104,10 @@ const PhantomArquitetonico = () => {
       <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
       <meta property="og:url" content="https://www.insulfilm.com.br/phantom-arquitetonico" />
       <script type="application/ld+json">{JSON.stringify(phantomSchema)}</script>
+      {(() => { const s = getPDPSchemas('phantom-arquitetonico'); return s ? (<>
+        <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+        <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+      </>) : null; })()}
     </Helmet>
     <main>
       {/* ═══════════════════════ HERO ═══════════════════════ */}

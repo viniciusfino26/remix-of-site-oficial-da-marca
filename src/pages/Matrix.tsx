@@ -8,6 +8,7 @@ import { Sun, Zap, Layers, Shield, CheckCircle, MessageCircle, Car } from 'lucid
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -70,6 +71,10 @@ const Matrix = () => {
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
         <meta property="og:url" content="https://www.insulfilm.com.br/matrix" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('matrix'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
       <main>
         {/* ═══ HERO ═══ */}
