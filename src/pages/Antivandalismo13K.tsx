@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
 
 /* ── animation variants ── */
@@ -188,6 +189,18 @@ const Antivandalismo13K = () => {
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
+
+      <TLDR
+        question="O que é a película INSULFILM™ Antivandalismo 13K?"
+        answer="A INSULFILM™ Antivandalismo 13K é uma película de segurança automotiva com 12 mil de espessura (304,8 micras) e dupla laminação, projetada para retardar arrombamentos, quebras e tentativas de roubo em vidros laterais."
+        context="Indicada para motoristas em centros urbanos de alto risco, com resistência à tração superior a 165 MPa e 5 anos de garantia de fábrica."
+        specs={[
+          { label: 'Espessura', value: '12 mil (304,8 µm)' },
+          { label: 'Construção', value: 'Dupla Laminação' },
+          { label: 'Resistência', value: '≥ 165 MPa' },
+          { label: 'Garantia', value: '5 anos' },
+        ]}
+      />
 
       {/* ═══ 2. A REALIDADE DOS ROUBOS (emocional) ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">
