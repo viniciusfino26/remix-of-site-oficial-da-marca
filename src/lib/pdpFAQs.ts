@@ -4,6 +4,7 @@
 // Atualizar AQUI quando alterar specs nas páginas correspondentes.
 
 import { buildBreadcrumbSchema, buildFAQSchema, type BreadcrumbItem, type FAQItem } from './pdpSchemas';
+import { buildProductSchema, PDP_PRODUCTS } from './pdpProducts';
 
 export type Lang = 'pt' | 'en' | 'es';
 
@@ -840,15 +841,19 @@ const pickBreadcrumb = (items: I18nBreadcrumbItem[], lang: Lang): BreadcrumbItem
   items.map((it) => ({ name: it.name[lang], url: it.url }));
 
 /**
- * Retorna BreadcrumbList (idioma ativo) + um array de FAQPage por idioma
- * (cada um com `inLanguage`). Renderizar cada FAQPage como `<script>` separado.
+ * Retorna BreadcrumbList (idioma ativo) + array de FAQPage por idioma (com `inLanguage`)
+ * + array de Product por idioma. Renderizar cada um como `<script>` separado.
  */
 export const getPDPSchemas = (slug: string, currentLang: Lang = 'pt') => {
   const meta = PDP_META[slug];
   if (!meta) return null;
+  const hasProduct = !!PDP_PRODUCTS[slug];
   return {
     breadcrumb: buildBreadcrumbSchema(pickBreadcrumb(meta.breadcrumb, currentLang)),
     faqsByLang: ALL_LANGS.map((lang) => buildFAQSchema(pickFAQs(meta.faqs, lang), LANG_TAG[lang])),
+    productsByLang: hasProduct
+      ? (ALL_LANGS.map((lang) => buildProductSchema(slug, lang)).filter(Boolean) as object[])
+      : [],
   };
 };
 

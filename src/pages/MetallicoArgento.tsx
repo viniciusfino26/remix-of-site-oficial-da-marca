@@ -54,19 +54,6 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Metallico Argento",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película espelhada premium com até 86% de rejeição IR, proteção UV >99% e garantia de 10 anos. Máxima eficiência com sofisticação espelhada.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Vapor-Coated Aluminium Film" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "Até 86%" },
-      { "@type": "PropertyValue", "name": "Versões", "value": "3 (50, 35, 20)" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -79,9 +66,9 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('metallico-argento'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

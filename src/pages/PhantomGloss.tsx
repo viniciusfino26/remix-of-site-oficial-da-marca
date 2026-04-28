@@ -31,18 +31,6 @@ const PhantomGloss = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Phantom Gloss",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Surface Protection Film para superfícies brilhosas. Preserva o brilho original contra micro-riscos, manchas ácidas e desgaste. 180 microns. Garantia 5 anos.",
-    "url": "https://insulfilm.com.br/arquitetonico/phantom-gloss",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tipo", "value": "SPF — Surface Protection Film" },
-      { "@type": "PropertyValue", "name": "Espessura", "value": "180 microns (7 mil)" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -55,9 +43,9 @@ const PhantomGloss = () => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/phantom-gloss" />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('phantom-gloss'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

@@ -44,19 +44,6 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Ultravioletti90",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película arquitetônica incolor com bloqueio de >99% de raios UV. Proteção máxima invisível para vidros, sem alterar estética ou luminosidade.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "UV Concentrated" },
-      { "@type": "PropertyValue", "name": "Transmissão de Luz", "value": "88%" },
-      { "@type": "PropertyValue", "name": "Bloqueio UV", "value": ">99%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -69,9 +56,9 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('ultravioletti90'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

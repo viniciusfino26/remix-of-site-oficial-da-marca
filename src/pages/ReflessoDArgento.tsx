@@ -43,18 +43,6 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Reflesso d'Argento",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película arquitetônica espelhada com 80% de rejeição de IR e privacidade diurna. Aplicável em fachadas e pergolados. Marca registrada.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Vapor-Coated Aluminium Film" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "80%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 3 anos" }
-    ]
-  };
 
   return (
     <>
@@ -66,9 +54,9 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <link rel="canonical" href={baseCanonical} />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('reflesso-d-argento'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

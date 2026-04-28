@@ -88,20 +88,6 @@ const SkinSafe8K = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ SkinSafe8K",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película de proteção (7 mil / 177,8 micras) para laminação do vidro em quebras acidentais. Minimiza a projeção de estilhaços contra os ocupantes. 5 anos de garantia.",
-    "image": `https://www.insulfilm.com.br${autoSkinSafe8K}`,
-    "url": "https://www.insulfilm.com.br/skinsafe8k",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Espessura", "value": "7 mil / 177,8 micras" },
-      { "@type": "PropertyValue", "name": "Função", "value": "Laminação do vidro — proteção contra estilhaços" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -113,9 +99,9 @@ const SkinSafe8K = () => {
         <meta property="og:description" content="Película de proteção para laminação do vidro em quebras acidentais. Minimiza a projeção de estilhaços contra os ocupantes." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content="https://www.insulfilm.com.br/skinsafe8k" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('skinsafe8k'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

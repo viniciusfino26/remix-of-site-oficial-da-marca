@@ -45,18 +45,6 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Petrolio",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película arquitetônica híbrida com estética preta sem refletividade intensa, proteção UV >99% e rejeição de IR de até 42%. Para projetos contemporâneos.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Hybrid Performance Film" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "Até 42%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 3 anos" }
-    ]
-  };
 
   return (
     <>
@@ -68,9 +56,9 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <link rel="canonical" href={baseCanonical} />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('petrolio'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>
