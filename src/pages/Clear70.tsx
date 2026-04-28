@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
+import TechSpecsHighlight from '@/components/TechSpecsHighlight';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
@@ -122,39 +123,19 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        {/* ── TECH TABLE ── */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto">
-              <motion.h3 variants={fadeInUp} className="text-2xl font-extrabold text-foreground mb-8 text-center">Ficha Técnica</motion.h3>
-              <motion.div variants={fadeInUp} className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead><tr className="border-b border-border">
-                    <th className="text-left py-3 px-4 font-bold text-foreground">Versão</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Privacidade</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Luz Visível</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Infravermelho</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">UV</th>
-                    <th className="text-center py-3 px-4 font-bold text-foreground">Energia Solar</th>
-                  </tr></thead>
-                  <tbody>
-                    {techTable.map((row) => (
-                      <tr key={row.version} className="border-b border-border/50">
-                        <td className="py-3 px-4 font-semibold text-foreground">{row.version}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.privacy}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.light}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.ir}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.uv}</td>
-                        <td className="text-center py-3 px-4 text-muted-foreground">{row.energy}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </motion.div>
-              <p className="text-xs text-muted-foreground/60 text-center mt-4">Garantia: até 5 anos. Consulte condições.</p>
-            </motion.div>
-          </div>
-        </section>
+        {/* ── TECH SPECS HIGHLIGHT (decisor de compra) ── */}
+        <TechSpecsHighlight
+          title="Ficha Técnica Clear70"
+          subtitle="Os índices que comprovam: máxima luminosidade com controle solar real."
+          highlights={[
+            { value: '72%', label: 'Luz Visível', sublabel: 'Transmissão preservada' },
+            { value: '81%', label: 'Rejeição IR', sublabel: 'Calor bloqueado' },
+            { value: '>99%', label: 'Bloqueio UV', sublabel: 'Proteção total' },
+            { value: '50%', label: 'Energia Solar', sublabel: 'Rejeitada' },
+          ]}
+          techTable={techTable}
+          warrantyNote="Garantia: até 5 anos. Consulte condições com um Centro Autorizado."
+        />
 
 
         {/* ── BENEFITS ── */}
