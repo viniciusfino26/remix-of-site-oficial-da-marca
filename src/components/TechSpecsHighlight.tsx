@@ -120,48 +120,61 @@ const TechSpecsHighlight = ({
           ))}
         </motion.div>
 
-        {/* Full tech table */}
-        <motion.div
-          className="max-w-5xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
-          variants={stagger}
-        >
-          <motion.div variants={fadeInUp} className="rounded-2xl border border-primary-foreground/10 bg-background/30 backdrop-blur-md overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-accent/30 bg-accent/5">
-                    <th className="text-left py-4 px-4 md:px-6 font-bold text-primary-foreground uppercase tracking-wider text-xs">Versão</th>
-                    <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Privacidade</th>
-                    <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Luz Visível</th>
-                    <th className="text-center py-4 px-3 md:px-4 font-bold text-accent uppercase tracking-wider text-xs">Infravermelho</th>
-                    <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">UV</th>
-                    <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Energia Solar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {techTable.map((row, i) => (
-                    <tr key={row.version} className={`border-b border-primary-foreground/5 hover:bg-accent/5 transition-colors ${i === techTable.length - 1 ? 'border-b-0' : ''}`}>
-                      <td className="py-4 px-4 md:px-6 font-bold text-primary-foreground">{row.version}</td>
-                      <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.privacy}</td>
-                      <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.light}</td>
-                      <td className="text-center py-4 px-3 md:px-4 text-accent font-bold">{row.ir}</td>
-                      <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.uv}</td>
-                      <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.energy}</td>
+        {/* Full tech table (opcional) */}
+        {techTable && techTable.length > 0 && (
+          <motion.div
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.div variants={fadeInUp} className="rounded-2xl border border-primary-foreground/10 bg-background/30 backdrop-blur-md overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-accent/30 bg-accent/5">
+                      <th className="text-left py-4 px-4 md:px-6 font-bold text-primary-foreground uppercase tracking-wider text-xs">Versão</th>
+                      <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Privacidade</th>
+                      <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Luz Visível</th>
+                      <th className="text-center py-4 px-3 md:px-4 font-bold text-accent uppercase tracking-wider text-xs">Infravermelho</th>
+                      <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">UV</th>
+                      <th className="text-center py-4 px-3 md:px-4 font-bold text-primary-foreground uppercase tracking-wider text-xs">Energia Solar</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {techTable.map((row, i) => (
+                      <tr key={row.version} className={`border-b border-primary-foreground/5 hover:bg-accent/5 transition-colors ${i === techTable.length - 1 ? 'border-b-0' : ''}`}>
+                        <td className="py-4 px-4 md:px-6 font-bold text-primary-foreground">{row.version}</td>
+                        <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.privacy}</td>
+                        <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.light}</td>
+                        <td className="text-center py-4 px-3 md:px-4 text-accent font-bold">{row.ir}</td>
+                        <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.uv}</td>
+                        <td className="text-center py-4 px-3 md:px-4 text-primary-foreground/70">{row.energy}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+            {warrantyNote && (
+              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/50 text-center mt-4 italic">
+                {warrantyNote}
+              </motion.p>
+            )}
           </motion.div>
-          {warrantyNote && (
-            <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/50 text-center mt-4 italic">
-              {warrantyNote}
-            </motion.p>
-          )}
-        </motion.div>
+        )}
+        {!techTable && warrantyNote && (
+          <motion.p
+            className="text-xs text-primary-foreground/50 text-center mt-4 italic max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            {warrantyNote}
+          </motion.p>
+        )}
       </div>
     </section>
   );
