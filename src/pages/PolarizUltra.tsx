@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -94,6 +95,18 @@ const PolarizUltra = () => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película INSULFILM™ Polariz Ultra?"
+          answer="A INSULFILM™ Polariz Ultra é uma película automotiva híbrida metal-cerâmica de alta performance, com visual polarizado característico e rejeição de até 75% dos raios infravermelhos."
+          context="Desenvolvida para quem deseja conforto térmico premium aliado ao acabamento estético polarizado, com 10 anos de garantia de fábrica."
+          specs={[
+            { label: 'Tecnologia', value: 'Híbrida Metal-Cerâmica' },
+            { label: 'Rejeição de IR', value: 'Até 75%' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Garantia', value: '10 anos' },
+          ]}
+        />
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">

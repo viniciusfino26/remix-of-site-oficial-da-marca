@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
 
 /* ── animation variants ── */
@@ -185,6 +186,18 @@ const SkudoUltra = () => {
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
+
+      <TLDR
+        question="O que é a película INSULFILM™ SkudoUltra?"
+        answer="A INSULFILM™ SkudoUltra é a película de segurança automotiva mais robusta da marca, com 24 mil de espessura (609,6 micras) em construção tetra laminada, oferecendo proteção extrema contra ataques, vandalismo e tentativas de invasão."
+        context="Recomendada para perfis de alto risco e veículos blindados leves, com 10 anos de garantia de fábrica."
+        specs={[
+          { label: 'Espessura', value: '24 mil (609,6 µm)' },
+          { label: 'Construção', value: 'Tetra Laminação' },
+          { label: 'Aplicação', value: 'Vidros Laterais' },
+          { label: 'Garantia', value: '10 anos' },
+        ]}
+      />
 
       {/* ═══ 2. A REALIDADE DA VIOLÊNCIA ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">

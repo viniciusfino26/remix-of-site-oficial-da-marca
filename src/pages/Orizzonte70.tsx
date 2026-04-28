@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -93,6 +94,18 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Orizzonte70?"
+          answer="A INSULFILM™ Orizzonte70 é uma película arquitetônica cerâmica premium com 68% de transparência e rejeição extrema de calor, alcançando até 93% de bloqueio dos raios infravermelhos."
+          context="Indicada para projetos corporativos e residenciais de alto padrão que exigem máxima eficiência térmica sem comprometer a luminosidade."
+          specs={[
+            { label: 'Tecnologia', value: 'Cerâmica Premium' },
+            { label: 'Transparência', value: '68% VLT' },
+            { label: 'Rejeição de IR', value: 'Até 93%' },
+            { label: 'Bloqueio UV', value: '99%' },
+          ]}
+        />
 
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">

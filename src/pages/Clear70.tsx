@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -85,6 +86,18 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Clear70?"
+          answer="A INSULFILM™ Clear70 é uma película arquitetônica de nano cerâmica transparente com 72% de transmissão de luz visível e até 81% de rejeição dos raios infravermelhos."
+          context="Ideal para fachadas, escritórios e residências que precisam manter a vista panorâmica e a luminosidade natural enquanto reduzem o calor solar."
+          specs={[
+            { label: 'Tecnologia', value: 'Nano Cerâmica' },
+            { label: 'Transparência', value: '72% VLT' },
+            { label: 'Rejeição de IR', value: 'Até 81%' },
+            { label: 'Bloqueio UV', value: '99%' },
+          ]}
+        />
 
         {/* ── TRADEMARK BLOCK ── */}
         <section className="py-12 bg-background">
