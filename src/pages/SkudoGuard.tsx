@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
 
 /* ── animation variants ── */
@@ -194,6 +195,19 @@ const SkudoGuard = () => {
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
+
+        <TLDR
+          question="O que é a película INSULFILM™ SkudoGuard?"
+          answer="A INSULFILM™ SkudoGuard é uma película de segurança automotiva com 16 mil de espessura (406,4 micras) e força de ruptura de 440 lbs/in, atuando como escudo contra armas brancas e tentativas de invasão."
+          context="Indicada para perfis de risco médio-alto que precisam de proteção robusta sem chegar à blindagem, com 10 anos de garantia."
+          specs={[
+            { label: 'Espessura', value: '16 mil (406,4 µm)' },
+            { label: 'Força de ruptura', value: '440 lbs/in' },
+            { label: 'Construção', value: 'Tri laminação' },
+            { label: 'Garantia', value: '10 anos' },
+          ]}
+        />
+
 
       {/* ═══ 2. A REALIDADE DA VIOLÊNCIA ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">

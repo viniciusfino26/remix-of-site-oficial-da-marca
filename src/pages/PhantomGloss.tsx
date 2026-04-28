@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -69,6 +70,19 @@ const PhantomGloss = () => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é o PPF INSULFILM™ Phantom Gloss?"
+          answer="O INSULFILM™ Phantom Gloss é uma película de proteção de pintura (PPF) com tecnologia auto-regenerativa que recupera microriscos com calor e protege a pintura contra impactos, insetos e contaminantes."
+          context="Acabamento brilhante premium com 10 anos de garantia, ideal para preservar a pintura original do veículo."
+          specs={[
+            { label: 'Tipo', value: 'PPF — Paint Protection Film' },
+            { label: 'Acabamento', value: 'Gloss' },
+            { label: 'Tecnologia', value: 'Auto-regenerativa' },
+            { label: 'Garantia', value: '10 anos' },
+          ]}
+        />
+
 
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -92,6 +93,19 @@ const VIP = () => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película INSULFILM™ VIP?"
+          answer="A INSULFILM™ VIP é uma película automotiva de carbono de alta performance, com rejeição de até 65% dos raios infravermelhos e estabilidade de cor garantida."
+          context="Equilibra performance térmica, estética sóbria e custo-benefício, com 5 anos de garantia de fábrica."
+          specs={[
+            { label: 'Tecnologia', value: 'Carbono Premium' },
+            { label: 'Rejeição de IR', value: 'Até 65%' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Garantia', value: '5 anos' },
+          ]}
+        />
+
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">

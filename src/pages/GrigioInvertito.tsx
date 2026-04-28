@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -84,6 +85,19 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Grigio Invertito?"
+          answer="A INSULFILM™ Grigio Invertito é uma película arquitetônica de privacidade invertida — espelhada externa e fumê interna — com rejeição de 75% dos raios infravermelhos."
+          context="Garante privacidade diurna total preservando vista externa pelo lado interno, com forte controle térmico."
+          specs={[
+            { label: 'Tecnologia', value: 'Sputtered Invertida' },
+            { label: 'Privacidade', value: 'Diurna total' },
+            { label: 'Rejeição de IR', value: '75%' },
+            { label: 'Bloqueio UV', value: '99%' },
+          ]}
+        />
+
 
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
