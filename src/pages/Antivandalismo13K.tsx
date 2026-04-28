@@ -14,6 +14,7 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
 
 /* ── animation variants ── */
@@ -202,6 +203,17 @@ const Antivandalismo13K = () => {
         ]}
       />
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="Película antivandalismo INSULFILM™ 13K aplicada em vidro automotivo com dupla laminação"
+              icon={ShieldAlert}
+              variant="light"
+            />
+          </div>
+        </section>
       {/* ═══ 2. A REALIDADE DOS ROUBOS (emocional) ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden relative">
         <div className="absolute inset-0 bg-diagonal-texture" />

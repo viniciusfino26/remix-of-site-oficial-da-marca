@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -84,6 +85,17 @@ const PhantomGloss = () => {
         />
 
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="PPF INSULFILM™ Phantom Gloss aplicado em pintura automotiva com acabamento brilhante"
+              icon={Sparkles}
+              variant="light"
+            />
+          </div>
+        </section>
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">
           <div className="container mx-auto px-4 max-w-4xl">

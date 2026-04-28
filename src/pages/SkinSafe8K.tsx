@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
+import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
 
 /* ── animation variants ── */
@@ -172,6 +173,17 @@ const SkinSafe8K = () => {
         />
 
 
+
+        {/* ═══ IMAGEM DO PRODUTO ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ProductImagePlaceholder
+              alt="Película de segurança automotiva INSULFILM™ SkinSafe 8K aplicada em vidro lateral"
+              icon={Shield}
+              variant="light"
+            />
+          </div>
+        </section>
       {/* ═══ 2. CONTEXTO EMOCIONAL ═══ */}
       <section className="py-24 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
