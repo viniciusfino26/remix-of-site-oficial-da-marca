@@ -4,6 +4,7 @@
 // Atualizar AQUI quando alterar specs nas páginas correspondentes.
 
 import { buildBreadcrumbSchema, buildFAQSchema, type BreadcrumbItem, type FAQItem } from './pdpSchemas';
+import { buildProductSchema, PDP_PRODUCTS } from './pdpProducts';
 
 export type Lang = 'pt' | 'en' | 'es';
 
@@ -846,9 +847,6 @@ const pickBreadcrumb = (items: I18nBreadcrumbItem[], lang: Lang): BreadcrumbItem
 export const getPDPSchemas = (slug: string, currentLang: Lang = 'pt') => {
   const meta = PDP_META[slug];
   if (!meta) return null;
-  // Import dinâmico evita ciclo: pdpProducts.ts importa types deste arquivo.
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { buildProductSchema, PDP_PRODUCTS } = require('./pdpProducts') as typeof import('./pdpProducts');
   const hasProduct = !!PDP_PRODUCTS[slug];
   return {
     breadcrumb: buildBreadcrumbSchema(pickBreadcrumb(meta.breadcrumb, currentLang)),
