@@ -19,10 +19,10 @@ const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, sc
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const specs = [
-  { icon: Zap, label: 'Tecnologia', value: 'Nano Ceramic IR Film' },
+  { icon: Zap, label: 'Tecnologia', value: 'Nano Cerâmica' },
   { icon: Eye, label: 'Transmissão de Luz', value: '72%' },
-  { icon: Sun, label: 'Rejeição de IR', value: '81%' },
-  { icon: Layers, label: 'Garantia', value: '5 anos' },
+  { icon: Sun, label: 'Rejeição de IR', value: 'Até 81%' },
+  { icon: Layers, label: 'Garantia', value: 'Até 5 anos' },
 ];
 
 const techTable = [
