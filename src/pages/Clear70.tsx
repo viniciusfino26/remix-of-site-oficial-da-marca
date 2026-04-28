@@ -1,12 +1,10 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Zap, Eye, Sun, Layers, CheckCircle, MessageCircle, ArrowRight, Building2 } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, MessageCircle, ArrowRight, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
@@ -20,12 +18,6 @@ const fadeInLeft = { hidden: { opacity: 0, x: -60 }, visible: { opacity: 1, x: 0
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const specs = [
-  { icon: Zap, label: 'Tecnologia', value: 'Nano Cerâmica' },
-  { icon: Eye, label: 'Transmissão de Luz', value: '72%' },
-  { icon: Sun, label: 'Rejeição de IR', value: 'Até 81%' },
-  { icon: Layers, label: 'Garantia', value: 'Até 5 anos' },
-];
 
 const techTable = [
   { version: 'Clear70', privacy: 'Baixo', light: '72%', ir: '81%', uv: '>99%', energy: '50%' },
@@ -130,27 +122,6 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        {/* ── SPECS CARDS ── */}
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-            </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}><motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                  <Card className="glass-card rounded-2xl h-full text-center"><CardContent className="p-8">
-                    <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                    <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                    <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                  </CardContent></Card>
-                </motion.div></motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* ── TECH TABLE ── */}
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
@@ -185,11 +156,6 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
           </div>
         </section>
 
-        <ParallaxBreak minHeight="25vh" stats={[
-          { value: '72%', label: 'Transmissão de Luz' },
-          { value: '81%', label: 'Rejeição IR' },
-          { value: '>99%', label: 'Bloqueio UV' },
-        ]} />
 
         {/* ── BENEFITS ── */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
