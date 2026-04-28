@@ -52,19 +52,6 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Orizzonte70",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película cerâmica premium com 93% de rejeição de IR, 68% de transmissão de luz e garantia de 10 anos. O mais alto desempenho cerâmico da linha.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Premium Nano Ceramic Infrared Film" },
-      { "@type": "PropertyValue", "name": "Transmissão de Luz", "value": "68%" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "93%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -77,9 +64,9 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('orizzonte70'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

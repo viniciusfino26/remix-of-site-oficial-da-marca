@@ -107,6 +107,7 @@ const PhantomArquitetonico = () => {
       <script type="application/ld+json">{JSON.stringify(phantomSchema)}</script>
       {(() => { const s = getPDPSchemas('phantom-arquitetonico'); return s ? (<>
         <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+        {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
         {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
       </>) : null; })()}
     </Helmet>

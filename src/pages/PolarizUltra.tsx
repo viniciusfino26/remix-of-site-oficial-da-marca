@@ -46,20 +46,6 @@ const PolarizUltra = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ Polariz Ultra",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Proteção solar com visual polarizado elegante. Híbrida metal-cerâmica com 75% de rejeição de IR e 10 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
-    "url": "https://www.insulfilm.com.br/polariz-ultra",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Híbrida Metal-Cerâmica" },
-      { "@type": "PropertyValue", "name": "Rejeição de IR", "value": "Até 75%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -71,9 +57,9 @@ const PolarizUltra = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
         <meta property="og:url" content="https://www.insulfilm.com.br/polariz-ultra" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('polariz-ultra'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

@@ -114,20 +114,6 @@ const SkudoUltra = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ SkudoUltra",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "A proteção máxima para seus vidros laterais. Película de 24 mil com tetra laminação e 10 anos de garantia.",
-    "image": `https://www.insulfilm.com.br${autoSkudoUltra}`,
-    "url": "https://www.insulfilm.com.br/skudo-ultra",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Espessura", "value": "24 mil / 609,6 micras" },
-      { "@type": "PropertyValue", "name": "Estrutura", "value": "Tetra Laminação" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -139,9 +125,9 @@ const SkudoUltra = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content={`https://www.insulfilm.com.br${autoSkudoUltra}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/skudo-ultra" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('skudo-ultra'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

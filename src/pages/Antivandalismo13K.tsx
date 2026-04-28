@@ -117,20 +117,6 @@ const Antivandalismo13K = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ Antivandalismo 13K",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Proteção contra atos de vandalismo. Estrutura multicamadas de 12 mil com dupla laminação e 5 anos de garantia.",
-    "image": `https://www.insulfilm.com.br${autoAntivandalismo13K}`,
-    "url": "https://www.insulfilm.com.br/antivandalismo13k",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Espessura", "value": "12 mil / 304,8 micras" },
-      { "@type": "PropertyValue", "name": "Estrutura", "value": "Dupla Laminação" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -142,9 +128,9 @@ const Antivandalismo13K = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content={`https://www.insulfilm.com.br${autoAntivandalismo13K}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/antivandalismo13k" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('antivandalismo13k'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

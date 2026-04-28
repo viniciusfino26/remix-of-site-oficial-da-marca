@@ -46,20 +46,6 @@ const Eclipse = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ Eclipse",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película com nano partículas de carbono verdadeiro. Filtro de 30% de IR e 5 anos de garantia contra desbotamento.",
-    "image": "LINK_DA_IMAGEM_AQUI",
-    "url": "https://www.insulfilm.com.br/eclipse",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Carbon Color Stable" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho (IR)", "value": "Até 30%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -71,9 +57,9 @@ const Eclipse = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
         <meta property="og:url" content="https://www.insulfilm.com.br/eclipse" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('eclipse'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

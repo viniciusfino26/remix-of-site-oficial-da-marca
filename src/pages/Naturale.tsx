@@ -54,19 +54,6 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Naturale",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos. Discrição que transforma.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Neutral Sputtered Film" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "Até 81%" },
-      { "@type": "PropertyValue", "name": "Versões", "value": "4 (70, 50, 35, 20)" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -79,9 +66,9 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('naturale'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

@@ -43,19 +43,6 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org", "@type": "Product",
-    "name": "INSULFILM™ Clear70",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película arquitetônica de tecnologia nano cerâmica com 72% de transparência, rejeição de IR de 81% e proteção UV >99%. Marca registrada.",
-    "url": baseCanonical,
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Nano Ceramic Infrared Film" },
-      { "@type": "PropertyValue", "name": "Transmissão de Luz", "value": "72%" },
-      { "@type": "PropertyValue", "name": "Rejeição de Infravermelho", "value": "81%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "Até 5 anos" }
-    ]
-  };
 
   return (
     <>
@@ -67,9 +54,9 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <link rel="canonical" href={baseCanonical} />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('clear70'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>

@@ -46,20 +46,6 @@ const Matrix = () => {
   const heroOpacity = useTransform(heroProgress, [0, 0.8], [1, 0]);
   const heroTextureY = useSpring(useTransform(heroProgress, [0, 1], [0, 35]), { stiffness: 60, damping: 20 });
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "INSULFILM™ Matrix",
-    "brand": { "@type": "Brand", "name": "INSULFILM™" },
-    "description": "Película premium de nano cerâmica verdadeira. Rejeição de até 75% dos raios infravermelhos e 10 anos de garantia.",
-    "image": "LINK_DA_IMAGEM_AQUI",
-    "url": "https://www.insulfilm.com.br/matrix",
-    "additionalProperty": [
-      { "@type": "PropertyValue", "name": "Tecnologia", "value": "Nano Cerâmica" },
-      { "@type": "PropertyValue", "name": "Rejeição de IR", "value": "Até 75%" },
-      { "@type": "PropertyValue", "name": "Garantia", "value": "10 anos" }
-    ]
-  };
 
   return (
     <>
@@ -71,9 +57,9 @@ const Matrix = () => {
         <meta property="og:type" content="product" />
         <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
         <meta property="og:url" content="https://www.insulfilm.com.br/matrix" />
-        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         {(() => { const s = getPDPSchemas('matrix'); return s ? (<>
           <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          {s.productsByLang.map((p, i) => (<script key={`p-${i}`} type="application/ld+json">{JSON.stringify(p)}</script>))}
           {s.faqsByLang.map((f, i) => (<script key={i} type="application/ld+json">{JSON.stringify(f)}</script>))}
         </>) : null; })()}
       </Helmet>
