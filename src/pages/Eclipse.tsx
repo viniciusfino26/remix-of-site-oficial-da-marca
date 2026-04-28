@@ -99,31 +99,17 @@ const Eclipse = () => {
         />
 
 
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Especificações Técnicas</motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
-            </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                    <Card className="glass-card rounded-2xl h-full text-center">
-                      <CardContent className="p-8">
-                        <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4"><s.icon className="w-7 h-7 text-accent" /></div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        <ParallaxBreak minHeight="25vh" stats={[{ value: '99%', label: 'Bloqueio UV' }, { value: 'Carbono', label: 'Puro' }]} />
+        <TechSpecsHighlight
+          title="Ficha Técnica Eclipse"
+          subtitle="Carbono puro. Cor estável. Os índices que justificam a escolha."
+          highlights={[
+            { value: '30%', label: 'Rejeição IR', sublabel: 'Calor bloqueado' },
+            { value: '99%', label: 'Bloqueio UV', sublabel: 'Proteção total' },
+            { value: 'Carbono', label: 'Tecnologia', sublabel: 'Color Stable' },
+            { value: '5 anos', label: 'Garantia', sublabel: 'Anti-desbotamento' },
+          ]}
+          warrantyNote="Garantia: 5 anos contra desbotamento. Consulte condições com um Centro Autorizado."
+        />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />

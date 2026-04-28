@@ -102,38 +102,18 @@ const Matrix = () => {
           ]}
         />
 
-        {/* ═══ SPECS ═══ */}
-        <section className="py-24 bg-background overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-                Especificações Técnicas
-              </motion.h2>
-              <motion.div variants={scaleIn} className="flex justify-center mt-4">
-                <div className="separator-accent" />
-              </motion.div>
-            </motion.div>
-            <motion.div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              {specs.map((s, i) => (
-                <motion.div key={i} variants={fadeInUp}>
-                  <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }}>
-                    <Card className="glass-card rounded-2xl h-full text-center">
-                      <CardContent className="p-8">
-                        <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                          <s.icon className="w-7 h-7 text-accent" />
-                        </div>
-                        <p className="text-sm text-muted-foreground font-medium mb-1">{s.label}</p>
-                        <p className="text-xl font-extrabold text-foreground">{s.value}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        <ParallaxBreak minHeight="25vh" stats={[{ value: 'Nano', label: 'Cerâmica' }, { value: 'Vitalícia', label: 'Garantia' }]} />
+        {/* ═══ TECH SPECS HIGHLIGHT ═══ */}
+        <TechSpecsHighlight
+          title="Ficha Técnica Matrix"
+          subtitle="Nano cerâmica verdadeira. Os índices que comprovam a performance Ultra Definition."
+          highlights={[
+            { value: '75%', label: 'Rejeição IR', sublabel: 'Calor bloqueado' },
+            { value: '99%', label: 'Bloqueio UV', sublabel: 'Proteção total' },
+            { value: 'Nano', label: 'Cerâmica', sublabel: 'Sem interferência de sinal' },
+            { value: '10 anos', label: 'Garantia', sublabel: 'INSULFILM™' },
+          ]}
+          warrantyNote="Garantia: até 10 anos. Consulte condições com um Centro Autorizado."
+        />
 
         {/* ═══ DESCRIÇÃO ═══ */}
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
