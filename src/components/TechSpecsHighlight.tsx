@@ -23,8 +23,8 @@ interface TechSpecsHighlightProps {
   subtitle?: string;
   /** 3 a 4 KPIs em destaque (números grandes). */
   highlights: HighlightStat[];
-  /** Linhas da tabela técnica completa. */
-  techTable: TechRow[];
+  /** Linhas da tabela técnica completa (opcional — produtos de SKU único podem omitir). */
+  techTable?: TechRow[];
   /** Texto da garantia / nota de rodapé. */
   warrantyNote?: string;
 }
