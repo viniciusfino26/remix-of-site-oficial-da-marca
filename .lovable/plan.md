@@ -1,70 +1,73 @@
-# Auditoria de Consistência Numérica — 19 PDPs (revisado)
+## Fase 2 — Status: Concluída ✅
 
-## Por que isso importa
-
-Repetir a mesma informação em TLDR, Cards técnicos e Schema.org **ajuda** SEO/GEO — desde que os valores **batam exatamente**. Quando divergem, Google rebaixa por inconsistência e LLMs (ChatGPT, Perplexity, Gemini) extraem o número errado. **Esse é o único tipo de "repetição" que prejudica.**
-
-## Regras confirmadas (não tocar)
-
-- **Phantom existe em duas linhas**: PPF Automotivo e SPF Arquitetônico, **ambos com 5 anos**.
-- **Películas arquitetônicas mantêm "Até X anos"** — não alterar.
-- **Manter unidade "micras"** — é a unidade que o brasileiro reconhece (não trocar por µm).
+Todas as correções críticas foram aplicadas:
+- PhantomGloss → 5 anos (PPF Auto)
+- PhantomArquitetonico → SPF
+- 4 PDPs Security Auto com `specs` no TLDR semântico
+- Rótulos "Rejeição de IR" + "Até X%" harmonizados
+- Nomes técnicos (Sputtered Alumínio / Sputtered Neutra / Nano Cerâmica) padronizados
+- "micras" e "Até X anos" preservados conforme regra
 
 ---
 
-## Divergências a corrigir
+## Fase 3 — FAQ Schema + BreadcrumbList nos 19 PDPs
 
-### Crítico
+### Por que essa é a próxima alavanca
 
-| PDP | Campo | Valor errado | Valor correto |
-|---|---|---|---|
-| **PhantomGloss** (auto) | TLDR — Garantia | `10 anos` | **`5 anos`** |
-| **PhantomGloss** (auto) | TLDR — Contexto | "10 anos de garantia" | **"5 anos de garantia"** |
-| **PhantomArquitetonico** | Schema/meta — Tipo | `PPF` | **`SPF — Surface Protection Film`** (é arquitetônico) |
-| **Antivandalismo13K** | falta Specs Cards | — | adicionar replicando TLDR |
-| **SkinSafe8K** | falta Specs Cards | — | adicionar replicando TLDR |
-| **SkudoGuard** | falta Specs Cards | — | adicionar replicando TLDR |
-| **SkudoUltra** | falta Specs Cards | — | adicionar replicando TLDR |
+Hoje os PDPs têm **Product Schema + TLDR** (resposta direta). Falta o que mais move ranking em 2026 para LLMs e Google AI Overviews:
 
-### Médio — harmonizar rótulos (mesmo número, nomes diferentes)
+1. **FAQPage Schema (JSON-LD)** — único schema que aparece literalmente nos resultados do Google como "rich snippet" expansível, e é a fonte preferida de ChatGPT/Perplexity/Gemini para responder perguntas técnicas.
+2. **BreadcrumbList Schema** — substitui a URL por trilha clicável no SERP ("Insulfilm › Automotivo › Solar › Matrix"), aumentando CTR em 15-20%.
 
-- **Eclipse**: TLDR diz "Filtro de IR 30%" mas Specs diz "Rejeição de IR Até 30%" → padronizar TLDR para **"Rejeição de IR"** e **"Até 30%"**.
-- **Matrix / PolarizUltra**: Schema usa `"Rejeição de Infravermelho (IR)"` e TLDR `"Rejeição de IR"` → padronizar Schema para **"Rejeição de IR"** (mesmo termo do site).
-- **Clear70**: TLDR `"Nano Cerâmica"` ↔ Specs `"Nano Ceramic IR Film"`. Padronizar Specs para **"Nano Cerâmica"** (manter nome técnico EN apenas no Schema).
-- **GrigioInvertito / ReflessoDArgento**: Specs `"Vapor-Coated Al"` → padronizar para **"Sputtered Alumínio"** (igual TLDR).
-- **Naturale**: Specs `"Bombardeamento Iônico"` → padronizar para **"Sputtered Neutra"** (igual TLDR).
+Ambos são **invisíveis ao usuário** (só JSON-LD no `<head>`), então não tocam em layout, copy ou design.
 
-### Não fazer (confirmado pelo usuário)
+### O que será feito
 
-- ~~Trocar "micras" por "µm"~~ → manter `"micras"` em TLDR e Schema.
-- ~~Remover "Até" de garantia em arquitetônicas~~ → manter `"Até 10 anos"`, `"Até 5 anos"`, `"Até 3 anos"` no Schema das 10 PDPs Solar Arq.
+**Para cada um dos 19 PDPs primários**, adicionar dois novos blocos `<script type="application/ld+json">`:
 
----
+#### 3.1 — BreadcrumbList Schema
+Trilha hierárquica baseada na URL canônica de cada PDP:
+- Automotivo → Solar/Segurança/PPF → [Produto]
+- Arquitetônico → Residencial/Comercial → Solar/Segurança/SPF/Decorativo → [Produto]
 
-## Arquivos afetados (~10 PDPs)
+#### 3.2 — FAQPage Schema
+3-5 perguntas por PDP, derivadas dos dados **já existentes** no TLDR e Specs (sem inventar conteúdo novo). Padrão por categoria:
 
-- `src/pages/PhantomGloss.tsx` (correção de garantia 10→5)
-- `src/pages/PhantomArquitetonico.tsx` (correção PPF→SPF no Schema/meta)
-- `src/pages/Antivandalismo13K.tsx` (adicionar Specs Cards)
-- `src/pages/SkinSafe8K.tsx` (adicionar Specs Cards)
-- `src/pages/SkudoGuard.tsx` (adicionar Specs Cards)
-- `src/pages/SkudoUltra.tsx` (adicionar Specs Cards)
-- `src/pages/Eclipse.tsx` (rótulo IR)
-- `src/pages/Matrix.tsx` (rótulo IR no Schema)
-- `src/pages/PolarizUltra.tsx` (rótulo IR no Schema)
-- `src/pages/Clear70.tsx` (nome técnico Specs)
-- `src/pages/GrigioInvertito.tsx` (nome técnico Specs)
-- `src/pages/ReflessoDArgento.tsx` (nome técnico Specs)
-- `src/pages/Naturale.tsx` (nome técnico Specs)
+**Solar (Auto + Arq):**
+- "Qual a rejeição de calor (IR) da [Produto]?"
+- "Quantos anos de garantia tem a [Produto]?"
+- "A [Produto] é homologada pelo Contran?" (só auto)
+- "Qual a transmissão de luz visível (VLT) da [Produto]?"
 
-## Garantias
+**Segurança Auto (4K/8K/13K):**
+- "Qual a espessura da [Produto] em micras?"
+- "A [Produto] resiste a tentativas de quebra?"
+- "Quantos anos de garantia tem a [Produto]?"
 
-- Apenas valores técnicos serão alterados — nenhum copy de Hero, descrição ou benefícios será tocado.
-- Sem mudanças de layout, roteamento ou novos componentes.
-- Após mudanças, todas as PDPs terão valores idênticos entre TLDR ↔ Specs Cards ↔ Schema.org.
+**PPF / SPF (Phantom):**
+- "Qual a espessura do PPF/SPF Phantom?"
+- "Por quanto tempo o Phantom é garantido?"
+- "O Phantom Gloss tem propriedade auto-regenerativa?"
 
-## Resultado esperado
+**Decorativo Arq (Blackout/Whiteout/Jateado):**
+- "Qual a privacidade oferecida pela [Produto]?"
+- "Por quantos anos a [Produto] é garantida?"
 
-- Google interpreta o produto como entidade única e bem-definida → melhor ranking.
-- LLMs (ChatGPT/Perplexity) extraem sempre o mesmo número independente da fonte.
-- Cliente final vê os mesmos dados no resumo, na tabela e no rich snippet.
+### Garantia de consistência
+As respostas do FAQ serão **strings idênticas** ao que já existe no TLDR/Specs/Schema Product — mantendo o "Single Source of Truth" estabelecido na Fase 2.
+
+### Arquivos afetados (19 PDPs)
+
+**Automotivo (8):** Matrix, Eclipse, PolarizUltra, PhantomGloss, Antivandalismo13K, SkinSafe8K, SkudoGuard, SkudoUltra
+**Arquitetônico Solar (10):** Clear70, Naturale, Orizzonte70, GrigioInvertito, MetallicoArgento, ReflessoDArgento, Petrolio, SpecchiatoBronzo, Ultravioletti90, PhantomArquitetonico
+
+### Não será feito
+- Nenhuma mudança em copy visível, layout, hero, CTAs ou imagens.
+- Nenhuma mudança em rotas ou componentes existentes.
+- Sem nova UI de FAQ visível (apenas Schema invisível). Se o usuário quiser FAQ visível também, é uma fase 4 separada.
+
+### Resultado esperado
+- Rich snippets expansíveis no Google (FAQ accordion no SERP).
+- Breadcrumb visível nos resultados em vez de URL crua.
+- ChatGPT/Perplexity passam a citar valores exatos diretamente do FAQ schema.
+- Zero risco visual — toda mudança é em `<head>` JSON-LD.
