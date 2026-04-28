@@ -16,6 +16,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -141,6 +142,10 @@ const Antivandalismo13K = () => {
         <meta property="og:image" content={`https://www.insulfilm.com.br${autoAntivandalismo13K}`} />
         <meta property="og:url" content="https://www.insulfilm.com.br/antivandalismo13k" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('antivandalismo13k'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
     <main>
       {/* ═══ 1. HERO + VIDEO ═══ */}

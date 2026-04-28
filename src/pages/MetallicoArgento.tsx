@@ -12,6 +12,7 @@ import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
+import { getPDPSchemas } from '@/lib/pdpFAQs';
 
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -78,6 +79,10 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        {(() => { const s = getPDPSchemas('metallico-argento'); return s ? (<>
+          <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>
+          <script type="application/ld+json">{JSON.stringify(s.faq)}</script>
+        </>) : null; })()}
       </Helmet>
       <main>
         {/* ── HERO ── */}
