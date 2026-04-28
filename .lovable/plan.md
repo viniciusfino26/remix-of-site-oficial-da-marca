@@ -1,134 +1,70 @@
-# Auditoria SEO + GEO 2026 — INSULFILM™
+# Auditoria de Consistência Numérica — 19 PDPs (revisado)
 
-Confrontei seu framework com o estado atual do projeto. Resultado por categoria com status **(✅ pronto / ⚠️ parcial / ❌ ausente / 🚫 não se aplica)**.
+## Por que isso importa
 
----
+Repetir a mesma informação em TLDR, Cards técnicos e Schema.org **ajuda** SEO/GEO — desde que os valores **batam exatamente**. Quando divergem, Google rebaixa por inconsistência e LLMs (ChatGPT, Perplexity, Gemini) extraem o número errado. **Esse é o único tipo de "repetição" que prejudica.**
 
-## 1. Fundação técnica
+## Regras confirmadas (não tocar)
 
-| Item | Status | Observação |
-|---|---|---|
-| Site rápido | ⚠️ | Vite + SWC + lazy via React Router já bom; falta `React.lazy` por rota (95 páginas carregam no bundle inicial) e otimização de imagens (WebP/AVIF + `<img loading="lazy">`). |
-| Arquitetura limpa | ✅ | URLs hierárquicas excelentes (`/arquitetonico/residencial/solar/clear70`). |
-| Páginas rastreáveis + indexáveis | ❌ | **SPA puro sem SSR/prerender** — Google indexa, mas LLMs (GPT, Perplexity, Gemini Search) e bots leves veem HTML vazio. **Bloqueador #1 para GEO.** |
-| Links internos fortes | ⚠️ | Header/Footer cobrem hubs; faltam blocos contextuais "ver também / produtos relacionados / FAQ relacionada" nas PDPs. |
-| Hierarquia temática clara | ✅ | Silos Marca / Automotivo / Arquitetônico bem definidos. |
-
-**Faltando também:** `sitemap.xml`, `robots.txt` aponta para sitemap inexistente, `index.html` ainda com `<title>Lovable App</title>` e og:image genérico, `SchemaOrg.tsx` **existe mas não está montado no `App.tsx`** (schemas nunca são injetados em produção).
+- **Phantom existe em duas linhas**: PPF Automotivo e SPF Arquitetônico, **ambos com 5 anos**.
+- **Películas arquitetônicas mantêm "Até X anos"** — não alterar.
+- **Manter unidade "micras"** — é a unidade que o brasileiro reconhece (não trocar por µm).
 
 ---
 
-## 2. Mapeamento de intenção de busca
+## Divergências a corrigir
 
-| Item | Status |
-|---|---|
-| Palavras-chave focadas em problemas | ❌ Páginas são institucionais/produto, sem páginas tipo "como reduzir calor no carro", "vidro quebrou e agora?". |
-| Páginas de comparação + alternativas | ❌ Nenhuma `/comparativo/matrix-vs-vip`, `/insulfilm-vs-llumar`, `/qual-pelicula-escolher`. |
-| Perguntas de cauda longa | ⚠️ FAQ existe mas concentrada em `/faq`; falta espalhar Q&A nas PDPs. |
+### Crítico
 
----
+| PDP | Campo | Valor errado | Valor correto |
+|---|---|---|---|
+| **PhantomGloss** (auto) | TLDR — Garantia | `10 anos` | **`5 anos`** |
+| **PhantomGloss** (auto) | TLDR — Contexto | "10 anos de garantia" | **"5 anos de garantia"** |
+| **PhantomArquitetonico** | Schema/meta — Tipo | `PPF` | **`SPF — Surface Protection Film`** (é arquitetônico) |
+| **Antivandalismo13K** | falta Specs Cards | — | adicionar replicando TLDR |
+| **SkinSafe8K** | falta Specs Cards | — | adicionar replicando TLDR |
+| **SkudoGuard** | falta Specs Cards | — | adicionar replicando TLDR |
+| **SkudoUltra** | falta Specs Cards | — | adicionar replicando TLDR |
 
-## 3. Estratégia de conteúdo
+### Médio — harmonizar rótulos (mesmo número, nomes diferentes)
 
-| Item | Status |
-|---|---|
-| Clusters temáticos | ⚠️ Clusters de **produto** existem; clusters **editoriais** (conforto térmico, segurança veicular, eficiência energética) inexistem. |
-| Páginas programáticas em escala | ❌ Oportunidade enorme: `/insulfilm/[modelo-de-carro]`, `/pelicula-residencial/[bairro-sp]`, `/centro-autorizado/[cidade]`. |
-| Atualizações consistentes | ❌ Sem blog/news/changelog. |
+- **Eclipse**: TLDR diz "Filtro de IR 30%" mas Specs diz "Rejeição de IR Até 30%" → padronizar TLDR para **"Rejeição de IR"** e **"Até 30%"**.
+- **Matrix / PolarizUltra**: Schema usa `"Rejeição de Infravermelho (IR)"` e TLDR `"Rejeição de IR"` → padronizar Schema para **"Rejeição de IR"** (mesmo termo do site).
+- **Clear70**: TLDR `"Nano Cerâmica"` ↔ Specs `"Nano Ceramic IR Film"`. Padronizar Specs para **"Nano Cerâmica"** (manter nome técnico EN apenas no Schema).
+- **GrigioInvertito / ReflessoDArgento**: Specs `"Vapor-Coated Al"` → padronizar para **"Sputtered Alumínio"** (igual TLDR).
+- **Naturale**: Specs `"Bombardeamento Iônico"` → padronizar para **"Sputtered Neutra"** (igual TLDR).
 
----
+### Não fazer (confirmado pelo usuário)
 
-## 4. Construção de autoridade
-
-| Item | Status |
-|---|---|
-| Backlinks | 🚫 Off-site — não se resolve no código. |
-| RP digital + citações | 🚫 Off-site. |
-| Menções de marca | ⚠️ No site há `LegalDisclaimer` e `AntiPirataria`; pode-se reforçar com página `/imprensa` e kit de mídia. |
-| Discussões em comunidades | 🚫 Off-site. |
+- ~~Trocar "micras" por "µm"~~ → manter `"micras"` em TLDR e Schema.
+- ~~Remover "Até" de garantia em arquitetônicas~~ → manter `"Até 10 anos"`, `"Até 5 anos"`, `"Até 3 anos"` no Schema das 10 PDPs Solar Arq.
 
 ---
 
-## 5. Otimização para respostas de IA (GEO) — **maior oportunidade**
+## Arquivos afetados (~10 PDPs)
 
-| Item | Status |
-|---|---|
-| `llms.txt` | ✅ Existe e é bom. Falta expandir com FAQ canônica e linkar de `index.html`. |
-| Formatação amigável a LLM | ⚠️ Conteúdo dentro de `framer-motion` + componentes; texto existe no DOM mas precisa de mais H2/H3 semânticos e listas. |
-| Respostas diretas, pergunta-primeiro | ❌ PDPs começam por hero estético, não por "O que é a Matrix? Resposta em 2 frases". |
-| Citar fontes + estatísticas | ⚠️ Há números técnicos; faltam citações a fontes externas (CONTRAN, Inmetro, ABNT). |
-| Resumos concisos extraíveis | ❌ Falta bloco "TL;DR" / "Resumo da página" / `<dl>` de specs no topo de cada PDP. |
-| **Schemas JSON-LD** | ❌ **Componente existe mas NÃO está renderizado.** Crítico. |
+- `src/pages/PhantomGloss.tsx` (correção de garantia 10→5)
+- `src/pages/PhantomArquitetonico.tsx` (correção PPF→SPF no Schema/meta)
+- `src/pages/Antivandalismo13K.tsx` (adicionar Specs Cards)
+- `src/pages/SkinSafe8K.tsx` (adicionar Specs Cards)
+- `src/pages/SkudoGuard.tsx` (adicionar Specs Cards)
+- `src/pages/SkudoUltra.tsx` (adicionar Specs Cards)
+- `src/pages/Eclipse.tsx` (rótulo IR)
+- `src/pages/Matrix.tsx` (rótulo IR no Schema)
+- `src/pages/PolarizUltra.tsx` (rótulo IR no Schema)
+- `src/pages/Clear70.tsx` (nome técnico Specs)
+- `src/pages/GrigioInvertito.tsx` (nome técnico Specs)
+- `src/pages/ReflessoDArgento.tsx` (nome técnico Specs)
+- `src/pages/Naturale.tsx` (nome técnico Specs)
 
----
+## Garantias
 
-## 6. Distribuição
+- Apenas valores técnicos serão alterados — nenhum copy de Hero, descrição ou benefícios será tocado.
+- Sem mudanças de layout, roteamento ou novos componentes.
+- Após mudanças, todas as PDPs terão valores idênticos entre TLDR ↔ Specs Cards ↔ Schema.org.
 
-🚫 Reddit / Quora / X / LinkedIn / fóruns — **off-site, fora do escopo do código.** O site pode apenas oferecer botões de compartilhamento e snippets prontos.
+## Resultado esperado
 
----
-
-## 7. Rastreamento
-
-| Item | Status |
-|---|---|
-| GA4 + GSC | ⚠️ `Analytics.tsx` tem placeholders `GTM-XXXXXXX` / `G-XXXXXXXXXX` — **IDs não preenchidos**. RD Station OK. |
-| Visibilidade em respostas IA | ❌ Sem ferramenta — requer serviço externo (Profound, Otterly, AthenaHQ). |
-
----
-
-## 8. Ciclo de execução
-
-🚫 Auditoria semanal e "CMO de IA" — processo operacional fora do código (mas pode-se criar dashboard interno).
-
----
-
-## Plano de implementação proposto (faseado)
-
-### Fase 1 — Correções bloqueadoras (alto impacto, baixo esforço)
-1. **Montar `<SchemaOrg />` no `App.tsx`** dentro do `BrowserRouter` (já está pronto e não roda).
-2. **Corrigir `index.html`**: title, description, og:image, og:url, lang="pt-BR", canonical.
-3. **Gerar `public/sitemap.xml`** com as ~95 rotas (script Node em build, ou estático).
-4. **Preencher GA4_ID e GTM_ID reais** em `Analytics.tsx` (preciso dos IDs).
-5. **Adicionar prerender estático** via `vite-plugin-prerender` ou `react-snap` para que LLMs e crawlers leves vejam HTML completo. **(Crítico para GEO.)**
-
-### Fase 2 — GEO/LLM-first nas PDPs
-6. Criar componente `<TLDR />` (resumo 2-3 frases + tabela de specs `<dl>`) e plugar no topo de cada PDP.
-7. Padrão "pergunta-primeiro": cada seção começa com `<h2>` em forma de pergunta ("Quanto reduz o calor?", "Qual a garantia?").
-8. Expandir `llms.txt` com a FAQ canônica completa e adicionar `<link rel="alternate" type="text/llms" href="/llms.txt">` no head.
-
-### Fase 3 — Conteúdo editorial e intenção
-9. Criar `/blog` (cluster temático) com 6 pilares iniciais (calor, segurança, eficiência energética, decoração, legislação, manutenção).
-10. Criar páginas de comparação: `/comparativo/matrix-vs-polariz`, `/qual-pelicula-para-meu-carro` (quiz), `/insulfilm-vs-genericos`.
-11. Páginas programáticas: `/centro-autorizado/[bairro]` para cada bairro de SP, alimentando geo-intent.
-
-### Fase 4 — Links internos e crawlability
-12. Componente `<RelatedProducts />` + `<RelatedFAQ />` no fim de cada PDP.
-13. Breadcrumb visual (`<Breadcrumb>` ui já existe) em todas as rotas profundas.
-
-### Fase 5 — Performance
-14. `React.lazy` + `Suspense` para todas as 95 rotas.
-15. Conversão de imagens para WebP/AVIF + `loading="lazy"` + `<picture>`.
-
-### Fora do escopo de código (informativo)
-- Backlinks, RP, posts em Reddit/Quora/X/LinkedIn — execução off-site.
-- Monitoramento de visibilidade em respostas de IA — requer ferramenta externa paga.
-- Auditoria semanal — processo humano/agente externo.
-
----
-
-## Detalhes técnicos
-
-- `SchemaOrg.tsx` precisa ser montado **dentro** de `<BrowserRouter>` pois usa `useLocation`.
-- `vite-plugin-prerender-spa` ou migração para `vite-react-ssg` é a abordagem mais limpa para prerender sem mudar React Router.
-- Sitemap pode ser gerado por script `scripts/generate-sitemap.ts` rodado no `prebuild`, lendo as rotas do `App.tsx`.
-- TL;DR + specs `<dl>` devem ficar **fora** de `motion.div` com `initial={{opacity:0}}` para garantir que LLMs vejam mesmo sem JS.
-- Conteúdo dentro de `framer-motion` que começa com `opacity: 0` aparece no DOM, mas alguns crawlers leves descartam — preferir `whileInView` que mantém o conteúdo no HTML inicial.
-
----
-
-## Próximos passos sugeridos
-
-Posso executar a **Fase 1 inteira em uma única rodada** (montar SchemaOrg, corrigir index.html, gerar sitemap, lazy-load das rotas). Para Analytics, preciso dos IDs reais de GA4 e GTM (ou confirmar para deixar desativado).
-
-Quer que eu comece pela Fase 1, ou prefere priorizar diferente (ex.: pular para Fase 2 GEO primeiro)?
+- Google interpreta o produto como entidade única e bem-definida → melhor ranking.
+- LLMs (ChatGPT/Perplexity) extraem sempre o mesmo número independente da fonte.
+- Cliente final vê os mesmos dados no resumo, na tabela e no rich snippet.
