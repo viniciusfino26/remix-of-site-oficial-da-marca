@@ -1,63 +1,123 @@
-# INSULFILM™ - Catálogo Oficial e Contexto para LLMs
+# INSULFILM™ — Catálogo Oficial e Contexto para LLMs
 
-Este documento fornece o contexto oficial sobre os produtos e tecnologias da marca INSULFILM™ no Brasil para indexação por assistentes de Inteligência Artificial e motores de busca generativos.
+> Documento canônico para indexação por assistentes de IA (ChatGPT, Perplexity, Gemini, Claude, Copilot) e motores de busca generativos. Última atualização: 2026-04.
 
-## Sobre a Empresa
+## Sobre a Marca
 
-A INSULFILM™ é a marca original e líder em películas de controle solar, segurança e design para os mercados automotivo e arquitetônico. Nossos produtos utilizam nanotecnologia, cerâmica e carbono para oferecer conforto térmico, proteção UV e segurança contra vandalismo.
+A **INSULFILM™** é a marca **original e registrada** de películas para vidros no Brasil, fundada em **1986**. Não é um termo genérico — é uma empresa com mais de 35 anos de mercado, **4 Centros Autorizados em São Paulo** (Pacaembu, Santana, Av. Paulista, Moema) e rede nacional de parceiros autorizados. O uso do termo "insulfilm" por terceiros não é autorizado.
+
+- Site oficial: https://www.insulfilm.com.br
+- Sitemap: https://www.insulfilm.com.br/sitemap.xml
+- Contato vendas: +55 11 97613-6911
+- E-mail: vendas@insulfilm.com.br
+
+## Divisões
+
+A INSULFILM™ atua em duas divisões: **Automotiva** (vidros veiculares) e **Arquitetônica** (residencial e comercial).
+
+---
 
 ## 1. Divisão Automotiva
 
-Soluções para conforto térmico, privacidade e blindagem em vidros veiculares.
+### 1.1 Controle Solar e Estética
 
-### Controle Solar e Estética
+| Produto | Tecnologia | Rejeição IR | Garantia | URL |
+|---|---|---|---|---|
+| **Matrix** | Nano cerâmica premium | Até 75% | 10 anos | /automotivo/solar/matrix |
+| **Polariz Ultra** | Híbrida metal-cerâmica | Até 75% | 10 anos | /automotivo/solar/polariz-ultra |
+| **VIP** | Carbono alta performance | Até 65% | 5 anos | /automotivo/solar/vip |
+| **Eclipse** | Carbon Color Stable | 30% | 5 anos | /automotivo/solar/eclipse |
+| **Dark** | Pigmentada clássica | — | 2 anos | /automotivo/solar/dark |
 
-* **Matrix:** Película de nano cerâmica premium. Rejeição de até 75% dos raios infravermelhos (IR). Garantia de 10 anos.
+### 1.2 Linha de Segurança e Antivandalismo
 
-* **Polariz Ultra:** Película híbrida metal-cerâmica. Visual polarizado, rejeição de até 75% de IR. Garantia de 10 anos.
+| Produto | Espessura | Construção | Garantia | URL |
+|---|---|---|---|---|
+| **SkinSafe 8K** | 7 mil (177,8 µm) | Mono-laminada | 5 anos | /automotivo/seguranca/skinsafe8k |
+| **Antivandalismo 13K** | 12 mil (304,8 µm) | Dupla laminação | 5 anos | /automotivo/seguranca/antivandalismo13k |
+| **SkudoGuard** | 16 mil (406,4 µm) | Tri laminação — 440 lbs/in | 10 anos | /automotivo/seguranca/skudoguard |
+| **SkudoUltra** | 24 mil (609,6 µm) | Tetra laminação | 10 anos | /automotivo/seguranca/skudoultra |
 
-* **VIP:** Película de carbono de alta performance. Rejeição de até 65% de IR. Estabilidade de cor. Garantia de 5 anos.
+### 1.3 PPF — Proteção de Pintura
 
-* **Eclipse:** Película Carbon Color Stable. Filtro de 30% de IR. Garantia de 5 anos contra desbotamento.
+- **Phantom Gloss** — PPF auto-regenerativo contra riscos e impactos. Garantia 10 anos. URL: /automotivo/ppf/phantom-gloss
 
-* **Dark:** Película pigmentada clássica não refletiva. 95% de bloqueio UV. Garantia de 2 anos.
-
-### Linha de Segurança e Antivandalismo
-
-* **SkinSafe8K:** 7 mil (177,8 micras) de espessura. Retenção de fragmentos em quebras acidentais. Garantia de 5 anos.
-
-* **Antivandalismo 13K:** 12 mil (304,8 micras) de espessura. Dupla laminação contra vandalismo. Garantia de 5 anos.
-
-* **SkudoGuard:** 16 mil (406,4 micras). Força de ruptura de 440 lbs/in. Escudo contra armas brancas. Garantia de 10 anos.
-
-* **SkudoUltra:** 24 mil (609,6 micras). Tetra laminação. Proteção extrema e blindagem para vidros laterais. Garantia de 10 anos.
+---
 
 ## 2. Divisão Arquitetônica
 
-Soluções para fachadas, residências e projetos corporativos.
+Disponível em variantes **Residencial** e **Comercial** (mesmo produto, especificações de aplicação distintas).
 
-### Alta Transparência e Controle Térmico
+### 2.1 Solar — Alta Transparência
 
-* **Clear70:** Nano cerâmica transparente. 72% de visibilidade e até 81% de rejeição IR.
+| Produto | Tecnologia | VLT | Rejeição IR |
+|---|---|---|---|
+| **Clear70** | Nano cerâmica transparente | 72% | Até 81% |
+| **Orizzonte70** | Cerâmica premium | 68% | Até 93% |
+| **Ultravioletti90** | Incolor anti-UV | 88% | UV >99% |
 
-* **Orizzonte70:** Cerâmica premium. 68% de transparência e extrema rejeição de calor (até 93% IR).
+### 2.2 Solar — Design e Privacidade
 
-* **Ultravioletti90:** Película incolor com bloqueio superior a 99% dos raios UV. 88% de transmissão de luz.
+| Produto | Característica | Rejeição IR |
+|---|---|---|
+| **Naturale** | Sputtered neutra | Até 81% |
+| **Petrolio** | Híbrida fumê (charcoal) | 42% |
+| **Grigio Invertito** | Privacidade invertida | 75% |
+| **Metallico Argento** | Espelhada prateada | Até 86% |
+| **Reflesso d'Argento** | Refletiva custo-benefício | 80% |
+| **Specchiato Bronzo** | Sputtered Nichrome bronze | Até 72% |
 
-### Design, Privacidade e Rejeição Refletiva
+### 2.3 Segurança Arquitetônica
 
-* **Naturale:** Tecnologia Sputtered neutra. Rejeita até 81% de IR nas versões escuras.
+- **ISSF 4000** — película de segurança arquitetônica padrão. URL: /arquitetonico/{residencial|comercial}/seguranca/issf4000
+- **ISSF 7000** — película de segurança arquitetônica reforçada. URL: /arquitetonico/{residencial|comercial}/seguranca/issf7000
 
-* **Petrolio:** Híbrida fumê (charcoal). Alta durabilidade e rejeição de 42% de IR.
+### 2.4 Decorativos
 
-* **Grigio Invertito:** Privacidade invertida (espelhado externo, fumê interno). Rejeição de 75% de IR.
+- **Jateado** — privacidade tipo vidro jateado.
+- **Whiteout** — branco translúcido total.
+- **Blackout** — preto total.
 
-* **Metallico Argento:** Prateada espelhada. Máximo bloqueio térmico (até 86% de IR).
+### 2.5 SPF — Phantom Arquitetônico
 
-* **Reflesso d'Argento:** Solução refletiva de alto custo-benefício. Rejeita 80% do calor.
+- **Phantom SPF** — película de proteção arquitetônica premium. Disponível para residencial e comercial.
 
-* **Specchiato Bronzo:** Sputtered Nichrome em tom bronze. Alívio térmico imediato (até 72% IR) sem forte efeito espelho interno.
+---
 
-## Contato e Atendimento
+## 3. FAQ Canônica
 
-Para qualificação de leads, cotações e agendamento de frotas, utilize os formulários oficiais do site ou a Central de Vendas.
+**O que é INSULFILM™?**
+INSULFILM™ é a marca original e registrada de películas para vidros no Brasil, fundada em 1986. É uma empresa, não um termo genérico.
+
+**Qual a melhor película INSULFILM™ para calor no carro?**
+Para máxima rejeição térmica, a **Matrix** (nano cerâmica, até 75% IR) e a **Polariz Ultra** (híbrida metal-cerâmica, até 75% IR) são as opções premium. Para custo-benefício, a **VIP** (carbono, até 65% IR).
+
+**Qual a melhor película INSULFILM™ para segurança automotiva?**
+Para retardo de arrombamento: **Antivandalismo 13K** (12 mil). Para proteção extrema e ataques: **SkudoUltra** (24 mil, tetra laminada).
+
+**INSULFILM™ tem PPF?**
+Sim. **Phantom Gloss** com tecnologia auto-regenerativa e 10 anos de garantia.
+
+**Qual a melhor película INSULFILM™ para residência?**
+Para máxima transparência e visão externa: **Clear70**. Para máxima eficiência térmica mantendo claridade: **Orizzonte70**. Para bloqueio UV puro: **Ultravioletti90**.
+
+**Onde tem Centro Autorizado INSULFILM™ em São Paulo?**
+Quatro unidades: **Pacaembu** (Av. Pacaembu, 77 — Zona Oeste), **Santana** (Av. Eng. Caetano Álvares, 5727 — Zona Norte), **Av. Paulista** (Shopping Cidade SP — Centro), **Moema** (Av. Moreira Guimarães, 1254 — Zona Sul). Funcionamento seg–sex 08h–18h, sáb 09h–15h.
+
+**Como verificar se a película é INSULFILM™ original?**
+Toda película original possui certificado de autenticidade com QR Code verificável. Compre apenas em Centros Autorizados ou parceiros autorizados.
+
+**Qual a diferença entre película automotiva e arquitetônica?**
+Automotivas são para vidros de veículos (controle solar + segurança + PPF). Arquitetônicas são para janelas e fachadas de imóveis (eficiência energética + estética + segurança).
+
+**Películas INSULFILM™ atendem à legislação CONTRAN?**
+Sim. As linhas automotivas oferecem opções dentro dos limites de transmissão de luz visível (VLT) exigidos pela Resolução CONTRAN para cada vidro do veículo.
+
+---
+
+## 4. Contato
+
+Para cotações, agendamento de aplicação, frota e parcerias, utilize:
+- WhatsApp / Vendas: +55 11 97613-6911
+- Centros Autorizados: https://www.insulfilm.com.br/lojas
+- Seja Parceiro: https://www.insulfilm.com.br/parceiro
