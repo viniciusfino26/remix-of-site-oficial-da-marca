@@ -16,6 +16,7 @@ import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -776,6 +777,7 @@ const SkudoUltra = () => {
           </motion.div>
         </div>
       </section>
+      <PDPFaqSection slug="skudo-ultra" />
     </main>
     </>
   );

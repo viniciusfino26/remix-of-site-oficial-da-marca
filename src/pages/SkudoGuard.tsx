@@ -15,6 +15,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -837,6 +838,7 @@ const SkudoGuard = () => {
           </motion.div>
         </div>
       </section>
+      <PDPFaqSection slug="skudoguard" />
     </main>
     </>
   );

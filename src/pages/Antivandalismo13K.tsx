@@ -17,6 +17,7 @@ import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
+import PDPFaqSection from '@/components/PDPFaqSection';
 
 /* ── animation variants ── */
 const fadeInUp = {
@@ -787,6 +788,7 @@ const Antivandalismo13K = () => {
           </motion.div>
         </div>
       </section>
+      <PDPFaqSection slug="antivandalismo13k" />
     </main>
     </>
   );
