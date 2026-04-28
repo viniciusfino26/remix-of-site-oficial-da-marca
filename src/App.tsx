@@ -363,8 +363,9 @@ const App = () => (
         <PageNavigation />
         <CookieBanner />
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
