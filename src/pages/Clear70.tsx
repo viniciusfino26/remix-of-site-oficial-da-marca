@@ -1,12 +1,10 @@
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Zap, Eye, Sun, Layers, CheckCircle, MessageCircle, ArrowRight, Building2 } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { CheckCircle, MessageCircle, ArrowRight, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
