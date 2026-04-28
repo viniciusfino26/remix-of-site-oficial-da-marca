@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -95,6 +96,19 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Naturale?"
+          answer="A INSULFILM™ Naturale é uma película arquitetônica com tecnologia Sputtered de tonalidade neutra, oferecendo até 81% de rejeição dos raios infravermelhos nas versões mais escuras."
+          context="Solução estética neutra para fachadas que combina conforto térmico com aparência sóbria e elegante."
+          specs={[
+            { label: 'Tecnologia', value: 'Sputtered Neutra' },
+            { label: 'Rejeição de IR', value: 'Até 81%' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Estética', value: 'Neutra' },
+          ]}
+        />
+
 
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">

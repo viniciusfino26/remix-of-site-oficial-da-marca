@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -87,6 +88,19 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Specchiato Bronzo?"
+          answer="A INSULFILM™ Specchiato Bronzo é uma película arquitetônica Sputtered Nichrome em tom bronze, com até 72% de rejeição dos raios infravermelhos e baixo efeito espelho interno."
+          context="Combina alívio térmico imediato com estética quente em tom bronze, sem comprometer a vista externa pelo lado interno."
+          specs={[
+            { label: 'Tecnologia', value: 'Sputtered Nichrome' },
+            { label: 'Tonalidade', value: 'Bronze' },
+            { label: 'Rejeição de IR', value: 'Até 72%' },
+            { label: 'Bloqueio UV', value: '99%' },
+          ]}
+        />
+
 
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -83,6 +84,19 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Reflesso d'Argento?"
+          answer="A INSULFILM™ Reflesso d'Argento é uma película arquitetônica refletiva de excelente custo-benefício, com 80% de rejeição do calor solar."
+          context="Opção econômica para grandes áreas envidraçadas que precisam de alívio térmico imediato."
+          specs={[
+            { label: 'Tecnologia', value: 'Refletiva' },
+            { label: 'Rejeição de calor', value: '80%' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Custo-benefício', value: 'Alto' },
+          ]}
+        />
+
 
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">

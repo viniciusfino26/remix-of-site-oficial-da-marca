@@ -13,6 +13,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
 
 /* ── animation variants ── */
@@ -157,6 +158,19 @@ const SkinSafe8K = () => {
         </motion.div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
+
+        <TLDR
+          question="O que é a película INSULFILM™ SkinSafe 8K?"
+          answer="A INSULFILM™ SkinSafe 8K é uma película de segurança automotiva com 7 mil de espessura (177,8 micras) que retém fragmentos de vidro em quebras acidentais."
+          context="Camada de segurança essencial para proteção dos ocupantes em colisões e impactos, com 5 anos de garantia de fábrica."
+          specs={[
+            { label: 'Espessura', value: '7 mil (177,8 µm)' },
+            { label: 'Função', value: 'Retenção de fragmentos' },
+            { label: 'Bloqueio UV', value: '99%' },
+            { label: 'Garantia', value: '5 anos' },
+          ]}
+        />
+
 
       {/* ═══ 2. CONTEXTO EMOCIONAL ═══ */}
       <section className="py-24 bg-background overflow-hidden">

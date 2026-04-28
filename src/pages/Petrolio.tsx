@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -85,6 +86,19 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Petrolio?"
+          answer="A INSULFILM™ Petrolio é uma película arquitetônica híbrida fumê (charcoal) de alta durabilidade, com 42% de rejeição dos raios infravermelhos."
+          context="Indicada para projetos que pedem privacidade e estética escura sem efeito espelho excessivo."
+          specs={[
+            { label: 'Tecnologia', value: 'Híbrida Fumê' },
+            { label: 'Tonalidade', value: 'Charcoal' },
+            { label: 'Rejeição de IR', value: '42%' },
+            { label: 'Bloqueio UV', value: '99%' },
+          ]}
+        />
+
 
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">

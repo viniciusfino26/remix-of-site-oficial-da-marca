@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -93,6 +94,19 @@ const Dark = () => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película INSULFILM™ Dark?"
+          answer="A INSULFILM™ Dark é a película automotiva pigmentada clássica não refletiva, com 95% de bloqueio dos raios UV."
+          context="Solução de entrada com excelente custo-benefício para escurecimento e privacidade, com 2 anos de garantia de fábrica."
+          specs={[
+            { label: 'Tecnologia', value: 'Pigmentada Clássica' },
+            { label: 'Acabamento', value: 'Não refletivo' },
+            { label: 'Bloqueio UV', value: '95%' },
+            { label: 'Garantia', value: '2 anos' },
+          ]}
+        />
+
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">

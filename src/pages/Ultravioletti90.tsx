@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import ParallaxBreak from '@/components/ParallaxBreak';
+import TLDR from '@/components/TLDR';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 
@@ -85,6 +86,19 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
           </motion.div>
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
+
+        <TLDR
+          question="O que é a película arquitetônica INSULFILM™ Ultravioletti90?"
+          answer="A INSULFILM™ Ultravioletti90 é uma película arquitetônica incolor com 88% de transmissão de luz e bloqueio superior a 99% dos raios ultravioleta."
+          context="Ideal para vitrines, museus e ambientes que precisam preservar móveis, obras e tecidos sem alterar a aparência do vidro."
+          specs={[
+            { label: 'Tecnologia', value: 'Anti-UV Incolor' },
+            { label: 'Transparência', value: '88% VLT' },
+            { label: 'Bloqueio UV', value: '>99%' },
+            { label: 'Aparência', value: 'Praticamente invisível' },
+          ]}
+        />
+
 
         {/* ── TRADEMARK ── */}
         <section className="py-10 bg-background border-b border-border/30">
