@@ -4,10 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import RDStationTracking from "./components/RDStationTracking";
+import SchemaOrg from "./components/SchemaOrg";
+import AnalyticsProvider from "./components/Analytics";
 
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingCTA from "./components/FloatingCTA";
@@ -159,14 +162,17 @@ import "./i18n";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <RDStationTracking />
-        <Header />
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <SchemaOrg />
+          <AnalyticsProvider />
+          <RDStationTracking />
+          <Header />
         <Routes>
           <Route path="/" element={<Index />} />
 
