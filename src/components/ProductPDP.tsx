@@ -22,7 +22,6 @@ import {
   Building2,
   Home,
   MessageCircle,
-  MapPin,
   Download,
   Sparkles,
 } from 'lucide-react';
@@ -427,15 +426,6 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
                 variants={scaleIn}
                 className="flex flex-col sm:flex-row gap-3"
               >
-                <Button
-                  asChild
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-xl"
-                >
-                  <Link to="/pt/lojas-oficiais">
-                    <MapPin className="w-4 h-4" />
-                    Encontrar loja oficial
-                  </Link>
-                </Button>
                 <Button asChild variant="outline" className="font-bold rounded-xl">
                   <Link to="/contato">
                     <MessageCircle className="w-4 h-4" />
@@ -665,25 +655,15 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
 
               <motion.div
                 variants={scaleIn}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex justify-center"
               >
                 <Button
                   asChild
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-extrabold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all"
                 >
-                  <Link to="/pt/lojas-oficiais">
-                    <MapPin className="w-5 h-5" />
-                    Para minha casa — encontrar loja
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="font-bold text-lg px-10 py-6 rounded-xl border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  <Link to="/contato?tipo=b2b">
+                  <Link to="/contato">
                     <MessageCircle className="w-5 h-5" />
-                    Para meu projeto — falar com consultor
+                    Falar com especialista
                   </Link>
                 </Button>
               </motion.div>
