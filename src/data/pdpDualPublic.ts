@@ -17,7 +17,7 @@
 // ─────────────────────────────────────────────
 export const dualPublicAggregates = {
   appliedSquareMeters: '+3 milhões m²',
-  yearsInMarket: 'Em projetos arquitetônicos desde 1988',
+  yearsInMarket: 'Em projetos arquitetônicos desde 2018',
   bestSellerNote: 'Linha mais vendida do portfólio INSULFILM™ arquitetônico nos últimos 4 anos',
 } as const;
 
