@@ -24,7 +24,7 @@ const StripTrack = ({ direction }: { direction: 'left' | 'right' }) => (
             : ''
         }
         aria-hidden={copyIndex === 1}
-        className="h-24 w-auto max-w-none select-none object-contain md:h-36 lg:h-44"
+        className="h-40 w-auto max-w-none select-none object-contain md:h-56 lg:h-72"
         loading={copyIndex === 0 ? 'eager' : 'lazy'}
         decoding="async"
         draggable={false}
