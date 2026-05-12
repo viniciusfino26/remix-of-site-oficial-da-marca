@@ -162,7 +162,7 @@ const Index = () => {
         description="Curta o seu caminho. Vidros muito mais seguros para você chegar lá."
         buttonText="Conheça"
         buttonIcon={Shield}
-        link="/antivandalismo13k"
+        link="/automotivo/seguranca"
         alignment="left"
         imageSrc={homeSeguranca}
         cardVariant="orange"
