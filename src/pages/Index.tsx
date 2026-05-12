@@ -173,7 +173,7 @@ const Index = () => {
         description="Conforto e controle solar. Economia inteligente todos os dias, durante anos."
         buttonText="Explore"
         buttonIcon={Building2}
-        link="/residencial"
+        link="/arquitetonico"
         alignment="right"
         imageSrc={homeComercial}
         cardVariant="blue"
