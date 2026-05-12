@@ -24,7 +24,7 @@ const StripTrack = ({ direction }: { direction: 'left' | 'right' }) => (
             : ''
         }
         aria-hidden={copyIndex === 1}
-        className="h-16 w-auto max-w-none select-none object-contain md:h-24 lg:h-28"
+        className="h-24 w-auto max-w-none select-none object-contain md:h-36 lg:h-44"
         loading={copyIndex === 0 ? 'eager' : 'lazy'}
         decoding="async"
         draggable={false}
@@ -57,9 +57,8 @@ const ArchitecturalLogoCarousel = ({
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-card via-card/90 to-transparent md:w-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-card via-card/90 to-transparent md:w-20" />
 
-          <div className="space-y-4 md:space-y-6">
+          <div>
             <StripTrack direction="left" />
-            <StripTrack direction="right" />
           </div>
         </div>
       </div>
