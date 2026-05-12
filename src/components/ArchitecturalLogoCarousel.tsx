@@ -57,9 +57,8 @@ const ArchitecturalLogoCarousel = ({
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-card via-card/90 to-transparent md:w-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-card via-card/90 to-transparent md:w-20" />
 
-          <div className="space-y-4 md:space-y-6">
+          <div>
             <StripTrack direction="left" />
-            <StripTrack direction="right" />
           </div>
         </div>
       </div>
