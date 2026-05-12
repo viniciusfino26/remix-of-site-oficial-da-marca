@@ -342,7 +342,7 @@ const AutomotivoHubSeguranca = () => {
                   <Swords className="w-3.5 h-3.5" /> Defesa Superior
                 </div>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™SkudoGuard</p>
-                <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">MAIS ANTIVANDALISMO. SEGURANÇA FORTE E EFETIVA.</h3>
+                <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">MAIS QUE ANTIVANDALISMO. SEGURANÇA FORTE E EFETIVA.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Película de segurança com resistência superior à tentativa de roubo.
                 </p>
