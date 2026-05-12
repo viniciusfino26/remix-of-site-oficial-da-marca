@@ -151,7 +151,7 @@ const Index = () => {
         description="Menos calor, mais conforto. Controle a claridade."
         buttonText="Veja"
         buttonIcon={Car}
-        link="/automotivo"
+        link="/automotivo/solar"
         alignment="right"
         imageSrc={homeSolar}
         cardVariant="blue"
@@ -162,7 +162,7 @@ const Index = () => {
         description="Curta o seu caminho. Vidros muito mais seguros para você chegar lá."
         buttonText="Conheça"
         buttonIcon={Shield}
-        link="/antivandalismo13k"
+        link="/automotivo/seguranca"
         alignment="left"
         imageSrc={homeSeguranca}
         cardVariant="orange"
@@ -173,7 +173,7 @@ const Index = () => {
         description="Conforto e controle solar. Economia inteligente todos os dias, durante anos."
         buttonText="Explore"
         buttonIcon={Building2}
-        link="/residencial"
+        link="/arquitetonico"
         alignment="right"
         imageSrc={homeComercial}
         cardVariant="blue"
@@ -184,7 +184,7 @@ const Index = () => {
         description="Cobertura invisível, seu carro sempre novo e valorizado."
         buttonText="Conheça"
         buttonIcon={Shield}
-        link="/ppf"
+        link="/automotivo/ppf"
         alignment="left"
         imageSrc={homePpf}
         cardVariant="gray"
