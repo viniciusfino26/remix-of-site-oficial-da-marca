@@ -59,7 +59,7 @@ const LogoTrack = ({
               draggable={false}
             />
           </div>
-        ))}
+        );})}
       </div>
     ))}
   </div>
