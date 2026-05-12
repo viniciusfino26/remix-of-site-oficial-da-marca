@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import logosStrip from '@/assets/architectural-logos-strip.png';
 
 type ArchitecturalLogoCarouselProps = {
   className?: string;
@@ -6,61 +7,28 @@ type ArchitecturalLogoCarouselProps = {
   description?: string;
 };
 
-type LogoItem = {
-  src: string;
-  alt: string;
-};
-
-const logoModules = import.meta.glob('@/assets/architectural-logos/*.png', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-const logoEntries = Object.entries(logoModules).sort(([pathA], [pathB]) => pathA.localeCompare(pathB));
-
-const logoItems: LogoItem[] = logoEntries.map(([path, src], index) => ({
-  src,
-  alt: `Logo institucional ${index + 1} aplicado em projetos arquitetônicos com soluções INSULFILM™.`,
-}));
-
-const topRowLogos = logoItems.filter((_, index) => index % 2 === 0);
-const bottomRowLogos = logoItems.filter((_, index) => index % 2 === 1);
-const marqueeCopies = [0, 1] as const;
-
-const LogoTrack = ({
-  logos,
-  direction,
-}: {
-  logos: LogoItem[];
-  direction: 'left' | 'right';
-}) => (
+const StripTrack = ({ direction }: { direction: 'left' | 'right' }) => (
   <div
     className={cn(
-      'flex w-max items-center gap-2 will-change-transform motion-reduce:animate-none md:gap-3',
+      'flex w-max items-center gap-8 will-change-transform motion-reduce:animate-none md:gap-12',
       direction === 'left' ? 'animate-logo-marquee-left' : 'animate-logo-marquee-right',
     )}
   >
-    {marqueeCopies.map((copyIndex) => (
-      <div key={`${direction}-${copyIndex}`} className="flex shrink-0 items-center gap-2 md:gap-3" aria-hidden={copyIndex === 1}>
-        {logos.map((logo, index) => {
-          const heights = ['h-10 md:h-14', 'h-12 md:h-16', 'h-14 md:h-20', 'h-11 md:h-[4.5rem]'];
-          const sizeClass = heights[index % heights.length];
-          return (
-          <div
-            key={`${direction}-${copyIndex}-${index}`}
-            className="flex shrink-0 items-center justify-center"
-          >
-            <img
-              src={logo.src}
-              alt={copyIndex === 0 ? logo.alt : ''}
-              className={cn('w-auto max-w-none select-none object-contain', sizeClass)}
-              loading={copyIndex === 0 && index < 6 ? 'eager' : 'lazy'}
-              decoding="async"
-              draggable={false}
-            />
-          </div>
-        );})}
-      </div>
+    {[0, 1].map((copyIndex) => (
+      <img
+        key={`${direction}-${copyIndex}`}
+        src={logosStrip}
+        alt={
+          copyIndex === 0
+            ? 'Marcas e projetos institucionais que confiaram em soluções INSULFILM™ em ambientes arquitetônicos.'
+            : ''
+        }
+        aria-hidden={copyIndex === 1}
+        className="h-16 w-auto max-w-none select-none object-contain md:h-24 lg:h-28"
+        loading={copyIndex === 0 ? 'eager' : 'lazy'}
+        decoding="async"
+        draggable={false}
+      />
     ))}
   </div>
 );
@@ -89,9 +57,9 @@ const ArchitecturalLogoCarousel = ({
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-card via-card/90 to-transparent md:w-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-card via-card/90 to-transparent md:w-20" />
 
-          <div className="space-y-4 md:space-y-5">
-            <LogoTrack logos={topRowLogos} direction="left" />
-            <LogoTrack logos={bottomRowLogos} direction="right" />
+          <div className="space-y-4 md:space-y-6">
+            <StripTrack direction="left" />
+            <StripTrack direction="right" />
           </div>
         </div>
       </div>
