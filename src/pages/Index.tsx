@@ -151,7 +151,7 @@ const Index = () => {
         description="Menos calor, mais conforto. Controle a claridade."
         buttonText="Veja"
         buttonIcon={Car}
-        link="/automotivo"
+        link="/automotivo/solar"
         alignment="right"
         imageSrc={homeSolar}
         cardVariant="blue"
