@@ -184,7 +184,7 @@ const Index = () => {
         description="Cobertura invisível, seu carro sempre novo e valorizado."
         buttonText="Conheça"
         buttonIcon={Shield}
-        link="/ppf"
+        link="/automotivo/ppf"
         alignment="left"
         imageSrc={homePpf}
         cardVariant="gray"
