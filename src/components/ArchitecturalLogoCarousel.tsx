@@ -36,21 +36,24 @@ const LogoTrack = ({
 }) => (
   <div
     className={cn(
-      'flex w-max gap-5 will-change-transform motion-reduce:animate-none md:gap-8',
+      'flex w-max items-center gap-2 will-change-transform motion-reduce:animate-none md:gap-3',
       direction === 'left' ? 'animate-logo-marquee-left' : 'animate-logo-marquee-right',
     )}
   >
     {marqueeCopies.map((copyIndex) => (
-      <div key={`${direction}-${copyIndex}`} className="flex shrink-0 items-center gap-5 md:gap-8" aria-hidden={copyIndex === 1}>
-        {logos.map((logo, index) => (
+      <div key={`${direction}-${copyIndex}`} className="flex shrink-0 items-center gap-2 md:gap-3" aria-hidden={copyIndex === 1}>
+        {logos.map((logo, index) => {
+          const heights = ['h-10 md:h-14', 'h-12 md:h-16', 'h-14 md:h-20', 'h-11 md:h-[4.5rem]'];
+          const sizeClass = heights[index % heights.length];
+          return (
           <div
             key={`${direction}-${copyIndex}-${index}`}
-            className="flex h-20 shrink-0 items-center justify-center px-2 py-1 md:h-24 md:px-3"
+            className="flex shrink-0 items-center justify-center"
           >
             <img
               src={logo.src}
               alt={copyIndex === 0 ? logo.alt : ''}
-              className="max-h-[3.25rem] w-auto max-w-none select-none object-contain md:max-h-[4.25rem]"
+              className={cn('w-auto max-w-none select-none object-contain', sizeClass)}
               loading={copyIndex === 0 && index < 6 ? 'eager' : 'lazy'}
               decoding="async"
               draggable={false}
