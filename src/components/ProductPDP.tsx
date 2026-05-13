@@ -130,7 +130,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
               <motion.nav
                 aria-label="Breadcrumb"
                 variants={fadeInUp}
-                className="text-xs uppercase tracking-widest text-primary-foreground/50 mb-6"
+                className="text-xs uppercase tracking-widest text-primary-foreground/70 mb-6"
               >
                 <Link to="/pt" className="hover:text-accent transition-colors">Início</Link>
                 <span className="mx-2">/</span>
@@ -177,7 +177,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
                     variants={fadeInUp}
                     className="text-center"
                   >
-                    <dt className="text-xs uppercase tracking-wider text-primary-foreground/50 mb-1">
+                    <dt className="text-xs uppercase tracking-wider text-primary-foreground/70 mb-1">
                       {stat.label}
                     </dt>
                     <dd className="text-2xl md:text-3xl font-extrabold text-accent">

@@ -131,7 +131,7 @@ const PhantomArquitetonico = () => {
             <motion.p variants={fadeInLeft} className="text-xl md:text-2xl text-primary-foreground/80 font-light mb-2">
               Preservando o Design dos Seus Acabamentos
             </motion.p>
-            <motion.p variants={fadeInLeft} className="text-base text-primary-foreground/50 font-light mb-8">
+            <motion.p variants={fadeInLeft} className="text-base text-primary-foreground/70 font-light mb-8">
               Um guia para arquitetos, designers e proprietários exigentes.
             </motion.p>
             <motion.div variants={scaleIn}>
@@ -157,7 +157,7 @@ const PhantomArquitetonico = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.6 }}
         >
-          <span className="text-primary-foreground/50 text-xs tracking-widest uppercase font-light">Continue navegando</span>
+          <span className="text-primary-foreground/70 text-xs tracking-widest uppercase font-light">Continue navegando</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -277,7 +277,7 @@ const PhantomArquitetonico = () => {
                     </div>
                   ))}
                 </motion.div>
-                <motion.p variants={fadeInLeft} className="text-primary-foreground/50 font-light mt-6">
+                <motion.p variants={fadeInLeft} className="text-primary-foreground/70 font-light mt-6">
                   Pequenos gestos que deixam marcas permanentes.
                 </motion.p>
               </div>
@@ -423,7 +423,7 @@ const PhantomArquitetonico = () => {
               ))}
             </motion.div>
 
-            <motion.p variants={fadeInUp} className="text-center text-primary-foreground/50 text-base font-light max-w-3xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-center text-primary-foreground/70 text-base font-light max-w-3xl mx-auto">
               Preserva exatamente o visual original de qualquer superfície — com uma camada de proteção invisível de engenharia avançada.
             </motion.p>
 

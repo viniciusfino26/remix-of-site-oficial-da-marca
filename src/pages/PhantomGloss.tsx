@@ -168,7 +168,7 @@ const PhantomGloss = () => {
                   <div className="relative h-full glass-card rounded-3xl p-8 md:p-10 text-center border border-accent/20 hover:border-accent/40 transition-colors">
                     <p className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-accent leading-none mb-3 tracking-tight">{stat.value}</p>
                     <p className="text-sm md:text-base text-primary-foreground font-bold uppercase tracking-wider mb-1">{stat.label}</p>
-                    <p className="text-xs text-primary-foreground/50 font-light">{stat.sublabel}</p>
+                    <p className="text-xs text-primary-foreground/70 font-light">{stat.sublabel}</p>
                   </div>
                 </motion.div>
               ))}
@@ -192,7 +192,7 @@ const PhantomGloss = () => {
                   ))}
                 </div>
               </motion.div>
-              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/50 text-center mt-4 italic">
+              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/70 text-center mt-4 italic">
                 Garantia: 5 anos contra rachaduras, formação de bolhas e amarelamento causados por defeitos na fabricação.
               </motion.p>
             </motion.div>

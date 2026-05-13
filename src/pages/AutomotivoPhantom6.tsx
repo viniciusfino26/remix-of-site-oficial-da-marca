@@ -89,7 +89,7 @@ const AutomotivoPhantom6 = () => (
               "Proteção invisível para trafegar confiante.<br />Depois do dano, será tarde."
             </motion.p>
             <motion.div variants={fadeInUp} className="mt-8 mb-6">
-              <p className="text-sm text-primary-foreground/50 uppercase tracking-wider mb-3">Livre-se da preocupação com:</p>
+              <p className="text-sm text-primary-foreground/70 uppercase tracking-wider mb-3">Livre-se da preocupação com:</p>
               <div className="flex flex-wrap justify-center gap-2 max-w-xl mx-auto">
                 {protections.map((p, i) => (
                   <Badge key={i} variant="outline" className="border-accent/30 text-accent/90 text-xs px-3 py-1">{p}</Badge>
@@ -135,7 +135,7 @@ const AutomotivoPhantom6 = () => (
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-2">Composição</motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 font-light">5 camadas de engenharia de proteção</motion.p>
+            <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light">5 camadas de engenharia de proteção</motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
           </motion.div>
           <motion.div className="max-w-4xl mx-auto space-y-4" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -215,7 +215,7 @@ const AutomotivoPhantom6 = () => (
                   </p>
                   <div className="flex items-start gap-3 mt-6 p-4 rounded-xl bg-accent/5 border border-accent/10">
                     <AlertTriangle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                    <p className="text-xs text-primary-foreground/50">
+                    <p className="text-xs text-primary-foreground/70">
                       A garantia é válida exclusivamente para instalações realizadas por aplicadores autorizados INSULFILM™. Consulte as condições completas.
                     </p>
                   </div>

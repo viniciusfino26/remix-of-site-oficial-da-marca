@@ -51,7 +51,7 @@ const HighlightCard = ({ stat, index, scrollYProgress }: { stat: HighlightStat; 
           {stat.label}
         </p>
         {stat.sublabel && (
-          <p className="text-xs text-primary-foreground/50 font-light">{stat.sublabel}</p>
+          <p className="text-xs text-primary-foreground/70 font-light">{stat.sublabel}</p>
         )}
       </div>
     </motion.div>
@@ -158,7 +158,7 @@ const TechSpecsHighlight = ({
               </div>
             </motion.div>
             {warrantyNote && (
-              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/50 text-center mt-4 italic">
+              <motion.p variants={fadeInUp} className="text-xs text-primary-foreground/70 text-center mt-4 italic">
                 {warrantyNote}
               </motion.p>
             )}
@@ -166,7 +166,7 @@ const TechSpecsHighlight = ({
         )}
         {!techTable && warrantyNote && (
           <motion.p
-            className="text-xs text-primary-foreground/50 text-center mt-4 italic max-w-3xl mx-auto"
+            className="text-xs text-primary-foreground/70 text-center mt-4 italic max-w-3xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

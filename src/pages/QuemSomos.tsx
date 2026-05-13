@@ -471,7 +471,7 @@ const QuemSomos = () => {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
               {t('about.diffTitle')}
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 text-lg font-light max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-primary-foreground/70 text-lg font-light max-w-2xl mx-auto">
               {t('about.diffSubtitle')}
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4">
@@ -506,7 +506,7 @@ const QuemSomos = () => {
                       <h3 className="text-lg font-extrabold text-primary-foreground mb-2">
                         {t(`${diff.key}Title`)}
                       </h3>
-                      <p className="text-sm text-primary-foreground/50 font-light">
+                      <p className="text-sm text-primary-foreground/70 font-light">
                         {t(`${diff.key}Desc`)}
                       </p>
                     </CardContent>

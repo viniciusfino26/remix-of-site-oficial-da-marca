@@ -170,7 +170,7 @@ const AutomotivoHubSeguranca = () => {
               <motion.p variants={fadeInUp} className="text-primary-foreground/70 text-sm leading-relaxed">
                 As informações sobre desempenho de resistência apresentadas nesta página resultam da combinação entre vidro temperado automotivo padrão com 3,2 milímetros de espessura e película aplicada pelo lado interno, obtidas a partir de sucessivos testes controlados, com impactos reais não manipulados - com armas brancas, para invasão ao carro pelo vídeo.
               </motion.p>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/50 text-xs italic">
+              <motion.p variants={fadeInUp} className="text-primary-foreground/70 text-xs italic">
                 *Resultados anteriores obtidos através do laboratório de serviço da INSULFILM™ de acordo com a metodologia aplicada no vídeo.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/70 text-sm leading-relaxed">
@@ -206,7 +206,7 @@ const AutomotivoHubSeguranca = () => {
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
                   Anti-estilhaços projetados e proteção contra atos de vandalismo.
                 </p>
-                <p className="text-primary-foreground/40 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
+                <p className="text-primary-foreground/60 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
                 <div className="flex flex-wrap gap-2">
                   <Link to="/automotivo/seguranca/skinsafe8k">
                     <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">
@@ -233,7 +233,7 @@ const AutomotivoHubSeguranca = () => {
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
                   Verdadeiros escudos muito mais resistentes a tentativas de invasão.
                 </p>
-                <p className="text-primary-foreground/40 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
+                <p className="text-primary-foreground/60 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
                 <div className="flex flex-wrap gap-2">
                   <Link to="/automotivo/seguranca/skudoguard">
                     <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">

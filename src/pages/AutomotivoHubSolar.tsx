@@ -112,7 +112,7 @@ const ProductSection = ({ product, index }: { product: typeof products[0]; index
       <div className="flex items-center gap-2 text-muted-foreground text-sm mb-1">
         <Settings className="w-4 h-4" />
         <span>{product.tech}</span>
-        <span className="text-muted-foreground/40">|</span>
+        <span className="text-muted-foreground">|</span>
         <span>{product.serie}</span>
       </div>
       <h3 className="text-2xl md:text-3xl font-extrabold text-primary mb-3">{product.name}</h3>
