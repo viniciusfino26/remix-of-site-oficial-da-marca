@@ -133,6 +133,8 @@ import SpecchiatoBronzoUnified from "./pages/products/SpecchiatoBronzo";
 import PetrolioUnified from "./pages/products/Petrolio";
 import GrigioInvertitoUnified from "./pages/products/GrigioInvertito";
 import ReflessoDArgentoUnified from "./pages/products/ReflessoDArgento";
+import PhantomGlossUnified from "./pages/products/PhantomGloss";
+import PhantomMatteUnified from "./pages/products/PhantomMatte";
 
 /* ── PDPs Arquitetônico Segurança ── */
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
@@ -201,6 +203,9 @@ const App = () => (
           <Route path="/pt/arquitetonico/solar/petrolio" element={<PetrolioUnified />} />
           <Route path="/pt/arquitetonico/solar/grigio-invertito" element={<GrigioInvertitoUnified />} />
           <Route path="/pt/arquitetonico/solar/reflesso-d-argento" element={<ReflessoDArgentoUnified />} />
+          {/* Batch 3 — 2 produtos SPF (Surface Protection Film) — categoria nova */}
+          <Route path="/pt/arquitetonico/spf/phantom-gloss" element={<PhantomGlossUnified />} />
+          <Route path="/pt/arquitetonico/spf/phantom-matte" element={<PhantomMatteUnified />} />
 
           {/* Marca */}
           <Route path="/marca/sobre" element={<MarcaSobre />} />
@@ -336,11 +341,11 @@ const App = () => (
           <Route path="/arquitetonico/comercial/decorativo/blackout" element={<ArqComBlackout />} />
 
           {/* Divisão Arquitetônica — PDPs SPF Residencial + Comercial */}
-          <Route path="/arquitetonico/residencial/spf/phantom" element={<ArqResPhantom />} />
-          <Route path="/arquitetonico/comercial/spf/phantom" element={<ArqComPhantom />} />
+          <Route path="/arquitetonico/residencial/spf/phantom" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
+          <Route path="/arquitetonico/comercial/spf/phantom" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
 
           {/* Divisão Arquitetônica — Phantom SPF (legado) */}
-          <Route path="/arquitetonico/phantom-gloss" element={<PhantomGloss />} />
+          <Route path="/arquitetonico/phantom-gloss" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
 
           {/* Atendimento */}
           <Route path="/legislacao" element={<Legislacao />} />

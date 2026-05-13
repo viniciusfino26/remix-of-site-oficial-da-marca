@@ -35,3 +35,9 @@
 /arquitetonico/solar/reflesso-d-argento            /pt/arquitetonico/solar/reflesso-d-argento  301
 /arquitetonico/residencial/solar/reflesso-d-argento /pt/arquitetonico/solar/reflesso-d-argento  301
 /arquitetonico/comercial/solar/reflesso-d-argento  /pt/arquitetonico/solar/reflesso-d-argento  301
+/phantom-gloss                                  /pt/arquitetonico/spf/phantom-gloss   301
+/arquitetonico/phantom-gloss                    /pt/arquitetonico/spf/phantom-gloss   301
+/arquitetonico/residencial/spf/phantom          /pt/arquitetonico/spf/phantom-gloss   301
+/arquitetonico/comercial/spf/phantom            /pt/arquitetonico/spf/phantom-gloss   301
+/phantom-matte                                  /pt/arquitetonico/spf/phantom-matte   301
+/arquitetonico/spf/phantom-matte                /pt/arquitetonico/spf/phantom-matte   301

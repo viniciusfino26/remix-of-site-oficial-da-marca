@@ -1496,6 +1496,323 @@ const reflessoDArgento: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
+// Phantom Gloss — Premium · SPF para superfícies brilhosas
+// ─────────────────────────────────────────────
+const phantomGloss: ProductDualPublic = {
+  slug: 'phantom-gloss',
+  category: 'arq-spf',
+  line: 'Premium',
+  hero: {
+    badge: 'SPF · Premium',
+    title: 'Proteção invisível. Brilho original preservado.',
+    subtitle:
+      'Surface Protection Film de 180 microns para superfícies brilhosas — mármore polido, lacado, madeira envernizada, vidro de alto padrão. Barreira contra micro-riscos, manchas ácidas e desgaste cotidiano. Garantia 5 anos.',
+    quickStats: [
+      { label: 'Espessura', value: '180 microns' },
+      { label: 'Proteção', value: 'Anti-risco · barreira química' },
+      { label: 'Temperatura', value: '-35°C a 116°C' },
+      { label: 'Garantia', value: 'até 5 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para superfícies de alto padrão na sua residência',
+      description:
+        'Bancada de mármore polido na cozinha. Móveis lacados de marcenaria fina. Mesa de jantar envernizada. Investimento que precisa continuar bonito daqui a 5 anos. Proteção invisível, brilho preservado.',
+    },
+    corporate: {
+      headline: 'Para mobiliário e revestimentos comerciais de alto padrão',
+      description:
+        'Hotelaria sofisticada, showrooms, lobbies, mobiliário executivo, mármore polido em recepções. Onde a aparência da superfície É parte do produto — e a degradação cotidiana é o principal risco.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Phantom Gloss arquitetônica é uma película de proteção de superfície — SPF (Surface Protection Film) — com 180 microns de espessura, desenhada para preservar superfícies de acabamento brilhoso em ambientes arquitetônicos. Pertence à família Phantom, distinta da versão automotiva (PPF — Paint Protection Film) que tem aplicação e formulação específicas para pintura de veículos.',
+      'Diferente das películas solares, a Phantom Gloss não atua sobre vidros de fachada — atua sobre o objeto que precisa ser protegido: bancada, móvel, mesa, painel.',
+      'O conflito central do design de alto padrão é que as superfícies mais bonitas são as mais expostas: a bancada de mármore que recebe vinho, cítricos e ácido cotidiano. O móvel lacado que recebe utensílios deslizando. A mesa envernizada que recebe pratos quentes. Cada uso é um vetor de degradação invisível.',
+      'A Phantom Gloss interpõe uma camada técnica entre a superfície e esses agentes — preservando o brilho original, a profundidade dos reflexos e a integridade visual da peça. Aplicação invisível: você sabe que está lá apenas pela ausência do dano.',
+      'Indicada para residências de alto padrão (cozinhas gourmet, suítes master, espaços gourmet integrados) e ambientes comerciais sofisticados (hotelaria 5 estrelas, showrooms, lobbies corporativos premium, mobiliário executivo).',
+    ],
+    techTable: [
+      { label: 'Tipo', value: 'SPF — Surface Protection Film' },
+      { label: 'Espessura', value: '180 microns (7 mil)' },
+      { label: 'Acabamento', value: 'Gloss (preserva brilho original)' },
+      { label: 'Proteção mecânica', value: 'Anti-risco e anti-abrasão' },
+      { label: 'Proteção química', value: 'Barreira contra ácidos, álcalis e solventes domésticos' },
+      { label: 'Faixa de temperatura', value: '-35°C a 116°C' },
+      { label: 'Aplicação típica', value: 'Mármore, lacado, vidro, madeira envernizada' },
+      { label: 'Limpeza', value: 'Superfície ultra lisa, sem retenção de resíduos' },
+      { label: 'Garantia', value: 'Até 5 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Phantom Gloss para superfícies premium da sua residência',
+    pains: [
+      {
+        problem:
+          'Bancada de mármore polido na cozinha — vinho, vinagre, suco de limão e produtos de limpeza atacam diariamente.',
+        solution:
+          'Barreira química contra ácidos e álcalis domésticos. Mancha não penetra na pedra. Limpeza vira detalhe, não problema.',
+      },
+      {
+        problem:
+          'Marcenaria lacada de alto padrão começando a mostrar micro-riscos do uso cotidiano após poucos anos.',
+        solution:
+          '180 microns de proteção anti-risco preservam o acabamento. O lacado continua novo, sem aquela "rede" de micro-abrasões que mata o brilho.',
+      },
+      {
+        problem:
+          'Mesa de jantar envernizada com marcas de pratos quentes, anéis de copo, riscos de talheres.',
+        solution:
+          'Aplicação invisível, resistência térmica até 116°C. Você usa a mesa normalmente, ela continua impecável.',
+      },
+      {
+        problem:
+          'O investimento em interiores foi alto — não quer assistir a degradação progressiva nos próximos 5 anos.',
+        solution:
+          'Garantia 5 anos contra falhas da película. O valor estético do investimento se preserva no horizonte do produto.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Phantom Gloss aparece visualmente sobre a superfície?',
+        a: 'Não. A aplicação é invisível — você não percebe que existe uma camada protetiva. O brilho original do mármore, do lacado ou da madeira envernizada continua exatamente como antes da aplicação.',
+      },
+      {
+        q: 'Pode ser aplicada sobre qualquer superfície brilhosa?',
+        a: 'A linha é específica para superfícies de acabamento gloss — mármore polido, granito polido, lacado, madeira envernizada, vidro de alto padrão. Para acabamento fosco, ver Phantom Matte. Para superfícies muito irregulares ou porosas, consulta técnica é necessária.',
+      },
+      {
+        q: 'Como remover, se quiser?',
+        a: 'Aplicação reversível. Remoção é feita por aplicador especializado, sem dano à superfície original. Comum em projetos onde se quer trocar o protetor ao longo dos anos.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Phantom Gloss para mobiliário e revestimentos comerciais de alto padrão',
+    pains: [
+      {
+        problem:
+          'Mármore polido em recepção, lobby ou área social de hotel — atrito constante com bagagem, carrinhos, sapatos.',
+        solution:
+          '180 microns de proteção anti-abrasão preservam o acabamento original. A peça continua sendo "novo mármore" mesmo após anos de operação intensa.',
+      },
+      {
+        problem:
+          'Mobiliário executivo lacado (mesas de reunião, painéis de escritório de diretoria) sofrendo desgaste em uso diário.',
+        solution:
+          'Resistência a riscos e impactos cotidianos. Reuniões, notebooks deslizando, café derramado — superfície segue impecável.',
+      },
+      {
+        problem:
+          'Showroom com superfícies de alto padrão que precisam ser tocadas pelo cliente para apresentação.',
+        solution:
+          'A Phantom Gloss permite o contato físico sem comprometer a apresentação. Mostruário se mantém em estado de demonstração por toda a vida útil do investimento.',
+      },
+      {
+        problem:
+          'Hotelaria 5 estrelas com volume alto de hóspedes — degradação é inevitável, custo de troca de mobiliário é alto.',
+        solution:
+          'Estende ciclo de vida útil de superfícies premium. CAPEX único, OPEX de manutenção reduzido. Cobertura sob garantia 5 anos.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Phantom Gloss arquitetônica é a mesma que a automotiva?',
+        a: 'Não — são da mesma família Phantom, mas produtos distintos. A versão arquitetônica é SPF (Surface Protection Film), aplicada em superfícies de acabamento como mármore polido, lacado e madeira envernizada. A versão automotiva é PPF (Paint Protection Film), aplicada sobre pintura de veículos. Aplicações, formulações e aplicadores são diferentes.',
+      },
+      {
+        q: 'Phantom Gloss substitui manutenção periódica de mármore polido?',
+        a: 'Não substitui — complementa. A manutenção periódica de polimento continua sendo recomendada conforme orientação do fornecedor da pedra. A Phantom Gloss elimina o principal agente que acelera a necessidade dessa manutenção: o ataque químico cotidiano.',
+      },
+      {
+        q: 'Funciona em projetos corporativos de retrofit?',
+        a: 'Sim — é uma das aplicações típicas. Aplicada sobre mobiliário e revestimentos existentes sem necessidade de obra. Hospedeiros, restaurantes e lobbies em operação podem receber a proteção sem interrupção de serviço.',
+      },
+      {
+        q: 'Existe versão para acabamento fosco?',
+        a: 'Sim — Phantom Matte. Mesma tecnologia de proteção, calibrada para preservar acabamento fosco em mármore matte, lacado fosco e superfícies de madeira em acabamento natural ou matte.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'phantom-matte',
+      name: 'INSULFILM™ Phantom Matte',
+      positioning: 'Premium · SPF para acabamento fosco preservado',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · proteção solar para vidros de fachada (categoria diferente)',
+    },
+    {
+      slug: 'naturale',
+      name: 'INSULFILM™ Naturale',
+      positioning: 'Premium · solução solar premium discreta',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// Phantom Matte — Premium · SPF para superfícies foscas
+// ─────────────────────────────────────────────
+const phantomMatte: ProductDualPublic = {
+  slug: 'phantom-matte',
+  category: 'arq-spf',
+  line: 'Premium',
+  hero: {
+    badge: 'SPF · Premium',
+    title: 'Proteção fosca. Acabamento matte intacto.',
+    subtitle:
+      'Surface Protection Film de 180 microns calibrado para preservar acabamentos foscos — mármore matte, lacado fosco, madeira em acabamento natural ou velado. Sem alteração de textura, sem brilho indesejado. Garantia 5 anos.',
+    quickStats: [
+      { label: 'Espessura', value: '180 microns' },
+      { label: 'Acabamento', value: 'Matte preservado' },
+      { label: 'Proteção', value: 'Anti-risco · barreira química' },
+      { label: 'Garantia', value: 'até 5 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para superfícies foscas de alto padrão',
+      description:
+        'O acabamento fosco está cada vez mais presente em residências de design contemporâneo — mármore preto matte, lacado fosco, madeira natural sem verniz. Protege sem brilhar.',
+    },
+    corporate: {
+      headline: 'Para projetos comerciais com identidade matte definida',
+      description:
+        'Boutique hotels com paleta matte, restaurantes assinados, espaços de design contemporâneo, showrooms de luxo onde o acabamento fosco é parte da identidade visual.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Phantom Matte arquitetônica é a contraparte fosca da família Phantom — SPF (Surface Protection Film) com 180 microns, calibrada especificamente para preservar acabamentos matte em ambientes arquitetônicos. Pertence à família Phantom mas é produto distinto da versão automotiva PPF.',
+      'O acabamento fosco tem crescido em arquitetura e design contemporâneos: mármore preto fosco em bancadas, lacado matte em marcenaria, madeira em acabamento natural ou velado. Esses acabamentos são igualmente vulneráveis a riscos, manchas e desgaste — mas qualquer película convencional adicionaria brilho, distorcendo a estética.',
+      'A Phantom Matte resolve isso: preserva exatamente o acabamento original. Você protege a superfície sem alterar a leitura visual do material. Aplicação invisível em todos os sentidos.',
+      'Indicada para residências de design contemporâneo, ambientes comerciais com paleta matte definida (boutique hotels, restaurantes, showrooms de luxo) e qualquer projeto onde a estética fosca é parte da identidade.',
+    ],
+    techTable: [
+      { label: 'Tipo', value: 'SPF — Surface Protection Film' },
+      { label: 'Espessura', value: '180 microns (7 mil)' },
+      { label: 'Acabamento', value: 'Matte (preserva fosco original)' },
+      { label: 'Proteção mecânica', value: 'Anti-risco e anti-abrasão' },
+      { label: 'Proteção química', value: 'Barreira contra ácidos, álcalis e solventes domésticos' },
+      { label: 'Faixa de temperatura', value: '-35°C a 116°C' },
+      { label: 'Aplicação típica', value: 'Mármore fosco, lacado matte, madeira natural' },
+      { label: 'Diferencial vs Phantom Gloss', value: 'Acabamento fosco preservado (não adiciona brilho)' },
+      { label: 'Garantia', value: 'Até 5 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Phantom Matte para superfícies foscas premium',
+    pains: [
+      {
+        problem:
+          'Mármore preto fosco na bancada da cozinha — o acabamento matte é a identidade do projeto, mas é o que mais sofre com manchas.',
+        solution:
+          'Barreira química preserva o acabamento matte intacto. Mancha não penetra. O fosco continua sendo fosco.',
+      },
+      {
+        problem:
+          'Marcenaria em lacado matte de cor escura — qualquer micro-risco se torna imediatamente visível pela diferença de textura.',
+        solution:
+          '180 microns de proteção evitam o micro-risco antes que ele aconteça. O lacado matte mantém uniformidade visual.',
+      },
+      {
+        problem:
+          'Mesa de madeira em acabamento natural (óleo / velado) que sofre com líquidos e marcas de uso.',
+        solution:
+          'Barreira contra manchas líquidas sem alterar o aspecto natural da madeira. A peça continua "viva" visualmente, protegida invisivelmente.',
+      },
+      {
+        problem:
+          'Aplicação de proteção convencional adicionaria brilho — quebrando a paleta matte cuidadosamente especificada pelo arquiteto.',
+        solution:
+          'Phantom Matte é calibrada para preservar exatamente o acabamento fosco original. Sem brilho indesejado, sem alteração de textura visual.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Phantom Matte adiciona algum brilho à superfície original?',
+        a: 'Não. A formulação é específica para preservar acabamento fosco. Se o seu material original é matte, ele continua matte após a aplicação — sem brilho, sem reflexo indesejado, sem alteração de textura visual.',
+      },
+      {
+        q: 'Posso ter Phantom Gloss em uma superfície e Phantom Matte em outra na mesma casa?',
+        a: 'Sim, é o uso comum. Em projetos contemporâneos é normal ter mistura de acabamentos — bancada de mármore polido (Gloss) e marcenaria lacada matte (Matte) na mesma cozinha. O aplicador especifica a versão correta por peça.',
+      },
+      {
+        q: 'Funciona em pedra natural com porosidade visível (tipo travertino fosco)?',
+        a: 'Em superfícies com porosidade muito acentuada, a aplicação requer análise prévia. Em pedras foscas com superfície razoavelmente plana, sim. Consulta técnica antes da especificação garante o resultado.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Phantom Matte para projetos comerciais com identidade fosca',
+    pains: [
+      {
+        problem:
+          'Boutique hotel com paleta matte definida pelo design — qualquer alteração de acabamento quebra a linguagem.',
+        solution:
+          'Proteção que não interfere na estética. Os ambientes continuam visualmente fiéis ao projeto original do designer.',
+      },
+      {
+        problem:
+          'Restaurante de alto padrão com mobiliário lacado fosco em uso intenso — desgaste rápido, repaginação cara.',
+        solution:
+          'Estende ciclo de vida do mobiliário sem alterar acabamento. CAPEX único, OPEX de reposição reduzido.',
+      },
+      {
+        problem:
+          'Showroom de design contemporâneo onde os móveis em exposição são tocados constantemente pelo público.',
+        solution:
+          'Proteção contra contato físico sem comprometer a leitura matte das peças. Exposição mantém estado de "vitrine" por toda a vida útil.',
+      },
+      {
+        problem:
+          'Espaço corporativo com identidade visual fosca (paleta minimalista, materiais naturais) que precisa de durabilidade operacional.',
+        solution:
+          'Proteção técnica invisível em todos os sentidos. Mantém a linguagem visual do espaço, adiciona resistência operacional.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Phantom Matte é nova na linha INSULFILM™?',
+        a: 'É a versão fosca complementar à Phantom Gloss (que protege acabamento brilhoso). Mesma tecnologia base de SPF, calibrada para preservar acabamento matte. Foi desenhada para projetos contemporâneos que adotam paleta fosca como linguagem.',
+      },
+      {
+        q: 'Como o aplicador escolhe entre Phantom Gloss e Phantom Matte?',
+        a: 'Pelo acabamento do material original. Superfície brilhosa (mármore polido, lacado brilhoso, verniz alto-brilho) → Gloss. Superfície fosca (mármore matte, lacado fosco, madeira natural sem brilho) → Matte. Aplicação errada altera a leitura visual — por isso a análise prévia importa.',
+      },
+      {
+        q: 'Cobre superfícies com texturas (madeira escovada, pedra rústica)?',
+        a: 'Para superfícies com textura acentuada, análise prévia é necessária — a película pode não acompanhar a topografia. Em superfícies foscas relativamente planas, sim. Consultor técnico avalia caso a caso.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'phantom-gloss',
+      name: 'INSULFILM™ Phantom Gloss',
+      positioning: 'Premium · SPF para acabamento brilhoso preservado',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · proteção solar para vidros de fachada (categoria diferente)',
+    },
+    {
+      slug: 'specchiato-bronzo',
+      name: 'INSULFILM™ Specchiato Bronzo',
+      positioning: 'Premium · solar espelhado bronze para arquiteturas distintivas',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // Registro central (próximas PDPs entram aqui)
 // ─────────────────────────────────────────────
 export const productDualPublicData: Record<string, ProductDualPublic> = {
@@ -1508,6 +1825,8 @@ export const productDualPublicData: Record<string, ProductDualPublic> = {
   petrolio,
   'grigio-invertito': grigioInvertito,
   'reflesso-d-argento': reflessoDArgento,
+  'phantom-gloss': phantomGloss,
+  'phantom-matte': phantomMatte,
 };
 
 export const getProductDualPublic = (slug: string): ProductDualPublic | undefined =>
