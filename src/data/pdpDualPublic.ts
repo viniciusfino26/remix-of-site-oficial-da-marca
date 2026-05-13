@@ -282,7 +282,7 @@ const orizzonte70: ProductDualPublic = {
     corporate: {
       headline: 'Para projetos de alta exigência',
       description:
-        'Edifícios classe AAA, retrofits LEED/AQUA, ativos imobiliários de alto valor patrimonial. Performance cerâmica documentada, custo de ciclo de vida competitivo, dossiê técnico para auditoria.',
+        'Edifícios classe AAA, retrofits prediais, conformidade NR17 em larga escala. Performance cerâmica documentada, custo de ciclo de vida competitivo, dossiê técnico para auditoria.',
     },
   },
 
@@ -354,9 +354,9 @@ const orizzonte70: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Edifício classe AAA com FAR elevado e exigência de certificação LEED/AQUA.',
+          'Edifício de múltiplos pavimentos com obrigação NR17 documentada em toda a área útil.',
         solution:
-          'Especificação premium documentada para créditos de Eficiência Energética. Laudo técnico individual + simulação térmica disponíveis sob demanda.',
+          'Especificação premium com laudo técnico individual por andar e por face. Documentação pronta para auditoria do MTE e para gestão interna de SST.',
       },
       {
         problem:
@@ -379,8 +379,8 @@ const orizzonte70: ProductDualPublic = {
     ],
     miniFaq: [
       {
-        q: 'Como Orizzonte70 contribui em projetos LEED ou AQUA?',
-        a: 'Bloqueio de IR e UV são critérios de pontuação em Otimização de Eficiência Energética. Laudo técnico individual + simulação térmica entregam evidência documental para o crédito. Especificação detalhada disponível com consultor B2B.',
+        q: 'Como Orizzonte70 ajuda na conformidade NR17 em edifícios corporativos?',
+        a: 'A NR17 exige conforto térmico em postos de trabalho, e fachadas envidraçadas são fonte direta de carga térmica radiante. Orizzonte70 reduz essa carga de forma mensurável e documentada, com laudo técnico individual por aplicação — pronto para auditoria do MTE e para o processo interno de gestão de SST.',
       },
       {
         q: 'Garantia de 10 anos cobre todo o ciclo de vida do equipamento?',
@@ -388,7 +388,7 @@ const orizzonte70: ProductDualPublic = {
       },
       {
         q: 'É possível especificar Orizzonte70 em retrofit predial em andamento?',
-        a: 'Sim. A aplicação não requer obra civil, é feita por andar, face ou área, e não interrompe ocupação. É a solução padrão para retrofits LEED/AQUA em edifícios habitados.',
+        a: 'Sim. A aplicação não requer obra civil, é feita por andar, face ou área, e não interrompe ocupação. Solução comum em retrofits prediais e adequações NR17 em edifícios já habitados.',
       },
     ],
     aggregates: dualPublicAggregates,
@@ -414,13 +414,633 @@ const orizzonte70: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
+// Naturale — Premium · tom neutro · 4 versões (70/50/35/20)
+// ─────────────────────────────────────────────
+const naturale: ProductDualPublic = {
+  slug: 'naturale',
+  category: 'arq-solar',
+  line: 'Premium',
+  hero: {
+    badge: 'Solar · Premium',
+    title: 'Discrição que transforma. Tom neutro sem perda de performance.',
+    subtitle:
+      'Película arquitetônica premium com tecnologia de bombardeamento iônico — até 81% de rejeição IR preservando a aparência natural do vidro. Quatro versões de transparência (70/50/35/20). Garantia 10 anos.',
+    quickStats: [
+      { label: 'Tonalidade', value: 'Neutra' },
+      { label: 'Rejeição IR', value: 'até 81%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Garantia', value: 'até 10 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para sua residência sem alteração visual',
+      description:
+        'O projeto arquitetônico não pode mudar. As cortinas estão certas. O vidro precisa cumprir função sem se anunciar. Tom neutro premium que respeita o que já está bem feito.',
+    },
+    corporate: {
+      headline: 'Para projetos onde a fachada é parte da identidade',
+      description:
+        'Edifícios onde alterar visual da fachada é impossível — patrimônio histórico, identidade corporativa, especificação arquitetônica congelada. Solução técnica invisível ao olhar externo.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Naturale é a película arquitetônica para projetos onde a estética não pode mudar. Tecnologia de bombardeamento iônico (Neutral Sputtered Film) que entrega até 81% de rejeição IR com tonalidade neutra — sem espelhamento, sem alteração de cor, sem distorção visual.',
+      'Disponível em quatro versões de transparência (70/50/35/20), permite calibrar luminosidade pra cada ambiente sem comprometer a identidade visual do projeto. A versão escolhida para uma sala de reunião pode ser diferente da especificada para a área de trabalho aberta, mantendo coerência arquitetônica.',
+      'Aplicada em residências de alto padrão, edifícios corporativos com identidade visual definida e patrimônios históricos onde alterar a fachada é proibido.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Neutral Sputtered Film' },
+      { label: 'Versões disponíveis', value: '4 (Naturale 70, 50, 35, 20)' },
+      { label: 'Transmissão de luz visível (VLT)', value: '20% a 70% (conforme versão)' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 81%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Refletância visível externa', value: 'Baixa (sem espelhamento)' },
+      { label: 'Neutralidade ótica', value: 'Premium (sem alteração de cor)' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Não há' },
+      { label: 'Garantia', value: 'Até 10 anos (residencial e comercial)' },
+    ],
+  },
+  residential: {
+    h2: 'Naturale para residências sem alteração estética',
+    pains: [
+      {
+        problem:
+          'O projeto arquitetônico foi pensado nos mínimos detalhes — a cor do vidro também.',
+        solution:
+          'Tom neutro Premium. Não espelha, não amarela, não distorce. O vidro continua sendo o vidro especificado.',
+      },
+      {
+        problem:
+          'Diferentes ambientes da casa precisam de diferentes níveis de privacidade e luz.',
+        solution:
+          'Quatro versões (70/50/35/20) permitem calibrar cada ambiente sem perder coerência visual do conjunto.',
+      },
+      {
+        problem:
+          'Não quer abrir mão do calor controlado mesmo em janelas onde a luz natural é prioridade.',
+        solution:
+          'Até 81% de rejeição IR mesmo na versão de maior transparência (Naturale 70). Performance térmica real sem comprometer luminosidade.',
+      },
+      {
+        problem:
+          'Quer solução premium duradoura, não improviso a ser refeito em 3 anos.',
+        solution:
+          'Garantia 10 anos. Tecnologia Sputtered estável que não degrada cromaticamente ao longo da vida útil.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Por que escolher Naturale em vez de Clear70 ou Orizzonte70?',
+        a: 'A Naturale é a escolha quando neutralidade ótica é o critério principal — não muda a aparência do vidro. Tem mais opções de versão (4 transparências) que Clear70 e Orizzonte70 (versão única). Indicada quando o projeto exige flexibilidade de calibração por ambiente.',
+      },
+      {
+        q: 'A Naturale escurece o ambiente?',
+        a: 'Depende da versão. Naturale 70 mantém alta luminosidade (similar à Clear70). Naturale 20 reduz luminosidade significativamente. A escolha é feita ambiente por ambiente conforme uso.',
+      },
+      {
+        q: 'Pode aplicar versões diferentes de Naturale na mesma casa?',
+        a: 'Sim, é o uso recomendado. Áreas sociais geralmente recebem versão de maior transparência; suítes e áreas íntimas, versões mais fechadas. O consultor faz o mapeamento.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Naturale para edifícios onde a fachada não pode mudar',
+    pains: [
+      {
+        problem:
+          'Edifício de patrimônio histórico ou identidade corporativa congelada — fachada não admite alteração visual.',
+        solution:
+          'Solução tecnicamente invisível. Aprovada para uso em patrimônio histórico no Brasil. Sem alterar refletância externa.',
+      },
+      {
+        problem:
+          'Conformidade NR17 em postos de trabalho próximos a fachadas envidraçadas.',
+        solution:
+          'Redução documentada de carga térmica radiante por andar e face. Laudo técnico individual emitido por aplicação, pronto para auditoria do MTE.',
+      },
+      {
+        problem:
+          'Diferentes pavimentos têm necessidades térmicas/luminosas diferentes — não dá pra padronizar um único produto.',
+        solution:
+          'Quatro versões permitem especificação modular por andar ou área. Mesma família, mesma identidade visual, performance calibrada.',
+      },
+      {
+        problem:
+          'Retrofit predial em andamento e a janela de obra é curta.',
+        solution:
+          'Aplicação por face, por andar ou por ambiente. Sem obra civil, sem interrupção de ocupação. Cronograma compatível com retrofit ativo.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Naturale altera a aparência externa da fachada vista da rua?',
+        a: 'Não. Sem espelhamento e sem alteração de cor — a fachada continua com a aparência original. É essa a justificativa de uso em edifícios de patrimônio histórico e em identidades corporativas que exigem preservação visual.',
+      },
+      {
+        q: 'É possível misturar versões diferentes de Naturale no mesmo edifício?',
+        a: 'Sim. Especificação modular é o uso padrão em projetos corporativos. Cada andar ou face pode receber a versão correta para sua exposição solar e função interna.',
+      },
+      {
+        q: 'Como Naturale entra na documentação NR17?',
+        a: 'Laudo técnico individual por aplicação documenta a redução de carga térmica radiante. Anexado ao mapeamento de riscos físicos (calor) do PGR/PCMSO. Disponível com consultor B2B.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · cerâmica com rejeição IR superior (93%)',
+    },
+    {
+      slug: 'ultravioletti90',
+      name: 'INSULFILM™ Ultravioletti90',
+      positioning: 'Premium · proteção UV de pico, alta transparência',
+    },
+    {
+      slug: 'clear70',
+      name: 'INSULFILM™ Clear70',
+      positioning: 'Performance · alternativa de custo inicial menor',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// Ultravioletti90 — Premium · UV-focused · garantia 5 anos
+// ─────────────────────────────────────────────
+const ultravioletti90: ProductDualPublic = {
+  slug: 'ultravioletti90',
+  category: 'arq-solar',
+  line: 'Premium',
+  hero: {
+    badge: 'Solar · Premium · UV',
+    title: 'Proteção UV de pico. Completamente imperceptível.',
+    subtitle:
+      'Película arquitetônica incolor especializada em UV — bloqueia mais de 99% dos raios ultravioleta sem alterar luminosidade, tonalidade ou aparência do vidro. Para residências de alto padrão e ambientes onde o acervo é parte do valor.',
+    quickStats: [
+      { label: 'Transparência (VLT)', value: '88%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Aparência', value: 'Incolor · invisível' },
+      { label: 'Garantia', value: 'até 5 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para residências de alto padrão',
+      description:
+        'Obras de arte, peças de design, fotografias raras, móveis assinados — o interior da casa onde o valor está nos detalhes. Proteção UV completamente invisível, sem alterar luminosidade nem aparência do vidro.',
+    },
+    corporate: {
+      headline: 'Para museus, galerias e espaços com acervo exposto',
+      description:
+        'Museus, galerias de arte, lojas de alto padrão, hotelaria sofisticada. UV é o principal agente de degradação visual de acervos e mercadorias — Ultravioletti90 documenta a barreira sem alterar nenhuma estética do ambiente.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Ultravioletti90 é a película arquitetônica especializada em proteção UV — bloqueio superior a 99% dos raios ultravioleta, com tecnologia UV Concentrated específica para essa função.',
+      'Diferente das soluções solares que tratam UV como benefício secundário, a Ultravioletti90 é desenhada com a proteção UV como objetivo principal. A composição preserva 88% da luz visível e mantém a aparência original do vidro completamente intacta — sem tonalidade, sem reflexo, sem alteração de cor. Visualmente imperceptível.',
+      'Indicada para museus, galerias de arte, residências de alto padrão com acervo significativo e ambientes comerciais sofisticados (hotelaria, lojas de luxo) onde a depreciação por UV representa perda de valor patrimonial ou de marca.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'UV Concentrated' },
+      { label: 'Transmissão de luz visível (VLT)', value: '88%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Aparência', value: 'Incolor (completamente invisível)' },
+      { label: 'Alteração tonal do vidro', value: 'Nenhuma' },
+      { label: 'Refletância visível externa', value: 'Mínima' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Não há' },
+      { label: 'Aplicação típica', value: 'Museus, galerias, residências de alto padrão' },
+      { label: 'Garantia', value: 'Até 5 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Ultravioletti90 para residências de alto padrão',
+    pains: [
+      {
+        problem:
+          'Obras de arte, fotografias antigas, coleções pessoais expostas à luz natural — UV degrada cromaticamente em silêncio.',
+        solution:
+          '>99% de bloqueio UV. O principal agente de desbotamento neutralizado, sem alterar a iluminação natural do ambiente.',
+      },
+      {
+        problem:
+          'Móveis de design, peças de couro nobre, tapeçarias importadas, tapetes assinados — investimentos cuja apresentação visual define o valor.',
+        solution:
+          'Proteção UV de pico estende significativamente a vida visual desses ativos. Aplicação invisível mantém a estética intacta.',
+      },
+      {
+        problem:
+          'O projeto de interiores foi pensado em texturas e cromias específicas — madeiras nobres, pedras naturais, peças coloridas — que perdem identidade com exposição UV cumulativa.',
+        solution:
+          'Bloqueio UV preserva a integridade cromática especificada pelo arquiteto/decorador. O projeto continua sendo o projeto entregue.',
+      },
+      {
+        problem:
+          'Não quer escurecer o ambiente, não quer alterar a estética, não quer película visível em nenhum ângulo de luz.',
+        solution:
+          '88% de transmissão luminosa, aparência incolor, sem alteração tonal do vidro. Completamente imperceptível ao olhar — totalmente perceptível na preservação.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Ultravioletti90 também reduz calor?',
+        a: 'A função principal é proteção UV — não é uma solução térmica primária. Reduz calor em menor grau que as linhas focadas em IR (Clear70, Orizzonte70). Se proteção térmica é prioridade, escolha solar; se conservação UV invisível é prioridade, escolha Ultravioletti90.',
+      },
+      {
+        q: 'Por que a garantia é menor (5 anos) que outras Premium?',
+        a: 'A garantia reflete o regime de uso específico. A composição UV Concentrated é otimizada para máxima eficiência UV, não para longevidade térmica máxima. 5 anos é o ciclo de revisão recomendado.',
+      },
+      {
+        q: 'É a mesma película usada em museus?',
+        a: 'A linha é frequentemente especificada em ambientes museológicos e de galeria por exatamente essa razão: máxima proteção UV com mínima alteração visual. Consultor pode emitir laudo técnico para projetos institucionais ou residenciais com acervo significativo.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Ultravioletti90 para museus, galerias e espaços de alto padrão',
+    pains: [
+      {
+        problem:
+          'Vitrine comercial com mercadoria desbotando — reposição custa, imagem da loja se desgasta.',
+        solution:
+          '>99% de bloqueio UV preserva cores originais de tecidos, embalagens e produtos. Vida útil de visual de produto se estende significativamente.',
+      },
+      {
+        problem:
+          'Galeria, museu corporativo ou hall com acervo artístico exposto à luz solar direta.',
+        solution:
+          'Especificação técnica para conservação patrimonial. Laudo individual por aplicação documenta a barreira UV — exigência comum de seguradoras de acervo.',
+      },
+      {
+        problem:
+          'Joalheria, loja de luxo ou showroom de alto padrão — mercadoria de alto valor sob luz natural.',
+        solution:
+          'Bloqueio UV de pico preserva cores e materiais sem escurecer o ambiente nem alterar a percepção visual do produto. Mercadoria conservada, vitrine impecável.',
+      },
+      {
+        problem:
+          'Retrofit de loja, galeria ou ambiente corporativo onde estética não pode mudar.',
+        solution:
+          'Aplicação incolor. Não altera vitrine, não muda visual da loja, não afeta percepção do espaço. Instalação rápida sem interrupção de operação.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'A Ultravioletti90 é adequada para retrofit de loja em operação?',
+        a: 'Sim — é uma das aplicações típicas. Instalação modular por vidro, fora do horário de pico, sem alteração da estética da vitrine ou identidade visual da marca.',
+      },
+      {
+        q: 'Pode ser combinada com outras películas no mesmo edifício?',
+        a: 'Sim. Comum em projetos especificarem Ultravioletti90 em vitrines/galerias e uma solar (Orizzonte70 ou Naturale) em ambientes administrativos. O consultor faz a especificação por zona.',
+      },
+      {
+        q: 'Que documentação técnica está disponível para seguradoras de acervo?',
+        a: 'Laudo técnico individual por aplicação com especificação UV, certificado de procedência e termo de garantia. Frequentemente aceito por seguradoras como evidência de mitigação de risco UV.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'naturale',
+      name: 'INSULFILM™ Naturale',
+      positioning: 'Premium · neutralidade ótica + IR superior',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · cerâmica IR de pico com transparência preservada',
+    },
+    {
+      slug: 'clear70',
+      name: 'INSULFILM™ Clear70',
+      positioning: 'Performance · controle solar com bom bloqueio UV',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// MetallicoArgento — Premium · espelhado prata · 3 versões (50/35/20)
+// ─────────────────────────────────────────────
+const metallicoArgento: ProductDualPublic = {
+  slug: 'metallico-argento',
+  category: 'arq-solar',
+  line: 'Premium',
+  hero: {
+    badge: 'Solar · Premium · Espelhado',
+    title: 'Performance espelhada premium. Até 86% de bloqueio IR.',
+    subtitle:
+      'Película espelhada com tecnologia Vapor-Coated Aluminium — performance térmica máxima e estética espelhada prata. Três versões para diferentes contextos. Garantia 10 anos.',
+    quickStats: [
+      { label: 'Rejeição IR', value: 'até 86%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada prata' },
+      { label: 'Garantia', value: 'até 10 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para residências de fachada exposta',
+      description:
+        'Casa em terreno aberto, sacada com sol direto durante metade do dia, vista para condomínio adjacente. Privacidade diurna total com performance térmica de topo.',
+    },
+    corporate: {
+      headline: 'Para edifícios com fachadas de alta exposição solar',
+      description:
+        'Corporativos com identidade visual espelhada, edifícios em zona quente urbana, retrofit de fachadas para redução agressiva de OPEX em ar-condicionado.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Metallico Argento é a película arquitetônica premium para situações de alta exposição solar onde performance térmica é critério primário. Tecnologia Vapor-Coated Aluminium entrega até 86% de rejeição IR — patamar superior dentro da linha solar.',
+      'A estética espelhada prata cumpre função dupla: privacidade diurna total (de fora não se vê o interior durante o dia) e identidade visual contemporânea. Disponível em três versões (50/35/20) que permitem calibrar opacidade conforme cada projeto.',
+      'Especificada em residências de fachada exposta, edifícios corporativos em zonas urbanas quentes (especialmente regiões norte e centro-oeste) e retrofits onde a meta é redução agressiva de consumo de ar-condicionado.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Vapor-Coated Aluminium Film' },
+      { label: 'Versões disponíveis', value: '3 (Metallico Argento 50, 35, 20)' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 86%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada prata (visão externa)' },
+      { label: 'Privacidade diurna', value: 'Alta (efeito espelho)' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Pode haver (verificar com consultor)' },
+      { label: 'Garantia', value: 'Até 10 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Metallico Argento para residências de fachada exposta',
+    pains: [
+      {
+        problem:
+          'Casa de frente para outra casa ou condomínio — privacidade diurna sem fechar cortinas.',
+        solution:
+          'Efeito espelhado externo durante o dia bloqueia a visão de fora. Privacidade total sem reduzir luz natural interna.',
+      },
+      {
+        problem:
+          'Sacada com sol direto que torna ambiente impossível de usar nas tardes quentes.',
+        solution:
+          'Até 86% de bloqueio IR — patamar superior. O ambiente fica utilizável em todos os horários.',
+      },
+      {
+        problem:
+          'Conta de luz com ar-condicionado dominando consumo no verão.',
+        solution:
+          'Redução agressiva de carga térmica diminui demanda do sistema de refrigeração. Resultado mensurável já no segundo mês de fatura.',
+      },
+      {
+        problem:
+          'Quer estética contemporânea — vidro espelhado moderno, não película "automotiva" no prédio.',
+        solution:
+          'Acabamento arquitetônico premium. Linha Premium INSULFILM™, não confundir com películas espelhadas genéricas de baixo custo.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Vejo para fora normalmente durante o dia?',
+        a: 'Sim. O efeito espelho é assimétrico — bloqueia visão de quem está do lado mais iluminado (de fora durante o dia) preservando a visão de quem está do lado menos iluminado (você dentro da casa).',
+      },
+      {
+        q: 'E à noite, quando a luz interna está acesa?',
+        a: 'O efeito se inverte: à noite, de fora se enxerga para dentro. Para privacidade noturna, é necessário usar cortinas ou persianas. O efeito espelho é diurno.',
+      },
+      {
+        q: 'A película interfere em Wi-Fi ou sinal celular?',
+        a: 'Pode haver atenuação parcial por conta da camada de alumínio. Em projetos onde o sinal é crítico, o consultor faz teste prévio e pode recomendar alternativa não-metálica como Orizzonte70.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Metallico Argento para edifícios em alta exposição solar urbana',
+    pains: [
+      {
+        problem:
+          'Edifício corporativo em zona urbana quente — postos de trabalho próximos à fachada com NR17 comprometida.',
+        solution:
+          'Até 86% de bloqueio IR reduz drasticamente a carga térmica radiante. Conformidade NR17 documentada por laudo técnico individual.',
+      },
+      {
+        problem:
+          'OPEX do edifício dominado por consumo de ar-condicionado em meses quentes.',
+        solution:
+          'Patamar superior de rejeição IR resulta em redução proporcional da demanda do sistema. Simulação térmica predial disponível para previsão de ROI.',
+      },
+      {
+        problem:
+          'Retrofit de fachada onde se quer renovação estética e ganho de performance simultaneamente.',
+        solution:
+          'Estética espelhada prata renova visual urbano do edifício enquanto a performance térmica atualiza para padrão contemporâneo. Solução dupla em uma especificação.',
+      },
+      {
+        problem:
+          'Aplicação em edifício habitado — não pode ter obra civil prolongada.',
+        solution:
+          'Aplicação modular por andar/face. Cronograma compatível com operação contínua. Sem interrupção de uso dos ambientes.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Atende exigências NR17 em postos próximos a fachadas envidraçadas?',
+        a: 'Sim — é uma das soluções mais eficazes para casos de alta carga radiante. Laudo técnico individual documenta a redução por área. Anexável ao PGR/PCMSO.',
+      },
+      {
+        q: 'Como Metallico Argento se compara a Reflesso d\'Argento (Performance)?',
+        a: 'Metallico Argento é a versão Premium da família espelhada: tecnologia Vapor-Coated, maior bloqueio IR (até 86% vs 70%+ da Reflesso), garantia 10 anos (vs 3 anos). Para projetos onde performance e durabilidade são críticos.',
+      },
+      {
+        q: 'A atenuação de sinal celular pode ser problema em edifício corporativo?',
+        a: 'Em edifícios com sinal já fraco, sim. Em edifícios com sistema de DAS ou repetidores internos, geralmente não. Análise prévia disponível com consultor B2B.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'specchiato-bronzo',
+      name: 'INSULFILM™ Specchiato Bronzo',
+      positioning: 'Premium · espelhado bronze, estética distintiva',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · alternativa não-espelhada com IR superior',
+    },
+    {
+      slug: 'reflesso-d-argento',
+      name: "INSULFILM™ Reflesso d'Argento",
+      positioning: 'Performance · espelhado prata de custo inicial menor',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// SpecchiatoBronzo — Premium · espelhado bronze · 3 versões (35/25/15)
+// ─────────────────────────────────────────────
+const specchiatoBronzo: ProductDualPublic = {
+  slug: 'specchiato-bronzo',
+  category: 'arq-solar',
+  line: 'Premium',
+  hero: {
+    badge: 'Solar · Premium · Espelhado Bronze',
+    title: 'Sofisticação bronze. Conforto visual preservado.',
+    subtitle:
+      'Película espelhada premium com tecnologia Sputtered Nichrome — estética bronze de distinção arquitetônica, até 72% de bloqueio IR e conforto visual interno mantido. Três versões. Garantia 10 anos.',
+    quickStats: [
+      { label: 'Rejeição IR', value: 'até 72%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada bronze' },
+      { label: 'Garantia', value: 'até 10 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para residências com identidade arquitetônica distintiva',
+      description:
+        'Quem quer mais que espelhamento prata padrão — quer assinatura visual. Bronze é menos comum, mais arquitetônico, mais característico. Performance Premium em estética singular.',
+    },
+    corporate: {
+      headline: 'Para edifícios com identidade visual marcante',
+      description:
+        'Fachadas dos anos 70-80 em retrofit, edifícios com identidade bronze histórica, lounge bars e hotéis de identidade visual definida. Performance arquitetônica e estética unidas.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Specchiato Bronzo é a alternativa estética premium dentro da família espelhada — tecnologia Sputtered Nichrome com acabamento bronze característico. Performance térmica Premium (até 72% de bloqueio IR) com identidade visual distintiva.',
+      'O bronze como acabamento arquitetônico tem história: edifícios corporativos clássicos dos anos 70-80, residências de arquitetura modernista, hotelaria de alto padrão. A Specchiato Bronzo dá continuidade contemporânea a essa linguagem, agora com performance térmica de geração atual.',
+      'Disponível em três versões (35/25/15) para diferentes intensidades de espelhamento e privacidade. Indicada para projetos onde a identidade visual é tão importante quanto a performance.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Sputtered Nichrome Film' },
+      { label: 'Versões disponíveis', value: '3 (Specchiato Bronzo 35, 25, 15)' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 72%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada bronze' },
+      { label: 'Privacidade diurna', value: 'Alta' },
+      { label: 'Conforto visual interno', value: 'Preservado (Sputtered Nichrome)' },
+      { label: 'Garantia', value: 'Até 10 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Specchiato Bronzo para residências de assinatura arquitetônica',
+    pains: [
+      {
+        problem:
+          'Casa de arquitetura definida — espelhamento prata padrão quebraria a linguagem visual.',
+        solution:
+          'Bronze como acabamento dá continuidade à arquitetura. Performance térmica Premium sem comprometer identidade.',
+      },
+      {
+        problem:
+          'Quer privacidade diurna mas não quer "casa espelhada genérica".',
+        solution:
+          'Espelhamento bronze é menos comum, mais arquitetônico. Cumpre função de privacidade com singularidade visual.',
+      },
+      {
+        problem:
+          'Sacada ou ambiente exposto onde o conforto visual interno (cor, tom da luz) não pode ser distorcido.',
+        solution:
+          'Tecnologia Sputtered Nichrome preserva conforto visual interno. A luz que passa mantém tonalidade adequada para vivência.',
+      },
+      {
+        problem:
+          'Investimento de longo prazo — não quer película que descole ou perca aderência em poucos anos.',
+        solution:
+          'Garantia 10 anos com cobertura de descolamento, descoloração e perda de performance. Aplicação por canal autorizado INSULFILM™.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Bronze é discreto ou chama atenção?',
+        a: 'Depende da versão. Specchiato Bronzo 35 é mais sutil; Bronzo 15 é mais marcante. A escolha é feita conforme o projeto arquitetônico. Bronze é, em geral, menos chamativo que prata e mais distintivo que tons neutros.',
+      },
+      {
+        q: 'Pode combinar com outras películas na mesma casa?',
+        a: 'Sim. Comum combinar Specchiato Bronzo em fachadas expostas e uma linha não-espelhada (Naturale, Clear70) em ambientes internos ou janelas voltadas para área protegida.',
+      },
+      {
+        q: 'Qual a diferença real para Metallico Argento?',
+        a: 'Tecnologia, estética e performance térmica. Argento é Vapor-Coated Aluminium, espelhamento prata, até 86% IR. Bronzo é Sputtered Nichrome, espelhamento bronze, até 72% IR. Escolha por estética (bronze vs prata) e contexto de uso.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Specchiato Bronzo para edifícios com identidade visual bronze',
+    pains: [
+      {
+        problem:
+          'Edifício corporativo dos anos 70-80 em retrofit — fachada bronze original precisa de atualização com manutenção da identidade.',
+        solution:
+          'Specchiato Bronzo dá continuidade contemporânea à linguagem bronze histórica. Performance térmica atualizada, identidade preservada.',
+      },
+      {
+        problem:
+          'Hotel ou empreendimento de alto padrão onde a estética da fachada é parte do branding.',
+        solution:
+          'Acabamento bronze como elemento de marca. Performance Premium garante NR17 nos ambientes internos sem comprometer identidade visual externa.',
+      },
+      {
+        problem:
+          'Conformidade NR17 em edifício de fachada exposta — solução técnica não pode interferir na estética arquitetônica aprovada.',
+        solution:
+          'Laudo técnico individual documenta a adequação NR17. Estética bronze mantém a aprovação arquitetônica original.',
+      },
+      {
+        problem:
+          'Retrofit de edifício histórico ou tombado com fachada bronze original.',
+        solution:
+          'Aplicação reversível, não-invasiva, sem alteração estrutural. Aprovada para uso em edifícios com restrições patrimoniais. Documentação técnica disponível.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Specchiato Bronzo é aprovada para retrofit de edifício tombado?',
+        a: 'A aplicação é não-invasiva e reversível, característica geralmente compatível com restrições patrimoniais. A aprovação caso a caso depende do órgão de tombamento. Consultor B2B emite documentação técnica para apresentação ao IPHAN/órgãos locais.',
+      },
+      {
+        q: 'Mantém conformidade NR17 mesmo com bloqueio IR menor (72%) que Metallico Argento (86%)?',
+        a: 'Depende do nível de carga térmica do ambiente. Em situações de exposição extrema, Metallico Argento é mais indicado. Em exposições intermediárias, Specchiato Bronzo entrega NR17 conforme. Análise técnica individual define a especificação correta.',
+      },
+      {
+        q: 'Como manter consistência visual em edifício com várias faces?',
+        a: 'Especificação por face. Em retrofits de edifícios bronze, é comum aplicar Specchiato Bronzo em todas as faces visíveis para coerência. Documentação técnica acompanha cada face individualmente.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'metallico-argento',
+      name: 'INSULFILM™ Metallico Argento',
+      positioning: 'Premium · espelhado prata com IR superior (86%)',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · alternativa não-espelhada com IR de pico',
+    },
+    {
+      slug: 'naturale',
+      name: 'INSULFILM™ Naturale',
+      positioning: 'Premium · tom neutro sem espelhamento',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // Registro central (próximas PDPs entram aqui)
 // ─────────────────────────────────────────────
 export const productDualPublicData: Record<string, ProductDualPublic> = {
   clear70,
   orizzonte70,
-  // ultravioletti90: { ... },
-  // ...
+  naturale,
+  ultravioletti90,
+  'metallico-argento': metallicoArgento,
+  'specchiato-bronzo': specchiatoBronzo,
 };
 
 export const getProductDualPublic = (slug: string): ProductDualPublic | undefined =>

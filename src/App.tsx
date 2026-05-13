@@ -126,6 +126,10 @@ import ArqComSpecchiato from "./pages/arq/comercial/solar/SpecchiatoBronzo";
 /* ── PDPs Unificadas (residencial + empresarial em uma URL) ── */
 import Clear70Unified from "./pages/products/Clear70";
 import Orizzonte70Unified from "./pages/products/Orizzonte70";
+import NaturaleUnified from "./pages/products/Naturale";
+import Ultravioletti90Unified from "./pages/products/Ultravioletti90";
+import MetallicoArgentoUnified from "./pages/products/MetallicoArgento";
+import SpecchiatoBronzoUnified from "./pages/products/SpecchiatoBronzo";
 
 /* ── PDPs Arquitetônico Segurança ── */
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
@@ -185,6 +189,11 @@ const App = () => (
           <Route path="/pt/arquitetonico/solar/clear70" element={<Clear70Unified />} />
           {/* PR-zero — Orizzonte70 (Premium tier, exemplar #2) */}
           <Route path="/pt/arquitetonico/solar/orizzonte70" element={<Orizzonte70Unified />} />
+          {/* Batch 1 — 4 produtos Premium */}
+          <Route path="/pt/arquitetonico/solar/naturale" element={<NaturaleUnified />} />
+          <Route path="/pt/arquitetonico/solar/ultravioletti90" element={<Ultravioletti90Unified />} />
+          <Route path="/pt/arquitetonico/solar/metallico-argento" element={<MetallicoArgentoUnified />} />
+          <Route path="/pt/arquitetonico/solar/specchiato-bronzo" element={<SpecchiatoBronzoUnified />} />
 
           {/* Marca */}
           <Route path="/marca/sobre" element={<MarcaSobre />} />
@@ -260,37 +269,37 @@ const App = () => (
           {/* Clear70 unificada (PR 1) — antiga rota residencial agora redireciona */}
           <Route path="/arquitetonico/residencial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/residencial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
-          <Route path="/arquitetonico/residencial/solar/ultravioletti90" element={<ArqResUV90 />} />
-          <Route path="/arquitetonico/residencial/solar/naturale" element={<ArqResNaturale />} />
+          <Route path="/arquitetonico/residencial/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
+          <Route path="/arquitetonico/residencial/solar/naturale" element={<Navigate to="/pt/arquitetonico/solar/naturale" replace />} />
           <Route path="/arquitetonico/residencial/solar/petrolio" element={<ArqResPetrolio />} />
           <Route path="/arquitetonico/residencial/solar/grigio-invertito" element={<ArqResGrigio />} />
-          <Route path="/arquitetonico/residencial/solar/metallico-argento" element={<ArqResMetallico />} />
+          <Route path="/arquitetonico/residencial/solar/metallico-argento" element={<Navigate to="/pt/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/arquitetonico/residencial/solar/reflesso-d-argento" element={<ArqResReflesso />} />
-          <Route path="/arquitetonico/residencial/solar/specchiato-bronzo" element={<ArqResSpecchiato />} />
+          <Route path="/arquitetonico/residencial/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
           {/* Divisão Arquitetônica — Comercial Solar */}
           <Route path="/arquitetonico/comercial/solar" element={<ArqHubSolar />} />
           {/* Clear70 unificada (PR 1) — antiga rota comercial agora redireciona */}
           <Route path="/arquitetonico/comercial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/comercial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
-          <Route path="/arquitetonico/comercial/solar/ultravioletti90" element={<ArqComUV90 />} />
-          <Route path="/arquitetonico/comercial/solar/naturale" element={<ArqComNaturale />} />
+          <Route path="/arquitetonico/comercial/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
+          <Route path="/arquitetonico/comercial/solar/naturale" element={<Navigate to="/pt/arquitetonico/solar/naturale" replace />} />
           <Route path="/arquitetonico/comercial/solar/petrolio" element={<ArqComPetrolio />} />
           <Route path="/arquitetonico/comercial/solar/grigio-invertito" element={<ArqComGrigio />} />
-          <Route path="/arquitetonico/comercial/solar/metallico-argento" element={<ArqComMetallico />} />
+          <Route path="/arquitetonico/comercial/solar/metallico-argento" element={<Navigate to="/pt/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/arquitetonico/comercial/solar/reflesso-d-argento" element={<ArqComReflesso />} />
-          <Route path="/arquitetonico/comercial/solar/specchiato-bronzo" element={<ArqComSpecchiato />} />
+          <Route path="/arquitetonico/comercial/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
           {/* Redirects legado — PDPs Solar antigas → Residencial */}
           <Route path="/arquitetonico/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
-          <Route path="/arquitetonico/solar/ultravioletti90" element={<Navigate to="/arquitetonico/residencial/solar/ultravioletti90" replace />} />
-          <Route path="/arquitetonico/solar/naturale" element={<Navigate to="/arquitetonico/residencial/solar/naturale" replace />} />
+          <Route path="/arquitetonico/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
+          <Route path="/arquitetonico/solar/naturale" element={<Navigate to="/pt/arquitetonico/solar/naturale" replace />} />
           <Route path="/arquitetonico/solar/petrolio" element={<Navigate to="/arquitetonico/residencial/solar/petrolio" replace />} />
           <Route path="/arquitetonico/solar/grigio-invertito" element={<Navigate to="/arquitetonico/residencial/solar/grigio-invertito" replace />} />
-          <Route path="/arquitetonico/solar/metallico-argento" element={<Navigate to="/arquitetonico/residencial/solar/metallico-argento" replace />} />
+          <Route path="/arquitetonico/solar/metallico-argento" element={<Navigate to="/pt/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/arquitetonico/solar/reflesso-d-argento" element={<Navigate to="/arquitetonico/residencial/solar/reflesso-d-argento" replace />} />
-          <Route path="/arquitetonico/solar/specchiato-bronzo" element={<Navigate to="/arquitetonico/residencial/solar/specchiato-bronzo" replace />} />
+          <Route path="/arquitetonico/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
           {/* Divisão Arquitetônica — PDPs Segurança (legado) */}
           <Route path="/arquitetonico/seguranca/issf4000" element={<ArqSegurancaISSF4000 />} />
@@ -355,13 +364,13 @@ const App = () => (
           <Route path="/skudo-ultra" element={<Navigate to="/automotivo/seguranca/skudoultra" replace />} />
           <Route path="/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
-          <Route path="/ultravioletti90" element={<Navigate to="/arquitetonico/solar/ultravioletti90" replace />} />
-          <Route path="/naturale" element={<Navigate to="/arquitetonico/solar/naturale" replace />} />
+          <Route path="/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
+          <Route path="/naturale" element={<Navigate to="/pt/arquitetonico/solar/naturale" replace />} />
           <Route path="/petrolio" element={<Navigate to="/arquitetonico/solar/petrolio" replace />} />
           <Route path="/grigio-invertito" element={<Navigate to="/arquitetonico/solar/grigio-invertito" replace />} />
-          <Route path="/metallico-argento" element={<Navigate to="/arquitetonico/solar/metallico-argento" replace />} />
+          <Route path="/metallico-argento" element={<Navigate to="/pt/arquitetonico/solar/metallico-argento" replace />} />
           <Route path="/reflesso-dargento" element={<Navigate to="/arquitetonico/solar/reflesso-d-argento" replace />} />
-          <Route path="/specchiato-bronzo" element={<Navigate to="/arquitetonico/solar/specchiato-bronzo" replace />} />
+          <Route path="/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
           <Route path="/aviso_legal" element={<Navigate to="/marca/autenticidade" replace />} />
           <Route path="/aviso-legal" element={<Navigate to="/marca/autenticidade" replace />} />
           <Route path="/automotivo/ppf/phantom-6mil" element={<Navigate to="/automotivo/ppf/phantom-gloss" replace />} />
