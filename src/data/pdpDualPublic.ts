@@ -17,7 +17,7 @@
 // ─────────────────────────────────────────────
 export const dualPublicAggregates = {
   appliedSquareMeters: '+3 milhões m²',
-  yearsInMarket: 'Em projetos arquitetônicos desde 2018',
+  yearsInMarket: 'Em projetos arquitetônicos desde 1988',
   bestSellerNote: 'Linha mais vendida do portfólio INSULFILM™ arquitetônico nos últimos 4 anos',
 } as const;
 
@@ -253,11 +253,172 @@ const clear70: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
+// Orizzonte70 — exemplar #2 (Premium tier)
+// ─────────────────────────────────────────────
+const orizzonte70: ProductDualPublic = {
+  slug: 'orizzonte70',
+  category: 'arq-solar',
+  line: 'Premium',
+
+  hero: {
+    badge: 'Solar · Premium',
+    title: 'Performance cerâmica premium. Transparência preservada.',
+    subtitle:
+      'Tecnologia nano cerâmica de geração premium — bloqueia 93% do calor infravermelho com 68% de transmissão luminosa. Garantia de 10 anos.',
+    quickStats: [
+      { label: 'Transparência (VLT)', value: '68%' },
+      { label: 'Rejeição IR', value: 'até 93%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Garantia', value: 'até 10 anos' },
+    ],
+  },
+
+  segmentation: {
+    residential: {
+      headline: 'Para sua residência de alto padrão',
+      description:
+        'A casa que cuida de tudo: vista preservada, móveis intactos, conforto consistente, garantia decenal. Para quem investiu no interior e exige o mesmo nível de cuidado nas janelas.',
+    },
+    corporate: {
+      headline: 'Para projetos de alta exigência',
+      description:
+        'Edifícios classe AAA, retrofits LEED/AQUA, ativos imobiliários de alto valor patrimonial. Performance cerâmica documentada, custo de ciclo de vida competitivo, dossiê técnico para auditoria.',
+    },
+  },
+
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Orizzonte70 é o topo da família solar arquitetônica — película cerâmica de geração premium com 93% de rejeição infravermelha e máxima preservação da transparência ótica.',
+      'Sua composição cerâmica avançada combina o que nenhuma alternativa no mercado entrega simultaneamente: bloqueio térmico de performance superior, neutralidade ótica que não distorce a percepção de cor do ambiente e estabilidade de longo prazo certificada.',
+      'Aplicada em residências de alto padrão, fachadas corporativas classe AAA e edifícios de valor patrimonial onde desempenho mediano comprometeria o ativo. Garantia de 10 anos — a mais longa do portfólio.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Premium Nano Ceramic Infrared Film' },
+      { label: 'Transmissão de luz visível (VLT)', value: '68%' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 93%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Rejeição total de energia (TSER)', value: '~58%' },
+      { label: 'Refletância visível externa', value: 'Baixa' },
+      { label: 'Neutralidade ótica', value: 'Premium (alta)' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Não há (sem metalização)' },
+      { label: 'Garantia', value: 'Até 10 anos (residencial e comercial)' },
+    ],
+  },
+
+  residential: {
+    h2: 'Orizzonte70 para residências de alto padrão',
+    pains: [
+      {
+        problem:
+          'A vista do jardim, da praia, da cidade — você não quer abrir mão dela com cortinas pesadas.',
+        solution:
+          '68% de transmissão luminosa preservam a vista. Você vê tudo o que tinha antes da aplicação — só o calor que some.',
+      },
+      {
+        problem:
+          'Móveis caros, obras de arte, pisos importados — o investimento de uma vida no interior da casa.',
+        solution:
+          '>99% de bloqueio UV + estabilidade ótica cerâmica premium. Os materiais do interior preservam apresentação e valor por décadas.',
+      },
+      {
+        problem:
+          'Você quer conforto consistente, não solução que decai em dois anos.',
+        solution:
+          'Garantia de 10 anos — a mais longa do portfólio. Cobertura de fabricante e aplicação por canal autorizado.',
+      },
+      {
+        problem:
+          'A casa tem múltiplas exposições solares e merece uma especificação técnica, não improviso.',
+        solution:
+          'Mapeamento térmico individual pré-aplicação. Performance premium em todas as orientações de janela.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Vale a diferença de preço entre Orizzonte70 e Clear70?',
+        a: 'Se você prioriza transparência máxima e longevidade (garantia de 10 vs 5 anos), sim. A diferença de 12% no bloqueio IR e o dobro de garantia justificam o investimento para residências de alto padrão e ativos de longo prazo.',
+      },
+      {
+        q: 'Aplica em todas as janelas da casa ou só nas críticas?',
+        a: 'O consultor faz mapeamento térmico antes da especificação. Janelas voltadas para nascente e poente são prioridade. Vidros estruturais em sacadas integradas geralmente também entram. Aplicação modular por face/janela.',
+      },
+      {
+        q: 'Não escurece o ambiente como filmes mais antigos?',
+        a: '68% de transmissão luminosa — praticamente imperceptível visualmente. A cerâmica premium é opticamente neutra: não interfere na percepção de cor de interior, em obras de arte ou na fotografia residencial.',
+      },
+    ],
+  },
+
+  corporate: {
+    h2: 'Orizzonte70 para edifícios classe AAA e projetos de alta exigência',
+    pains: [
+      {
+        problem:
+          'Edifício classe AAA com FAR elevado e exigência de certificação LEED/AQUA.',
+        solution:
+          'Especificação premium documentada para créditos de Eficiência Energética. Laudo técnico individual + simulação térmica disponíveis sob demanda.',
+      },
+      {
+        problem:
+          'Custo de ciclo de vida (LCC) é critério no comitê de aprovação — não só CAPEX.',
+        solution:
+          'Garantia 10 anos + manutenção zero ao longo da vida útil. O LCC do Orizzonte70 supera alternativas de custo inicial menor em qualquer horizonte > 4 anos.',
+      },
+      {
+        problem:
+          'Fachadas envidraçadas de alto valor patrimonial — desempenho mediano compromete o ativo.',
+        solution:
+          'Performance cerâmica premium documentada por laudo técnico por aplicação. Especificação aprovada em edifícios listados e ativos AAA no Brasil.',
+      },
+      {
+        problem:
+          'Diretoria quer evidência hard de redução de OPEX antes de aprovar retrofit predial.',
+        solution:
+          'Estudo de simulação térmica predial + relatório de ROI individualizado sob demanda. Disponível diretamente com consultor B2B.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Como Orizzonte70 contribui em projetos LEED ou AQUA?',
+        a: 'Bloqueio de IR e UV são critérios de pontuação em Otimização de Eficiência Energética. Laudo técnico individual + simulação térmica entregam evidência documental para o crédito. Especificação detalhada disponível com consultor B2B.',
+      },
+      {
+        q: 'Garantia de 10 anos cobre todo o ciclo de vida do equipamento?',
+        a: 'Cobre fabricante e aplicação. Inclui descoloração, descolamento e perda de performance superior a 15% da especificação inicial. Termo de garantia individual emitido por aplicação, vinculado ao lote.',
+      },
+      {
+        q: 'É possível especificar Orizzonte70 em retrofit predial em andamento?',
+        a: 'Sim. A aplicação não requer obra civil, é feita por andar, face ou área, e não interrompe ocupação. É a solução padrão para retrofits LEED/AQUA em edifícios habitados.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+
+  related: [
+    {
+      slug: 'naturale',
+      name: 'INSULFILM™ Naturale',
+      positioning: 'Premium · tom neutro com performance térmica estendida',
+    },
+    {
+      slug: 'ultravioletti90',
+      name: 'INSULFILM™ Ultravioletti90',
+      positioning: 'Premium · proteção UV de pico para acervos sensíveis',
+    },
+    {
+      slug: 'clear70',
+      name: 'INSULFILM™ Clear70',
+      positioning: 'Performance · alternativa de custo inicial menor',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // Registro central (próximas PDPs entram aqui)
 // ─────────────────────────────────────────────
 export const productDualPublicData: Record<string, ProductDualPublic> = {
   clear70,
-  // orizzonte70: { ... },
+  orizzonte70,
   // ultravioletti90: { ... },
   // ...
 };
