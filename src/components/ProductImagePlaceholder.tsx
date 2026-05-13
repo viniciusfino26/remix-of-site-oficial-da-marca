@@ -42,7 +42,7 @@ const ProductImagePlaceholder = ({
   const bgClasses = isDark
     ? 'bg-muted/10 border border-border/20'
     : 'bg-background border border-border/40';
-  const iconColor = isDark ? 'text-primary-foreground/30' : 'text-muted-foreground/40';
+  const iconColor = isDark ? 'text-primary-foreground/70' : 'text-muted-foreground/60';
 
   return (
     <motion.div

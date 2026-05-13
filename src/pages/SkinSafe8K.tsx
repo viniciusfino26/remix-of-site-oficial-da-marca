@@ -310,7 +310,7 @@ const SkinSafe8K = () => {
             <motion.div variants={fadeInLeft}>
               <Card className="glass-card rounded-2xl overflow-hidden h-full">
                 <div className="aspect-[16/10] bg-primary-foreground/5 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground/50">
+                  <div className="text-center text-primary-foreground/70">
                     <Layers className="w-12 h-12 mx-auto mb-2" />
                     <p className="text-xs">Imagem em breve</p>
                   </div>
@@ -324,7 +324,7 @@ const SkinSafe8K = () => {
             <motion.div variants={fadeInRight}>
               <Card className="glass-card rounded-2xl overflow-hidden h-full">
                 <div className="aspect-[16/10] bg-primary-foreground/5 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground/50">
+                  <div className="text-center text-primary-foreground/70">
                     <Sun className="w-12 h-12 mx-auto mb-2" />
                     <p className="text-xs">Imagem em breve</p>
                   </div>

@@ -471,7 +471,7 @@ const SkudoGuard = () => {
           >
             <motion.div variants={fadeInLeft}>
               <div className="aspect-[4/3] rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center">
-                <div className="text-center text-primary-foreground/50">
+                <div className="text-center text-primary-foreground/70">
                   <Users className="w-16 h-16 mx-auto mb-3" />
                   <p className="text-sm font-light">Foto ilustrativa — família</p>
                 </div>
