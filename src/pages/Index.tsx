@@ -137,7 +137,6 @@ const Index = () => {
                 title="INSULFILM™"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 className="w-full h-full pointer-events-none"
-                loading="lazy"
               />
               <div className="absolute inset-0 z-10 cursor-default" />
             </div>
