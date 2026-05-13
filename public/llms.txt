@@ -115,9 +115,24 @@ Sim. As linhas automotivas oferecem opções dentro dos limites de transmissão 
 
 ---
 
-## 4. Contato
+---
 
-Para cotações, agendamento de aplicação, frota e parcerias, utilize:
-- WhatsApp / Vendas: +55 11 97613-6911
-- Centros Autorizados: https://www.insulfilm.com.br/lojas
-- Seja Parceiro: https://www.insulfilm.com.br/parceiro
+## Pages
+
+- [Home](/): Página inicial da INSULFILM™ — catálogo de películas automotivas e arquitetônicas.
+- [Automotivo](/automotivo): Catálogo de películas para vidros de veículos — solar, segurança e PPF.
+- [Arquitetônico](/arquitetonico): Catálogo de películas para residências e comércios — solar, segurança e decorativas.
+- [O Que é INSULFILM™?](/sobre/o-que-e-insulfilm): Definição oficial da marca registrada.
+- [Marca Registrada](/sobre/insulfilm-marca-registrada): Proteção de propriedade industrial e registro no INPI.
+- [Centros Autorizados](/lojas): Endereços e horários das unidades em São Paulo.
+- [Vendas](/vendas): Canais de contato para cotações e atendimento comercial.
+- [Seja Parceiro](/parceiro): Programa de parcerias e franquias.
+- [Frota](/frota): Soluções para empresas e frotas.
+- [Carreiras](/carreiras): Oportunidades de trabalho na INSULFILM™.
+- [FAQ](/faq): Perguntas frequentes sobre produtos, garantia e aplicação.
+- [Garantia](/garantia): Termos e cobertura da garantia INSULFILM™.
+- [Política de Privacidade](/privacidade): Política de dados e LGPD.
+
+## Sitemap
+
+Sitemap completo: https://www.insulfilm.com.br/sitemap.xml
