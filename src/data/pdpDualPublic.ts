@@ -1032,6 +1032,470 @@ const specchiatoBronzo: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
+// Petrolio — Performance · estética preta sem refletividade
+// ─────────────────────────────────────────────
+const petrolio: ProductDualPublic = {
+  slug: 'petrolio',
+  category: 'arq-solar',
+  line: 'Performance',
+  hero: {
+    badge: 'Solar · Performance',
+    title: 'Estética preta sem espelhamento. Discreta por fora, controlada por dentro.',
+    subtitle:
+      'Película arquitetônica híbrida com acabamento preto — sem efeito espelho, sem refletividade externa intensa. Proteção UV >99% com personalidade arquitetônica contemporânea.',
+    quickStats: [
+      { label: 'Aparência', value: 'Preta opaca' },
+      { label: 'Rejeição IR', value: 'até 42%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Garantia', value: 'até 3 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para residências com identidade arquitetônica preta',
+      description:
+        'Casas contemporâneas, vidros pretos integrados, fachadas modernistas. Quem quer privacidade e proteção UV sem que a casa pareça um prédio espelhado de aeroporto.',
+    },
+    corporate: {
+      headline: 'Para projetos comerciais com estética definida',
+      description:
+        'Lojas conceituais, showrooms contemporâneos, fachadas de identidade preta. Reduz carga UV total e melhora privacidade sem comprometer linguagem arquitetônica.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Petrolio é a película arquitetônica de acabamento preto opaco — sem o efeito espelho que define os filmes espelhados convencionais. Tecnologia Hybrid Performance combina proteção UV de pico (>99%) com controle solar moderado.',
+      'O posicionamento é estético antes de tudo: ela existe para projetos onde a opacidade preta é parte da linguagem arquitetônica e a refletividade espelhada seria descontextualizada. A rejeição IR (até 42%) é menor que linhas focadas em performance térmica, mas suficiente para reduzir ganho solar em ambientes onde estética é prioridade.',
+      'Indicada para arquitetura contemporânea residencial e comercial, fachadas de vidros pretos integrados e projetos onde o controle solar não pode comprometer a identidade visual.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Hybrid Performance Film' },
+      { label: 'Aparência', value: 'Preta opaca (sem espelhamento)' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 42%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Refletividade externa', value: 'Baixa' },
+      { label: 'Privacidade diurna', value: 'Alta (opacidade)' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Mínima' },
+      { label: 'Garantia', value: 'Até 3 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Petrolio para residências contemporâneas',
+    pains: [
+      {
+        problem:
+          'Casa de arquitetura preta — película espelhada padrão quebraria a linguagem do projeto.',
+        solution:
+          'Acabamento preto opaco coerente com a estética. Sem espelhamento, sem refletividade que destoa.',
+      },
+      {
+        problem:
+          'Quer privacidade diurna sem que a fachada vire um espelho que reflete a vizinhança.',
+        solution:
+          'Privacidade pela opacidade, não pela refletividade. De fora se vê preto sólido, não o reflexo da rua.',
+      },
+      {
+        problem:
+          'Móveis e pisos sofrendo com luz UV em ambientes voltados para o sol.',
+        solution:
+          '>99% de bloqueio UV. Proteção máxima de interiores contra o principal agente de descoloração.',
+      },
+      {
+        problem:
+          'Quer reduzir parte do calor sem investir no patamar Premium de bloqueio térmico.',
+        solution:
+          'Redução IR moderada (até 42%) com investimento Performance. Para quem prioriza estética + UV + privacidade, não bloqueio térmico máximo.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Petrolio reduz muito o calor?',
+        a: 'Reduz parcialmente (até 42% de IR). Se controle térmico é a prioridade principal, Clear70 ou linhas Premium (Orizzonte70, MetallicoArgento) entregam mais. A Petrolio é escolhida por estética preta + UV + privacidade.',
+      },
+      {
+        q: 'Escurece muito o ambiente interno?',
+        a: 'Sim, é uma película opaca preta — reduz luz natural significativamente. É escolha consciente: você troca luminosidade por privacidade total e estética preta. Não é indicada para ambientes onde luz natural é prioridade.',
+      },
+      {
+        q: 'Por que não é Premium se a UV é >99%?',
+        a: 'A classificação Premium leva em conta tecnologia, performance integral e garantia (10 anos). A Petrolio tem garantia de 3 anos e tecnologia Hybrid — Performance é a classificação correta. A UV alta é benefício da composição, não suficiente para Premium isoladamente.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Petrolio para projetos comerciais com identidade preta definida',
+    pains: [
+      {
+        problem:
+          'Loja conceito, showroom ou ponto comercial com fachada preta — espelhamento padrão descaracterizaria a marca.',
+        solution:
+          'Acabamento preto opaco mantém identidade visual do ponto. Privacidade diurna + UV preservam mercadoria e ambiente interno.',
+      },
+      {
+        problem:
+          'Mercadoria desbotando em vitrines voltadas para sol direto — reposição custa, imagem da loja se desgasta.',
+        solution:
+          '>99% de bloqueio UV preserva cores originais de produtos e display. Aplicação rápida em retrofit de fachada.',
+      },
+      {
+        problem:
+          'NR17 em postos de trabalho próximos a fachada de vidro com alta carga UV.',
+        solution:
+          'Bloqueio UV de pico contribui em ambientes onde exposição cumulativa é fator. Documentação técnica disponível com consultor B2B.',
+      },
+      {
+        problem:
+          'Retrofit de ponto comercial em operação — não pode haver obra que interrompa o atendimento.',
+        solution:
+          'Aplicação modular por vidro, fora do horário de operação. Sem alteração civil. Cronograma compatível com loja aberta.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Pode ser aplicada em fachada visível da rua?',
+        a: 'Sim — é o uso típico em lojas conceituais e showrooms. A aparência preta opaca de fora é parte da estética buscada nesses projetos.',
+      },
+      {
+        q: 'Como Petrolio se compara a Grigio Invertito ou Reflesso d\'Argento?',
+        a: 'Petrolio é PRETA OPACA, sem espelhamento. Grigio Invertito é ESPELHADA com visibilidade interna preservada (efeito espião melhorado, similar à Specchiato Bronzo). Reflesso d\'Argento é ESPELHADA PRATA convencional. Três soluções de privacidade com estéticas e leituras visuais diferentes.',
+      },
+      {
+        q: 'A Petrolio cumpre exigência NR17?',
+        a: 'Contribui com a redução de carga UV em postos de trabalho. Para conformidade NR17 ampla (incluindo conforto térmico), análise por consultor B2B define se Petrolio sozinha é suficiente ou se complemento térmico é necessário.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'grigio-invertito',
+      name: 'INSULFILM™ Grigio Invertito',
+      positioning: 'Performance · privacidade externa + visibilidade interna',
+    },
+    {
+      slug: 'reflesso-d-argento',
+      name: "INSULFILM™ Reflesso d'Argento",
+      positioning: 'Performance · espelhado prata com IR superior',
+    },
+    {
+      slug: 'orizzonte70',
+      name: 'INSULFILM™ Orizzonte70',
+      positioning: 'Premium · upgrade aspiracional não-espelhado',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// Grigio Invertito — Performance · espelhado invertido (fora prata / dentro fumê)
+// ─────────────────────────────────────────────
+const grigioInvertito: ProductDualPublic = {
+  slug: 'grigio-invertito',
+  category: 'arq-solar',
+  line: 'Performance',
+  hero: {
+    badge: 'Solar · Performance',
+    title: 'Privacidade espelhada com visibilidade interna preservada.',
+    subtitle:
+      'Película arquitetônica com alto efeito espelhado externo e visão interna mais aguçada que filmes refletivos convencionais. Privacidade diurna sem perder o contato visual com o exterior. Garantia 3 anos.',
+    quickStats: [
+      { label: 'Transparência interna (VLT)', value: '15%' },
+      { label: 'Rejeição IR', value: 'até 75%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Garantia', value: 'até 3 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para residências que precisam de privacidade sem perder a vista',
+      description:
+        'Casa de frente para vizinho próximo, condomínio horizontal, sacada exposta. Quem quer privacidade durante o dia mas não abre mão de olhar para fora.',
+    },
+    corporate: {
+      headline: 'Para escritórios e salas com privacidade + vista',
+      description:
+        'Salas de reunião com fachada envidraçada, escritórios em andares baixos, ambientes onde se exige privacidade total externa mas a equipe precisa continuar enxergando o entorno.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Grigio Invertito tem uma característica que a destaca dentro da linha espelhada Performance: mesmo com alto efeito espelho externo, a visibilidade interna permanece mais aguçada que a maioria dos filmes refletivos convencionais. Tecnologia Vapor-Coated Aluminium calibrada para esse equilíbrio.',
+      'O comportamento é parecido com a Specchiato Bronzo (Premium) no aspecto da visão interna preservada — sem o "fechamento" característico dos filmes espelhados clássicos. A diferença está no tom (cinza vs bronze), na tecnologia e no patamar Performance (vs Premium).',
+      'À noite, quando a luz interna supera a externa, o efeito espelho se inverte (de fora se enxerga para dentro). Para manter o "efeito espião" também à noite, uma solução técnica comum é instalar um spot de luz externo voltado para a fachada — equilibra a iluminação dos dois lados e preserva o espelhamento. Quando isso não é viável, cortina ou persiana noturna resolvem.',
+      'Aplicação típica: residências em condomínios horizontais, salas em térreo e andares baixos, ambientes onde a combinação privacidade externa + visão interna ao exterior é prioridade. Rejeição IR de até 75% adiciona controle térmico relevante além da função de privacidade.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Vapor-Coated Aluminium Film' },
+      { label: 'Transmissão de luz visível (VLT)', value: '15%' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 75%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Efeito externo (diurno)', value: 'Espelho prata-cinza' },
+      { label: 'Visibilidade interna', value: 'Preservada (acima do padrão refletivo)' },
+      { label: 'Privacidade diurna', value: 'Alta (efeito espelho)' },
+      { label: 'Privacidade noturna', value: 'Requer iluminação externa OU cortina' },
+      { label: 'Garantia', value: 'Até 3 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Grigio Invertito para residências de condomínio horizontal',
+    pains: [
+      {
+        problem:
+          'Casa de frente para casa do vizinho — sempre com cortina fechada, perdendo luz natural e vista.',
+        solution:
+          'Privacidade diurna pelo espelhamento externo. A cortina pode ficar aberta durante o dia — você mantém vista para fora com visibilidade preservada acima do padrão refletivo.',
+      },
+      {
+        problem:
+          'Sacada ou terraço em condomínio com tráfego de outros condôminos passando próximo.',
+        solution:
+          'De fora, ninguém enxerga. De dentro, você continua usufruindo do ambiente normalmente.',
+      },
+      {
+        problem:
+          'Quer também reduzir calor da fachada exposta, não só ganhar privacidade.',
+        solution:
+          'Até 75% de rejeição IR — performance térmica relevante. Solução dupla: privacidade + controle solar em uma especificação.',
+      },
+      {
+        problem:
+          'Garantia mínima de 3 anos suficiente — não precisa do compromisso Premium de 10.',
+        solution:
+          'Linha Performance INSULFILM™. Mesma tecnologia Vapor-Coated em escala Performance, preço acessível com garantia de fabricante.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Funciona de noite também?',
+        a: 'Por padrão não — quando a luz interna fica mais forte que a externa (à noite, com luzes acesas), o efeito espelho se inverte e de fora se enxerga para dentro. Solução técnica: spot de luz externo voltado para a fachada equilibra a iluminação dos dois lados e mantém o "efeito espião" também à noite. Quando isso não é viável, cortina ou persiana noturna resolvem.',
+      },
+      {
+        q: 'Escurece muito o ambiente?',
+        a: 'A versão padrão tem VLT de 15% — escurece visivelmente. Para ambientes onde se quer privacidade com mais luz, vale conversar com consultor sobre outras opções. Para privacidade total, o escurecimento é parte do funcionamento.',
+      },
+      {
+        q: 'Posso aplicar em apartamento alto também?',
+        a: 'Pode, mas a aplicação típica é em térreos, andares baixos e casas — onde a privacidade externa é problema real. Em altos andares, geralmente não há necessidade prática.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Grigio Invertito para escritórios e salas com privacidade + visibilidade',
+    pains: [
+      {
+        problem:
+          'Sala de reunião térrea voltada para rua — privacidade necessária mas equipe quer continuar enxergando movimento externo.',
+        solution:
+          'Espelhamento externo diurno bloqueia visão de fora. Visibilidade interna preservada. Solução padrão para salas de board e reuniões executivas em térreos.',
+      },
+      {
+        problem:
+          'NR17 em estação de trabalho próxima à fachada com exposição UV e térmica.',
+        solution:
+          'Até 75% de rejeição IR + >99% UV reduzem a carga térmica radiante. Laudo técnico por aplicação disponível para anexo ao PGR.',
+      },
+      {
+        problem:
+          'Ponto comercial em andar baixo com pessoas passando o tempo todo na frente da vitrine.',
+        solution:
+          'Privacidade diurna total para o interior do ponto. Aparência externa controlada. Vitrine continua sendo vitrine apenas para quem decidiu entrar.',
+      },
+      {
+        problem:
+          'Retrofit em escritório em operação — janela de obra é curta.',
+        solution:
+          'Aplicação por vidro, fora do horário de pico. Sem obra civil. Operação não para.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Como Grigio Invertito atende a NR17?',
+        a: 'A redução de carga IR e UV é documentada por laudo técnico individual emitido por aplicação. Anexo ao PGR/PCMSO compõe a documentação de mitigação para postos próximos a fachadas envidraçadas.',
+      },
+      {
+        q: 'Funciona em pavimentos altos ou só térreos?',
+        a: 'Tecnicamente funciona em qualquer pavimento. A demanda é principalmente em térreos e andares baixos por questão de privacidade real (em alto andar geralmente não há quem olhe diretamente para dentro). Em alto, a função fica reduzida ao controle solar.',
+      },
+      {
+        q: 'É a versão Performance do Metallico Argento?',
+        a: 'Não exatamente. Metallico Argento é espelhamento simétrico (espelha dos dois lados durante o dia). Grigio Invertito é assimétrico (espelha só de um lado). São produtos com funções relacionadas mas distintas. Análise de uso define qual é a especificação correta.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'reflesso-d-argento',
+      name: "INSULFILM™ Reflesso d'Argento",
+      positioning: 'Performance · espelhado prata convencional',
+    },
+    {
+      slug: 'petrolio',
+      name: 'INSULFILM™ Petrolio',
+      positioning: 'Performance · privacidade preta sem espelhamento',
+    },
+    {
+      slug: 'metallico-argento',
+      name: 'INSULFILM™ Metallico Argento',
+      positioning: 'Premium · upgrade espelhado com IR superior (86%)',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// Reflesso d'Argento — Performance · espelhado prata convencional
+// ─────────────────────────────────────────────
+const reflessoDArgento: ProductDualPublic = {
+  slug: 'reflesso-d-argento',
+  category: 'arq-solar',
+  line: 'Performance',
+  hero: {
+    badge: 'Solar · Performance',
+    title: 'Espelhado prata clássico. Privacidade e controle solar em escala Performance.',
+    subtitle:
+      'Película arquitetônica espelhada com 80% de rejeição IR e privacidade diurna total. Aplicação versátil em fachadas e pergolados. Linha Performance com garantia 3 anos.',
+    quickStats: [
+      { label: 'Rejeição IR', value: 'até 80%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada prata' },
+      { label: 'Garantia', value: 'até 3 anos' },
+    ],
+  },
+  segmentation: {
+    residential: {
+      headline: 'Para fachadas e ambientes expostos ao sol direto',
+      description:
+        'Sacadas com sol direto, áreas envidraçadas grandes, pergolados de vidro. Quem quer privacidade espelhada e controle solar agressivo sem investir no patamar Premium.',
+    },
+    corporate: {
+      headline: 'Para edifícios e fachadas envidraçadas em alta exposição',
+      description:
+        'Edifícios corporativos em zona urbana quente, fachadas voltadas para nascente/poente, NR17 em postos próximos a fachadas. Custo-benefício Performance para projetos amplos.',
+    },
+  },
+  description: {
+    paragraphs: [
+      'A INSULFILM™ Reflesso d\'Argento é a versão Performance da família espelhada prata da INSULFILM™. Tecnologia Vapor-Coated Aluminium com até 80% de rejeição IR — patamar superior dentro do tier Performance.',
+      'Atende a aplicação clássica de fachadas e ambientes expostos: privacidade diurna total pelo efeito espelho prata, controle solar agressivo pela alta rejeição IR e proteção UV >99%. Versatilidade de aplicação em vidros de fachada, pergolados envidraçados e áreas integradas grandes.',
+      'Compete com a Metallico Argento (Premium) no patamar térmico, oferecendo investimento inicial menor e garantia Performance (3 anos vs 10 anos). A escolha entre as duas é função do horizonte de investimento e ciclo de vida pretendido.',
+    ],
+    techTable: [
+      { label: 'Tecnologia', value: 'Vapor-Coated Aluminium Film' },
+      { label: 'Rejeição infravermelho (IR)', value: 'até 80%' },
+      { label: 'Bloqueio UV', value: '>99%' },
+      { label: 'Estética', value: 'Espelhada prata' },
+      { label: 'Privacidade diurna', value: 'Alta (efeito espelho)' },
+      { label: 'Aplicações típicas', value: 'Fachadas, pergolados, áreas envidraçadas amplas' },
+      { label: 'Interferência em sinais eletrônicos', value: 'Pode haver (verificar com consultor)' },
+      { label: 'Garantia', value: 'Até 3 anos' },
+    ],
+  },
+  residential: {
+    h2: 'Reflesso d\'Argento para residências com fachadas amplas',
+    pains: [
+      {
+        problem:
+          'Sacada integrada grande com sol direto — torna o ambiente impossível de usar nas horas de pico.',
+        solution:
+          'Até 80% de rejeição IR. A sacada vira ambiente utilizável em qualquer horário do dia.',
+      },
+      {
+        problem:
+          'Pergolado envidraçado, área de lazer com vidro — calor concentrado, conta de luz dispara.',
+        solution:
+          'Performance térmica de alto patamar. Reduz necessidade de ar-condicionado e gera economia mensurável em poucas faturas.',
+      },
+      {
+        problem:
+          'Privacidade diurna pra área da casa exposta a vizinhança ou rua.',
+        solution:
+          'Efeito espelho prata bloqueia visão de fora durante o dia. Privacidade total sem reduzir luminosidade interna.',
+      },
+      {
+        problem:
+          'Quer espelhado prata clássico, sem investir no patamar Premium.',
+        solution:
+          'Linha Performance INSULFILM™. Mesma estética visual do Metallico Argento, com investimento inicial menor e garantia 3 anos.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Qual a diferença real entre Reflesso d\'Argento (Performance) e Metallico Argento (Premium)?',
+        a: 'Tecnologia Vapor-Coated Aluminium em ambos. Diferença está em performance integral (Metallico chega até 86% IR vs 80% da Reflesso) e principalmente em garantia (10 vs 3 anos). Em horizonte curto, a Reflesso entrega quase a mesma performance térmica. Em horizonte longo, o Metallico amortiza melhor pelo ciclo de vida estendido.',
+      },
+      {
+        q: 'Funciona em pergolado de vidro com sol direto?',
+        a: 'Sim — é uma das aplicações típicas. Reduz drasticamente a sensação térmica do ambiente sob o pergolado, especialmente em horários de pico solar.',
+      },
+      {
+        q: 'O efeito espelho funciona dos dois lados?',
+        a: 'Durante o dia, espelha de fora (privacidade externa). À noite, com luz interna acesa, o efeito se inverte. Para privacidade noturna, cortina/persiana ainda é necessária.',
+      },
+    ],
+  },
+  corporate: {
+    h2: 'Reflesso d\'Argento para edifícios corporativos em escala',
+    pains: [
+      {
+        problem:
+          'Edifício corporativo com várias fachadas envidraçadas — Metallico Argento sobe muito o CAPEX do retrofit.',
+        solution:
+          'Performance térmica próxima do Premium (80% vs 86% IR) com investimento inicial significativamente menor. Para projetos em escala, viabiliza o retrofit completo.',
+      },
+      {
+        problem:
+          'NR17 em diversos postos próximos a fachadas envidraçadas — exigência ampla, orçamento finito.',
+        solution:
+          'Custo-benefício Performance permite cobertura ampla da edificação. Laudo técnico individual por aplicação documenta conformidade para PGR/PCMSO.',
+      },
+      {
+        problem:
+          'Retrofit predial em andamento, edifício habitado, cronograma apertado.',
+        solution:
+          'Aplicação por andar, face ou área. Sem obra civil. Cronograma compatível com operação contínua do prédio.',
+      },
+      {
+        problem:
+          'Diretoria quer redução de OPEX em ar-condicionado — sem aprovar CAPEX Premium.',
+        solution:
+          'Patamar de rejeição IR Performance entrega redução térmica relevante. Simulação de retorno via consultor B2B mostra payback compatível com Performance investment.',
+      },
+    ],
+    miniFaq: [
+      {
+        q: 'Quando faz sentido escolher Reflesso d\'Argento em vez de Metallico Argento?',
+        a: 'Horizonte mais curto de investimento, orçamento limitado, escala ampla. A Metallico é a escolha quando o horizonte é longo (10 anos) e a performance integral importa. A Reflesso é a escolha quando o critério é viabilizar retrofit em escala com CAPEX ajustado.',
+      },
+      {
+        q: 'Como atende a NR17 em edifício corporativo?',
+        a: 'A redução de carga IR e UV é documentada por laudo técnico individual emitido por aplicação. Anexa-se ao mapeamento de riscos físicos (calor) do PGR/PCMSO. Solução padrão em edifícios corporativos.',
+      },
+      {
+        q: 'Pode interferir em Wi-Fi ou sinal celular?',
+        a: 'Pode atenuar parcialmente, pela camada de alumínio da composição Vapor-Coated. Em edifícios com sistema de DAS ou repetidores internos, geralmente não é problema. Análise prévia com consultor B2B identifica risco antes da especificação.',
+      },
+    ],
+    aggregates: dualPublicAggregates,
+  },
+  related: [
+    {
+      slug: 'grigio-invertito',
+      name: 'INSULFILM™ Grigio Invertito',
+      positioning: 'Performance · espelhado invertido (visibilidade interna preservada)',
+    },
+    {
+      slug: 'metallico-argento',
+      name: 'INSULFILM™ Metallico Argento',
+      positioning: 'Premium · upgrade aspiracional com IR superior (86%)',
+    },
+    {
+      slug: 'petrolio',
+      name: 'INSULFILM™ Petrolio',
+      positioning: 'Performance · alternativa preta sem espelhamento',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // Registro central (próximas PDPs entram aqui)
 // ─────────────────────────────────────────────
 export const productDualPublicData: Record<string, ProductDualPublic> = {
@@ -1041,6 +1505,9 @@ export const productDualPublicData: Record<string, ProductDualPublic> = {
   ultravioletti90,
   'metallico-argento': metallicoArgento,
   'specchiato-bronzo': specchiatoBronzo,
+  petrolio,
+  'grigio-invertito': grigioInvertito,
+  'reflesso-d-argento': reflessoDArgento,
 };
 
 export const getProductDualPublic = (slug: string): ProductDualPublic | undefined =>
