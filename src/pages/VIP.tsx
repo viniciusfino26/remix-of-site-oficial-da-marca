@@ -153,7 +153,7 @@ const VIP = () => {
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
                 <div className="aspect-[4/3] rounded-2xl bg-muted/10 border border-border/20 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground/30"><Car className="w-16 h-16 mx-auto mb-3 opacity-30" /><p className="text-sm">Imagem do produto</p></div>
+                  <div className="text-center text-primary-foreground/50"><Car className="w-16 h-16 mx-auto mb-3 opacity-30" /><p className="text-sm">Imagem do produto</p></div>
                 </div>
               </motion.div>
             </div>

@@ -215,7 +215,7 @@ const Index = () => {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">
               {t('why.title')}
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 text-lg font-light">
+            <motion.p variants={fadeInUp} className="text-primary-foreground/70 text-lg font-light">
               {t('why.subtitle')}
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4">
@@ -242,7 +242,7 @@ const Index = () => {
                         <item.icon className="w-8 h-8 text-accent" />
                       </motion.div>
                       <h3 className="text-lg font-extrabold text-primary-foreground mb-2">{item.title}</h3>
-                      <p className="text-sm text-primary-foreground/50 font-light">{item.desc}</p>
+                      <p className="text-sm text-primary-foreground/70 font-light">{item.desc}</p>
                     </CardContent>
                   </Card>
                 </motion.div>

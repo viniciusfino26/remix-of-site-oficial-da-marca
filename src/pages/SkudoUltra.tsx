@@ -278,7 +278,7 @@ const SkudoUltra = () => {
           </motion.div>
 
           <motion.p
-            className="text-xs text-primary-foreground/40 mt-6 text-center italic"
+            className="text-xs text-primary-foreground/60 mt-6 text-center italic"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -428,7 +428,7 @@ const SkudoUltra = () => {
           >
             <motion.div variants={fadeInLeft}>
               <div className="aspect-[4/3] rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center">
-                <div className="text-center text-primary-foreground/30">
+                <div className="text-center text-primary-foreground/50">
                   <Users className="w-16 h-16 mx-auto mb-3" />
                   <p className="text-sm font-light">Foto ilustrativa — família</p>
                 </div>
@@ -595,7 +595,7 @@ const SkudoUltra = () => {
               <CardContent className="p-0">
                 <div className="grid grid-cols-3 bg-primary-foreground/5 border-b border-primary-foreground/10">
                   <div className="p-4 md:p-6">
-                    <span className="text-sm font-bold text-primary-foreground/40 uppercase tracking-wider">Especificação</span>
+                    <span className="text-sm font-bold text-primary-foreground/60 uppercase tracking-wider">Especificação</span>
                   </div>
                   <div className="p-4 md:p-6 text-center">
                     <span className="text-sm font-bold text-primary-foreground/60 uppercase tracking-wider">SkudoGuard</span>

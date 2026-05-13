@@ -58,7 +58,7 @@ const Carreiras = () => {
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary-foreground mb-6 leading-[0.95]">
               {t('careers.heroTitle')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/50 font-light max-w-3xl mx-auto leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/70 font-light max-w-3xl mx-auto leading-relaxed">
               {t('careers.heroSubtitle')}
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-8"><div className="separator-accent" /></motion.div>
@@ -99,7 +99,7 @@ const Carreiras = () => {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">{t('careers.pillarsTitle')}</motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 font-light max-w-2xl mx-auto">{t('careers.pillarsSubtitle')}</motion.p>
+            <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light max-w-2xl mx-auto">{t('careers.pillarsSubtitle')}</motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
           </motion.div>
           <motion.div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -112,7 +112,7 @@ const Carreiras = () => {
                       <p.icon className="w-7 h-7 text-accent" />
                     </div>
                     <h3 className="text-xl font-extrabold text-primary-foreground mb-3">{t(p.titleKey)}</h3>
-                    <p className="text-sm text-primary-foreground/50 font-light leading-relaxed">{t(p.descKey)}</p>
+                    <p className="text-sm text-primary-foreground/70 font-light leading-relaxed">{t(p.descKey)}</p>
                   </CardContent>
                 </Card>
               </motion.div>

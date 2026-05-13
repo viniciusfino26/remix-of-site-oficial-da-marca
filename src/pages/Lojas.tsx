@@ -340,7 +340,7 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
             value={cep}
             onChange={(e) => { setCep(formatCep(e.target.value)); setError(''); }}
             onKeyDown={(e) => e.key === 'Enter' && searchCep()}
-            className="pl-10 pr-4 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground/50 rounded-xl focus:border-accent focus:ring-accent/20"
+            className="pl-10 pr-4 h-12 bg-card border-border text-foreground placeholder:text-muted-foreground rounded-xl focus:border-accent focus:ring-accent/20"
             maxLength={9}
           />
         </div>
@@ -575,10 +575,10 @@ const StoreCard = ({ store, index, searchContext }: { store: typeof STORES[0]; i
               <div className="space-y-1 pt-1">
                 {store.hours.map((h) => (
                   <div key={h.days} className="flex gap-2 text-sm">
-                    <span className={`font-semibold ${h.days === 'Domingo' ? 'text-muted-foreground/40' : 'text-foreground'}`}>
+                    <span className={`font-semibold ${h.days === 'Domingo' ? 'text-muted-foreground' : 'text-foreground'}`}>
                       {h.days}
                     </span>
-                    <span className={h.days === 'Domingo' ? 'text-muted-foreground/40' : 'text-muted-foreground'}>
+                    <span className={h.days === 'Domingo' ? 'text-muted-foreground' : 'text-muted-foreground'}>
                       {h.time}
                     </span>
                   </div>
@@ -721,7 +721,7 @@ const Lojas = () => {
                     Analytics.storeLocatorClick(store.id);
                     trackEvent('store_zone_chip_click', { zone: store.zone, store_id: store.id });
                   }}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground/50 hover:text-accent bg-primary-foreground/5 hover:bg-accent/10 px-4 py-2 rounded-full border border-primary-foreground/10 hover:border-accent/30 transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground/70 hover:text-accent bg-primary-foreground/5 hover:bg-accent/10 px-4 py-2 rounded-full border border-primary-foreground/10 hover:border-accent/30 transition-all duration-300"
                 >
                   <MapPin className="w-3 h-3" />
                   {store.zone}
@@ -763,7 +763,7 @@ const Lojas = () => {
                 <h3 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-2">
                   Películas para Residências e Empresas
                 </h3>
-                <p className="text-sm text-primary-foreground/50 max-w-md font-light leading-relaxed">
+                <p className="text-sm text-primary-foreground/70 max-w-md font-light leading-relaxed">
                   Atendemos projetos residenciais e comerciais em todo o Brasil. Fale com um especialista arquitetônico para consultoria e orçamento.
                 </p>
               </div>
@@ -896,7 +896,7 @@ const Lojas = () => {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-5">
               TORNE-SE UM PARCEIRO OFICIAL
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-primary-foreground/50 font-light max-w-lg mx-auto mb-4 leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light max-w-lg mx-auto mb-4 leading-relaxed">
               Faça parte da maior rede de películas premium do Brasil. Suporte completo, treinamento e a força da marca mais reconhecida do setor.
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mb-10">

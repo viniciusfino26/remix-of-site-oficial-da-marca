@@ -229,7 +229,7 @@ const Antivandalismo13KProposta = () => {
           </motion.div>
 
           <motion.p
-            className="text-xs text-primary-foreground/40 mt-6 text-center italic"
+            className="text-xs text-primary-foreground/60 mt-6 text-center italic"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -270,7 +270,7 @@ const Antivandalismo13KProposta = () => {
             </motion.div>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInRight}>
               <div className="aspect-[4/3] rounded-2xl bg-muted/50 border border-border flex items-center justify-center">
-                <div className="text-center text-muted-foreground/50">
+                <div className="text-center text-muted-foreground">
                   <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
                   <p className="text-sm">{t('av13k.imagePlaceholder')}</p>
                 </div>
@@ -418,7 +418,7 @@ const Antivandalismo13KProposta = () => {
             {/* Family placeholder image */}
             <motion.div variants={fadeInLeft}>
               <div className="aspect-[4/3] rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center">
-                <div className="text-center text-primary-foreground/30">
+                <div className="text-center text-primary-foreground/50">
                   <Users className="w-16 h-16 mx-auto mb-3" />
                   <p className="text-sm font-light">{t('av13kP.family.imagePlaceholder')}</p>
                 </div>
@@ -506,7 +506,7 @@ const Antivandalismo13KProposta = () => {
               <motion.div key={key} variants={i === 0 ? fadeInLeft : fadeInRight}>
                 <Card className="glass-card rounded-2xl overflow-hidden h-full">
                   <div className="aspect-[16/10] bg-primary-foreground/5 flex items-center justify-center">
-                    <div className="text-center text-primary-foreground/30">
+                    <div className="text-center text-primary-foreground/50">
                       <Layers className="w-12 h-12 mx-auto mb-2" />
                       <p className="text-xs">{t('av13k.imagePlaceholder')}</p>
                     </div>

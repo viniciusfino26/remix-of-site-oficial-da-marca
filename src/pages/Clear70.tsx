@@ -247,7 +247,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
         {/* ── LEGAL FOOTER ── */}
         <section className="py-8 bg-muted/30">
           <div className="container mx-auto px-4">
-            <p className="text-xs text-muted-foreground/50 text-center">
+            <p className="text-xs text-muted-foreground text-center">
               INSULFILM™ é marca registrada, protegida pela Lei de Propriedade Industrial (Lei nº 9.279/96). O uso do termo por terceiros não possui autorização da titular.
             </p>
           </div>
