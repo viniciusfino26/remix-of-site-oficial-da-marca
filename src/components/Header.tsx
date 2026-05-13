@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Menu, ChevronDown, Shield, Car, Building2, Headphones } from 'lucide-react';
+import { Menu, ChevronDown, Shield, Car, Building2, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
@@ -18,6 +18,8 @@ interface NavMenu {
   icon: React.ComponentType<{ className?: string }>;
   sections?: NavSection[];
   items?: NavItem[];
+  /** When set, the menu item is a direct link with no dropdown. */
+  href?: string;
 }
 
 const languages = [
@@ -92,16 +94,10 @@ const Header = () => {
       ],
     },
     {
-      key: 'support',
-      label: t('nav.support'),
-      icon: Headphones,
-      items: [
-        { label: t('nav.salesCentral'), href: '/vendas' },
-        { label: t('nav.sac'), href: '/sac' },
-        { label: t('nav.faq'), href: '/faq' },
-        { label: t('nav.warranty'), href: '/garantia' },
-        { label: t('nav.storeLocator'), href: '/lojas' },
-      ],
+      key: 'stores',
+      label: 'Lojas e Aplicação Homologada',
+      icon: MapPin,
+      href: '/lojas',
     },
   ];
 
@@ -183,29 +179,45 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
-              {megaMenuItems.map((menu) => (
-                <div
-                  key={menu.key}
-                  className="relative"
-                  onMouseEnter={() => setOpenMenu(menu.key)}
-                  onMouseLeave={() => setOpenMenu(null)}
-                >
-                  <button
-                    className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
-                    aria-expanded={openMenu === menu.key}
+              {megaMenuItems.map((menu) => {
+                /* Direct-link item (no dropdown) — e.g., Lojas e Aplicação Homologada */
+                if (menu.href) {
+                  return (
+                    <Link
+                      key={menu.key}
+                      to={menu.href}
+                      className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                    >
+                      <menu.icon className="w-4 h-4" />
+                      {menu.label}
+                    </Link>
+                  );
+                }
+                /* Dropdown item — Marca, Automotivo, Arquitetônico */
+                return (
+                  <div
+                    key={menu.key}
+                    className="relative"
+                    onMouseEnter={() => setOpenMenu(menu.key)}
+                    onMouseLeave={() => setOpenMenu(null)}
                   >
-                    <menu.icon className="w-4 h-4" />
-                    {menu.label}
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${openMenu === menu.key ? 'rotate-180' : ''}`} />
-                  </button>
+                    <button
+                      className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                      aria-expanded={openMenu === menu.key}
+                    >
+                      <menu.icon className="w-4 h-4" />
+                      {menu.label}
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${openMenu === menu.key ? 'rotate-180' : ''}`} />
+                    </button>
 
-                  {openMenu === menu.key && (
-                    <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-premium-lg border border-border p-2 z-50 animate-fade-in-up">
-                      {renderDropdownContent(menu)}
-                    </div>
-                  )}
-                </div>
-              ))}
+                    {openMenu === menu.key && (
+                      <div className="absolute top-full left-0 mt-1 w-64 bg-card rounded-xl shadow-premium-lg border border-border p-2 z-50 animate-fade-in-up">
+                        {renderDropdownContent(menu)}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
             {/* Right side: Language + CTA + Mobile */}
@@ -250,14 +262,31 @@ const Header = () => {
                     </SheetTitle>
                   </div>
                   <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 flex flex-col gap-1.5">
-                    {megaMenuItems.map((menu) => (
-                      <div key={menu.key}>
-                        <p className="text-xs font-bold text-primary uppercase tracking-wider px-3 py-2">
-                          {menu.label}
-                        </p>
-                        {renderMobileContent(menu)}
-                      </div>
-                    ))}
+                    {megaMenuItems.map((menu) => {
+                      /* Direct-link item (no dropdown/section) — e.g., Lojas e Aplicação Homologada */
+                      if (menu.href) {
+                        return (
+                          <Link
+                            key={menu.key}
+                            to={menu.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center gap-2 px-3 py-3 text-sm font-bold text-primary uppercase tracking-wider hover:bg-muted rounded-md transition-colors"
+                          >
+                            <menu.icon className="w-4 h-4" />
+                            {menu.label}
+                          </Link>
+                        );
+                      }
+                      /* Dropdown item with sections or items list */
+                      return (
+                        <div key={menu.key}>
+                          <p className="text-xs font-bold text-primary uppercase tracking-wider px-3 py-2">
+                            {menu.label}
+                          </p>
+                          {renderMobileContent(menu)}
+                        </div>
+                      );
+                    })}
                   </nav>
                   <div className="flex-shrink-0 p-4 border-t border-border">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ8iSTDUlUntDmBCWEjI51gUye8Tc-Ocw_Cw-yHHiZhjEj9Q/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>
