@@ -125,6 +125,7 @@ import ArqComSpecchiato from "./pages/arq/comercial/solar/SpecchiatoBronzo";
 
 /* ── PDPs Unificadas (residencial + empresarial em uma URL) ── */
 import Clear70Unified from "./pages/products/Clear70";
+import Orizzonte70Unified from "./pages/products/Orizzonte70";
 
 /* ── PDPs Arquitetônico Segurança ── */
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
@@ -182,6 +183,8 @@ const App = () => (
           {/* ─── PDPs Unificadas (residencial + empresarial em uma URL) ─── */}
           {/* PR 1 — Clear70 piloto */}
           <Route path="/pt/arquitetonico/solar/clear70" element={<Clear70Unified />} />
+          {/* PR-zero — Orizzonte70 (Premium tier, exemplar #2) */}
+          <Route path="/pt/arquitetonico/solar/orizzonte70" element={<Orizzonte70Unified />} />
 
           {/* Marca */}
           <Route path="/marca/sobre" element={<MarcaSobre />} />
@@ -256,7 +259,7 @@ const App = () => (
           {/* Divisão Arquitetônica — Residencial Solar PDPs */}
           {/* Clear70 unificada (PR 1) — antiga rota residencial agora redireciona */}
           <Route path="/arquitetonico/residencial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
-          <Route path="/arquitetonico/residencial/solar/orizzonte70" element={<ArqResOrizzonte70 />} />
+          <Route path="/arquitetonico/residencial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/residencial/solar/ultravioletti90" element={<ArqResUV90 />} />
           <Route path="/arquitetonico/residencial/solar/naturale" element={<ArqResNaturale />} />
           <Route path="/arquitetonico/residencial/solar/petrolio" element={<ArqResPetrolio />} />
@@ -269,7 +272,7 @@ const App = () => (
           <Route path="/arquitetonico/comercial/solar" element={<ArqHubSolar />} />
           {/* Clear70 unificada (PR 1) — antiga rota comercial agora redireciona */}
           <Route path="/arquitetonico/comercial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
-          <Route path="/arquitetonico/comercial/solar/orizzonte70" element={<ArqComOrizzonte70 />} />
+          <Route path="/arquitetonico/comercial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/comercial/solar/ultravioletti90" element={<ArqComUV90 />} />
           <Route path="/arquitetonico/comercial/solar/naturale" element={<ArqComNaturale />} />
           <Route path="/arquitetonico/comercial/solar/petrolio" element={<ArqComPetrolio />} />
@@ -280,7 +283,7 @@ const App = () => (
 
           {/* Redirects legado — PDPs Solar antigas → Residencial */}
           <Route path="/arquitetonico/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
-          <Route path="/arquitetonico/solar/orizzonte70" element={<Navigate to="/arquitetonico/residencial/solar/orizzonte70" replace />} />
+          <Route path="/arquitetonico/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/solar/ultravioletti90" element={<Navigate to="/arquitetonico/residencial/solar/ultravioletti90" replace />} />
           <Route path="/arquitetonico/solar/naturale" element={<Navigate to="/arquitetonico/residencial/solar/naturale" replace />} />
           <Route path="/arquitetonico/solar/petrolio" element={<Navigate to="/arquitetonico/residencial/solar/petrolio" replace />} />
@@ -351,7 +354,7 @@ const App = () => (
           <Route path="/skudoguard" element={<Navigate to="/automotivo/seguranca/skudoguard" replace />} />
           <Route path="/skudo-ultra" element={<Navigate to="/automotivo/seguranca/skudoultra" replace />} />
           <Route path="/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
-          <Route path="/orizzonte70" element={<Navigate to="/arquitetonico/solar/orizzonte70" replace />} />
+          <Route path="/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/ultravioletti90" element={<Navigate to="/arquitetonico/solar/ultravioletti90" replace />} />
           <Route path="/naturale" element={<Navigate to="/arquitetonico/solar/naturale" replace />} />
           <Route path="/petrolio" element={<Navigate to="/arquitetonico/solar/petrolio" replace />} />
