@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, MessageCircle, ArrowRight, Shield, Eye, Thermometer, Sparkles, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
@@ -23,8 +22,6 @@ const scaleIn = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-type Tier = 'Premium' | 'Performance';
-
 type Category = {
   id: string;
   title: string;
@@ -32,7 +29,7 @@ type Category = {
   imageSrc?: string;
   fallbackIcon?: React.ReactNode;
   description: string;
-  products: { name: string; path: string; tier: Tier }[];
+  products: { name: string; path: string }[];
 };
 
 const categories: Category[] = [
@@ -43,9 +40,9 @@ const categories: Category[] = [
     imageSrc: arqSolarTransparencia,
     description: 'O calor entra pelo infravermelho, não pela luz. Estas películas bloqueiam até 93% do calor sem escurecer o ambiente — para quem não quer abrir mão da luminosidade natural nem da vista.',
     products: [
-      { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70', tier: 'Performance' },
-      { name: 'INSULFILM™ Orizzonte70', path: '/arquitetonico/solar/orizzonte70', tier: 'Premium' },
-      { name: 'INSULFILM™ Ultravioletti90', path: '/arquitetonico/solar/ultravioletti90', tier: 'Premium' }
+      { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70' },
+      { name: 'INSULFILM™ Orizzonte70', path: '/arquitetonico/solar/orizzonte70' },
+      { name: 'INSULFILM™ Ultravioletti90', path: '/arquitetonico/solar/ultravioletti90' }
     ]
   },
   {
@@ -55,7 +52,7 @@ const categories: Category[] = [
     imageSrc: arqSolarNeutra,
     description: 'Para projetos que não admitem reflexo espelhado nem escurecimento visível. Tonalidade sutil que respeita o design original da arquitetura — com controle solar real e garantia de até 10 anos.',
     products: [
-      { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale', tier: 'Premium' }
+      { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale' }
     ]
   },
   {
@@ -65,10 +62,10 @@ const categories: Category[] = [
     imageSrc: arqSolarEspelhados,
     description: 'Fachadas muito expostas ao sol e ambientes que precisam de privacidade diurna sem fechar as cortinas. Alto desempenho térmico com estética espelhada que valoriza o imóvel.',
     products: [
-      { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento', tier: 'Premium' },
-      { name: "INSULFILM™ Reflesso d'Argento", path: '/arquitetonico/solar/reflesso-d-argento', tier: 'Performance' },
-      { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo', tier: 'Premium' },
-      { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito', tier: 'Performance' }
+      { name: 'INSULFILM™ Metallico Argento', path: '/arquitetonico/solar/metallico-argento' },
+      { name: "INSULFILM™ Reflesso d'Argento", path: '/arquitetonico/solar/reflesso-d-argento' },
+      { name: 'INSULFILM™ Specchiato Bronzo', path: '/arquitetonico/solar/specchiato-bronzo' },
+      { name: 'INSULFILM™ Grigio Invertito', path: '/arquitetonico/solar/grigio-invertito' }
     ]
   },
   {
@@ -78,7 +75,7 @@ const categories: Category[] = [
     imageSrc: arqSolarFume,
     description: 'Estética preta sem refletividade intensa ou privacidade invertida com visual fumê elegante — para quem busca controle de claridade e redução de ofuscamento sem o efeito espelhado.',
     products: [
-      { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio', tier: 'Performance' }
+      { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio' }
     ]
   }
 ];
@@ -211,16 +208,6 @@ const ArqHubSolar = () => {
                             <motion.div whileHover={{ y: -6, scale: 1.02 }} transition={{ duration: 0.3 }}>
                               <Card className="glass-card rounded-2xl h-full hover:border-accent/30 transition-all duration-300 hover:shadow-premium">
                                 <CardContent className="p-8">
-                                  <Badge
-                                    className={
-                                      p.tier === 'Premium'
-                                        ? 'bg-accent/10 text-accent border-accent/20 text-[0.65rem] uppercase tracking-widest px-2.5 py-0.5 mb-3'
-                                        : 'bg-muted text-muted-foreground border-border/40 text-[0.65rem] uppercase tracking-widest px-2.5 py-0.5 mb-3'
-                                    }
-                                    variant="outline"
-                                  >
-                                    {p.tier}
-                                  </Badge>
                                   <h4 className="text-lg font-extrabold mb-4 text-primary">{p.name}</h4>
                                   <span className="text-accent font-bold text-sm flex items-center gap-1">
                                     Ver detalhes <ArrowRight className="w-4 h-4" />
