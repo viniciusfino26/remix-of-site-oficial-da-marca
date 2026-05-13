@@ -97,7 +97,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         <meta property="og:description" content={data.hero.subtitle} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         {(() => {
-          const s = getPDPSchemas(data.slug);
+          const s = getPDPSchemas(data.seoSlug ?? data.slug);
           return s ? (
             <>
               <script type="application/ld+json">{JSON.stringify(s.breadcrumb)}</script>

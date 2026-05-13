@@ -65,6 +65,17 @@ const arqSPF = (name: string, url: string): I18nBreadcrumbItem[] => [
   HOME, ARQ, { name: SPF_LABEL, url: '/arquitetonico/spf' }, { name: product(name), url },
 ];
 
+// Canonical URL helpers (padrão dual-público /pt/arquitetonico/...)
+// Usar nas PDPs migradas pra atualizar breadcrumbs e Schema.org pra URLs canônicas.
+const arqSolarCanonical = (name: string, slug: string): I18nBreadcrumbItem[] => [
+  HOME, ARQ, { name: SOLAR, url: '/pt/arquitetonico/solar' },
+  { name: product(name), url: `/pt/arquitetonico/solar/${slug}` },
+];
+const arqSPFCanonical = (name: string, slug: string): I18nBreadcrumbItem[] => [
+  HOME, ARQ, { name: SPF_LABEL, url: '/pt/arquitetonico/spf' },
+  { name: product(name), url: `/pt/arquitetonico/spf/${slug}` },
+];
+
 // ───────── Manifesto trilíngue ─────────
 export const PDP_META: Record<string, PDPMeta> = {
   // ═══ AUTOMOTIVO — SOLAR ═══
@@ -412,7 +423,7 @@ export const PDP_META: Record<string, PDPMeta> = {
   },
   // ═══ ARQUITETÔNICO — SOLAR ═══
   clear70: {
-    breadcrumb: arqSolar('INSULFILM™ Clear70', '/arquitetonico/clear70'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Clear70', 'clear70'),
     faqs: [
       {
         q: {
@@ -453,7 +464,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   naturale: {
-    breadcrumb: arqSolar('INSULFILM™ Naturale', '/arquitetonico/naturale'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Naturale', 'naturale'),
     faqs: [
       {
         q: {
@@ -494,7 +505,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   orizzonte70: {
-    breadcrumb: arqSolar('INSULFILM™ Orizzonte70', '/arquitetonico/orizzonte70'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Orizzonte70', 'orizzonte70'),
     faqs: [
       {
         q: {
@@ -535,7 +546,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   'grigio-invertito': {
-    breadcrumb: arqSolar('INSULFILM™ Grigio Invertito', '/arquitetonico/grigio-invertito'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Grigio Invertito', 'grigio-invertito'),
     faqs: [
       {
         q: {
@@ -576,7 +587,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   'metallico-argento': {
-    breadcrumb: arqSolar('INSULFILM™ Metallico Argento', '/arquitetonico/metallico-argento'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Metallico Argento', 'metallico-argento'),
     faqs: [
       {
         q: {
@@ -617,7 +628,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   'reflesso-d-argento': {
-    breadcrumb: arqSolar("INSULFILM™ Reflesso d'Argento", '/arquitetonico/reflesso-d-argento'),
+    breadcrumb: arqSolarCanonical("INSULFILM™ Reflesso d'Argento", "reflesso-d-argento"),
     faqs: [
       {
         q: {
@@ -658,7 +669,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   petrolio: {
-    breadcrumb: arqSolar('INSULFILM™ Petrolio', '/arquitetonico/petrolio'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Petrolio', 'petrolio'),
     faqs: [
       {
         q: {
@@ -699,7 +710,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   'specchiato-bronzo': {
-    breadcrumb: arqSolar('INSULFILM™ Specchiato Bronzo', '/arquitetonico/specchiato-bronzo'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Specchiato Bronzo', 'specchiato-bronzo'),
     faqs: [
       {
         q: {
@@ -740,7 +751,7 @@ export const PDP_META: Record<string, PDPMeta> = {
     ],
   },
   ultravioletti90: {
-    breadcrumb: arqSolar('INSULFILM™ Ultravioletti90', '/arquitetonico/ultravioletti90'),
+    breadcrumb: arqSolarCanonical('INSULFILM™ Ultravioletti90', 'ultravioletti90'),
     faqs: [
       {
         q: {
@@ -818,6 +829,89 @@ export const PDP_META: Record<string, PDPMeta> = {
           pt: 'SPF é uma película de proteção de superfície que preserva o brilho original contra micro-riscos, manchas ácidas e desgaste em superfícies brilhosas arquitetônicas.',
           en: 'SPF is a surface protection film that preserves the original gloss against micro-scratches, acid stains and wear on architectural high-gloss surfaces.',
           es: 'SPF es una película de protección de superficies que preserva el brillo original contra microrayones, manchas ácidas y desgaste en superficies brillantes arquitectónicas.',
+        },
+      },
+    ],
+  },
+  // ═══ ARQUITETÔNICO — SPF (entradas dedicadas, separadas da auto) ═══
+  'phantom-gloss-spf': {
+    breadcrumb: arqSPFCanonical('INSULFILM™ Phantom Gloss', 'phantom-gloss'),
+    faqs: [
+      {
+        q: {
+          pt: 'A Phantom Gloss arquitetônica é a mesma que a automotiva?',
+          en: 'Is architectural Phantom Gloss the same as automotive?',
+          es: '¿La Phantom Gloss arquitectónica es la misma que la automotriz?',
+        },
+        a: {
+          pt: 'Não. São da mesma família Phantom, mas produtos distintos: a versão arquitetônica é SPF (Surface Protection Film) para mármore, lacado e madeira; a automotiva é PPF (Paint Protection Film) para pintura de veículos.',
+          en: 'No. They belong to the same Phantom family but are distinct products: the architectural version is SPF (Surface Protection Film) for marble, lacquer and wood; the automotive is PPF (Paint Protection Film) for vehicle paint.',
+          es: 'No. Pertenecen a la misma familia Phantom pero son productos distintos: la versión arquitectónica es SPF (Surface Protection Film) para mármol, lacado y madera; la automotriz es PPF (Paint Protection Film) para pintura de vehículos.',
+        },
+      },
+      {
+        q: {
+          pt: 'Em que superfícies a Phantom Gloss arquitetônica é aplicada?',
+          en: 'On which surfaces is architectural Phantom Gloss applied?',
+          es: '¿En qué superficies se aplica la Phantom Gloss arquitectónica?',
+        },
+        a: {
+          pt: 'Superfícies de acabamento brilhoso: mármore polido, granito polido, lacado, madeira envernizada e vidro de alto padrão.',
+          en: 'High-gloss surfaces: polished marble, polished granite, lacquered surfaces, varnished wood and premium glass.',
+          es: 'Superficies de acabado brillante: mármol pulido, granito pulido, lacado, madera barnizada y vidrio de alto estándar.',
+        },
+      },
+      {
+        q: {
+          pt: 'Qual a espessura e garantia da Phantom Gloss arquitetônica?',
+          en: 'What is the thickness and warranty of architectural Phantom Gloss?',
+          es: '¿Cuál es el espesor y garantía de la Phantom Gloss arquitectónica?',
+        },
+        a: {
+          pt: '180 microns de espessura, com garantia de até 5 anos contra falhas da película.',
+          en: '180 microns thick, with up to 5 years warranty against film failure.',
+          es: '180 micras de espesor, con garantía de hasta 5 años contra fallas de la película.',
+        },
+      },
+    ],
+  },
+  'phantom-matte': {
+    breadcrumb: arqSPFCanonical('INSULFILM™ Phantom Matte', 'phantom-matte'),
+    faqs: [
+      {
+        q: {
+          pt: 'A Phantom Matte preserva o acabamento fosco original?',
+          en: 'Does Phantom Matte preserve the original matte finish?',
+          es: '¿La Phantom Matte preserva el acabado mate original?',
+        },
+        a: {
+          pt: 'Sim. A formulação é específica para acabamentos foscos — não adiciona brilho nem altera a textura visual do material original.',
+          en: 'Yes. The formulation is specific to matte finishes — it does not add gloss nor alter the visual texture of the original material.',
+          es: 'Sí. La formulación es específica para acabados mate — no añade brillo ni altera la textura visual del material original.',
+        },
+      },
+      {
+        q: {
+          pt: 'Qual a diferença entre Phantom Matte e Phantom Gloss arquitetônicas?',
+          en: 'What is the difference between architectural Phantom Matte and Phantom Gloss?',
+          es: '¿Cuál es la diferencia entre Phantom Matte y Phantom Gloss arquitectónicas?',
+        },
+        a: {
+          pt: 'Mesma família, mesma tecnologia base (180 microns SPF). A Gloss preserva acabamento brilhoso (mármore polido, lacado); a Matte preserva acabamento fosco (mármore matte, lacado fosco, madeira natural).',
+          en: 'Same family, same base technology (180 microns SPF). Gloss preserves high-gloss finish (polished marble, lacquered); Matte preserves matte finish (matte marble, matte lacquered, natural wood).',
+          es: 'Misma familia, misma tecnología base (180 micras SPF). Gloss preserva acabado brillante (mármol pulido, lacado); Matte preserva acabado mate (mármol mate, lacado mate, madera natural).',
+        },
+      },
+      {
+        q: {
+          pt: 'Quais são as aplicações típicas da Phantom Matte?',
+          en: 'What are typical Phantom Matte applications?',
+          es: '¿Cuáles son las aplicaciones típicas de Phantom Matte?',
+        },
+        a: {
+          pt: 'Mármore preto matte, lacado fosco, madeira em acabamento natural ou velado, projetos de design contemporâneo onde paleta matte é parte da identidade visual.',
+          en: 'Matte black marble, matte lacquered surfaces, wood in natural or veiled finish, contemporary design projects where the matte palette is part of the visual identity.',
+          es: 'Mármol negro mate, lacado mate, madera en acabado natural o velado, proyectos de diseño contemporáneo donde la paleta mate es parte de la identidad visual.',
         },
       },
     ],

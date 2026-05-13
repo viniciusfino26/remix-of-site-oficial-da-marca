@@ -54,6 +54,11 @@ export interface ProductDualPublic {
   /** Slug usado para casar com pdpProducts.ts e pdpFAQs.ts */
   slug: string;
 
+  /** Slug alternativo pra Schema.org (override do slug quando o produto compartilha
+   *  nome com outro de divisão diferente — ex: Phantom Gloss arq usa 'phantom-gloss-spf'
+   *  pra evitar colisão com Phantom Gloss automotivo). */
+  seoSlug?: string;
+
   /** Categoria pra breadcrumb e SEO. */
   category: 'arq-solar' | 'arq-seguranca' | 'arq-decorativo' | 'arq-spf';
 
@@ -1500,6 +1505,7 @@ const reflessoDArgento: ProductDualPublic = {
 // ─────────────────────────────────────────────
 const phantomGloss: ProductDualPublic = {
   slug: 'phantom-gloss',
+  seoSlug: 'phantom-gloss-spf',
   category: 'arq-spf',
   line: 'Premium',
   hero: {
