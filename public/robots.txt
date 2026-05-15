@@ -5,4 +5,4 @@ Disallow: /_supabase
 Disallow: /dashboard
 Allow: /
 
-Sitemap: https://insulfilm.com.br/sitemap.xml
+Sitemap: https://sitenovoinsulfilm.lovable.app/sitemap.xml
