@@ -64,8 +64,23 @@ const FAQ = () => {
     },
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqCategories.flatMap((cat) =>
+      cat.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: t(faq.qKey),
+        acceptedAnswer: { '@type': 'Answer', text: t(faq.aKey) },
+      }))
+    ),
+  };
+
   return (
     <main>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <section className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">
