@@ -187,7 +187,7 @@ const FrotaLeadForm = () => {
         <Checkbox
           id="frota-consent"
           checked={!!consentValue}
-          onCheckedChange={(v) => setValue("consent", (v === true) as true, { shouldValidate: true })}
+          onCheckedChange={(v) => setValue("consent", v === true ? true : (false as unknown as true), { shouldValidate: true })}
           className="mt-0.5 border-border"
         />
         <Label
