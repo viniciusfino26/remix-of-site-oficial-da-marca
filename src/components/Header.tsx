@@ -183,14 +183,16 @@ const Header = () => {
                 /* Direct-link item (no dropdown) — e.g., Lojas e Aplicação Homologada */
                 if (menu.href) {
                   return (
-                    <Link
-                      key={menu.key}
-                      to={menu.href}
-                      className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
-                    >
-                      <menu.icon className="w-4 h-4" />
-                      {menu.label}
-                    </Link>
+                  <Link
+                    key={menu.key}
+                    to={menu.href}
+                    className="nav-link-premium flex items-center gap-2 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                  >
+                    <span className="w-5 h-5 flex items-center justify-center">
+                      <menu.icon className="w-full h-full" />
+                    </span>
+                    {menu.label}
+                  </Link>
                   );
                 }
                 /* Dropdown item — Marca, Automotivo, Arquitetônico */
@@ -202,10 +204,12 @@ const Header = () => {
                     onMouseLeave={() => setOpenMenu(null)}
                   >
                     <button
-                      className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                      className="nav-link-premium flex items-center gap-2 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
                       aria-expanded={openMenu === menu.key}
                     >
-                      <menu.icon className="w-4 h-4" />
+                      <span className="w-5 h-5 flex items-center justify-center">
+                        <menu.icon className="w-full h-full" />
+                      </span>
                       {menu.label}
                       <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${openMenu === menu.key ? 'rotate-180' : ''}`} />
                     </button>
@@ -266,15 +270,17 @@ const Header = () => {
                       /* Direct-link item (no dropdown/section) — e.g., Lojas e Aplicação Homologada */
                       if (menu.href) {
                         return (
-                          <Link
-                            key={menu.key}
-                            to={menu.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-2 px-3 py-3 text-sm font-bold text-primary uppercase tracking-wider hover:bg-muted rounded-md transition-colors"
-                          >
-                            <menu.icon className="w-4 h-4" />
-                            {menu.label}
-                          </Link>
+                        <Link
+                          key={menu.key}
+                          to={menu.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 px-3 py-3 text-sm font-bold text-primary uppercase tracking-wider hover:bg-muted rounded-md transition-colors"
+                        >
+                          <span className="w-5 h-5 flex items-center justify-center">
+                            <menu.icon className="w-full h-full" />
+                          </span>
+                          {menu.label}
+                        </Link>
                         );
                       }
                       /* Dropdown item with sections or items list */
