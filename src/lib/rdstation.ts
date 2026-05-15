@@ -10,6 +10,7 @@
  */
 
 const CONSENT_KEY = "insulfilm_cookie_consent";
+export const CONSENT_CHANGE_EVENT = "insulfilm:consent-change";
 
 declare global {
   interface Window {
@@ -48,6 +49,17 @@ const emit = (event: RDDebugEvent) => {
 export const hasConsent = (): boolean => {
   if (typeof window === "undefined") return false;
   return localStorage.getItem(CONSENT_KEY) === "accepted";
+};
+
+export const setTrackingConsent = (value: "accepted" | "rejected") => {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(CONSENT_KEY, value);
+
+  try {
+    window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: value }));
+  } catch {
+    /* noop */
+  }
 };
 
 export const isRdLoaded = (): boolean =>

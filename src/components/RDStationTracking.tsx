@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { trackPageView, hasConsent } from "@/lib/rdstation";
+import { trackPageView, hasConsent, CONSENT_CHANGE_EVENT } from "@/lib/rdstation";
 
 /**
  * RD Station Marketing — Loader global do script de rastreamento.
@@ -46,10 +46,12 @@ const RDStationTracking = () => {
     const recheck = () => setConsentReady(hasConsent());
     window.addEventListener("storage", recheck);
     window.addEventListener("focus", recheck);
+    window.addEventListener(CONSENT_CHANGE_EVENT, recheck as EventListener);
     const interval = window.setInterval(recheck, 2000);
     return () => {
       window.removeEventListener("storage", recheck);
       window.removeEventListener("focus", recheck);
+      window.removeEventListener(CONSENT_CHANGE_EVENT, recheck as EventListener);
       window.clearInterval(interval);
     };
   }, []);
