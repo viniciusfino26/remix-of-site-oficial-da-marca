@@ -5,6 +5,7 @@ import { Truck, Thermometer, Shield, Eye, Layers, Lock, Clock, Award, RefreshCw,
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import FrotaLeadForm from '@/components/FrotaLeadForm';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -137,6 +138,9 @@ const Frota = () => {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">{t('fleet.ctaTitle')}</motion.h2>
             <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light mb-8 max-w-lg mx-auto">{t('fleet.ctaSubtitle')}</motion.p>
+            <motion.div variants={fadeInUp} className="mb-10">
+              <FrotaLeadForm />
+            </motion.div>
             <motion.div variants={fadeInUp}>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold shadow-lg">

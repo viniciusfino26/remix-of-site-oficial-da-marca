@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import RDStationTracking from "./components/RDStationTracking";
+import RDDebugOverlay from "./components/RDDebugOverlay";
 import SchemaOrg from "./components/SchemaOrg";
 import AnalyticsProvider from "./components/Analytics";
 
@@ -185,6 +186,7 @@ const App = () => (
           <SchemaOrg />
           <AnalyticsProvider />
           <RDStationTracking />
+          <RDDebugOverlay />
           <Header />
         <Routes>
           <Route path="/" element={<Index />} />
