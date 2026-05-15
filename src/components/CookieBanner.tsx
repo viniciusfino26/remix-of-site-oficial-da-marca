@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { setTrackingConsent } from '@/lib/rdstation';
 
 export function CookieBanner() {
   const [mounted, setMounted] = useState(false);
@@ -11,12 +12,12 @@ export function CookieBanner() {
   }, []);
 
   const accept = () => {
-    localStorage.setItem('insulfilm_cookie_consent', 'accepted');
+    setTrackingConsent('accepted');
     setVisible(false);
   };
 
   const reject = () => {
-    localStorage.setItem('insulfilm_cookie_consent', 'rejected');
+    setTrackingConsent('rejected');
     setVisible(false);
   };
 
