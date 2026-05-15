@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Shield, Award, Cpu, Car, Building2, Eye, SunDim, Layers, Fingerprint, Headset } from 'lucide-react';
 import logoLight from '@/assets/logo-light.png';
@@ -76,6 +77,15 @@ const Index = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>INSULFILM™ — Películas Originais para Vidros desde 1986</title>
+        <meta name="description" content="Marca registrada de películas para vidros desde 1986. Controle solar, segurança antivandalismo, PPF e arquitetônico com Centros Autorizados em SP." />
+        <link rel="canonical" href="https://sitenovoinsulfilm.lovable.app/" />
+        <meta property="og:title" content="INSULFILM™ — Películas Originais para Vidros desde 1986" />
+        <meta property="og:description" content="Marca registrada e pioneira no Brasil. Controle solar, segurança, PPF e arquitetônico com Centros Autorizados." />
+        <meta property="og:url" content="https://sitenovoinsulfilm.lovable.app/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero Section */}
       <section ref={heroRef} id="hero" className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center bg-carbon-gradient overflow-hidden">
         {/* Geometric texture with parallax */}
