@@ -183,14 +183,16 @@ const Header = () => {
                 /* Direct-link item (no dropdown) — e.g., Lojas e Aplicação Homologada */
                 if (menu.href) {
                   return (
-                    <Link
-                      key={menu.key}
-                      to={menu.href}
-                      className="nav-link-premium flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
-                    >
-                      <menu.icon className="w-4 h-4" />
-                      {menu.label}
-                    </Link>
+                  <Link
+                    key={menu.key}
+                    to={menu.href}
+                    className="nav-link-premium flex items-center gap-2 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
+                  >
+                    <span className="w-5 h-5 flex items-center justify-center">
+                      <menu.icon className="w-full h-full" />
+                    </span>
+                    {menu.label}
+                  </Link>
                   );
                 }
                 /* Dropdown item — Marca, Automotivo, Arquitetônico */
