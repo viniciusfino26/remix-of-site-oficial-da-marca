@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const BASE_URL = 'https://www.insulfilm.com.br';
+const BASE_URL = 'https://sitenovoinsulfilm.lovable.app';
 
 // ─────────────────────────────────────────────
 // BLOCKLIST: paths a excluir do sitemap.
