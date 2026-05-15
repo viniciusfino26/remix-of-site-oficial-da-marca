@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
