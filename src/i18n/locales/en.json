@@ -638,7 +638,19 @@
     "why3Desc": "Interior protection against sun-caused drying, preserving company assets.",
     "ctaTitle": "Specialized Fleet Service",
     "ctaSubtitle": "Special conditions, personalized quotes and tailored logistics for your fleet.",
-    "ctaButton": "Request a Quote"
+    "ctaButton": "Request a Quote",
+    "form": {
+      "title": "Request a Commercial Contact",
+      "subtitle": "Our B2B team replies within 1 business day.",
+      "nameLabel": "Full name",
+      "emailLabel": "Corporate e-mail",
+      "phoneLabel": "Phone / WhatsApp",
+      "consent": "I authorize INSULFILM™ contact and the processing of my data per the Privacy Policy.",
+      "submit": "Send request",
+      "successTitle": "Request received!",
+      "successDesc": "Our sales team will reach out shortly.",
+      "error": "Unable to send. Please try again."
+    }
   },
   "sales": {
     "badge": "Sales",

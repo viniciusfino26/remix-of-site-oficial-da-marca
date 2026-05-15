@@ -769,7 +769,19 @@
     "why3Desc": "Proteção do interior contra o ressecamento causado pelo sol, preservando o patrimônio da empresa.",
     "ctaTitle": "Atendimento Especializado para Frotas",
     "ctaSubtitle": "Condições especiais, orçamento personalizado e logística sob medida para a sua frota.",
-    "ctaButton": "Solicitar Orçamento"
+    "ctaButton": "Solicitar Orçamento",
+    "form": {
+      "title": "Solicitar Contato Comercial",
+      "subtitle": "Nossa equipe B2B retorna em até 1 dia útil.",
+      "nameLabel": "Nome completo",
+      "emailLabel": "E-mail corporativo",
+      "phoneLabel": "Telefone / WhatsApp",
+      "consent": "Autorizo o contato da INSULFILM™ e o tratamento dos meus dados conforme a Política de Privacidade (LGPD).",
+      "submit": "Enviar solicitação",
+      "successTitle": "Solicitação recebida!",
+      "successDesc": "Nosso time comercial entrará em contato em breve.",
+      "error": "Não foi possível enviar. Tente novamente em instantes."
+    }
   },
   "sales": {
     "badge": "Vendas",
