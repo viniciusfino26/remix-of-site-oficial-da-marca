@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Shield, Award, Cpu, Car, Building2, Eye, SunDim, Layers, Fingerprint, Headset } from 'lucide-react';
 import logoLight from '@/assets/logo-light.png';
