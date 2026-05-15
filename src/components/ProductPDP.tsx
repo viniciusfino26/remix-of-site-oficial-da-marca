@@ -88,7 +88,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
   return (
     <>
       <Helmet>
-        <title>{`${productName} | ${data.hero.title} | INSULFILM™`}</title>
+        <title>{`${productName} — ${data.hero.title}`.slice(0, 60)}</title>
         <meta name="description" content={data.hero.subtitle} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="product" />
