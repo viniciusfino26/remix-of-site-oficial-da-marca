@@ -270,15 +270,17 @@ const Header = () => {
                       /* Direct-link item (no dropdown/section) — e.g., Lojas e Aplicação Homologada */
                       if (menu.href) {
                         return (
-                          <Link
-                            key={menu.key}
-                            to={menu.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-2 px-3 py-3 text-sm font-bold text-primary uppercase tracking-wider hover:bg-muted rounded-md transition-colors"
-                          >
-                            <menu.icon className="w-4 h-4" />
-                            {menu.label}
-                          </Link>
+                        <Link
+                          key={menu.key}
+                          to={menu.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 px-3 py-3 text-sm font-bold text-primary uppercase tracking-wider hover:bg-muted rounded-md transition-colors"
+                        >
+                          <span className="w-5 h-5 flex items-center justify-center">
+                            <menu.icon className="w-full h-full" />
+                          </span>
+                          {menu.label}
+                        </Link>
                         );
                       }
                       /* Dropdown item with sections or items list */
