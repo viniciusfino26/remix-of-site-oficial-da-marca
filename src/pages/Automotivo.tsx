@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import ProductBanner from '@/components/ProductBanner';
 import { useTranslation } from 'react-i18next';
