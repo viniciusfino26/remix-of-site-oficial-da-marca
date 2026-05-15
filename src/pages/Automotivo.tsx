@@ -80,6 +80,15 @@ const Automotivo = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Películas Automotivas INSULFILM™ — Solar, Segurança e PPF</title>
+        <meta name="description" content="Películas automotivas INSULFILM™: controle solar, antivandalismo e PPF para carros. Aplicação por Centros Autorizados em SP." />
+        <link rel="canonical" href="https://sitenovoinsulfilm.lovable.app/automotivo" />
+        <meta property="og:title" content="Películas Automotivas INSULFILM™ — Solar, Segurança e PPF" />
+        <meta property="og:description" content="Conforto térmico, segurança e proteção de pintura para o seu carro com a marca original." />
+        <meta property="og:url" content="https://sitenovoinsulfilm.lovable.app/automotivo" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero */}
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
         <motion.div className="absolute inset-0 bg-hero-texture" style={{ y: heroTextureY }} />
