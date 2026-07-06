@@ -18,4 +18,18 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // As páginas já são divididas por rota via React.lazy(); aqui separamos
+    // as libs de terceiros mais pesadas em chunks próprios, para melhor cache
+    // e para não inflar o bundle inicial.
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "framer-motion": ["framer-motion"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 800,
+  },
 }));

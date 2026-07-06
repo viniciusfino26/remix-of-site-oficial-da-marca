@@ -3,8 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -18,176 +18,137 @@ import FloatingCTA from "./components/FloatingCTA";
 import PageNavigation from "./components/PageNavigation";
 import { CookieBanner } from "./components/CookieBanner";
 
+// A home é carregada de forma estática para garantir o first paint imediato
+// na rota mais acessada. Todas as demais páginas usam code-splitting via
+// React.lazy(), gerando um chunk sob demanda por rota.
 import Index from "./pages/Index";
-import QuemSomos from "./pages/QuemSomos";
-import MarcaSobre from "./pages/MarcaSobre";
-import MarcaOQueE from "./pages/MarcaOQueE";
-import MarcaRegistrada from "./pages/MarcaRegistrada";
-import MarcaAutenticidade from "./pages/MarcaAutenticidade";
-import MarcaTecnologia from "./pages/MarcaTecnologia";
-import MarcaPresenca from "./pages/MarcaPresenca";
-import MarcaHistoria from "./pages/MarcaHistoria";
-import Automotivo from "./pages/Automotivo";
-import Residencial from "./pages/Residencial";
-import Lojas from "./pages/Lojas";
-import Parceiro from "./pages/Parceiro";
-import Franquias from "./pages/Franquias";
-import Carreiras from "./pages/Carreiras";
-import AntiPirataria from "./pages/AntiPirataria";
-import Frota from "./pages/Frota";
-import PPF from "./pages/PPF";
-import Empresarial from "./pages/Empresarial";
-import PhantomArquitetonico from "./pages/PhantomArquitetonico";
-import Vendas from "./pages/Vendas";
-import SAC from "./pages/SAC";
-import FAQ from "./pages/FAQ";
-import Garantia from "./pages/Garantia";
-import NotFound from "./pages/NotFound";
-import Privacidade from "./pages/Privacidade";
-import SobreOQueEInsulfilm from "./pages/SobreOQueEInsulfilm";
-import SobreInsulfilmMarcaRegistrada from "./pages/SobreInsulfilmMarcaRegistrada";
-import LegalMarcaRegistrada from "./pages/LegalMarcaRegistrada";
-import Legislacao from "./pages/Legislacao";
+
+const MarcaSobre = lazy(() => import("./pages/MarcaSobre"));
+const MarcaOQueE = lazy(() => import("./pages/MarcaOQueE"));
+const MarcaRegistrada = lazy(() => import("./pages/MarcaRegistrada"));
+const MarcaAutenticidade = lazy(() => import("./pages/MarcaAutenticidade"));
+const MarcaTecnologia = lazy(() => import("./pages/MarcaTecnologia"));
+const MarcaPresenca = lazy(() => import("./pages/MarcaPresenca"));
+const MarcaHistoria = lazy(() => import("./pages/MarcaHistoria"));
+const Automotivo = lazy(() => import("./pages/Automotivo"));
+const Residencial = lazy(() => import("./pages/Residencial"));
+const Lojas = lazy(() => import("./pages/Lojas"));
+const Parceiro = lazy(() => import("./pages/Parceiro"));
+const Franquias = lazy(() => import("./pages/Franquias"));
+const Carreiras = lazy(() => import("./pages/Carreiras"));
+const Frota = lazy(() => import("./pages/Frota"));
+const Empresarial = lazy(() => import("./pages/Empresarial"));
+const PhantomArquitetonico = lazy(() => import("./pages/PhantomArquitetonico"));
+const Vendas = lazy(() => import("./pages/Vendas"));
+const SAC = lazy(() => import("./pages/SAC"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Garantia = lazy(() => import("./pages/Garantia"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Privacidade = lazy(() => import("./pages/Privacidade"));
+const SobreOQueEInsulfilm = lazy(() => import("./pages/SobreOQueEInsulfilm"));
+const SobreInsulfilmMarcaRegistrada = lazy(() => import("./pages/SobreInsulfilmMarcaRegistrada"));
+const LegalMarcaRegistrada = lazy(() => import("./pages/LegalMarcaRegistrada"));
+const Legislacao = lazy(() => import("./pages/Legislacao"));
 
 /* ── Hubs Automotivos ── */
-import AutomotivoHubSolar from "./pages/AutomotivoHubSolar";
-import AutomotivoHubSeguranca from "./pages/AutomotivoHubSeguranca";
+const AutomotivoHubSolar = lazy(() => import("./pages/AutomotivoHubSolar"));
+const AutomotivoHubSeguranca = lazy(() => import("./pages/AutomotivoHubSeguranca"));
 
 /* ── PDPs Automotivo Solar ── */
-import AutomotivoMatrix from "./pages/AutomotivoMatrix";
-import AutomotivoPolariz from "./pages/AutomotivoPolariz";
-import AutomotivoVip from "./pages/AutomotivoVip";
-import AutomotivoEclipse from "./pages/AutomotivoEclipse";
-import AutomotivoDark from "./pages/AutomotivoDark";
+const AutomotivoMatrix = lazy(() => import("./pages/AutomotivoMatrix"));
+const AutomotivoPolariz = lazy(() => import("./pages/AutomotivoPolariz"));
+const AutomotivoVip = lazy(() => import("./pages/AutomotivoVip"));
+const AutomotivoEclipse = lazy(() => import("./pages/AutomotivoEclipse"));
+const AutomotivoDark = lazy(() => import("./pages/AutomotivoDark"));
 
 /* ── PDPs Automotivo Segurança ── */
-import AutomotivoSkinSafe from "./pages/AutomotivoSkinSafe";
-import AutomotivoAntivandalismo from "./pages/AutomotivoAntivandalismo";
-import AutomotivoSkudoGuard from "./pages/AutomotivoSkudoGuard";
-import AutomotivoSkudoUltra from "./pages/AutomotivoSkudoUltra";
+const AutomotivoSkinSafe = lazy(() => import("./pages/AutomotivoSkinSafe"));
+const AutomotivoAntivandalismo = lazy(() => import("./pages/AutomotivoAntivandalismo"));
+const AutomotivoSkudoGuard = lazy(() => import("./pages/AutomotivoSkudoGuard"));
+const AutomotivoSkudoUltra = lazy(() => import("./pages/AutomotivoSkudoUltra"));
 
 /* ── Hub + PDP Automotivo PPF ── */
-import AutomotivoHubPPF from "./pages/AutomotivoHubPPF";
-import AutomotivoPhantomGloss from "./pages/AutomotivoPhantomGloss";
+const AutomotivoHubPPF = lazy(() => import("./pages/AutomotivoHubPPF"));
+const AutomotivoPhantomGloss = lazy(() => import("./pages/AutomotivoPhantomGloss"));
 
 /* ── Hub + Hubs Arquitetônicos ── */
-import Arquitetonico from "./pages/Arquitetonico";
-import ArqHubSolar from "./pages/ArqHubSolar";
-import ArqHubSeguranca from "./pages/ArqHubSeguranca";
-import ArqHubDecorativo from "./pages/ArqHubDecorativo";
+const Arquitetonico = lazy(() => import("./pages/Arquitetonico"));
+const ArqHubSolar = lazy(() => import("./pages/ArqHubSolar"));
+const ArqHubSeguranca = lazy(() => import("./pages/ArqHubSeguranca"));
+const ArqHubDecorativo = lazy(() => import("./pages/ArqHubDecorativo"));
 
 /* ── Hubs Segmentados — Residencial + Comercial ── */
-import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
-import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
-import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
-import ArqResidencialHubSeguranca from "./pages/ArqResidencialHubSeguranca";
-import ArqResidencialHubDecorativo from "./pages/ArqResidencialHubDecorativo";
-import ArqResidencialHubSPF from "./pages/ArqResidencialHubSPF";
-import ArqComercialHubSolar from "./pages/ArqComercialHubSolar";
-import ArqComercialHubSeguranca from "./pages/ArqComercialHubSeguranca";
-import ArqComercialHubDecorativo from "./pages/ArqComercialHubDecorativo";
-import ArqComercialHubSPF from "./pages/ArqComercialHubSPF";
+const ArquitetonicoResidencial = lazy(() => import("./pages/ArquitetonicoResidencial"));
+const ArquitetonicoComercial = lazy(() => import("./pages/ArquitetonicoComercial"));
+const ArqResidencialHubSolar = lazy(() => import("./pages/ArqResidencialHubSolar"));
+const ArqResidencialHubSeguranca = lazy(() => import("./pages/ArqResidencialHubSeguranca"));
+const ArqResidencialHubDecorativo = lazy(() => import("./pages/ArqResidencialHubDecorativo"));
+const ArqResidencialHubSPF = lazy(() => import("./pages/ArqResidencialHubSPF"));
+const ArqComercialHubSolar = lazy(() => import("./pages/ArqComercialHubSolar"));
+const ArqComercialHubSeguranca = lazy(() => import("./pages/ArqComercialHubSeguranca"));
+const ArqComercialHubDecorativo = lazy(() => import("./pages/ArqComercialHubDecorativo"));
+const ArqComercialHubSPF = lazy(() => import("./pages/ArqComercialHubSPF"));
 
 /* ── PDP Automotivo Solar — Polariz (novo) ── */
-import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
-
-/* ── PDPs Arquitetônico Solar (legado — re-exports) ── */
-import ArqClear70 from "./pages/ArqClear70";
-import ArqOrizzonte from "./pages/ArqOrizzonte";
-import ArqUV90 from "./pages/ArqUV90";
-import ArqNaturale from "./pages/ArqNaturale";
-import ArqPetrolio from "./pages/ArqPetrolio";
-import ArqGrigio from "./pages/ArqGrigio";
-import ArqMetallico from "./pages/ArqMetallico";
-import ArqReflesso from "./pages/ArqReflesso";
-import ArqSpecchiato from "./pages/ArqSpecchiato";
-
-/* ── PDPs Arquitetônico Solar — Residencial ── */
-import ArqResClear70 from "./pages/arq/residencial/solar/Clear70";
-import ArqResOrizzonte70 from "./pages/arq/residencial/solar/Orizzonte70";
-import ArqResUV90 from "./pages/arq/residencial/solar/Ultravioletti90";
-import ArqResNaturale from "./pages/arq/residencial/solar/Naturale";
-import ArqResPetrolio from "./pages/arq/residencial/solar/Petrolio";
-import ArqResGrigio from "./pages/arq/residencial/solar/GrigioInvertito";
-import ArqResMetallico from "./pages/arq/residencial/solar/MetallicoArgento";
-import ArqResReflesso from "./pages/arq/residencial/solar/ReflessoDArgento";
-import ArqResSpecchiato from "./pages/arq/residencial/solar/SpecchiatoBronzo";
-
-/* ── PDPs Arquitetônico Solar — Comercial ── */
-import ArqComClear70 from "./pages/arq/comercial/solar/Clear70";
-import ArqComOrizzonte70 from "./pages/arq/comercial/solar/Orizzonte70";
-import ArqComUV90 from "./pages/arq/comercial/solar/Ultravioletti90";
-import ArqComNaturale from "./pages/arq/comercial/solar/Naturale";
-import ArqComPetrolio from "./pages/arq/comercial/solar/Petrolio";
-import ArqComGrigio from "./pages/arq/comercial/solar/GrigioInvertito";
-import ArqComMetallico from "./pages/arq/comercial/solar/MetallicoArgento";
-import ArqComReflesso from "./pages/arq/comercial/solar/ReflessoDArgento";
-import ArqComSpecchiato from "./pages/arq/comercial/solar/SpecchiatoBronzo";
+const AutomotivoSolarPolariz = lazy(() => import("./pages/AutomotivoSolarPolariz"));
 
 /* ── PDPs Unificadas (residencial + empresarial em uma URL) ── */
-import Clear70Unified from "./pages/products/Clear70";
-import Orizzonte70Unified from "./pages/products/Orizzonte70";
-import NaturaleUnified from "./pages/products/Naturale";
-import Ultravioletti90Unified from "./pages/products/Ultravioletti90";
-import MetallicoArgentoUnified from "./pages/products/MetallicoArgento";
-import SpecchiatoBronzoUnified from "./pages/products/SpecchiatoBronzo";
-import PetrolioUnified from "./pages/products/Petrolio";
-import GrigioInvertitoUnified from "./pages/products/GrigioInvertito";
-import ReflessoDArgentoUnified from "./pages/products/ReflessoDArgento";
-import PhantomGlossUnified from "./pages/products/PhantomGloss";
-import PhantomMatteUnified from "./pages/products/PhantomMatte";
+const Clear70Unified = lazy(() => import("./pages/products/Clear70"));
+const Orizzonte70Unified = lazy(() => import("./pages/products/Orizzonte70"));
+const NaturaleUnified = lazy(() => import("./pages/products/Naturale"));
+const Ultravioletti90Unified = lazy(() => import("./pages/products/Ultravioletti90"));
+const MetallicoArgentoUnified = lazy(() => import("./pages/products/MetallicoArgento"));
+const SpecchiatoBronzoUnified = lazy(() => import("./pages/products/SpecchiatoBronzo"));
+const PetrolioUnified = lazy(() => import("./pages/products/Petrolio"));
+const GrigioInvertitoUnified = lazy(() => import("./pages/products/GrigioInvertito"));
+const ReflessoDArgentoUnified = lazy(() => import("./pages/products/ReflessoDArgento"));
+const PhantomGlossUnified = lazy(() => import("./pages/products/PhantomGloss"));
+const PhantomMatteUnified = lazy(() => import("./pages/products/PhantomMatte"));
 
 /* ── PDPs Arquitetônico Segurança ── */
-import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
-import ArqSegurancaISSF7000 from "./pages/ArqSegurancaISSF7000";
+const ArqSegurancaISSF4000 = lazy(() => import("./pages/ArqSegurancaISSF4000"));
+const ArqSegurancaISSF7000 = lazy(() => import("./pages/ArqSegurancaISSF7000"));
 
 /* ── PDPs Arquitetônico Segurança — Residencial ── */
-import ArqResISSF4000 from "./pages/arq/residencial/seguranca/ISSF4000";
-import ArqResISSF7000 from "./pages/arq/residencial/seguranca/ISSF7000";
+const ArqResISSF4000 = lazy(() => import("./pages/arq/residencial/seguranca/ISSF4000"));
+const ArqResISSF7000 = lazy(() => import("./pages/arq/residencial/seguranca/ISSF7000"));
 
 /* ── PDPs Arquitetônico Segurança — Comercial ── */
-import ArqComISSF4000 from "./pages/arq/comercial/seguranca/ISSF4000";
-import ArqComISSF7000 from "./pages/arq/comercial/seguranca/ISSF7000";
+const ArqComISSF4000 = lazy(() => import("./pages/arq/comercial/seguranca/ISSF4000"));
+const ArqComISSF7000 = lazy(() => import("./pages/arq/comercial/seguranca/ISSF7000"));
 
 /* ── PDPs Arquitetônico Decorativo ── */
-import ArqDecorativoJateado from "./pages/ArqDecorativoJateado";
-import ArqDecorativoWhiteout from "./pages/ArqDecorativoWhiteout";
-import ArqDecorativoBlackout from "./pages/ArqDecorativoBlackout";
+const ArqDecorativoJateado = lazy(() => import("./pages/ArqDecorativoJateado"));
+const ArqDecorativoWhiteout = lazy(() => import("./pages/ArqDecorativoWhiteout"));
+const ArqDecorativoBlackout = lazy(() => import("./pages/ArqDecorativoBlackout"));
 
 /* ── PDPs Arquitetônico Decorativo — Residencial ── */
-import ArqResJateado from "./pages/arq/residencial/decorativo/Jateado";
-import ArqResWhiteout from "./pages/arq/residencial/decorativo/Whiteout";
-import ArqResBlackout from "./pages/arq/residencial/decorativo/Blackout";
+const ArqResJateado = lazy(() => import("./pages/arq/residencial/decorativo/Jateado"));
+const ArqResWhiteout = lazy(() => import("./pages/arq/residencial/decorativo/Whiteout"));
+const ArqResBlackout = lazy(() => import("./pages/arq/residencial/decorativo/Blackout"));
 
 /* ── PDPs Arquitetônico Decorativo — Comercial ── */
-import ArqComJateado from "./pages/arq/comercial/decorativo/Jateado";
-import ArqComWhiteout from "./pages/arq/comercial/decorativo/Whiteout";
-import ArqComBlackout from "./pages/arq/comercial/decorativo/Blackout";
-
-/* ── PDPs Arquitetônico SPF — Residencial + Comercial ── */
-import ArqResPhantom from "./pages/arq/residencial/spf/Phantom";
-import ArqComPhantom from "./pages/arq/comercial/spf/Phantom";
-
-/* ── PDP Arquitetônico Phantom SPF ── */
-import PhantomGloss from "./pages/PhantomGloss";
+const ArqComJateado = lazy(() => import("./pages/arq/comercial/decorativo/Jateado"));
+const ArqComWhiteout = lazy(() => import("./pages/arq/comercial/decorativo/Whiteout"));
+const ArqComBlackout = lazy(() => import("./pages/arq/comercial/decorativo/Blackout"));
 
 import "./i18n";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <SchemaOrg />
-          <AnalyticsProvider />
-          <RDStationTracking />
-          <RDDebugOverlay />
-          <Header />
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <SchemaOrg />
+        <AnalyticsProvider />
+        <RDStationTracking />
+        <RDDebugOverlay />
+        <Header />
+        <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
         <Routes>
           <Route path="/" element={<Index />} />
 
@@ -392,15 +353,15 @@ const App = () => (
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
         <Footer />
         <WhatsAppButton />
         <FloatingCTA />
         <PageNavigation />
         <CookieBanner />
       </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;
