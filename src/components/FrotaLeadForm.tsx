@@ -26,7 +26,7 @@ const schema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(/^\+?[\d\s()\-]{10,20}$/, { message: "Telefone inválido" }),
+    .regex(/^\+?[\d\s()-]{10,20}$/, { message: "Telefone inválido" }),
   consent: z.literal(true, {
     errorMap: () => ({ message: "Consentimento obrigatório" }),
   }),

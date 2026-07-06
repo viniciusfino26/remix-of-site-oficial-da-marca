@@ -44,6 +44,7 @@ const ProductShowcase = ({
     offset: ['start end', 'end start']
   });
   const imgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const fallbackY = useTransform(scrollYProgress, [0, 1], [8, -8]);
 
   return (
     <motion.div
@@ -98,7 +99,7 @@ const ProductShowcase = ({
 
         <div className="glass-card rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden relative">
             <motion.div
-            style={{ y: useTransform(scrollYProgress, [0, 1], [8, -8]) }}>
+            style={{ y: fallbackY }}>
 
               {fallbackIcon}
             </motion.div>

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 
 export interface HighlightStat {
   value: string;
@@ -35,7 +35,7 @@ const fadeInUp = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const HighlightCard = ({ stat, index, scrollYProgress }: { stat: HighlightStat; index: number; scrollYProgress: any }) => {
+const HighlightCard = ({ stat, index, scrollYProgress }: { stat: HighlightStat; index: number; scrollYProgress: MotionValue<number> }) => {
   const y = useTransform(scrollYProgress, [0, 1], [10 * (index + 1), -10 * (index + 1)]);
   return (
     <motion.div variants={fadeInUp} className="relative group">
