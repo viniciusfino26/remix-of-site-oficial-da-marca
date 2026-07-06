@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Shield, ShieldCheck, Swords, MessageCircle, Play, ChevronRight } from 'lucide-react';
+import { Shield, ShieldCheck, Swords, MessageCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import LazyVideo from '@/components/LazyVideo';
 import autoSeguranca from '@/assets/auto-seguranca.webp';
 import homeSeguranca from '@/assets/home-seguranca.webp';
 import autoSkinSafe8K from '@/assets/auto-skinsafe8k.webp';
@@ -82,15 +83,9 @@ const AutomotivoHubSeguranca = () => {
               className="relative w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden"
               style={{ aspectRatio: '16/9' }}
             >
-              <video
+              <LazyVideo
                 src="/videos/auto-seguranca.mp4"
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                disablePictureInPicture
+                label="Reproduzir demonstração de quebra de vidro com película comum"
               />
             </motion.div>
           </div>
@@ -115,15 +110,9 @@ const AutomotivoHubSeguranca = () => {
                   className="relative w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden"
                   style={{ aspectRatio: '16/9' }}
                 >
-                  <video
+                  <LazyVideo
                     src="/videos/auto-seguranca-marginal.mp4"
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    disablePictureInPicture
+                    label="Reproduzir vídeo: elimine as vantagens do marginal"
                   />
                 </div>
               </motion.div>

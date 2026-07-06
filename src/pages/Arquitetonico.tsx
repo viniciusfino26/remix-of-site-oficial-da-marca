@@ -8,6 +8,7 @@ import PageHero from '@/components/PageHero';
 import ProductBanner from '@/components/ProductBanner';
 import ArchitecturalLogoCarousel from '@/components/ArchitecturalLogoCarousel';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import LazyVideo from '@/components/LazyVideo';
 import homeVideo from '@/assets/home-video.mp4';
 
 const fadeInUp = {
@@ -150,17 +151,10 @@ const Arquitetonico = () => (
             </motion.p>
             <motion.div variants={fadeInUp} className="mt-8 overflow-hidden rounded-lg border border-border/30 bg-muted/20 shadow-premium">
               <div className="aspect-video w-full overflow-hidden">
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                  preload="metadata"
-                >
-                  <source src={homeVideo} type="video/mp4" />
-                </video>
+                <LazyVideo
+                  src={homeVideo}
+                  label="Reproduzir vídeo de películas arquitetônicas INSULFILM™"
+                />
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="flex justify-center mt-8"><div className="separator-accent" /></motion.div>
