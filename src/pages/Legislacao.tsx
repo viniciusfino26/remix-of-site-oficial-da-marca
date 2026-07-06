@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
-import legislacaoCarro from '@/assets/legislacao-carro-transparencias.png';
+import legislacaoCarro from '@/assets/legislacao-carro-transparencias.webp';
 
 /* ── Animações ── */
 const fadeInUp = {
@@ -290,6 +290,8 @@ const Legislacao = () => (
                 <img
                   src={legislacaoCarro}
                   alt="Demonstração das transparências permitidas em películas automotivas INSULFILM™"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay com legenda */}

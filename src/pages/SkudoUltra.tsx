@@ -14,7 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
-import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
+import autoSkudoUltra from '@/assets/auto-skudoultra.webp';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
 

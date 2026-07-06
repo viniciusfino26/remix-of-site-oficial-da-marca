@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import arqNacionalBg from '@/assets/arq-nacional-bg.png';
+import arqNacionalBg from '@/assets/arq-nacional-bg.webp';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import ParallaxBreak from '@/components/ParallaxBreak';
@@ -737,7 +737,7 @@ const Lojas = () => {
       {/* Arquitetônico Nacional */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={arqNacionalBg} alt="" className="w-full h-full object-cover" />
+          <img src={arqNacionalBg} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#0a0f1e]/65" />
         </div>
         <div className="container mx-auto px-4 relative z-10">

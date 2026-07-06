@@ -8,10 +8,10 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import ProductShowcase from '@/components/ProductShowcase';
-import arqSolarTransparencia from '@/assets/arq-solar-alta-transparencia.png';
-import arqSolarNeutra from '@/assets/arq-solar-estetica-neutra.png';
-import arqSolarFume from '@/assets/arq-solar-fume-invertida.png';
-import arqSolarEspelhados from '@/assets/arq-solar-privacidade-espelhados.png';
+import arqSolarTransparencia from '@/assets/arq-solar-alta-transparencia.webp';
+import arqSolarNeutra from '@/assets/arq-solar-estetica-neutra.webp';
+import arqSolarFume from '@/assets/arq-solar-fume-invertida.webp';
+import arqSolarEspelhados from '@/assets/arq-solar-privacidade-espelhados.webp';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

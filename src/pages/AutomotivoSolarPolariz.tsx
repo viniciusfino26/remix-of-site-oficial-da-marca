@@ -3,7 +3,7 @@ import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Zap, Layers, Shield, Sun, CheckCircle, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
-import productImage from '@/assets/auto-solar-polariz.png';
+import productImage from '@/assets/auto-solar-polariz.webp';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

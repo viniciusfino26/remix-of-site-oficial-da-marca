@@ -13,7 +13,7 @@ import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
-import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
+import autoSkudoGuard from '@/assets/auto-skudoguard.webp';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
 

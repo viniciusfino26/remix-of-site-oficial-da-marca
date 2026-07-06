@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
-import autoSolarDark from '@/assets/auto-solar-dark.png';
-import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
-import autoSolarVip from '@/assets/auto-solar-vip.png';
-import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
-import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
-import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
-import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
-import autoSolarHero from '@/assets/auto-solar-hero.png';
+import autoSolarDark from '@/assets/auto-solar-dark.webp';
+import autoSolarEclipse from '@/assets/auto-solar-eclipse.webp';
+import autoSolarVip from '@/assets/auto-solar-vip.webp';
+import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.webp';
+import autoSolarMatrix from '@/assets/auto-solar-matrix.webp';
+import autoSolarPolariz from '@/assets/auto-solar-polariz.webp';
+import autoSolarNavBg from '@/assets/auto-solar-nav-bg.webp';
+import autoSolarHero from '@/assets/auto-solar-hero.webp';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -210,7 +210,7 @@ const AutomotivoHubSolar = () => {
 
         {/* ═══ NAVEGAÇÃO / ANCORAGEM ═══ */}
         <section className="relative py-14 overflow-hidden">
-          <img src={autoSolarNavBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={autoSolarNavBg} alt="" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40" />
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">

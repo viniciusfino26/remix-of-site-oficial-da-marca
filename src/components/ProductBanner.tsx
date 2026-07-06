@@ -51,6 +51,8 @@ const ProductBanner = ({ title, description, buttonText, buttonIcon: Icon, link,
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
             style={{ scale: imgScale }}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background/30 to-transparent" />
         </>

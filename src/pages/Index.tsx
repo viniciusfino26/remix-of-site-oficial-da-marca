@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Shield, Award, Cpu, Car, Building2, Eye, SunDim, Layers, Fingerprint, Headset } from 'lucide-react';
-import logoLight from '@/assets/logo-light.png';
+import logoLight from '@/assets/logo-light.webp';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductBanner from '@/components/ProductBanner';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
-import homeSolar from '@/assets/home-solar.png';
-import homeSeguranca from '@/assets/home-seguranca.png';
-import homeComercial from '@/assets/home-comercial.png';
-import homePpf from '@/assets/home-ppf.png';
+import homeSolar from '@/assets/home-solar.webp';
+import homeSeguranca from '@/assets/home-seguranca.webp';
+import homeComercial from '@/assets/home-comercial.webp';
+import homePpf from '@/assets/home-ppf.webp';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

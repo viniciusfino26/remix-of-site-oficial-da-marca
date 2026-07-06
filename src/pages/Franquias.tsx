@@ -5,11 +5,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-import homeSolar from '@/assets/home-solar.png';
-import homeSeguranca from '@/assets/home-seguranca.png';
-import homeComercial from '@/assets/home-comercial.png';
-import homePpf from '@/assets/home-ppf.png';
-import autoSolar from '@/assets/auto-solar.png';
+import homeSolar from '@/assets/home-solar.webp';
+import homeSeguranca from '@/assets/home-seguranca.webp';
+import homeComercial from '@/assets/home-comercial.webp';
+import homePpf from '@/assets/home-ppf.webp';
+import autoSolar from '@/assets/auto-solar.webp';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -95,7 +95,7 @@ const Franquias = () => (
             <motion.div key={i} variants={fadeInUp}>
               <Card className="glass-card rounded-2xl overflow-hidden h-full group">
                 <div className="relative h-48 overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={p.img} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                   <div className="absolute bottom-3 left-4">
                     <p.icon className="w-6 h-6 text-accent" />
@@ -177,7 +177,7 @@ const Franquias = () => (
           </motion.div>
           <motion.div variants={scaleIn} className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={autoSolar} alt="Película solar aplicada em veículo" className="w-full h-80 md:h-96 object-cover" />
+              <img src={autoSolar} alt="Película solar aplicada em veículo" loading="lazy" decoding="async" className="w-full h-80 md:h-96 object-cover" />
             </div>
             <div className="absolute -bottom-4 -left-4 w-24 h-24 rounded-2xl bg-accent/10 blur-2xl" />
             <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-accent/5 blur-3xl" />

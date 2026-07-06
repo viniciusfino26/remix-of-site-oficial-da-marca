@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, MessageCircle, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Analytics } from '@/components/Analytics';
-import logoDark from '@/assets/logo-dark.png';
-import logoDarkCropped from '@/assets/logo-dark-cropped.png';
+import logoDark from '@/assets/logo-dark.webp';
+import logoDarkCropped from '@/assets/logo-dark-cropped.webp';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -187,7 +187,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="mt-1 sm:mt-2 max-w-full flex justify-center">
-            <img src={logoDarkCropped} alt="INSULFILM™" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
+            <img src={logoDarkCropped} alt="INSULFILM™" loading="lazy" decoding="async" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
-import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
+import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.webp';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
 

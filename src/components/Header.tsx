@@ -5,7 +5,7 @@ import { Menu, ChevronDown, Shield, Car, Building2, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
-import logoDark from '@/assets/logo-dark.png';
+import logoDark from '@/assets/logo-dark.webp';
 import flagBr from '@/assets/flag-br.svg';
 import flagUs from '@/assets/flag-us.svg';
 import flagEs from '@/assets/flag-es.svg';

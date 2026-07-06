@@ -11,9 +11,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import autoSolarImg from '@/assets/auto-solar.png';
-import autoSegurancaImg from '@/assets/auto-seguranca.png';
-import autoPpfImg from '@/assets/auto-ppf.png';
+import autoSolarImg from '@/assets/auto-solar.webp';
+import autoSegurancaImg from '@/assets/auto-seguranca.webp';
+import autoPpfImg from '@/assets/auto-ppf.webp';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

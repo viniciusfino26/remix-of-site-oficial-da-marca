@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { Shield, ShieldCheck, Swords, MessageCircle, Play, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import autoSeguranca from '@/assets/auto-seguranca.png';
-import homeSeguranca from '@/assets/home-seguranca.png';
-import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
-import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
-import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
-import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
+import autoSeguranca from '@/assets/auto-seguranca.webp';
+import homeSeguranca from '@/assets/home-seguranca.webp';
+import autoSkinSafe8K from '@/assets/auto-skinsafe8k.webp';
+import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.webp';
+import autoSkudoGuard from '@/assets/auto-skudoguard.webp';
+import autoSkudoUltra from '@/assets/auto-skudoultra.webp';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

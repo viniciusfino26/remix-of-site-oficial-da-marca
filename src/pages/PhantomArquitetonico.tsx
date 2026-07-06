@@ -9,7 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ParallaxBreak from '@/components/ParallaxBreak';
 
-import phantomSolutionThickness from '@/assets/phantom-solution-thickness.png';
+import phantomSolutionThickness from '@/assets/phantom-solution-thickness.webp';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
 
@@ -405,7 +405,7 @@ const PhantomArquitetonico = () => {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="overflow-hidden rounded-2xl mb-12 border border-primary-foreground/10">
-              <img src={phantomSolutionThickness} alt="Película Phantom - 180 microns de espessura premium" className="w-full object-contain bg-muted/10" />
+              <img src={phantomSolutionThickness} alt="Película Phantom - 180 microns de espessura premium" loading="lazy" decoding="async" className="w-full object-contain bg-muted/10" />
             </motion.div>
 
             <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">

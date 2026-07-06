@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import logosStrip from '@/assets/architectural-logos-strip.png';
+import logosStrip from '@/assets/architectural-logos-strip.webp';
 
 type ArchitecturalLogoCarouselProps = {
   className?: string;
@@ -24,6 +24,8 @@ const StripTrack = ({ direction }: { direction: 'left' | 'right' }) => (
             : ''
         }
         aria-hidden={copyIndex === 1}
+        loading="lazy"
+        decoding="async"
         className="h-40 w-auto max-w-none select-none object-contain md:h-56 lg:h-72"
         loading={copyIndex === 0 ? 'eager' : 'lazy'}
         decoding="async"

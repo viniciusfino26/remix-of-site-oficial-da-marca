@@ -15,7 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
-import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
+import autoSkinSafe8K from '@/assets/auto-skinsafe8k.webp';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import PDPFaqSection from '@/components/PDPFaqSection';
 

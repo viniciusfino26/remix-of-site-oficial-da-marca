@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Sun, Zap, Layers, Shield, CheckCircle, MessageCircle, Eye } from 'lucide-react';
-import productImage from '@/assets/auto-solar-dark.png';
+import productImage from '@/assets/auto-solar-dark.webp';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
