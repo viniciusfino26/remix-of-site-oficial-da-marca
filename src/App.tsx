@@ -239,6 +239,7 @@ const App = () => (
           <Route path="/automotivo/solar/raystart" element={<AutomotivoRayStart />} />
           <Route path="/automotivo/solar/raypro" element={<AutomotivoRayPro />} />
           <Route path="/automotivo/solar/carbon" element={<AutomotivoCarbon />} />
+          <Route path="/automotivo/solar/ceramic" element={<AutomotivoCeramic />} />
           <Route path="/automotivo/solar/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
           <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
