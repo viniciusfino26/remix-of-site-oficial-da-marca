@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Qual a diferença entre a RayPro e uma película apenas pigmentada de entrada?',
+    answer: 'A RayPro tem pigmentação homogênea fundida ao poliéster e uma camada dedicada de rejeição UV (98%, o maior da faixa de entrada). Isso retarda o clareamento e a virada de tom típicos das películas apenas tingidas.',
+  },
+  {
+    question: 'Quais tonalidades a RayPro oferece e qual a ficha técnica?',
+    answer: 'RayPro 35 (35% de luz, TSER 34%, privacidade Médio), RayPro 20 (20% de luz, TSER 36%, Médio Alto) e RayPro 05 (5% de luz, TSER 39%, Alto). Todas com 98% de UV rejeitado e 5% de IR.',
+  },
+  {
+    question: 'Qual é a garantia oficial da RayPro?',
+    answer: '3 anos, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+  {
+    question: 'A RayPro interfere em GPS, celular ou tag de pedágio?',
+    answer: 'Não. Celular, GPS, rádio e tag funcionam normalmente após o serviço técnico.',
+  },
+  {
+    question: 'Onde a RayPro pode ser aplicada?',
+    answer: 'Vidros laterais, vidro traseiro e para-brisa, conforme ficha técnica. A aplicação (serviço técnico) deve ser realizada em Centro Autorizado INSULFILM™.',
+  },
+];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
