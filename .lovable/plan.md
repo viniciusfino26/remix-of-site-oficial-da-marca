@@ -1,102 +1,50 @@
-# Plano — RD Station: Debug, Form Frota e Verificação SPA
+# Etapa 1 — Transformar Dark em RayStart
 
-## 1. Painel de Debug RD (overlay flutuante)
+Primeira etapa do overhaul da linha Solar Automotiva. Foco exclusivo no produto **RayStart** (substitui a antiga PDP Dark). Etapas futuras (RayPro, Carbon, Ceramic, Polariz, Matrix, Polariz Ultra) virão em novos passos.
 
-**Novo arquivo:** `src/components/RDDebugOverlay.tsx`
-- Overlay fixo no canto inferior direito (acima do FloatingCTA), só aparece quando ativo.
-- **Ativação:** `?rd_debug=1` na URL **ou** `localStorage.rd_debug = "1"`. Persiste em localStorage ao usar o query param.
-- UI: cabeçalho com título "RD Debug", contador, botão minimizar, botão limpar, botão fechar (`rd_debug=0`).
-- Lista rolável (últimos 100 eventos) com:
-  - Tag colorida: `PAGEVIEW` (azul) / `CONVERSION` (verde) / `BLOCKED` (cinza, quando sem consentimento) / `ERROR` (vermelho).
-  - Timestamp (HH:MM:SS), URL/identifier, payload em JSON colapsável.
-- Estado de status no topo: consentimento LGPD ✅/❌, script RD carregado ✅/❌ (`!!window.RdIntegration`), token presente.
-- Estilo dark, glassmorphism, Tailwind tokens semânticos (sem cores hard-coded).
+## O que muda
 
-**Bus de eventos em `src/lib/rdstation.ts`:**
-- Adicionar `EventTarget` interno `rdDebugBus` exportado.
-- Em `trackPageView` e `trackConversion`: emitir evento (`type`, `payload`, `blocked`, `error`) **antes/depois** da chamada — incluindo o caso `!hasConsent()` (emite `blocked`) e o `catch` (emite `error`).
-- Não loga dados sensíveis no console por padrão (segurança); apenas no overlay quando ativado pelo dev.
+### 1. Nova PDP `AutomotivoRayStart.tsx`
+Renomear/reescrever a atual `AutomotivoDark.tsx` como `AutomotivoRayStart.tsx`, mantendo o mesmo padrão visual dark premium (hero parallax, specs cards, ficha técnica, posicionamento, garantia, CTA), com o **conteúdo integral do documento**:
 
-**Mount global:** importar `<RDDebugOverlay />` em `src/App.tsx` ao lado de `<RDStationTracking />`.
+- **Hero:** badge "Solar Performance Films · Linha de Entrada", H1 "INSULFILM™ RayStart", subtítulo "O primeiro passo para escurecer o vidro e recuperar o conforto visual." + descritor do doc.
+- **Seção "O que esta linha resolve":** 3 cards (Excesso de claridade, Interior à mostra, Vidro sem acabamento) com os textos exatos do doc.
+- **Sobre esta linha + Posição no portfólio:** bloco lado a lado listando toda a hierarquia Solar Performance (RayStart ●, RayPro, Carbon, Ceramic, Polariz) e Solar Premium (Matrix, Polariz Ultra), com RayStart destacada.
+- **Ficha técnica (Performance Técnica):** tabela com as 3 variantes RayStart 35 / 20 / 05 exatamente com os números do doc (TL, IR 05%, UV 90%, TSER 24/26/29%, privacidade Médio/Médio Alto/Alto).
+- **Specs cards:** 4 cards — Construção "Basic Film Pigmentada", Nitidez Ótica "Regular", Bloqueio UV "90%", Garantia "2 anos".
+- **O que você recebe:** 4 bullets do doc (3 tonalidades, 90% UV, tom preto clássico, não interfere em eletrônicos).
+- **Garantia oficial:** 2 anos (mesmo padrão da atual Dark).
+- **CTA final:** Solicitar Orçamento → `/contato` + link secundário "Conheça a linha completa" → `/automotivo/solar`.
+- **SEO:** title, meta description, canonical, og e JSON-LD Product atualizados para RayStart.
 
-## 2. Formulário B2B inline na /frota
+Toda a copy vem do documento enviado — não inventar textos, não misturar com a copy antiga da Dark.
 
-**Editar:** `src/pages/Frota.tsx`
-- Substituir a seção CTA final (atualmente só botão WhatsApp) por uma seção dual: formulário à esquerda + CTA WhatsApp secundário à direita. Copy da seção atual (`fleet.ctaTitle`, `fleet.ctaSubtitle`, `fleet.ctaButton`) **mantida intacta** (memory: copy is immutable).
-- Adicionar novas chaves de copy nos 3 locales (`pt.json`, `en.json`, `es.json`) sob `fleet.form.*`: title, subtitle, nameLabel, emailLabel, phoneLabel, submit, success, error, consent.
+### 2. Roteamento (`src/App.tsx`)
+- Adicionar rota `/automotivo/solar/raystart` → `AutomotivoRayStart`.
+- Substituir a rota antiga `/automotivo/solar/dark` por `<Navigate to="/automotivo/solar/raystart" replace />` (redirect client-side, equivalente a 301 para SPA).
+- Redirect legado `/dark` continua apontando para o novo destino via cascata.
+- Remover import de `AutomotivoDark` (arquivo pode ser deletado após a migração para evitar código morto).
 
-**Novo componente:** `src/components/FrotaLeadForm.tsx`
-- Campos: Nome, E-mail, Telefone (+ checkbox de consentimento LGPD obrigatório).
-- Validação **Zod** (segurança):
-  - `name`: trim, 2–100 chars.
-  - `email`: trim, e-mail válido, max 255.
-  - `phone`: trim, regex BR `^\+?[\d\s\(\)\-]{10,20}$`.
-  - `consent`: `true`.
-- React Hook Form + zodResolver, mensagens de erro inline.
-- Sanitização: `sanitizeText()` de `src/lib/sanitize.ts` antes de enviar.
-- Submit: `trackConversion('frota-lead-b2b', { name, email, phone, source: 'pagina-frota', cf_segmento: 'B2B-Frotas' })`.
-- Estado loading/success/error; ao sucesso, esconde form e mostra mensagem de agradecimento + link WhatsApp.
-- Anti-spam leve: honeypot + intervalo mínimo (3s) entre montagem e submit.
-- Estilo: glassmorphism, `bg-carbon-gradient`, parallax leve (memory: estética visual).
+### 3. Hub Solar (`src/pages/AutomotivoHubSolar.tsx`)
+Reestruturar a listagem para refletir o novo portfólio, removendo Dark, Eclipse e Vip conforme decisão:
+- Remover cards Dark, Eclipse e Vip.
+- Adicionar card **RayStart** (usando por ora o `auto-solar-dark.png` como placeholder até termos imagem própria).
+- Manter cards existentes de Polariz, Matrix, Polariz Ultra.
+- Atualizar âncoras (`quick nav`) e meta description do hub.
+- Observação: RayPro, Carbon e Ceramic **ainda não** entram no hub nesta etapa — serão adicionados nas etapas seguintes conforme cada PDP for construída.
 
-## 3. Verificação de pageviews SPA
+### 4. Header / Mega Menu (`src/components/Header.tsx`)
+Remover entradas de Dark, Eclipse e Vip na navegação de Controle Solar Automotivo; adicionar entrada RayStart apontando para `/automotivo/solar/raystart`. Demais categorias (PPF, Segurança, Antivandalismo) permanecem intocadas.
 
-**Auditoria (sem mudanças se OK):**
-- `RDStationTracking` já está montado em `App.tsx:187` dentro do `BrowserRouter` e dispara `trackPageView()` em todo `useLocation` change → cobre `/automotivo/solar` e todas as rotas SPA.
-- O painel de debug servirá como prova visual: navegar entre rotas e ver `PAGEVIEW` aparecendo.
-- Conferir manualmente em modo debug: `/`, `/automotivo`, `/automotivo/solar`, `/arquitetonico`, `/frota`, e uma PDP (ex: `/pt/arquitetonico/solar/naturale`).
-- **Único ajuste possível:** se houver rota com `<Helmet>` que atualiza `document.title` tarde, o delay de 300ms já cobre. Caso o overlay revele alguma rota sem disparo, ajusto o efeito (ex.: aumentar delay ou ouvir `helmet`).
+### 5. Links internos residuais
+Varredura por referências a `automotivo/solar/dark`, "INSULFILM™ Dark" e cards antigos em componentes de navegação, banners e CTAs cruzados. Substituir por RayStart ou remover se apontarem para produtos descontinuados nesta etapa (Eclipse/Vip continuam com PDP viva, apenas não são mais promovidos no hub/menu — as rotas permanecem para não quebrar links externos).
 
-## Detalhes técnicos
+## Fora do escopo desta etapa
+- PDPs RayPro, Carbon, Ceramic, Polariz, Matrix, Polariz Ultra (próximas etapas, uma por vez).
+- Remoção definitiva dos arquivos de Eclipse/Vip (mantidos até decisão futura).
+- Novas imagens de produto (usaremos placeholder até o material oficial chegar).
+- Traduções EN/ES (a PDP atual da Dark já é PT-only; manter o mesmo padrão).
 
-### Bus de debug (`rdstation.ts`)
-```ts
-export const rdDebugBus = new EventTarget();
-type RDDebugEvent = {
-  kind: 'pageview' | 'conversion';
-  status: 'sent' | 'blocked' | 'error';
-  identifier?: string;
-  payload?: Record<string, unknown>;
-  url?: string;
-  title?: string;
-  error?: string;
-  ts: number;
-};
-const emit = (e: RDDebugEvent) =>
-  rdDebugBus.dispatchEvent(new CustomEvent('rd', { detail: e }));
-```
-
-### Ativação do overlay
-```ts
-const isDebug = () => {
-  if (typeof window === 'undefined') return false;
-  const qs = new URLSearchParams(window.location.search);
-  if (qs.get('rd_debug') === '1') localStorage.setItem('rd_debug', '1');
-  if (qs.get('rd_debug') === '0') localStorage.removeItem('rd_debug');
-  return localStorage.getItem('rd_debug') === '1';
-};
-```
-
-### Segurança
-- Sem `dangerouslySetInnerHTML`.
-- E-mail/telefone sanitizados e validados antes de `trackConversion`.
-- Overlay nunca exposto em produção a menos que o usuário ative explicitamente — não há leak de PII para usuários comuns.
-- Sem logs de PII no console.
-
-## Arquivos afetados
-
-| Ação | Arquivo |
-|---|---|
-| Novo | `src/components/RDDebugOverlay.tsx` |
-| Novo | `src/components/FrotaLeadForm.tsx` |
-| Editar | `src/lib/rdstation.ts` (bus + emits) |
-| Editar | `src/App.tsx` (mount overlay) |
-| Editar | `src/pages/Frota.tsx` (inserir form na seção CTA) |
-| Editar | `src/i18n/locales/{pt,en,es}.json` (chaves `fleet.form.*`) |
-
-## Como testar
-1. Abrir `/?rd_debug=1` → overlay aparece, status mostra consentimento.
-2. Aceitar cookies → status muda para "script carregado".
-3. Navegar entre rotas → eventos `PAGEVIEW` em tempo real.
-4. Em `/frota`, preencher form e enviar → evento `CONVERSION frota-lead-b2b` com payload visível.
-5. Conferir no painel do RD Station Marketing que a conversão chegou.
+## Validação
+- Build limpo (typecheck automático).
+- Playwright: navegar em `/automotivo/solar/raystart`, capturar screenshot da PDP inteira; navegar em `/automotivo/solar/dark` e confirmar redirect para a nova URL; abrir `/automotivo/solar` e confirmar que o hub mostra RayStart e não mostra mais Dark/Eclipse/Vip.
