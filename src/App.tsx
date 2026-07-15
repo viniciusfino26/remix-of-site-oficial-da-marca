@@ -61,6 +61,7 @@ import AutomotivoEclipse from "./pages/AutomotivoEclipse";
 import AutomotivoRayStart from "./pages/AutomotivoRayStart";
 import AutomotivoRayPro from "./pages/AutomotivoRayPro";
 import AutomotivoCarbon from "./pages/AutomotivoCarbon";
+import AutomotivoCeramic from "./pages/AutomotivoCeramic";
 
 /* ── PDPs Automotivo Segurança ── */
 import AutomotivoSkinSafe from "./pages/AutomotivoSkinSafe";
