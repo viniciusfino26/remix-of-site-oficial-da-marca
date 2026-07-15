@@ -61,6 +61,7 @@ import AutomotivoEclipse from "./pages/AutomotivoEclipse";
 import AutomotivoRayStart from "./pages/AutomotivoRayStart";
 import AutomotivoRayPro from "./pages/AutomotivoRayPro";
 import AutomotivoCarbon from "./pages/AutomotivoCarbon";
+import AutomotivoCeramic from "./pages/AutomotivoCeramic";
 
 /* ── PDPs Automotivo Segurança ── */
 import AutomotivoSkinSafe from "./pages/AutomotivoSkinSafe";
@@ -238,6 +239,7 @@ const App = () => (
           <Route path="/automotivo/solar/raystart" element={<AutomotivoRayStart />} />
           <Route path="/automotivo/solar/raypro" element={<AutomotivoRayPro />} />
           <Route path="/automotivo/solar/carbon" element={<AutomotivoCarbon />} />
+          <Route path="/automotivo/solar/ceramic" element={<AutomotivoCeramic />} />
           <Route path="/automotivo/solar/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
           <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
@@ -380,6 +382,7 @@ const App = () => (
           <Route path="/raystart" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/raypro" element={<Navigate to="/automotivo/solar/raypro" replace />} />
           <Route path="/carbon" element={<Navigate to="/automotivo/solar/carbon" replace />} />
+          <Route path="/ceramic" element={<Navigate to="/automotivo/solar/ceramic" replace />} />
           <Route path="/skinsafe8k" element={<Navigate to="/automotivo/seguranca/skinsafe8k" replace />} />
           <Route path="/antivandalismo13k" element={<Navigate to="/automotivo/seguranca/antivandalismo13k" replace />} />
           <Route path="/skudoguard" element={<Navigate to="/automotivo/seguranca/skudoguard" replace />} />

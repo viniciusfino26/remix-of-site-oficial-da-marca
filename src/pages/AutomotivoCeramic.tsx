@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Zap, Layers, Shield, CheckCircle, MessageCircle, Eye, ArrowRight, Sun, Thermometer, Palette, FileCheck, Wifi, Award } from 'lucide-react';
+import { Zap, Layers, Shield, CheckCircle, MessageCircle, Eye, ArrowRight, Sun, Thermometer, CloudFog, FileCheck, Wifi } from 'lucide-react';
 import productImage from '@/assets/auto-solar-matrix.png';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -14,29 +14,29 @@ const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, sc
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const specs = [
-  { icon: Zap, label: 'Construção', value: 'Premium Film · Nanocerâmica' },
-  { icon: Layers, label: 'Nitidez Óptica', value: 'Excelente · Ultra Definition' },
-  { icon: Eye, label: 'Bloqueio UV', value: '>99%' },
-  { icon: Shield, label: 'Garantia', value: '10 anos' },
+  { icon: Zap, label: 'Construção', value: 'Advanced Plus · Nanocerâmica' },
+  { icon: Layers, label: 'Nitidez Óptica', value: 'Alta · High Definition' },
+  { icon: Eye, label: 'Bloqueio UV', value: '99%' },
+  { icon: Shield, label: 'Garantia', value: '4 anos' },
 ];
 
 const techTable = [
-  { version: 'Matrix 70', privacy: 'Baixo', light: '70%', ir: '75%', uv: '>99%', energy: '44%' },
-  { version: 'Matrix 35', privacy: 'Médio', light: '35%', ir: '67%', uv: '>99%', energy: '55%' },
-  { version: 'Matrix 15', privacy: 'Médio Alto', light: '15%', ir: '67%', uv: '>99%', energy: '60%' },
+  { version: 'Ceramic 35', privacy: 'Médio', light: '35%', ir: '>85%', uv: '99%', energy: '54%' },
+  { version: 'Ceramic 20', privacy: 'Médio Alto', light: '20%', ir: '>85%', uv: '99%', energy: '58%' },
+  { version: 'Ceramic 05', privacy: 'Alto', light: '05%', ir: '>85%', uv: '99%', energy: '63%' },
 ];
 
 const problems = [
-  { icon: Thermometer, title: 'Calor que o ar-condicionado não vence sozinho', text: 'Em trajetos longos ou sol de frente, o calor entra mais rápido do que o ar compensa. Com até 75% de rejeição de infravermelho, a Matrix barra a maior parte do calor antes que ele chegue ao habitáculo.' },
-  { icon: Palette, title: 'Conforto térmico sem precisar escurecer o vidro', text: 'A nanocerâmica rejeita calor em qualquer tonalidade. Mesmo a Matrix 70 — clara como vidro original — entrega 75% de IR. O motorista escolhe o tom sem abrir mão da performance.' },
-  { icon: Sun, title: 'Exposição solar acumulada em quem roda muito', text: 'Mais de 99% de bloqueio UV e nitidez Ultra Definition preservam a pele, o interior e a dirigibilidade — com estabilidade de cor ao longo dos 10 anos de garantia.' },
+  { icon: Thermometer, title: 'Calor intenso que o ar-condicionado não vence sozinho', text: 'Em trajetos longos ou com sol de frente, o calor entra mais rápido do que o ar-condicionado compensa. Com mais de 85% de rejeição de infravermelho, o Ceramic barra a maior parte do calor antes que ele chegue ao habitáculo.' },
+  { icon: CloudFog, title: 'Cor que envelhece e perde o acabamento', text: 'A construção nanocerâmica garante estabilidade de cor superior à pigmentação simples e ao carbono, mantendo o tom neutro por mais tempo, sem virar cor e sem efeito neblina.' },
+  { icon: Sun, title: 'Exposição diária que afeta o bem-estar dos ocupantes', text: 'Com 99% de bloqueio UV e alta rejeição de infravermelho, o Ceramic cria conforto térmico real para motorista e passageiros, com estabilidade de cor ao longo dos anos.' },
 ];
 
 const benefits = [
-  { title: 'Alta rejeição térmica, até 75% de IR', text: 'A Matrix 70 entrega 75% de rejeição de infravermelho com o vidro mantendo aparência clara. Desempenho de ponta sem abrir mão da visibilidade.' },
-  { title: 'Três tonalidades, mesma tecnologia cerâmica', text: 'Da Matrix 70 (clara, máximo IR) à Matrix 15 (até 60% de TSER), o motorista escolhe o equilíbrio entre luz e rejeição solar — todas com mais de 99% de UV.' },
-  { title: 'Nitidez Ultra Definition', text: 'Clareza de visão de dentro para fora sem escurecimento desnecessário, preservando a dirigibilidade de dia e de noite.' },
-  { title: '10 anos de garantia, não interfere em eletrônicos', text: 'O maior prazo do portfólio, com tecnologia cerâmica não metálica que preserva celular, GPS, rádio e tag de pedágio.' },
+  { title: 'Mais de 85% de rejeição de infravermelho', text: 'O Ceramic entrega alta rejeição de calor em todas as variantes, do Ceramic 35 ao Ceramic 05. É conforto térmico perceptível na pele desde os primeiros minutos de trajeto.' },
+  { title: 'Conforto térmico sem escurecer demais', text: 'A performance térmica não depende da tonalidade: a variante clara entrega o mesmo patamar de IR rejeitado que a escura. Liberdade de escolha do tom.' },
+  { title: 'Nitidez óptica High Definition, visual neutro', text: 'Clareza de visão superior, sem efeito neblina, com acabamento neutro e não refletivo que não altera a identidade do veículo.' },
+  { title: 'Não interfere em eletrônicos', text: 'Construção nanocerâmica, sem metalização. Celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.' },
 ];
 
 const portfolio = {
@@ -44,16 +44,16 @@ const portfolio = {
     { name: 'INSULFILM™ RayStart', current: false },
     { name: 'INSULFILM™ RayPro', current: false },
     { name: 'INSULFILM™ Carbon', current: false },
-    { name: 'INSULFILM™ Ceramic', current: false },
+    { name: 'INSULFILM™ Ceramic', current: true },
     { name: 'INSULFILM™ Polariz', current: false },
   ],
   premium: [
-    { name: 'INSULFILM™ Matrix', current: true },
+    { name: 'INSULFILM™ Matrix', current: false },
     { name: 'INSULFILM™ Polariz Ultra', current: false },
   ],
 };
 
-const AutomotivoMatrix = () => {
+const AutomotivoCeramic = () => {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroTextY = useSpring(useTransform(heroProgress, [0, 1], [0, -80]), { stiffness: 100, damping: 30 });
@@ -62,27 +62,27 @@ const AutomotivoMatrix = () => {
 
   const schemaMarkup = {
     '@context': 'https://schema.org', '@type': 'Product',
-    name: 'INSULFILM™ Matrix', brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Matrix — nanocerâmica premium da Solar Premium Films. Até 75% de IR rejeitado, mais de 99% UV, nitidez Ultra Definition e 10 anos de garantia.',
-    url: 'https://insulfilm.com.br/automotivo/solar/matrix',
+    name: 'INSULFILM™ Ceramic', brand: { '@type': 'Brand', name: 'INSULFILM™' },
+    description: 'INSULFILM™ Ceramic — nanocerâmica da Solar Performance Films. Mais de 85% de IR rejeitado em todas as variantes, 99% UV, nitidez High Definition e 4 anos de garantia.',
+    url: 'https://insulfilm.com.br/automotivo/solar/ceramic',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Premium Film — Nanocerâmica' },
-      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Excelente — Ultra Definition' },
-      { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '>99%' },
-      { '@type': 'PropertyValue', name: 'Garantia', value: '10 anos' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Advanced Plus Film — Nanocerâmica' },
+      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
+      { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
+      { '@type': 'PropertyValue', name: 'Garantia', value: '4 anos' },
     ],
   };
 
   return (
     <>
       <Helmet>
-        <title>INSULFILM™ Matrix | Solar Premium Films · Nanocerâmica Premium</title>
-        <meta name="description" content="INSULFILM™ Matrix: nanocerâmica premium com até 75% de rejeição de infravermelho em qualquer tonalidade, nitidez Ultra Definition e 10 anos de garantia." />
-        <meta property="og:title" content="INSULFILM™ Matrix | Solar Premium Films" />
-        <meta property="og:description" content="A nanocerâmica que rejeita calor sem comprometer a clareza, em qualquer tonalidade." />
+        <title>INSULFILM™ Ceramic | Solar Performance Films · Nanocerâmica</title>
+        <meta name="description" content="INSULFILM™ Ceramic: nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades, 99% de UV, nitidez High Definition e 4 anos de garantia." />
+        <meta property="og:title" content="INSULFILM™ Ceramic | Solar Performance Films" />
+        <meta property="og:description" content="Quando o cliente procura cerâmica, é aqui que o calor para de entrar." />
         <meta property="og:type" content="product" />
-        <meta property="og:url" content="https://insulfilm.com.br/automotivo/solar/matrix" />
-        <link rel="canonical" href="https://insulfilm.com.br/automotivo/solar/matrix" />
+        <meta property="og:url" content="https://insulfilm.com.br/automotivo/solar/ceramic" />
+        <link rel="canonical" href="https://insulfilm.com.br/automotivo/solar/ceramic" />
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
       <main>
@@ -92,12 +92,12 @@ const AutomotivoMatrix = () => {
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
                 <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                  <Award className="w-3.5 h-3.5 mr-2" /> Solar Premium Films · Nanocerâmica
+                  <Sun className="w-3.5 h-3.5 mr-2" /> Solar Performance Films · Nanocerâmica
                 </Badge>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Matrix</motion.h1>
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/70 font-light italic max-w-3xl mx-auto mb-4">A nanocerâmica que rejeita calor sem comprometer a clareza, em qualquer tonalidade.</motion.p>
-              <motion.p variants={fadeInUp} className="text-base md:text-lg text-primary-foreground/60 font-light max-w-3xl mx-auto">★ Melhor Equilíbrio &nbsp;·&nbsp; Nitidez Óptica: Excelente · Ultra Definition</motion.p>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Ceramic</motion.h1>
+              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/70 font-light italic max-w-3xl mx-auto mb-4">Quando o cliente procura cerâmica, é aqui que o calor para de entrar.</motion.p>
+              <motion.p variants={fadeInUp} className="text-base md:text-lg text-primary-foreground/60 font-light max-w-3xl mx-auto">★ Alta Rejeição Térmica &nbsp;·&nbsp; Nitidez Óptica: Alta · High Definition</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
           </motion.div>
@@ -108,7 +108,7 @@ const AutomotivoMatrix = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-14 max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ O que esta linha resolve</motion.p>
-              <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-foreground font-light italic leading-relaxed">A Matrix é o ponto em que o motorista deixa de escolher entre visibilidade e conforto térmico — os dois vêm juntos, com 10 anos de cobertura.</motion.p>
+              <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-foreground font-light italic leading-relaxed">A cerâmica é o nome que o mercado associa a conforto térmico. O Ceramic entrega o que a palavra promete: mais de 85% de rejeição de infravermelho, com visual neutro.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
             <motion.div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -133,24 +133,24 @@ const AutomotivoMatrix = () => {
             <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Sobre esta linha</motion.p>
-                <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-6 leading-tight">A entrada da Solar Premium Films — nanocerâmica de última geração.</motion.h2>
-                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Matrix é película espectro seletiva, enriquecida por cerâmica incorporada em nanopartículas especializadas, projetada para máxima proteção contra os raios infravermelhos do sol — com altíssima rejeição térmica e visibilidade interna de ultra definição.</motion.p>
-                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Três tonalidades (Matrix 70, 35 e 15), até 75% de IR, mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia oficial — sem interferir em eletrônicos.</motion.p>
+                <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-6 leading-tight">A nanocerâmica que rejeita calor sem escurecer demais.</motion.h2>
+                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Ceramic é película de alta performance desenvolvida com avançada tecnologia nanocerâmica. Proporciona elevada rejeição de calor, excelente conforto térmico e alta estabilidade de cor ao longo dos anos, com visual neutro e não refletivo.</motion.p>
+                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Três tonalidades (Ceramic 35, 20 e 05), rejeição superior a 85% de IR em todas elas, 99% de UV, nitidez óptica High Definition e 4 anos de garantia oficial com certificado individual.</motion.p>
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Posição no portfólio</motion.p>
                 <motion.div variants={fadeInUp} className="glass-card rounded-2xl p-6">
                   <p className="text-sm font-bold text-accent uppercase tracking-wider mb-4">Solar Performance Films</p>
                   <ul className="space-y-2 mb-6">{portfolio.performance.map((it) => (
-                    <li key={it.name} className="flex items-center gap-3 text-primary-foreground/50 font-light">
-                      <span className="w-2 h-2 rounded-full bg-primary-foreground/30" />{it.name}
+                    <li key={it.name} className={`flex items-center gap-3 ${it.current ? 'text-primary-foreground font-bold' : 'text-primary-foreground/50 font-light'}`}>
+                      <span className={`w-2 h-2 rounded-full ${it.current ? 'bg-accent' : 'bg-primary-foreground/30'}`} />
+                      {it.name}{it.current && <Badge className="bg-accent/20 text-accent border-0 text-[10px] ml-2">VOCÊ ESTÁ AQUI</Badge>}
                     </li>))}
                   </ul>
                   <p className="text-sm font-bold text-accent uppercase tracking-wider mb-4">Solar Premium Films</p>
                   <ul className="space-y-2">{portfolio.premium.map((it) => (
-                    <li key={it.name} className={`flex items-center gap-3 ${it.current ? 'text-primary-foreground font-bold' : 'text-primary-foreground/50 font-light'}`}>
-                      <span className={`w-2 h-2 rounded-full ${it.current ? 'bg-accent' : 'bg-primary-foreground/30'}`} />
-                      {it.name}{it.current && <Badge className="bg-accent/20 text-accent border-0 text-[10px] ml-2">VOCÊ ESTÁ AQUI</Badge>}
+                    <li key={it.name} className="flex items-center gap-3 text-primary-foreground/50 font-light">
+                      <span className="w-2 h-2 rounded-full bg-primary-foreground/30" />{it.name}
                     </li>))}
                   </ul>
                 </motion.div>
@@ -162,7 +162,7 @@ const AutomotivoMatrix = () => {
         <section className="py-16 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Matrix — Nanocerâmica premium" className="w-full h-full object-cover rounded-2xl" /></div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Ceramic — Película nanocerâmica" className="w-full h-full object-cover rounded-2xl" /></div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
           </div>
@@ -222,9 +222,9 @@ const AutomotivoMatrix = () => {
         </section>
 
         <ParallaxBreak minHeight="25vh" stats={[
-          { value: '75%', label: 'IR Rejeitado' },
-          { value: '>99%', label: 'Bloqueio UV' },
-          { value: '10', label: 'Anos Garantia' },
+          { value: '>85%', label: 'IR Rejeitado' },
+          { value: '99%', label: 'Bloqueio UV' },
+          { value: '4', label: 'Anos Garantia' },
         ]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
@@ -232,7 +232,7 @@ const AutomotivoMatrix = () => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-4xl mx-auto">
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ O que você recebe</motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-10">Conforto térmico e clareza sem escolher.</motion.h2>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-10">Cerâmica de verdade, com desempenho que se sente.</motion.h2>
               <motion.ul className="space-y-6" variants={stagger}>{benefits.map((b, i) => (
                 <motion.li key={i} variants={fadeInUp} className="flex items-start gap-4">
                   <CheckCircle className="w-6 h-6 text-accent mt-1 shrink-0" />
@@ -273,7 +273,7 @@ const AutomotivoMatrix = () => {
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3 text-center">▪ Garantia Oficial</motion.p>
               <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">10 anos</p>
+                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">4 anos</p>
                   <p className="text-sm uppercase tracking-widest text-muted-foreground font-bold mt-2">Garantia Oficial</p>
                 </div>
                 <div className="glass-card rounded-2xl p-6">
@@ -282,7 +282,7 @@ const AutomotivoMatrix = () => {
                   <ul className="space-y-2 text-sm text-foreground">
                     <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Certificado emitido no ato do serviço técnico</li>
                     <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Número único de rastreamento</li>
-                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Cobertura contra desbotamento, mudança de cor e efeito neblina</li>
+                    <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Cobertura contra desbotamento e mudança de cor</li>
                   </ul>
                 </div>
               </motion.div>
@@ -293,8 +293,8 @@ const AutomotivoMatrix = () => {
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nanocerâmica premium, 10 anos de cobertura.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Matrix é a entrada da Solar Premium Films — para quem quer o mais alto padrão de proteção solar sem escurecer o vidro.</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nanocerâmica com desempenho térmico de verdade.</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Ceramic é o topo da Solar Performance Films — com 4 anos de garantia e a procedência da marca original.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</Link>
@@ -311,4 +311,4 @@ const AutomotivoMatrix = () => {
   );
 };
 
-export default AutomotivoMatrix;
+export default AutomotivoCeramic;
