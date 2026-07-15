@@ -23,7 +23,7 @@ const specs = [
   { icon: Zap, label: 'Construção', value: 'Basic Film · Pigmentada' },
   { icon: Layers, label: 'Nitidez Óptica', value: 'Regular' },
   { icon: Eye, label: 'Bloqueio UV', value: '90%' },
-  { icon: Shield, label: 'Garantia', value: '2 anos' },
+  { icon: Shield, label: 'Garantia', value: '1 ano' },
 ];
 
 const techTable = [
@@ -101,7 +101,7 @@ const AutomotivoRayStart = () => {
       { '@type': 'PropertyValue', name: 'Construção', value: 'Basic Film — Pigmentada' },
       { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Regular' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '90%' },
-      { '@type': 'PropertyValue', name: 'Garantia', value: '2 anos' },
+      { '@type': 'PropertyValue', name: 'Garantia', value: '1 ano' },
     ],
   };
 
@@ -109,7 +109,7 @@ const AutomotivoRayStart = () => {
     <>
       <Helmet>
         <title>INSULFILM™ RayStart | Solar Performance Films · Linha de Entrada</title>
-        <meta name="description" content="INSULFILM™ RayStart: o primeiro passo para escurecer o vidro e recuperar o conforto visual. Película pigmentada com 90% de bloqueio UV, três tonalidades e 2 anos de garantia." />
+        <meta name="description" content="INSULFILM™ RayStart: o primeiro passo para escurecer o vidro e recuperar o conforto visual. Película pigmentada com 90% de bloqueio UV, três tonalidades e 1 ano de garantia." />
         <meta property="og:title" content="INSULFILM™ RayStart | Solar Performance Films" />
         <meta property="og:description" content="O primeiro passo para escurecer o vidro e recuperar o conforto visual." />
         <meta property="og:type" content="product" />
@@ -347,7 +347,7 @@ const AutomotivoRayStart = () => {
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3 text-center">▪ Garantia Oficial</motion.p>
               <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">2 anos</p>
+                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">1 ano</p>
                   <p className="text-sm uppercase tracking-widest text-muted-foreground font-bold mt-2">Garantia Oficial</p>
                 </div>
                 <div className="glass-card rounded-2xl p-6">
