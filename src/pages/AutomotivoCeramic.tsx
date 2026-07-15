@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Quanto de infravermelho a Ceramic rejeita?',
+    answer: 'Mais de 85% em todas as variantes — Ceramic 35, Ceramic 20 e Ceramic 05. A performance térmica não depende da tonalidade: a variante clara entrega o mesmo patamar de IR rejeitado que a escura.',
+  },
+  {
+    question: 'Qual a diferença da Ceramic para a Carbon e para películas pigmentadas?',
+    answer: 'A Ceramic usa construção nanocerâmica (Advanced Plus) com alta rejeição de infravermelho (>85%) e alta estabilidade de cor. Diferente da pigmentação simples e do carbono, mantém o tom neutro por mais tempo, sem virar cor e sem efeito neblina.',
+  },
+  {
+    question: 'Qual é a garantia oficial da Ceramic?',
+    answer: '4 anos, com Certificado Individual emitido no ato do serviço técnico, número único de rastreamento e cobertura contra desbotamento e mudança de cor. Consulte condições.',
+  },
+  {
+    question: 'A Ceramic interfere em GPS, celular ou tag de pedágio?',
+    answer: 'Não. A construção é nanocerâmica, sem metalização — celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
+  },
+  {
+    question: 'Qual o bloqueio UV e a nitidez óptica da Ceramic?',
+    answer: '99% de bloqueio UV em todas as variantes e nitidez óptica Alta · High Definition, com acabamento neutro e não refletivo.',
+  },
+];
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
