@@ -106,7 +106,7 @@ const benefits = [
   { icon: Gem, title: 'DESIGN SOFISTICADO' },
 ];
 
-const ProductSection = ({ product, index }: { product: typeof products[0]; index: number }) => {
+const ProductSection = ({ product, index }: { product: Product; index: number }) => {
   const reversed = index % 2 !== 0;
   const textVariant = reversed ? fadeInRight : fadeInLeft;
   const imgVariant = reversed ? fadeInLeft : fadeInRight;
