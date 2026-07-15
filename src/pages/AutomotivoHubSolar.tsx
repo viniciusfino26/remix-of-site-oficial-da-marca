@@ -30,6 +30,7 @@ const navTabs = [
   { label: 'RayStart', href: '#raystart' },
   { label: 'RayPro', href: '#raypro' },
   { label: 'Carbon', href: '#carbon' },
+  { label: 'Ceramic', href: '#ceramic' },
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
