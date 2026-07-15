@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
+import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
 import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
 import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
 import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
