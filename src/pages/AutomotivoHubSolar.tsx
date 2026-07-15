@@ -247,15 +247,35 @@ const AutomotivoHubSolar = () => {
           </div>
         </section>
 
-        {/* ═══ PRODUTOS ═══ */}
-        <section className="bg-white overflow-x-hidden">
+        {/* ═══ SOLAR PERFORMANCE FILMS ═══ */}
+        <section className="bg-white overflow-x-hidden pt-16">
           <div className="container mx-auto px-4">
-            {products.map((p, i) => (
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Performance</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Performance Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">Do primeiro escurecimento à tecnologia polarizada de 4ª geração.</motion.p>
+            </motion.div>
+            {performanceProducts.map((p, i) => (
               <div key={p.id}>
                 <ProductSection product={p} index={i} />
-                {i < products.length - 1 && (
-                  <div className="border-b border-border" />
-                )}
+                {i < performanceProducts.length - 1 && (<div className="border-b border-border" />)}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══ SOLAR PREMIUM FILMS ═══ */}
+        <section className="bg-white overflow-x-hidden pt-16 border-t border-border">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Premium</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Premium Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">O ápice da engenharia INSULFILM™ em rejeição térmica e visibilidade.</motion.p>
+            </motion.div>
+            {premiumProducts.map((p, i) => (
+              <div key={p.id}>
+                <ProductSection product={p} index={i} />
+                {i < premiumProducts.length - 1 && (<div className="border-b border-border" />)}
               </div>
             ))}
           </div>
