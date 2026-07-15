@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Quanto de calor (infravermelho) a Carbon rejeita?',
+    answer: 'Carbon 35 rejeita mais de 30% de IR, Carbon 20 mais de 40% e Carbon 05 mais de 50%. É onde a proteção térmica passa a ser sentida no corpo, com filtro dedicado de infravermelho.',
+  },
+  {
+    question: 'Qual a diferença entre a Carbon e uma película pigmentada?',
+    answer: 'A Carbon é construção em carbono verdadeiro, não metalizada, com filtro dedicado de IR. Películas apenas pigmentadas praticamente não rejeitam infravermelho e sofrem virada de cor típica ao longo do tempo — a Carbon preserva o tom por mais tempo.',
+  },
+  {
+    question: 'Qual é a garantia oficial da Carbon?',
+    answer: '5 anos, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+  {
+    question: 'A Carbon interfere em GPS, celular ou tag de pedágio?',
+    answer: 'Não. A construção é em carbono verdadeiro, sem metalização — celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
+  },
+  {
+    question: 'Qual o nível de bloqueio UV e nitidez óptica?',
+    answer: '99% de bloqueio UV em todas as variantes e nitidez óptica Alta · High Definition, com clareza de visão superior de dentro para fora, inclusive à noite.',
+  },
+];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
