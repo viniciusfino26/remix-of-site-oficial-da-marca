@@ -59,6 +59,7 @@ import AutomotivoPolariz from "./pages/AutomotivoPolariz";
 import AutomotivoVip from "./pages/AutomotivoVip";
 import AutomotivoEclipse from "./pages/AutomotivoEclipse";
 import AutomotivoRayStart from "./pages/AutomotivoRayStart";
+import AutomotivoRayPro from "./pages/AutomotivoRayPro";
 
 /* ── PDPs Automotivo Segurança ── */
 import AutomotivoSkinSafe from "./pages/AutomotivoSkinSafe";
