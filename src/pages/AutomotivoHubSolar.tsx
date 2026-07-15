@@ -67,6 +67,16 @@ const performanceProducts: Product[] = [
     image: autoSolarEclipse,
   },
   {
+    name: 'INSULFILM™ Carbon',
+    tech: 'Solar Performance Films · Carbono Verdadeiro',
+    serie: 'Série: Carbon Film · Cor Estável',
+    highlight: 'Quando o cliente procura carbono de verdade, é aqui que a rejeição de calor começa.',
+    text: 'Salto de tecnologia dentro da Solar Performance Films. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado. Três tonalidades (Carbon 35, 20 e 05).\n\nVisual: não refletivo, cor preta não opaca. 99% de bloqueio UV, nitidez óptica High Definition e 5 anos de garantia.',
+    path: '/automotivo/solar/carbon',
+    id: 'carbon',
+    image: autoSolarVip,
+  },
+  {
     name: 'INSULFILM™ Polariz',
     tech: 'Solar Performance Films · Tecnologia 4ª Geração',
     serie: 'Série: Cerâmica metalizada',
