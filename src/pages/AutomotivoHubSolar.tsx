@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
+import autoSolarVip from '@/assets/auto-solar-vip.png';
 import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
 import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
 import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
@@ -28,6 +29,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 const navTabs = [
   { label: 'RayStart', href: '#raystart' },
   { label: 'RayPro', href: '#raypro' },
+  { label: 'Carbon', href: '#carbon' },
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
@@ -64,6 +66,16 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/raypro',
     id: 'raypro',
     image: autoSolarEclipse,
+  },
+  {
+    name: 'INSULFILM™ Carbon',
+    tech: 'Solar Performance Films · Carbono Verdadeiro',
+    serie: 'Série: Carbon Film · Cor Estável',
+    highlight: 'Quando o cliente procura carbono de verdade, é aqui que a rejeição de calor começa.',
+    text: 'Salto de tecnologia dentro da Solar Performance Films. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado. Três tonalidades (Carbon 35, 20 e 05).\n\nVisual: não refletivo, cor preta não opaca. 99% de bloqueio UV, nitidez óptica High Definition e 5 anos de garantia.',
+    path: '/automotivo/solar/carbon',
+    id: 'carbon',
+    image: autoSolarVip,
   },
   {
     name: 'INSULFILM™ Polariz',
