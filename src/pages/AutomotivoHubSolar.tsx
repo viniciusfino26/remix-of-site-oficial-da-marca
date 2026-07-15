@@ -2,8 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
-import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
-import autoSolarVip from '@/assets/auto-solar-vip.png';
 import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
 import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
 import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
@@ -27,42 +25,22 @@ const fadeInRight = {
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const navTabs = [
-  { label: 'Dark', href: '#dark' },
-  { label: 'Eclipse', href: '#eclipse' },
-  { label: 'Vip', href: '#vip' },
+  { label: 'RayStart', href: '#raystart' },
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
-  { label: 'Transparente', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
 ];
 
 const products = [
   {
-    name: 'INSULFILM™ Dark',
-    tech: 'Tecnologia: 2ª Geração',
-    serie: 'Série: Pigmentada',
-    text: 'Proteção solar com foco em privacidade, controle da luminosidade excessiva e filtro elevado dos raios ultravioletas (UV). Oferece ótima nitidez ótica interna para dirigir, enquanto protege você e o carro dos efeitos indesejados à exposição solar direta.\n\nVisual: não refletivo, cor preta não opaca.',
-    path: '/automotivo/solar/dark',
-    id: 'dark',
+    name: 'INSULFILM™ RayStart',
+    tech: 'Solar Performance Films · Linha de Entrada',
+    serie: 'Série: Basic Film · Pigmentada',
+    highlight: 'O primeiro passo para escurecer o vidro e recuperar o conforto visual.',
+    text: 'Porta de entrada da linha solar. Película pigmentada em tom preto clássico não refletivo, para quem busca escurecer o vidro, reduzir o excesso de claridade e ganhar reserva visual, com três tonalidades para escolher (RayStart 35, 20 e 05).\n\nVisual: não refletivo, tom preto clássico. 90% de bloqueio UV em todas as variantes.',
+    path: '/automotivo/solar/raystart',
+    id: 'raystart',
     image: autoSolarDark,
-  },
-  {
-    name: 'INSULFILM™ Eclipse',
-    tech: 'Tecnologia: 3ª Geração',
-    serie: 'Série: Carbono',
-    text: 'Proteção solar focada em privacidade, com melhor desempenho térmico e durabilidade prolongada. Cor estável e duradoura por sua construção em carbono puro verdadeiro. Filtra raios infravermelhos rejeitando o calor de forma avançada. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
-    path: '/automotivo/solar/eclipse',
-    id: 'eclipse',
-    image: autoSolarEclipse,
-  },
-  {
-    name: 'INSULFILM™ Vip',
-    tech: 'Tecnologia: 3ª Geração evoluída',
-    serie: 'Série: Carbono-Cerâmica, extra rejeição IR',
-    text: 'Película em carbono puro verdadeiro com rejeição de raios infravermelhos (IR) potencializada. Proteção solar com alta redução de calor e privacidade. Durabilidade prolongada com estabilidade de cor. Máxima rejeição dos raios ultravioletas (UV) e tecnologia de alta definição para visibilidade interna superior ao volante.\n\nVisual: não refletivo, cor carbono não opaco.',
-    path: '/automotivo/solar/vip',
-    id: 'vip',
-    image: autoSolarVip,
   },
   {
     name: 'INSULFILM™ Polariz',
@@ -75,7 +53,7 @@ const products = [
   },
   {
     name: 'INSULFILM™ Matrix',
-    tech: 'Tecnologia: 4ª Geração',
+    tech: 'Solar Premium Films',
     serie: 'Série: Cerâmica, máxima rejeição IR',
     highlight: 'Transparente ou escura, você escolhe.',
     text: 'Extra-classe. Película espectro seletiva, enriquecida por cerâmica incorporada em nano partículas especializadas para entregar a máxima proteção contra os raios infravermelhos do sol, tendo altíssima rejeição térmica, combinada a uma visibilidade interna de ultra definição.\n\nVisual: não refletivo, cor preta não opaca.',
@@ -85,7 +63,7 @@ const products = [
   },
   {
     name: 'INSULFILM™ Polariz Ultra',
-    tech: 'Tecnologia: 5ª Geração',
+    tech: 'Solar Premium Films',
     serie: 'Série: Cerâmica metalizada',
     text: 'Exclusiva. Película espectro seletiva híbrida: metalizada combinada à cerâmica, com estética visual polarizada e máximo desempenho de retenção de calor. Um visual refinado e alta tecnologia com ultra rejeição térmica em proteção contra os raios infravermelhos. Alta durabilidade e proteção. Excepcional visibilidade interna de ultra definição.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
     path: '/automotivo/solar/polariz-ultra',
@@ -163,7 +141,7 @@ const AutomotivoHubSolar = () => {
     <>
       <Helmet>
         <title>Películas de Proteção Solar Automotivo | INSULFILM™</title>
-        <meta name="description" content="Películas de proteção solar automotiva INSULFILM™: Dark, Eclipse, Vip, Matrix e Polariz Ultra. Redução de calor, proteção UV e design sofisticado." />
+        <meta name="description" content="Películas de proteção solar automotiva INSULFILM™: RayStart, Polariz, Matrix e Polariz Ultra. Redução de calor, proteção UV e design sofisticado." />
         <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/solar" />
       </Helmet>
 

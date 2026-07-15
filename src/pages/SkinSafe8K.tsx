@@ -347,7 +347,7 @@ const SkinSafe8K = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  { name: 'Dark', gen: '2ª Geração — Pigmentada', href: '/automotivo/solar/dark' },
+                  { name: 'RayStart', gen: 'Solar Performance · Basic Film Pigmentada', href: '/automotivo/solar/raystart' },
                   { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
                   { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
                   { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
