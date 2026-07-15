@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
+import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings, Check, Minus, Sparkles, Snowflake, Zap } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
 import autoSolarVip from '@/assets/auto-solar-vip.png';
 import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
@@ -11,6 +11,7 @@ import autoSolarNavBg from '@/assets/auto-solar-nav-bg.png';
 import autoSolarHero from '@/assets/auto-solar-hero.png';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import PdpFaq, { type FaqItem } from '@/components/PdpFaq';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,6 +35,7 @@ const navTabs = [
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
+  { label: 'Comparar', href: '#comparar' },
 ];
 
 type Product = {
@@ -45,6 +47,7 @@ type Product = {
   path: string;
   id: string;
   image: string;
+  badge?: string;
 };
 
 const performanceProducts: Product[] = [
@@ -57,6 +60,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/raystart',
     id: 'raystart',
     image: autoSolarDark,
+    badge: 'Entrada',
   },
   {
     name: 'INSULFILM™ RayPro',
@@ -67,6 +71,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/raypro',
     id: 'raypro',
     image: autoSolarEclipse,
+    badge: 'Mais vendido da linha clássica',
   },
   {
     name: 'INSULFILM™ Carbon',
@@ -77,6 +82,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/carbon',
     id: 'carbon',
     image: autoSolarVip,
+    badge: 'Carbono verdadeiro',
   },
   {
     name: 'INSULFILM™ Ceramic',
@@ -87,6 +93,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/ceramic',
     id: 'ceramic',
     image: autoSolarMatrix,
+    badge: 'Cerâmica real',
   },
   {
     name: 'INSULFILM™ Polariz',
@@ -97,6 +104,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/polariz',
     id: 'polariz',
     image: autoSolarPolarizSolar,
+    badge: 'Único com teto-solar (Performance)',
   },
 ];
 
@@ -110,6 +118,7 @@ const premiumProducts: Product[] = [
     path: '/automotivo/solar/matrix',
     id: 'matrix',
     image: autoSolarMatrix,
+    badge: 'Melhor custo-benefício Premium',
   },
   {
     name: 'INSULFILM™ Polariz Ultra',
@@ -120,6 +129,7 @@ const premiumProducts: Product[] = [
     path: '/automotivo/solar/polariz-ultra',
     id: 'polariz-ultra',
     image: autoSolarPolariz,
+    badge: 'Topo absoluto · 70% TSER',
   },
 ];
 
@@ -130,6 +140,100 @@ const benefits = [
   { icon: Wifi, title: 'CELULARES E ELETRÔNICOS' },
   { icon: Gem, title: 'DESIGN SOFISTICADO' },
 ];
+
+// ═══ COMPARATIVO ═══
+type ComparisonRow = {
+  name: string;
+  construction: string;
+  tons: string;
+  uv: string;
+  ir: string;
+  tser: string;
+  warranty: string;
+  badge: string;
+  path: string;
+};
+
+const comparisonRows: ComparisonRow[] = [
+  { name: 'RayStart', construction: 'Pigmentada', tons: '35 / 20 / 05', uv: '90%', ir: '—', tser: '—', warranty: '1 ano', badge: 'Entrada', path: '/automotivo/solar/raystart' },
+  { name: 'RayPro', construction: 'Pigmentação homogênea + UV', tons: '35 / 20 / 05', uv: '98%', ir: '—', tser: '—', warranty: '3 anos', badge: 'Clássica', path: '/automotivo/solar/raypro' },
+  { name: 'Carbon', construction: 'Carbono verdadeiro + filtro IR', tons: '35 / 20 / 05', uv: '99%', ir: '+50%', tser: '—', warranty: '5 anos', badge: 'Carbono real', path: '/automotivo/solar/carbon' },
+  { name: 'Ceramic', construction: 'Nanocerâmica', tons: '35 / 20 / 05', uv: '99%', ir: '+85%', tser: '—', warranty: '4 anos', badge: 'Cerâmica real', path: '/automotivo/solar/ceramic' },
+  { name: 'Polariz', construction: 'Híbrida metalizada', tons: '20 / 10 / 05', uv: '99%', ir: '—', tser: '57%', warranty: '5 anos', badge: 'Teto-solar', path: '/automotivo/solar/polariz' },
+  { name: 'Matrix', construction: 'Nanocerâmica Premium', tons: '70 / 35 / 15', uv: '+99%', ir: '+75%', tser: '—', warranty: '10 anos', badge: 'Premium', path: '/automotivo/solar/matrix' },
+  { name: 'Polariz Ultra', construction: 'Metal-cerâmica', tons: '15 / 05', uv: '+99%', ir: '+75%', tser: '70%', warranty: '10 anos', badge: 'Topo absoluto', path: '/automotivo/solar/polariz-ultra' },
+];
+
+const chooseProfiles = [
+  {
+    icon: Eye,
+    title: 'Quero apenas escurecer',
+    subtitle: 'Conforto visual e reserva de privacidade',
+    lines: [
+      { name: 'RayStart', desc: 'O primeiro passo para escurecer o vidro e recuperar o conforto visual.', path: '/automotivo/solar/raystart' },
+      { name: 'RayPro', desc: 'Pigmentação que não desvanece. Cor que resiste ao tempo.', path: '/automotivo/solar/raypro' },
+    ],
+  },
+  {
+    icon: Snowflake,
+    title: 'Quero rejeitar calor de verdade',
+    subtitle: 'Carbono, cerâmica e reflexão térmica',
+    lines: [
+      { name: 'Carbon', desc: 'Quando o cliente procura carbono de verdade, é aqui que a rejeição de calor começa.', path: '/automotivo/solar/carbon' },
+      { name: 'Ceramic', desc: 'Quando o cliente procura cerâmica, é aqui que o calor para de entrar.', path: '/automotivo/solar/ceramic' },
+      { name: 'Polariz', desc: 'Reflexão de calor e um visual que nenhuma outra linha da faixa entrega.', path: '/automotivo/solar/polariz' },
+    ],
+  },
+  {
+    icon: Zap,
+    title: 'Quero o máximo de performance',
+    subtitle: 'Linha Premium · 10 anos de garantia',
+    lines: [
+      { name: 'Matrix', desc: 'A nanocerâmica que rejeita calor sem comprometer a clareza.', path: '/automotivo/solar/matrix' },
+      { name: 'Polariz Ultra', desc: 'O limite máximo da engenharia de películas solares automotivas.', path: '/automotivo/solar/polariz-ultra' },
+    ],
+  },
+];
+
+const faqItems: FaqItem[] = [
+  {
+    question: 'Qual a diferença entre RayStart e RayPro?',
+    answer:
+      'A RayStart é a porta de entrada da linha solar: película pigmentada em tom preto clássico não refletivo, com 90% de bloqueio UV e 1 ano de garantia. A RayPro é um passo acima: pigmentação homogênea fundida ao poliéster, com camada dedicada de rejeição UV que retarda o clareamento e a virada de tom, elevando o bloqueio UV para 98% e a garantia para 3 anos. Ambas em três tonalidades (35, 20 e 05).',
+  },
+  {
+    question: 'Carbon ou Ceramic: quando cada uma faz sentido?',
+    answer:
+      'A Carbon é construída em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho e rejeição de IR acima de 50% — indicada para quem procura carbono de verdade e cor estável, com 5 anos de garantia. A Ceramic é nanocerâmica com mais de 85% de rejeição de IR em todas as tonalidades — a mesma performance térmica no claro e no escuro — com nitidez High Definition e 4 anos de garantia. Escolha Carbon pela estética carbono; escolha Ceramic pela máxima rejeição térmica dentro da linha Performance.',
+  },
+  {
+    question: 'Qual película INSULFILM™ posso aplicar em teto-solar?',
+    answer:
+      'Dentro do portfólio solar, as linhas Polariz (Performance) e Polariz Ultra (Premium) são aplicáveis em teto-solar. Ambas são híbridas: a Polariz em construção metalizada e a Polariz Ultra em construção metal-cerâmica, com estética polarizada exclusiva.',
+  },
+  {
+    question: 'Qual a diferença entre Polariz e Polariz Ultra?',
+    answer:
+      'A Polariz pertence à Solar Performance Films: híbrida metalizada, até 57% de rejeição de energia solar total (TSER), 99% de UV e 5 anos de garantia, em três tonalidades (20, 10 e 05). A Polariz Ultra é o topo absoluto do portfólio, na Solar Premium Films: híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades (15 e 05), com mais de 99% de UV e 10 anos de garantia. Ambas com estética polarizada exclusiva e aplicáveis em teto-solar.',
+  },
+  {
+    question: 'Quais linhas têm 10 anos de garantia?',
+    answer:
+      'Apenas as duas linhas da Solar Premium Films oferecem 10 anos de garantia: Matrix (nanocerâmica premium) e Polariz Ultra (ultra híbrida metal-cerâmica).',
+  },
+  {
+    question: 'Qual linha entrega a máxima rejeição de calor (IR/TSER)?',
+    answer:
+      'A Polariz Ultra é o limite máximo da engenharia INSULFILM™: 70% de TSER (recorde) e 75% de IR nas duas tonalidades. Em seguida vêm a Matrix, com até 75% de IR em qualquer tonalidade, e a Ceramic, com mais de 85% de rejeição de IR mantida no claro e no escuro. Na Performance, a Polariz reflete calor com até 57% de TSER e a Carbon rejeita mais de 50% de IR.',
+  },
+];
+
+const Badge = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-flex items-center gap-1.5 bg-accent/15 text-accent border border-accent/30 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+    <Sparkles className="w-3 h-3" />
+    {children}
+  </span>
+);
 
 const ProductSection = ({ product, index }: { product: Product; index: number }) => {
   const reversed = index % 2 !== 0;
@@ -144,7 +248,10 @@ const ProductSection = ({ product, index }: { product: Product; index: number })
         <span className="text-muted-foreground">|</span>
         <span>{product.serie}</span>
       </div>
-      <h3 className="text-2xl md:text-3xl font-extrabold text-primary mb-3">{product.name}</h3>
+      <div className="flex flex-wrap items-center gap-3 mb-3">
+        <h3 className="text-2xl md:text-3xl font-extrabold text-primary">{product.name}</h3>
+        {product.badge && <Badge>{product.badge}</Badge>}
+      </div>
       {product.highlight && (
         <p className="text-accent font-bold text-base mb-3">{product.highlight}</p>
       )}
@@ -192,7 +299,7 @@ const AutomotivoHubSolar = () => {
     <>
       <Helmet>
         <title>Películas de Proteção Solar Automotivo | INSULFILM™</title>
-        <meta name="description" content="Películas de proteção solar automotiva INSULFILM™: RayStart, Polariz, Matrix e Polariz Ultra. Redução de calor, proteção UV e design sofisticado." />
+        <meta name="description" content="Compare as 7 linhas de películas solares automotivas INSULFILM™: RayStart, RayPro, Carbon, Ceramic, Polariz, Matrix e Polariz Ultra. Rejeição de calor, UV e garantia lado a lado." />
         <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/solar" />
       </Helmet>
 
@@ -204,7 +311,6 @@ const AutomotivoHubSolar = () => {
             alt="Película solar automotiva aplicada"
             className="block w-full h-auto max-h-[260px] md:max-h-[280px] object-cover"
           />
-          {/* Badge laranja inferior esquerdo */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -214,7 +320,6 @@ const AutomotivoHubSolar = () => {
             <p className="text-xl md:text-2xl font-extrabold leading-tight">Películas Premium</p>
             <p className="text-base md:text-lg font-light leading-tight">Sinta a diferença</p>
           </motion.div>
-          {/* Crédito inferior direito */}
           <span className="absolute right-4 bottom-3 text-white/80 text-[11px] italic">
             Imagem meramente ilustrativa
           </span>
@@ -251,8 +356,7 @@ const AutomotivoHubSolar = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center items-center gap-3">
               {navTabs.map((tab, i) => (
                 <motion.div key={tab.label} variants={fadeInUp} className="flex items-center gap-3">
-                  {i > 0 && tab.label !== 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
-                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
+                  {i > 0 && <span className="text-white/30 text-lg font-light">|</span>}
                   <a href={tab.href}>
                     <Button
                       variant={i === 0 ? 'default' : 'outline'}
@@ -265,7 +369,6 @@ const AutomotivoHubSolar = () => {
                       {tab.label}
                     </Button>
                   </a>
-                  {tab.label === 'Transparente' && <span className="text-white/30 text-lg font-light">|</span>}
                 </motion.div>
               ))}
             </motion.div>
@@ -306,6 +409,146 @@ const AutomotivoHubSolar = () => {
           </div>
         </section>
 
+        {/* ═══ TABELA COMPARATIVA ═══ */}
+        <section id="comparar" className="py-24 bg-carbon-gradient relative overflow-hidden border-t border-white/5">
+          <div className="absolute inset-0 bg-diagonal-texture" />
+          <div className="container mx-auto px-4 relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center mb-12">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Comparativo Completo</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground leading-tight">
+                As 7 linhas solares INSULFILM™ lado a lado
+              </motion.h2>
+              <motion.div variants={fadeInUp} className="separator-accent mx-auto mt-6" />
+              <motion.p variants={fadeInUp} className="text-primary-foreground/70 mt-6 font-light">
+                Construção, tonalidades, bloqueio UV, rejeição de IR, TSER e garantia — para você comparar objetivamente antes de recomendar.
+              </motion.p>
+            </motion.div>
+
+            {/* Desktop: tabela */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="hidden md:block glass-card rounded-2xl p-2 overflow-x-auto"
+            >
+              <table className="w-full text-left text-sm text-primary-foreground/90 min-w-[720px]">
+                <thead>
+                  <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-accent">
+                    <th className="px-4 py-4 font-bold">Linha</th>
+                    <th className="px-4 py-4 font-bold">Construção</th>
+                    <th className="px-4 py-4 font-bold">Tons</th>
+                    <th className="px-4 py-4 font-bold text-center">UV</th>
+                    <th className="px-4 py-4 font-bold text-center">IR</th>
+                    <th className="px-4 py-4 font-bold text-center">TSER</th>
+                    <th className="px-4 py-4 font-bold text-center">Garantia</th>
+                    <th className="px-4 py-4 font-bold text-right">Destaque</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((r) => (
+                    <tr key={r.name} className="border-b border-white/5 hover:bg-white/[0.03] transition-colors">
+                      <td className="px-4 py-4">
+                        <Link to={r.path} className="font-extrabold text-primary-foreground hover:text-accent transition-colors flex items-center gap-1.5">
+                          {r.name}
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </td>
+                      <td className="px-4 py-4 text-primary-foreground/70 font-light">{r.construction}</td>
+                      <td className="px-4 py-4 text-primary-foreground/70 font-light whitespace-nowrap">{r.tons}</td>
+                      <td className="px-4 py-4 text-center font-bold">{r.uv}</td>
+                      <td className="px-4 py-4 text-center font-bold">
+                        {r.ir === '—' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.ir}
+                      </td>
+                      <td className="px-4 py-4 text-center font-bold">
+                        {r.tser === '—' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.tser}
+                      </td>
+                      <td className="px-4 py-4 text-center font-bold whitespace-nowrap">{r.warranty}</td>
+                      <td className="px-4 py-4 text-right">
+                        <span className="inline-block bg-accent/15 text-accent border border-accent/30 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full whitespace-nowrap">
+                          {r.badge}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </motion.div>
+
+            {/* Mobile: cards */}
+            <div className="md:hidden space-y-4">
+              {comparisonRows.map((r, i) => (
+                <motion.div
+                  key={r.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.04 }}
+                  className="glass-card rounded-2xl p-5"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <Link to={r.path} className="font-extrabold text-primary-foreground text-lg hover:text-accent flex items-center gap-1.5">
+                      {r.name}
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <span className="inline-block bg-accent/15 text-accent border border-accent/30 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full whitespace-nowrap">
+                      {r.badge}
+                    </span>
+                  </div>
+                  <p className="text-primary-foreground/70 text-sm font-light mb-4">{r.construction}</p>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">Tons</span><span className="font-bold text-primary-foreground">{r.tons}</span></div>
+                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">Garantia</span><span className="font-bold text-primary-foreground">{r.warranty}</span></div>
+                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">UV</span><span className="font-bold text-accent">{r.uv}</span></div>
+                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">IR</span><span className="font-bold text-accent">{r.ir}</span></div>
+                    <div className="col-span-2"><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">TSER</span><span className="font-bold text-accent">{r.tser}</span></div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ QUAL ESCOLHER? ═══ */}
+        <section className="py-24 bg-white border-t border-border">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl mx-auto text-center mb-14">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Guia rápido</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">
+                Qual linha INSULFILM™ escolher?
+              </motion.h2>
+              <motion.div variants={fadeInUp} className="separator-accent mx-auto mt-6" />
+            </motion.div>
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {chooseProfiles.map((p) => (
+                <motion.div key={p.title} variants={fadeInUp} className="border border-border rounded-2xl p-8 bg-muted/20 flex flex-col hover:border-accent/40 transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-5">
+                    <p.icon className="w-6 h-6" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-xl font-extrabold text-primary mb-1">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground font-light mb-6">{p.subtitle}</p>
+                  <div className="space-y-4 flex-1">
+                    {p.lines.map((l) => (
+                      <Link key={l.name} to={l.path} className="block group">
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-accent shrink-0 mt-1" />
+                          <div>
+                            <span className="font-bold text-primary group-hover:text-accent transition-colors">
+                              {l.name} <ArrowRight className="w-3 h-3 inline" />
+                            </span>
+                            <p className="text-sm text-muted-foreground font-light leading-snug mt-0.5">{l.desc}</p>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* ═══ BENEFÍCIOS ═══ */}
         <section className="py-20 bg-white border-t border-border">
           <div className="container mx-auto px-4">
@@ -325,6 +568,9 @@ const AutomotivoHubSolar = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* ═══ FAQ COMPARATIVO ═══ */}
+        <PdpFaq productName="linha solar INSULFILM™" items={faqItems} variant="dark" />
 
         {/* ═══ CTA FINAL ═══ */}
         <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-accent py-6">
