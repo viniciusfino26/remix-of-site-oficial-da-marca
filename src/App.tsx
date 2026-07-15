@@ -58,7 +58,7 @@ import AutomotivoMatrix from "./pages/AutomotivoMatrix";
 import AutomotivoPolariz from "./pages/AutomotivoPolariz";
 import AutomotivoVip from "./pages/AutomotivoVip";
 import AutomotivoEclipse from "./pages/AutomotivoEclipse";
-import AutomotivoDark from "./pages/AutomotivoDark";
+import AutomotivoRayStart from "./pages/AutomotivoRayStart";
 
 /* ── PDPs Automotivo Segurança ── */
 import AutomotivoSkinSafe from "./pages/AutomotivoSkinSafe";
@@ -233,7 +233,8 @@ const App = () => (
           <Route path="/automotivo/seguranca" element={<AutomotivoHubSeguranca />} />
 
           {/* Divisão Automotiva — PDPs Solar */}
-          <Route path="/automotivo/solar/dark" element={<AutomotivoDark />} />
+          <Route path="/automotivo/solar/raystart" element={<AutomotivoRayStart />} />
+          <Route path="/automotivo/solar/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
           <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
           <Route path="/automotivo/solar/polariz" element={<AutomotivoSolarPolariz />} />
@@ -371,7 +372,8 @@ const App = () => (
           <Route path="/polariz-ultra" element={<Navigate to="/automotivo/solar/polariz-ultra" replace />} />
           <Route path="/vip" element={<Navigate to="/automotivo/solar/vip" replace />} />
           <Route path="/eclipse" element={<Navigate to="/automotivo/solar/eclipse" replace />} />
-          <Route path="/dark" element={<Navigate to="/automotivo/solar/dark" replace />} />
+          <Route path="/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
+          <Route path="/raystart" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/skinsafe8k" element={<Navigate to="/automotivo/seguranca/skinsafe8k" replace />} />
           <Route path="/antivandalismo13k" element={<Navigate to="/automotivo/seguranca/antivandalismo13k" replace />} />
           <Route path="/skudoguard" element={<Navigate to="/automotivo/seguranca/skudoguard" replace />} />
