@@ -376,6 +376,7 @@ const App = () => (
           <Route path="/eclipse" element={<Navigate to="/automotivo/solar/eclipse" replace />} />
           <Route path="/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/raystart" element={<Navigate to="/automotivo/solar/raystart" replace />} />
+          <Route path="/raypro" element={<Navigate to="/automotivo/solar/raypro" replace />} />
           <Route path="/skinsafe8k" element={<Navigate to="/automotivo/seguranca/skinsafe8k" replace />} />
           <Route path="/antivandalismo13k" element={<Navigate to="/automotivo/seguranca/antivandalismo13k" replace />} />
           <Route path="/skudoguard" element={<Navigate to="/automotivo/seguranca/skudoguard" replace />} />
