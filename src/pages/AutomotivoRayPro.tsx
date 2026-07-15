@@ -390,6 +390,8 @@ const AutomotivoRayPro = () => {
           </div>
         </section>
 
+        <PdpFaq productName="INSULFILM™ RayPro" items={faqItems} variant="dark" />
+
         {/* ── CTA FINAL ── */}
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
