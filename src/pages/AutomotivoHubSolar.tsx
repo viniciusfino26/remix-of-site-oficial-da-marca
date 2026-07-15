@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
+import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
 import autoSolarPolarizSolar from '@/assets/auto-solar-polariz.png';
 import autoSolarMatrix from '@/assets/auto-solar-matrix.png';
 import autoSolarPolariz from '@/assets/auto-solar-polariz.png';
@@ -26,12 +27,24 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const navTabs = [
   { label: 'RayStart', href: '#raystart' },
+  { label: 'RayPro', href: '#raypro' },
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
 ];
 
-const products = [
+type Product = {
+  name: string;
+  tech: string;
+  serie: string;
+  highlight?: string;
+  text: string;
+  path: string;
+  id: string;
+  image: string;
+};
+
+const performanceProducts: Product[] = [
   {
     name: 'INSULFILM™ RayStart',
     tech: 'Solar Performance Films · Linha de Entrada',
@@ -43,14 +56,27 @@ const products = [
     image: autoSolarDark,
   },
   {
+    name: 'INSULFILM™ RayPro',
+    tech: 'Solar Performance Films · Linha Clássica',
+    serie: 'Série: Classic Film · Pigmentação Homogênea',
+    highlight: 'Pigmentação que não desvanece. Cor que resiste ao tempo.',
+    text: 'Um passo acima do básico. Película de pigmentação homogênea fundida ao poliéster, com camada dedicada de rejeição UV que retarda o clareamento e a virada de tom típicos das películas apenas tingidas. Três tonalidades (RayPro 35, 20 e 05).\n\nVisual: não refletivo, tom preto clássico. 98% de bloqueio UV — o maior da faixa de entrada.',
+    path: '/automotivo/solar/raypro',
+    id: 'raypro',
+    image: autoSolarEclipse,
+  },
+  {
     name: 'INSULFILM™ Polariz',
-    tech: 'Tecnologia: 4ª Geração',
+    tech: 'Solar Performance Films · Tecnologia 4ª Geração',
     serie: 'Série: Cerâmica metalizada',
     text: 'Película espectro seletiva híbrida com estética visual polarizada e alto desempenho de retenção de calor. Visual refinado com tecnologia avançada de rejeição térmica e proteção contra raios infravermelhos.\n\nVisual: polarizado de baixa refletividade, cor grafite não opaco.',
     path: '/automotivo/solar/polariz',
     id: 'polariz',
     image: autoSolarPolarizSolar,
   },
+];
+
+const premiumProducts: Product[] = [
   {
     name: 'INSULFILM™ Matrix',
     tech: 'Solar Premium Films',
@@ -80,7 +106,7 @@ const benefits = [
   { icon: Gem, title: 'DESIGN SOFISTICADO' },
 ];
 
-const ProductSection = ({ product, index }: { product: typeof products[0]; index: number }) => {
+const ProductSection = ({ product, index }: { product: Product; index: number }) => {
   const reversed = index % 2 !== 0;
   const textVariant = reversed ? fadeInRight : fadeInLeft;
   const imgVariant = reversed ? fadeInLeft : fadeInRight;
@@ -221,15 +247,35 @@ const AutomotivoHubSolar = () => {
           </div>
         </section>
 
-        {/* ═══ PRODUTOS ═══ */}
-        <section className="bg-white overflow-x-hidden">
+        {/* ═══ SOLAR PERFORMANCE FILMS ═══ */}
+        <section className="bg-white overflow-x-hidden pt-16">
           <div className="container mx-auto px-4">
-            {products.map((p, i) => (
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Performance</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Performance Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">Do primeiro escurecimento à tecnologia polarizada de 4ª geração.</motion.p>
+            </motion.div>
+            {performanceProducts.map((p, i) => (
               <div key={p.id}>
                 <ProductSection product={p} index={i} />
-                {i < products.length - 1 && (
-                  <div className="border-b border-border" />
-                )}
+                {i < performanceProducts.length - 1 && (<div className="border-b border-border" />)}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══ SOLAR PREMIUM FILMS ═══ */}
+        <section className="bg-white overflow-x-hidden pt-16 border-t border-border">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Premium</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Premium Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">O ápice da engenharia INSULFILM™ em rejeição térmica e visibilidade.</motion.p>
+            </motion.div>
+            {premiumProducts.map((p, i) => (
+              <div key={p.id}>
+                <ProductSection product={p} index={i} />
+                {i < premiumProducts.length - 1 && (<div className="border-b border-border" />)}
               </div>
             ))}
           </div>
