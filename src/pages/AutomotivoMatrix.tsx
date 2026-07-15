@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Quais tonalidades a Matrix oferece e qual a ficha técnica?',
+    answer: 'Matrix 70 (70% de luz, IR 75%, TSER 44%, privacidade Baixo), Matrix 35 (35%, IR 67%, TSER 55%, Médio) e Matrix 15 (15%, IR 67%, TSER 60%, Médio Alto). Todas com mais de 99% de bloqueio UV.',
+  },
+  {
+    question: 'Dá para ter alto desempenho térmico sem escurecer o vidro?',
+    answer: 'Sim. A Matrix 70 é clara como vidro original e ainda entrega 75% de rejeição de infravermelho — o mais alto da linha. A nanocerâmica rejeita calor em qualquer tonalidade.',
+  },
+  {
+    question: 'Qual é a garantia oficial da Matrix?',
+    answer: '10 anos — o maior prazo do portfólio automotivo INSULFILM™ — com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+  {
+    question: 'A Matrix interfere em GPS, celular ou tag de pedágio?',
+    answer: 'Não. A construção é nanocerâmica premium, não metálica — preserva o funcionamento de celular, GPS, rádio e tag de pedágio.',
+  },
+  {
+    question: 'Qual a diferença entre a Matrix (Premium) e as linhas Performance?',
+    answer: 'A Matrix compõe a Solar Premium Films (com a Polariz Ultra). Sobe em tecnologia nanocerâmica premium, nitidez Ultra Definition, mais de 99% de UV e 10 anos de garantia — patamar acima das linhas Performance (RayStart, RayPro, Carbon, Ceramic e Polariz).',
+  },
+];
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -289,6 +313,8 @@ const AutomotivoMatrix = () => {
             </motion.div>
           </div>
         </section>
+
+        <PdpFaq productName="INSULFILM™ Matrix" items={faqItems} variant="dark" />
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">

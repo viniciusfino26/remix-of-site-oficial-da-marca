@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Quais tonalidades a INSULFILM™ RayStart oferece?',
+    answer: 'Três: RayStart 35 (privacidade Médio, 35% de transmissão de luz), RayStart 20 (Médio Alto, 20%) e RayStart 05 (Alto, 5%). Todas com 90% de bloqueio UV.',
+  },
+  {
+    question: 'Qual é a garantia oficial da RayStart?',
+    answer: '1 ano, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+  {
+    question: 'A RayStart interfere em GPS, celular, rádio ou tag de pedágio?',
+    answer: 'Não. Celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
+  },
+  {
+    question: 'Em quais vidros a RayStart pode ser aplicada?',
+    answer: 'Vidros laterais, vidro traseiro e para-brisa, conforme ficha técnica. A aplicação (serviço técnico) deve ser realizada em Centro Autorizado INSULFILM™.',
+  },
+  {
+    question: 'Qual a posição da RayStart no portfólio solar automotivo?',
+    answer: 'É a porta de entrada da Solar Performance Films, antes de RayPro, Carbon, Ceramic e Polariz. Solar Premium Films (Matrix e Polariz Ultra) compõem o topo do portfólio.',
+  },
+];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -365,6 +389,8 @@ const AutomotivoRayStart = () => {
             </motion.div>
           </div>
         </section>
+
+        <PdpFaq productName="INSULFILM™ RayStart" items={faqItems} variant="dark" />
 
         {/* ── CTA FINAL ── */}
         <section className="py-24 bg-background overflow-hidden">

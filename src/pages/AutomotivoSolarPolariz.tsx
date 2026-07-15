@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Quais tonalidades a Polariz oferece?',
+    answer: 'Polariz 20 (20% de transmissão de luz, TSER 47%), Polariz 10 (10%, TSER 50%) e Polariz 05 (5%, TSER 57%). IR rejeitado de 38% a 44% e 99% de UV em todas.',
+  },
+  {
+    question: 'A Polariz pode ser aplicada em teto-solar?',
+    answer: 'Sim. É uma das linhas indicadas para teto-solar, controlando o calor no ponto de maior incidência solar do veículo. Também é aplicável em vidros laterais, vidro traseiro e para-brisa.',
+  },
+  {
+    question: 'Como funciona a rejeição de calor da Polariz?',
+    answer: 'A construção híbrida metalizada (Hybrid Film) reflete o calor do sol antes que ele entre. A Polariz 05 chega a 57% de rejeição de energia solar total (TSER), com sensação térmica imediata no habitáculo.',
+  },
+  {
+    question: 'O que diferencia visualmente a Polariz das outras linhas?',
+    answer: 'A tonalidade polarizada neutro-petróleo cria uma assinatura visual exclusiva: brilho intenso com refletividade discreta, diferente do preto das demais linhas da faixa.',
+  },
+  {
+    question: 'Qual é a garantia oficial da Polariz?',
+    answer: '5 anos, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+];
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
@@ -285,6 +309,8 @@ const AutomotivoSolarPolariz = () => {
             </motion.div>
           </div>
         </section>
+
+        <PdpFaq productName="INSULFILM™ Polariz" items={faqItems} variant="dark" />
 
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
