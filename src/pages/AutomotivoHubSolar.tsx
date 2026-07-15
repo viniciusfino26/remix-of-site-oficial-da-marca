@@ -28,6 +28,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 const navTabs = [
   { label: 'RayStart', href: '#raystart' },
   { label: 'RayPro', href: '#raypro' },
+  { label: 'Carbon', href: '#carbon' },
   { label: 'Polariz', href: '#polariz' },
   { label: 'Matrix', href: '#matrix' },
   { label: 'Polariz Ultra', href: '#polariz-ultra' },
