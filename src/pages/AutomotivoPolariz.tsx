@@ -8,6 +8,30 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import PdpFaq from '@/components/PdpFaq';
+
+const faqItems = [
+  {
+    question: 'Por que a Polariz Ultra é considerada o topo do portfólio?',
+    answer: 'Porque a Polariz Ultra 05 chega a 70% de TSER — o recorde de rejeição de energia solar do portfólio automotivo INSULFILM™. Nenhuma outra linha rejeita mais energia solar hoje.',
+  },
+  {
+    question: 'Quais tonalidades a Polariz Ultra oferece?',
+    answer: 'Polariz Ultra 15 (15% de transmissão de luz, TSER 65%, privacidade Médio) e Polariz Ultra 05 (5% de luz, TSER 70%, Alto). Ambas com 75% de IR rejeitado e mais de 99% de UV.',
+  },
+  {
+    question: 'Qual a construção da Polariz Ultra?',
+    answer: 'Ultra Hybrid — construção híbrida metal-cerâmica que combina reflexão e absorção seletiva, com nitidez óptica Excelente · Ultra Definition.',
+  },
+  {
+    question: 'Qual é a garantia oficial da Polariz Ultra?',
+    answer: '10 anos — a cobertura mais abrangente do portfólio — com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+  },
+  {
+    question: 'Qual a diferença entre a Polariz Ultra e a Polariz (Performance)?',
+    answer: 'A Polariz (Solar Performance Films) é híbrida metalizada, com até 57% de TSER, 44% de IR e 5 anos de garantia. A Polariz Ultra (Solar Premium Films) é híbrida metal-cerâmica, atinge 70% de TSER, 75% de IR e 10 anos de garantia — patamar acima.',
+  },
+];
 
 const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
 const scaleIn = { hidden: { opacity: 0, scale: 0.85 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] } } };
