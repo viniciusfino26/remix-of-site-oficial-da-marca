@@ -310,6 +310,8 @@ const AutomotivoSolarPolariz = () => {
           </div>
         </section>
 
+        <PdpFaq productName="INSULFILM™ Polariz" items={faqItems} variant="dark" />
+
         <section className="py-24 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
