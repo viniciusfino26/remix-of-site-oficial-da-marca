@@ -39,15 +39,15 @@ while ((m = routeRegex.exec(appSrc)) !== null) {
   routes.add(path);
 }
 
-// Rotas com <Navigate /> ou bloqueadas por prefixo que ainda devem ser
-// indexadas (ex.: redirect canônico legado, hub segmentado acessível).
+// Rotas com <Navigate /> que ainda devem ser indexadas
+// (redirects canônicos legados mantidos por descoberta).
 const EXTRA_ROUTES = [
   '/quem-somos',
   '/institucional',
   '/anti-pirataria',
   '/ppf',
-  '/arquitetonico/residencial',
-  '/arquitetonico/residencial/guia-completo',
+  '/arquitetonico/solar',
+  '/automotivo/solar/dark',
 ];
 EXTRA_ROUTES.forEach((path) => routes.add(path));
 
