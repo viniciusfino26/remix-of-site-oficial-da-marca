@@ -41,14 +41,29 @@ const Header = () => {
       key: 'brand',
       label: t('nav.brand'),
       icon: Shield,
-      items: [
-        { label: 'Sobre a INSULFILM™', href: '/marca/sobre' },
-        { label: 'O que é INSULFILM', href: '/marca/o-que-e' },
-        { label: 'Marca Registrada', href: '/marca/marca-registrada' },
-        { label: 'Autenticidade e Padrão', href: '/marca/autenticidade' },
-        { label: 'Tecnologia', href: '/marca/tecnologia' },
-        { label: 'Presença da Marca', href: '/marca/presenca' },
-        { label: 'História', href: '/marca/historia' },
+      columns: [
+        {
+          title: 'A Marca',
+          items: [
+            { label: 'Sobre a INSULFILM™', href: '/marca/sobre', desc: 'Quem somos e o que representamos.' },
+            { label: 'O que é INSULFILM', href: '/marca/o-que-e', desc: 'A origem do termo e seu significado.' },
+            { label: 'História', href: '/marca/historia', desc: 'Trajetória e legado da marca.' },
+          ],
+        },
+        {
+          title: 'Autenticidade',
+          items: [
+            { label: 'Marca Registrada', href: '/marca/marca-registrada', desc: 'Proteção legal e uso correto.' },
+            { label: 'Autenticidade e Padrão', href: '/marca/autenticidade', desc: 'Como identificar o produto original.' },
+          ],
+        },
+        {
+          title: 'Presença e Tecnologia',
+          items: [
+            { label: 'Tecnologia', href: '/marca/tecnologia', desc: 'Inovação por trás das películas.' },
+            { label: 'Presença da Marca', href: '/marca/presenca', desc: 'Onde a INSULFILM™ está presente.' },
+          ],
+        },
       ],
     },
     {
