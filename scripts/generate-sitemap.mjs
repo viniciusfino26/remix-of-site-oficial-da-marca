@@ -17,9 +17,6 @@ const BASE_URL = 'https://sitenovoinsulfilm.lovable.app';
 // Aliás: a página continua acessível para visitantes — só não é "promovida".
 // ─────────────────────────────────────────────
 const BLOCKED_PREFIXES = [
-  // Padrão antigo dual-público (substituído por /pt/arquitetonico/...)
-  '/arquitetonico/residencial',
-  '/arquitetonico/comercial',
   // Páginas /sobre redundantes com /marca/...
   '/sobre',
   // Página legal duplicada com /marca/marca-registrada
