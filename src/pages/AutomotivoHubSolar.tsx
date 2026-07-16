@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings, Check, Minus, Sparkles, Snowflake, Zap } from 'lucide-react';
+import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings, Check, Minus, Sparkles, Snowflake, Zap, Scale } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
 import autoSolarVip from '@/assets/auto-solar-vip.png';
 import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
