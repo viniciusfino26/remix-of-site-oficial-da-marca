@@ -172,7 +172,7 @@ const Header = () => {
 
   const renderMegaPanel = (menu: NavMenu) => (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[min(96vw,1280px)] bg-card rounded-xl shadow-premium-lg border border-border p-6 z-50 animate-fade-in-up"
+      className="fixed left-[50vw] -translate-x-1/2 top-[calc(3px+6rem)] lg:top-[calc(3px+8rem)] mt-1 w-[min(96vw,1280px)] bg-card rounded-xl shadow-premium-lg border border-border p-6 z-50 animate-fade-in-up"
       onMouseEnter={() => setOpenMenu(menu.key)}
       onMouseLeave={() => setOpenMenu(null)}
     >
