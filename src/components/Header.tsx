@@ -55,18 +55,23 @@ const Header = () => {
       icon: Car,
       columns: [
         {
-          title: 'Controle Solar',
+          title: 'Solar Performance',
           items: [
             { label: 'RayStart', href: '/automotivo/solar/raystart', desc: 'Entrada solar com conforto térmico.' },
             { label: 'RayPro', href: '/automotivo/solar/raypro', desc: 'Performance solar profissional.' },
-            { label: 'Polariz', href: '/automotivo/solar/polariz', desc: 'Visão sem reflexo.' },
-            { label: 'Polariz Ultra', href: '/automotivo/solar/polariz-ultra', desc: 'Conforto polarizado premium.' },
           ],
         },
         {
-          title: 'Alta Performance',
+          title: 'Solar High Performance',
           items: [
+            { label: 'Polariz', href: '/automotivo/solar/polariz', desc: 'Visão sem reflexo.' },
+            { label: 'Polariz Ultra', href: '/automotivo/solar/polariz-ultra', desc: 'Conforto polarizado premium.' },
             { label: 'Carbon', href: '/automotivo/solar/carbon', desc: 'Rejeição térmica com visual escuro.' },
+          ],
+        },
+        {
+          title: 'Solar Ultra Performance',
+          items: [
             { label: 'Ceramic', href: '/automotivo/solar/ceramic', desc: 'Nano cerâmica de alta rejeição.' },
             { label: 'Matrix', href: '/automotivo/solar/matrix', desc: 'Nano cerâmica Ultra Definition.' },
             { label: 'Comparar Linhas', href: '/automotivo/solar', desc: 'Tabela técnica lado a lado.' },
