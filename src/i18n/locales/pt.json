@@ -169,36 +169,6 @@
       "desc": "Tecnologia nano cerâmica com ultra definição. O topo da linha em performance e claridade visual.",
       "warranty": "Garantia Premium Vitalícia"
     },
-    "dark": {
-      "name": "INSULFILM™ LT Dark",
-      "category": "Clássica",
-      "serie": "Pigmentada",
-      "heat": "Até 39%",
-      "tech": "Clear",
-      "type": "Pigmentação",
-      "desc": "A película mais tradicional do Brasil. Proteção solar com estilo clássico e custo-benefício imbatível.",
-      "warranty": "Garantia de Fábrica"
-    },
-    "eclipse": {
-      "name": "INSULFILM™ LT Eclipse",
-      "category": "Premium Performance",
-      "serie": "Carbono",
-      "heat": "Até 49%",
-      "tech": "High Definition",
-      "type": "Carbono HD",
-      "desc": "Tecnologia carbono com alta definição. Rejeição de calor superior para máximo conforto.",
-      "warranty": "Garantia de Fábrica Estendida"
-    },
-    "vip": {
-      "name": "INSULFILM™ LT VIP",
-      "category": "Premium Performance",
-      "serie": "Carbono Extra",
-      "heat": "Até 58%",
-      "tech": "High Definition",
-      "type": "Carbono Extra HD",
-      "desc": "O máximo em rejeição de calor da linha carbono. Para quem exige o melhor em performance.",
-      "warranty": "Garantia de Fábrica Estendida"
-    },
     "polaris": {
       "name": "INSULFILM™ LT Polariz",
       "category": "Ultra Performance",
