@@ -5,10 +5,7 @@
 //
 // Atualizar AQUI sempre que mudar specs/descrição na página correspondente.
 
-import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
-import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
-import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
-import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
+import { PDP_PRODUCT_IMAGES } from './pdpProductImages';
 
 import type { Lang, I18nText } from './pdpFAQs';
 
