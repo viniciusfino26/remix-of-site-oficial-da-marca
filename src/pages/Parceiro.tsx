@@ -30,6 +30,15 @@ const WHATSAPP = 'https://wa.me/5511976136911?text=Quero%20ser%20parceiro%20INSU
 
 const Parceiro = () => (
   <main>
+    <Helmet>
+      <title>Seja Parceiro INSULFILM™ | Programa de Parceria</title>
+      <meta name="description" content="Programa de Parceiros INSULFILM™: concessionárias, revendas e aplicadores oficiais das linhas automotiva e arquitetônica. Solicite credenciamento." />
+      <link rel="canonical" href="https://www.insulfilm.com.br/parceiro" />
+      <meta property="og:title" content="Seja Parceiro INSULFILM™" />
+      <meta property="og:description" content="Torne-se parceiro credenciado da marca de películas mais reconhecida do Brasil." />
+      <meta property="og:url" content="https://www.insulfilm.com.br/parceiro" />
+      <meta property="og:type" content="website" />
+    </Helmet>
     <section className="relative min-h-[60vh] flex items-center bg-carbon-gradient overflow-hidden">
       <div className="absolute inset-0 bg-hero-texture" />
       <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">
