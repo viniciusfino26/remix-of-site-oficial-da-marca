@@ -47,7 +47,7 @@ const specs = [
   { icon: Zap, label: 'Construção', value: 'Carbon Film · Carbono Verdadeiro' },
   { icon: Layers, label: 'Nitidez Óptica', value: 'Alta · High Definition' },
   { icon: Eye, label: 'Bloqueio UV', value: '99%' },
-  { icon: Shield, label: 'Garantia', value: '5 anos' },
+  { icon: Shield, label: 'Garantia', value: '4 anos' },
 ];
 
 const techTable = [
