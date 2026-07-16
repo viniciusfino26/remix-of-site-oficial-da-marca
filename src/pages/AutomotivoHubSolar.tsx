@@ -470,7 +470,7 @@ const AutomotivoHubSolar = () => {
                   <tr className="border-b border-white/10 text-xs uppercase tracking-wider text-accent">
                     <th className="px-4 py-4 font-bold">Linha</th>
                     <th className="px-4 py-4 font-bold">Construção</th>
-                    <th className="px-4 py-4 font-bold">Tons</th>
+                    <th className="px-4 py-4 font-bold">Transparências</th>
                     <th className="px-4 py-4 font-bold text-center">UV</th>
                     <th className="px-4 py-4 font-bold text-center">IR</th>
                     <th className="px-4 py-4 font-bold text-center">TSER</th>
@@ -530,7 +530,7 @@ const AutomotivoHubSolar = () => {
                   </div>
                   <p className="text-primary-foreground/70 text-sm font-light mb-4">{r.construction}</p>
                   <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">Tons</span><span className="font-bold text-primary-foreground">{r.tons}</span></div>
+                    <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">Transparências</span><span className="font-bold text-primary-foreground">{r.tons}</span></div>
                     <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">Garantia</span><span className="font-bold text-primary-foreground">{r.warranty}</span></div>
                     <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">UV</span><span className="font-bold text-accent">{r.uv}</span></div>
                     <div><span className="text-primary-foreground/50 text-xs uppercase tracking-wider block mb-0.5">IR</span><span className="font-bold text-accent">{r.ir}</span></div>
