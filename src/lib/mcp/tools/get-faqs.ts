@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { getPDPFaqs } from "@/lib/pdpFAQs";
+import { getPDPFaqs } from "../../pdpFAQs";
 
 export default defineTool({
   name: "get_faqs",
