@@ -268,6 +268,7 @@ const App = () => (
 
           {/* Divisão Arquitetônica, Hubs Segmentados */}
           <Route path="/arquitetonico/residencial" element={<ArquitetonicoResidencial />} />
+          <Route path="/arquitetonico/residencial/guia-completo" element={<ArqResidencialGuiaCompleto />} />
           <Route path="/arquitetonico/comercial" element={<ArquitetonicoComercial />} />
 
           {/* Divisão Arquitetônica, Hubs de Silo (legado, mantidos temporariamente) */}
