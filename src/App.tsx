@@ -56,8 +56,6 @@ import AutomotivoHubSeguranca from "./pages/AutomotivoHubSeguranca";
 /* ── PDPs Automotivo Solar ── */
 import AutomotivoMatrix from "./pages/AutomotivoMatrix";
 import AutomotivoPolariz from "./pages/AutomotivoPolariz";
-import AutomotivoVip from "./pages/AutomotivoVip";
-import AutomotivoEclipse from "./pages/AutomotivoEclipse";
 import AutomotivoRayStart from "./pages/AutomotivoRayStart";
 import AutomotivoRayPro from "./pages/AutomotivoRayPro";
 import AutomotivoCarbon from "./pages/AutomotivoCarbon";
@@ -242,8 +240,8 @@ const App = () => (
           <Route path="/automotivo/solar/carbon" element={<AutomotivoCarbon />} />
           <Route path="/automotivo/solar/ceramic" element={<AutomotivoCeramic />} />
           <Route path="/automotivo/solar/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
-          <Route path="/automotivo/solar/eclipse" element={<AutomotivoEclipse />} />
-          <Route path="/automotivo/solar/vip" element={<AutomotivoVip />} />
+          <Route path="/automotivo/solar/eclipse" element={<Navigate to="/automotivo/solar/carbon" replace />} />
+          <Route path="/automotivo/solar/vip" element={<Navigate to="/automotivo/solar/carbon" replace />} />
           <Route path="/automotivo/solar/polariz" element={<AutomotivoSolarPolariz />} />
           <Route path="/automotivo/solar/matrix" element={<AutomotivoMatrix />} />
           <Route path="/automotivo/solar/polariz-ultra" element={<AutomotivoPolariz />} />

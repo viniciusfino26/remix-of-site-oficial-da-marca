@@ -132,47 +132,6 @@ export const PDP_META: Record<string, PDPMeta> = {
       },
     ],
   },
-  eclipse: {
-    breadcrumb: autoSolar('INSULFILM™ Eclipse', '/eclipse'),
-    faqs: [
-      {
-        q: {
-          pt: 'Qual a rejeição de calor (IR) da película INSULFILM™ Eclipse?',
-          en: 'What is the heat (IR) rejection of the INSULFILM™ Eclipse film?',
-          es: '¿Cuál es el rechazo de calor (IR) de la película INSULFILM™ Eclipse?',
-        },
-        a: {
-          pt: 'A INSULFILM™ Eclipse rejeita até 30% dos raios infravermelhos.',
-          en: 'INSULFILM™ Eclipse rejects up to 30% of infrared rays.',
-          es: 'INSULFILM™ Eclipse rechaza hasta el 30% de los rayos infrarrojos.',
-        },
-      },
-      {
-        q: {
-          pt: 'Quantos anos de garantia tem a INSULFILM™ Eclipse?',
-          en: 'How many years of warranty does INSULFILM™ Eclipse have?',
-          es: '¿Cuántos años de garantía tiene INSULFILM™ Eclipse?',
-        },
-        a: {
-          pt: 'A INSULFILM™ Eclipse tem 5 anos de garantia.',
-          en: 'INSULFILM™ Eclipse has a 5-year warranty.',
-          es: 'INSULFILM™ Eclipse tiene 5 años de garantía.',
-        },
-      },
-      {
-        q: {
-          pt: 'Qual a tecnologia da película INSULFILM™ Eclipse?',
-          en: 'What is the technology of the INSULFILM™ Eclipse film?',
-          es: '¿Cuál es la tecnología de la película INSULFILM™ Eclipse?',
-        },
-        a: {
-          pt: 'A Eclipse é Carbon Color Stable, fabricada com nano partículas de carbono verdadeiro, garantindo cor estável sem desbotamento ao longo do tempo.',
-          en: 'Eclipse is Carbon Color Stable, made with true carbon nano-particles, ensuring stable color without fading over time.',
-          es: 'Eclipse es Carbon Color Stable, fabricada con nano-partículas de carbono auténtico, garantizando color estable sin decoloración con el tiempo.',
-        },
-      },
-    ],
-  },
   'polariz-ultra': {
     breadcrumb: autoSolar('INSULFILM™ Polariz Ultra', '/polariz-ultra'),
     faqs: [

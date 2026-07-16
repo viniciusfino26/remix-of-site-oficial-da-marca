@@ -111,23 +111,6 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     rating: { value: 4.9, count: 312 },
     offer: true,
   },
-  eclipse: {
-    name: 'INSULFILM™ Eclipse',
-    description: {
-      pt: 'Película com nano partículas de carbono verdadeiro. Filtro de 30% de IR e 5 anos de garantia contra desbotamento.',
-      en: 'Window film with true carbon nano-particles. 30% IR filter and 5-year anti-fade warranty.',
-      es: 'Película con nano partículas de carbono verdadero. Filtro de 30% de IR y 5 años de garantía contra decoloración.',
-    },
-    url: '/eclipse',
-    category: CAT_AUTO_SOLAR,
-    properties: [
-      TECH('Carbon Color Stable'),
-      IR_UPTO('Até 30%', 'Up to 30%', 'Hasta 30%'),
-      WARRANTY('5'),
-    ],
-    rating: { value: 4.8, count: 245 },
-    offer: true,
-  },
   'polariz-ultra': {
     name: 'INSULFILM™ Polariz Ultra',
     description: {

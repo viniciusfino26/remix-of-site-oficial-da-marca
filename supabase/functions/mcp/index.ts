@@ -65,23 +65,6 @@ var PDP_PRODUCTS = {
     rating: { value: 4.9, count: 312 },
     offer: true
   },
-  eclipse: {
-    name: "INSULFILM\u2122 Eclipse",
-    description: {
-      pt: "Pel\xEDcula com nano part\xEDculas de carbono verdadeiro. Filtro de 30% de IR e 5 anos de garantia contra desbotamento.",
-      en: "Window film with true carbon nano-particles. 30% IR filter and 5-year anti-fade warranty.",
-      es: "Pel\xEDcula con nano part\xEDculas de carbono verdadero. Filtro de 30% de IR y 5 a\xF1os de garant\xEDa contra decoloraci\xF3n."
-    },
-    url: "/eclipse",
-    category: CAT_AUTO_SOLAR,
-    properties: [
-      TECH("Carbon Color Stable"),
-      IR_UPTO("At\xE9 30%", "Up to 30%", "Hasta 30%"),
-      WARRANTY("5")
-    ],
-    rating: { value: 4.8, count: 245 },
-    offer: true
-  },
   "polariz-ultra": {
     name: "INSULFILM\u2122 Polariz Ultra",
     description: {
@@ -406,7 +389,7 @@ var get_product_default = defineTool2({
   title: "Get INSULFILM product details",
   description: "Return full public details for one INSULFILM\u2122 product: description, technical properties, category, rating, and page URL.",
   inputSchema: {
-    slug: z2.string().min(1).describe("Product slug, e.g. 'matrix', 'eclipse', 'raystart'."),
+    slug: z2.string().min(1).describe("Product slug, e.g. 'matrix', 'raystart', 'carbon'."),
     lang: z2.enum(["pt", "en", "es"]).default("pt").describe("Language for text fields.")
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
@@ -546,47 +529,6 @@ var PDP_META = {
           pt: "A Matrix usa Nano Cer\xE2mica da s\xE9rie Ultra Definition.",
           en: "Matrix uses Nano Ceramic technology from the Ultra Definition series.",
           es: "Matrix utiliza Nano Cer\xE1mica de la serie Ultra Definition."
-        }
-      }
-    ]
-  },
-  eclipse: {
-    breadcrumb: autoSolar("INSULFILM\u2122 Eclipse", "/eclipse"),
-    faqs: [
-      {
-        q: {
-          pt: "Qual a rejei\xE7\xE3o de calor (IR) da pel\xEDcula INSULFILM\u2122 Eclipse?",
-          en: "What is the heat (IR) rejection of the INSULFILM\u2122 Eclipse film?",
-          es: "\xBFCu\xE1l es el rechazo de calor (IR) de la pel\xEDcula INSULFILM\u2122 Eclipse?"
-        },
-        a: {
-          pt: "A INSULFILM\u2122 Eclipse rejeita at\xE9 30% dos raios infravermelhos.",
-          en: "INSULFILM\u2122 Eclipse rejects up to 30% of infrared rays.",
-          es: "INSULFILM\u2122 Eclipse rechaza hasta el 30% de los rayos infrarrojos."
-        }
-      },
-      {
-        q: {
-          pt: "Quantos anos de garantia tem a INSULFILM\u2122 Eclipse?",
-          en: "How many years of warranty does INSULFILM\u2122 Eclipse have?",
-          es: "\xBFCu\xE1ntos a\xF1os de garant\xEDa tiene INSULFILM\u2122 Eclipse?"
-        },
-        a: {
-          pt: "A INSULFILM\u2122 Eclipse tem 5 anos de garantia.",
-          en: "INSULFILM\u2122 Eclipse has a 5-year warranty.",
-          es: "INSULFILM\u2122 Eclipse tiene 5 a\xF1os de garant\xEDa."
-        }
-      },
-      {
-        q: {
-          pt: "Qual a tecnologia da pel\xEDcula INSULFILM\u2122 Eclipse?",
-          en: "What is the technology of the INSULFILM\u2122 Eclipse film?",
-          es: "\xBFCu\xE1l es la tecnolog\xEDa de la pel\xEDcula INSULFILM\u2122 Eclipse?"
-        },
-        a: {
-          pt: "A Eclipse \xE9 Carbon Color Stable, fabricada com nano part\xEDculas de carbono verdadeiro, garantindo cor est\xE1vel sem desbotamento ao longo do tempo.",
-          en: "Eclipse is Carbon Color Stable, made with true carbon nano-particles, ensuring stable color without fading over time.",
-          es: "Eclipse es Carbon Color Stable, fabricada con nano-part\xEDculas de carbono aut\xE9ntico, garantizando color estable sin decoloraci\xF3n con el tiempo."
         }
       }
     ]
@@ -1348,7 +1290,7 @@ var get_faqs_default = defineTool3({
   title: "Get product FAQs",
   description: "Return the public FAQ list (question/answer pairs) for one INSULFILM\u2122 product page.",
   inputSchema: {
-    slug: z3.string().min(1).describe("Product slug, e.g. 'matrix', 'eclipse'."),
+    slug: z3.string().min(1).describe("Product slug, e.g. 'matrix', 'raystart', 'carbon'."),
     lang: z3.enum(["pt", "en", "es"]).default("pt").describe("Language for the FAQs.")
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },

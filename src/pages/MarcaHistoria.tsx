@@ -52,7 +52,7 @@ const eras: { era: string; label: string; events: TimelineEvent[] }[] = [
     label: 'Futuro da proteção e do conforto',
     events: [
       { year: '2024', title: 'Ultra definição', description: 'Lançamento da tecnologia de ultra definição, INSULFILM™ Elite, INSULFILM™ Polariz e INSULFILM™ Matrix.' },
-      { year: '2025', title: 'Nova geração de películas', description: 'Lançamento das películas automotivas solar performance INSULFILM™ Eclipse, INSULFILM™ Vip. Película automotiva ultra performance especial para tetos solares INSULFILM™ Panoramic. Lançamento da nova categoria "Películas de Segurança Superior" para vidros automotivos, com diferenciais técnicos exclusivos.' },
+      { year: '2025', title: 'Nova geração de películas', description: 'Reorganização da linha Solar Performance Films com INSULFILM™ RayStart, RayPro, Carbon e Ceramic. Película automotiva ultra performance especial para tetos solares INSULFILM™ Panoramic. Lançamento da nova categoria "Películas de Segurança Superior" para vidros automotivos, com diferenciais técnicos exclusivos.' },
     ],
   },
 ];
