@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Headphones, MessageCircle, Phone, HelpCircle, ShieldCheck } from 'lucide-react';
@@ -29,6 +30,15 @@ const SAC = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>SAC INSULFILM™ | Atendimento ao Cliente</title>
+        <meta name="description" content="Fale com o SAC INSULFILM™: canais oficiais para dúvidas, garantia e suporte técnico das películas originais para vidros aplicadas no Brasil." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/sac" />
+        <meta property="og:title" content="SAC INSULFILM™ | Atendimento ao Cliente" />
+        <meta property="og:description" content="Canais oficiais de atendimento INSULFILM™: WhatsApp, telefone e e-mail para suporte e garantia." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/sac" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="relative min-h-[60vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">

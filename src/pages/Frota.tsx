@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import ParallaxBreak from '@/components/ParallaxBreak';
@@ -76,6 +77,15 @@ const Frota = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Películas para Frotas | INSULFILM™</title>
+        <meta name="description" content="Soluções INSULFILM™ para frotas: controle solar, segurança e proteção patrimonial com aplicação técnica e garantia estendida em todo o Brasil." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/frota" />
+        <meta property="og:title" content="Películas para Frotas | INSULFILM™" />
+        <meta property="og:description" content="Programa INSULFILM™ Frotas: conforto, segurança e economia para veículos corporativos." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/frota" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center">

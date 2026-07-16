@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import ParallaxBreak from '@/components/ParallaxBreak';
@@ -39,6 +40,15 @@ const Garantia = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Garantia INSULFILM™ | Cobertura e Prazos das Películas</title>
+        <meta name="description" content="Conheça a garantia oficial INSULFILM™: prazos, coberturas e condições para películas solares, de segurança, arquitetônicas e PPF aplicadas em Centros Autorizados." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/garantia" />
+        <meta property="og:title" content="Garantia INSULFILM™ | Cobertura Oficial" />
+        <meta property="og:description" content="Termos, prazos e cobertura da garantia oficial INSULFILM™ para todas as linhas de películas." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/garantia" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="relative min-h-[60vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">

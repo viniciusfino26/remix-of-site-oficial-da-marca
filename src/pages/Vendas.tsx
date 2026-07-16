@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
@@ -29,6 +30,15 @@ const Vendas = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Fale com Vendas | INSULFILM™</title>
+        <meta name="description" content="Solicite orçamento e fale com o time de vendas INSULFILM™. WhatsApp, telefone e e-mail para películas automotivas, arquitetônicas, PPF e segurança." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/vendas" />
+        <meta property="og:title" content="Fale com Vendas | INSULFILM™" />
+        <meta property="og:description" content="Canais oficiais de venda INSULFILM™: WhatsApp, telefone, e-mail e Centros Autorizados." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/vendas" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="relative min-h-[60vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 text-center">
