@@ -7,7 +7,7 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.22.2";
 
 // src/lib/mcp/tools/list-products.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.22.2";
-import { z } from "npm:zod@^4.4.3";
+import { z } from "npm:zod@^3.23.8";
 import { PDP_PRODUCTS } from "npm:@/lib/pdpProducts";
 var list_products_default = defineTool({
   name: "list_products",
@@ -33,7 +33,7 @@ var list_products_default = defineTool({
 
 // src/lib/mcp/tools/get-product.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.22.2";
-import { z as z2 } from "npm:zod@^4.4.3";
+import { z as z2 } from "npm:zod@^3.23.8";
 import { PDP_PRODUCTS as PDP_PRODUCTS2 } from "npm:@/lib/pdpProducts";
 var get_product_default = defineTool2({
   name: "get_product",
@@ -73,7 +73,7 @@ var get_product_default = defineTool2({
 
 // src/lib/mcp/tools/get-faqs.ts
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.22.2";
-import { z as z3 } from "npm:zod@^4.4.3";
+import { z as z3 } from "npm:zod@^3.23.8";
 import { getPDPFaqs } from "npm:@/lib/pdpFAQs";
 var get_faqs_default = defineTool3({
   name: "get_faqs",
