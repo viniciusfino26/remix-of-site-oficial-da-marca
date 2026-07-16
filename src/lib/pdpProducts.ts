@@ -450,7 +450,8 @@ export const buildProductSchema = (slug: string, lang: Lang = 'pt') => {
     additionalProperty,
   };
 
-  if (p.image) schema.image = p.image;
+  const img = PDP_PRODUCT_IMAGES[slug];
+  if (img) schema.image = ABS(img);
   if (p.category) schema.category = p.category[lang];
 
   if (p.offer) {
