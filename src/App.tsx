@@ -81,6 +81,7 @@ import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
 /* ── Hubs Segmentados, Residencial + Comercial ── */
 import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
+import ArqResidencialGuiaCompleto from "./pages/ArqResidencialGuiaCompleto";
 import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
 import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
 import ArqResidencialHubSeguranca from "./pages/ArqResidencialHubSeguranca";
