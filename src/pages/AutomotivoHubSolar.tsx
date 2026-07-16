@@ -368,25 +368,43 @@ const AutomotivoHubSolar = () => {
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-white/60 mt-2">Conheça nossas películas</motion.p>
             </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-wrap justify-center items-center gap-3">
-              {navTabs.map((tab, i) => (
-                <motion.div key={tab.label} variants={fadeInUp} className="flex items-center gap-3">
-                  {i > 0 && <span className="text-white/30 text-lg font-light">|</span>}
-                  <a href={tab.href}>
-                    <Button
-                      variant={i === 0 ? 'default' : 'outline'}
-                      className={
-                        i === 0
-                          ? 'bg-accent text-accent-foreground hover:bg-accent/90 font-bold rounded-full px-6'
-                          : 'border-white/30 bg-transparent text-white hover:bg-white/10 font-bold rounded-full px-6'
-                      }
-                    >
-                      {tab.label}
-                    </Button>
-                  </a>
-                </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+              {navGroups.map((group, gi) => (
+                <div key={group.label} className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                  {gi > 0 && <div className="hidden md:block w-px h-20 bg-white/15" />}
+                  <motion.div variants={fadeInUp} className="flex flex-col items-center">
+                    <p className="text-[11px] tracking-widest text-accent/90 font-bold mb-3 text-center uppercase">
+                      {group.label}
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {group.tabs.map((tab) => (
+                        <a key={tab.label} href={tab.href}>
+                          <Button
+                            variant="outline"
+                            className="border-white/30 bg-transparent text-white hover:bg-white/10 font-bold rounded-full px-5"
+                          >
+                            {tab.label}
+                          </Button>
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
               ))}
             </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mt-8 flex justify-center md:justify-end">
+              <a href="#comparar">
+                <Button
+                  variant="ghost"
+                  className="text-white/80 hover:text-accent hover:bg-white/5 font-bold rounded-full px-5 py-2 gap-2 transition-all"
+                >
+                  <Scale className="w-4 h-4" />
+                  Comparar as 7 linhas
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+            </motion.div>
+
           </div>
         </section>
 
