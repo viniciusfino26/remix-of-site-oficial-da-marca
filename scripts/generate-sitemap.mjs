@@ -42,6 +42,17 @@ while ((m = routeRegex.exec(appSrc)) !== null) {
   routes.add(path);
 }
 
+// Rotas com <Navigate /> ou bloqueadas por prefixo que ainda devem ser
+// indexadas (ex.: redirect canônico legado, hub segmentado acessível).
+const EXTRA_ROUTES = [
+  '/quem-somos',
+  '/institucional',
+  '/anti-pirataria',
+  '/ppf',
+  '/arquitetonico/residencial',
+];
+EXTRA_ROUTES.forEach((path) => routes.add(path));
+
 const today = new Date().toISOString().split('T')[0];
 
 const priority = (p) => {
