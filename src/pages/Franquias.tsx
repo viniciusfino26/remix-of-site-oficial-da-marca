@@ -49,6 +49,15 @@ const suporte = [
 
 const Franquias = () => (
   <main>
+    <Helmet>
+      <title>Franquias INSULFILM™ | Empreenda com a Marca Nº1 do Brasil</title>
+      <meta name="description" content="Seja franqueado INSULFILM™. Mais de 39 anos de mercado, portfólio multi-produto e território exclusivo. Solicite informações." />
+      <link rel="canonical" href="https://www.insulfilm.com.br/franquias" />
+      <meta property="og:title" content="Franquias INSULFILM™ | Empreenda com a Marca Nº1" />
+      <meta property="og:description" content="Torne-se franqueado da marca de películas mais reconhecida do Brasil. Suporte, treinamento e território exclusivo." />
+      <meta property="og:url" content="https://www.insulfilm.com.br/franquias" />
+      <meta property="og:type" content="website" />
+    </Helmet>
     {/* HERO */}
     <section className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
       <div className="absolute inset-0 bg-hero-texture" />
