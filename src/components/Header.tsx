@@ -13,12 +13,14 @@ import flagEs from '@/assets/flag-es.svg';
 interface NavItem { label: string; href: string; desc?: string }
 interface NavColumn { title: string; items: NavItem[] }
 interface NavFooter { title: string; items: NavItem[] }
+interface NavHighlight { label: string; href: string; desc?: string }
 interface NavMenu {
   key: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
   columns?: NavColumn[];
   footer?: NavFooter;
+  highlight?: NavHighlight;
   items?: NavItem[];
   href?: string;
 }
