@@ -27,16 +27,31 @@ const fadeInRight = {
 };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
-const navTabs = [
-  { label: 'RayStart', href: '#raystart' },
-  { label: 'RayPro', href: '#raypro' },
-  { label: 'Carbon', href: '#carbon' },
-  { label: 'Ceramic', href: '#ceramic' },
-  { label: 'Polariz', href: '#polariz' },
-  { label: 'Matrix', href: '#matrix' },
-  { label: 'Polariz Ultra', href: '#polariz-ultra' },
-  { label: 'Comparar', href: '#comparar' },
+const navGroups = [
+  {
+    label: 'Solar Performance Films',
+    tabs: [
+      { label: 'RayStart', href: '#raystart' },
+      { label: 'RayPro', href: '#raypro' },
+      { label: 'Carbon', href: '#carbon' },
+    ],
+  },
+  {
+    label: 'Solar High Performance Films',
+    tabs: [
+      { label: 'Ceramic', href: '#ceramic' },
+      { label: 'Polariz', href: '#polariz' },
+    ],
+  },
+  {
+    label: 'Solar Ultra Performance Films',
+    tabs: [
+      { label: 'Matrix', href: '#matrix' },
+      { label: 'Polariz Ultra', href: '#polariz-ultra' },
+    ],
+  },
 ];
+
 
 type Product = {
   name: string;
