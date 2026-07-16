@@ -376,8 +376,8 @@ const App = () => (
           {/* ── Redirects legado (rotas flat → silos) ── */}
           <Route path="/matrix" element={<Navigate to="/automotivo/solar/matrix" replace />} />
           <Route path="/polariz-ultra" element={<Navigate to="/automotivo/solar/polariz-ultra" replace />} />
-          <Route path="/vip" element={<Navigate to="/automotivo/solar/vip" replace />} />
-          <Route path="/eclipse" element={<Navigate to="/automotivo/solar/eclipse" replace />} />
+          <Route path="/vip" element={<Navigate to="/automotivo/solar/carbon" replace />} />
+          <Route path="/eclipse" element={<Navigate to="/automotivo/solar/carbon" replace />} />
           <Route path="/dark" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/raystart" element={<Navigate to="/automotivo/solar/raystart" replace />} />
           <Route path="/raypro" element={<Navigate to="/automotivo/solar/raypro" replace />} />
