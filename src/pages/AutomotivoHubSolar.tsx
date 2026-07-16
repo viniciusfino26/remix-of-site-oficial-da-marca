@@ -178,7 +178,7 @@ const comparisonRows: ComparisonRow[] = [
   { name: 'RayPro', construction: 'Pigmentação homogênea + UV', tons: '35 / 20 / 05', uv: '98%', ir: '5%', tser: '34–39%', warranty: '3 anos', badge: 'Clássica', path: '/automotivo/solar/raypro' },
   { name: 'Carbon', construction: 'Carbono verdadeiro + filtro IR', tons: '35 / 20 / 05', uv: '99%', ir: '30–50%', tser: '36–45%', warranty: '4 anos', badge: 'Carbono real', path: '/automotivo/solar/carbon' },
   { name: 'Ceramic', construction: 'Nanocerâmica', tons: '35 / 20 / 05', uv: '99%', ir: '>85%', tser: '54–63%', warranty: '5 anos', badge: 'Cerâmica real', path: '/automotivo/solar/ceramic' },
-  { name: 'Polariz', construction: 'Híbrida metalizada', tons: '20 / 10 / 05', uv: '99%', ir: '38–44%', tser: '47–57%', warranty: '5 anos', badge: 'Teto-solar', path: '/automotivo/solar/polariz' },
+  { name: 'Polariz', construction: 'Híbrida metalizada', tons: '20 / 10 / 05', uv: '99%', ir: '38–44%', tser: '47–57%', warranty: '5 anos', badge: 'HÍBRIDA METALIZADA', path: '/automotivo/solar/polariz' },
   { name: 'Matrix', construction: 'Nanocerâmica Premium', tons: '70 / 35 / 15 / 05', uv: '>99%', ir: '67–75%', tser: '44–62%', warranty: '10 anos', badge: 'Premium', path: '/automotivo/solar/matrix' },
   { name: 'Polariz Ultra', construction: 'Metal-cerâmica', tons: '15 / 05', uv: '>99%', ir: '75%', tser: '65–70%', warranty: '10 anos', badge: 'Topo absoluto', path: '/automotivo/solar/polariz-ultra' },
 ];
