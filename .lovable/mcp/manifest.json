@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "sdk_version": "0.22.2",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "insulfilm-mcp",
+      "version": "0.1.0",
+      "title": "INSULFILM™ Site MCP"
+    },
+    "tools": [
+      {
+        "name": "list_products",
+        "title": "List INSULFILM products",
+        "description": "List every INSULFILM™ product available on the site (slug, commercial name, page URL, and category).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "lang": {
+              "type": "string",
+              "enum": [
+                "pt",
+                "en",
+                "es"
+              ],
+              "default": "pt",
+              "description": "Language for the returned category label (pt, en, or es)."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_product",
+        "title": "Get INSULFILM product details",
+        "description": "Return full public details for one INSULFILM™ product: description, technical properties, category, rating, and page URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Product slug, e.g. 'matrix', 'eclipse', 'raystart'."
+            },
+            "lang": {
+              "type": "string",
+              "enum": [
+                "pt",
+                "en",
+                "es"
+              ],
+              "default": "pt",
+              "description": "Language for text fields."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_faqs",
+        "title": "Get product FAQs",
+        "description": "Return the public FAQ list (question/answer pairs) for one INSULFILM™ product page.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Product slug, e.g. 'matrix', 'eclipse'."
+            },
+            "lang": {
+              "type": "string",
+              "enum": [
+                "pt",
+                "en",
+                "es"
+              ],
+              "default": "pt",
+              "description": "Language for the FAQs."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

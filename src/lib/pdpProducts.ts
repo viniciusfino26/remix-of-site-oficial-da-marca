@@ -5,10 +5,7 @@
 //
 // Atualizar AQUI sempre que mudar specs/descrição na página correspondente.
 
-import autoAntivandalismo13K from '@/assets/auto-antivandalismo13k.jpg';
-import autoSkinSafe8K from '@/assets/auto-skinsafe8k.jpg';
-import autoSkudoGuard from '@/assets/auto-skudoguard.jpg';
-import autoSkudoUltra from '@/assets/auto-skudoultra.jpg';
+
 
 import type { Lang, I18nText } from './pdpFAQs';
 
@@ -177,7 +174,6 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
       es: 'Protección contra actos de vandalismo. Estructura multicapa de 12 mil con doble laminación y 5 años de garantía.',
     },
     url: '/antivandalismo13k',
-    image: ABS(autoAntivandalismo13K),
     category: CAT_AUTO_SECURITY,
     properties: [
       THICK('12 mil / 304,8 micras'),
@@ -195,7 +191,6 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
       es: 'Película de protección (7 mil / 177,8 micras) para laminación del vidrio en roturas accidentales. Minimiza la proyección de astillas contra los ocupantes. 5 años de garantía.',
     },
     url: '/skinsafe8k',
-    image: ABS(autoSkinSafe8K),
     category: CAT_AUTO_SECURITY,
     properties: [
       THICK('7 mil / 177,8 micras'),
@@ -216,7 +211,6 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
       es: 'Escudo fuerte y efectivo contra armas blancas. Estructura de 16 mil con fuerza de ruptura de 440 lbs/in. 10 años de garantía.',
     },
     url: '/skudoguard',
-    image: ABS(autoSkudoGuard),
     category: CAT_AUTO_SECURITY,
     properties: [
       THICK('16 mil / 406,4 micras'),
@@ -234,7 +228,6 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
       es: 'La máxima protección para sus vidrios laterales. Película de 24 mil con tetra laminación y 10 años de garantía.',
     },
     url: '/skudo-ultra',
-    image: ABS(autoSkudoUltra),
     category: CAT_AUTO_SECURITY,
     properties: [
       THICK('24 mil / 609,6 micras'),
