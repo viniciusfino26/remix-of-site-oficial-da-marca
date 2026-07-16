@@ -1,46 +1,92 @@
+# Segregar navegação do Hub Solar em 3 famílias + reposicionar "Comparar"
+
 ## Objetivo
-Alinhar os índices técnicos (UV, IR, TSER, garantia, tonalidades) do **comparativo no Hub Solar** e das **7 PDPs solares** com as fichas técnicas oficiais enviadas, e remover o rótulo "Único com teto-solar" da linha Polariz.
+Reorganizar a barra de âncoras "Encontre o seu INSULFILM™ ideal" em **três grupos** de famílias solares e tirar o pill "Comparar" da barra para não poluir, promovendo-o a CTA visualmente distinto.
 
-## Fonte de verdade (fichas oficiais)
+Famílias:
+- **Solar Performance Films** → RayStart, RayPro, Carbon
+- **Solar High Performance Films** → Ceramic, Polariz
+- **Solar Ultra Performance Films** → Matrix, Polariz Ultra
 
-| Linha         | Tons                | IR                   | UV     | TSER          | Garantia | Teto-solar |
-| ------------- | ------------------- | -------------------- | ------ | ------------- | -------- | ---------- |
-| RayStart      | 35 / 20 / 05        | 5%                   | 90%    | 24 / 26 / 29% | 1 ano    | não        |
-| RayPro        | 35 / 20 / 05        | 5%                   | 98%    | 34 / 36 / 39% | 3 anos   | não        |
-| Carbon        | 35 / 20 / 05        | >30 / >40 / >50%     | 99%    | 36 / 39 / 45% | **4 anos** | não      |
-| Ceramic       | 35 / 20 / 05        | >85%                 | 99%    | 54 / 58 / 63% | **5 anos** | não      |
-| Polariz       | 20 / 10 / 05        | 38 / 44 / 44%        | 99%    | 47 / 50 / 57% | 5 anos   | **sim**    |
-| Matrix        | **70 / 35 / 15 / 05** | 75 / 67 / 67 / 67% | >99%   | 44 / 55 / 60 / 62% | 10 anos | não   |
-| Polariz Ultra | 15 / 05             | 75%                  | >99%   | 65 / 70%      | 10 anos  | **não** (ficha diz apenas laterais e traseiro) |
+## Arquivo
+`src/pages/AutomotivoHubSolar.tsx` — array `navTabs` (~linhas 30–39) e bloco de navegação (~linhas 356–374).
 
-## Correções principais detectadas
+## Mudanças
 
-1. **Garantia trocada** Carbon ↔ Ceramic no comparativo (hoje: Carbon 5 / Ceramic 4 → correto: Carbon 4 / Ceramic 5).
-2. **Matrix** faltando a tonalidade 05 (hoje: 70/35/15).
-3. **TSER "—"** em quase todas as linhas → preencher com faixas oficiais.
-4. **IR do Carbon** hoje "+50%" → passar para faixa "30–50%" (varia por tom).
-5. **Polariz Ultra** afirma "Aplicável em teto-solar" em várias PDPs/Hub → **remover**, pois a ficha oficial lista apenas laterais e traseiro.
-6. **Rótulo "Único com teto-solar (Performance)"** no card Polariz → **remover** conforme pedido.
+### 1. Reestruturar dados
+Substituir o array plano por três grupos:
 
-## Arquivos a editar
+```ts
+const navGroups = [
+  {
+    label: 'Solar Performance Films',
+    tabs: [
+      { label: 'RayStart', href: '#raystart' },
+      { label: 'RayPro',   href: '#raypro' },
+      { label: 'Carbon',   href: '#carbon' },
+    ],
+  },
+  {
+    label: 'Solar High Performance Films',
+    tabs: [
+      { label: 'Ceramic', href: '#ceramic' },
+      { label: 'Polariz', href: '#polariz' },
+    ],
+  },
+  {
+    label: 'Solar Ultra Performance Films',
+    tabs: [
+      { label: 'Matrix',        href: '#matrix' },
+      { label: 'Polariz Ultra', href: '#polariz-ultra' },
+    ],
+  },
+];
+```
 
-### `src/pages/AutomotivoHubSolar.tsx`
-- **Tabela comparativa** (linhas ~158–164): atualizar 7 linhas com tons/UV/IR/TSER/garantia corretos, incluindo faixas quando o valor varia por tom (ex.: `IR 38–44%`, `TSER 47–57%`).
-- **Cards ProductSection** (linhas ~103, 128): remover `badge: 'Único com teto-solar (Performance)'` da Polariz; ajustar textos que citem valores desatualizados (Ceramic "4 anos" → 5; Carbon "5 anos" → 4; Matrix incluir tom 05).
-- **FAQ** (linhas ~210–227): remover Polariz Ultra da resposta de teto-solar (deixar apenas Polariz); atualizar valor de Ceramic 4→5 anos e Carbon 5→4 anos; atualizar TSER da Polariz Ultra se necessário.
+### 2. Layout — 3 colunas rotuladas
+Container `flex flex-col md:flex-row items-start md:items-center justify-center gap-6 md:gap-8`. Cada grupo:
+- Rótulo pequeno em uppercase: `text-[11px] tracking-widest text-accent/90 font-bold mb-3 text-center`.
+- Pills em `flex flex-wrap justify-center gap-2`, estilo outline branco/transparente (mesmo dos atuais).
+- Divisores verticais entre grupos em desktop: `<div className="hidden md:block w-px h-20 bg-white/15" />`.
+- Em mobile empilham naturalmente sem divisor.
+- Remover os separadores `|` e o realce laranja fixo do primeiro item — todos os pills de produto passam a ter o mesmo estilo.
 
-### PDPs — atualizar bloco de specs, TL;DR, FAQ e `<meta description>` quando divergir
-- `src/pages/AutomotivoRayStart.tsx` — confirmar UV 90%, IR 5%, TSER 24–29%, 1 ano.
-- `src/pages/AutomotivoRayPro.tsx` — UV 98%, IR 5%, TSER 34–39%, 3 anos.
-- `src/pages/AutomotivoCarbon.tsx` — **garantia 4 anos** (não 5), IR 30–50% por tom, TSER 36–45%.
-- `src/pages/AutomotivoCeramic.tsx` — **garantia 5 anos** (não 4), IR >85%, TSER 54–63%.
-- `src/pages/AutomotivoSolarPolariz.tsx` — IR 38–44%, TSER 47–57%, tons 20/10/05, 5 anos, mantém teto-solar.
-- `src/pages/AutomotivoMatrix.tsx` — incluir tom 05; IR 67–75% (75% só no Matrix 70), TSER 44–62%, 10 anos.
-- `src/pages/AutomotivoPolariz.tsx` (Polariz Ultra) — IR 75%, TSER 65–70%, tons 15/05, 10 anos, **remover menções a teto-solar** ("Aplicável em teto-solar").
+```text
+┌────────────────────────────────────────────────────────────────────────────┐
+│                       ENCONTRE O SEU INSULFILM™ IDEAL                      │
+│                          Conheça nossas películas                          │
+│                                                                            │
+│  SOLAR PERFORMANCE   │  SOLAR HIGH PERFORMANCE  │  SOLAR ULTRA PERFORMANCE │
+│  [RayStart][RayPro]  │     [Ceramic][Polariz]   │    [Matrix][Polariz U.]  │
+│      [Carbon]        │                          │                          │
+└────────────────────────────────────────────────────────────────────────────┘
 
-### `src/lib/pdpProducts.ts`
-- Ajustar `matrix` (`Até 75% IR` já ok; validar), `polariz-ultra` (IR já 75%). Sem mudanças críticas além de manter coerência das descrições PT/EN/ES se algum valor tiver mudado.
+           (fora da barra, abaixo/à direita)  ⚖  Comparar as 7 linhas
+```
 
-## Fora de escopo
-- Não altero copy aprovado além dos números divergentes e da remoção pedida do "único com teto-solar".
-- Não crio rotas, componentes ou assets novos.
+### 3. "Comparar" fora da barra de pills
+Remover "Comparar" da nav. Renderizar imediatamente abaixo dos 3 grupos, alinhado à direita do container, como CTA discreto e distinto:
+
+```tsx
+<div className="mt-8 flex justify-center md:justify-end">
+  <a href="#comparar">
+    <Button
+      variant="ghost"
+      className="text-white/80 hover:text-accent hover:bg-white/5 font-bold rounded-full px-5 py-2 gap-2 transition-all"
+    >
+      <Scale className="w-4 h-4" />
+      Comparar as 7 linhas
+      <ArrowRight className="w-4 h-4" />
+    </Button>
+  </a>
+</div>
+```
+
+- Ícone `Scale` do `lucide-react` (adicionar ao import; `ArrowRight` já importado).
+- Visual "link forte" em vez de pill sólido — não compete com os pills de produto e não polui a barra.
+- Âncora `#comparar` (já existente na página, sem mudança na seção da tabela).
+
+### 4. Fora de escopo
+- Copy dos produtos, seções Performance/Premium, tabela comparativa, "Qual escolher?" e FAQ permanecem intactos.
+- Nenhuma alteração em `pdpProducts.ts`, outras páginas, ou índices técnicos.
+- Nomes das seções internas "Solar Performance Films" e "Solar Premium Films" na página não são renomeados nesta etapa (a segregação em 3 famílias é aplicada apenas na navegação de âncoras). Confirmar se quer que eu também renomeie as seções e os `tech:` de cada produto em um passo seguinte.
