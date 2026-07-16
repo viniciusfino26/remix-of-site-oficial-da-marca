@@ -151,36 +151,6 @@
     "specType": "Tipo",
     "cta": "Quiero saber más",
     "viewMore": "Ver página del producto",
-    "dark": {
-      "name": "INSULFILM™ Dark",
-      "category": "Clásica",
-      "serie": "Pigmentada",
-      "heat": "Hasta 39%",
-      "tech": "Clear",
-      "type": "Pigmentación",
-      "desc": "La película más tradicional de Brasil. Protección solar con estilo clásico y relación calidad-precio inigualable.",
-      "warranty": "Garantía de Fábrica"
-    },
-    "eclipse": {
-      "name": "INSULFILM™ Eclipse",
-      "category": "Premium Performance",
-      "serie": "Carbono",
-      "heat": "Hasta 49%",
-      "tech": "High Definition",
-      "type": "Carbono HD",
-      "desc": "Tecnología carbono con alta definición. Rechazo de calor superior para máximo confort.",
-      "warranty": "Garantía de Fábrica Extendida"
-    },
-    "vip": {
-      "name": "INSULFILM™ VIP",
-      "category": "Premium Performance",
-      "serie": "Carbono Extra",
-      "heat": "Hasta 58%",
-      "tech": "High Definition",
-      "type": "Carbono Extra HD",
-      "desc": "El máximo en rechazo de calor de la línea carbono. Para quienes exigen lo mejor en rendimiento.",
-      "warranty": "Garantía de Fábrica Extendida"
-    },
     "polaris": {
       "name": "INSULFILM™ Polaris",
       "category": "Ultra Performance",
