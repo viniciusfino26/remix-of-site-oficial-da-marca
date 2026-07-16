@@ -76,6 +76,10 @@ export default {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "mega-fade-in-up": {
+          from: { opacity: "0", transform: "translateY(20px) translateX(-50%)" },
+          to: { opacity: "1", transform: "translateY(0) translateX(-50%)" },
+        },
         "glow-pulse": {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
