@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import ParallaxBreak from '@/components/ParallaxBreak';
 import { Store, Award, Globe, TrendingUp, Shield, MapPin, MessageCircle, GraduationCap, Megaphone, Settings, Sun, Car, Building2, Layers } from 'lucide-react';
