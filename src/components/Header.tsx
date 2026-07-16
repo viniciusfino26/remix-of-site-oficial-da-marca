@@ -161,11 +161,11 @@ const Header = () => {
 
   const renderMegaPanel = (menu: NavMenu) => (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[min(96vw,1100px)] bg-card rounded-xl shadow-premium-lg border border-border p-6 z-50 animate-fade-in-up"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[min(96vw,1280px)] bg-card rounded-xl shadow-premium-lg border border-border p-6 z-50 animate-fade-in-up"
       onMouseEnter={() => setOpenMenu(menu.key)}
       onMouseLeave={() => setOpenMenu(null)}
     >
-      <div className="grid grid-cols-3 gap-8">
+      <div className={`grid gap-8 ${menu.columns!.length >= 4 ? 'grid-cols-4' : 'grid-cols-3'}`}>
         {menu.columns!.map((col) => (
           <div key={col.title}>
             <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3 px-2">
