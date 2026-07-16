@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings, Check, Minus, Sparkles, Snowflake, Zap, Scale } from 'lucide-react';
+import { Thermometer, Eye, ShieldCheck, Wifi, Gem, Award, ArrowRight, Settings, Check, Minus, Sparkles, Snowflake, Zap, GitCompare } from 'lucide-react';
 import autoSolarDark from '@/assets/auto-solar-dark.png';
 import autoSolarVip from '@/assets/auto-solar-vip.png';
 import autoSolarEclipse from '@/assets/auto-solar-eclipse.png';
@@ -398,7 +398,7 @@ const AutomotivoHubSolar = () => {
                   variant="ghost"
                   className="text-white/80 hover:text-accent hover:bg-white/5 font-bold rounded-full px-5 py-2 gap-2 transition-all"
                 >
-                  <Scale className="w-4 h-4" />
+                  <GitCompare className="w-4 h-4" />
                   Comparar as 7 linhas
                   <ArrowRight className="w-4 h-4" />
                 </Button>
