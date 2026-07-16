@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -12,15 +11,23 @@ const LegalDisclaimer = () => (
     whileInView="visible"
     viewport={{ once: true }}
     variants={fadeInUp}
-    className="max-w-3xl mx-auto my-10 px-6 py-5 rounded-xl border border-border/20 bg-muted/30"
-    aria-label="Aviso legal sobre a marca INSULFILM™"
+    className="max-w-3xl mx-auto my-10 px-6 py-5 rounded-xl border border-border/20 bg-muted/30 space-y-3 text-xs md:text-sm text-muted-foreground/80 leading-relaxed font-light"
+    aria-label="Aviso legal INSULFILM™"
   >
-    <p className="text-xs md:text-sm text-muted-foreground/70 leading-relaxed font-light">
-      O termo "insulfilm" é utilizado popularmente para se referir a películas para vidro.{' '}
-      <span className="font-semibold text-foreground/80">INSULFILM™ é marca registrada brasileira</span>, pioneira no segmento desde 1986.{' '}
-      O uso da marca por terceiros não é autorizado.{' '}
-      <Link to="/sobre/o-que-e-insulfilm" className="text-accent hover:underline">O que é INSULFILM™?</Link>{' · '}
-      <Link to="/marca/autenticidade" className="text-accent hover:underline">Autenticidade</Link>
+    <p>
+      <span className="font-semibold text-foreground/80">Uso restrito.</span> A marca identifica películas, aplicações e comunicações vinculadas ao Ecossistema INSULFILM™ oficial seu uso é restrito às empresas licenciadas integrantes.
+    </p>
+    <p>
+      A origem oficial de uma aplicação deve ser sempre verificável pelos canais institucionais: Lojas Oficiais, certificado individual, selo de autenticidade e demais elementos de rastreabilidade emitidos dentro do Ecossistema INSULFILM™.
+    </p>
+    <p>
+      Benefícios, desempenho, garantias, coberturas e condições de reaplicação variam conforme a linha aplicada, a película técnica adotada, as condições do vidro, a documentação apresentada e o plano vigente sempre regidos pelas orientações institucionais oficiais.
+    </p>
+    <p>
+      Nenhuma responsabilidade é aceita por erros. As representações visuais são apenas para fins ilustrativos; a aparência real dos vidros aplicados com a película pode variar.
+    </p>
+    <p className="pt-2 border-t border-border/20 text-muted-foreground/70">
+      <span className="font-semibold text-foreground/70">Gestão institucional:</span> FÊNIX MAIOR PARTICIPAÇÕES LTDA. · CNPJ 65.685.208/0001-37
     </p>
   </motion.aside>
 );

@@ -31,7 +31,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
-import LegalDisclaimer from '@/components/LegalDisclaimer';
 import PDPFaqSection from '@/components/PDPFaqSection';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
 import { type ProductDualPublic } from '@/data/pdpDualPublic';
@@ -615,7 +614,6 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         {/* ──────────────────────────────────────── */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
-            <LegalDisclaimer />
           </div>
         </section>
 

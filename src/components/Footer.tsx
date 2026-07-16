@@ -178,13 +178,24 @@ const Footer = () => {
 
         {/* Antipirataria badge + Logo */}
         <div className="mt-6 pt-4 border-t border-primary-foreground/10 flex flex-col items-center">
-          <div className="w-full max-w-4xl px-4 py-2.5 sm:px-5 sm:py-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
-            <p className="text-xs sm:text-sm text-center text-primary-foreground/70 leading-relaxed">
-              <span className="font-semibold text-primary-foreground/70">INSULFILM™ é marca registrada</span>{' '}
-              protegida pela Lei nº 9.279/96. O uso do termo por terceiros não possui autorização da titular.
-              <br />
-              <Link to="/anti-pirataria" className="text-accent hover:underline">Saiba mais</Link>
-            </p>
+          <div className="w-full max-w-4xl px-4 py-4 sm:px-6 sm:py-5 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5">
+            <div className="text-xs sm:text-sm text-left text-primary-foreground/70 leading-relaxed font-light space-y-3">
+              <p>
+                <span className="font-semibold text-primary-foreground/90">Uso restrito.</span> A marca identifica películas, aplicações e comunicações vinculadas ao Ecossistema INSULFILM™ oficial seu uso é restrito às empresas licenciadas integrantes.
+              </p>
+              <p>
+                A origem oficial de uma aplicação deve ser sempre verificável pelos canais institucionais: Lojas Oficiais, certificado individual, selo de autenticidade e demais elementos de rastreabilidade emitidos dentro do Ecossistema INSULFILM™.
+              </p>
+              <p>
+                Benefícios, desempenho, garantias, coberturas e condições de reaplicação variam conforme a linha aplicada, a película técnica adotada, as condições do vidro, a documentação apresentada e o plano vigente sempre regidos pelas orientações institucionais oficiais.
+              </p>
+              <p>
+                Nenhuma responsabilidade é aceita por erros. As representações visuais são apenas para fins ilustrativos; a aparência real dos vidros aplicados com a película pode variar.
+              </p>
+              <p className="pt-1 border-t border-primary-foreground/10 text-primary-foreground/60">
+                <span className="font-semibold text-primary-foreground/80">Gestão institucional:</span> FÊNIX MAIOR PARTICIPAÇÕES LTDA. · CNPJ 65.685.208/0001-37
+              </p>
+            </div>
           </div>
           <div className="mt-1 sm:mt-2 max-w-full flex justify-center">
             <img src={logoDarkCropped} alt="INSULFILM™" className="w-[min(15rem,64vw)] sm:w-[16rem] lg:w-[17rem] h-auto" />
