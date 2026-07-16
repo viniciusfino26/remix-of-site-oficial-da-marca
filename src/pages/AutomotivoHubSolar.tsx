@@ -78,7 +78,7 @@ const performanceProducts: Product[] = [
     tech: 'Solar Performance Films · Carbono Verdadeiro',
     serie: 'Série: Carbon Film · Cor Estável',
     highlight: 'Quando o cliente procura carbono de verdade, é aqui que a rejeição de calor começa.',
-    text: 'Salto de tecnologia dentro da Solar Performance Films. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado. Três tonalidades (Carbon 35, 20 e 05).\n\nVisual: não refletivo, cor preta não opaca. 99% de bloqueio UV, nitidez óptica High Definition e 5 anos de garantia.',
+    text: 'Salto de tecnologia dentro da Solar Performance Films. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado. Três tonalidades (Carbon 35, 20 e 05).\n\nVisual: não refletivo, cor preta não opaca. 99% de bloqueio UV, nitidez óptica High Definition e 4 anos de garantia.',
     path: '/automotivo/solar/carbon',
     id: 'carbon',
     image: autoSolarVip,
@@ -89,7 +89,7 @@ const performanceProducts: Product[] = [
     tech: 'Solar Performance Films · Nanocerâmica',
     serie: 'Série: Advanced Plus Film · Nanocerâmica',
     highlight: 'Quando o cliente procura cerâmica, é aqui que o calor para de entrar.',
-    text: 'Topo da Solar Performance Films. Nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades — a mesma performance térmica no claro e no escuro. Três tonalidades (Ceramic 35, 20 e 05).\n\nVisual: neutro não refletivo. 99% de bloqueio UV, nitidez High Definition e 4 anos de garantia.',
+    text: 'Topo da Solar Performance Films. Nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades — a mesma performance térmica no claro e no escuro. Três tonalidades (Ceramic 35, 20 e 05).\n\nVisual: neutro não refletivo. 99% de bloqueio UV, nitidez High Definition e 5 anos de garantia.',
     path: '/automotivo/solar/ceramic',
     id: 'ceramic',
     image: autoSolarMatrix,
@@ -104,7 +104,7 @@ const performanceProducts: Product[] = [
     path: '/automotivo/solar/polariz',
     id: 'polariz',
     image: autoSolarPolarizSolar,
-    badge: 'Único com teto-solar (Performance)',
+    badge: 'Teto-solar (Performance)',
   },
 ];
 
@@ -114,7 +114,7 @@ const premiumProducts: Product[] = [
     tech: 'Solar Premium Films · Nanocerâmica Premium',
     serie: 'Série: Premium Film · Nanocerâmica',
     highlight: 'A nanocerâmica que rejeita calor sem comprometer a clareza.',
-    text: 'Entrada da Solar Premium Films. Nanocerâmica de última geração com até 75% de rejeição de infravermelho em qualquer tonalidade — mesmo a variante mais clara. Três tonalidades (Matrix 70, 35 e 15).\n\nVisual: não refletivo, neutro. Mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia.',
+    text: 'Entrada da Solar Premium Films. Nanocerâmica de última geração com até 75% de rejeição de infravermelho em qualquer tonalidade — mesmo a variante mais clara. Quatro tonalidades (Matrix 70, 35, 15 e 05).\n\nVisual: não refletivo, neutro. Mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia.',
     path: '/automotivo/solar/matrix',
     id: 'matrix',
     image: autoSolarMatrix,
@@ -125,7 +125,7 @@ const premiumProducts: Product[] = [
     tech: 'Solar Premium Films · Ultra Híbrida Metal-Cerâmica',
     serie: 'Série: Ultra Hybrid Film · Metal-Cerâmica',
     highlight: 'O limite máximo da engenharia de películas solares automotivas.',
-    text: 'Topo absoluto do portfólio. Híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades. Estética polarizada exclusiva e desempenho térmico sem paralelo. Duas tonalidades (Polariz Ultra 15 e 05).\n\nVisual: polarizado de baixa refletividade. Aplicável em teto-solar. Mais de 99% de UV e 10 anos de garantia.',
+    text: 'Topo absoluto do portfólio. Híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades. Estética polarizada exclusiva e desempenho térmico sem paralelo. Duas tonalidades (Polariz Ultra 15 e 05).\n\nVisual: polarizado de baixa refletividade. Aplicabilidade: vidros laterais e traseiro. Mais de 99% de UV e 10 anos de garantia.',
     path: '/automotivo/solar/polariz-ultra',
     id: 'polariz-ultra',
     image: autoSolarPolariz,
@@ -155,13 +155,13 @@ type ComparisonRow = {
 };
 
 const comparisonRows: ComparisonRow[] = [
-  { name: 'RayStart', construction: 'Pigmentada', tons: '35 / 20 / 05', uv: '90%', ir: '—', tser: '—', warranty: '1 ano', badge: 'Entrada', path: '/automotivo/solar/raystart' },
-  { name: 'RayPro', construction: 'Pigmentação homogênea + UV', tons: '35 / 20 / 05', uv: '98%', ir: '—', tser: '—', warranty: '3 anos', badge: 'Clássica', path: '/automotivo/solar/raypro' },
-  { name: 'Carbon', construction: 'Carbono verdadeiro + filtro IR', tons: '35 / 20 / 05', uv: '99%', ir: '+50%', tser: '—', warranty: '5 anos', badge: 'Carbono real', path: '/automotivo/solar/carbon' },
-  { name: 'Ceramic', construction: 'Nanocerâmica', tons: '35 / 20 / 05', uv: '99%', ir: '+85%', tser: '—', warranty: '4 anos', badge: 'Cerâmica real', path: '/automotivo/solar/ceramic' },
-  { name: 'Polariz', construction: 'Híbrida metalizada', tons: '20 / 10 / 05', uv: '99%', ir: '—', tser: '57%', warranty: '5 anos', badge: 'Teto-solar', path: '/automotivo/solar/polariz' },
-  { name: 'Matrix', construction: 'Nanocerâmica Premium', tons: '70 / 35 / 15', uv: '+99%', ir: '+75%', tser: '—', warranty: '10 anos', badge: 'Premium', path: '/automotivo/solar/matrix' },
-  { name: 'Polariz Ultra', construction: 'Metal-cerâmica', tons: '15 / 05', uv: '+99%', ir: '+75%', tser: '70%', warranty: '10 anos', badge: 'Topo absoluto', path: '/automotivo/solar/polariz-ultra' },
+  { name: 'RayStart', construction: 'Pigmentada', tons: '35 / 20 / 05', uv: '90%', ir: '5%', tser: '24–29%', warranty: '1 ano', badge: 'Entrada', path: '/automotivo/solar/raystart' },
+  { name: 'RayPro', construction: 'Pigmentação homogênea + UV', tons: '35 / 20 / 05', uv: '98%', ir: '5%', tser: '34–39%', warranty: '3 anos', badge: 'Clássica', path: '/automotivo/solar/raypro' },
+  { name: 'Carbon', construction: 'Carbono verdadeiro + filtro IR', tons: '35 / 20 / 05', uv: '99%', ir: '30–50%', tser: '36–45%', warranty: '4 anos', badge: 'Carbono real', path: '/automotivo/solar/carbon' },
+  { name: 'Ceramic', construction: 'Nanocerâmica', tons: '35 / 20 / 05', uv: '99%', ir: '>85%', tser: '54–63%', warranty: '5 anos', badge: 'Cerâmica real', path: '/automotivo/solar/ceramic' },
+  { name: 'Polariz', construction: 'Híbrida metalizada', tons: '20 / 10 / 05', uv: '99%', ir: '38–44%', tser: '47–57%', warranty: '5 anos', badge: 'Teto-solar', path: '/automotivo/solar/polariz' },
+  { name: 'Matrix', construction: 'Nanocerâmica Premium', tons: '70 / 35 / 15 / 05', uv: '>99%', ir: '67–75%', tser: '44–62%', warranty: '10 anos', badge: 'Premium', path: '/automotivo/solar/matrix' },
+  { name: 'Polariz Ultra', construction: 'Metal-cerâmica', tons: '15 / 05', uv: '>99%', ir: '75%', tser: '65–70%', warranty: '10 anos', badge: 'Topo absoluto', path: '/automotivo/solar/polariz-ultra' },
 ];
 
 const chooseProfiles = [
@@ -204,17 +204,17 @@ const faqItems: FaqItem[] = [
   {
     question: 'Carbon ou Ceramic: quando cada uma faz sentido?',
     answer:
-      'A Carbon é construída em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho e rejeição de IR acima de 50% — indicada para quem procura carbono de verdade e cor estável, com 5 anos de garantia. A Ceramic é nanocerâmica com mais de 85% de rejeição de IR em todas as tonalidades — a mesma performance térmica no claro e no escuro — com nitidez High Definition e 4 anos de garantia. Escolha Carbon pela estética carbono; escolha Ceramic pela máxima rejeição térmica dentro da linha Performance.',
+      'A Carbon é construída em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho e rejeição de IR acima de 50% — indicada para quem procura carbono de verdade e cor estável, com 4 anos de garantia. A Ceramic é nanocerâmica com mais de 85% de rejeição de IR em todas as tonalidades — a mesma performance térmica no claro e no escuro — com nitidez High Definition e 5 anos de garantia. Escolha Carbon pela estética carbono; escolha Ceramic pela máxima rejeição térmica dentro da linha Performance.',
   },
   {
     question: 'Qual película INSULFILM™ posso aplicar em teto-solar?',
     answer:
-      'Dentro do portfólio solar, as linhas Polariz (Performance) e Polariz Ultra (Premium) são aplicáveis em teto-solar. Ambas são híbridas: a Polariz em construção metalizada e a Polariz Ultra em construção metal-cerâmica, com estética polarizada exclusiva.',
+      'Dentro do portfólio solar, a linha Polariz (Performance) é a indicada para teto-solar — construção híbrida metalizada com estética polarizada exclusiva, aplicável também em vidros laterais, traseiro e para-brisa.',
   },
   {
     question: 'Qual a diferença entre Polariz e Polariz Ultra?',
     answer:
-      'A Polariz pertence à Solar Performance Films: híbrida metalizada, até 57% de rejeição de energia solar total (TSER), 99% de UV e 5 anos de garantia, em três tonalidades (20, 10 e 05). A Polariz Ultra é o topo absoluto do portfólio, na Solar Premium Films: híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades (15 e 05), com mais de 99% de UV e 10 anos de garantia. Ambas com estética polarizada exclusiva e aplicáveis em teto-solar.',
+      'A Polariz pertence à Solar Performance Films: híbrida metalizada, até 57% de rejeição de energia solar total (TSER), 99% de UV e 5 anos de garantia, em três tonalidades (20, 10 e 05) — aplicável em vidros laterais, traseiro, para-brisa e teto-solar. A Polariz Ultra é o topo absoluto do portfólio, na Solar Premium Films: híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades (15 e 05), com mais de 99% de UV e 10 anos de garantia — aplicável em vidros laterais e traseiro. Ambas com estética polarizada exclusiva.',
   },
   {
     question: 'Quais linhas têm 10 anos de garantia?',

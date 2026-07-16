@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: 'Qual é a garantia oficial da Ceramic?',
-    answer: '4 anos, com Certificado Individual emitido no ato do serviço técnico, número único de rastreamento e cobertura contra desbotamento e mudança de cor. Consulte condições.',
+    answer: '5 anos, com Certificado Individual emitido no ato do serviço técnico, número único de rastreamento e cobertura contra desbotamento e mudança de cor. Consulte condições.',
   },
   {
     question: 'A Ceramic interfere em GPS, celular ou tag de pedágio?',
@@ -41,7 +41,7 @@ const specs = [
   { icon: Zap, label: 'Construção', value: 'Advanced Plus · Nanocerâmica' },
   { icon: Layers, label: 'Nitidez Óptica', value: 'Alta · High Definition' },
   { icon: Eye, label: 'Bloqueio UV', value: '99%' },
-  { icon: Shield, label: 'Garantia', value: '4 anos' },
+  { icon: Shield, label: 'Garantia', value: '5 anos' },
 ];
 
 const techTable = [
@@ -87,13 +87,13 @@ const AutomotivoCeramic = () => {
   const schemaMarkup = {
     '@context': 'https://schema.org', '@type': 'Product',
     name: 'INSULFILM™ Ceramic', brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Ceramic — nanocerâmica da Solar Performance Films. Mais de 85% de IR rejeitado em todas as variantes, 99% UV, nitidez High Definition e 4 anos de garantia.',
+    description: 'INSULFILM™ Ceramic — nanocerâmica da Solar Performance Films. Mais de 85% de IR rejeitado em todas as variantes, 99% UV, nitidez High Definition e 5 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/ceramic',
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Construção', value: 'Advanced Plus Film — Nanocerâmica' },
       { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
-      { '@type': 'PropertyValue', name: 'Garantia', value: '4 anos' },
+      { '@type': 'PropertyValue', name: 'Garantia', value: '5 anos' },
     ],
   };
 
@@ -101,7 +101,7 @@ const AutomotivoCeramic = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Ceramic | Solar Performance Films · Nanocerâmica</title>
-        <meta name="description" content="INSULFILM™ Ceramic: nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades, 99% de UV, nitidez High Definition e 4 anos de garantia." />
+        <meta name="description" content="INSULFILM™ Ceramic: nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades, 99% de UV, nitidez High Definition e 5 anos de garantia." />
         <meta property="og:title" content="INSULFILM™ Ceramic | Solar Performance Films" />
         <meta property="og:description" content="Quando o cliente procura cerâmica, é aqui que o calor para de entrar." />
         <meta property="og:type" content="product" />
@@ -159,7 +159,7 @@ const AutomotivoCeramic = () => {
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Sobre esta linha</motion.p>
                 <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-6 leading-tight">A nanocerâmica que rejeita calor sem escurecer demais.</motion.h2>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Ceramic é película de alta performance desenvolvida com avançada tecnologia nanocerâmica. Proporciona elevada rejeição de calor, excelente conforto térmico e alta estabilidade de cor ao longo dos anos, com visual neutro e não refletivo.</motion.p>
-                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Três tonalidades (Ceramic 35, 20 e 05), rejeição superior a 85% de IR em todas elas, 99% de UV, nitidez óptica High Definition e 4 anos de garantia oficial com certificado individual.</motion.p>
+                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Três tonalidades (Ceramic 35, 20 e 05), rejeição superior a 85% de IR em todas elas, 99% de UV, nitidez óptica High Definition e 5 anos de garantia oficial com certificado individual.</motion.p>
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Posição no portfólio</motion.p>
@@ -248,7 +248,7 @@ const AutomotivoCeramic = () => {
         <ParallaxBreak minHeight="25vh" stats={[
           { value: '>85%', label: 'IR Rejeitado' },
           { value: '99%', label: 'Bloqueio UV' },
-          { value: '4', label: 'Anos Garantia' },
+          { value: '5', label: 'Anos Garantia' },
         ]} />
 
         <section className="py-24 bg-carbon-gradient overflow-hidden relative">
@@ -297,7 +297,7 @@ const AutomotivoCeramic = () => {
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3 text-center">▪ Garantia Oficial</motion.p>
               <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">4 anos</p>
+                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">5 anos</p>
                   <p className="text-sm uppercase tracking-widest text-muted-foreground font-bold mt-2">Garantia Oficial</p>
                 </div>
                 <div className="glass-card rounded-2xl p-6">
@@ -320,7 +320,7 @@ const AutomotivoCeramic = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nanocerâmica com desempenho térmico de verdade.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Ceramic é o topo da Solar Performance Films — com 4 anos de garantia e a procedência da marca original.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Ceramic é o topo da Solar Performance Films — com 5 anos de garantia e a procedência da marca original.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</Link>

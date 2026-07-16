@@ -13,7 +13,7 @@ import PdpFaq from '@/components/PdpFaq';
 const faqItems = [
   {
     question: 'Quais tonalidades a Matrix oferece e qual a ficha técnica?',
-    answer: 'Matrix 70 (70% de luz, IR 75%, TSER 44%, privacidade Baixo), Matrix 35 (35%, IR 67%, TSER 55%, Médio) e Matrix 15 (15%, IR 67%, TSER 60%, Médio Alto). Todas com mais de 99% de bloqueio UV.',
+    answer: 'Matrix 70 (70% de luz, IR 75%, TSER 44%, privacidade Baixo), Matrix 35 (35%, IR 67%, TSER 55%, Médio), Matrix 15 (15%, IR 67%, TSER 60%, Médio Alto) e Matrix 05 (05%, IR 67%, TSER 62%, Alto). Todas com mais de 99% de bloqueio UV.',
   },
   {
     question: 'Dá para ter alto desempenho térmico sem escurecer o vidro?',
@@ -48,6 +48,7 @@ const techTable = [
   { version: 'Matrix 70', privacy: 'Baixo', light: '70%', ir: '75%', uv: '>99%', energy: '44%' },
   { version: 'Matrix 35', privacy: 'Médio', light: '35%', ir: '67%', uv: '>99%', energy: '55%' },
   { version: 'Matrix 15', privacy: 'Médio Alto', light: '15%', ir: '67%', uv: '>99%', energy: '60%' },
+  { version: 'Matrix 05', privacy: 'Alto', light: '05%', ir: '67%', uv: '>99%', energy: '62%' },
 ];
 
 const problems = [
@@ -58,7 +59,7 @@ const problems = [
 
 const benefits = [
   { title: 'Alta rejeição térmica, até 75% de IR', text: 'A Matrix 70 entrega 75% de rejeição de infravermelho com o vidro mantendo aparência clara. Desempenho de ponta sem abrir mão da visibilidade.' },
-  { title: 'Três tonalidades, mesma tecnologia cerâmica', text: 'Da Matrix 70 (clara, máximo IR) à Matrix 15 (até 60% de TSER), o motorista escolhe o equilíbrio entre luz e rejeição solar — todas com mais de 99% de UV.' },
+  { title: 'Quatro tonalidades, mesma tecnologia cerâmica', text: 'Da Matrix 70 (clara, máximo IR) à Matrix 05 (até 62% de TSER), o motorista escolhe o equilíbrio entre luz e rejeição solar — todas com mais de 99% de UV.' },
   { title: 'Nitidez Ultra Definition', text: 'Clareza de visão de dentro para fora sem escurecimento desnecessário, preservando a dirigibilidade de dia e de noite.' },
   { title: '10 anos de garantia, não interfere em eletrônicos', text: 'O maior prazo do portfólio, com tecnologia cerâmica não metálica que preserva celular, GPS, rádio e tag de pedágio.' },
 ];
@@ -159,7 +160,7 @@ const AutomotivoMatrix = () => {
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Sobre esta linha</motion.p>
                 <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-6 leading-tight">A entrada da Solar Premium Films — nanocerâmica de última geração.</motion.h2>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Matrix é película espectro seletiva, enriquecida por cerâmica incorporada em nanopartículas especializadas, projetada para máxima proteção contra os raios infravermelhos do sol — com altíssima rejeição térmica e visibilidade interna de ultra definição.</motion.p>
-                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Três tonalidades (Matrix 70, 35 e 15), até 75% de IR, mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia oficial — sem interferir em eletrônicos.</motion.p>
+                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Quatro tonalidades (Matrix 70, 35, 15 e 05), até 75% de IR, mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia oficial — sem interferir em eletrônicos.</motion.p>
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Posição no portfólio</motion.p>

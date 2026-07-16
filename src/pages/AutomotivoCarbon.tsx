@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: 'Qual é a garantia oficial da Carbon?',
-    answer: '5 anos, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+    answer: '4 anos, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
   },
   {
     question: 'A Carbon interfere em GPS, celular ou tag de pedágio?',
@@ -47,7 +47,7 @@ const specs = [
   { icon: Zap, label: 'Construção', value: 'Carbon Film · Carbono Verdadeiro' },
   { icon: Layers, label: 'Nitidez Óptica', value: 'Alta · High Definition' },
   { icon: Eye, label: 'Bloqueio UV', value: '99%' },
-  { icon: Shield, label: 'Garantia', value: '5 anos' },
+  { icon: Shield, label: 'Garantia', value: '4 anos' },
 ];
 
 const techTable = [
@@ -119,13 +119,13 @@ const AutomotivoCarbon = () => {
     '@type': 'Product',
     name: 'INSULFILM™ Carbon',
     brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Carbon — carbono verdadeiro da Solar Performance Films. Filtro dedicado de infravermelho com até >50% de rejeição IR, 99% de bloqueio UV, três tonalidades (35, 20 e 05) e 5 anos de garantia.',
+    description: 'INSULFILM™ Carbon — carbono verdadeiro da Solar Performance Films. Filtro dedicado de infravermelho com até >50% de rejeição IR, 99% de bloqueio UV, três tonalidades (35, 20 e 05) e 4 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/carbon',
     additionalProperty: [
       { '@type': 'PropertyValue', name: 'Construção', value: 'Carbon Film — Carbono Verdadeiro' },
       { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
-      { '@type': 'PropertyValue', name: 'Garantia', value: '5 anos' },
+      { '@type': 'PropertyValue', name: 'Garantia', value: '4 anos' },
     ],
   };
 
@@ -133,7 +133,7 @@ const AutomotivoCarbon = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Carbon | Solar Performance Films · Carbono Verdadeiro</title>
-        <meta name="description" content="INSULFILM™ Carbon: carbono verdadeiro com filtro dedicado de infravermelho. Até >50% de IR rejeitado, 99% de bloqueio UV, nitidez High Definition e 5 anos de garantia." />
+        <meta name="description" content="INSULFILM™ Carbon: carbono verdadeiro com filtro dedicado de infravermelho. Até >50% de IR rejeitado, 99% de bloqueio UV, nitidez High Definition e 4 anos de garantia." />
         <meta property="og:title" content="INSULFILM™ Carbon | Solar Performance Films" />
         <meta property="og:description" content="Quando o cliente procura carbono de verdade, é aqui que a rejeição de calor começa." />
         <meta property="og:type" content="product" />
@@ -210,7 +210,7 @@ const AutomotivoCarbon = () => {
                   A INSULFILM™ Carbon é o ponto em que a linha solar deixa de ser apenas pigmento e passa a rejeitar calor de verdade. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado.
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">
-                  Três tonalidades (Carbon 35, 20 e 05), 99% de bloqueio UV, nitidez óptica High Definition e 5 anos de garantia oficial com certificado individual — sem interferir em GPS, celular ou tag de pedágio.
+                  Três tonalidades (Carbon 35, 20 e 05), 99% de bloqueio UV, nitidez óptica High Definition e 4 anos de garantia oficial com certificado individual — sem interferir em GPS, celular ou tag de pedágio.
                 </motion.p>
               </motion.div>
 
@@ -318,7 +318,7 @@ const AutomotivoCarbon = () => {
         <ParallaxBreak minHeight="25vh" stats={[
           { value: '>50%', label: 'IR Rejeitado' },
           { value: '99%', label: 'Bloqueio UV' },
-          { value: '5', label: 'Anos Garantia' },
+          { value: '4', label: 'Anos Garantia' },
         ]} />
 
         {/* ── O QUE VOCÊ RECEBE ── */}
@@ -375,7 +375,7 @@ const AutomotivoCarbon = () => {
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3 text-center">▪ Garantia Oficial</motion.p>
               <motion.div variants={fadeInUp} className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">5 anos</p>
+                  <p className="text-6xl md:text-7xl font-extrabold text-accent leading-none">4 anos</p>
                   <p className="text-sm uppercase tracking-widest text-muted-foreground font-bold mt-2">Garantia Oficial</p>
                 </div>
                 <div className="glass-card rounded-2xl p-6">
@@ -403,7 +403,7 @@ const AutomotivoCarbon = () => {
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Carbono de verdade, com rejeição térmica que se sente.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                A INSULFILM™ Carbon marca o salto de tecnologia dentro da Solar Performance Films — com 5 anos de garantia e a procedência da marca original.
+                A INSULFILM™ Carbon marca o salto de tecnologia dentro da Solar Performance Films — com 4 anos de garantia e a procedência da marca original.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
