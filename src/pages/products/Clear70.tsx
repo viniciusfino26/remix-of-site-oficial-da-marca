@@ -19,7 +19,7 @@ const Clear70Page = () => {
   const data = getProductDualPublic('clear70');
 
   if (!data) {
-    // Não deve acontecer — fallback defensivo
+    // Não deve acontecer, fallback defensivo
     return null;
   }
 

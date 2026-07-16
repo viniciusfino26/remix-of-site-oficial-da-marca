@@ -17,7 +17,7 @@ const STORES = [
     zone: 'Zona Central',
     zoneBadge: 'Av. Paulista · Bela Vista',
     name: 'Centro Autorizado Av. Paulista',
-    address: 'Shopping Cidade São Paulo\nR. São Carlos do Pinhal, 627 — Bela Vista, SP\nEstacionamento: 5º Subsolo',
+    address: 'Shopping Cidade São Paulo\nR. São Carlos do Pinhal, 627, Bela Vista, SP\nEstacionamento: 5º Subsolo',
     phone: null as string | null,
     phoneTel: null as string | null,
     whatsapp: 'https://wa.me/5511947721470?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
@@ -38,7 +38,7 @@ const STORES = [
     zone: 'Zona Sul',
     zoneBadge: 'Moema',
     name: 'Centro Autorizado Moema',
-    address: 'Av. Moreira Guimarães, 1.254\nMoema — São Paulo, SP',
+    address: 'Av. Moreira Guimarães, 1.254\nMoema, São Paulo, SP',
     phone: '(11) 2626-0949',
     phoneTel: '+551126260949',
     whatsapp: 'https://wa.me/5511934313285?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
@@ -59,7 +59,7 @@ const STORES = [
     zone: 'Zona Oeste',
     zoneBadge: 'Pacaembu · Barra Funda',
     name: 'Centro Autorizado Pacaembu',
-    address: 'Av. Pacaembu, 77\nBarra Funda — São Paulo, SP',
+    address: 'Av. Pacaembu, 77\nBarra Funda, São Paulo, SP',
     phone: '(11) 4062-0098',
     phoneTel: '+551140620098',
     whatsapp: 'https://wa.me/5511965719291?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
@@ -80,7 +80,7 @@ const STORES = [
     zone: 'Zona Norte',
     zoneBadge: 'Santana · Imirim',
     name: 'Centro Autorizado Santana',
-    address: 'Av. Eng. Caetano Álvares, 5727\nImirim — São Paulo, SP',
+    address: 'Av. Eng. Caetano Álvares, 5727\nImirim, São Paulo, SP',
     phone: '(11) 2122-4260',
     phoneTel: '+551121224260',
     whatsapp: 'https://wa.me/5511991774718?text=Olá!+Visitei+o+site+INSULFILM™+e+gostaria+de+maiores+informações.',
@@ -242,7 +242,7 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
       const viaCepData = await viaCepRes.json();
 
       if (viaCepData.erro) {
-        // CEP inválido — se for prefixo SP conhecido, usa mesmo assim
+        // CEP inválido, se for prefixo SP conhecido, usa mesmo assim
         if (zoneInfo) {
           const display = `Zona ${zoneInfo.zone} · ${zoneInfo.district}`;
           setFoundAddress(display);
@@ -291,7 +291,7 @@ const CepSearch = ({ onResult }: CepSearchProps) => {
         if (coords) precision = 'street';
       }
 
-      // ESTRATÉGIA 3: Fallback infalível — usa prefixo CEP em vez do centro de SP
+      // ESTRATÉGIA 3: Fallback infalível, usa prefixo CEP em vez do centro de SP
       if (!coords && zoneInfo) {
         coords = { lat: zoneInfo.lat, lng: zoneInfo.lng };
         precision = 'prefix';
@@ -697,7 +697,7 @@ const Lojas = () => {
             variants={stagger}
           >
             <motion.p variants={fadeInUp} className="text-sm uppercase tracking-[0.4em] text-accent mb-5 font-semibold">
-              INSULFILM™ — Centros Autorizados
+              INSULFILM™, Centros Autorizados
             </motion.p>
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-primary-foreground leading-[0.95] tracking-tight mb-6">
               ONDE NOS<br />
@@ -758,7 +758,7 @@ const Lojas = () => {
               </motion.div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-2">
-                  Arquitetônico — Território Nacional
+                  Arquitetônico, Território Nacional
                 </p>
                 <h3 className="text-xl md:text-2xl font-extrabold text-primary-foreground mb-2">
                   Películas para Residências e Empresas

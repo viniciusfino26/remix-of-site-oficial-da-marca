@@ -63,7 +63,7 @@ const CountUp = ({ target, prefix = '', suffix = '' }: { target: number; prefix?
   return <span ref={ref}>{prefix}{display}{suffix}</span>;
 };
 
-/* ── Impact data (SkudoGuard — superior ao 13K) ── */
+/* ── Impact data (SkudoGuard, superior ao 13K) ── */
 const impactData = [
   { label: 'Pré-quebra', vela: 1, pedra: 22, taco: 14 },
   { label: 'Pós-quebra', vela: 79, pedra: 35, taco: 7 },
@@ -105,7 +105,7 @@ const dangerCards = [
 const techDifferentials = [
   { icon: Layers, title: 'Tripla Laminação Industrial', desc: 'Estrutura multicamadas com tripla laminação que multiplica a resistência contra impactos violentos e tentativas de invasão.' },
   { icon: Shield, title: 'Poliéster de Alta Densidade', desc: 'Polímeros mais resistentes que absorvem e distribuem a energia do impacto, impedindo a penetração mesmo após múltiplas pancadas.' },
-  { icon: Zap, title: 'Adesivo Performance', desc: 'Adesivo especial com aderência superior — mais pegajoso, mais forte. Mantém os fragmentos unidos mesmo sob impactos extremos.' },
+  { icon: Zap, title: 'Adesivo Performance', desc: 'Adesivo especial com aderência superior, mais pegajoso, mais forte. Mantém os fragmentos unidos mesmo sob impactos extremos.' },
   { icon: Eye, title: 'Nitidez Óptica Cristal', desc: 'Apesar da proteção superior, mantém transparência total e claridade visual sem distorções.' },
 ];
 
@@ -306,10 +306,10 @@ const SkudoGuard = () => {
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Retenção de fragmentos — protege pele, rosto e olhos de todos os ocupantes',
-                  'Não altera a originalidade do veículo — instalação discreta e profissional',
-                  'Não aplicável a furtos — proteção específica contra abordagens violentas',
-                  'Não interfere em sinais eletrônicos — pedágio, GPS e celular funcionam normalmente',
+                  'Retenção de fragmentos, protege pele, rosto e olhos de todos os ocupantes',
+                  'Não altera a originalidade do veículo, instalação discreta e profissional',
+                  'Não aplicável a furtos, proteção específica contra abordagens violentas',
+                  'Não interfere em sinais eletrônicos, pedágio, GPS e celular funcionam normalmente',
                 ].map((text, i) => (
                   <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
                     <motion.div className="mt-0.5" initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 + 0.3, type: 'spring', stiffness: 300 }}>
@@ -324,7 +324,7 @@ const SkudoGuard = () => {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
                 <img
                   src={autoSkudoGuard}
-                  alt="Tentativa de invasão criminosa em vidro lateral de veículo — barreira de defesa INSULFILM™ SkudoGuard contra arrombamento"
+                  alt="Tentativa de invasão criminosa em vidro lateral de veículo, barreira de defesa INSULFILM™ SkudoGuard contra arrombamento"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -386,7 +386,7 @@ const SkudoGuard = () => {
         <div className="container mx-auto px-4">
           <motion.div className="text-center mb-14" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Resistência a Impactos</motion.h2>
-            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light">Quantidade de impactos suportados por tipo de objeto — valores superiores com tripla laminação</motion.p>
+            <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light">Quantidade de impactos suportados por tipo de objeto, valores superiores com tripla laminação</motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
           </motion.div>
 
@@ -473,7 +473,7 @@ const SkudoGuard = () => {
               <div className="aspect-[4/3] rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 flex items-center justify-center">
                 <div className="text-center text-primary-foreground/70">
                   <Users className="w-16 h-16 mx-auto mb-3" />
-                  <p className="text-sm font-light">Foto ilustrativa — família</p>
+                  <p className="text-sm font-light">Foto ilustrativa, família</p>
                 </div>
               </div>
             </motion.div>
@@ -586,7 +586,7 @@ const SkudoGuard = () => {
           </motion.div>
           <motion.div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             {[
-              { title: 'Vidros Laterais', desc: 'Proteção completa nos vidros laterais — o ponto de entrada mais usado em abordagens criminosas violentas.' },
+              { title: 'Vidros Laterais', desc: 'Proteção completa nos vidros laterais, o ponto de entrada mais usado em abordagens criminosas violentas.' },
               { title: 'Vidro Traseiro', desc: 'Barreira de segurança no vidro traseiro, protegendo os passageiros do banco de trás contra estilhaços e invasão.' },
             ].map((item, i) => (
               <motion.div key={i} variants={i === 0 ? fadeInLeft : fadeInRight}>
@@ -632,7 +632,7 @@ const SkudoGuard = () => {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-foreground">Relato anônimo verificado</p>
-                    <p className="text-xs text-muted-foreground">São Paulo, SP — 2024</p>
+                    <p className="text-xs text-muted-foreground">São Paulo, SP, 2024</p>
                   </div>
                 </div>
               </CardContent>
@@ -774,7 +774,7 @@ const SkudoGuard = () => {
         </div>
       </section>
 
-      {/* ═══ 15. APLICABILIDADE — LINHAS SOLARES ═══ */}
+      {/* ═══ 15. APLICABILIDADE, LINHAS SOLARES ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
@@ -787,16 +787,16 @@ const SkudoGuard = () => {
               <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { name: 'RayStart', gen: 'Solar Performance · Basic Film Pigmentada', href: '/automotivo/solar/raystart' },
-                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
-                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
-                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
-                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
+                  { name: 'Eclipse', gen: '3ª Geração, Carbono', href: '/automotivo/solar/eclipse' },
+                  { name: 'Vip', gen: '3ª Geração evoluída, Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'Matrix', gen: '4ª Geração, Cerâmica', href: '/automotivo/solar/matrix' },
+                  { name: 'Polariz Ultra', gen: '5ª Geração, Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
                 ].map((line) => (
                   <a key={line.name} href={line.href} className="group">
                     <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
                       <Sun className="w-3.5 h-3.5 mr-2" />
                       <span className="font-bold">{line.name}</span>
-                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
+                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">, {line.gen}</span>
                     </Badge>
                   </a>
                 ))}

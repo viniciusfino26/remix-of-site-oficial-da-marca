@@ -41,7 +41,7 @@ const categories: Category[] = [
     title: 'Alta Transparência',
     icon: <Eye className="w-5 h-5" />,
     imageSrc: arqSolarTransparencia,
-    description: 'O calor entra pelo infravermelho, não pela luz. Estas películas bloqueiam até 93% do calor sem escurecer o ambiente — para quem não quer abrir mão da luminosidade natural nem da vista.',
+    description: 'O calor entra pelo infravermelho, não pela luz. Estas películas bloqueiam até 93% do calor sem escurecer o ambiente, para quem não quer abrir mão da luminosidade natural nem da vista.',
     products: [
       { name: 'INSULFILM™ Clear70', path: '/arquitetonico/solar/clear70', tier: 'Performance' },
       { name: 'INSULFILM™ Orizzonte70', path: '/arquitetonico/solar/orizzonte70', tier: 'Premium' },
@@ -53,7 +53,7 @@ const categories: Category[] = [
     title: 'Estética Neutra',
     icon: <Sparkles className="w-5 h-5" />,
     imageSrc: arqSolarNeutra,
-    description: 'Para projetos que não admitem reflexo espelhado nem escurecimento visível. Tonalidade sutil que respeita o design original da arquitetura — com controle solar real e garantia de até 10 anos.',
+    description: 'Para projetos que não admitem reflexo espelhado nem escurecimento visível. Tonalidade sutil que respeita o design original da arquitetura, com controle solar real e garantia de até 10 anos.',
     products: [
       { name: 'INSULFILM™ Naturale', path: '/arquitetonico/solar/naturale', tier: 'Premium' }
     ]
@@ -76,7 +76,7 @@ const categories: Category[] = [
     title: 'Não Refletivas',
     icon: <Thermometer className="w-5 h-5" />,
     imageSrc: arqSolarFume,
-    description: 'Estética preta sem refletividade intensa ou privacidade invertida com visual fumê elegante — para quem busca controle de claridade e redução de ofuscamento sem o efeito espelhado.',
+    description: 'Estética preta sem refletividade intensa ou privacidade invertida com visual fumê elegante, para quem busca controle de claridade e redução de ofuscamento sem o efeito espelhado.',
     products: [
       { name: 'INSULFILM™ Petrolio', path: '/arquitetonico/solar/petrolio', tier: 'Performance' }
     ]
@@ -94,7 +94,7 @@ const ArqHubSolar = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Solar Arquitetônico | Películas para Fachadas e Janelas</title>
-        <meta name="description" content="Películas solares arquitetônicas INSULFILM™ — controle térmico para fachadas, sacadas e janelas de residências e espaços comerciais. Alta Transparência, Neutras, Espelhadas e Não Refletivas." />
+        <meta name="description" content="Películas solares arquitetônicas INSULFILM™, controle térmico para fachadas, sacadas e janelas de residências e espaços comerciais. Alta Transparência, Neutras, Espelhadas e Não Refletivas." />
         <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/solar" />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="INSULFILM™ Solar Arquitetônico | Películas para Fachadas e Janelas" />
@@ -123,8 +123,8 @@ const ArqHubSolar = () => {
         {/* ── HERO ── */}
         <PageHero
           title="O vidro que você tem não é o problema. O calor que ele deixa entrar, é."
-          subtitle="Películas solares INSULFILM™ para fachadas, sacadas e janelas — de residências e espaços comerciais que não aceitam calor excessivo, conta de energia inflada e mobiliário que desbota antes da hora."
-          badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'PELÍCULAS SOLARES ARQUITETÔNICAS — INSULFILM™' }}
+          subtitle="Películas solares INSULFILM™ para fachadas, sacadas e janelas, de residências e espaços comerciais que não aceitam calor excessivo, conta de energia inflada e mobiliário que desbota antes da hora."
+          badge={{ icon: <Sun className="w-3.5 h-3.5" />, text: 'PELÍCULAS SOLARES ARQUITETÔNICAS, INSULFILM™' }}
           cta={{
             text: 'Falar com um Especialista',
             href: '/contato',
@@ -140,7 +140,7 @@ const ArqHubSolar = () => {
                 Cada fachada tem uma necessidade. Cada necessidade tem uma película.
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-3xl mx-auto">
-                A linha solar INSULFILM™ reúne tecnologias distintas para cada tipo de projeto, exposição solar e exigência estética. Escolha pela sua necessidade — não pela embalagem.
+                A linha solar INSULFILM™ reúne tecnologias distintas para cada tipo de projeto, exposição solar e exigência estética. Escolha pela sua necessidade, não pela embalagem.
               </motion.p>
             </motion.div>
 

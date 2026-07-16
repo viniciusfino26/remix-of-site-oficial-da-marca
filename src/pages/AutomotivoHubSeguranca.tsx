@@ -37,7 +37,7 @@ const AutomotivoHubSeguranca = () => {
 
       <main>
 
-        {/* ═══ HERO — foto + gradiente ═══ */}
+        {/* ═══ HERO, foto + gradiente ═══ */}
         <section className="relative w-full bg-gray-900 overflow-x-hidden">
           <img
             src={autoSeguranca}
@@ -68,7 +68,7 @@ const AutomotivoHubSeguranca = () => {
           </div>
         </section>
 
-        {/* ═══ VÍDEO 1 — Quebra de vidro comum ═══ */}
+        {/* ═══ VÍDEO 1, Quebra de vidro comum ═══ */}
         <section className="bg-primary py-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.p
@@ -183,7 +183,7 @@ const AutomotivoHubSeguranca = () => {
           </div>
         </section>
 
-        {/* ═══ ENCONTRE SUA PELÍCULA — SELETOR ═══ */}
+        {/* ═══ ENCONTRE SUA PELÍCULA, SELETOR ═══ */}
         <section className="bg-primary py-12 border-t border-white/5">
           <div className="container mx-auto px-4 max-w-5xl">
             <motion.p
@@ -285,7 +285,7 @@ const AutomotivoHubSeguranca = () => {
               {/* Foto SkinSafe8K */}
               <motion.div variants={fadeInRight}>
                 <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
-                  <img src={autoSkinSafe8K} alt="INSULFILM™ SkinSafe8K — proteção contra estilhaços" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={autoSkinSafe8K} alt="INSULFILM™ SkinSafe8K, proteção contra estilhaços" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
@@ -295,10 +295,10 @@ const AutomotivoHubSeguranca = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              {/* Foto Antivandalismo13K — lado esquerdo */}
+              {/* Foto Antivandalismo13K, lado esquerdo */}
               <motion.div variants={fadeInLeft} className="order-2 md:order-1">
                 <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
-                  <img src={autoAntivandalismo13K} alt="INSULFILM™ Antivandalismo13K — proteção contra atos de vandalismo" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={autoAntivandalismo13K} alt="INSULFILM™ Antivandalismo13K, proteção contra atos de vandalismo" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">
@@ -358,7 +358,7 @@ const AutomotivoHubSeguranca = () => {
               {/* Foto SkudoGuard */}
               <motion.div variants={fadeInRight}>
                 <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
-                  <img src={autoSkudoGuard} alt="INSULFILM™ SkudoGuard — defesa superior contra invasão" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={autoSkudoGuard} alt="INSULFILM™ SkudoGuard, defesa superior contra invasão" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
@@ -368,10 +368,10 @@ const AutomotivoHubSeguranca = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              {/* Foto SkudoUltra — lado esquerdo */}
+              {/* Foto SkudoUltra, lado esquerdo */}
               <motion.div variants={fadeInLeft} className="order-2 md:order-1">
                 <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
-                  <img src={autoSkudoUltra} alt="INSULFILM™ SkudoUltra — extrema segurança contra armas brancas" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={autoSkudoUltra} alt="INSULFILM™ SkudoUltra, extrema segurança contra armas brancas" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
               <motion.div variants={fadeInRight} className="space-y-3 order-1 md:order-2">

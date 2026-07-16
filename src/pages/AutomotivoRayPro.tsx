@@ -70,7 +70,7 @@ const problems = [
   {
     icon: Sun,
     title: 'Exposição UV acumulada em quem roda muito',
-    text: 'Para quem passa muitas horas ao volante, os 98% de bloqueio UV — o maior da faixa de entrada — são sentidos na pele e vistos no estado de conservação do interior do carro ao longo do tempo.',
+    text: 'Para quem passa muitas horas ao volante, os 98% de bloqueio UV, o maior da faixa de entrada, são sentidos na pele e vistos no estado de conservação do interior do carro ao longo do tempo.',
   },
 ];
 
@@ -119,10 +119,10 @@ const AutomotivoRayPro = () => {
     '@type': 'Product',
     name: 'INSULFILM™ RayPro',
     brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ RayPro — linha clássica da Solar Performance Films. Pigmentação homogênea fundida ao poliéster, 98% de bloqueio UV, três tonalidades (35, 20 e 05) e 3 anos de garantia.',
+    description: 'INSULFILM™ RayPro, linha clássica da Solar Performance Films. Pigmentação homogênea fundida ao poliéster, 98% de bloqueio UV, três tonalidades (35, 20 e 05) e 3 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/raypro',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Classic Film — Pigmentação Homogênea' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Classic Film, Pigmentação Homogênea' },
       { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Boa' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '98%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '3 anos' },
@@ -133,7 +133,7 @@ const AutomotivoRayPro = () => {
     <>
       <Helmet>
         <title>INSULFILM™ RayPro | Solar Performance Films · Linha Clássica</title>
-        <meta name="description" content="INSULFILM™ RayPro: pigmentação homogênea que resiste ao tempo. 98% de bloqueio UV — o maior da faixa de entrada — três tonalidades e 3 anos de garantia." />
+        <meta name="description" content="INSULFILM™ RayPro: pigmentação homogênea que resiste ao tempo. 98% de bloqueio UV, o maior da faixa de entrada, três tonalidades e 3 anos de garantia." />
         <meta property="og:title" content="INSULFILM™ RayPro | Solar Performance Films" />
         <meta property="og:description" content="Pigmentação que não desvanece. Cor que resiste ao tempo. Um passo acima do básico." />
         <meta property="og:type" content="product" />
@@ -210,7 +210,7 @@ const AutomotivoRayPro = () => {
                   A INSULFILM™ RayPro é a evolução natural da faixa de entrada. Película de pigmentação homogênea fundida ao poliéster, com camada dedicada de rejeição UV que retarda o clareamento e a virada de tom típicos das películas apenas tingidas.
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">
-                  Três tonalidades para escolher (RayPro 35, 20 e 05), 98% de bloqueio UV — o maior da faixa de entrada — e 3 anos de garantia oficial com certificado individual.
+                  Três tonalidades para escolher (RayPro 35, 20 e 05), 98% de bloqueio UV, o maior da faixa de entrada, e 3 anos de garantia oficial com certificado individual.
                 </motion.p>
               </motion.div>
 
@@ -247,7 +247,7 @@ const AutomotivoRayPro = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ RayPro — Película pigmentação homogênea" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ RayPro, Película pigmentação homogênea" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -398,7 +398,7 @@ const AutomotivoRayPro = () => {
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Um passo acima do básico.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                A INSULFILM™ RayPro entrega o melhor custo-benefício do portfólio solar — com a procedência da marca original.
+                A INSULFILM™ RayPro entrega o melhor custo-benefício do portfólio solar, com a procedência da marca original.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">

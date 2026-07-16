@@ -58,7 +58,7 @@ const compositionLayers = [
 ];
 
 const physicalProps = [
-  { prop: 'Espessura total — livre de camadas protetivas', value: '7 mil / ≈175 microns' },
+  { prop: 'Espessura total, livre de camadas protetivas', value: '7 mil / ≈175 microns' },
   { prop: 'Força do adesivo contra arrancamento', value: '≥15N / 25mm' },
   { prop: 'Força para rompimento da película', value: '≈355 lbs/in' },
   { prop: 'Intervalo de resistência à temperatura', value: '-35°C ~ 116°C' },
@@ -216,7 +216,7 @@ const PPF = () => (
             <Card className="glass-card rounded-2xl border-t-2 border-t-accent/30">
               <CardContent className="p-8">
                 <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base">
-                  Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos — com confiança — a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
+                  Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos, com confiança, a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
                 </p>
                 <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base mt-4">
                   A cobertura compreende: <span className="text-primary-foreground font-semibold">rachaduras, formação de bolhas ou amarelamento</span> causados apenas por defeitos na fabricação.

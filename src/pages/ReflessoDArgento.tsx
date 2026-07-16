@@ -49,7 +49,7 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Reflesso d'Argento | Película Espelhada Arquitetônica | Alta Privacidade</title>
-        <meta name="description" content="INSULFILM™ Reflesso d'Argento — película arquitetônica espelhada com 80% de rejeição de IR e privacidade diurna. Aplicável em fachadas e pergolados. Marca registrada." />
+        <meta name="description" content="INSULFILM™ Reflesso d'Argento, película arquitetônica espelhada com 80% de rejeição de IR e privacidade diurna. Aplicável em fachadas e pergolados. Marca registrada." />
         <meta property="og:title" content="INSULFILM™ Reflesso d'Argento | Película Espelhada Arquitetônica" />
         <meta property="og:description" content="Eficiência térmica imediata. Visual espelhado. Privacidade durante o dia." />
         <meta property="og:type" content="product" />
@@ -73,7 +73,7 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
                 {copy?.h1 || `Eficiência térmica imediata. Visual espelhado. Privacidade durante o dia.`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Reflesso d'Argento foi desenvolvida para fachadas comerciais, residências e estruturas envidraçadas que exigem alto desempenho térmico com estética espelhada — unindo conforto, privacidade diurna e proteção UV em uma solução de excelente custo-benefício.
+                A INSULFILM™ Reflesso d'Argento foi desenvolvida para fachadas comerciais, residências e estruturas envidraçadas que exigem alto desempenho térmico com estética espelhada, unindo conforto, privacidade diurna e proteção UV em uma solução de excelente custo-benefício.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -117,7 +117,7 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Inspirada na tecnologia Metallico Argento. Desempenho acessível com eficiência real.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A INSULFILM™ Reflesso d'Argento foi desenvolvida a partir da tecnologia da linha Metallico Argento — entregando desempenho térmico elevado, privacidade diurna e estética espelhada com uma proposta de excelente custo-benefício.
+                A INSULFILM™ Reflesso d'Argento foi desenvolvida a partir da tecnologia da linha Metallico Argento, entregando desempenho térmico elevado, privacidade diurna e estética espelhada com uma proposta de excelente custo-benefício.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed">
                 Com rejeição de infravermelho de 80% e bloqueio UV &gt;99%, é uma solução de alto desempenho para fachadas, pergolados e coberturas envidraçadas com alta exposição solar.
@@ -170,15 +170,15 @@ const ReflessoDArgento = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-8">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">80% de rejeição de infravermelho</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Um dos maiores índices da linha Performance — desempenho térmico de alto nível com resultado perceptível mesmo em fachadas de alta exposição.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Um dos maiores índices da linha Performance, desempenho térmico de alto nível com resultado perceptível mesmo em fachadas de alta exposição.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Aplicação em pergolados e coberturas</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Diferente de outras películas da linha Performance, a Reflesso d'Argento é indicada para teto de vidro e pergolados — versatilidade técnica que amplia as opções de projeto.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Diferente de outras películas da linha Performance, a Reflesso d'Argento é indicada para teto de vidro e pergolados, versatilidade técnica que amplia as opções de projeto.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Estética espelhada acessível</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Inspira-se na tecnologia Metallico Argento — entregando visual espelhado com custo-benefício superior para projetos com maior metragem ou orçamento otimizado.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Inspira-se na tecnologia Metallico Argento, entregando visual espelhado com custo-benefício superior para projetos com maior metragem ou orçamento otimizado.</p>
                 </motion.div>
               </div>
             </motion.div>

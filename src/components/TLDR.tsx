@@ -13,7 +13,7 @@ export interface TLDRSpec {
 interface TLDRProps {
   /** Pergunta canônica que essa página responde. Vira <h2>. */
   question: string;
-  /** Resposta em 1-3 frases — a primeira frase deve ser auto-suficiente. */
+  /** Resposta em 1-3 frases, a primeira frase deve ser auto-suficiente. */
   answer: string;
   /** Tabela de especificações chave-valor. 4-8 itens ideal. */
   specs?: TLDRSpec[];

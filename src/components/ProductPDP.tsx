@@ -1,15 +1,15 @@
 // src/components/ProductPDP.tsx
 //
-// Template UNIFICADO de página de produto — atende público residencial + empresarial em uma única URL.
+// Template UNIFICADO de página de produto, atende público residencial + empresarial em uma única URL.
 //
-// PR 1 — ESQUELETO. Estrutura, dados, SEO e roteamento corretos.
+// PR 1, ESQUELETO. Estrutura, dados, SEO e roteamento corretos.
 // Ajuste fino visual (parallax do hero, animações, imagens reais, micro-interações)
 // é responsabilidade das PRs 2-6 conforme o plano.
 //
 // Pega dados de:
 //   - pdpProducts.ts   (specs canônicos i18n + schema.org Product)
 //   - pdpFAQs.ts       (FAQs canônicas i18n + breadcrumb + schema FAQPage)
-//   - pdpDualPublic.ts (sobreposição dual-público — dores, mini-FAQ, agregados B2B)
+//   - pdpDualPublic.ts (sobreposição dual-público, dores, mini-FAQ, agregados B2B)
 //
 // Reutiliza componentes existentes: TLDR, ProductImagePlaceholder, LegalDisclaimer, PDPFaqSection.
 
@@ -88,12 +88,12 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
   return (
     <>
       <Helmet>
-        <title>{`${productName} — ${data.hero.title}`.slice(0, 60)}</title>
+        <title>{`${productName}, ${data.hero.title}`.slice(0, 60)}</title>
         <meta name="description" content={data.hero.subtitle} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={`${productName} — ${data.hero.title}`} />
+        <meta property="og:title" content={`${productName}, ${data.hero.title}`} />
         <meta property="og:description" content={data.hero.subtitle} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         {(() => {
@@ -114,7 +114,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
 
       <main>
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 1 — HERO (universal, não escolhe lado) */}
+        {/* SEÇÃO 1, HERO (universal, não escolhe lado) */}
         {/* ──────────────────────────────────────── */}
         <section
           ref={heroRef}
@@ -166,7 +166,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
                 {data.hero.subtitle}
               </motion.p>
 
-              {/* Quick stats — 4 specs universais */}
+              {/* Quick stats, 4 specs universais */}
               <motion.dl
                 variants={stagger}
                 className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
@@ -196,7 +196,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 2 — É PRA VOCÊ? (auto-segmentação) */}
+        {/* SEÇÃO 2, É PRA VOCÊ? (auto-segmentação) */}
         {/* ──────────────────────────────────────── */}
         <section className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-4">
@@ -283,7 +283,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* TLDR — bloco GEO/LLM-first, semântico */}
+        {/* TLDR, bloco GEO/LLM-first, semântico */}
         {/* ──────────────────────────────────────── */}
         <TLDR
           question={`O que é a película arquitetônica ${productName}?`}
@@ -293,7 +293,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         />
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 3 — O PRODUTO (universal, técnico) */}
+        {/* SEÇÃO 3, O PRODUTO (universal, técnico) */}
         {/* ──────────────────────────────────────── */}
         <section id="produto" className="py-20 md:py-24 bg-background scroll-mt-24">
           <div className="container mx-auto px-4">
@@ -357,7 +357,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 4 — ASA RESIDENCIAL (B2C) */}
+        {/* SEÇÃO 4, ASA RESIDENCIAL (B2C) */}
         {/* ──────────────────────────────────────── */}
         <section
           id="para-residencias"
@@ -438,7 +438,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 5 — ASA EMPRESARIAL (B2B) */}
+        {/* SEÇÃO 5, ASA EMPRESARIAL (B2B) */}
         {/* ──────────────────────────────────────── */}
         <section
           id="para-empresas"
@@ -541,7 +541,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="font-bold rounded-xl" disabled>
-                  {/* PR 5 — quando o spec sheet PDF estiver disponível */}
+                  {/* PR 5, quando o spec sheet PDF estiver disponível */}
                   <span>
                     <Download className="w-4 h-4" />
                     Spec sheet (em breve)
@@ -553,7 +553,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 6 — COMPARE COM A LINHA */}
+        {/* SEÇÃO 6, COMPARE COM A LINHA */}
         {/* ──────────────────────────────────────── */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
@@ -611,7 +611,7 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 7 — GARANTIA + PROCEDÊNCIA (marca) */}
+        {/* SEÇÃO 7, GARANTIA + PROCEDÊNCIA (marca) */}
         {/* ──────────────────────────────────────── */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
@@ -620,12 +620,12 @@ const ProductPDP = ({ data, canonicalUrl, categoryUrl, categoryLabel }: ProductP
         </section>
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 8 — FAQ universal (componente existente — i18n + schema) */}
+        {/* SEÇÃO 8, FAQ universal (componente existente, i18n + schema) */}
         {/* ──────────────────────────────────────── */}
         <PDPFaqSection slug={data.slug} />
 
         {/* ──────────────────────────────────────── */}
-        {/* SEÇÃO 9 — CTA FINAL DUAL */}
+        {/* SEÇÃO 9, CTA FINAL DUAL */}
         {/* ──────────────────────────────────────── */}
         <section className="py-20 md:py-24 bg-carbon-gradient overflow-hidden relative">
           <div className="absolute inset-0 bg-diagonal-texture" />

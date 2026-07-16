@@ -78,10 +78,10 @@ const Index = () => {
   return (
     <main>
       <Helmet>
-        <title>INSULFILM™ — Películas Originais para Vidros desde 1986</title>
+        <title>INSULFILM™, Películas Originais para Vidros desde 1986</title>
         <meta name="description" content="Marca registrada de películas para vidros desde 1986. Controle solar, segurança antivandalismo, PPF e arquitetônico com Centros Autorizados em SP." />
         <link rel="canonical" href="https://sitenovoinsulfilm.lovable.app/" />
-        <meta property="og:title" content="INSULFILM™ — Películas Originais para Vidros desde 1986" />
+        <meta property="og:title" content="INSULFILM™, Películas Originais para Vidros desde 1986" />
         <meta property="og:description" content="Marca registrada e pioneira no Brasil. Controle solar, segurança, PPF e arquitetônico com Centros Autorizados." />
         <meta property="og:url" content="https://sitenovoinsulfilm.lovable.app/" />
         <meta property="og:type" content="website" />

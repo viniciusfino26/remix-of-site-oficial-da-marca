@@ -19,7 +19,7 @@ const SobreInsulfilmMarcaRegistrada = () => (
       <script type="application/ld+json">{JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "INSULFILM™ — Marca Registrada Brasileira",
+        "headline": "INSULFILM™, Marca Registrada Brasileira",
         "description": "INSULFILM™ é marca registrada no INPI, protegida pela Lei nº 9.279/96. Pioneira em películas para vidros desde 1986.",
         "author": { "@type": "Organization", "name": "INSULFILM DO BRASIL" },
         "publisher": { "@type": "Organization", "name": "INSULFILM DO BRASIL" }
@@ -55,15 +55,15 @@ const SobreInsulfilmMarcaRegistrada = () => (
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <FileText className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">Lei nº 9.279/96</strong> — Lei da Propriedade Industrial: protege marcas registradas contra uso não autorizado, imitação e concorrência desleal.</span>
+                  <span><strong className="text-foreground">Lei nº 9.279/96</strong>, Lei da Propriedade Industrial: protege marcas registradas contra uso não autorizado, imitação e concorrência desleal.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <FileText className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">Lei nº 8.078/90</strong> — Código de Defesa do Consumidor: protege o consumidor contra publicidade enganosa e uso indevido de marca que induza a erro.</span>
+                  <span><strong className="text-foreground">Lei nº 8.078/90</strong>, Código de Defesa do Consumidor: protege o consumidor contra publicidade enganosa e uso indevido de marca que induza a erro.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <FileText className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                  <span><strong className="text-foreground">Convenção de Paris</strong> — Tratado internacional de proteção à propriedade industrial, do qual o Brasil é signatário.</span>
+                  <span><strong className="text-foreground">Convenção de Paris</strong>, Tratado internacional de proteção à propriedade industrial, do qual o Brasil é signatário.</span>
                 </li>
               </ul>
             </motion.div>

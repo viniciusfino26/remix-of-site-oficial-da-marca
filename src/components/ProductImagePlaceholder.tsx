@@ -1,5 +1,5 @@
 // src/components/ProductImagePlaceholder.tsx
-// Placeholder padronizado de imagem de produto — mesmo visual usado na PDP Matrix.
+// Placeholder padronizado de imagem de produto, mesmo visual usado na PDP Matrix.
 // Quando a imagem real chegar, basta passar a prop `src` e o placeholder some.
 
 import { motion } from 'framer-motion';

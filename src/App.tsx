@@ -79,7 +79,7 @@ import ArqHubSolar from "./pages/ArqHubSolar";
 import ArqHubSeguranca from "./pages/ArqHubSeguranca";
 import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
-/* ── Hubs Segmentados — Residencial + Comercial ── */
+/* ── Hubs Segmentados, Residencial + Comercial ── */
 import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
 import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
 import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
@@ -91,10 +91,10 @@ import ArqComercialHubSeguranca from "./pages/ArqComercialHubSeguranca";
 import ArqComercialHubDecorativo from "./pages/ArqComercialHubDecorativo";
 import ArqComercialHubSPF from "./pages/ArqComercialHubSPF";
 
-/* ── PDP Automotivo Solar — Polariz (novo) ── */
+/* ── PDP Automotivo Solar, Polariz (novo) ── */
 import AutomotivoSolarPolariz from "./pages/AutomotivoSolarPolariz";
 
-/* ── PDPs Arquitetônico Solar (legado — re-exports) ── */
+/* ── PDPs Arquitetônico Solar (legado, re-exports) ── */
 import ArqClear70 from "./pages/ArqClear70";
 import ArqOrizzonte from "./pages/ArqOrizzonte";
 import ArqUV90 from "./pages/ArqUV90";
@@ -105,7 +105,7 @@ import ArqMetallico from "./pages/ArqMetallico";
 import ArqReflesso from "./pages/ArqReflesso";
 import ArqSpecchiato from "./pages/ArqSpecchiato";
 
-/* ── PDPs Arquitetônico Solar — Residencial ── */
+/* ── PDPs Arquitetônico Solar, Residencial ── */
 import ArqResClear70 from "./pages/arq/residencial/solar/Clear70";
 import ArqResOrizzonte70 from "./pages/arq/residencial/solar/Orizzonte70";
 import ArqResUV90 from "./pages/arq/residencial/solar/Ultravioletti90";
@@ -116,7 +116,7 @@ import ArqResMetallico from "./pages/arq/residencial/solar/MetallicoArgento";
 import ArqResReflesso from "./pages/arq/residencial/solar/ReflessoDArgento";
 import ArqResSpecchiato from "./pages/arq/residencial/solar/SpecchiatoBronzo";
 
-/* ── PDPs Arquitetônico Solar — Comercial ── */
+/* ── PDPs Arquitetônico Solar, Comercial ── */
 import ArqComClear70 from "./pages/arq/comercial/solar/Clear70";
 import ArqComOrizzonte70 from "./pages/arq/comercial/solar/Orizzonte70";
 import ArqComUV90 from "./pages/arq/comercial/solar/Ultravioletti90";
@@ -144,11 +144,11 @@ import PhantomMatteUnified from "./pages/products/PhantomMatte";
 import ArqSegurancaISSF4000 from "./pages/ArqSegurancaISSF4000";
 import ArqSegurancaISSF7000 from "./pages/ArqSegurancaISSF7000";
 
-/* ── PDPs Arquitetônico Segurança — Residencial ── */
+/* ── PDPs Arquitetônico Segurança, Residencial ── */
 import ArqResISSF4000 from "./pages/arq/residencial/seguranca/ISSF4000";
 import ArqResISSF7000 from "./pages/arq/residencial/seguranca/ISSF7000";
 
-/* ── PDPs Arquitetônico Segurança — Comercial ── */
+/* ── PDPs Arquitetônico Segurança, Comercial ── */
 import ArqComISSF4000 from "./pages/arq/comercial/seguranca/ISSF4000";
 import ArqComISSF7000 from "./pages/arq/comercial/seguranca/ISSF7000";
 
@@ -157,17 +157,17 @@ import ArqDecorativoJateado from "./pages/ArqDecorativoJateado";
 import ArqDecorativoWhiteout from "./pages/ArqDecorativoWhiteout";
 import ArqDecorativoBlackout from "./pages/ArqDecorativoBlackout";
 
-/* ── PDPs Arquitetônico Decorativo — Residencial ── */
+/* ── PDPs Arquitetônico Decorativo, Residencial ── */
 import ArqResJateado from "./pages/arq/residencial/decorativo/Jateado";
 import ArqResWhiteout from "./pages/arq/residencial/decorativo/Whiteout";
 import ArqResBlackout from "./pages/arq/residencial/decorativo/Blackout";
 
-/* ── PDPs Arquitetônico Decorativo — Comercial ── */
+/* ── PDPs Arquitetônico Decorativo, Comercial ── */
 import ArqComJateado from "./pages/arq/comercial/decorativo/Jateado";
 import ArqComWhiteout from "./pages/arq/comercial/decorativo/Whiteout";
 import ArqComBlackout from "./pages/arq/comercial/decorativo/Blackout";
 
-/* ── PDPs Arquitetônico SPF — Residencial + Comercial ── */
+/* ── PDPs Arquitetônico SPF, Residencial + Comercial ── */
 import ArqResPhantom from "./pages/arq/residencial/spf/Phantom";
 import ArqComPhantom from "./pages/arq/comercial/spf/Phantom";
 
@@ -195,20 +195,20 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* ─── PDPs Unificadas (residencial + empresarial em uma URL) ─── */}
-          {/* PR 1 — Clear70 piloto */}
+          {/* PR 1, Clear70 piloto */}
           <Route path="/pt/arquitetonico/solar/clear70" element={<Clear70Unified />} />
-          {/* PR-zero — Orizzonte70 (Premium tier, exemplar #2) */}
+          {/* PR-zero, Orizzonte70 (Premium tier, exemplar #2) */}
           <Route path="/pt/arquitetonico/solar/orizzonte70" element={<Orizzonte70Unified />} />
-          {/* Batch 1 — 4 produtos Premium */}
+          {/* Batch 1, 4 produtos Premium */}
           <Route path="/pt/arquitetonico/solar/naturale" element={<NaturaleUnified />} />
           <Route path="/pt/arquitetonico/solar/ultravioletti90" element={<Ultravioletti90Unified />} />
           <Route path="/pt/arquitetonico/solar/metallico-argento" element={<MetallicoArgentoUnified />} />
           <Route path="/pt/arquitetonico/solar/specchiato-bronzo" element={<SpecchiatoBronzoUnified />} />
-          {/* Batch 2 — 3 produtos Performance */}
+          {/* Batch 2, 3 produtos Performance */}
           <Route path="/pt/arquitetonico/solar/petrolio" element={<PetrolioUnified />} />
           <Route path="/pt/arquitetonico/solar/grigio-invertito" element={<GrigioInvertitoUnified />} />
           <Route path="/pt/arquitetonico/solar/reflesso-d-argento" element={<ReflessoDArgentoUnified />} />
-          {/* Batch 3 — 2 produtos SPF (Surface Protection Film) — categoria nova */}
+          {/* Batch 3, 2 produtos SPF (Surface Protection Film), categoria nova */}
           <Route path="/pt/arquitetonico/spf/phantom-gloss" element={<PhantomGlossUnified />} />
           <Route path="/pt/arquitetonico/spf/phantom-matte" element={<PhantomMatteUnified />} />
 
@@ -226,16 +226,16 @@ const App = () => (
           <Route path="/franquias" element={<Franquias />} />
           <Route path="/carreiras" element={<Carreiras />} />
 
-          {/* Divisão Automotiva — Categoria */}
+          {/* Divisão Automotiva, Categoria */}
           <Route path="/automotivo" element={<Automotivo />} />
           <Route path="/frota" element={<Frota />} />
           <Route path="/ppf" element={<Navigate to="/automotivo/ppf" replace />} />
 
-          {/* Divisão Automotiva — Hubs de Silo */}
+          {/* Divisão Automotiva, Hubs de Silo */}
           <Route path="/automotivo/solar" element={<AutomotivoHubSolar />} />
           <Route path="/automotivo/seguranca" element={<AutomotivoHubSeguranca />} />
 
-          {/* Divisão Automotiva — PDPs Solar */}
+          {/* Divisão Automotiva, PDPs Solar */}
           <Route path="/automotivo/solar/raystart" element={<AutomotivoRayStart />} />
           <Route path="/automotivo/solar/raypro" element={<AutomotivoRayPro />} />
           <Route path="/automotivo/solar/carbon" element={<AutomotivoCarbon />} />
@@ -247,47 +247,47 @@ const App = () => (
           <Route path="/automotivo/solar/matrix" element={<AutomotivoMatrix />} />
           <Route path="/automotivo/solar/polariz-ultra" element={<AutomotivoPolariz />} />
 
-          {/* Divisão Automotiva — PDPs Segurança */}
+          {/* Divisão Automotiva, PDPs Segurança */}
           <Route path="/automotivo/seguranca/skinsafe8k" element={<AutomotivoSkinSafe />} />
           <Route path="/automotivo/seguranca/antivandalismo13k" element={<AutomotivoAntivandalismo />} />
           <Route path="/automotivo/seguranca/skudoguard" element={<AutomotivoSkudoGuard />} />
           <Route path="/automotivo/seguranca/skudoultra" element={<AutomotivoSkudoUltra />} />
 
-          {/* Divisão Automotiva — Hub + PDP PPF */}
+          {/* Divisão Automotiva, Hub + PDP PPF */}
           <Route path="/automotivo/ppf" element={<AutomotivoHubPPF />} />
           <Route path="/automotivo/ppf/phantom-gloss" element={<AutomotivoPhantomGloss />} />
 
-          {/* Divisão Arquitetônica — Categorias */}
+          {/* Divisão Arquitetônica, Categorias */}
           <Route path="/residencial" element={<Residencial />} />
           <Route path="/empresarial" element={<Empresarial />} />
           <Route path="/phantom-arquitetonico" element={<PhantomArquitetonico />} />
 
-          {/* Divisão Arquitetônica — Hub Principal */}
+          {/* Divisão Arquitetônica, Hub Principal */}
           <Route path="/arquitetonico" element={<Arquitetonico />} />
 
-          {/* Divisão Arquitetônica — Hubs Segmentados */}
+          {/* Divisão Arquitetônica, Hubs Segmentados */}
           <Route path="/arquitetonico/residencial" element={<ArquitetonicoResidencial />} />
           <Route path="/arquitetonico/comercial" element={<ArquitetonicoComercial />} />
 
-          {/* Divisão Arquitetônica — Hubs de Silo (legado, mantidos temporariamente) */}
+          {/* Divisão Arquitetônica, Hubs de Silo (legado, mantidos temporariamente) */}
           <Route path="/arquitetonico/solar" element={<Navigate to="/arquitetonico/residencial/solar" replace />} />
           <Route path="/arquitetonico/seguranca" element={<ArqHubSeguranca />} />
           <Route path="/arquitetonico/decorativo" element={<ArqHubDecorativo />} />
 
-          {/* Divisão Arquitetônica — Residencial Hubs de Categoria */}
+          {/* Divisão Arquitetônica, Residencial Hubs de Categoria */}
           <Route path="/arquitetonico/residencial/solar" element={<ArqResidencialHubSolar />} />
           <Route path="/arquitetonico/residencial/seguranca" element={<ArqResidencialHubSeguranca />} />
           <Route path="/arquitetonico/residencial/decorativo" element={<ArqResidencialHubDecorativo />} />
           <Route path="/arquitetonico/residencial/spf" element={<ArqResidencialHubSPF />} />
 
-          {/* Divisão Arquitetônica — Comercial Hubs de Categoria */}
+          {/* Divisão Arquitetônica, Comercial Hubs de Categoria */}
           <Route path="/arquitetonico/comercial/solar" element={<ArqComercialHubSolar />} />
           <Route path="/arquitetonico/comercial/seguranca" element={<ArqComercialHubSeguranca />} />
           <Route path="/arquitetonico/comercial/decorativo" element={<ArqComercialHubDecorativo />} />
           <Route path="/arquitetonico/comercial/spf" element={<ArqComercialHubSPF />} />
 
-          {/* Divisão Arquitetônica — Residencial Solar PDPs */}
-          {/* Clear70 unificada (PR 1) — antiga rota residencial agora redireciona */}
+          {/* Divisão Arquitetônica, Residencial Solar PDPs */}
+          {/* Clear70 unificada (PR 1), antiga rota residencial agora redireciona */}
           <Route path="/arquitetonico/residencial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/residencial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/residencial/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
@@ -298,9 +298,9 @@ const App = () => (
           <Route path="/arquitetonico/residencial/solar/reflesso-d-argento" element={<Navigate to="/pt/arquitetonico/solar/reflesso-d-argento" replace />} />
           <Route path="/arquitetonico/residencial/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
-          {/* Divisão Arquitetônica — Comercial Solar */}
+          {/* Divisão Arquitetônica, Comercial Solar */}
           <Route path="/arquitetonico/comercial/solar" element={<ArqHubSolar />} />
-          {/* Clear70 unificada (PR 1) — antiga rota comercial agora redireciona */}
+          {/* Clear70 unificada (PR 1), antiga rota comercial agora redireciona */}
           <Route path="/arquitetonico/comercial/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/comercial/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/comercial/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
@@ -311,7 +311,7 @@ const App = () => (
           <Route path="/arquitetonico/comercial/solar/reflesso-d-argento" element={<Navigate to="/pt/arquitetonico/solar/reflesso-d-argento" replace />} />
           <Route path="/arquitetonico/comercial/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
-          {/* Redirects legado — PDPs Solar antigas → Residencial */}
+          {/* Redirects legado, PDPs Solar antigas → Residencial */}
           <Route path="/arquitetonico/solar/clear70" element={<Navigate to="/pt/arquitetonico/solar/clear70" replace />} />
           <Route path="/arquitetonico/solar/orizzonte70" element={<Navigate to="/pt/arquitetonico/solar/orizzonte70" replace />} />
           <Route path="/arquitetonico/solar/ultravioletti90" element={<Navigate to="/pt/arquitetonico/solar/ultravioletti90" replace />} />
@@ -322,38 +322,38 @@ const App = () => (
           <Route path="/arquitetonico/solar/reflesso-d-argento" element={<Navigate to="/pt/arquitetonico/solar/reflesso-d-argento" replace />} />
           <Route path="/arquitetonico/solar/specchiato-bronzo" element={<Navigate to="/pt/arquitetonico/solar/specchiato-bronzo" replace />} />
 
-          {/* Divisão Arquitetônica — PDPs Segurança (legado) */}
+          {/* Divisão Arquitetônica, PDPs Segurança (legado) */}
           <Route path="/arquitetonico/seguranca/issf4000" element={<ArqSegurancaISSF4000 />} />
           <Route path="/arquitetonico/seguranca/issf7000" element={<ArqSegurancaISSF7000 />} />
 
-          {/* Divisão Arquitetônica — PDPs Segurança Residencial */}
+          {/* Divisão Arquitetônica, PDPs Segurança Residencial */}
           <Route path="/arquitetonico/residencial/seguranca/issf4000" element={<ArqResISSF4000 />} />
           <Route path="/arquitetonico/residencial/seguranca/issf7000" element={<ArqResISSF7000 />} />
 
-          {/* Divisão Arquitetônica — PDPs Segurança Comercial */}
+          {/* Divisão Arquitetônica, PDPs Segurança Comercial */}
           <Route path="/arquitetonico/comercial/seguranca/issf4000" element={<ArqComISSF4000 />} />
           <Route path="/arquitetonico/comercial/seguranca/issf7000" element={<ArqComISSF7000 />} />
 
-          {/* Divisão Arquitetônica — PDPs Decorativo (legado) */}
+          {/* Divisão Arquitetônica, PDPs Decorativo (legado) */}
           <Route path="/arquitetonico/decorativo/jateado" element={<ArqDecorativoJateado />} />
           <Route path="/arquitetonico/decorativo/whiteout" element={<ArqDecorativoWhiteout />} />
           <Route path="/arquitetonico/decorativo/blackout" element={<ArqDecorativoBlackout />} />
 
-          {/* Divisão Arquitetônica — PDPs Decorativo Residencial */}
+          {/* Divisão Arquitetônica, PDPs Decorativo Residencial */}
           <Route path="/arquitetonico/residencial/decorativo/jateado" element={<ArqResJateado />} />
           <Route path="/arquitetonico/residencial/decorativo/whiteout" element={<ArqResWhiteout />} />
           <Route path="/arquitetonico/residencial/decorativo/blackout" element={<ArqResBlackout />} />
 
-          {/* Divisão Arquitetônica — PDPs Decorativo Comercial */}
+          {/* Divisão Arquitetônica, PDPs Decorativo Comercial */}
           <Route path="/arquitetonico/comercial/decorativo/jateado" element={<ArqComJateado />} />
           <Route path="/arquitetonico/comercial/decorativo/whiteout" element={<ArqComWhiteout />} />
           <Route path="/arquitetonico/comercial/decorativo/blackout" element={<ArqComBlackout />} />
 
-          {/* Divisão Arquitetônica — PDPs SPF Residencial + Comercial */}
+          {/* Divisão Arquitetônica, PDPs SPF Residencial + Comercial */}
           <Route path="/arquitetonico/residencial/spf/phantom" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
           <Route path="/arquitetonico/comercial/spf/phantom" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
 
-          {/* Divisão Arquitetônica — Phantom SPF (legado) */}
+          {/* Divisão Arquitetônica, Phantom SPF (legado) */}
           <Route path="/arquitetonico/phantom-gloss" element={<Navigate to="/pt/arquitetonico/spf/phantom-gloss" replace />} />
 
           {/* Atendimento */}
@@ -365,7 +365,7 @@ const App = () => (
           <Route path="/lojas" element={<Lojas />} />
           <Route path="/privacidade" element={<Privacidade />} />
 
-          {/* Sobre — Blindagem Jurídica */}
+          {/* Sobre, Blindagem Jurídica */}
           <Route path="/sobre/o-que-e-insulfilm" element={<SobreOQueEInsulfilm />} />
           <Route path="/sobre/insulfilm-marca-registrada" element={<SobreInsulfilmMarcaRegistrada />} />
           <Route path="/legal/marca-registrada" element={<LegalMarcaRegistrada />} />

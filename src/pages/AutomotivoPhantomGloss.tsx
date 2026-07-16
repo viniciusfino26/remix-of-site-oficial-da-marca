@@ -52,21 +52,21 @@ const compositionLayers = [
 ];
 
 const physicalProps = [
-  { prop: 'Espessura total — livre de camadas protetivas', value: '7 mil / ≈175 microns' },
+  { prop: 'Espessura total, livre de camadas protetivas', value: '7 mil / ≈175 microns' },
   { prop: 'Força do adesivo contra arrancamento', value: '≥15N / 25mm' },
   { prop: 'Força para rompimento da película', value: '≈355 lbs/in' },
   { prop: 'Intervalo de resistência à temperatura', value: '-35°C ~ 116°C' },
 ];
 
-const WHATSAPP = `https://wa.me/5511976136911?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre o INSULFILM™ Phantom — Película de Proteção de Pintura (PPF).')}`;
+const WHATSAPP = `https://wa.me/5511976136911?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre o INSULFILM™ Phantom, Película de Proteção de Pintura (PPF).')}`;
 
 const AutomotivoPhantomGloss = () => (
   <>
     <Helmet>
-      <title>{PRODUCT_NAME} Transparente Gloss — PPF Proteção de Pintura Automotiva | INSULFILM™</title>
+      <title>{PRODUCT_NAME} Transparente Gloss, PPF Proteção de Pintura Automotiva | INSULFILM™</title>
       <meta name="description" content="INSULFILM™ Phantom: película PPF transparente gloss com 5 camadas de proteção, 175 microns de espessura e garantia de 5 anos. Proteção invisível contra riscos, pedras e intempéries." />
       <link rel="canonical" href={CANONICAL} />
-      <meta property="og:title" content={`${PRODUCT_NAME} — PPF Automotivo`} />
+      <meta property="og:title" content={`${PRODUCT_NAME}, PPF Automotivo`} />
       <meta property="og:description" content="Proteção invisível de 7mil contra riscos, pedras e intempéries." />
       <meta property="og:url" content={CANONICAL} />
       <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
@@ -117,7 +117,7 @@ const AutomotivoPhantomGloss = () => (
               INSULFILM™ Phantom <span className="text-accent">Transparente Gloss</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground font-light max-w-lg mx-auto">
-              Filme PPF de última geração com 5 camadas de proteção — espessura 7 mil
+              Filme PPF de última geração com 5 camadas de proteção, espessura 7 mil
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
           </motion.div>
@@ -208,7 +208,7 @@ const AutomotivoPhantomGloss = () => (
               <Card className="glass-card rounded-2xl border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base">
-                    Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos — com confiança — a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
+                    Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos, com confiança, a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
                   </p>
                   <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base mt-4">
                     A cobertura compreende: <span className="text-primary-foreground font-semibold">rachaduras, formação de bolhas ou amarelamento</span> causados apenas por defeitos na fabricação.

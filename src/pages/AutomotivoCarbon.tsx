@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: 'Qual a diferença entre a Carbon e uma película pigmentada?',
-    answer: 'A Carbon é construção em carbono verdadeiro, não metalizada, com filtro dedicado de IR. Películas apenas pigmentadas praticamente não rejeitam infravermelho e sofrem virada de cor típica ao longo do tempo — a Carbon preserva o tom por mais tempo.',
+    answer: 'A Carbon é construção em carbono verdadeiro, não metalizada, com filtro dedicado de IR. Películas apenas pigmentadas praticamente não rejeitam infravermelho e sofrem virada de cor típica ao longo do tempo, a Carbon preserva o tom por mais tempo.',
   },
   {
     question: 'Qual é a garantia oficial da Carbon?',
@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: 'A Carbon interfere em GPS, celular ou tag de pedágio?',
-    answer: 'Não. A construção é em carbono verdadeiro, sem metalização — celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
+    answer: 'Não. A construção é em carbono verdadeiro, sem metalização, celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
   },
   {
     question: 'Qual o nível de bloqueio UV e nitidez óptica?',
@@ -60,7 +60,7 @@ const problems = [
   {
     icon: Flame,
     title: 'Calor que a linha pigmentada não bloqueia',
-    text: 'Películas apenas tingidas praticamente não rejeitam infravermelho. A Carbon incorpora filtro dedicado de IR que entrega mais de 50% de rejeição na variante mais escura — o ponto onde a proteção térmica passa a ser sentida no corpo.',
+    text: 'Películas apenas tingidas praticamente não rejeitam infravermelho. A Carbon incorpora filtro dedicado de IR que entrega mais de 50% de rejeição na variante mais escura, o ponto onde a proteção térmica passa a ser sentida no corpo.',
   },
   {
     icon: Sun,
@@ -70,7 +70,7 @@ const problems = [
   {
     icon: CloudFog,
     title: 'Virada de cor típica das películas tingidas',
-    text: 'A tecnologia de carbono verdadeiro preserva o tom por mais tempo, sem a virada de cor progressiva das películas pigmentadas — com acabamento clássico não refletivo estável ao longo da garantia.',
+    text: 'A tecnologia de carbono verdadeiro preserva o tom por mais tempo, sem a virada de cor progressiva das películas pigmentadas, com acabamento clássico não refletivo estável ao longo da garantia.',
   },
 ];
 
@@ -85,7 +85,7 @@ const benefits = [
   },
   {
     title: 'Nitidez óptica High Definition',
-    text: 'Clareza de visão superior de dentro para fora, sem efeito neblina, em qualquer condição de luz — inclusive à noite.',
+    text: 'Clareza de visão superior de dentro para fora, sem efeito neblina, em qualquer condição de luz, inclusive à noite.',
   },
   {
     title: 'Não interfere em eletrônicos',
@@ -119,11 +119,11 @@ const AutomotivoCarbon = () => {
     '@type': 'Product',
     name: 'INSULFILM™ Carbon',
     brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Carbon — carbono verdadeiro da Solar Performance Films. Filtro dedicado de infravermelho com até >50% de rejeição IR, 99% de bloqueio UV, três tonalidades (35, 20 e 05) e 4 anos de garantia.',
+    description: 'INSULFILM™ Carbon, carbono verdadeiro da Solar Performance Films. Filtro dedicado de infravermelho com até >50% de rejeição IR, 99% de bloqueio UV, três tonalidades (35, 20 e 05) e 4 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/carbon',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Carbon Film — Carbono Verdadeiro' },
-      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Carbon Film, Carbono Verdadeiro' },
+      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta, High Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '4 anos' },
     ],
@@ -174,7 +174,7 @@ const AutomotivoCarbon = () => {
             <motion.div className="text-center mb-14 max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ O que esta linha resolve</motion.p>
               <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-foreground font-light italic leading-relaxed">
-                A diferença entre uma pigmentada e a Carbon é o filtro dedicado de infravermelho — é onde a proteção térmica deixa de ser promessa e passa a ser sentida no corpo.
+                A diferença entre uma pigmentada e a Carbon é o filtro dedicado de infravermelho, é onde a proteção térmica deixa de ser promessa e passa a ser sentida no corpo.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -210,7 +210,7 @@ const AutomotivoCarbon = () => {
                   A INSULFILM™ Carbon é o ponto em que a linha solar deixa de ser apenas pigmento e passa a rejeitar calor de verdade. Construção em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho que entrega até mais de 50% de IR rejeitado.
                 </motion.p>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">
-                  Três tonalidades (Carbon 35, 20 e 05), 99% de bloqueio UV, nitidez óptica High Definition e 4 anos de garantia oficial com certificado individual — sem interferir em GPS, celular ou tag de pedágio.
+                  Três tonalidades (Carbon 35, 20 e 05), 99% de bloqueio UV, nitidez óptica High Definition e 4 anos de garantia oficial com certificado individual, sem interferir em GPS, celular ou tag de pedágio.
                 </motion.p>
               </motion.div>
 
@@ -247,7 +247,7 @@ const AutomotivoCarbon = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Carbon — Película de carbono verdadeiro" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Carbon, Película de carbono verdadeiro" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -403,7 +403,7 @@ const AutomotivoCarbon = () => {
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Carbono de verdade, com rejeição térmica que se sente.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                A INSULFILM™ Carbon marca o salto de tecnologia dentro da Solar Performance Films — com 4 anos de garantia e a procedência da marca original.
+                A INSULFILM™ Carbon marca o salto de tecnologia dentro da Solar Performance Films, com 4 anos de garantia e a procedência da marca original.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">

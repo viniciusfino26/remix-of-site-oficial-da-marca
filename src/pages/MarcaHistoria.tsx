@@ -32,7 +32,7 @@ const eras: { era: string; label: string; events: TimelineEvent[] }[] = [
     label: 'Expansão e regulamentação do mercado',
     events: [
       { year: '2000', title: 'Películas automotivas antivandalismo', description: 'Primeira a oferecer películas automotivas de proteção antivandalismo e segurança no Brasil, INSULFILM™ Blindado.' },
-      { year: '2001', title: 'Primeira loja oficial', description: 'Primeira marca de películas a abrir uma loja oficial para atendimento direto ao consumidor final, Loja Oficial INSULFILM™ — Unidade Água Branca, São Paulo/SP.' },
+      { year: '2001', title: 'Primeira loja oficial', description: 'Primeira marca de películas a abrir uma loja oficial para atendimento direto ao consumidor final, Loja Oficial INSULFILM™, Unidade Água Branca, São Paulo/SP.' },
       { year: '2001', title: 'Inovação em aplicação antivandalismo', description: 'Primeira a sacar os vidros do carro para aplicação de películas de proteção antivandalismo.' },
       { year: '2008', title: 'Película fotocromática', description: 'Primeira a oferecer película automotiva com efeito fotocromático e tecnologia superior para bloquear o calor, não só filtrar; INSULFILM™ Elite.' },
     ],
@@ -42,7 +42,7 @@ const eras: { era: string; label: string; events: TimelineEvent[] }[] = [
     label: 'Inovação e tecnologia de alto desempenho',
     events: [
       { year: '2011', title: 'Projeto balístico inédito', description: 'Primeiro projeto arquitetônico do Brasil com películas para vidros customizadas para resistência balística.' },
-      { year: '2012', title: 'Primeira franquia do Brasil', description: 'Venda da primeira franquia de serviços de película para vidros no Brasil, Loja Oficial INSULFILM™ — Unidade Ribeirão Preto.' },
+      { year: '2012', title: 'Primeira franquia do Brasil', description: 'Venda da primeira franquia de serviços de película para vidros no Brasil, Loja Oficial INSULFILM™, Unidade Ribeirão Preto.' },
       { year: '2018', title: 'Tecnologia de alta definição', description: 'Primeira a oferecer películas com tecnologia de alta definição, INSULFILM™ Elite.' },
       { year: '2019', title: 'PPF premium', description: 'Lançamento da película premium de proteção à pintura (PPF), INSULFILM™ Phantom8mil.' },
     ],
@@ -79,10 +79,10 @@ const MarcaHistoria = () => {
   return (
     <>
       <Helmet>
-        <title>Nossa História — INSULFILM™ | Pioneira em Películas desde 1986</title>
+        <title>Nossa História, INSULFILM™ | Pioneira em Películas desde 1986</title>
         <meta name="description" content="Conheça a trajetória da INSULFILM™, a primeira e mais reconhecida marca de películas do Brasil. Quase 40 anos de inovação em proteção solar, segurança e conforto." />
         <link rel="canonical" href="https://insulfilm.com.br/marca/historia" />
-        <meta property="og:title" content="Nossa História — INSULFILM™" />
+        <meta property="og:title" content="Nossa História, INSULFILM™" />
         <meta property="og:description" content="Pioneira em películas para vidros desde 1986. Conheça nossa linha do tempo de inovação." />
         <meta property="og:url" content="https://insulfilm.com.br/marca/historia" />
       </Helmet>
@@ -305,13 +305,13 @@ const MarcaHistoria = () => {
 
         {/* SEO: All content rendered in DOM for crawlers (visually hidden) */}
         <div className="sr-only" aria-hidden="false">
-          <h2>Linha do Tempo Completa — INSULFILM™</h2>
+          <h2>Linha do Tempo Completa, INSULFILM™</h2>
           {eras.map((era) => (
             <div key={era.era}>
-              <h3>{era.era} — {era.label}</h3>
+              <h3>{era.era}, {era.label}</h3>
               {era.events.map((event, idx) => (
                 <article key={idx}>
-                  <h4>{event.year} — {event.title}</h4>
+                  <h4>{event.year}, {event.title}</h4>
                   <p>{event.description}</p>
                 </article>
               ))}

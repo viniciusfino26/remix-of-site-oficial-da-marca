@@ -50,10 +50,10 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Ultravioletti90 | Película Anti-UV Invisível | &gt;99% Bloqueio UV</title>
-        <meta name="description" content="INSULFILM™ Ultravioletti90 — película arquitetônica incolor com bloqueio de >99% de raios UV. Proteção máxima invisível para vidros, sem alterar estética ou luminosidade." />
+        <meta name="description" content="INSULFILM™ Ultravioletti90, película arquitetônica incolor com bloqueio de >99% de raios UV. Proteção máxima invisível para vidros, sem alterar estética ou luminosidade." />
         <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Ultravioletti90 | Película Anti-UV Invisível | >99% Bloqueio UV" />
-        <meta property="og:description" content="INSULFILM™ Ultravioletti90 — película arquitetônica incolor com bloqueio de >99% de raios UV." />
+        <meta property="og:description" content="INSULFILM™ Ultravioletti90, película arquitetônica incolor com bloqueio de >99% de raios UV." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -70,10 +70,10 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium, Arquitetônica</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                {copy?.h1 || `INSULFILM™ Ultravioletti90 — proteção UV máxima com transparência absoluta`}
+                {copy?.h1 || `INSULFILM™ Ultravioletti90, proteção UV máxima com transparência absoluta`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Proteção UV de 99%. O vidro parece sem película. Porque a proteção não precisa aparecer.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
@@ -146,8 +146,8 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
               <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-8">Principais Benefícios</motion.h2>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Bloqueio >99% de raios UV — proteção máxima para pele, móveis e eletrônicos',
-                  '88% de transmissão de luz visível — a mais alta da linha arquitetônica',
+                  'Bloqueio >99% de raios UV, proteção máxima para pele, móveis e eletrônicos',
+                  '88% de transmissão de luz visível, a mais alta da linha arquitetônica',
                   'Aparência completamente incolor e imperceptível após aplicação',
                   'Proteção contínua: desempenho mantido mesmo com total transparência',
                   'Visual limpo: não interfere na estética de nenhum projeto',
@@ -182,7 +182,7 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
                   <p className="text-muted-foreground font-light leading-relaxed">Para quem não quer abrir mão da luminosidade total mas precisa de proteção UV real para a família e o mobiliário.</p>
                 </motion.div>
               </div>
-              <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mt-8 p-4 bg-card/50 rounded-xl border border-border/30"><strong>Nota técnica:</strong> A Ultravioletti90 não tem foco em controle térmico — sua rejeição de IR é de 11%. Para ambientes que precisam simultaneamente de proteção UV e controle térmico, a <Link to="/arquitetonico/solar/orizzonte70" className="text-accent hover:underline">Orizzonte70</Link> ou o <Link to="/arquitetonico/solar/naturale" className="text-accent hover:underline">Naturale</Link> são as indicações corretas.</motion.p>
+              <motion.p variants={fadeInUp} className="text-sm text-muted-foreground mt-8 p-4 bg-card/50 rounded-xl border border-border/30"><strong>Nota técnica:</strong> A Ultravioletti90 não tem foco em controle térmico, sua rejeição de IR é de 11%. Para ambientes que precisam simultaneamente de proteção UV e controle térmico, a <Link to="/arquitetonico/solar/orizzonte70" className="text-accent hover:underline">Orizzonte70</Link> ou o <Link to="/arquitetonico/solar/naturale" className="text-accent hover:underline">Naturale</Link> são as indicações corretas.</motion.p>
             </motion.div>
           </div>
         </section>
@@ -195,15 +195,15 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-10">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Bloqueio UV avançado (&gt;99% UVA e UVB)</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Filtragem de espectro completo — sem lacunas na cobertura de proteção UV.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Filtragem de espectro completo, sem lacunas na cobertura de proteção UV.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">88% de transmissão de luz visível</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">A mais alta da linha arquitetônica INSULFILM™ — ideal para projetos onde a luminosidade é inegociável.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">A mais alta da linha arquitetônica INSULFILM™, ideal para projetos onde a luminosidade é inegociável.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Aparência incolor e imperceptível</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">A película não é percebida visualmente após a aplicação — o projeto mantém exatamente a aparência original.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">A película não é percebida visualmente após a aplicação, o projeto mantém exatamente a aparência original.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Alta durabilidade e estabilidade técnica</h3>
@@ -227,7 +227,7 @@ const Ultravioletti90 = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Solicite Atendimento Nacional</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Ultravioletti90 é a solução definitiva para quem precisa de proteção UV máxima sem nenhum comprometimento visual — com a procedência da marca registrada referência no segmento.</motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Ultravioletti90 é a solução definitiva para quem precisa de proteção UV máxima sem nenhum comprometimento visual, com a procedência da marca registrada referência no segmento.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><ArrowRight className="w-5 h-5" />Solicitar atendimento nacional</Link>

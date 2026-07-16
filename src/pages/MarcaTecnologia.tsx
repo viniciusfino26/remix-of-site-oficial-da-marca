@@ -67,7 +67,7 @@ const MarcaTecnologia = () => {
       <main className="min-h-screen bg-background">
         <PageHero
           title="Tecnologia INSULFILM™"
-          subtitle="Engenharia aplicada ao vidro — base técnica que sustenta a reputação da marca."
+          subtitle="Engenharia aplicada ao vidro, base técnica que sustenta a reputação da marca."
           badge={{ icon: <Cpu className="w-4 h-4" />, text: 'Plataforma Tecnológica' }}
         />
 
@@ -81,7 +81,7 @@ const MarcaTecnologia = () => {
               transition={{ duration: 0.6 }}
               className="text-foreground/80 text-lg md:text-xl leading-relaxed"
             >
-              A INSULFILM™ organiza suas soluções a partir de tecnologias de engenharia de materiais desenvolvidas para atuar sobre calor, luz, radiação e comportamento do vidro. O desempenho não depende apenas do material — ele resulta da combinação entre tecnologia, escolha adequada da solução, aplicação qualificada e controle técnico.
+              A INSULFILM™ organiza suas soluções a partir de tecnologias de engenharia de materiais desenvolvidas para atuar sobre calor, luz, radiação e comportamento do vidro. O desempenho não depende apenas do material, ele resulta da combinação entre tecnologia, escolha adequada da solução, aplicação qualificada e controle técnico.
             </motion.p>
           </div>
         </section>
@@ -195,7 +195,7 @@ const MarcaTecnologia = () => {
                 </div>
               </div>
               <p className="text-foreground/80 leading-relaxed text-lg">
-                A INSULFILM™ opera com critérios de homologação, seleção técnica e controle de execução voltados à consistência de desempenho entre diferentes aplicações. Essa base técnica impacta a percepção do cliente porque conecta origem, construção e resultado — a reputação da marca não depende apenas do que se comunica, mas do que se confirma na entrega.
+                A INSULFILM™ opera com critérios de homologação, seleção técnica e controle de execução voltados à consistência de desempenho entre diferentes aplicações. Essa base técnica impacta a percepção do cliente porque conecta origem, construção e resultado, a reputação da marca não depende apenas do que se comunica, mas do que se confirma na entrega.
               </p>
             </motion.div>
           </div>

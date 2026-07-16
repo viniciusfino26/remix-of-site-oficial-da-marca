@@ -1,5 +1,5 @@
 /**
- * RD Station Marketing — Helper de rastreamento e conversões.
+ * RD Station Marketing, Helper de rastreamento e conversões.
  *
  * O script oficial (loader-scripts) injeta `window.RdIntegration` no escopo
  * global. Este módulo expõe wrappers seguros que:

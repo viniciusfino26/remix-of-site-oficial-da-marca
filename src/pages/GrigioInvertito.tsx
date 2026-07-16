@@ -49,7 +49,7 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Grigio Invertito | Película Espelhada Invertida | Privacidade Externa</title>
-        <meta name="description" content="INSULFILM™ Grigio Invertito — película arquitetônica com espelhamento invertido. Privacidade externa durante o dia, visibilidade interna preservada. Marca registrada." />
+        <meta name="description" content="INSULFILM™ Grigio Invertito, película arquitetônica com espelhamento invertido. Privacidade externa durante o dia, visibilidade interna preservada. Marca registrada." />
         <meta property="og:title" content="INSULFILM™ Grigio Invertito | Película Espelhada Invertida" />
         <meta property="og:description" content="Visual moderno por fora. Amplitude iluminada por dentro. Privacidade externa durante o dia." />
         <meta property="og:type" content="product" />
@@ -73,7 +73,7 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
                 {copy?.h1 || `Visual moderno por fora. Amplitude iluminada por dentro.`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Grigio Invertito foi desenvolvida para fachadas e ambientes que exigem privacidade externa durante o dia sem abrir mão de luminosidade interna — com estética fumê espelhada de alto impacto visual.
+                A INSULFILM™ Grigio Invertito foi desenvolvida para fachadas e ambientes que exigem privacidade externa durante o dia sem abrir mão de luminosidade interna, com estética fumê espelhada de alto impacto visual.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -83,7 +83,7 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
 
         <TLDR
           question="O que é a película arquitetônica INSULFILM™ Grigio Invertito?"
-          answer="A INSULFILM™ Grigio Invertito é uma película arquitetônica de privacidade invertida — espelhada externa e fumê interna — com rejeição de 75% dos raios infravermelhos."
+          answer="A INSULFILM™ Grigio Invertito é uma película arquitetônica de privacidade invertida, espelhada externa e fumê interna, com rejeição de 75% dos raios infravermelhos."
           context="Garante privacidade diurna total preservando vista externa pelo lado interno, com forte controle térmico."
           specs={[
             { label: 'Tecnologia', value: 'Sputtered Invertida' },
@@ -117,7 +117,7 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">A película que inverte a lógica do espelhamento.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A maioria das películas espelhadas escurece o interior. A INSULFILM™ Grigio Invertito opera de forma diferente: sua tecnologia de espelhamento invertido reflete o ambiente externo para fora — garantindo privacidade visual do exterior para o interior — enquanto mantém a entrada de luz natural e a amplitude do ambiente interno.
+                A maioria das películas espelhadas escurece o interior. A INSULFILM™ Grigio Invertito opera de forma diferente: sua tecnologia de espelhamento invertido reflete o ambiente externo para fora, garantindo privacidade visual do exterior para o interior, enquanto mantém a entrada de luz natural e a amplitude do ambiente interno.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed">
                 O resultado é um visual contemporâneo e sofisticado por fora, com conforto e luminosidade preservados por dentro.
@@ -170,11 +170,11 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-8">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Espelhamento invertido exclusivo</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Tecnologia que reflete para fora — não para dentro. A experiência interna não é comprometida pelo efeito espelhado.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Tecnologia que reflete para fora, não para dentro. A experiência interna não é comprometida pelo efeito espelhado.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">75% de rejeição de infravermelho</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Barreira térmica eficiente — reduz a entrada de calor mesmo com a película voltada para o reflexo externo.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Barreira térmica eficiente, reduz a entrada de calor mesmo com a película voltada para o reflexo externo.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Passagem de luz natural preservada</h3>
@@ -182,7 +182,7 @@ const GrigioInvertito = ({ segment }: { segment?: Segment }) => {
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Proteção UV completa</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">&gt;99% de bloqueio de raios UV — protegendo pele, tecidos, mobiliário e obras de arte contra degradação.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">&gt;99% de bloqueio de raios UV, protegendo pele, tecidos, mobiliário e obras de arte contra degradação.</p>
                 </motion.div>
               </div>
             </motion.div>

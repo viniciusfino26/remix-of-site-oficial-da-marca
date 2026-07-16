@@ -1,7 +1,7 @@
 // src/data/pdpDualPublic.ts
 //
 // Camada de dados para PDPs unificadas (página única servindo público residencial + empresarial).
-// Sobrepõe a `copyBySegment.ts`, `pdpProducts.ts` e `pdpFAQs.ts` existentes — não as substitui.
+// Sobrepõe a `copyBySegment.ts`, `pdpProducts.ts` e `pdpFAQs.ts` existentes, não as substitui.
 //
 // Cada produto define aqui APENAS os campos novos exigidos pelo template <ProductPDP>:
 //  - Hero unificado (badge, título, subtítulo neutro, 4 quick stats)
@@ -13,7 +13,7 @@
 // Verdade técnica (TSER, VLT, IR, UV, garantia) e FAQ canônica continuam vivendo nos arquivos centrais.
 
 // ─────────────────────────────────────────────
-// Números agregados — substituem logos de cases na asa B2B
+// Números agregados, substituem logos de cases na asa B2B
 // ─────────────────────────────────────────────
 export const dualPublicAggregates = {
   appliedSquareMeters: '+3 milhões m²',
@@ -55,7 +55,7 @@ export interface ProductDualPublic {
   slug: string;
 
   /** Slug alternativo pra Schema.org (override do slug quando o produto compartilha
-   *  nome com outro de divisão diferente — ex: Phantom Gloss arq usa 'phantom-gloss-spf'
+   *  nome com outro de divisão diferente, ex: Phantom Gloss arq usa 'phantom-gloss-spf'
    *  pra evitar colisão com Phantom Gloss automotivo). */
   seoSlug?: string;
 
@@ -105,7 +105,7 @@ export interface ProductDualPublic {
 }
 
 // ─────────────────────────────────────────────
-// Clear70 — produto piloto da estrutura dual-public
+// Clear70, produto piloto da estrutura dual-public
 // ─────────────────────────────────────────────
 const clear70: ProductDualPublic = {
   slug: 'clear70',
@@ -116,7 +116,7 @@ const clear70: ProductDualPublic = {
     badge: 'Solar · Performance',
     title: 'Máxima transparência. Controle solar invisível.',
     subtitle:
-      'Tecnologia nano cerâmica para vidros — bloqueia até 81% do calor infravermelho preservando 72% da luz natural.',
+      'Tecnologia nano cerâmica para vidros, bloqueia até 81% do calor infravermelho preservando 72% da luz natural.',
     quickStats: [
       { label: 'Transparência (VLT)', value: '72%' },
       { label: 'Rejeição IR', value: 'até 81%' },
@@ -141,7 +141,7 @@ const clear70: ProductDualPublic = {
   description: {
     paragraphs: [
       'A INSULFILM™ Clear70 combina o que projetos arquitetônicos exigentes precisam: alta eficiência no controle solar com máxima preservação da luz natural e estética neutra que não interfere no design.',
-      'Sua composição com nanopartículas cerâmicas entrega rejeição de infravermelho sem metalização — preservando sinais eletrônicos, mantendo aparência neutra e oferecendo desempenho estável ao longo do tempo.',
+      'Sua composição com nanopartículas cerâmicas entrega rejeição de infravermelho sem metalização, preservando sinais eletrônicos, mantendo aparência neutra e oferecendo desempenho estável ao longo do tempo.',
       'Para fachadas, sacadas e janelas onde a claridade é parte do projeto, a Clear70 é a escolha técnica correta.',
     ],
     techTable: [
@@ -158,17 +158,17 @@ const clear70: ProductDualPublic = {
   },
 
   residential: {
-    h2: 'Clear70 para residências — conforto que você sente em uma semana',
+    h2: 'Clear70 para residências, conforto que você sente em uma semana',
     pains: [
       {
         problem: 'A sala que esquenta de tarde e força o ar-condicionado a trabalhar dobrado.',
         solution:
-          'Bloqueio de até 81% do infravermelho — o calor é refletido antes de atravessar o vidro. Resultado mensurável já na primeira semana.',
+          'Bloqueio de até 81% do infravermelho, o calor é refletido antes de atravessar o vidro. Resultado mensurável já na primeira semana.',
       },
       {
         problem: 'O sofá que desbotou. O piso de madeira que clareou. A obra de arte que perdeu cor.',
         solution:
-          'Bloqueio >99% dos raios UV — o principal responsável pelo desbotamento de móveis, tecidos, pisos e obras de arte.',
+          'Bloqueio >99% dos raios UV, o principal responsável pelo desbotamento de móveis, tecidos, pisos e obras de arte.',
       },
       {
         problem: 'A janela do quarto exposta para o prédio em frente, sem opção de cortina.',
@@ -178,17 +178,17 @@ const clear70: ProductDualPublic = {
       {
         problem: 'Conta de luz que dispara no verão por conta do ar-condicionado.',
         solution:
-          'Redução documentada da carga térmica — o sistema de refrigeração precisa trabalhar menos para manter o mesmo conforto.',
+          'Redução documentada da carga térmica, o sistema de refrigeração precisa trabalhar menos para manter o mesmo conforto.',
       },
     ],
     miniFaq: [
       {
         q: 'Película arquitetônica reduz mesmo o calor do ambiente?',
-        a: 'Sim. A INSULFILM™ Clear70 bloqueia até 81% dos raios infravermelhos — o principal responsável pela sensação de calor em ambientes com vidro. O resultado é perceptível nas primeiras horas após a aplicação.',
+        a: 'Sim. A INSULFILM™ Clear70 bloqueia até 81% dos raios infravermelhos, o principal responsável pela sensação de calor em ambientes com vidro. O resultado é perceptível nas primeiras horas após a aplicação.',
       },
       {
         q: 'A Clear70 escurece o ambiente?',
-        a: 'Não. Mantém 72% de transmissão de luz visível — o ambiente continua naturalmente iluminado. Para situações em que se deseja mais privacidade ou tonalidade, há outras linhas indicadas.',
+        a: 'Não. Mantém 72% de transmissão de luz visível, o ambiente continua naturalmente iluminado. Para situações em que se deseja mais privacidade ou tonalidade, há outras linhas indicadas.',
       },
       {
         q: 'A película interfere no Wi-Fi de casa ou em antenas?',
@@ -203,12 +203,12 @@ const clear70: ProductDualPublic = {
       {
         problem: 'Postos de trabalho próximos a fachadas envidraçadas fora da faixa de conforto NR17.',
         solution:
-          'Redução de carga térmica documentada — apoia conformidade com NR17 sem alterar a estética da fachada. Certificado individual disponível para auditoria.',
+          'Redução de carga térmica documentada, apoia conformidade com NR17 sem alterar a estética da fachada. Certificado individual disponível para auditoria.',
       },
       {
         problem: 'OPEX dominado pelo ar-condicionado em carga máxima durante meses do ano.',
         solution:
-          'Redução mensurável da carga térmica do edifício — menor demanda do sistema de refrigeração e menor consumo de energia. Calculadora de retorno disponível mediante consulta.',
+          'Redução mensurável da carga térmica do edifício, menor demanda do sistema de refrigeração e menor consumo de energia. Calculadora de retorno disponível mediante consulta.',
       },
       {
         problem: 'Edifício histórico ou tombado onde a fachada não pode ser alterada.',
@@ -224,7 +224,7 @@ const clear70: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Clear70 atende exigências de NR17?',
-        a: 'A Clear70 contribui com a conformidade NR17 ao reduzir a carga térmica de postos de trabalho próximos a fachadas envidraçadas. Para a documentação de auditoria completa, consulte um especialista da INSULFILM™ — o relatório técnico é emitido caso a caso.',
+        a: 'A Clear70 contribui com a conformidade NR17 ao reduzir a carga térmica de postos de trabalho próximos a fachadas envidraçadas. Para a documentação de auditoria completa, consulte um especialista da INSULFILM™, o relatório técnico é emitido caso a caso.',
       },
       {
         q: 'É possível aplicar em edifícios já habitados sem interromper a operação?',
@@ -258,7 +258,7 @@ const clear70: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Orizzonte70 — exemplar #2 (Premium tier)
+// Orizzonte70, exemplar #2 (Premium tier)
 // ─────────────────────────────────────────────
 const orizzonte70: ProductDualPublic = {
   slug: 'orizzonte70',
@@ -269,7 +269,7 @@ const orizzonte70: ProductDualPublic = {
     badge: 'Solar · Premium',
     title: 'Performance cerâmica premium. Transparência preservada.',
     subtitle:
-      'Tecnologia nano cerâmica de geração premium — bloqueia 93% do calor infravermelho com 68% de transmissão luminosa. Garantia de 10 anos.',
+      'Tecnologia nano cerâmica de geração premium, bloqueia 93% do calor infravermelho com 68% de transmissão luminosa. Garantia de 10 anos.',
     quickStats: [
       { label: 'Transparência (VLT)', value: '68%' },
       { label: 'Rejeição IR', value: 'até 93%' },
@@ -293,9 +293,9 @@ const orizzonte70: ProductDualPublic = {
 
   description: {
     paragraphs: [
-      'A INSULFILM™ Orizzonte70 é o topo da família solar arquitetônica — película cerâmica de geração premium com 93% de rejeição infravermelha e máxima preservação da transparência ótica.',
+      'A INSULFILM™ Orizzonte70 é o topo da família solar arquitetônica, película cerâmica de geração premium com 93% de rejeição infravermelha e máxima preservação da transparência ótica.',
       'Sua composição cerâmica avançada combina o que nenhuma alternativa no mercado entrega simultaneamente: bloqueio térmico de performance superior, neutralidade ótica que não distorce a percepção de cor do ambiente e estabilidade de longo prazo certificada.',
-      'Aplicada em residências de alto padrão, fachadas corporativas classe AAA e edifícios de valor patrimonial onde desempenho mediano comprometeria o ativo. Garantia de 10 anos — a mais longa do portfólio.',
+      'Aplicada em residências de alto padrão, fachadas corporativas classe AAA e edifícios de valor patrimonial onde desempenho mediano comprometeria o ativo. Garantia de 10 anos, a mais longa do portfólio.',
     ],
     techTable: [
       { label: 'Tecnologia', value: 'Premium Nano Ceramic Infrared Film' },
@@ -315,13 +315,13 @@ const orizzonte70: ProductDualPublic = {
     pains: [
       {
         problem:
-          'A vista do jardim, da praia, da cidade — você não quer abrir mão dela com cortinas pesadas.',
+          'A vista do jardim, da praia, da cidade, você não quer abrir mão dela com cortinas pesadas.',
         solution:
-          '68% de transmissão luminosa preservam a vista. Você vê tudo o que tinha antes da aplicação — só o calor que some.',
+          '68% de transmissão luminosa preservam a vista. Você vê tudo o que tinha antes da aplicação, só o calor que some.',
       },
       {
         problem:
-          'Móveis caros, obras de arte, pisos importados — o investimento de uma vida no interior da casa.',
+          'Móveis caros, obras de arte, pisos importados, o investimento de uma vida no interior da casa.',
         solution:
           '>99% de bloqueio UV + estabilidade ótica cerâmica premium. Os materiais do interior preservam apresentação e valor por décadas.',
       },
@@ -329,7 +329,7 @@ const orizzonte70: ProductDualPublic = {
         problem:
           'Você quer conforto consistente, não solução que decai em dois anos.',
         solution:
-          'Garantia de 10 anos — a mais longa do portfólio. Cobertura de fabricante e aplicação por canal autorizado.',
+          'Garantia de 10 anos, a mais longa do portfólio. Cobertura de fabricante e aplicação por canal autorizado.',
       },
       {
         problem:
@@ -349,7 +349,7 @@ const orizzonte70: ProductDualPublic = {
       },
       {
         q: 'Não escurece o ambiente como filmes mais antigos?',
-        a: '68% de transmissão luminosa — praticamente imperceptível visualmente. A cerâmica premium é opticamente neutra: não interfere na percepção de cor de interior, em obras de arte ou na fotografia residencial.',
+        a: '68% de transmissão luminosa, praticamente imperceptível visualmente. A cerâmica premium é opticamente neutra: não interfere na percepção de cor de interior, em obras de arte ou na fotografia residencial.',
       },
     ],
   },
@@ -365,13 +365,13 @@ const orizzonte70: ProductDualPublic = {
       },
       {
         problem:
-          'Custo de ciclo de vida (LCC) é critério no comitê de aprovação — não só CAPEX.',
+          'Custo de ciclo de vida (LCC) é critério no comitê de aprovação, não só CAPEX.',
         solution:
           'Garantia 10 anos + manutenção zero ao longo da vida útil. O LCC do Orizzonte70 supera alternativas de custo inicial menor em qualquer horizonte > 4 anos.',
       },
       {
         problem:
-          'Fachadas envidraçadas de alto valor patrimonial — desempenho mediano compromete o ativo.',
+          'Fachadas envidraçadas de alto valor patrimonial, desempenho mediano compromete o ativo.',
         solution:
           'Performance cerâmica premium documentada por laudo técnico por aplicação. Especificação aprovada em edifícios listados e ativos AAA no Brasil.',
       },
@@ -385,7 +385,7 @@ const orizzonte70: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Como Orizzonte70 ajuda na conformidade NR17 em edifícios corporativos?',
-        a: 'A NR17 exige conforto térmico em postos de trabalho, e fachadas envidraçadas são fonte direta de carga térmica radiante. Orizzonte70 reduz essa carga de forma mensurável e documentada, com laudo técnico individual por aplicação — pronto para auditoria do MTE e para o processo interno de gestão de SST.',
+        a: 'A NR17 exige conforto térmico em postos de trabalho, e fachadas envidraçadas são fonte direta de carga térmica radiante. Orizzonte70 reduz essa carga de forma mensurável e documentada, com laudo técnico individual por aplicação, pronto para auditoria do MTE e para o processo interno de gestão de SST.',
       },
       {
         q: 'Garantia de 10 anos cobre todo o ciclo de vida do equipamento?',
@@ -419,7 +419,7 @@ const orizzonte70: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Naturale — Premium · tom neutro · 4 versões (70/50/35/20)
+// Naturale, Premium · tom neutro · 4 versões (70/50/35/20)
 // ─────────────────────────────────────────────
 const naturale: ProductDualPublic = {
   slug: 'naturale',
@@ -429,7 +429,7 @@ const naturale: ProductDualPublic = {
     badge: 'Solar · Premium',
     title: 'Discrição que transforma. Tom neutro sem perda de performance.',
     subtitle:
-      'Película arquitetônica premium com tecnologia de bombardeamento iônico — até 81% de rejeição IR preservando a aparência natural do vidro. Quatro versões de transparência (70/50/35/20). Garantia 10 anos.',
+      'Película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR preservando a aparência natural do vidro. Quatro versões de transparência (70/50/35/20). Garantia 10 anos.',
     quickStats: [
       { label: 'Tonalidade', value: 'Neutra' },
       { label: 'Rejeição IR', value: 'até 81%' },
@@ -446,12 +446,12 @@ const naturale: ProductDualPublic = {
     corporate: {
       headline: 'Para projetos onde a fachada é parte da identidade',
       description:
-        'Edifícios onde alterar visual da fachada é impossível — patrimônio histórico, identidade corporativa, especificação arquitetônica congelada. Solução técnica invisível ao olhar externo.',
+        'Edifícios onde alterar visual da fachada é impossível, patrimônio histórico, identidade corporativa, especificação arquitetônica congelada. Solução técnica invisível ao olhar externo.',
     },
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Naturale é a película arquitetônica para projetos onde a estética não pode mudar. Tecnologia de bombardeamento iônico (Neutral Sputtered Film) que entrega até 81% de rejeição IR com tonalidade neutra — sem espelhamento, sem alteração de cor, sem distorção visual.',
+      'A INSULFILM™ Naturale é a película arquitetônica para projetos onde a estética não pode mudar. Tecnologia de bombardeamento iônico (Neutral Sputtered Film) que entrega até 81% de rejeição IR com tonalidade neutra, sem espelhamento, sem alteração de cor, sem distorção visual.',
       'Disponível em quatro versões de transparência (70/50/35/20), permite calibrar luminosidade pra cada ambiente sem comprometer a identidade visual do projeto. A versão escolhida para uma sala de reunião pode ser diferente da especificada para a área de trabalho aberta, mantendo coerência arquitetônica.',
       'Aplicada em residências de alto padrão, edifícios corporativos com identidade visual definida e patrimônios históricos onde alterar a fachada é proibido.',
     ],
@@ -472,7 +472,7 @@ const naturale: ProductDualPublic = {
     pains: [
       {
         problem:
-          'O projeto arquitetônico foi pensado nos mínimos detalhes — a cor do vidro também.',
+          'O projeto arquitetônico foi pensado nos mínimos detalhes, a cor do vidro também.',
         solution:
           'Tom neutro Premium. Não espelha, não amarela, não distorce. O vidro continua sendo o vidro especificado.',
       },
@@ -498,7 +498,7 @@ const naturale: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Por que escolher Naturale em vez de Clear70 ou Orizzonte70?',
-        a: 'A Naturale é a escolha quando neutralidade ótica é o critério principal — não muda a aparência do vidro. Tem mais opções de versão (4 transparências) que Clear70 e Orizzonte70 (versão única). Indicada quando o projeto exige flexibilidade de calibração por ambiente.',
+        a: 'A Naturale é a escolha quando neutralidade ótica é o critério principal, não muda a aparência do vidro. Tem mais opções de versão (4 transparências) que Clear70 e Orizzonte70 (versão única). Indicada quando o projeto exige flexibilidade de calibração por ambiente.',
       },
       {
         q: 'A Naturale escurece o ambiente?',
@@ -515,7 +515,7 @@ const naturale: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Edifício de patrimônio histórico ou identidade corporativa congelada — fachada não admite alteração visual.',
+          'Edifício de patrimônio histórico ou identidade corporativa congelada, fachada não admite alteração visual.',
         solution:
           'Solução tecnicamente invisível. Aprovada para uso em patrimônio histórico no Brasil. Sem alterar refletância externa.',
       },
@@ -527,7 +527,7 @@ const naturale: ProductDualPublic = {
       },
       {
         problem:
-          'Diferentes pavimentos têm necessidades térmicas/luminosas diferentes — não dá pra padronizar um único produto.',
+          'Diferentes pavimentos têm necessidades térmicas/luminosas diferentes, não dá pra padronizar um único produto.',
         solution:
           'Quatro versões permitem especificação modular por andar ou área. Mesma família, mesma identidade visual, performance calibrada.',
       },
@@ -541,7 +541,7 @@ const naturale: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Naturale altera a aparência externa da fachada vista da rua?',
-        a: 'Não. Sem espelhamento e sem alteração de cor — a fachada continua com a aparência original. É essa a justificativa de uso em edifícios de patrimônio histórico e em identidades corporativas que exigem preservação visual.',
+        a: 'Não. Sem espelhamento e sem alteração de cor, a fachada continua com a aparência original. É essa a justificativa de uso em edifícios de patrimônio histórico e em identidades corporativas que exigem preservação visual.',
       },
       {
         q: 'É possível misturar versões diferentes de Naturale no mesmo edifício?',
@@ -574,7 +574,7 @@ const naturale: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Ultravioletti90 — Premium · UV-focused · garantia 5 anos
+// Ultravioletti90, Premium · UV-focused · garantia 5 anos
 // ─────────────────────────────────────────────
 const ultravioletti90: ProductDualPublic = {
   slug: 'ultravioletti90',
@@ -584,7 +584,7 @@ const ultravioletti90: ProductDualPublic = {
     badge: 'Solar · Premium · UV',
     title: 'Proteção UV de pico. Completamente imperceptível.',
     subtitle:
-      'Película arquitetônica incolor especializada em UV — bloqueia mais de 99% dos raios ultravioleta sem alterar luminosidade, tonalidade ou aparência do vidro. Para residências de alto padrão e ambientes onde o acervo é parte do valor.',
+      'Película arquitetônica incolor especializada em UV, bloqueia mais de 99% dos raios ultravioleta sem alterar luminosidade, tonalidade ou aparência do vidro. Para residências de alto padrão e ambientes onde o acervo é parte do valor.',
     quickStats: [
       { label: 'Transparência (VLT)', value: '88%' },
       { label: 'Bloqueio UV', value: '>99%' },
@@ -596,18 +596,18 @@ const ultravioletti90: ProductDualPublic = {
     residential: {
       headline: 'Para residências de alto padrão',
       description:
-        'Obras de arte, peças de design, fotografias raras, móveis assinados — o interior da casa onde o valor está nos detalhes. Proteção UV completamente invisível, sem alterar luminosidade nem aparência do vidro.',
+        'Obras de arte, peças de design, fotografias raras, móveis assinados, o interior da casa onde o valor está nos detalhes. Proteção UV completamente invisível, sem alterar luminosidade nem aparência do vidro.',
     },
     corporate: {
       headline: 'Para museus, galerias e espaços com acervo exposto',
       description:
-        'Museus, galerias de arte, lojas de alto padrão, hotelaria sofisticada. UV é o principal agente de degradação visual de acervos e mercadorias — Ultravioletti90 documenta a barreira sem alterar nenhuma estética do ambiente.',
+        'Museus, galerias de arte, lojas de alto padrão, hotelaria sofisticada. UV é o principal agente de degradação visual de acervos e mercadorias, Ultravioletti90 documenta a barreira sem alterar nenhuma estética do ambiente.',
     },
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Ultravioletti90 é a película arquitetônica especializada em proteção UV — bloqueio superior a 99% dos raios ultravioleta, com tecnologia UV Concentrated específica para essa função.',
-      'Diferente das soluções solares que tratam UV como benefício secundário, a Ultravioletti90 é desenhada com a proteção UV como objetivo principal. A composição preserva 88% da luz visível e mantém a aparência original do vidro completamente intacta — sem tonalidade, sem reflexo, sem alteração de cor. Visualmente imperceptível.',
+      'A INSULFILM™ Ultravioletti90 é a película arquitetônica especializada em proteção UV, bloqueio superior a 99% dos raios ultravioleta, com tecnologia UV Concentrated específica para essa função.',
+      'Diferente das soluções solares que tratam UV como benefício secundário, a Ultravioletti90 é desenhada com a proteção UV como objetivo principal. A composição preserva 88% da luz visível e mantém a aparência original do vidro completamente intacta, sem tonalidade, sem reflexo, sem alteração de cor. Visualmente imperceptível.',
       'Indicada para museus, galerias de arte, residências de alto padrão com acervo significativo e ambientes comerciais sofisticados (hotelaria, lojas de luxo) onde a depreciação por UV representa perda de valor patrimonial ou de marca.',
     ],
     techTable: [
@@ -627,19 +627,19 @@ const ultravioletti90: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Obras de arte, fotografias antigas, coleções pessoais expostas à luz natural — UV degrada cromaticamente em silêncio.',
+          'Obras de arte, fotografias antigas, coleções pessoais expostas à luz natural, UV degrada cromaticamente em silêncio.',
         solution:
           '>99% de bloqueio UV. O principal agente de desbotamento neutralizado, sem alterar a iluminação natural do ambiente.',
       },
       {
         problem:
-          'Móveis de design, peças de couro nobre, tapeçarias importadas, tapetes assinados — investimentos cuja apresentação visual define o valor.',
+          'Móveis de design, peças de couro nobre, tapeçarias importadas, tapetes assinados, investimentos cuja apresentação visual define o valor.',
         solution:
           'Proteção UV de pico estende significativamente a vida visual desses ativos. Aplicação invisível mantém a estética intacta.',
       },
       {
         problem:
-          'O projeto de interiores foi pensado em texturas e cromias específicas — madeiras nobres, pedras naturais, peças coloridas — que perdem identidade com exposição UV cumulativa.',
+          'O projeto de interiores foi pensado em texturas e cromias específicas, madeiras nobres, pedras naturais, peças coloridas, que perdem identidade com exposição UV cumulativa.',
         solution:
           'Bloqueio UV preserva a integridade cromática especificada pelo arquiteto/decorador. O projeto continua sendo o projeto entregue.',
       },
@@ -647,13 +647,13 @@ const ultravioletti90: ProductDualPublic = {
         problem:
           'Não quer escurecer o ambiente, não quer alterar a estética, não quer película visível em nenhum ângulo de luz.',
         solution:
-          '88% de transmissão luminosa, aparência incolor, sem alteração tonal do vidro. Completamente imperceptível ao olhar — totalmente perceptível na preservação.',
+          '88% de transmissão luminosa, aparência incolor, sem alteração tonal do vidro. Completamente imperceptível ao olhar, totalmente perceptível na preservação.',
       },
     ],
     miniFaq: [
       {
         q: 'A Ultravioletti90 também reduz calor?',
-        a: 'A função principal é proteção UV — não é uma solução térmica primária. Reduz calor em menor grau que as linhas focadas em IR (Clear70, Orizzonte70). Se proteção térmica é prioridade, escolha solar; se conservação UV invisível é prioridade, escolha Ultravioletti90.',
+        a: 'A função principal é proteção UV, não é uma solução térmica primária. Reduz calor em menor grau que as linhas focadas em IR (Clear70, Orizzonte70). Se proteção térmica é prioridade, escolha solar; se conservação UV invisível é prioridade, escolha Ultravioletti90.',
       },
       {
         q: 'Por que a garantia é menor (5 anos) que outras Premium?',
@@ -670,7 +670,7 @@ const ultravioletti90: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Vitrine comercial com mercadoria desbotando — reposição custa, imagem da loja se desgasta.',
+          'Vitrine comercial com mercadoria desbotando, reposição custa, imagem da loja se desgasta.',
         solution:
           '>99% de bloqueio UV preserva cores originais de tecidos, embalagens e produtos. Vida útil de visual de produto se estende significativamente.',
       },
@@ -678,11 +678,11 @@ const ultravioletti90: ProductDualPublic = {
         problem:
           'Galeria, museu corporativo ou hall com acervo artístico exposto à luz solar direta.',
         solution:
-          'Especificação técnica para conservação patrimonial. Laudo individual por aplicação documenta a barreira UV — exigência comum de seguradoras de acervo.',
+          'Especificação técnica para conservação patrimonial. Laudo individual por aplicação documenta a barreira UV, exigência comum de seguradoras de acervo.',
       },
       {
         problem:
-          'Joalheria, loja de luxo ou showroom de alto padrão — mercadoria de alto valor sob luz natural.',
+          'Joalheria, loja de luxo ou showroom de alto padrão, mercadoria de alto valor sob luz natural.',
         solution:
           'Bloqueio UV de pico preserva cores e materiais sem escurecer o ambiente nem alterar a percepção visual do produto. Mercadoria conservada, vitrine impecável.',
       },
@@ -696,7 +696,7 @@ const ultravioletti90: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Ultravioletti90 é adequada para retrofit de loja em operação?',
-        a: 'Sim — é uma das aplicações típicas. Instalação modular por vidro, fora do horário de pico, sem alteração da estética da vitrine ou identidade visual da marca.',
+        a: 'Sim, é uma das aplicações típicas. Instalação modular por vidro, fora do horário de pico, sem alteração da estética da vitrine ou identidade visual da marca.',
       },
       {
         q: 'Pode ser combinada com outras películas no mesmo edifício?',
@@ -729,7 +729,7 @@ const ultravioletti90: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// MetallicoArgento — Premium · espelhado prata · 3 versões (50/35/20)
+// MetallicoArgento, Premium · espelhado prata · 3 versões (50/35/20)
 // ─────────────────────────────────────────────
 const metallicoArgento: ProductDualPublic = {
   slug: 'metallico-argento',
@@ -739,7 +739,7 @@ const metallicoArgento: ProductDualPublic = {
     badge: 'Solar · Premium · Espelhado',
     title: 'Performance espelhada premium. Até 86% de bloqueio IR.',
     subtitle:
-      'Película espelhada com tecnologia Vapor-Coated Aluminium — performance térmica máxima e estética espelhada prata. Três versões para diferentes contextos. Garantia 10 anos.',
+      'Película espelhada com tecnologia Vapor-Coated Aluminium, performance térmica máxima e estética espelhada prata. Três versões para diferentes contextos. Garantia 10 anos.',
     quickStats: [
       { label: 'Rejeição IR', value: 'até 86%' },
       { label: 'Bloqueio UV', value: '>99%' },
@@ -761,7 +761,7 @@ const metallicoArgento: ProductDualPublic = {
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Metallico Argento é a película arquitetônica premium para situações de alta exposição solar onde performance térmica é critério primário. Tecnologia Vapor-Coated Aluminium entrega até 86% de rejeição IR — patamar superior dentro da linha solar.',
+      'A INSULFILM™ Metallico Argento é a película arquitetônica premium para situações de alta exposição solar onde performance térmica é critério primário. Tecnologia Vapor-Coated Aluminium entrega até 86% de rejeição IR, patamar superior dentro da linha solar.',
       'A estética espelhada prata cumpre função dupla: privacidade diurna total (de fora não se vê o interior durante o dia) e identidade visual contemporânea. Disponível em três versões (50/35/20) que permitem calibrar opacidade conforme cada projeto.',
       'Especificada em residências de fachada exposta, edifícios corporativos em zonas urbanas quentes (especialmente regiões norte e centro-oeste) e retrofits onde a meta é redução agressiva de consumo de ar-condicionado.',
     ],
@@ -781,7 +781,7 @@ const metallicoArgento: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Casa de frente para outra casa ou condomínio — privacidade diurna sem fechar cortinas.',
+          'Casa de frente para outra casa ou condomínio, privacidade diurna sem fechar cortinas.',
         solution:
           'Efeito espelhado externo durante o dia bloqueia a visão de fora. Privacidade total sem reduzir luz natural interna.',
       },
@@ -789,7 +789,7 @@ const metallicoArgento: ProductDualPublic = {
         problem:
           'Sacada com sol direto que torna ambiente impossível de usar nas tardes quentes.',
         solution:
-          'Até 86% de bloqueio IR — patamar superior. O ambiente fica utilizável em todos os horários.',
+          'Até 86% de bloqueio IR, patamar superior. O ambiente fica utilizável em todos os horários.',
       },
       {
         problem:
@@ -799,7 +799,7 @@ const metallicoArgento: ProductDualPublic = {
       },
       {
         problem:
-          'Quer estética contemporânea — vidro espelhado moderno, não película "automotiva" no prédio.',
+          'Quer estética contemporânea, vidro espelhado moderno, não película "automotiva" no prédio.',
         solution:
           'Acabamento arquitetônico premium. Linha Premium INSULFILM™, não confundir com películas espelhadas genéricas de baixo custo.',
       },
@@ -807,7 +807,7 @@ const metallicoArgento: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Vejo para fora normalmente durante o dia?',
-        a: 'Sim. O efeito espelho é assimétrico — bloqueia visão de quem está do lado mais iluminado (de fora durante o dia) preservando a visão de quem está do lado menos iluminado (você dentro da casa).',
+        a: 'Sim. O efeito espelho é assimétrico, bloqueia visão de quem está do lado mais iluminado (de fora durante o dia) preservando a visão de quem está do lado menos iluminado (você dentro da casa).',
       },
       {
         q: 'E à noite, quando a luz interna está acesa?',
@@ -824,7 +824,7 @@ const metallicoArgento: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Edifício corporativo em zona urbana quente — postos de trabalho próximos à fachada com NR17 comprometida.',
+          'Edifício corporativo em zona urbana quente, postos de trabalho próximos à fachada com NR17 comprometida.',
         solution:
           'Até 86% de bloqueio IR reduz drasticamente a carga térmica radiante. Conformidade NR17 documentada por laudo técnico individual.',
       },
@@ -842,7 +842,7 @@ const metallicoArgento: ProductDualPublic = {
       },
       {
         problem:
-          'Aplicação em edifício habitado — não pode ter obra civil prolongada.',
+          'Aplicação em edifício habitado, não pode ter obra civil prolongada.',
         solution:
           'Aplicação modular por andar/face. Cronograma compatível com operação contínua. Sem interrupção de uso dos ambientes.',
       },
@@ -850,7 +850,7 @@ const metallicoArgento: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Atende exigências NR17 em postos próximos a fachadas envidraçadas?',
-        a: 'Sim — é uma das soluções mais eficazes para casos de alta carga radiante. Laudo técnico individual documenta a redução por área. Anexável ao PGR/PCMSO.',
+        a: 'Sim, é uma das soluções mais eficazes para casos de alta carga radiante. Laudo técnico individual documenta a redução por área. Anexável ao PGR/PCMSO.',
       },
       {
         q: 'Como Metallico Argento se compara a Reflesso d\'Argento (Performance)?',
@@ -883,7 +883,7 @@ const metallicoArgento: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// SpecchiatoBronzo — Premium · espelhado bronze · 3 versões (35/25/15)
+// SpecchiatoBronzo, Premium · espelhado bronze · 3 versões (35/25/15)
 // ─────────────────────────────────────────────
 const specchiatoBronzo: ProductDualPublic = {
   slug: 'specchiato-bronzo',
@@ -893,7 +893,7 @@ const specchiatoBronzo: ProductDualPublic = {
     badge: 'Solar · Premium · Espelhado Bronze',
     title: 'Sofisticação bronze. Conforto visual preservado.',
     subtitle:
-      'Película espelhada premium com tecnologia Sputtered Nichrome — estética bronze de distinção arquitetônica, até 72% de bloqueio IR e conforto visual interno mantido. Três versões. Garantia 10 anos.',
+      'Película espelhada premium com tecnologia Sputtered Nichrome, estética bronze de distinção arquitetônica, até 72% de bloqueio IR e conforto visual interno mantido. Três versões. Garantia 10 anos.',
     quickStats: [
       { label: 'Rejeição IR', value: 'até 72%' },
       { label: 'Bloqueio UV', value: '>99%' },
@@ -905,7 +905,7 @@ const specchiatoBronzo: ProductDualPublic = {
     residential: {
       headline: 'Para residências com identidade arquitetônica distintiva',
       description:
-        'Quem quer mais que espelhamento prata padrão — quer assinatura visual. Bronze é menos comum, mais arquitetônico, mais característico. Performance Premium em estética singular.',
+        'Quem quer mais que espelhamento prata padrão, quer assinatura visual. Bronze é menos comum, mais arquitetônico, mais característico. Performance Premium em estética singular.',
     },
     corporate: {
       headline: 'Para edifícios com identidade visual marcante',
@@ -915,7 +915,7 @@ const specchiatoBronzo: ProductDualPublic = {
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Specchiato Bronzo é a alternativa estética premium dentro da família espelhada — tecnologia Sputtered Nichrome com acabamento bronze característico. Performance térmica Premium (até 72% de bloqueio IR) com identidade visual distintiva.',
+      'A INSULFILM™ Specchiato Bronzo é a alternativa estética premium dentro da família espelhada, tecnologia Sputtered Nichrome com acabamento bronze característico. Performance térmica Premium (até 72% de bloqueio IR) com identidade visual distintiva.',
       'O bronze como acabamento arquitetônico tem história: edifícios corporativos clássicos dos anos 70-80, residências de arquitetura modernista, hotelaria de alto padrão. A Specchiato Bronzo dá continuidade contemporânea a essa linguagem, agora com performance térmica de geração atual.',
       'Disponível em três versões (35/25/15) para diferentes intensidades de espelhamento e privacidade. Indicada para projetos onde a identidade visual é tão importante quanto a performance.',
     ],
@@ -935,7 +935,7 @@ const specchiatoBronzo: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Casa de arquitetura definida — espelhamento prata padrão quebraria a linguagem visual.',
+          'Casa de arquitetura definida, espelhamento prata padrão quebraria a linguagem visual.',
         solution:
           'Bronze como acabamento dá continuidade à arquitetura. Performance térmica Premium sem comprometer identidade.',
       },
@@ -953,7 +953,7 @@ const specchiatoBronzo: ProductDualPublic = {
       },
       {
         problem:
-          'Investimento de longo prazo — não quer película que descole ou perca aderência em poucos anos.',
+          'Investimento de longo prazo, não quer película que descole ou perca aderência em poucos anos.',
         solution:
           'Garantia 10 anos com cobertura de descolamento, descoloração e perda de performance. Aplicação por canal autorizado INSULFILM™.',
       },
@@ -978,7 +978,7 @@ const specchiatoBronzo: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Edifício corporativo dos anos 70-80 em retrofit — fachada bronze original precisa de atualização com manutenção da identidade.',
+          'Edifício corporativo dos anos 70-80 em retrofit, fachada bronze original precisa de atualização com manutenção da identidade.',
         solution:
           'Specchiato Bronzo dá continuidade contemporânea à linguagem bronze histórica. Performance térmica atualizada, identidade preservada.',
       },
@@ -990,7 +990,7 @@ const specchiatoBronzo: ProductDualPublic = {
       },
       {
         problem:
-          'Conformidade NR17 em edifício de fachada exposta — solução técnica não pode interferir na estética arquitetônica aprovada.',
+          'Conformidade NR17 em edifício de fachada exposta, solução técnica não pode interferir na estética arquitetônica aprovada.',
         solution:
           'Laudo técnico individual documenta a adequação NR17. Estética bronze mantém a aprovação arquitetônica original.',
       },
@@ -1037,7 +1037,7 @@ const specchiatoBronzo: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Petrolio — Performance · estética preta sem refletividade
+// Petrolio, Performance · estética preta sem refletividade
 // ─────────────────────────────────────────────
 const petrolio: ProductDualPublic = {
   slug: 'petrolio',
@@ -1047,7 +1047,7 @@ const petrolio: ProductDualPublic = {
     badge: 'Solar · Performance',
     title: 'Estética preta sem espelhamento. Discreta por fora, controlada por dentro.',
     subtitle:
-      'Película arquitetônica híbrida com acabamento preto — sem efeito espelho, sem refletividade externa intensa. Proteção UV >99% com personalidade arquitetônica contemporânea.',
+      'Película arquitetônica híbrida com acabamento preto, sem efeito espelho, sem refletividade externa intensa. Proteção UV >99% com personalidade arquitetônica contemporânea.',
     quickStats: [
       { label: 'Aparência', value: 'Preta opaca' },
       { label: 'Rejeição IR', value: 'até 42%' },
@@ -1069,7 +1069,7 @@ const petrolio: ProductDualPublic = {
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Petrolio é a película arquitetônica de acabamento preto opaco — sem o efeito espelho que define os filmes espelhados convencionais. Tecnologia Hybrid Performance combina proteção UV de pico (>99%) com controle solar moderado.',
+      'A INSULFILM™ Petrolio é a película arquitetônica de acabamento preto opaco, sem o efeito espelho que define os filmes espelhados convencionais. Tecnologia Hybrid Performance combina proteção UV de pico (>99%) com controle solar moderado.',
       'O posicionamento é estético antes de tudo: ela existe para projetos onde a opacidade preta é parte da linguagem arquitetônica e a refletividade espelhada seria descontextualizada. A rejeição IR (até 42%) é menor que linhas focadas em performance térmica, mas suficiente para reduzir ganho solar em ambientes onde estética é prioridade.',
       'Indicada para arquitetura contemporânea residencial e comercial, fachadas de vidros pretos integrados e projetos onde o controle solar não pode comprometer a identidade visual.',
     ],
@@ -1089,7 +1089,7 @@ const petrolio: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Casa de arquitetura preta — película espelhada padrão quebraria a linguagem do projeto.',
+          'Casa de arquitetura preta, película espelhada padrão quebraria a linguagem do projeto.',
         solution:
           'Acabamento preto opaco coerente com a estética. Sem espelhamento, sem refletividade que destoa.',
       },
@@ -1119,11 +1119,11 @@ const petrolio: ProductDualPublic = {
       },
       {
         q: 'Escurece muito o ambiente interno?',
-        a: 'Sim, é uma película opaca preta — reduz luz natural significativamente. É escolha consciente: você troca luminosidade por privacidade total e estética preta. Não é indicada para ambientes onde luz natural é prioridade.',
+        a: 'Sim, é uma película opaca preta, reduz luz natural significativamente. É escolha consciente: você troca luminosidade por privacidade total e estética preta. Não é indicada para ambientes onde luz natural é prioridade.',
       },
       {
         q: 'Por que não é Premium se a UV é >99%?',
-        a: 'A classificação Premium leva em conta tecnologia, performance integral e garantia (10 anos). A Petrolio tem garantia de 3 anos e tecnologia Hybrid — Performance é a classificação correta. A UV alta é benefício da composição, não suficiente para Premium isoladamente.',
+        a: 'A classificação Premium leva em conta tecnologia, performance integral e garantia (10 anos). A Petrolio tem garantia de 3 anos e tecnologia Hybrid, Performance é a classificação correta. A UV alta é benefício da composição, não suficiente para Premium isoladamente.',
       },
     ],
   },
@@ -1132,13 +1132,13 @@ const petrolio: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Loja conceito, showroom ou ponto comercial com fachada preta — espelhamento padrão descaracterizaria a marca.',
+          'Loja conceito, showroom ou ponto comercial com fachada preta, espelhamento padrão descaracterizaria a marca.',
         solution:
           'Acabamento preto opaco mantém identidade visual do ponto. Privacidade diurna + UV preservam mercadoria e ambiente interno.',
       },
       {
         problem:
-          'Mercadoria desbotando em vitrines voltadas para sol direto — reposição custa, imagem da loja se desgasta.',
+          'Mercadoria desbotando em vitrines voltadas para sol direto, reposição custa, imagem da loja se desgasta.',
         solution:
           '>99% de bloqueio UV preserva cores originais de produtos e display. Aplicação rápida em retrofit de fachada.',
       },
@@ -1150,7 +1150,7 @@ const petrolio: ProductDualPublic = {
       },
       {
         problem:
-          'Retrofit de ponto comercial em operação — não pode haver obra que interrompa o atendimento.',
+          'Retrofit de ponto comercial em operação, não pode haver obra que interrompa o atendimento.',
         solution:
           'Aplicação modular por vidro, fora do horário de operação. Sem alteração civil. Cronograma compatível com loja aberta.',
       },
@@ -1158,7 +1158,7 @@ const petrolio: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Pode ser aplicada em fachada visível da rua?',
-        a: 'Sim — é o uso típico em lojas conceituais e showrooms. A aparência preta opaca de fora é parte da estética buscada nesses projetos.',
+        a: 'Sim, é o uso típico em lojas conceituais e showrooms. A aparência preta opaca de fora é parte da estética buscada nesses projetos.',
       },
       {
         q: 'Como Petrolio se compara a Grigio Invertito ou Reflesso d\'Argento?',
@@ -1191,7 +1191,7 @@ const petrolio: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Grigio Invertito — Performance · espelhado invertido (fora prata / dentro fumê)
+// Grigio Invertito, Performance · espelhado invertido (fora prata / dentro fumê)
 // ─────────────────────────────────────────────
 const grigioInvertito: ProductDualPublic = {
   slug: 'grigio-invertito',
@@ -1224,8 +1224,8 @@ const grigioInvertito: ProductDualPublic = {
   description: {
     paragraphs: [
       'A INSULFILM™ Grigio Invertito tem uma característica que a destaca dentro da linha espelhada Performance: mesmo com alto efeito espelho externo, a visibilidade interna permanece mais aguçada que a maioria dos filmes refletivos convencionais. Tecnologia Vapor-Coated Aluminium calibrada para esse equilíbrio.',
-      'O comportamento é parecido com a Specchiato Bronzo (Premium) no aspecto da visão interna preservada — sem o "fechamento" característico dos filmes espelhados clássicos. A diferença está no tom (cinza vs bronze), na tecnologia e no patamar Performance (vs Premium).',
-      'À noite, quando a luz interna supera a externa, o efeito espelho se inverte (de fora se enxerga para dentro). Para manter o "efeito espião" também à noite, uma solução técnica comum é instalar um spot de luz externo voltado para a fachada — equilibra a iluminação dos dois lados e preserva o espelhamento. Quando isso não é viável, cortina ou persiana noturna resolvem.',
+      'O comportamento é parecido com a Specchiato Bronzo (Premium) no aspecto da visão interna preservada, sem o "fechamento" característico dos filmes espelhados clássicos. A diferença está no tom (cinza vs bronze), na tecnologia e no patamar Performance (vs Premium).',
+      'À noite, quando a luz interna supera a externa, o efeito espelho se inverte (de fora se enxerga para dentro). Para manter o "efeito espião" também à noite, uma solução técnica comum é instalar um spot de luz externo voltado para a fachada, equilibra a iluminação dos dois lados e preserva o espelhamento. Quando isso não é viável, cortina ou persiana noturna resolvem.',
       'Aplicação típica: residências em condomínios horizontais, salas em térreo e andares baixos, ambientes onde a combinação privacidade externa + visão interna ao exterior é prioridade. Rejeição IR de até 75% adiciona controle térmico relevante além da função de privacidade.',
     ],
     techTable: [
@@ -1245,9 +1245,9 @@ const grigioInvertito: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Casa de frente para casa do vizinho — sempre com cortina fechada, perdendo luz natural e vista.',
+          'Casa de frente para casa do vizinho, sempre com cortina fechada, perdendo luz natural e vista.',
         solution:
-          'Privacidade diurna pelo espelhamento externo. A cortina pode ficar aberta durante o dia — você mantém vista para fora com visibilidade preservada acima do padrão refletivo.',
+          'Privacidade diurna pelo espelhamento externo. A cortina pode ficar aberta durante o dia, você mantém vista para fora com visibilidade preservada acima do padrão refletivo.',
       },
       {
         problem:
@@ -1259,11 +1259,11 @@ const grigioInvertito: ProductDualPublic = {
         problem:
           'Quer também reduzir calor da fachada exposta, não só ganhar privacidade.',
         solution:
-          'Até 75% de rejeição IR — performance térmica relevante. Solução dupla: privacidade + controle solar em uma especificação.',
+          'Até 75% de rejeição IR, performance térmica relevante. Solução dupla: privacidade + controle solar em uma especificação.',
       },
       {
         problem:
-          'Garantia mínima de 3 anos suficiente — não precisa do compromisso Premium de 10.',
+          'Garantia mínima de 3 anos suficiente, não precisa do compromisso Premium de 10.',
         solution:
           'Linha Performance INSULFILM™. Mesma tecnologia Vapor-Coated em escala Performance, preço acessível com garantia de fabricante.',
       },
@@ -1271,15 +1271,15 @@ const grigioInvertito: ProductDualPublic = {
     miniFaq: [
       {
         q: 'Funciona de noite também?',
-        a: 'Por padrão não — quando a luz interna fica mais forte que a externa (à noite, com luzes acesas), o efeito espelho se inverte e de fora se enxerga para dentro. Solução técnica: spot de luz externo voltado para a fachada equilibra a iluminação dos dois lados e mantém o "efeito espião" também à noite. Quando isso não é viável, cortina ou persiana noturna resolvem.',
+        a: 'Por padrão não, quando a luz interna fica mais forte que a externa (à noite, com luzes acesas), o efeito espelho se inverte e de fora se enxerga para dentro. Solução técnica: spot de luz externo voltado para a fachada equilibra a iluminação dos dois lados e mantém o "efeito espião" também à noite. Quando isso não é viável, cortina ou persiana noturna resolvem.',
       },
       {
         q: 'Escurece muito o ambiente?',
-        a: 'A versão padrão tem VLT de 15% — escurece visivelmente. Para ambientes onde se quer privacidade com mais luz, vale conversar com consultor sobre outras opções. Para privacidade total, o escurecimento é parte do funcionamento.',
+        a: 'A versão padrão tem VLT de 15%, escurece visivelmente. Para ambientes onde se quer privacidade com mais luz, vale conversar com consultor sobre outras opções. Para privacidade total, o escurecimento é parte do funcionamento.',
       },
       {
         q: 'Posso aplicar em apartamento alto também?',
-        a: 'Pode, mas a aplicação típica é em térreos, andares baixos e casas — onde a privacidade externa é problema real. Em altos andares, geralmente não há necessidade prática.',
+        a: 'Pode, mas a aplicação típica é em térreos, andares baixos e casas, onde a privacidade externa é problema real. Em altos andares, geralmente não há necessidade prática.',
       },
     ],
   },
@@ -1288,7 +1288,7 @@ const grigioInvertito: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Sala de reunião térrea voltada para rua — privacidade necessária mas equipe quer continuar enxergando movimento externo.',
+          'Sala de reunião térrea voltada para rua, privacidade necessária mas equipe quer continuar enxergando movimento externo.',
         solution:
           'Espelhamento externo diurno bloqueia visão de fora. Visibilidade interna preservada. Solução padrão para salas de board e reuniões executivas em térreos.',
       },
@@ -1306,7 +1306,7 @@ const grigioInvertito: ProductDualPublic = {
       },
       {
         problem:
-          'Retrofit em escritório em operação — janela de obra é curta.',
+          'Retrofit em escritório em operação, janela de obra é curta.',
         solution:
           'Aplicação por vidro, fora do horário de pico. Sem obra civil. Operação não para.',
       },
@@ -1347,7 +1347,7 @@ const grigioInvertito: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Reflesso d'Argento — Performance · espelhado prata convencional
+// Reflesso d'Argento, Performance · espelhado prata convencional
 // ─────────────────────────────────────────────
 const reflessoDArgento: ProductDualPublic = {
   slug: 'reflesso-d-argento',
@@ -1379,7 +1379,7 @@ const reflessoDArgento: ProductDualPublic = {
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Reflesso d\'Argento é a versão Performance da família espelhada prata da INSULFILM™. Tecnologia Vapor-Coated Aluminium com até 80% de rejeição IR — patamar superior dentro do tier Performance.',
+      'A INSULFILM™ Reflesso d\'Argento é a versão Performance da família espelhada prata da INSULFILM™. Tecnologia Vapor-Coated Aluminium com até 80% de rejeição IR, patamar superior dentro do tier Performance.',
       'Atende a aplicação clássica de fachadas e ambientes expostos: privacidade diurna total pelo efeito espelho prata, controle solar agressivo pela alta rejeição IR e proteção UV >99%. Versatilidade de aplicação em vidros de fachada, pergolados envidraçados e áreas integradas grandes.',
       'Compete com a Metallico Argento (Premium) no patamar térmico, oferecendo investimento inicial menor e garantia Performance (3 anos vs 10 anos). A escolha entre as duas é função do horizonte de investimento e ciclo de vida pretendido.',
     ],
@@ -1399,13 +1399,13 @@ const reflessoDArgento: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Sacada integrada grande com sol direto — torna o ambiente impossível de usar nas horas de pico.',
+          'Sacada integrada grande com sol direto, torna o ambiente impossível de usar nas horas de pico.',
         solution:
           'Até 80% de rejeição IR. A sacada vira ambiente utilizável em qualquer horário do dia.',
       },
       {
         problem:
-          'Pergolado envidraçado, área de lazer com vidro — calor concentrado, conta de luz dispara.',
+          'Pergolado envidraçado, área de lazer com vidro, calor concentrado, conta de luz dispara.',
         solution:
           'Performance térmica de alto patamar. Reduz necessidade de ar-condicionado e gera economia mensurável em poucas faturas.',
       },
@@ -1429,7 +1429,7 @@ const reflessoDArgento: ProductDualPublic = {
       },
       {
         q: 'Funciona em pergolado de vidro com sol direto?',
-        a: 'Sim — é uma das aplicações típicas. Reduz drasticamente a sensação térmica do ambiente sob o pergolado, especialmente em horários de pico solar.',
+        a: 'Sim, é uma das aplicações típicas. Reduz drasticamente a sensação térmica do ambiente sob o pergolado, especialmente em horários de pico solar.',
       },
       {
         q: 'O efeito espelho funciona dos dois lados?',
@@ -1442,13 +1442,13 @@ const reflessoDArgento: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Edifício corporativo com várias fachadas envidraçadas — Metallico Argento sobe muito o CAPEX do retrofit.',
+          'Edifício corporativo com várias fachadas envidraçadas, Metallico Argento sobe muito o CAPEX do retrofit.',
         solution:
           'Performance térmica próxima do Premium (80% vs 86% IR) com investimento inicial significativamente menor. Para projetos em escala, viabiliza o retrofit completo.',
       },
       {
         problem:
-          'NR17 em diversos postos próximos a fachadas envidraçadas — exigência ampla, orçamento finito.',
+          'NR17 em diversos postos próximos a fachadas envidraçadas, exigência ampla, orçamento finito.',
         solution:
           'Custo-benefício Performance permite cobertura ampla da edificação. Laudo técnico individual por aplicação documenta conformidade para PGR/PCMSO.',
       },
@@ -1460,7 +1460,7 @@ const reflessoDArgento: ProductDualPublic = {
       },
       {
         problem:
-          'Diretoria quer redução de OPEX em ar-condicionado — sem aprovar CAPEX Premium.',
+          'Diretoria quer redução de OPEX em ar-condicionado, sem aprovar CAPEX Premium.',
         solution:
           'Patamar de rejeição IR Performance entrega redução térmica relevante. Simulação de retorno via consultor B2B mostra payback compatível com Performance investment.',
       },
@@ -1501,7 +1501,7 @@ const reflessoDArgento: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Phantom Gloss — Premium · SPF para superfícies brilhosas
+// Phantom Gloss, Premium · SPF para superfícies brilhosas
 // ─────────────────────────────────────────────
 const phantomGloss: ProductDualPublic = {
   slug: 'phantom-gloss',
@@ -1512,7 +1512,7 @@ const phantomGloss: ProductDualPublic = {
     badge: 'SPF · Premium',
     title: 'Proteção invisível. Brilho original preservado.',
     subtitle:
-      'Surface Protection Film de 180 microns para superfícies brilhosas — mármore polido, lacado, madeira envernizada, vidro de alto padrão. Barreira contra micro-riscos, manchas ácidas e desgaste cotidiano. Garantia 5 anos.',
+      'Surface Protection Film de 180 microns para superfícies brilhosas, mármore polido, lacado, madeira envernizada, vidro de alto padrão. Barreira contra micro-riscos, manchas ácidas e desgaste cotidiano. Garantia 5 anos.',
     quickStats: [
       { label: 'Espessura', value: '180 microns' },
       { label: 'Proteção', value: 'Anti-risco · barreira química' },
@@ -1529,19 +1529,19 @@ const phantomGloss: ProductDualPublic = {
     corporate: {
       headline: 'Para mobiliário e revestimentos comerciais de alto padrão',
       description:
-        'Hotelaria sofisticada, showrooms, lobbies, mobiliário executivo, mármore polido em recepções. Onde a aparência da superfície É parte do produto — e a degradação cotidiana é o principal risco.',
+        'Hotelaria sofisticada, showrooms, lobbies, mobiliário executivo, mármore polido em recepções. Onde a aparência da superfície É parte do produto, e a degradação cotidiana é o principal risco.',
     },
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Phantom Gloss arquitetônica é uma película de proteção de superfície — SPF (Surface Protection Film) — com 180 microns de espessura, desenhada para preservar superfícies de acabamento brilhoso em ambientes arquitetônicos. Pertence à família Phantom, distinta da versão automotiva (PPF — Paint Protection Film) que tem aplicação e formulação específicas para pintura de veículos.',
-      'Diferente das películas solares, a Phantom Gloss não atua sobre vidros de fachada — atua sobre o objeto que precisa ser protegido: bancada, móvel, mesa, painel.',
+      'A INSULFILM™ Phantom Gloss arquitetônica é uma película de proteção de superfície, SPF (Surface Protection Film), com 180 microns de espessura, desenhada para preservar superfícies de acabamento brilhoso em ambientes arquitetônicos. Pertence à família Phantom, distinta da versão automotiva (PPF, Paint Protection Film) que tem aplicação e formulação específicas para pintura de veículos.',
+      'Diferente das películas solares, a Phantom Gloss não atua sobre vidros de fachada, atua sobre o objeto que precisa ser protegido: bancada, móvel, mesa, painel.',
       'O conflito central do design de alto padrão é que as superfícies mais bonitas são as mais expostas: a bancada de mármore que recebe vinho, cítricos e ácido cotidiano. O móvel lacado que recebe utensílios deslizando. A mesa envernizada que recebe pratos quentes. Cada uso é um vetor de degradação invisível.',
-      'A Phantom Gloss interpõe uma camada técnica entre a superfície e esses agentes — preservando o brilho original, a profundidade dos reflexos e a integridade visual da peça. Aplicação invisível: você sabe que está lá apenas pela ausência do dano.',
+      'A Phantom Gloss interpõe uma camada técnica entre a superfície e esses agentes, preservando o brilho original, a profundidade dos reflexos e a integridade visual da peça. Aplicação invisível: você sabe que está lá apenas pela ausência do dano.',
       'Indicada para residências de alto padrão (cozinhas gourmet, suítes master, espaços gourmet integrados) e ambientes comerciais sofisticados (hotelaria 5 estrelas, showrooms, lobbies corporativos premium, mobiliário executivo).',
     ],
     techTable: [
-      { label: 'Tipo', value: 'SPF — Surface Protection Film' },
+      { label: 'Tipo', value: 'SPF, Surface Protection Film' },
       { label: 'Espessura', value: '180 microns (7 mil)' },
       { label: 'Acabamento', value: 'Gloss (preserva brilho original)' },
       { label: 'Proteção mecânica', value: 'Anti-risco e anti-abrasão' },
@@ -1557,7 +1557,7 @@ const phantomGloss: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Bancada de mármore polido na cozinha — vinho, vinagre, suco de limão e produtos de limpeza atacam diariamente.',
+          'Bancada de mármore polido na cozinha, vinho, vinagre, suco de limão e produtos de limpeza atacam diariamente.',
         solution:
           'Barreira química contra ácidos e álcalis domésticos. Mancha não penetra na pedra. Limpeza vira detalhe, não problema.',
       },
@@ -1575,7 +1575,7 @@ const phantomGloss: ProductDualPublic = {
       },
       {
         problem:
-          'O investimento em interiores foi alto — não quer assistir a degradação progressiva nos próximos 5 anos.',
+          'O investimento em interiores foi alto, não quer assistir a degradação progressiva nos próximos 5 anos.',
         solution:
           'Garantia 5 anos contra falhas da película. O valor estético do investimento se preserva no horizonte do produto.',
       },
@@ -1583,11 +1583,11 @@ const phantomGloss: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Phantom Gloss aparece visualmente sobre a superfície?',
-        a: 'Não. A aplicação é invisível — você não percebe que existe uma camada protetiva. O brilho original do mármore, do lacado ou da madeira envernizada continua exatamente como antes da aplicação.',
+        a: 'Não. A aplicação é invisível, você não percebe que existe uma camada protetiva. O brilho original do mármore, do lacado ou da madeira envernizada continua exatamente como antes da aplicação.',
       },
       {
         q: 'Pode ser aplicada sobre qualquer superfície brilhosa?',
-        a: 'A linha é específica para superfícies de acabamento gloss — mármore polido, granito polido, lacado, madeira envernizada, vidro de alto padrão. Para acabamento fosco, ver Phantom Matte. Para superfícies muito irregulares ou porosas, consulta técnica é necessária.',
+        a: 'A linha é específica para superfícies de acabamento gloss, mármore polido, granito polido, lacado, madeira envernizada, vidro de alto padrão. Para acabamento fosco, ver Phantom Matte. Para superfícies muito irregulares ou porosas, consulta técnica é necessária.',
       },
       {
         q: 'Como remover, se quiser?',
@@ -1600,7 +1600,7 @@ const phantomGloss: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Mármore polido em recepção, lobby ou área social de hotel — atrito constante com bagagem, carrinhos, sapatos.',
+          'Mármore polido em recepção, lobby ou área social de hotel, atrito constante com bagagem, carrinhos, sapatos.',
         solution:
           '180 microns de proteção anti-abrasão preservam o acabamento original. A peça continua sendo "novo mármore" mesmo após anos de operação intensa.',
       },
@@ -1608,7 +1608,7 @@ const phantomGloss: ProductDualPublic = {
         problem:
           'Mobiliário executivo lacado (mesas de reunião, painéis de escritório de diretoria) sofrendo desgaste em uso diário.',
         solution:
-          'Resistência a riscos e impactos cotidianos. Reuniões, notebooks deslizando, café derramado — superfície segue impecável.',
+          'Resistência a riscos e impactos cotidianos. Reuniões, notebooks deslizando, café derramado, superfície segue impecável.',
       },
       {
         problem:
@@ -1618,7 +1618,7 @@ const phantomGloss: ProductDualPublic = {
       },
       {
         problem:
-          'Hotelaria 5 estrelas com volume alto de hóspedes — degradação é inevitável, custo de troca de mobiliário é alto.',
+          'Hotelaria 5 estrelas com volume alto de hóspedes, degradação é inevitável, custo de troca de mobiliário é alto.',
         solution:
           'Estende ciclo de vida útil de superfícies premium. CAPEX único, OPEX de manutenção reduzido. Cobertura sob garantia 5 anos.',
       },
@@ -1626,19 +1626,19 @@ const phantomGloss: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Phantom Gloss arquitetônica é a mesma que a automotiva?',
-        a: 'Não — são da mesma família Phantom, mas produtos distintos. A versão arquitetônica é SPF (Surface Protection Film), aplicada em superfícies de acabamento como mármore polido, lacado e madeira envernizada. A versão automotiva é PPF (Paint Protection Film), aplicada sobre pintura de veículos. Aplicações, formulações e aplicadores são diferentes.',
+        a: 'Não, são da mesma família Phantom, mas produtos distintos. A versão arquitetônica é SPF (Surface Protection Film), aplicada em superfícies de acabamento como mármore polido, lacado e madeira envernizada. A versão automotiva é PPF (Paint Protection Film), aplicada sobre pintura de veículos. Aplicações, formulações e aplicadores são diferentes.',
       },
       {
         q: 'Phantom Gloss substitui manutenção periódica de mármore polido?',
-        a: 'Não substitui — complementa. A manutenção periódica de polimento continua sendo recomendada conforme orientação do fornecedor da pedra. A Phantom Gloss elimina o principal agente que acelera a necessidade dessa manutenção: o ataque químico cotidiano.',
+        a: 'Não substitui, complementa. A manutenção periódica de polimento continua sendo recomendada conforme orientação do fornecedor da pedra. A Phantom Gloss elimina o principal agente que acelera a necessidade dessa manutenção: o ataque químico cotidiano.',
       },
       {
         q: 'Funciona em projetos corporativos de retrofit?',
-        a: 'Sim — é uma das aplicações típicas. Aplicada sobre mobiliário e revestimentos existentes sem necessidade de obra. Hospedeiros, restaurantes e lobbies em operação podem receber a proteção sem interrupção de serviço.',
+        a: 'Sim, é uma das aplicações típicas. Aplicada sobre mobiliário e revestimentos existentes sem necessidade de obra. Hospedeiros, restaurantes e lobbies em operação podem receber a proteção sem interrupção de serviço.',
       },
       {
         q: 'Existe versão para acabamento fosco?',
-        a: 'Sim — Phantom Matte. Mesma tecnologia de proteção, calibrada para preservar acabamento fosco em mármore matte, lacado fosco e superfícies de madeira em acabamento natural ou matte.',
+        a: 'Sim, Phantom Matte. Mesma tecnologia de proteção, calibrada para preservar acabamento fosco em mármore matte, lacado fosco e superfícies de madeira em acabamento natural ou matte.',
       },
     ],
     aggregates: dualPublicAggregates,
@@ -1663,7 +1663,7 @@ const phantomGloss: ProductDualPublic = {
 };
 
 // ─────────────────────────────────────────────
-// Phantom Matte — Premium · SPF para superfícies foscas
+// Phantom Matte, Premium · SPF para superfícies foscas
 // ─────────────────────────────────────────────
 const phantomMatte: ProductDualPublic = {
   slug: 'phantom-matte',
@@ -1673,7 +1673,7 @@ const phantomMatte: ProductDualPublic = {
     badge: 'SPF · Premium',
     title: 'Proteção fosca. Acabamento matte intacto.',
     subtitle:
-      'Surface Protection Film de 180 microns calibrado para preservar acabamentos foscos — mármore matte, lacado fosco, madeira em acabamento natural ou velado. Sem alteração de textura, sem brilho indesejado. Garantia 5 anos.',
+      'Surface Protection Film de 180 microns calibrado para preservar acabamentos foscos, mármore matte, lacado fosco, madeira em acabamento natural ou velado. Sem alteração de textura, sem brilho indesejado. Garantia 5 anos.',
     quickStats: [
       { label: 'Espessura', value: '180 microns' },
       { label: 'Acabamento', value: 'Matte preservado' },
@@ -1685,7 +1685,7 @@ const phantomMatte: ProductDualPublic = {
     residential: {
       headline: 'Para superfícies foscas de alto padrão',
       description:
-        'O acabamento fosco está cada vez mais presente em residências de design contemporâneo — mármore preto matte, lacado fosco, madeira natural sem verniz. Protege sem brilhar.',
+        'O acabamento fosco está cada vez mais presente em residências de design contemporâneo, mármore preto matte, lacado fosco, madeira natural sem verniz. Protege sem brilhar.',
     },
     corporate: {
       headline: 'Para projetos comerciais com identidade matte definida',
@@ -1695,13 +1695,13 @@ const phantomMatte: ProductDualPublic = {
   },
   description: {
     paragraphs: [
-      'A INSULFILM™ Phantom Matte arquitetônica é a contraparte fosca da família Phantom — SPF (Surface Protection Film) com 180 microns, calibrada especificamente para preservar acabamentos matte em ambientes arquitetônicos. Pertence à família Phantom mas é produto distinto da versão automotiva PPF.',
-      'O acabamento fosco tem crescido em arquitetura e design contemporâneos: mármore preto fosco em bancadas, lacado matte em marcenaria, madeira em acabamento natural ou velado. Esses acabamentos são igualmente vulneráveis a riscos, manchas e desgaste — mas qualquer película convencional adicionaria brilho, distorcendo a estética.',
+      'A INSULFILM™ Phantom Matte arquitetônica é a contraparte fosca da família Phantom, SPF (Surface Protection Film) com 180 microns, calibrada especificamente para preservar acabamentos matte em ambientes arquitetônicos. Pertence à família Phantom mas é produto distinto da versão automotiva PPF.',
+      'O acabamento fosco tem crescido em arquitetura e design contemporâneos: mármore preto fosco em bancadas, lacado matte em marcenaria, madeira em acabamento natural ou velado. Esses acabamentos são igualmente vulneráveis a riscos, manchas e desgaste, mas qualquer película convencional adicionaria brilho, distorcendo a estética.',
       'A Phantom Matte resolve isso: preserva exatamente o acabamento original. Você protege a superfície sem alterar a leitura visual do material. Aplicação invisível em todos os sentidos.',
       'Indicada para residências de design contemporâneo, ambientes comerciais com paleta matte definida (boutique hotels, restaurantes, showrooms de luxo) e qualquer projeto onde a estética fosca é parte da identidade.',
     ],
     techTable: [
-      { label: 'Tipo', value: 'SPF — Surface Protection Film' },
+      { label: 'Tipo', value: 'SPF, Surface Protection Film' },
       { label: 'Espessura', value: '180 microns (7 mil)' },
       { label: 'Acabamento', value: 'Matte (preserva fosco original)' },
       { label: 'Proteção mecânica', value: 'Anti-risco e anti-abrasão' },
@@ -1717,13 +1717,13 @@ const phantomMatte: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Mármore preto fosco na bancada da cozinha — o acabamento matte é a identidade do projeto, mas é o que mais sofre com manchas.',
+          'Mármore preto fosco na bancada da cozinha, o acabamento matte é a identidade do projeto, mas é o que mais sofre com manchas.',
         solution:
           'Barreira química preserva o acabamento matte intacto. Mancha não penetra. O fosco continua sendo fosco.',
       },
       {
         problem:
-          'Marcenaria em lacado matte de cor escura — qualquer micro-risco se torna imediatamente visível pela diferença de textura.',
+          'Marcenaria em lacado matte de cor escura, qualquer micro-risco se torna imediatamente visível pela diferença de textura.',
         solution:
           '180 microns de proteção evitam o micro-risco antes que ele aconteça. O lacado matte mantém uniformidade visual.',
       },
@@ -1735,7 +1735,7 @@ const phantomMatte: ProductDualPublic = {
       },
       {
         problem:
-          'Aplicação de proteção convencional adicionaria brilho — quebrando a paleta matte cuidadosamente especificada pelo arquiteto.',
+          'Aplicação de proteção convencional adicionaria brilho, quebrando a paleta matte cuidadosamente especificada pelo arquiteto.',
         solution:
           'Phantom Matte é calibrada para preservar exatamente o acabamento fosco original. Sem brilho indesejado, sem alteração de textura visual.',
       },
@@ -1743,11 +1743,11 @@ const phantomMatte: ProductDualPublic = {
     miniFaq: [
       {
         q: 'A Phantom Matte adiciona algum brilho à superfície original?',
-        a: 'Não. A formulação é específica para preservar acabamento fosco. Se o seu material original é matte, ele continua matte após a aplicação — sem brilho, sem reflexo indesejado, sem alteração de textura visual.',
+        a: 'Não. A formulação é específica para preservar acabamento fosco. Se o seu material original é matte, ele continua matte após a aplicação, sem brilho, sem reflexo indesejado, sem alteração de textura visual.',
       },
       {
         q: 'Posso ter Phantom Gloss em uma superfície e Phantom Matte em outra na mesma casa?',
-        a: 'Sim, é o uso comum. Em projetos contemporâneos é normal ter mistura de acabamentos — bancada de mármore polido (Gloss) e marcenaria lacada matte (Matte) na mesma cozinha. O aplicador especifica a versão correta por peça.',
+        a: 'Sim, é o uso comum. Em projetos contemporâneos é normal ter mistura de acabamentos, bancada de mármore polido (Gloss) e marcenaria lacada matte (Matte) na mesma cozinha. O aplicador especifica a versão correta por peça.',
       },
       {
         q: 'Funciona em pedra natural com porosidade visível (tipo travertino fosco)?',
@@ -1760,13 +1760,13 @@ const phantomMatte: ProductDualPublic = {
     pains: [
       {
         problem:
-          'Boutique hotel com paleta matte definida pelo design — qualquer alteração de acabamento quebra a linguagem.',
+          'Boutique hotel com paleta matte definida pelo design, qualquer alteração de acabamento quebra a linguagem.',
         solution:
           'Proteção que não interfere na estética. Os ambientes continuam visualmente fiéis ao projeto original do designer.',
       },
       {
         problem:
-          'Restaurante de alto padrão com mobiliário lacado fosco em uso intenso — desgaste rápido, repaginação cara.',
+          'Restaurante de alto padrão com mobiliário lacado fosco em uso intenso, desgaste rápido, repaginação cara.',
         solution:
           'Estende ciclo de vida do mobiliário sem alterar acabamento. CAPEX único, OPEX de reposição reduzido.',
       },
@@ -1790,11 +1790,11 @@ const phantomMatte: ProductDualPublic = {
       },
       {
         q: 'Como o aplicador escolhe entre Phantom Gloss e Phantom Matte?',
-        a: 'Pelo acabamento do material original. Superfície brilhosa (mármore polido, lacado brilhoso, verniz alto-brilho) → Gloss. Superfície fosca (mármore matte, lacado fosco, madeira natural sem brilho) → Matte. Aplicação errada altera a leitura visual — por isso a análise prévia importa.',
+        a: 'Pelo acabamento do material original. Superfície brilhosa (mármore polido, lacado brilhoso, verniz alto-brilho) → Gloss. Superfície fosca (mármore matte, lacado fosco, madeira natural sem brilho) → Matte. Aplicação errada altera a leitura visual, por isso a análise prévia importa.',
       },
       {
         q: 'Cobre superfícies com texturas (madeira escovada, pedra rústica)?',
-        a: 'Para superfícies com textura acentuada, análise prévia é necessária — a película pode não acompanhar a topografia. Em superfícies foscas relativamente planas, sim. Consultor técnico avalia caso a caso.',
+        a: 'Para superfícies com textura acentuada, análise prévia é necessária, a película pode não acompanhar a topografia. Em superfícies foscas relativamente planas, sim. Consultor técnico avalia caso a caso.',
       },
     ],
     aggregates: dualPublicAggregates,

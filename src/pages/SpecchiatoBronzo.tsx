@@ -52,10 +52,10 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Specchiato Bronzo | Película Espelhada Bronze | Refletividade Equilibrada</title>
-        <meta name="description" content="INSULFILM™ Specchiato Bronzo — película espelhada bronze com tecnologia Sputtered Nichrome, até 72% de rejeição IR e conforto visual interno preservado. Garantia 10 anos." />
+        <meta name="description" content="INSULFILM™ Specchiato Bronzo, película espelhada bronze com tecnologia Sputtered Nichrome, até 72% de rejeição IR e conforto visual interno preservado. Garantia 10 anos." />
         <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Specchiato Bronzo | Película Espelhada Bronze" />
-        <meta property="og:description" content="INSULFILM™ Specchiato Bronzo — película espelhada bronze com tecnologia Sputtered Nichrome e até 72% de rejeição IR." />
+        <meta property="og:description" content="INSULFILM™ Specchiato Bronzo, película espelhada bronze com tecnologia Sputtered Nichrome e até 72% de rejeição IR." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -72,10 +72,10 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium, Arquitetônica</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                {copy?.h1 || `INSULFILM™ Specchiato Bronzo — eficiência solar com estética espelhada equilibrada e suave`}
+                {copy?.h1 || `INSULFILM™ Specchiato Bronzo, eficiência solar com estética espelhada equilibrada e suave`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Alto desempenho térmico. Sem o espelho intenso do lado interno.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
@@ -120,8 +120,8 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-8">A escolha para quem quer desempenho espelhado sem comprometer a experiência interna.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Specchiato Bronzo resolve uma tensão comum nos projetos arquitetônicos: a película espelhada mais eficiente termicamente tende a criar um efeito espelho intenso do lado interno — reduzindo o conforto visual dos ocupantes.</motion.p>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Com tecnologia Sputtered Nichrome, a Specchiato Bronzo entrega refletividade balanceada — bloqueando o calor excessivo externamente com um efeito espelho suave e elegante, sem comprometer a visão para fora ou criar desconforto interno.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Specchiato Bronzo resolve uma tensão comum nos projetos arquitetônicos: a película espelhada mais eficiente termicamente tende a criar um efeito espelho intenso do lado interno, reduzindo o conforto visual dos ocupantes.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Com tecnologia Sputtered Nichrome, a Specchiato Bronzo entrega refletividade balanceada, bloqueando o calor excessivo externamente com um efeito espelho suave e elegante, sem comprometer a visão para fora ou criar desconforto interno.</motion.p>
             </motion.div>
           </div>
         </section>
@@ -170,19 +170,19 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-10">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Tecnologia Sputtered Nichrome</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Tecnologia de deposição por pulverização catódica com Nichrome — entrega maior uniformidade de camada, resistência à corrosão superior e durabilidade de longo prazo. Suporta a garantia de 10 anos.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Tecnologia de deposição por pulverização catódica com Nichrome, entrega maior uniformidade de camada, resistência à corrosão superior e durabilidade de longo prazo. Suporta a garantia de 10 anos.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Refletividade equilibrada</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">A Specchiato Bronzo foi especificamente desenvolvida para ambientes onde a experiência interna importa tanto quanto o desempenho externo. Não é o espelho mais intenso da linha — é o mais confortável.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">A Specchiato Bronzo foi especificamente desenvolvida para ambientes onde a experiência interna importa tanto quanto o desempenho externo. Não é o espelho mais intenso da linha, é o mais confortável.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Tom bronze elegante</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Estética espelhada suave em tom bronze — diferente do prateado intenso do Metallico Argento. Para projetos que buscam sofisticação com personalidade estética distinta.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Estética espelhada suave em tom bronze, diferente do prateado intenso do Metallico Argento. Para projetos que buscam sofisticação com personalidade estética distinta.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Aplicação em pergolados</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Compatível com teto de vidro e pergolados — versatilidade de aplicação que amplifica o alcance nos projetos.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Compatível com teto de vidro e pergolados, versatilidade de aplicação que amplifica o alcance nos projetos.</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -221,7 +221,7 @@ const SpecchiatoBronzo = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Solicite Atendimento Nacional</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Specchiato Bronzo é a escolha para projetos que exigem eficiência solar com conforto visual interno — com estética bronze equilibrada e 10 anos de garantia da marca registrada.</motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Specchiato Bronzo é a escolha para projetos que exigem eficiência solar com conforto visual interno, com estética bronze equilibrada e 10 anos de garantia da marca registrada.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><ArrowRight className="w-5 h-5" />Solicitar atendimento nacional</Link>

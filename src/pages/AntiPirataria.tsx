@@ -46,7 +46,7 @@ const AntiPirataria = () => (
             Autenticidade e Anti-Pirataria
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">
-            INSULFILM™ é marca registrada no INPI desde 1987. Uso indevido é crime — Lei nº 9.279/96.
+            INSULFILM™ é marca registrada no INPI desde 1987. Uso indevido é crime, Lei nº 9.279/96.
           </motion.p>
           <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
         </motion.div>

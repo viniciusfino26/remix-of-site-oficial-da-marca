@@ -51,7 +51,7 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Petrolio | Película Híbrida Arquitetônica | Estética Preta Sofisticada</title>
-        <meta name="description" content="INSULFILM™ Petrolio — película arquitetônica híbrida com estética preta sem refletividade intensa, proteção UV >99% e rejeição de IR de até 42%. Para projetos contemporâneos." />
+        <meta name="description" content="INSULFILM™ Petrolio, película arquitetônica híbrida com estética preta sem refletividade intensa, proteção UV >99% e rejeição de IR de até 42%. Para projetos contemporâneos." />
         <meta property="og:title" content="INSULFILM™ Petrolio | Película Híbrida Arquitetônica" />
         <meta property="og:description" content="Design contemporâneo com controle solar e estética preta sofisticada." />
         <meta property="og:type" content="product" />
@@ -75,7 +75,7 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
                 {copy?.h1 || `Estética arquitetônica. Desempenho técnico. Sem abrir mão de nenhum dos dois.`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Petrolio foi desenvolvida para projetos que valorizam a estética preta sem refletividade intensa com controle solar eficiente — unindo tecnologia híbrida, alta nitidez ótica e proteção UV total em uma película discreta e sofisticada.
+                A INSULFILM™ Petrolio foi desenvolvida para projetos que valorizam a estética preta sem refletividade intensa com controle solar eficiente, unindo tecnologia híbrida, alta nitidez ótica e proteção UV total em uma película discreta e sofisticada.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -119,10 +119,10 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Tecnologia híbrida com o visual que a arquitetura contemporânea exige.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A INSULFILM™ Petrolio combina poliéster tingido em profundidade com partículas metálicas — resultando em uma película com durabilidade e estabilidade de cor superiores às películas tingidas convencionais, sem o efeito espelhado intenso das películas metalizadas.
+                A INSULFILM™ Petrolio combina poliéster tingido em profundidade com partículas metálicas, resultando em uma película com durabilidade e estabilidade de cor superiores às películas tingidas convencionais, sem o efeito espelhado intenso das películas metalizadas.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed">
-                O tom preto sofisticado sem efeito espelhado proporciona sofisticação arquitetônica discreta, conforto visual interno e controle de luminosidade — ideal para fachadas, janelas residenciais e ambientes internos envidraçados que exigem performance sem renunciar ao design.
+                O tom preto sofisticado sem efeito espelhado proporciona sofisticação arquitetônica discreta, conforto visual interno e controle de luminosidade, ideal para fachadas, janelas residenciais e ambientes internos envidraçados que exigem performance sem renunciar ao design.
               </motion.p>
             </motion.div>
           </div>
@@ -149,9 +149,9 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-8">Principais Benefícios</motion.h2>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Estética preta sofisticada — perfeita para projetos arquitetônicos contemporâneos',
+                  'Estética preta sofisticada, perfeita para projetos arquitetônicos contemporâneos',
                   'Conforto térmico: rejeição eficiente de calor sem reflexos espelhados',
-                  'Proteção UV >99% — bloqueio total de raios ultravioleta',
+                  'Proteção UV >99%, bloqueio total de raios ultravioleta',
                   'Versatilidade: três opções de transparência para diferentes níveis de privacidade',
                   'Estabilidade de cor superior às películas tingidas convencionais',
                 ].map((text, i) => (
@@ -172,11 +172,11 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-8">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Tecnologia híbrida</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">A combinação de tingimento profundo com partículas metálicas entrega durabilidade estrutural superior à película apenas tingida — com maior resistência ao desbotamento e à alteração de cor ao longo do tempo.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">A combinação de tingimento profundo com partículas metálicas entrega durabilidade estrutural superior à película apenas tingida, com maior resistência ao desbotamento e à alteração de cor ao longo do tempo.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Estética preta sem reflexo espelhado</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Visual preto sofisticado com aparência que não irradia reflexo intenso — sem o brilho espelhado que algumas películas metalizadas produzem. Ideal para projetos que valorizam a discrição estética.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Visual preto sofisticado com aparência que não irradia reflexo intenso, sem o brilho espelhado que algumas películas metalizadas produzem. Ideal para projetos que valorizam a discrição estética.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Excelente claridade ótica interna</h3>
@@ -184,7 +184,7 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Proteção UV &gt;99%</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Bloqueio total de radiação ultravioleta — protegendo ocupantes, mobiliário e revestimentos.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Bloqueio total de radiação ultravioleta, protegendo ocupantes, mobiliário e revestimentos.</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -213,7 +213,7 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
                 </table>
               </motion.div>
               <motion.p variants={fadeInUp} className="text-xs text-muted-foreground/60 text-center mt-4 italic">
-                A Petrolio prioriza estética arquitetônica preta com tecnologia híbrida — para quem busca visual contemporâneo sem o efeito espelhado intenso.
+                A Petrolio prioriza estética arquitetônica preta com tecnologia híbrida, para quem busca visual contemporâneo sem o efeito espelhado intenso.
               </motion.p>
             </motion.div>
           </div>
@@ -232,7 +232,7 @@ const Petrolio = ({ segment }: { segment?: Segment }) => {
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Estética e desempenho em uma única solução.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                A INSULFILM™ Petrolio integra o portfólio da marca registrada que definiu o padrão do segmento — para projetos que exigem estética e desempenho.
+                A INSULFILM™ Petrolio integra o portfólio da marca registrada que definiu o padrão do segmento, para projetos que exigem estética e desempenho.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">

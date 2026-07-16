@@ -81,10 +81,10 @@ const Automotivo = () => {
   return (
     <main>
       <Helmet>
-        <title>Películas Automotivas INSULFILM™ — Solar, Segurança e PPF</title>
+        <title>Películas Automotivas INSULFILM™, Solar, Segurança e PPF</title>
         <meta name="description" content="Películas automotivas INSULFILM™: controle solar, antivandalismo e PPF para carros. Aplicação por Centros Autorizados em SP." />
         <link rel="canonical" href="https://sitenovoinsulfilm.lovable.app/automotivo" />
-        <meta property="og:title" content="Películas Automotivas INSULFILM™ — Solar, Segurança e PPF" />
+        <meta property="og:title" content="Películas Automotivas INSULFILM™, Solar, Segurança e PPF" />
         <meta property="og:description" content="Conforto térmico, segurança e proteção de pintura para o seu carro com a marca original." />
         <meta property="og:url" content="https://sitenovoinsulfilm.lovable.app/automotivo" />
         <meta property="og:type" content="website" />
@@ -232,7 +232,7 @@ const Automotivo = () => {
           >
             <Badge className="bg-accent/10 text-accent border-accent/20 text-sm px-6 py-2 shimmer">
               <Award className="w-4 h-4 mr-2" />
-              PACOTE COMPLETO DE GARANTIAS — CERTIFICADO INDIVIDUAL
+              PACOTE COMPLETO DE GARANTIAS, CERTIFICADO INDIVIDUAL
             </Badge>
           </motion.div>
         </div>

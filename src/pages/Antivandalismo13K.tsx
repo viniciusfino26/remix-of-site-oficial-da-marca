@@ -314,7 +314,7 @@ const Antivandalismo13K = () => {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
                 <img
                   src={autoAntivandalismo13K}
-                  alt="Marginal armado com taco abordando veículo à noite — cenário de risco contido pela película INSULFILM™ Antivandalismo13K"
+                  alt="Marginal armado com taco abordando veículo à noite, cenário de risco contido pela película INSULFILM™ Antivandalismo13K"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -724,7 +724,7 @@ const Antivandalismo13K = () => {
         </div>
       </section>
 
-      {/* ═══ 14. APLICABILIDADE — LINHAS SOLARES ═══ */}
+      {/* ═══ 14. APLICABILIDADE, LINHAS SOLARES ═══ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={stagger}>
@@ -737,16 +737,16 @@ const Antivandalismo13K = () => {
               <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { name: 'RayStart', gen: 'Solar Performance · Basic Film Pigmentada', href: '/automotivo/solar/raystart' },
-                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
-                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
-                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
-                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
+                  { name: 'Eclipse', gen: '3ª Geração, Carbono', href: '/automotivo/solar/eclipse' },
+                  { name: 'Vip', gen: '3ª Geração evoluída, Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'Matrix', gen: '4ª Geração, Cerâmica', href: '/automotivo/solar/matrix' },
+                  { name: 'Polariz Ultra', gen: '5ª Geração, Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
                 ].map((line) => (
                   <a key={line.name} href={line.href} className="group">
                     <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
                       <Sun className="w-3.5 h-3.5 mr-2" />
                       <span className="font-bold">{line.name}</span>
-                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
+                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">, {line.gen}</span>
                     </Badge>
                   </a>
                 ))}

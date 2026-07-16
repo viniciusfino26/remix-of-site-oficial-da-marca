@@ -90,7 +90,7 @@ const AutomotivoEclipse = () => {
                 Quando privacidade e desempenho térmico precisam coexistir.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Eclipse representa o salto tecnológico da série Carbono — maior rejeição de infravermelho, estabilidade de cor superior e nitidez ótica High Definition para quem não abre mão de visibilidade interna.
+                A INSULFILM™ Eclipse representa o salto tecnológico da série Carbono, maior rejeição de infravermelho, estabilidade de cor superior e nitidez ótica High Definition para quem não abre mão de visibilidade interna.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -103,7 +103,7 @@ const AutomotivoEclipse = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Eclipse — Série Carbono" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Eclipse, Série Carbono" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -183,14 +183,14 @@ const AutomotivoEclipse = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">A tecnologia de carbono muda a natureza do produto.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A INSULFILM™ Eclipse foi desenvolvida para quem já compreende a diferença entre películas — e busca desempenho térmico real combinado à nitidez ótica de alto padrão.
+                A INSULFILM™ Eclipse foi desenvolvida para quem já compreende a diferença entre películas, e busca desempenho térmico real combinado à nitidez ótica de alto padrão.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
                 A série Carbono elimina a metalização presente em tecnologias anteriores: sem interferência em GPS ou sinais eletrônicos, com maior estabilidade de cor ao longo do tempo e filtro de infravermelho significativamente superior ao da linha pigmentada.
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Calor: filtro mais eficiente — perceptível na pele',
+                  'Calor: filtro mais eficiente, perceptível na pele',
                   'Privacidade externa: escuro por fora',
                   'Dirigibilidade interna: claro por dentro',
                   'Conforto visual: elimina o ofuscamento',
@@ -233,7 +233,7 @@ const AutomotivoEclipse = () => {
                 </table>
               </motion.div>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-sm font-light mt-6 text-center italic">
-                A diferença de rejeição de infravermelho — de 5% para 30% — é o principal responsável pelo ganho perceptível de conforto térmico dentro do veículo.
+                A diferença de rejeição de infravermelho, de 5% para 30%, é o principal responsável pelo ganho perceptível de conforto térmico dentro do veículo.
               </motion.p>
             </motion.div>
           </div>

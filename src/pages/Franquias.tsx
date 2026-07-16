@@ -25,17 +25,17 @@ const WHATSAPP = 'https://wa.me/5511976136911?text=Tenho%20interesse%20na%20fran
 const ANOS = new Date().getFullYear() - 1986;
 
 const produtos = [
-  { img: homeSolar, title: 'Linha Solar', desc: 'Proteção e conforto térmico para veículos e edificações — o carro-chefe da marca.', icon: Sun },
+  { img: homeSolar, title: 'Linha Solar', desc: 'Proteção e conforto térmico para veículos e edificações, o carro-chefe da marca.', icon: Sun },
   { img: homeSeguranca, title: 'Linha Segurança', desc: 'Películas antivandalismo e proteção patrimonial com alta demanda o ano todo.', icon: Shield },
   { img: homeComercial, title: 'Linha Arquitetônica', desc: 'Soluções decorativas e funcionais para projetos residenciais e comerciais.', icon: Building2 },
-  { img: homePpf, title: 'Linha PPF', desc: 'Paint Protection Film — proteção de pintura automotiva, segmento premium em expansão.', icon: Layers },
+  { img: homePpf, title: 'Linha PPF', desc: 'Paint Protection Film, proteção de pintura automotiva, segmento premium em expansão.', icon: Layers },
 ];
 
 const diferenciais = [
   { icon: Award, title: 'Pioneira no Brasil', desc: `Com ${ANOS}+ anos de mercado, a INSULFILM™ foi a primeira marca de películas do Brasil, tornando-se sinônimo da categoria.` },
   { icon: Globe, title: 'Visibilidade Nacional e Internacional', desc: 'Presença consolidada em todo o território brasileiro e reconhecimento em mercados internacionais.' },
   { icon: TrendingUp, title: 'Mercado em Crescimento Constante', desc: 'Frota brasileira em expansão e demanda crescente por eficiência energética garantem um mercado sempre aquecido.' },
-  { icon: Car, title: 'Marca Mais Reconhecida', desc: 'A marca nº1 em reconhecimento espontâneo — quando o consumidor pensa em película, pensa em INSULFILM™.' },
+  { icon: Car, title: 'Marca Mais Reconhecida', desc: 'A marca nº1 em reconhecimento espontâneo, quando o consumidor pensa em película, pensa em INSULFILM™.' },
   { icon: MapPin, title: 'Território com Exclusividade', desc: 'Atuação em região exclusiva com suporte dedicado, garantindo ROI acelerado e proteção de mercado.' },
   { icon: Store, title: 'Modelo de Negócio Comprovado', desc: 'Estrutura testada e validada ao longo de décadas, com processos otimizados e alto índice de satisfação.' },
 ];
@@ -168,7 +168,7 @@ const Franquias = () => (
                 O Brasil possui uma das maiores frotas de veículos do mundo, com crescimento constante ano após ano. Somado a isso, a demanda por eficiência energética em edificações comerciais e residenciais segue em forte expansão.
               </p>
               <p>
-                A película deixou de ser apenas estética — hoje é item de <strong className="text-primary-foreground font-semibold">segurança, economia e conforto</strong>. Isso significa demanda contínua e recorrente para o franqueado INSULFILM™.
+                A película deixou de ser apenas estética, hoje é item de <strong className="text-primary-foreground font-semibold">segurança, economia e conforto</strong>. Isso significa demanda contínua e recorrente para o franqueado INSULFILM™.
               </p>
               <p>
                 Com um portfólio que vai do solar ao PPF, do automotivo ao arquitetônico, sua franquia atende desde o motorista que quer conforto até o incorporador que busca certificação sustentável.

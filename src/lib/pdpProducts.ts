@@ -1,6 +1,6 @@
 // src/lib/pdpProducts.ts
 // Manifesto centralizado e TRILÍNGUE de Product Schema (JSON-LD) por PDP.
-// Single Source of Truth — espelha o conteúdo das PDPs (TLDR, Specs Cards, FAQs).
+// Single Source of Truth, espelha o conteúdo das PDPs (TLDR, Specs Cards, FAQs).
 // Inclui Brand, AdditionalProperty, Offer e AggregateRating para Rich Snippets.
 //
 // Atualizar AQUI sempre que mudar specs/descrição na página correspondente.
@@ -37,7 +37,7 @@ export interface PDPProduct {
   category?: I18nText;
   /** Avaliação agregada (real, baseada em depoimentos/centros autorizados). */
   rating?: { value: number; count: number };
-  /** Oferta (sob consulta — sem preço fixo, mas valida Offer schema). */
+  /** Oferta (sob consulta, sem preço fixo, mas valida Offer schema). */
   offer?: boolean;
 }
 
@@ -48,14 +48,14 @@ const ABS = (urlOrPath: string) =>
 
 // Categorias reutilizáveis
 const CAT_AUTO_SOLAR: I18nText = {
-  pt: 'Película automotiva — proteção solar',
-  en: 'Automotive window film — solar protection',
-  es: 'Película automotriz — protección solar',
+  pt: 'Película automotiva, proteção solar',
+  en: 'Automotive window film, solar protection',
+  es: 'Película automotriz, protección solar',
 };
 const CAT_AUTO_SECURITY: I18nText = {
-  pt: 'Película automotiva — segurança',
-  en: 'Automotive window film — security',
-  es: 'Película automotriz — seguridad',
+  pt: 'Película automotiva, segurança',
+  en: 'Automotive window film, security',
+  es: 'Película automotriz, seguridad',
 };
 const CAT_AUTO_PPF: I18nText = {
   pt: 'Película de proteção de pintura (PPF) automotiva',
@@ -63,14 +63,14 @@ const CAT_AUTO_PPF: I18nText = {
   es: 'Película de protección de pintura (PPF) automotriz',
 };
 const CAT_ARQ_SOLAR: I18nText = {
-  pt: 'Película arquitetônica — controle solar',
-  en: 'Architectural window film — solar control',
-  es: 'Película arquitectónica — control solar',
+  pt: 'Película arquitetônica, controle solar',
+  en: 'Architectural window film, solar control',
+  es: 'Película arquitectónica, control solar',
 };
 const CAT_ARQ_SPF: I18nText = {
-  pt: 'Película arquitetônica — proteção de superfícies (SPF)',
+  pt: 'Película arquitetônica, proteção de superfícies (SPF)',
   en: 'Architectural Surface Protection Film (SPF)',
-  es: 'Película arquitectónica — protección de superficies (SPF)',
+  es: 'Película arquitectónica, protección de superficies (SPF)',
 };
 
 // Helpers de propriedades trilíngues
@@ -96,7 +96,7 @@ const THICK = (value: string) =>
 // ───────── Manifesto ─────────
 
 export const PDP_PRODUCTS: Record<string, PDPProduct> = {
-  // ═══ AUTOMOTIVO — SOLAR ═══
+  // ═══ AUTOMOTIVO, SOLAR ═══
   matrix: {
     name: 'INSULFILM™ Matrix',
     description: {
@@ -149,7 +149,7 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     offer: true,
   },
 
-  // ═══ AUTOMOTIVO — PPF ═══
+  // ═══ AUTOMOTIVO, PPF ═══
   'phantom-gloss': {
     name: 'INSULFILM™ Phantom Gloss',
     description: {
@@ -160,7 +160,7 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     url: '/phantom-gloss',
     category: CAT_AUTO_PPF,
     properties: [
-      P('Tipo', 'Type', 'Tipo', 'SPF — Surface Protection Film'),
+      P('Tipo', 'Type', 'Tipo', 'SPF, Surface Protection Film'),
       THICK('180 microns (7 mil)'),
       WARRANTY('5'),
     ],
@@ -168,7 +168,7 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     offer: true,
   },
 
-  // ═══ AUTOMOTIVO — SEGURANÇA ═══
+  // ═══ AUTOMOTIVO, SEGURANÇA ═══
   antivandalismo13k: {
     name: 'INSULFILM™ Antivandalismo 13K',
     description: {
@@ -200,9 +200,9 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     properties: [
       THICK('7 mil / 177,8 micras'),
       P('Função', 'Function', 'Función',
-        'Laminação do vidro — proteção contra estilhaços',
-        'Glass lamination — shard protection',
-        'Laminación del vidrio — protección contra astillas'),
+        'Laminação do vidro, proteção contra estilhaços',
+        'Glass lamination, shard protection',
+        'Laminación del vidrio, protección contra astillas'),
       WARRANTY('5'),
     ],
     rating: { value: 4.8, count: 201 },
@@ -245,7 +245,7 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     offer: true,
   },
 
-  // ═══ ARQUITETÔNICO — SOLAR ═══
+  // ═══ ARQUITETÔNICO, SOLAR ═══
   clear70: {
     name: 'INSULFILM™ Clear70',
     description: {
@@ -407,18 +407,18 @@ export const PDP_PRODUCTS: Record<string, PDPProduct> = {
     offer: true,
   },
 
-  // ═══ ARQUITETÔNICO — SPF ═══
+  // ═══ ARQUITETÔNICO, SPF ═══
   'phantom-arquitetonico': {
     name: 'INSULFILM™ Phantom Arquitetônico',
     description: {
-      pt: 'Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.',
+      pt: 'Película de proteção de superfícies (SPF, Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.',
       en: 'Surface Protection Film (SPF) for marble, wood, stainless steel and glass. Preserving the design of your finishes.',
-      es: 'Película de protección de superficies (SPF — Surface Protection Film) para mármoles, maderas, acero inoxidable y vidrios. Preservando el diseño de sus acabados.',
+      es: 'Película de protección de superficies (SPF, Surface Protection Film) para mármoles, maderas, acero inoxidable y vidrios. Preservando el diseño de sus acabados.',
     },
     url: '/phantom-arquitetonico',
     category: CAT_ARQ_SPF,
     properties: [
-      P('Tipo', 'Type', 'Tipo', 'SPF — Surface Protection Film'),
+      P('Tipo', 'Type', 'Tipo', 'SPF, Surface Protection Film'),
       P('Versões', 'Versions', 'Versiones', 'Gloss & Matte'),
       THICK('180 microns'),
       WARRANTY('5'),
@@ -472,9 +472,9 @@ export const buildProductSchema = (slug: string, lang: Lang = 'pt') => {
         priceCurrency: 'BRL',
         valueAddedTaxIncluded: true,
         description: {
-          pt: 'Sob consulta — orçamento personalizado em Centro Autorizado INSULFILM™.',
-          en: 'On request — personalized quote at an Authorized INSULFILM™ Center.',
-          es: 'A consultar — presupuesto personalizado en Centro Autorizado INSULFILM™.',
+          pt: 'Sob consulta, orçamento personalizado em Centro Autorizado INSULFILM™.',
+          en: 'On request, personalized quote at an Authorized INSULFILM™ Center.',
+          es: 'A consultar, presupuesto personalizado en Centro Autorizado INSULFILM™.',
         }[lang],
       },
       seller: {

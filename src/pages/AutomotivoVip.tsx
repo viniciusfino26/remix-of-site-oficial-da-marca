@@ -64,7 +64,7 @@ const AutomotivoVip = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Vip | Topo da Linha Solar Performance</title>
-        <meta name="description" content="A INSULFILM™ Vip entrega a maior rejeição térmica da linha convencional — até 65% de rejeição de infravermelho e 58% de energia solar rejeitada." />
+        <meta name="description" content="A INSULFILM™ Vip entrega a maior rejeição térmica da linha convencional, até 65% de rejeição de infravermelho e 58% de energia solar rejeitada." />
         <meta property="og:title" content="INSULFILM™ Vip | Topo da Linha Solar Performance" />
         <meta property="og:description" content="O topo da linha Solar Performance. Para quem exige o máximo da tecnologia de carbono." />
         <meta property="og:type" content="product" />
@@ -87,7 +87,7 @@ const AutomotivoVip = () => {
                 O topo da linha Solar Performance. Para quem exige o máximo da tecnologia de carbono.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-3xl mx-auto">
-                A INSULFILM™ Vip entrega a maior rejeição térmica da linha convencional — com até 65% de rejeição de infravermelho, tecnologia High Definition e 58% de energia solar rejeitada.
+                A INSULFILM™ Vip entrega a maior rejeição térmica da linha convencional, com até 65% de rejeição de infravermelho, tecnologia High Definition e 58% de energia solar rejeitada.
               </motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -99,7 +99,7 @@ const AutomotivoVip = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ Vip — Carbono Alta Performance" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ Vip, Carbono Alta Performance" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -177,7 +177,7 @@ const AutomotivoVip = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger} className="max-w-3xl mx-auto">
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Alta rejeição térmica. Visibilidade interna excepcional. Sem concessões.</motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                A INSULFILM™ Vip é desenvolvida para um perfil específico: quem compreende que tecnologia superior tem impacto direto e mensurável no cotidiano — e não aceita menos do que o melhor disponível na linha convencional.
+                A INSULFILM™ Vip é desenvolvida para um perfil específico: quem compreende que tecnologia superior tem impacto direto e mensurável no cotidiano, e não aceita menos do que o melhor disponível na linha convencional.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
                 Com a maior rejeição de infravermelho da linha Carbon Color Stable e 58% de energia solar total rejeitada na versão mais densa, a Vip representa o padrão máximo antes da linha Solar Premium.
@@ -227,7 +227,7 @@ const AutomotivoVip = () => {
                 </table>
               </motion.div>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-sm font-light mt-6 text-center italic">
-                A diferença de rejeição de infravermelho entre Eclipse e Vip — de 30% para até 65% — representa o dobro de eficiência no bloqueio do principal vetor de calor.
+                A diferença de rejeição de infravermelho entre Eclipse e Vip, de 30% para até 65%, representa o dobro de eficiência no bloqueio do principal vetor de calor.
               </motion.p>
             </motion.div>
           </div>
