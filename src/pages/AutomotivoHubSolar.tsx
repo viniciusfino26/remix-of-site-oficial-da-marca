@@ -117,12 +117,12 @@ const highPerformanceProducts: Product[] = [
     name: 'INSULFILM™ Polariz',
     tech: 'Solar Performance Films · Híbrida Metalizada',
     serie: 'Série: Hybrid Film · Metalizada',
-    highlight: 'Reflexão de calor e um visual que nenhuma outra linha da faixa entrega.',
+    highlight: 'Reflexão de calor e um visual que nenhuma outra linha da categoria entrega.',
     text: 'Película espectro seletiva híbrida metalizada com estética polarizada exclusiva. Reflexão térmica com até 57% de rejeição de energia solar total e visual neutro-petróleo reconhecível. Três tonalidades (Polariz 20, 10 e 05).\n\nVisual: polarizado de baixa refletividade. Aplicável em teto-solar. 99% de UV e 5 anos de garantia.',
     path: '/automotivo/solar/polariz',
     id: 'polariz',
     image: autoSolarPolarizSolar,
-    badge: 'Teto-solar (Performance)',
+    badge: 'CONFORTO TÉRMICO E VISUAL AVANÇADO',
   },
 ];
 
