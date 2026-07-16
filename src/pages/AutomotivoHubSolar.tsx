@@ -127,7 +127,7 @@ const highPerformanceProducts: Product[] = [
 ];
 
 
-const premiumProducts: Product[] = [
+const ultraPerformanceProducts: Product[] = [
   {
     name: 'INSULFILM™ Matrix',
     tech: 'Solar Premium Films · Nanocerâmica Premium',
