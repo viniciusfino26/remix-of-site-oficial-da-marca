@@ -683,6 +683,15 @@ const Lojas = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Centros Autorizados INSULFILM™ | Encontre a Loja Mais Próxima</title>
+        <meta name="description" content="Localize um Centro Autorizado INSULFILM™ no Brasil. Aplicação técnica, garantia original e atendimento especializado em películas para vidros." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/lojas" />
+        <meta property="og:title" content="Centros Autorizados INSULFILM™" />
+        <meta property="og:description" content="Encontre o Centro Autorizado INSULFILM™ mais próximo com atendimento especializado." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/lojas" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
