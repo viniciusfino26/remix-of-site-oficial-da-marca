@@ -99,6 +99,9 @@ const performanceProducts: Product[] = [
     image: autoSolarVip,
     badge: 'Carbono verdadeiro',
   },
+];
+
+const highPerformanceProducts: Product[] = [
   {
     name: 'INSULFILM™ Ceramic',
     tech: 'Solar Performance Films · Nanocerâmica',
@@ -123,7 +126,8 @@ const performanceProducts: Product[] = [
   },
 ];
 
-const premiumProducts: Product[] = [
+
+const ultraPerformanceProducts: Product[] = [
   {
     name: 'INSULFILM™ Matrix',
     tech: 'Solar Premium Films · Nanocerâmica Premium',
@@ -414,7 +418,7 @@ const AutomotivoHubSolar = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Performance</motion.p>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Performance Films</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">Do primeiro escurecimento à tecnologia polarizada de 4ª geração.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">Do primeiro escurecimento ao carbono verdadeiro.</motion.p>
             </motion.div>
             {performanceProducts.map((p, i) => (
               <div key={p.id}>
@@ -425,22 +429,40 @@ const AutomotivoHubSolar = () => {
           </div>
         </section>
 
-        {/* ═══ SOLAR PREMIUM FILMS ═══ */}
+        {/* ═══ SOLAR HIGH PERFORMANCE FILMS ═══ */}
         <section className="bg-white overflow-x-hidden pt-16 border-t border-border">
           <div className="container mx-auto px-4">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
-              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Premium</motion.p>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Premium Films</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">O ápice da engenharia INSULFILM™ em rejeição térmica e visibilidade.</motion.p>
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha High Performance</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar High Performance Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">Nanocerâmica e híbrida metalizada polarizada.</motion.p>
             </motion.div>
-            {premiumProducts.map((p, i) => (
+            {highPerformanceProducts.map((p, i) => (
               <div key={p.id}>
                 <ProductSection product={p} index={i} />
-                {i < premiumProducts.length - 1 && (<div className="border-b border-border" />)}
+                {i < highPerformanceProducts.length - 1 && (<div className="border-b border-border" />)}
               </div>
             ))}
           </div>
         </section>
+
+        {/* ═══ SOLAR ULTRA PERFORMANCE FILMS ═══ */}
+        <section className="bg-white overflow-x-hidden pt-16 border-t border-border">
+          <div className="container mx-auto px-4">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-4xl mx-auto text-center border-b border-border pb-8 mb-4">
+              <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">Linha Ultra Performance</motion.p>
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">Solar Ultra Performance Films</motion.h2>
+              <motion.p variants={fadeInUp} className="text-muted-foreground mt-3 font-light">O ápice: nanocerâmica premium e metal-cerâmica.</motion.p>
+            </motion.div>
+            {ultraPerformanceProducts.map((p, i) => (
+              <div key={p.id}>
+                <ProductSection product={p} index={i} />
+                {i < ultraPerformanceProducts.length - 1 && (<div className="border-b border-border" />)}
+              </div>
+            ))}
+          </div>
+        </section>
+
 
         {/* ═══ TABELA COMPARATIVA ═══ */}
         <section id="comparar" className="py-24 bg-carbon-gradient relative overflow-hidden border-t border-white/5">
