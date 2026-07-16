@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
-import LegalDisclaimer from '@/components/LegalDisclaimer';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -122,7 +121,6 @@ const ArquitetonicoResidencial = () => (
       </section>
 
       <div className="container mx-auto px-4">
-        <LegalDisclaimer />
       </div>
 
       {/* CTA Final */}

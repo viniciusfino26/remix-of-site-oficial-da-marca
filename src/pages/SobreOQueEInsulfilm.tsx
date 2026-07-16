@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { HelpCircle, ShieldCheck, AlertTriangle } from 'lucide-react';
 import PageHero from '@/components/PageHero';
-import LegalDisclaimer from '@/components/LegalDisclaimer';
 
 const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -90,7 +89,6 @@ const SobreOQueEInsulfilm = () => (
         </div>
       </section>
 
-      <LegalDisclaimer />
     </main>
   </>
 );

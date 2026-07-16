@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import TLDR from '@/components/TLDR';
 import ProductImagePlaceholder from '@/components/ProductImagePlaceholder';
-import LegalDisclaimer from '@/components/LegalDisclaimer';
 import TechSpecsHighlight from '@/components/TechSpecsHighlight';
 import { copyBySegment, type Segment } from '@/content/copyBySegment';
 import { getPDPSchemas } from '@/lib/pdpFAQs';
@@ -100,7 +99,6 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
         {/* ── TRADEMARK BLOCK ── */}
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
-            <LegalDisclaimer />
           </div>
         </section>
 
