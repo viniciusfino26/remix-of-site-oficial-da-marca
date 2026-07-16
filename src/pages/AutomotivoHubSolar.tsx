@@ -99,6 +99,9 @@ const performanceProducts: Product[] = [
     image: autoSolarVip,
     badge: 'Carbono verdadeiro',
   },
+];
+
+const highPerformanceProducts: Product[] = [
   {
     name: 'INSULFILM™ Ceramic',
     tech: 'Solar Performance Films · Nanocerâmica',
@@ -122,6 +125,7 @@ const performanceProducts: Product[] = [
     badge: 'Teto-solar (Performance)',
   },
 ];
+
 
 const premiumProducts: Product[] = [
   {

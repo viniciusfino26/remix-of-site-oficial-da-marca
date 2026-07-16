@@ -1,92 +1,56 @@
-# Segregar navegação do Hub Solar em 3 famílias + reposicionar "Comparar"
+# Segregar seções de produtos em 3 famílias
 
-## Objetivo
-Reorganizar a barra de âncoras "Encontre o seu INSULFILM™ ideal" em **três grupos** de famílias solares e tirar o pill "Comparar" da barra para não poluir, promovendo-o a CTA visualmente distinto.
+Hoje a página tem apenas 2 blocos ("Solar Performance Films" com 5 produtos + "Solar Premium Films" com 2). O menu já foi segregado em 3 grupos, mas os blocos abaixo (foto 2) não. Este plano alinha os blocos ao menu.
 
-Famílias:
-- **Solar Performance Films** → RayStart, RayPro, Carbon
-- **Solar High Performance Films** → Ceramic, Polariz
-- **Solar Ultra Performance Films** → Matrix, Polariz Ultra
+## Reestruturação dos arrays de produtos
 
-## Arquivo
-`src/pages/AutomotivoHubSolar.tsx` — array `navTabs` (~linhas 30–39) e bloco de navegação (~linhas 356–374).
+Em `src/pages/AutomotivoHubSolar.tsx`, substituir os arrays atuais por três:
 
-## Mudanças
+- `performanceProducts` → RayStart, RayPro, Carbon
+- `highPerformanceProducts` → Ceramic, Polariz
+- `ultraPerformanceProducts` → Matrix, Polariz Ultra (renomeando o antigo `premiumProducts`)
 
-### 1. Reestruturar dados
-Substituir o array plano por três grupos:
+Os objetos de produto permanecem idênticos — apenas mudam de array.
 
-```ts
-const navGroups = [
-  {
-    label: 'Solar Performance Films',
-    tabs: [
-      { label: 'RayStart', href: '#raystart' },
-      { label: 'RayPro',   href: '#raypro' },
-      { label: 'Carbon',   href: '#carbon' },
-    ],
-  },
-  {
-    label: 'Solar High Performance Films',
-    tabs: [
-      { label: 'Ceramic', href: '#ceramic' },
-      { label: 'Polariz', href: '#polariz' },
-    ],
-  },
-  {
-    label: 'Solar Ultra Performance Films',
-    tabs: [
-      { label: 'Matrix',        href: '#matrix' },
-      { label: 'Polariz Ultra', href: '#polariz-ultra' },
-    ],
-  },
-];
-```
+## Três seções de produtos
 
-### 2. Layout — 3 colunas rotuladas
-Container `flex flex-col md:flex-row items-start md:items-center justify-center gap-6 md:gap-8`. Cada grupo:
-- Rótulo pequeno em uppercase: `text-[11px] tracking-widest text-accent/90 font-bold mb-3 text-center`.
-- Pills em `flex flex-wrap justify-center gap-2`, estilo outline branco/transparente (mesmo dos atuais).
-- Divisores verticais entre grupos em desktop: `<div className="hidden md:block w-px h-20 bg-white/15" />`.
-- Em mobile empilham naturalmente sem divisor.
-- Remover os separadores `|` e o realce laranja fixo do primeiro item — todos os pills de produto passam a ter o mesmo estilo.
+Substituir os 2 blocos (`SOLAR PERFORMANCE FILMS` + `SOLAR PREMIUM FILMS`) por 3 blocos com o mesmo template visual atual (fundo branco, `border-t border-border`, header centralizado):
 
 ```text
-┌────────────────────────────────────────────────────────────────────────────┐
-│                       ENCONTRE O SEU INSULFILM™ IDEAL                      │
-│                          Conheça nossas películas                          │
-│                                                                            │
-│  SOLAR PERFORMANCE   │  SOLAR HIGH PERFORMANCE  │  SOLAR ULTRA PERFORMANCE │
-│  [RayStart][RayPro]  │     [Ceramic][Polariz]   │    [Matrix][Polariz U.]  │
-│      [Carbon]        │                          │                          │
-└────────────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────┐
+│ LINHA PERFORMANCE                             │
+│ Solar Performance Films                       │
+│ Do primeiro escurecimento ao carbono verdadeiro. │
+├── RayStart ── RayPro ── Carbon ───────────────┤
 
-           (fora da barra, abaixo/à direita)  ⚖  Comparar as 7 linhas
+┌───────────────────────────────────────────────┐
+│ LINHA HIGH PERFORMANCE                        │
+│ Solar High Performance Films                  │
+│ Nanocerâmica e híbrida metalizada polarizada. │
+├── Ceramic ── Polariz ─────────────────────────┤
+
+┌───────────────────────────────────────────────┐
+│ LINHA ULTRA PERFORMANCE                       │
+│ Solar Ultra Performance Films                 │
+│ O ápice: nanocerâmica premium e metal-cerâmica. │
+├── Matrix ── Polariz Ultra ────────────────────┤
 ```
 
-### 3. "Comparar" fora da barra de pills
-Remover "Comparar" da nav. Renderizar imediatamente abaixo dos 3 grupos, alinhado à direita do container, como CTA discreto e distinto:
+Cada bloco mantém o padrão atual: eyebrow `text-accent`, `h2` `text-primary`, subtítulo `text-muted-foreground`, e `.map()` sobre o array correspondente renderizando `<ProductSection />` com divisores `border-b border-border` entre itens.
 
-```tsx
-<div className="mt-8 flex justify-center md:justify-end">
-  <a href="#comparar">
-    <Button
-      variant="ghost"
-      className="text-white/80 hover:text-accent hover:bg-white/5 font-bold rounded-full px-5 py-2 gap-2 transition-all"
-    >
-      <Scale className="w-4 h-4" />
-      Comparar as 7 linhas
-      <ArrowRight className="w-4 h-4" />
-    </Button>
-  </a>
-</div>
-```
+Os âncoras `#raystart`, `#raypro`, `#carbon`, `#ceramic`, `#polariz`, `#matrix`, `#polariz-ultra` continuam funcionando (baseadas no `id` do produto).
 
-- Ícone `Scale` do `lucide-react` (adicionar ao import; `ArrowRight` já importado).
-- Visual "link forte" em vez de pill sólido — não compete com os pills de produto e não polui a barra.
-- Âncora `#comparar` (já existente na página, sem mudança na seção da tabela).
+## Copy — o que **não** será alterado
 
-### 4. Fora de escopo
-- Copy dos produtos, seções Performance/Premium, tabela comparativa, "Qual escolher?" e FAQ permanecem intactos.
-- Nenhuma alteração em `pdpProducts.ts`, outras páginas, ou índices técnicos.
-- Nomes das seções internas "Solar Performance Films" e "Solar Premium Films" na página não são renomeados nesta etapa (a segregação em 3 famílias é aplicada apenas na navegação de âncoras). Confirmar se quer que eu também renomeie as seções e os `tech:` de cada produto em um passo seguinte.
+Regra de memória: copy aprovada é imutável. Portanto:
+
+- O campo `text` (descrição longa) de cada produto **fica intocado**, mesmo onde o corpo menciona "Topo da Solar Performance Films" (Ceramic) ou "Salto de tecnologia dentro da Solar Performance Films" (Carbon).
+- O campo `tech` (linha pequena acima do nome, ex.: "Solar Performance Films · Nanocerâmica") também fica intocado.
+- Os subtítulos propostos acima para os 3 novos blocos são novos textos de seção; se você preferir manter os atuais ("Do primeiro escurecimento à tecnologia polarizada de 4ª geração." e "O ápice da engenharia INSULFILM™ em rejeição térmica e visibilidade.") ou ditar outros, me diga antes de aprovar.
+
+Se quiser que eu atualize também as menções internas de "Solar Performance Films / Solar Premium Films" no `tech` e no `text` para refletir a nova nomenclatura de 3 famílias, avise — nesse caso trato como revisão de copy autorizada.
+
+## Escopo técnico
+
+- Arquivo único: `src/pages/AutomotivoHubSolar.tsx`.
+- Nenhuma mudança em componentes, rotas, dados de comparação ou navegação.
