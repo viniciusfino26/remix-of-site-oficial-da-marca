@@ -47,7 +47,7 @@ const EXTRA_ROUTES = [
   '/anti-pirataria',
   '/ppf',
   '/arquitetonico/solar',
-  '/automotivo/solar/dark',
+  
 ];
 EXTRA_ROUTES.forEach((path) => routes.add(path));
 
