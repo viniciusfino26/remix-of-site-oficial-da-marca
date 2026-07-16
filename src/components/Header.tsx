@@ -76,7 +76,12 @@ const Header = () => {
           items: [
             { label: 'Ceramic', href: '/automotivo/solar/ceramic', desc: 'Nano cerâmica de alta rejeição.' },
             { label: 'Matrix', href: '/automotivo/solar/matrix', desc: 'Nano cerâmica Ultra Definition.' },
-            { label: 'Comparar Linhas', href: '/automotivo/solar', desc: 'Tabela técnica lado a lado.' },
+          ],
+        },
+        {
+          title: 'PPF · Proteção de Pintura',
+          items: [
+            { label: 'Phantom Gloss', href: '/automotivo/ppf/phantom-gloss', desc: 'Proteção de pintura automotiva.' },
           ],
         },
         {
@@ -86,10 +91,14 @@ const Header = () => {
             { label: 'Antivandalismo 13K', href: '/automotivo/seguranca/antivandalismo13k', desc: 'Barreira contra depredação rápida.' },
             { label: 'SkudoGuard', href: '/automotivo/seguranca/skudoguard', desc: 'Escudo estrutural após a quebra.' },
             { label: 'SkudoUltra', href: '/automotivo/seguranca/skudoultra', desc: 'Proteção estrutural máxima.' },
-            { label: 'PPF Phantom Gloss', href: '/automotivo/ppf/phantom-gloss', desc: 'Proteção de pintura automotiva.' },
           ],
         },
       ],
+      highlight: {
+        label: 'Comparar Películas Solares',
+        href: '/automotivo/solar',
+        desc: 'Tabela técnica lado a lado — Performance, High Performance e Ultra Performance.',
+      },
       footer: {
         title: 'Atendimento',
         items: [
