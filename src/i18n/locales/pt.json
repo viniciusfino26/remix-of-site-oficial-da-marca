@@ -113,7 +113,7 @@
       "e2018": "Primeira a oferecer películas com tecnologia de alta definição, INSULFILM™ Elite.",
       "e2019": "Lançamento da película premium de proteção à pintura (PPF), INSULFILM™ Phantom®8mil.",
       "e2024": "Lançamento da tecnologia de ultra definição, INSULFILM™ LT Polariz e LT Matrix.",
-      "e2025": "Lançamento das películas LT Eclipse, LT Skye Ultra, LT Panoramic e da nova categoria Películas de Segurança Superior para vidros automotivos."
+      "e2025": "Reorganização da linha Solar Performance Films (RayStart, RayPro, Carbon, Ceramic), lançamento da película INSULFILM™ Panoramic para tetos solares e da nova categoria Películas de Segurança Superior para vidros automotivos."
     },
     "intro": {
       "whoTitle": "Quem Somos",
@@ -330,7 +330,7 @@
     "faqTitle": "Perguntas Frequentes",
     "faq1": {
       "q": "Qual película é indicada para o meu carro?",
-      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
+      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a linha Matrix (nanocerâmica premium). Para boa performance com custo-benefício, a linha Carbon ou Ceramic. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
     },
     "faq2": {
       "q": "A película escurece muito o vidro?",
@@ -775,7 +775,7 @@
     "catWarranty": "Garantia",
     "catGeneral": "Geral",
     "auto1Q": "Qual película é indicada para o meu carro?",
-    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
+    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a linha Matrix (nanocerâmica premium). Para boa performance com custo-benefício, a linha Carbon ou Ceramic. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
     "solar1Q": "A película escurece muito o vidro?",
     "solar1A": "Cada linha possui diferentes níveis de transmissão de luz visível (VLT). Oferecemos opções desde tonalidades leves até escurecimento máximo permitido pela legislação CONTRAN.",
     "solar2Q": "A película pode ser aplicada no para-brisa?",
@@ -858,10 +858,10 @@
     "heroTitle": "Garantia INSULFILM™",
     "heroSubtitle": "Qualidade comprovada com garantia de fábrica em todos os produtos",
     "tableTitle": "Garantia por Produto",
-    "w1Product": "LT Dark",
+    "w1Product": "RayStart",
     "w1Period": "Garantia de Fábrica",
     "w1Coverage": "Descoloração, bolhas e descascamento",
-    "w2Product": "LT Eclipse / LT VIP",
+    "w2Product": "RayPro / Carbon",
     "w2Period": "Garantia Estendida",
     "w2Coverage": "Descoloração, bolhas, descascamento e desbotamento",
     "w3Product": "LT Polariz / LT Matrix",
