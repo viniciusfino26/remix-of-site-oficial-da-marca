@@ -83,6 +83,15 @@ const Privacidade = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Política de Privacidade | INSULFILM™</title>
+        <meta name="description" content="Política de Privacidade INSULFILM™: como coletamos, usamos e protegemos seus dados pessoais em conformidade com a LGPD." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/privacidade" />
+        <meta property="og:title" content="Política de Privacidade | INSULFILM™" />
+        <meta property="og:description" content="Como a INSULFILM™ trata seus dados pessoais em conformidade com a LGPD." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/privacidade" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
