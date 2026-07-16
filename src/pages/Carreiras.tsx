@@ -46,6 +46,15 @@ const Carreiras = () => {
 
   return (
     <main>
+      <Helmet>
+        <title>Trabalhe na INSULFILM™ | Carreiras e Oportunidades</title>
+        <meta name="description" content="Faça parte da INSULFILM™, marca pioneira em películas para vidros no Brasil. Veja oportunidades, cultura, benefícios e envie seu currículo." />
+        <link rel="canonical" href="https://www.insulfilm.com.br/carreiras" />
+        <meta property="og:title" content="Carreiras INSULFILM™ | Trabalhe Conosco" />
+        <meta property="og:description" content="Vagas e oportunidades na INSULFILM™, marca líder em películas para vidros desde 1986." />
+        <meta property="og:url" content="https://www.insulfilm.com.br/carreiras" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="relative min-h-[70vh] flex items-center bg-carbon-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-texture" />
         <div className="container mx-auto px-4 pt-36 pb-20 relative z-10 text-center">
