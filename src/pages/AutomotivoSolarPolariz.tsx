@@ -51,9 +51,9 @@ const techTable = [
 ];
 
 const problems = [
-  { icon: Thermometer, title: 'Calor que só a rejeição por reflexão elimina', text: 'A construção híbrida metalizada da Polariz reflete o calor do sol antes que ele entre — até 57% de rejeição de energia solar total, sensação térmica imediata no habitáculo.' },
+  { icon: Thermometer, title: 'Calor que só a rejeição por reflexão elimina', text: 'A construção híbrida metalizada da Polariz reflete o calor do sol antes que ele entre, até 57% de rejeição de energia solar total, sensação térmica imediata no habitáculo.' },
   { icon: Palette, title: 'Visual comum, sem identidade própria', text: 'A tonalidade polarizada neutro-petróleo cria uma assinatura visual exclusiva. Brilho intenso com refletividade discreta que diferencia o veículo das linhas convencionais.' },
-  { icon: Sun, title: 'Teto-solar sem controle térmico', text: 'A Polariz é uma das linhas indicadas para teto-solar, controlando o calor no ponto de maior incidência solar do veículo — onde outras películas não performam.' },
+  { icon: Sun, title: 'Teto-solar sem controle térmico', text: 'A Polariz é uma das linhas indicadas para teto-solar, controlando o calor no ponto de maior incidência solar do veículo, onde outras películas não performam.' },
 ];
 
 const benefits = [
@@ -87,11 +87,11 @@ const AutomotivoSolarPolariz = () => {
   const schemaMarkup = {
     '@context': 'https://schema.org', '@type': 'Product',
     name: 'INSULFILM™ Polariz', brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Polariz — construção híbrida metalizada com visual polarizado neutro-petróleo. Até 57% de TSER, 99% UV, aplicável em teto-solar e 5 anos de garantia.',
+    description: 'INSULFILM™ Polariz, construção híbrida metalizada com visual polarizado neutro-petróleo. Até 57% de TSER, 99% UV, aplicável em teto-solar e 5 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/polariz',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Hybrid Film — Metalizada' },
-      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Hybrid Film, Metalizada' },
+      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta, High Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '5 anos' },
     ],
@@ -132,7 +132,7 @@ const AutomotivoSolarPolariz = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-14 max-w-3xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ O que esta linha resolve</motion.p>
-              <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-foreground font-light italic leading-relaxed">A Polariz é o único ponto da Solar Performance Films em que estética polarizada e reflexão térmica caminham juntas — inclusive em teto-solar.</motion.p>
+              <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-foreground font-light italic leading-relaxed">A Polariz é o único ponto da Solar Performance Films em que estética polarizada e reflexão térmica caminham juntas, inclusive em teto-solar.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
             <motion.div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -186,7 +186,7 @@ const AutomotivoSolarPolariz = () => {
         <section className="py-16 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Polariz — Película híbrida metalizada polarizada" className="w-full h-full object-cover rounded-2xl" /></div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Polariz, Película híbrida metalizada polarizada" className="w-full h-full object-cover rounded-2xl" /></div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
           </div>
@@ -316,7 +316,7 @@ const AutomotivoSolarPolariz = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Reflexão térmica com estética polarizada.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Polariz encerra a Solar Performance Films com visual exclusivo e desempenho premium — com 5 anos de garantia.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Polariz encerra a Solar Performance Films com visual exclusivo e desempenho premium, com 5 anos de garantia.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</Link>

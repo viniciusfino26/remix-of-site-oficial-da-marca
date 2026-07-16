@@ -60,10 +60,10 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Naturale | Película Neutra Premium | Bombardeamento Iônico | 4 Versões</title>
-        <meta name="description" content="INSULFILM™ Naturale — película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos. Discrição que transforma." />
+        <meta name="description" content="INSULFILM™ Naturale, película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos. Discrição que transforma." />
         <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Naturale | Película Neutra Premium | 4 Versões" />
-        <meta property="og:description" content="INSULFILM™ Naturale — película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos." />
+        <meta property="og:description" content="INSULFILM™ Naturale, película arquitetônica premium com tecnologia de bombardeamento iônico, até 81% de rejeição IR e garantia de 10 anos." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -80,10 +80,10 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium, Arquitetônica</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                {copy?.h1 || `INSULFILM™ Naturale — discrição que transforma, clareza que protege`}
+                {copy?.h1 || `INSULFILM™ Naturale, discrição que transforma, clareza que protege`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Proteção real. Estética preservada. Para projetos que não abrem mão dos dois.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
@@ -128,8 +128,8 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-8">Quatro versões. Uma premissa: o vidro continua sendo o protagonista do projeto.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Naturale foi concebida para projetos onde a estética do vidro é inegociável — mas onde conforto térmico e proteção UV são igualmente exigidos.</motion.p>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Com tecnologia de bombardeamento iônico e níveis de metalização ajustáveis, a linha Naturale oferece quatro versões com transparências de 20% a 70% — permitindo ao arquiteto ou projetista escolher o equilíbrio exato entre privacidade, controle térmico e preservação da luminosidade para cada ambiente.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Naturale foi concebida para projetos onde a estética do vidro é inegociável, mas onde conforto térmico e proteção UV são igualmente exigidos.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Com tecnologia de bombardeamento iônico e níveis de metalização ajustáveis, a linha Naturale oferece quatro versões com transparências de 20% a 70%, permitindo ao arquiteto ou projetista escolher o equilíbrio exato entre privacidade, controle térmico e preservação da luminosidade para cada ambiente.</motion.p>
             </motion.div>
           </div>
         </section>
@@ -137,7 +137,7 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
         {/* ── TECH SPECS HIGHLIGHT (decisor de compra) ── */}
         <TechSpecsHighlight
           title="Ficha Técnica Naturale"
-          subtitle="Quatro versões. Os índices que comprovam a performance — e a discrição."
+          subtitle="Quatro versões. Os índices que comprovam a performance, e a discrição."
           highlights={[
             { value: '81%', label: 'Rejeição IR', sublabel: 'até (versão 20)' },
             { value: '70%', label: 'Luz Visível', sublabel: 'até (versão 70)' },
@@ -177,15 +177,15 @@ const Naturale = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-10">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Tecnologia de bombardeamento iônico</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Processo de deposição de metal por bombardeamento iônico — entrega maior uniformidade de camada, melhor aderência e durabilidade superior às tecnologias de tingimento convencional.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Processo de deposição de metal por bombardeamento iônico, entrega maior uniformidade de camada, melhor aderência e durabilidade superior às tecnologias de tingimento convencional.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Escalabilidade de versões</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Da Naturale 70 — discreta e de alta luminosidade — à Naturale 20, com alta privacidade e máxima rejeição térmica. Quatro decisões técnicas distintas para quatro perfis de projeto diferentes.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Da Naturale 70, discreta e de alta luminosidade, à Naturale 20, com alta privacidade e máxima rejeição térmica. Quatro decisões técnicas distintas para quatro perfis de projeto diferentes.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">81% de rejeição IR na versão 20</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">A versão mais densa da linha Naturale entrega performance térmica de alto nível — com 81% de rejeição de infravermelho — mantendo a identidade visual discreta da linha.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">A versão mais densa da linha Naturale entrega performance térmica de alto nível, com 81% de rejeição de infravermelho, mantendo a identidade visual discreta da linha.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">10 anos de garantia</h3>

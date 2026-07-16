@@ -90,7 +90,7 @@ const Matrix = () => {
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
 
-        {/* ═══ TL;DR — GEO/LLM-first ═══ */}
+        {/* ═══ TL;DR, GEO/LLM-first ═══ */}
         <TLDR
           question="O que é a película INSULFILM™ Matrix?"
           answer="A INSULFILM™ Matrix é a película automotiva premium da linha Ultra Definition, fabricada com nanotecnologia cerâmica verdadeira que rejeita até 75% dos raios infravermelhos sem interferir em sinais de GPS, celular ou rádio."
@@ -129,7 +129,7 @@ const Matrix = () => {
                   A INSULFILM™ Matrix utiliza nano cerâmica verdadeira para oferecer máxima rejeição de calor sem interferir em sinais eletrônicos. Ideal para quem busca o melhor em conforto térmico e clareza visual.
                 </motion.p>
                 <motion.ul className="space-y-4" variants={stagger}>
-                  {['Nano cerâmica verdadeira — sem metal', 'Rejeição de até 75% dos raios infravermelhos', 'Não interfere em GPS, celular ou pedágios', 'Garantia de 10 anos contra desbotamento'].map((text, i) => (
+                  {['Nano cerâmica verdadeira, sem metal', 'Rejeição de até 75% dos raios infravermelhos', 'Não interfere em GPS, celular ou pedágios', 'Garantia de 10 anos contra desbotamento'].map((text, i) => (
                     <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                       <span className="text-primary-foreground font-medium">{text}</span>

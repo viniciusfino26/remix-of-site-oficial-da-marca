@@ -41,7 +41,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Clear70 | Película Arquitetônica Nano Cerâmica | Alta Transparência</title>
-        <meta name="description" content="INSULFILM™ Clear70 — película arquitetônica de tecnologia nano cerâmica com 72% de transparência, rejeição de IR de 81% e proteção UV >99%. Marca registrada." />
+        <meta name="description" content="INSULFILM™ Clear70, película arquitetônica de tecnologia nano cerâmica com 72% de transparência, rejeição de IR de 81% e proteção UV >99%. Marca registrada." />
         <meta property="og:title" content="INSULFILM™ Clear70 | Película Arquitetônica Nano Cerâmica" />
         <meta property="og:description" content="Conforto térmico sem abrir mão da luminosidade natural. 72% de transmissão de luz, 81% de rejeição IR." />
         <meta property="og:type" content="product" />
@@ -114,7 +114,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
                 A INSULFILM™ Clear70 combina o que os projetos arquitetônicos mais exigentes precisam: alta eficiência no controle solar com máxima preservação da luz natural e estética neutra que não interfere no design.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed mb-4">
-                Sua composição com nanopartículas cerâmicas entrega rejeição de infravermelho sem metalização — preservando sinais eletrônicos, mantendo aparência neutra e oferecendo desempenho estável ao longo do tempo.
+                Sua composição com nanopartículas cerâmicas entrega rejeição de infravermelho sem metalização, preservando sinais eletrônicos, mantendo aparência neutra e oferecendo desempenho estável ao longo do tempo.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-primary-foreground/60 font-light leading-relaxed">
                 Para fachadas, sacadas e janelas onde a claridade é parte do projeto, a Clear70 é a escolha técnica correta.
@@ -146,9 +146,9 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-8">Principais Benefícios</motion.h2>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Iluminação natural preservada — 72% de transmissão de luz visível',
-                  'Redução do calor por bloqueio de raios infravermelhos (IR) — 81% rejeitados',
-                  'Proteção UV >99% — prevenção de desbotamento e danos à pele',
+                  'Iluminação natural preservada, 72% de transmissão de luz visível',
+                  'Redução do calor por bloqueio de raios infravermelhos (IR), 81% rejeitados',
+                  'Proteção UV >99%, prevenção de desbotamento e danos à pele',
                   'Preserva móveis, pisos e objetos contra degradação solar',
                   'Sem interferência em sinais eletrônicos',
                   'Alta visibilidade com estética completamente discreta',
@@ -171,7 +171,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-8">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Tecnologia nano cerâmica</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Controle solar eficaz sem metalização — sem reflexo espelhado, sem interferência de sinal, sem alteração visual do ambiente.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Controle solar eficaz sem metalização, sem reflexo espelhado, sem interferência de sinal, sem alteração visual do ambiente.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">72% de transmissão de luz visível</h3>
@@ -179,7 +179,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Baixa refletividade interna e externa</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Aparência neutra e compatível com qualquer projeto arquitetônico — não muda o visual dos vidros.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Aparência neutra e compatível com qualquer projeto arquitetônico, não muda o visual dos vidros.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Estabilidade técnica</h3>
@@ -209,7 +209,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
                 ))}
               </motion.ul>
               <motion.p variants={fadeInUp} className="text-sm text-muted-foreground/70 mt-6 italic">
-                Nota: Para projetos que necessitam de maior privacidade ou maior rejeição térmica com estética diferenciada, as linhas Solar Premium — Orizzonte70, Naturale, Metallico Argento e Specchiato Bronzo — oferecem opções com desempenho superior.
+                Nota: Para projetos que necessitam de maior privacidade ou maior rejeição térmica com estética diferenciada, as linhas Solar Premium, Orizzonte70, Naturale, Metallico Argento e Specchiato Bronzo, oferecem opções com desempenho superior.
               </motion.p>
             </motion.div>
           </div>
@@ -219,7 +219,7 @@ const Clear70 = ({ segment }: { segment?: Segment }) => {
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
             <p className="text-sm text-muted-foreground/70 font-light max-w-3xl mx-auto text-center">
-              Películas para vidro existem em diversos níveis. INSULFILM™ é a marca registrada que estabeleceu o padrão de qualidade e aplicação no segmento arquitetônico no Brasil. Escolher corretamente é uma decisão técnica — e começa por um atendimento especializado.
+              Películas para vidro existem em diversos níveis. INSULFILM™ é a marca registrada que estabeleceu o padrão de qualidade e aplicação no segmento arquitetônico no Brasil. Escolher corretamente é uma decisão técnica, e começa por um atendimento especializado.
             </p>
           </div>
         </section>

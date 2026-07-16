@@ -30,7 +30,7 @@ const schema = z.object({
   consent: z.literal(true, {
     errorMap: () => ({ message: "Consentimento obrigatório" }),
   }),
-  // honeypot — must remain empty
+  // honeypot, must remain empty
   company_url: z.string().max(0).optional().or(z.literal("")),
 });
 
@@ -119,7 +119,7 @@ const FrotaLeadForm = () => {
         </p>
       </div>
 
-      {/* Honeypot — invisível para humanos */}
+      {/* Honeypot, invisível para humanos */}
       <div aria-hidden="true" className="absolute -left-[9999px] opacity-0 pointer-events-none">
         <label htmlFor="company_url">Company URL</label>
         <input id="company_url" type="text" tabIndex={-1} autoComplete="off" {...register("company_url")} />

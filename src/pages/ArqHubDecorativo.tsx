@@ -33,7 +33,7 @@ const products = [
     name: 'INSULFILM™ Whiteout',
     badge: 'Branco Opaco Total',
     subtitle: 'BLOQUEIO TOTAL DE VISIBILIDADE COM LUZ DIFUSA.',
-    desc: 'Película branca opaca que elimina completamente a transparência do vidro, criando uma barreira visual total. Ideal para ambientes que exigem privacidade absoluta — consultórios, laboratórios, vitrines de estoque e salas técnicas.',
+    desc: 'Película branca opaca que elimina completamente a transparência do vidro, criando uma barreira visual total. Ideal para ambientes que exigem privacidade absoluta, consultórios, laboratórios, vitrines de estoque e salas técnicas.',
     path: '/arquitetonico/decorativo/whiteout',
     fallbackIcon: <EyeOff className="w-24 h-24 text-accent/20" />,
   },
@@ -68,7 +68,7 @@ const ArqHubDecorativo = () => (
       {/* ── HERO ── */}
       <PageHero
         title="Transforme Seus Vidros em Elementos de Design"
-        subtitle="Privacidade, estética e funcionalidade — sem obras, sem complicação. As películas decorativas INSULFILM™ oferecem soluções visuais profissionais para vidros em ambientes corporativos, residenciais e comerciais."
+        subtitle="Privacidade, estética e funcionalidade, sem obras, sem complicação. As películas decorativas INSULFILM™ oferecem soluções visuais profissionais para vidros em ambientes corporativos, residenciais e comerciais."
         badge={{ icon: <Layers className="w-3.5 h-3.5" />, text: 'Películas Decorativas' }}
         cta={{
           text: 'Falar com um Especialista',
@@ -96,7 +96,7 @@ const ArqHubDecorativo = () => (
         </div>
       </section>
 
-      {/* ── PRODUTOS — SHOWCASES ── */}
+      {/* ── PRODUTOS, SHOWCASES ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-20">
@@ -141,7 +141,7 @@ const ArqHubDecorativo = () => (
               Aplicações e Vantagens
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-              Versatilidade para qualquer projeto — do residencial ao corporativo.
+              Versatilidade para qualquer projeto, do residencial ao corporativo.
             </motion.p>
           </motion.div>
 

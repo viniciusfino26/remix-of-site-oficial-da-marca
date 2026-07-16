@@ -58,10 +58,10 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Orizzonte70 | Cerâmica Premium Arquitetônica | 93% Rejeição IR</title>
-        <meta name="description" content="INSULFILM™ Orizzonte70 — película cerâmica premium com 93% de rejeição de IR, 68% de transmissão de luz e garantia de 10 anos. O mais alto desempenho cerâmico da linha." />
+        <meta name="description" content="INSULFILM™ Orizzonte70, película cerâmica premium com 93% de rejeição de IR, 68% de transmissão de luz e garantia de 10 anos. O mais alto desempenho cerâmico da linha." />
         <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Orizzonte70 | Cerâmica Premium Arquitetônica | 93% Rejeição IR" />
-        <meta property="og:description" content="INSULFILM™ Orizzonte70 — película cerâmica premium com 93% de rejeição de IR, 68% de transmissão de luz e garantia de 10 anos." />
+        <meta property="og:description" content="INSULFILM™ Orizzonte70, película cerâmica premium com 93% de rejeição de IR, 68% de transmissão de luz e garantia de 10 anos." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -78,10 +78,10 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium, Arquitetônica</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                {copy?.h1 || `INSULFILM™ Orizzonte70 — máximo desempenho cerâmico com transparência superior`}
+                {copy?.h1 || `INSULFILM™ Orizzonte70, máximo desempenho cerâmico com transparência superior`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">O mais alto desempenho em controle solar. Com o vidro que parece sem película.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
@@ -126,7 +126,7 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-8">Tecnologia cerâmica de última geração. Uma categoria à parte.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Orizzonte70 não é uma evolução da linha Performance. É uma categoria tecnológica distinta.</motion.p>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">Sua composição com nanotecnologia cerâmica de última geração entrega 93% de rejeição de infravermelho — o maior índice da linha arquitetônica não metalizada — com 68% de transmissão de luz visível e refletividade extremamente baixa.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">Sua composição com nanotecnologia cerâmica de última geração entrega 93% de rejeição de infravermelho, o maior índice da linha arquitetônica não metalizada, com 68% de transmissão de luz visível e refletividade extremamente baixa.</motion.p>
               <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Para fachadas, sacadas e projetos que exigem o máximo em desempenho térmico sem qualquer concessão estética ou técnica, a Orizzonte70 é a escolha definitiva.</motion.p>
             </motion.div>
           </div>
@@ -154,12 +154,12 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
               <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-8">Principais Benefícios</motion.h2>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  '93% de rejeição de infravermelho — o mais alto da linha não metalizada',
-                  '68% de transmissão de luz visível — alta claridade preservada',
-                  'Proteção UV >99% — bloqueio total de radiação ultravioleta',
-                  'Sem interferência em sinais eletrônicos — tecnologia não metalizada',
-                  'Sem corrosão — estabilidade óptica preservada por toda a vida útil',
-                  'Acabamento elegante com proteção de longa duração — 10 anos de garantia',
+                  '93% de rejeição de infravermelho, o mais alto da linha não metalizada',
+                  '68% de transmissão de luz visível, alta claridade preservada',
+                  'Proteção UV >99%, bloqueio total de radiação ultravioleta',
+                  'Sem interferência em sinais eletrônicos, tecnologia não metalizada',
+                  'Sem corrosão, estabilidade óptica preservada por toda a vida útil',
+                  'Acabamento elegante com proteção de longa duração, 10 anos de garantia',
                 ].map((text, i) => (
                   <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" /><span className="text-primary-foreground font-medium">{text}</span></motion.li>
                 ))}
@@ -176,19 +176,19 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
               <div className="space-y-10">
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">93% de rejeição de infravermelho</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Diferença estrutural em relação à linha Performance. Enquanto a Clear70 rejeita 81% de IR, a Orizzonte70 rejeita 93% — uma diferença perceptível no conforto térmico dos ambientes, especialmente em fachadas de alta exposição solar.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Diferença estrutural em relação à linha Performance. Enquanto a Clear70 rejeita 81% de IR, a Orizzonte70 rejeita 93%, uma diferença perceptível no conforto térmico dos ambientes, especialmente em fachadas de alta exposição solar.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Nanotecnologia cerâmica de última geração</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Absorção de calor por tecnologia cerâmica avançada — não por reflexo. O resultado é um ambiente mais fresco sem o efeito espelhado.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Absorção de calor por tecnologia cerâmica avançada, não por reflexo. O resultado é um ambiente mais fresco sem o efeito espelhado.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Estabilidade óptica superior</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Nano cerâmica não sofre corrosão e não apresenta degradação de desempenho ao longo do tempo — o que sustenta uma cobertura de garantia de 10 anos.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Nano cerâmica não sofre corrosão e não apresenta degradação de desempenho ao longo do tempo, o que sustenta uma cobertura de garantia de 10 anos.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Compatibilidade total com eletrônicos</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Sem metalização, sem interferência — GPS, Wi-Fi, celular e demais sinais preservados integralmente.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Sem metalização, sem interferência, GPS, Wi-Fi, celular e demais sinais preservados integralmente.</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -235,7 +235,7 @@ const Orizzonte70 = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Solicite Atendimento Nacional</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Orizzonte70 é a escolha para projetos que não aceitam concessões — máximo desempenho cerâmico com transparência superior e 10 anos de garantia da marca registrada.</motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Orizzonte70 é a escolha para projetos que não aceitam concessões, máximo desempenho cerâmico com transparência superior e 10 anos de garantia da marca registrada.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><ArrowRight className="w-5 h-5" />Solicitar atendimento nacional</Link>

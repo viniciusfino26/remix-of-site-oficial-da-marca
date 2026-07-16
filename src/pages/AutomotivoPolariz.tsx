@@ -13,7 +13,7 @@ import PdpFaq from '@/components/PdpFaq';
 const faqItems = [
   {
     question: 'Por que a Polariz Ultra é considerada o topo do portfólio?',
-    answer: 'Porque a Polariz Ultra 05 chega a 70% de TSER — o recorde de rejeição de energia solar do portfólio automotivo INSULFILM™. Nenhuma outra linha rejeita mais energia solar hoje.',
+    answer: 'Porque a Polariz Ultra 05 chega a 70% de TSER, o recorde de rejeição de energia solar do portfólio automotivo INSULFILM™. Nenhuma outra linha rejeita mais energia solar hoje.',
   },
   {
     question: 'Quais tonalidades a Polariz Ultra oferece?',
@@ -21,15 +21,15 @@ const faqItems = [
   },
   {
     question: 'Qual a construção da Polariz Ultra?',
-    answer: 'Ultra Hybrid — construção híbrida metal-cerâmica que combina reflexão e absorção seletiva, com nitidez óptica Excelente · Ultra Definition.',
+    answer: 'Ultra Hybrid, construção híbrida metal-cerâmica que combina reflexão e absorção seletiva, com nitidez óptica Excelente · Ultra Definition.',
   },
   {
     question: 'Qual é a garantia oficial da Polariz Ultra?',
-    answer: '10 anos — a cobertura mais abrangente do portfólio — com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
+    answer: '10 anos, a cobertura mais abrangente do portfólio, com Certificado Individual emitido no ato do serviço técnico e número único de rastreamento. Consulte condições.',
   },
   {
     question: 'Qual a diferença entre a Polariz Ultra e a Polariz (Performance)?',
-    answer: 'A Polariz (Solar Performance Films) é híbrida metalizada, com até 57% de TSER, 44% de IR e 5 anos de garantia. A Polariz Ultra (Solar Premium Films) é híbrida metal-cerâmica, atinge 70% de TSER, 75% de IR e 10 anos de garantia — patamar acima.',
+    answer: 'A Polariz (Solar Performance Films) é híbrida metalizada, com até 57% de TSER, 44% de IR e 5 anos de garantia. A Polariz Ultra (Solar Premium Films) é híbrida metal-cerâmica, atinge 70% de TSER, 75% de IR e 10 anos de garantia, patamar acima.',
   },
 ];
 
@@ -50,9 +50,9 @@ const techTable = [
 ];
 
 const problems = [
-  { icon: Trophy, title: 'Quando a exigência é o teto do que existe', text: '70% de TSER é o recorde do portfólio INSULFILM™. A Polariz Ultra 05 representa o limite máximo do que a engenharia de películas solares oferece hoje — nenhuma outra linha rejeita mais energia solar.' },
+  { icon: Trophy, title: 'Quando a exigência é o teto do que existe', text: '70% de TSER é o recorde do portfólio INSULFILM™. A Polariz Ultra 05 representa o limite máximo do que a engenharia de películas solares oferece hoje, nenhuma outra linha rejeita mais energia solar.' },
   { icon: Thermometer, title: 'Rejeição térmica sem precisar reflexão pura', text: 'A construção híbrida metal-cerâmica combina reflexão e absorção seletiva: 75% de IR nas duas tonalidades, com desempenho térmico que se sente na pele desde os primeiros minutos.' },
-  { icon: Palette, title: 'Identidade visual que se reconhece à distância', text: 'O acabamento polarizado exclusivo tem profundidade e reflexo controlado. Uma assinatura visual que eleva a presença do veículo — não confundível com nenhuma outra linha.' },
+  { icon: Palette, title: 'Identidade visual que se reconhece à distância', text: 'O acabamento polarizado exclusivo tem profundidade e reflexo controlado. Uma assinatura visual que eleva a presença do veículo, não confundível com nenhuma outra linha.' },
 ];
 
 const benefits = [
@@ -86,11 +86,11 @@ const AutomotivoPolariz = () => {
   const schemaMarkup = {
     '@context': 'https://schema.org', '@type': 'Product',
     name: 'INSULFILM™ Polariz Ultra', brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Polariz Ultra — construção híbrida metal-cerâmica, topo absoluto da Solar Premium Films. Até 70% de TSER, 75% de IR nas duas tonalidades e 10 anos de garantia.',
+    description: 'INSULFILM™ Polariz Ultra, construção híbrida metal-cerâmica, topo absoluto da Solar Premium Films. Até 70% de TSER, 75% de IR nas duas tonalidades e 10 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/polariz-ultra',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Ultra Hybrid — Metal-Cerâmica' },
-      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Excelente — Ultra Definition' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Ultra Hybrid, Metal-Cerâmica' },
+      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Excelente, Ultra Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '>99%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '10 anos' },
     ],
@@ -100,7 +100,7 @@ const AutomotivoPolariz = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Polariz Ultra | Solar Premium Films · Topo do Portfólio</title>
-        <meta name="description" content="INSULFILM™ Polariz Ultra: híbrida metal-cerâmica com 70% de TSER — o recorde do portfólio. 75% de IR, visual polarizado exclusivo e 10 anos de garantia." />
+        <meta name="description" content="INSULFILM™ Polariz Ultra: híbrida metal-cerâmica com 70% de TSER, o recorde do portfólio. 75% de IR, visual polarizado exclusivo e 10 anos de garantia." />
         <meta property="og:title" content="INSULFILM™ Polariz Ultra | Solar Premium Films" />
         <meta property="og:description" content="O limite máximo da engenharia de películas solares automotivas." />
         <meta property="og:type" content="product" />
@@ -157,7 +157,7 @@ const AutomotivoPolariz = () => {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.p variants={fadeInUp} className="text-xs uppercase tracking-widest text-accent font-bold mb-3">▪ Sobre esta linha</motion.p>
                 <motion.h2 variants={fadeInUp} className="text-2xl md:text-3xl font-extrabold text-primary-foreground mb-6 leading-tight">O topo absoluto da Solar Premium Films.</motion.h2>
-                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Polariz Ultra é película espectro seletiva híbrida — metalizada combinada à cerâmica — com estética polarizada e o máximo desempenho de retenção térmica do portfólio. Visual refinado, alta tecnologia e ultra rejeição de infravermelho.</motion.p>
+                <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed mb-4">A INSULFILM™ Polariz Ultra é película espectro seletiva híbrida, metalizada combinada à cerâmica, com estética polarizada e o máximo desempenho de retenção térmica do portfólio. Visual refinado, alta tecnologia e ultra rejeição de infravermelho.</motion.p>
                 <motion.p variants={fadeInUp} className="text-primary-foreground/70 font-light leading-relaxed">Duas tonalidades (Polariz Ultra 15 e 05), até 70% de TSER, 75% de IR nas duas versões, mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia oficial com certificado individual.</motion.p>
               </motion.div>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -185,7 +185,7 @@ const AutomotivoPolariz = () => {
         <section className="py-16 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Polariz Ultra — Híbrida metal-cerâmica" className="w-full h-full object-cover rounded-2xl" /></div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Polariz Ultra, Híbrida metal-cerâmica" className="w-full h-full object-cover rounded-2xl" /></div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
           </div>
@@ -316,7 +316,7 @@ const AutomotivoPolariz = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">O topo do portfólio.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Polariz Ultra é o teto do que a engenharia de películas solares oferece — com 10 anos de garantia e a procedência da marca original.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Polariz Ultra é o teto do que a engenharia de películas solares oferece, com 10 anos de garantia e a procedência da marca original.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</Link>

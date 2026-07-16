@@ -82,7 +82,7 @@ const performanceProducts: Product[] = [
     tech: 'Solar Performance Films · Linha Clássica',
     serie: 'Série: Classic Film · Pigmentação Homogênea',
     highlight: 'Pigmentação que não desvanece. Cor que resiste ao tempo.',
-    text: 'Um passo acima do básico. Película de pigmentação homogênea fundida ao poliéster, com camada dedicada de rejeição UV que retarda o clareamento e a virada de tom típicos das películas apenas tingidas. Três tonalidades (RayPro 35, 20 e 05).\n\nVisual: não refletivo, tom preto clássico. 98% de bloqueio UV — o maior da faixa de entrada.',
+    text: 'Um passo acima do básico. Película de pigmentação homogênea fundida ao poliéster, com camada dedicada de rejeição UV que retarda o clareamento e a virada de tom típicos das películas apenas tingidas. Três tonalidades (RayPro 35, 20 e 05).\n\nVisual: não refletivo, tom preto clássico. 98% de bloqueio UV, o maior da faixa de entrada.',
     path: '/automotivo/solar/raypro',
     id: 'raypro',
     image: autoSolarEclipse,
@@ -107,7 +107,7 @@ const highPerformanceProducts: Product[] = [
     tech: 'Solar Performance Films · Nanocerâmica',
     serie: 'Série: Advanced Plus Film · Nanocerâmica',
     highlight: 'Quando o cliente procura cerâmica, é aqui que o calor para de entrar.',
-    text: 'Topo da Solar Performance Films. Nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades — a mesma performance térmica no claro e no escuro. Três tonalidades (Ceramic 35, 20 e 05).\n\nVisual: neutro não refletivo. 99% de bloqueio UV, nitidez High Definition e 5 anos de garantia.',
+    text: 'Topo da Solar Performance Films. Nanocerâmica com mais de 85% de rejeição de infravermelho em todas as tonalidades, a mesma performance térmica no claro e no escuro. Três tonalidades (Ceramic 35, 20 e 05).\n\nVisual: neutro não refletivo. 99% de bloqueio UV, nitidez High Definition e 5 anos de garantia.',
     path: '/automotivo/solar/ceramic',
     id: 'ceramic',
     image: autoSolarMatrix,
@@ -133,7 +133,7 @@ const ultraPerformanceProducts: Product[] = [
     tech: 'Solar Premium Films · Nanocerâmica Premium',
     serie: 'Série: Premium Film · Nanocerâmica',
     highlight: 'A nanocerâmica que rejeita calor sem comprometer a clareza.',
-    text: 'Entrada da Solar Premium Films. Nanocerâmica de última geração com até 75% de rejeição de infravermelho em qualquer tonalidade — mesmo a variante mais clara. Quatro tonalidades (Matrix 70, 35, 15 e 05).\n\nVisual: não refletivo, neutro. Mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia.',
+    text: 'Entrada da Solar Premium Films. Nanocerâmica de última geração com até 75% de rejeição de infravermelho em qualquer tonalidade, mesmo a variante mais clara. Quatro tonalidades (Matrix 70, 35, 15 e 05).\n\nVisual: não refletivo, neutro. Mais de 99% de UV, nitidez Ultra Definition e 10 anos de garantia.',
     path: '/automotivo/solar/matrix',
     id: 'matrix',
     image: autoSolarMatrix,
@@ -223,17 +223,17 @@ const faqItems: FaqItem[] = [
   {
     question: 'Carbon ou Ceramic: quando cada uma faz sentido?',
     answer:
-      'A Carbon é construída em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho e rejeição de IR acima de 50% — indicada para quem procura carbono de verdade e cor estável, com 4 anos de garantia. A Ceramic é nanocerâmica com mais de 85% de rejeição de IR em todas as tonalidades — a mesma performance térmica no claro e no escuro — com nitidez High Definition e 5 anos de garantia. Escolha Carbon pela estética carbono; escolha Ceramic pela máxima rejeição térmica dentro da linha Performance.',
+      'A Carbon é construída em carbono verdadeiro, sem metalização, com filtro dedicado de infravermelho e rejeição de IR acima de 50%, indicada para quem procura carbono de verdade e cor estável, com 4 anos de garantia. A Ceramic é nanocerâmica com mais de 85% de rejeição de IR em todas as tonalidades, a mesma performance térmica no claro e no escuro, com nitidez High Definition e 5 anos de garantia. Escolha Carbon pela estética carbono; escolha Ceramic pela máxima rejeição térmica dentro da linha Performance.',
   },
   {
     question: 'Qual película INSULFILM™ posso aplicar em teto-solar?',
     answer:
-      'Dentro do portfólio solar, a linha Polariz (Performance) é a indicada para teto-solar — construção híbrida metalizada com estética polarizada exclusiva, aplicável também em vidros laterais, traseiro e para-brisa.',
+      'Dentro do portfólio solar, a linha Polariz (Performance) é a indicada para teto-solar, construção híbrida metalizada com estética polarizada exclusiva, aplicável também em vidros laterais, traseiro e para-brisa.',
   },
   {
     question: 'Qual a diferença entre Polariz e Polariz Ultra?',
     answer:
-      'A Polariz pertence à Solar Performance Films: híbrida metalizada, até 57% de rejeição de energia solar total (TSER), 99% de UV e 5 anos de garantia, em três tonalidades (20, 10 e 05) — aplicável em vidros laterais, traseiro, para-brisa e teto-solar. A Polariz Ultra é o topo absoluto do portfólio, na Solar Premium Films: híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades (15 e 05), com mais de 99% de UV e 10 anos de garantia — aplicável em vidros laterais e traseiro. Ambas com estética polarizada exclusiva.',
+      'A Polariz pertence à Solar Performance Films: híbrida metalizada, até 57% de rejeição de energia solar total (TSER), 99% de UV e 5 anos de garantia, em três tonalidades (20, 10 e 05), aplicável em vidros laterais, traseiro, para-brisa e teto-solar. A Polariz Ultra é o topo absoluto do portfólio, na Solar Premium Films: híbrida metal-cerâmica com 70% de TSER (o recorde) e 75% de IR nas duas tonalidades (15 e 05), com mais de 99% de UV e 10 anos de garantia, aplicável em vidros laterais e traseiro. Ambas com estética polarizada exclusiva.',
   },
   {
     question: 'Quais linhas têm 10 anos de garantia?',
@@ -475,7 +475,7 @@ const AutomotivoHubSolar = () => {
               </motion.h2>
               <motion.div variants={fadeInUp} className="separator-accent mx-auto mt-6" />
               <motion.p variants={fadeInUp} className="text-primary-foreground/70 mt-6 font-light">
-                Construção, tonalidades, bloqueio UV, rejeição de IR, TSER e garantia — para você comparar objetivamente antes de recomendar.
+                Construção, tonalidades, bloqueio UV, rejeição de IR, TSER e garantia, para você comparar objetivamente antes de recomendar.
               </motion.p>
             </motion.div>
 
@@ -513,10 +513,10 @@ const AutomotivoHubSolar = () => {
                       <td className="px-4 py-4 text-primary-foreground/70 font-light whitespace-nowrap">{r.tons}</td>
                       <td className="px-4 py-4 text-center font-bold">{r.uv}</td>
                       <td className="px-4 py-4 text-center font-bold">
-                        {r.ir === '—' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.ir}
+                        {r.ir === ',' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.ir}
                       </td>
                       <td className="px-4 py-4 text-center font-bold">
-                        {r.tser === '—' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.tser}
+                        {r.tser === ',' ? <Minus className="w-4 h-4 mx-auto text-primary-foreground/30" /> : r.tser}
                       </td>
                       <td className="px-4 py-4 text-center font-bold whitespace-nowrap">{r.warranty}</td>
                       <td className="px-4 py-4 text-right">

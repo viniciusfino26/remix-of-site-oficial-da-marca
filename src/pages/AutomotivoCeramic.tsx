@@ -13,7 +13,7 @@ import PdpFaq from '@/components/PdpFaq';
 const faqItems = [
   {
     question: 'Quanto de infravermelho a Ceramic rejeita?',
-    answer: 'Mais de 85% em todas as variantes — Ceramic 35, Ceramic 20 e Ceramic 05. A performance térmica não depende da tonalidade: a variante clara entrega o mesmo patamar de IR rejeitado que a escura.',
+    answer: 'Mais de 85% em todas as variantes, Ceramic 35, Ceramic 20 e Ceramic 05. A performance térmica não depende da tonalidade: a variante clara entrega o mesmo patamar de IR rejeitado que a escura.',
   },
   {
     question: 'Qual a diferença da Ceramic para a Carbon e para películas pigmentadas?',
@@ -25,7 +25,7 @@ const faqItems = [
   },
   {
     question: 'A Ceramic interfere em GPS, celular ou tag de pedágio?',
-    answer: 'Não. A construção é nanocerâmica, sem metalização — celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
+    answer: 'Não. A construção é nanocerâmica, sem metalização, celular, GPS, rádio e tag de pedágio funcionam normalmente após o serviço técnico.',
   },
   {
     question: 'Qual o bloqueio UV e a nitidez óptica da Ceramic?',
@@ -87,11 +87,11 @@ const AutomotivoCeramic = () => {
   const schemaMarkup = {
     '@context': 'https://schema.org', '@type': 'Product',
     name: 'INSULFILM™ Ceramic', brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ Ceramic — nanocerâmica da Solar Performance Films. Mais de 85% de IR rejeitado em todas as variantes, 99% UV, nitidez High Definition e 5 anos de garantia.',
+    description: 'INSULFILM™ Ceramic, nanocerâmica da Solar Performance Films. Mais de 85% de IR rejeitado em todas as variantes, 99% UV, nitidez High Definition e 5 anos de garantia.',
     url: 'https://insulfilm.com.br/automotivo/solar/ceramic',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Advanced Plus Film — Nanocerâmica' },
-      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta — High Definition' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Advanced Plus Film, Nanocerâmica' },
+      { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Alta, High Definition' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '99%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '5 anos' },
     ],
@@ -186,7 +186,7 @@ const AutomotivoCeramic = () => {
         <section className="py-16 bg-background overflow-hidden">
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Ceramic — Película nanocerâmica" className="w-full h-full object-cover rounded-2xl" /></div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden"><img src={productImage} alt="INSULFILM™ Ceramic, Película nanocerâmica" className="w-full h-full object-cover rounded-2xl" /></div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
           </div>
@@ -320,7 +320,7 @@ const AutomotivoCeramic = () => {
           <div className="container mx-auto px-4">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Nanocerâmica com desempenho térmico de verdade.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Ceramic é o topo da Solar Performance Films — com 5 anos de garantia e a procedência da marca original.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">A INSULFILM™ Ceramic é o topo da Solar Performance Films, com 5 anos de garantia e a procedência da marca original.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><MessageCircle className="w-5 h-5" />Solicitar Orçamento</Link>

@@ -28,21 +28,21 @@ const categories = [
   {
     title: 'Proteção e Segurança',
     icon: <Shield className="w-8 h-8" />,
-    desc: 'Vidros que retêm estilhaços e dificultam invasões. Proteção real para sua família e patrimônio — sem alterar a estética do imóvel.',
+    desc: 'Vidros que retêm estilhaços e dificultam invasões. Proteção real para sua família e patrimônio, sem alterar a estética do imóvel.',
     path: '/arquitetonico/residencial/seguranca',
     accent: 'bg-accent/10 border-accent/20',
   },
   {
     title: 'Decorativo',
     icon: <Layers className="w-8 h-8" />,
-    desc: 'Privacidade, estilo e personalidade para cada ambiente. Jateado, Whiteout e Blackout — sem obra, sem resíduo, com garantia.',
+    desc: 'Privacidade, estilo e personalidade para cada ambiente. Jateado, Whiteout e Blackout, sem obra, sem resíduo, com garantia.',
     path: '/arquitetonico/residencial/decorativo',
     accent: 'bg-accent/10 border-accent/20',
   },
   {
     title: 'Proteção de Superfícies (SPF)',
     icon: <Sparkles className="w-8 h-8" />,
-    desc: 'Proteção invisível para superfícies nobres — bancadas, portas, elevadores e revestimentos que precisam resistir ao uso diário sem perder o acabamento.',
+    desc: 'Proteção invisível para superfícies nobres, bancadas, portas, elevadores e revestimentos que precisam resistir ao uso diário sem perder o acabamento.',
     path: '/arquitetonico/residencial/spf',
     accent: 'bg-accent/10 border-accent/20',
   },
@@ -52,7 +52,7 @@ const ArquitetonicoResidencial = () => (
   <>
     <Helmet>
       <title>Películas para Residências | INSULFILM™ Arquitetônico Residencial</title>
-      <meta name="description" content="Películas INSULFILM™ para residências — controle solar, segurança, decorativo e proteção de superfícies. Conforto, estética e proteção de patrimônio." />
+      <meta name="description" content="Películas INSULFILM™ para residências, controle solar, segurança, decorativo e proteção de superfícies. Conforto, estética e proteção de patrimônio." />
       <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/residencial" />
       <meta property="og:title" content="Películas para Residências | INSULFILM™" />
       <meta property="og:description" content="Linha completa de películas INSULFILM™ para residências. Conforto térmico, segurança e estética para o seu lar." />
@@ -61,7 +61,7 @@ const ArquitetonicoResidencial = () => (
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Películas Residenciais INSULFILM™",
-        "description": "Linha completa de películas para residências INSULFILM™ — controle solar, segurança, decorativo e proteção de superfícies.",
+        "description": "Linha completa de películas para residências INSULFILM™, controle solar, segurança, decorativo e proteção de superfícies.",
         "url": "https://insulfilm.com.br/arquitetonico/residencial",
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -77,7 +77,7 @@ const ArquitetonicoResidencial = () => (
     <main>
       <PageHero
         title="Sua casa merece mais conforto, mais segurança e mais privacidade."
-        subtitle="Películas INSULFILM™ para residências — tecnologia que transforma o vidro em aliado do seu conforto, da sua segurança e da valorização do seu patrimônio."
+        subtitle="Películas INSULFILM™ para residências, tecnologia que transforma o vidro em aliado do seu conforto, da sua segurança e da valorização do seu patrimônio."
         badge={{ icon: <Home className="w-3.5 h-3.5" />, text: 'INSULFILM™ RESIDENCIAL' }}
         cta={{
           text: 'Falar com um Especialista',

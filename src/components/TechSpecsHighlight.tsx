@@ -23,7 +23,7 @@ interface TechSpecsHighlightProps {
   subtitle?: string;
   /** 3 a 4 KPIs em destaque (números grandes). */
   highlights: HighlightStat[];
-  /** Linhas da tabela técnica completa (opcional — produtos de SKU único podem omitir). */
+  /** Linhas da tabela técnica completa (opcional, produtos de SKU único podem omitir). */
   techTable?: TechRow[];
   /** Texto da garantia / nota de rodapé. */
   warrantyNote?: string;
@@ -60,7 +60,7 @@ const HighlightCard = ({ stat, index, scrollYProgress }: { stat: HighlightStat; 
 
 const TechSpecsHighlight = ({
   title = 'Ficha Técnica',
-  subtitle = 'Os índices que definem o desempenho — e a sua decisão.',
+  subtitle = 'Os índices que definem o desempenho, e a sua decisão.',
   highlights,
   techTable,
   warrantyNote,

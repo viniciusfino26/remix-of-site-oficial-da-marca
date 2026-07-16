@@ -143,7 +143,7 @@ const VIP = () => {
                   A INSULFILM™ VIP utiliza partículas de carbono real para garantir estabilidade de cor ao longo dos anos, sem desbotamento para roxo ou lilás. Alta performance com custo-benefício excepcional.
                 </motion.p>
                 <motion.ul className="space-y-4" variants={stagger}>
-                  {['Carbono real — cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
+                  {['Carbono real, cor estável por anos', 'Rejeição de até 65% dos raios infravermelhos', 'Sem interferência em sinais eletrônicos', 'Garantia de 5 anos contra desbotamento'].map((text, i) => (
                     <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                       <span className="text-primary-foreground font-medium">{text}</span>

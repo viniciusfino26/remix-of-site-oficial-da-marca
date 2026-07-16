@@ -119,10 +119,10 @@ const AutomotivoRayStart = () => {
     '@type': 'Product',
     name: 'INSULFILM™ RayStart',
     brand: { '@type': 'Brand', name: 'INSULFILM™' },
-    description: 'INSULFILM™ RayStart — porta de entrada da linha Solar Performance Films. Película pigmentada em tom preto clássico não refletivo, com 90% de bloqueio UV e três tonalidades (35, 20 e 05).',
+    description: 'INSULFILM™ RayStart, porta de entrada da linha Solar Performance Films. Película pigmentada em tom preto clássico não refletivo, com 90% de bloqueio UV e três tonalidades (35, 20 e 05).',
     url: 'https://insulfilm.com.br/automotivo/solar/raystart',
     additionalProperty: [
-      { '@type': 'PropertyValue', name: 'Construção', value: 'Basic Film — Pigmentada' },
+      { '@type': 'PropertyValue', name: 'Construção', value: 'Basic Film, Pigmentada' },
       { '@type': 'PropertyValue', name: 'Nitidez Óptica', value: 'Regular' },
       { '@type': 'PropertyValue', name: 'Bloqueio UV', value: '90%' },
       { '@type': 'PropertyValue', name: 'Garantia', value: '1 ano' },
@@ -247,7 +247,7 @@ const AutomotivoRayStart = () => {
           <div className="container mx-auto px-4">
             <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleIn}>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img src={productImage} alt="INSULFILM™ RayStart — Película pigmentada não refletiva" className="w-full h-full object-cover rounded-2xl" />
+                <img src={productImage} alt="INSULFILM™ RayStart, Película pigmentada não refletiva" className="w-full h-full object-cover rounded-2xl" />
               </div>
               <p className="text-center text-muted-foreground text-sm mt-3">Imagem meramente ilustrativa</p>
             </motion.div>
@@ -398,7 +398,7 @@ const AutomotivoRayStart = () => {
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Dê o primeiro passo.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light mb-8">
-                A INSULFILM™ RayStart é o ponto de partida do portfólio solar automotivo — com a procedência da marca original.
+                A INSULFILM™ RayStart é o ponto de partida do portfólio solar automotivo, com a procedência da marca original.
               </motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">

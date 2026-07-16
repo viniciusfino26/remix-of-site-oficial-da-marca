@@ -3,7 +3,7 @@ import { rdDebugBus, hasConsent, isRdLoaded, type RDDebugEvent } from "@/lib/rds
 import { Bug, X, Trash2, ChevronDown, ChevronUp, CheckCircle2, XCircle } from "lucide-react";
 
 /**
- * RDDebugOverlay — Painel flutuante de debug do RD Station Marketing.
+ * RDDebugOverlay, Painel flutuante de debug do RD Station Marketing.
  *
  * Ativação:
  *  - URL: `?rd_debug=1` (ativa) / `?rd_debug=0` (desativa)
@@ -194,7 +194,7 @@ const RDDebugOverlay = () => {
                   </span>
                   <span className="truncate flex-1 text-foreground">
                     {ev.identifier ??
-                      (ev.url ? new URL(ev.url, window.location.origin).pathname : "—")}
+                      (ev.url ? new URL(ev.url, window.location.origin).pathname : ",")}
                   </span>
                 </summary>
                 <pre className="px-3 pb-2 text-[10px] text-muted-foreground whitespace-pre-wrap break-all bg-muted/10">

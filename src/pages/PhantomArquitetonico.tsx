@@ -79,7 +79,7 @@ const faqs = [
   { q: 'Vai mudar o visual do meu ambiente?', a: 'Não. A película Phantom foi projetada para ser completamente invisível. A versão Gloss mantém o brilho original e a versão Matte preserva o toque aveludado e a aparência fosca, sem alterar cores ou texturas.' },
   { q: 'Se eu quiser tirar depois, posso?', a: 'Sim. A película pode ser removida profissionalmente sem deixar resíduos ou danificar a superfície original. É uma proteção reversível.' },
   { q: 'Funciona em ambientes com muita circulação?', a: 'Absolutamente. O Phantom foi desenvolvido para ambientes de alto tráfego como lobbies de hotéis, restaurantes e corredores comerciais. A película de 180 microns resiste a impactos e abrasões do uso intenso.' },
-  { q: 'Essa película realmente protege ou é só estética?', a: 'Proteção real e comprovada. O Phantom cria uma barreira física contra riscos, manchas ácidas, produtos químicos, óleos e raios UV. Não é apenas cosmético — é engenharia de proteção.' },
+  { q: 'Essa película realmente protege ou é só estética?', a: 'Proteção real e comprovada. O Phantom cria uma barreira física contra riscos, manchas ácidas, produtos químicos, óleos e raios UV. Não é apenas cosmético, é engenharia de proteção.' },
   { q: 'Quanto tempo leva pra instalar?', a: 'A instalação é rápida e limpa. Dependendo da área, um ambiente pode ser protegido em poucas horas. Nossa equipe avalia o espaço e fornece um cronograma preciso antes do início.' },
   { q: 'É resistente com criança, pet ou muito movimento?', a: 'Sim. O Phantom é ideal para famílias com crianças e pets. Protege contra arranhões de unhas, marcas de brinquedos e derramamentos acidentais, mantendo a superfície sempre como nova.' },
 ];
@@ -88,7 +88,7 @@ const phantomSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "INSULFILM™ Phantom Arquitetônico | SPF para Superfícies",
-  "description": "Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.",
+  "description": "Película de proteção de superfícies (SPF, Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos.",
   "url": "https://www.insulfilm.com.br/phantom-arquitetonico",
   "publisher": { "@type": "Brand", "name": "INSULFILM™" }
 };
@@ -98,9 +98,9 @@ const PhantomArquitetonico = () => {
     <>
     <Helmet>
       <title>INSULFILM™ Phantom Arquitetônico | SPF para Superfícies</title>
-      <meta name="description" content="Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <meta name="description" content="Película de proteção de superfícies (SPF, Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
       <meta property="og:title" content="INSULFILM™ Phantom Arquitetônico | SPF para Superfícies" />
-      <meta property="og:description" content="Película de proteção de superfícies (SPF — Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
+      <meta property="og:description" content="Película de proteção de superfícies (SPF, Surface Protection Film) para mármores, madeiras, aço inox e vidros. Preservando o design dos seus acabamentos." />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="LINK_DA_IMAGEM_AQUI" />
       <meta property="og:url" content="https://www.insulfilm.com.br/phantom-arquitetonico" />
@@ -221,7 +221,7 @@ const PhantomArquitetonico = () => {
               Escolher um acabamento é definir o caráter de um espaço. Do drama luminoso de uma superfície gloss à elegância tátil de um acabamento matte, essa decisão impacta como a luz interage com o ambiente.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-sm text-accent font-semibold mt-4 tracking-wide">
-              Presente nos ambientes mais exigentes — de suítes presidenciais a restaurantes de alta gastronomia.
+              Presente nos ambientes mais exigentes, de suítes presidenciais a restaurantes de alta gastronomia.
             </motion.p>
           </motion.div>
 
@@ -230,7 +230,7 @@ const PhantomArquitetonico = () => {
               <Card className="card-premium-hover h-full border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <Sparkles className="w-8 h-8 text-accent mb-4" />
-                  <h3 className="text-xl font-extrabold text-foreground mb-3">Gloss — Declaração Ousada</h3>
+                  <h3 className="text-xl font-extrabold text-foreground mb-3">Gloss, Declaração Ousada</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground font-light">
                     <li><span className="font-semibold text-foreground">Luz:</span> Amplia a luz natural e artificial com efeito espelhado.</li>
                     <li><span className="font-semibold text-foreground">Cor:</span> Intensifica a profundidade visual e os veios naturais.</li>
@@ -244,13 +244,13 @@ const PhantomArquitetonico = () => {
               <Card className="card-premium-hover h-full border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <Layers className="w-8 h-8 text-accent mb-4" />
-                  <h3 className="text-xl font-extrabold text-foreground mb-3">Matte — O Luxo Silencioso</h3>
+                  <h3 className="text-xl font-extrabold text-foreground mb-3">Matte, O Luxo Silencioso</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground font-light">
                     <li><span className="font-semibold text-foreground">Toque:</span> Sensação aveludada e sedosa, natureza sensorial.</li>
                     <li><span className="font-semibold text-foreground">Luz:</span> Absorve a luminosidade para uma atmosfera calma.</li>
                     <li><span className="font-semibold text-foreground">Estética:</span> Ideal para o minimalismo onde a forma prevalece sobre o reflexo.</li>
                   </ul>
-                  <p className="mt-4 text-accent text-sm font-semibold italic">"Um fosco perfeito não admite correções — apenas preservação."</p>
+                  <p className="mt-4 text-accent text-sm font-semibold italic">"Um fosco perfeito não admite correções, apenas preservação."</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -268,7 +268,7 @@ const PhantomArquitetonico = () => {
                   Quando o Design Encontra o Uso Diário
                 </motion.h2>
                 <motion.p variants={fadeInLeft} className="text-lg text-primary-foreground/60 font-light leading-relaxed mb-8">
-                  Superfícies de alto padrão não falham por falta de beleza — <span className="text-accent font-semibold">falham pelo uso.</span> O conflito central do design de interiores é que as superfícies mais bonitas são as mais expostas.
+                  Superfícies de alto padrão não falham por falta de beleza, <span className="text-accent font-semibold">falham pelo uso.</span> O conflito central do design de interiores é que as superfícies mais bonitas são as mais expostas.
                 </motion.p>
                 <motion.div variants={fadeInLeft} className="space-y-3">
                   {['Um copo de vinho apoiado sem cuidado.', 'Um respingo de limão.', 'A limpeza com um pano abrasivo.'].map((text, i) => (
@@ -391,7 +391,7 @@ const PhantomArquitetonico = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════ A SOLUÇÃO — PELÍCULAS PHANTOM ═══════════════════════ */}
+      {/* ═══════════════════════ A SOLUÇÃO, PELÍCULAS PHANTOM ═══════════════════════ */}
       <section className="py-24 bg-carbon-gradient overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-5xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
@@ -424,7 +424,7 @@ const PhantomArquitetonico = () => {
             </motion.div>
 
             <motion.p variants={fadeInUp} className="text-center text-primary-foreground/70 text-base font-light max-w-3xl mx-auto">
-              Preserva exatamente o visual original de qualquer superfície — com uma camada de proteção invisível de engenharia avançada.
+              Preserva exatamente o visual original de qualquer superfície, com uma camada de proteção invisível de engenharia avançada.
             </motion.p>
 
           </motion.div>

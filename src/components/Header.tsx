@@ -172,7 +172,7 @@ const Header = () => {
             <Link to="/" className="flex items-center gap-2 group shrink-0">
               <img
                 src={logoDark}
-                alt="INSULFILM™ — A marca das películas"
+                alt="INSULFILM™, A marca das películas"
                 className="h-56 lg:h-80 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
               />
             </Link>
@@ -180,7 +180,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
               {megaMenuItems.map((menu) => {
-                /* Direct-link item (no dropdown) — e.g., Lojas e Aplicação Homologada */
+                /* Direct-link item (no dropdown), e.g., Lojas e Aplicação Homologada */
                 if (menu.href) {
                   return (
                   <Link
@@ -195,7 +195,7 @@ const Header = () => {
                   </Link>
                   );
                 }
-                /* Dropdown item — Marca, Automotivo, Arquitetônico */
+                /* Dropdown item, Marca, Automotivo, Arquitetônico */
                 return (
                   <div
                     key={menu.key}
@@ -267,7 +267,7 @@ const Header = () => {
                   </div>
                   <nav className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 flex flex-col gap-1.5">
                     {megaMenuItems.map((menu) => {
-                      /* Direct-link item (no dropdown/section) — e.g., Lojas e Aplicação Homologada */
+                      /* Direct-link item (no dropdown/section), e.g., Lojas e Aplicação Homologada */
                       if (menu.href) {
                         return (
                         <Link

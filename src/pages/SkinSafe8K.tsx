@@ -45,9 +45,9 @@ const emotionalFade = {
 /* ── danger cards ── */
 const dangerCards = [
   { icon: AlertTriangle, title: 'Estilhaços projetados', desc: 'O vidro temperado se fragmenta em dezenas de pedaços que são projetados com força contra os ocupantes no momento da quebra.' },
-  { icon: Eye, title: 'Risco para olhos e rosto', desc: 'Fragmentos de vidro podem atingir diretamente olhos, rosto e pescoço — áreas extremamente vulneráveis e expostas.' },
+  { icon: Eye, title: 'Risco para olhos e rosto', desc: 'Fragmentos de vidro podem atingir diretamente olhos, rosto e pescoço, áreas extremamente vulneráveis e expostas.' },
   { icon: HeartCrack, title: 'Cortes na pele exposta', desc: 'Braços, mãos e colo ficam expostos a cortes de vidro que podem causar lesões sérias, mesmo em baixa velocidade.' },
-  { icon: UserX, title: 'Crianças no banco traseiro', desc: 'Crianças sentadas atrás estão na linha direta de projeção dos vidros laterais e traseiro — as áreas mais vulneráveis.' },
+  { icon: UserX, title: 'Crianças no banco traseiro', desc: 'Crianças sentadas atrás estão na linha direta de projeção dos vidros laterais e traseiro, as áreas mais vulneráveis.' },
 ];
 
 /* ── mechanical properties ── */
@@ -68,7 +68,7 @@ const solarProps = [
 
 /* ── optical benefits ── */
 const opticalBenefits = [
-  { icon: Eye, title: 'Alta Nitidez Óptica', desc: 'Transparência cristal — praticamente imperceptível após a aplicação.' },
+  { icon: Eye, title: 'Alta Nitidez Óptica', desc: 'Transparência cristal, praticamente imperceptível após a aplicação.' },
   { icon: Sun, title: '100% UV com Solar', desc: 'Em combinação com película solar, atinge bloqueio total de raios ultravioleta.' },
   { icon: Lock, title: 'Privacidade', desc: 'Combinada com película solar escura, oferece privacidade sem comprometer a segurança.' },
   { icon: Lightbulb, title: 'Conforto Visual', desc: 'Reduz reflexos e melhora o conforto visual em conjunto com a película solar.' },
@@ -185,14 +185,14 @@ const SkinSafe8K = () => {
                 O vidro ainda é a parte mais frágil do carro
               </motion.h2>
               <motion.p variants={fadeInLeft} className="text-muted-foreground font-light leading-relaxed mb-8">
-                Mesmo com tantos itens de segurança, o vidro ainda é a parte mais frágil do carro. O INSULFILM™ SkinSafe8K contribui de forma importante para minimizar a projeção direta de estilhaços contra os ocupantes em quebras inesperadas — uma prevenção simples que reduz o risco de lesões sérias.
+                Mesmo com tantos itens de segurança, o vidro ainda é a parte mais frágil do carro. O INSULFILM™ SkinSafe8K contribui de forma importante para minimizar a projeção direta de estilhaços contra os ocupantes em quebras inesperadas, uma prevenção simples que reduz o risco de lesões sérias.
               </motion.p>
               <motion.p variants={fadeInLeft} className="text-muted-foreground font-light leading-relaxed mb-8">
                 A película SkinSafe8K é uma película de proteção com 7 mil (177,8 micras) de espessura, projetada para laminar os fragmentos de vidro projetados em quebras acidentais, mantendo-os aderidos à película e reduzindo significativamente o risco de ferimentos nos ocupantes.
               </motion.p>
               <motion.ul className="space-y-4" variants={stagger}>
                 {[
-                  'Não aplicável à furtos — produto exclusivo para quebras acidentais',
+                  'Não aplicável à furtos, produto exclusivo para quebras acidentais',
                   'Não interfere em sinais de celulares, GPS ou pedágios',
                   'Não altera a originalidade do veículo'
                 ].map((text, i) => (
@@ -215,7 +215,7 @@ const SkinSafe8K = () => {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border shadow-premium">
                 <img
                   src={autoSkinSafe8K}
-                  alt="Vidro automotivo estilhaçado retido pela película INSULFILM™ SkinSafe8K — proteção contra projeção de fragmentos"
+                  alt="Vidro automotivo estilhaçado retido pela película INSULFILM™ SkinSafe8K, proteção contra projeção de fragmentos"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -239,7 +239,7 @@ const SkinSafe8K = () => {
               O perigo real
             </motion.h2>
             <motion.p variants={emotionalFade} className="text-muted-foreground text-lg font-light max-w-3xl mx-auto">
-              Em uma quebra acidental, o maior risco não é o vidro que cai — é o que ele projeta contra quem está dentro do carro.
+              Em uma quebra acidental, o maior risco não é o vidro que cai, é o que ele projeta contra quem está dentro do carro.
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4">
               <div className="separator-accent" />
@@ -272,7 +272,7 @@ const SkinSafe8K = () => {
       </div>
       </section>
 
-      {/* ═══ CTA — PROTEGER MINHA PELE ═══ */}
+      {/* ═══ CTA, PROTEGER MINHA PELE ═══ */}
       <section className="py-16 bg-carbon-gradient overflow-hidden relative">
         <div className="absolute inset-0 bg-diagonal-texture" />
         <div className="container mx-auto px-4 relative z-10">
@@ -348,16 +348,16 @@ const SkinSafe8K = () => {
               <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { name: 'RayStart', gen: 'Solar Performance · Basic Film Pigmentada', href: '/automotivo/solar/raystart' },
-                  { name: 'Eclipse', gen: '3ª Geração — Carbono', href: '/automotivo/solar/eclipse' },
-                  { name: 'Vip', gen: '3ª Geração evoluída — Carbono-Cerâmica', href: '/automotivo/solar/vip' },
-                  { name: 'Matrix', gen: '4ª Geração — Cerâmica', href: '/automotivo/solar/matrix' },
-                  { name: 'Polariz Ultra', gen: '5ª Geração — Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
+                  { name: 'Eclipse', gen: '3ª Geração, Carbono', href: '/automotivo/solar/eclipse' },
+                  { name: 'Vip', gen: '3ª Geração evoluída, Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'Matrix', gen: '4ª Geração, Cerâmica', href: '/automotivo/solar/matrix' },
+                  { name: 'Polariz Ultra', gen: '5ª Geração, Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
                 ].map((line) => (
                   <a key={line.name} href={line.href} className="group">
                     <Badge className="bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 transition-colors px-4 py-2 text-sm cursor-pointer">
                       <Sun className="w-3.5 h-3.5 mr-2" />
                       <span className="font-bold">{line.name}</span>
-                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">— {line.gen}</span>
+                      <span className="hidden sm:inline text-accent/60 ml-1.5 font-light">, {line.gen}</span>
                     </Badge>
                   </a>
                 ))}
@@ -463,7 +463,7 @@ const SkinSafe8K = () => {
                 <Card className="card-premium-hover rounded-2xl h-full border-t-2 border-t-accent/30">
                   <CardContent className="p-6">
                     <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center mb-4"><Award className="w-6 h-6 text-accent" /></div>
-                    <h3 className="text-lg font-extrabold text-foreground mb-2">Garantia do Produto — 5 anos</h3>
+                    <h3 className="text-lg font-extrabold text-foreground mb-2">Garantia do Produto, 5 anos</h3>
                     <p className="text-sm text-muted-foreground font-light leading-relaxed mb-4">Cobertura contra defeitos de fabricação que comprometam o desempenho da película.</p>
                     <ul className="space-y-2">
                       {['Falha adesiva', 'Delaminação', 'Rachadura espontânea'].map(item => (

@@ -245,7 +245,7 @@ const Legislacao = () => (
         </div>
       </section>
 
-      {/* ═══ ÁREA DE FOTO — TRANSPARÊNCIAS PERMITIDAS ═══ */}
+      {/* ═══ ÁREA DE FOTO, TRANSPARÊNCIAS PERMITIDAS ═══ */}
       <section className="py-20 bg-background overflow-x-hidden">
         <div className="container mx-auto px-4">
           <motion.div
@@ -264,7 +264,7 @@ const Legislacao = () => (
                 Veja as possibilidades dentro da legislação
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A regulamentação vigente permite uma ampla gama de opções para vidros traseiros e laterais traseiros. Películas com diferentes níveis de transmitância podem ser aplicadas nessas áreas, oferecendo privacidade, conforto térmico e proteção UV — dentro dos limites legais.
+                A regulamentação vigente permite uma ampla gama de opções para vidros traseiros e laterais traseiros. Películas com diferentes níveis de transmitância podem ser aplicadas nessas áreas, oferecendo privacidade, conforto térmico e proteção UV, dentro dos limites legais.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nos vidros dianteiros e para-brisa, a transmitância mínima de 70% garante a visibilidade necessária para a segurança no trânsito. A INSULFILM™ possui opções específicas para cada área do veículo.
@@ -303,13 +303,13 @@ const Legislacao = () => (
         </div>
       </section>
 
-      {/* ═══ PARALLAX — STATS ═══ */}
+      {/* ═══ PARALLAX, STATS ═══ */}
       <ParallaxBreak
         minHeight="28vh"
         stats={[
-          { value: '70%', label: 'Transmitância mínima — dianteiros' },
+          { value: '70%', label: 'Transmitância mínima, dianteiros' },
           { value: 'Res. 989', label: 'CONTRAN 2022' },
-          { value: 'Art. 230', label: 'Infração grave — CTB' },
+          { value: 'Art. 230', label: 'Infração grave, CTB' },
         ]}
       />
 
@@ -403,7 +403,7 @@ const Legislacao = () => (
                     <h3 className="font-extrabold text-primary-foreground">Chancela e Identificação Legal</h3>
                   </div>
                   <p className="text-sm text-primary-foreground/60 leading-relaxed">
-                    A chancela prevista na regulamentação tem finalidade legal de identificação do conjunto aplicado. Ela <strong className="text-primary-foreground/80">não se confunde</strong> com o Selo Holográfico INSULFILM™ — são elementos distintos, com funções diferentes.
+                    A chancela prevista na regulamentação tem finalidade legal de identificação do conjunto aplicado. Ela <strong className="text-primary-foreground/80">não se confunde</strong> com o Selo Holográfico INSULFILM™, são elementos distintos, com funções diferentes.
                   </p>
                   <p className="text-sm text-accent font-bold mt-3">
                     Sem o Selo Holográfico INSULFILM™, não é INSULFILM™.
@@ -415,7 +415,7 @@ const Legislacao = () => (
         </div>
       </section>
 
-      {/* ═══ FAQ — SEGREGADO ═══ */}
+      {/* ═══ FAQ, SEGREGADO ═══ */}
       <section className="py-24 bg-background" id="faq-legislacao">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
@@ -432,7 +432,7 @@ const Legislacao = () => (
               </Badge>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-              FAQ — Resolução CONTRAN nº 989/2022
+              FAQ, Resolução CONTRAN nº 989/2022
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground max-w-xl mx-auto">
               Dúvidas sobre a legislação vigente respondidas com base na norma oficial.

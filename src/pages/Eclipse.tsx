@@ -119,10 +119,10 @@ const Eclipse = () => {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
                 <motion.h2 variants={fadeInLeft} className="text-3xl md:text-4xl font-extrabold text-primary-foreground mb-6">Cor Estável por Anos</motion.h2>
                 <motion.p variants={fadeInLeft} className="text-primary-foreground/60 font-light leading-relaxed mb-8">
-                  A Eclipse utiliza nano partículas de carbono verdadeiro que garantem estabilidade de cor — sem desbotamento para tons roxos ao longo do tempo. Uma película acessível com qualidade comprovada.
+                  A Eclipse utiliza nano partículas de carbono verdadeiro que garantem estabilidade de cor, sem desbotamento para tons roxos ao longo do tempo. Uma película acessível com qualidade comprovada.
                 </motion.p>
                 <motion.ul className="space-y-4" variants={stagger}>
-                  {['Nano partículas de carbono verdadeiro', 'Color Stable — sem desbotamento', 'Filtro de 30% dos raios infravermelhos', 'Garantia de 5 anos'].map((text, i) => (
+                  {['Nano partículas de carbono verdadeiro', 'Color Stable, sem desbotamento', 'Filtro de 30% dos raios infravermelhos', 'Garantia de 5 anos'].map((text, i) => (
                     <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                       <span className="text-primary-foreground font-medium">{text}</span>

@@ -26,10 +26,10 @@ const products = [
 const AutomotivoHubPPF = () => (
   <>
     <Helmet>
-      <title>PPF — Película de Proteção de Pintura Automotiva | INSULFILM™</title>
+      <title>PPF, Película de Proteção de Pintura Automotiva | INSULFILM™</title>
       <meta name="description" content="Linha INSULFILM™ Phantom PPF: proteção invisível contra riscos, pedras, insetos e intempéries. Disponível em 6mil e 8mil." />
       <link rel="canonical" href="https://www.insulfilm.com.br/automotivo/ppf" />
-      <meta property="og:title" content="PPF — Película de Proteção de Pintura | INSULFILM™" />
+      <meta property="og:title" content="PPF, Película de Proteção de Pintura | INSULFILM™" />
       <meta property="og:description" content="Linha Phantom PPF com tecnologia de 5 camadas para proteção total da pintura automotiva." />
       <meta property="og:url" content="https://www.insulfilm.com.br/automotivo/ppf" />
     </Helmet>

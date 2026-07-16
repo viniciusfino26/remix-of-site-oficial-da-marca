@@ -128,7 +128,7 @@ const ArqSegurancaISSF4000 = () => {
                   A INSULFILM™ ISSF4000 é uma película de segurança projetada para proteger vidros de edificações contra estilhaços em caso de quebra, vandalismo e tentativas de invasão. Com 4 mil de espessura, mantém os fragmentos unidos e reduz riscos de lesões.
                 </motion.p>
                 <motion.ul className="space-y-4" variants={stagger}>
-                  {['Retenção de fragmentos em caso de quebra', 'Proteção contra vandalismo e tentativas de invasão', 'Transparência total — não altera a estética do vidro', 'Garantia de 5 anos'].map((text, i) => (
+                  {['Retenção de fragmentos em caso de quebra', 'Proteção contra vandalismo e tentativas de invasão', 'Transparência total, não altera a estética do vidro', 'Garantia de 5 anos'].map((text, i) => (
                     <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                       <span className="text-primary-foreground font-medium">{text}</span>

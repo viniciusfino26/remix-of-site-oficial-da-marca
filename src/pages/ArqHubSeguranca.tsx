@@ -23,14 +23,14 @@ const WHATSAPP_NUMBER = '5511936182746';
 const products = [
   {
     name: 'INSULFILM™ ISSF4000',
-    badge: '4 mil — Proteção Padrão',
+    badge: '4 mil, Proteção Padrão',
     subtitle: 'PROTEÇÃO CONTRA ESTILHAÇOS E ACIDENTES.',
     desc: 'Película de segurança de 4 mil (100 microns) para edificações. Retém fragmentos de vidro em caso de quebra acidental, explosões, ventanias ou falhas estruturais.',
     path: '/arquitetonico/seguranca/issf4000',
   },
   {
     name: 'INSULFILM™ ISSF7000',
-    badge: '7 mil — Proteção Reforçada',
+    badge: '7 mil, Proteção Reforçada',
     subtitle: 'SEGURANÇA REFORÇADA CONTRA VANDALISMO E INVASÕES.',
     desc: 'Película de segurança reforçada de 7 mil (175 microns). Além de reter estilhaços, dificulta significativamente a transposição do vidro em tentativas de invasão e vandalismo.',
     path: '/arquitetonico/seguranca/issf7000',
@@ -78,7 +78,7 @@ const ArqHubSeguranca = () => (
         </div>
       </section>
 
-      {/* ── PRODUTOS — SHOWCASES ── */}
+      {/* ── PRODUTOS, SHOWCASES ── */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-20">
@@ -86,7 +86,7 @@ const ArqHubSeguranca = () => (
               Encontre a Proteção Ideal para o Seu Projeto
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-              Do padrão residencial ao reforço corporativo — cada película atende a um nível específico de exigência.
+              Do padrão residencial ao reforço corporativo, cada película atende a um nível específico de exigência.
             </motion.p>
           </motion.div>
 

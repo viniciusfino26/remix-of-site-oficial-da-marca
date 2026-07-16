@@ -28,7 +28,7 @@ const SEOHead = ({
   ogDescription,
   schemaMarkup,
 }: SEOHeadProps) => {
-  const segmentSuffix = segment ? ` — ${segmentLabel[segment]}` : '';
+  const segmentSuffix = segment ? `, ${segmentLabel[segment]}` : '';
   const fullTitle = `${title}${segmentSuffix} | INSULFILM™`;
   const finalDescription = description || DEFAULT_DESCRIPTION;
 

@@ -52,7 +52,7 @@ const compositionLayers = [
 ];
 
 const physicalProps = [
-  { prop: 'Espessura total — livre de camadas protetivas', value: '6 mil / ≈150 microns' },
+  { prop: 'Espessura total, livre de camadas protetivas', value: '6 mil / ≈150 microns' },
   { prop: 'Força do adesivo contra arrancamento', value: '≥15N / 25mm' },
   { prop: 'Força para rompimento da película', value: '≈320 lbs/in' },
   { prop: 'Intervalo de resistência à temperatura', value: '-35°C ~ 116°C' },
@@ -63,10 +63,10 @@ const WHATSAPP = `https://wa.me/5511976136911?text=${encodeURIComponent('Olá! G
 const AutomotivoPhantom6 = () => (
   <>
     <Helmet>
-      <title>{PRODUCT_NAME} — PPF Proteção de Pintura Automotiva | INSULFILM™</title>
+      <title>{PRODUCT_NAME}, PPF Proteção de Pintura Automotiva | INSULFILM™</title>
       <meta name="description" content="INSULFILM™ Phantom 6mil: película PPF transparente gloss com 5 camadas de proteção, 150 microns de espessura e garantia de 5 anos." />
       <link rel="canonical" href={CANONICAL} />
-      <meta property="og:title" content={`${PRODUCT_NAME} — PPF Automotivo`} />
+      <meta property="og:title" content={`${PRODUCT_NAME}, PPF Automotivo`} />
       <meta property="og:description" content="Proteção invisível de 6mil contra riscos, pedras e intempéries." />
       <meta property="og:url" content={CANONICAL} />
       <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
@@ -79,7 +79,7 @@ const AutomotivoPhantom6 = () => (
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeInUp} className="flex justify-center mb-4">
               <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5">
-                <Paintbrush className="w-3.5 h-3.5 mr-2" />PPF — 6 mil
+                <Paintbrush className="w-3.5 h-3.5 mr-2" />PPF, 6 mil
               </Badge>
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary-foreground mb-5 leading-[0.95]">
@@ -117,7 +117,7 @@ const AutomotivoPhantom6 = () => (
               Phantom 6mil <span className="text-accent">Transparente Gloss</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground font-light max-w-lg mx-auto">
-              Filme PPF de última geração com 5 camadas de proteção — espessura 6 mil
+              Filme PPF de última geração com 5 camadas de proteção, espessura 6 mil
             </motion.p>
             <motion.div variants={scaleIn} className="flex justify-center mt-4"><div className="separator-accent" /></motion.div>
           </motion.div>
@@ -208,7 +208,7 @@ const AutomotivoPhantom6 = () => (
               <Card className="glass-card rounded-2xl border-t-2 border-t-accent/30">
                 <CardContent className="p-8">
                   <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base">
-                    Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos — com confiança — a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
+                    Para você dirigir tranquilo, sabendo que seu investimento está protegido por muito tempo, oferecemos, com confiança, a <span className="text-accent font-bold">garantia de cinco anos</span> desde a data de instalação em superfícies metálicas.
                   </p>
                   <p className="text-primary-foreground/70 font-light leading-relaxed text-sm md:text-base mt-4">
                     A cobertura compreende: <span className="text-primary-foreground font-semibold">rachaduras, formação de bolhas ou amarelamento</span> causados apenas por defeitos na fabricação.

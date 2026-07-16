@@ -60,10 +60,10 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
     <>
       <Helmet>
         <title>INSULFILM™ Metallico Argento | Película Espelhada Premium | Máx. Rejeição Térmica</title>
-        <meta name="description" content="INSULFILM™ Metallico Argento — película espelhada premium com até 86% de rejeição IR, proteção UV >99% e garantia de 10 anos. Máxima eficiência com sofisticação espelhada." />
+        <meta name="description" content="INSULFILM™ Metallico Argento, película espelhada premium com até 86% de rejeição IR, proteção UV >99% e garantia de 10 anos. Máxima eficiência com sofisticação espelhada." />
         <link rel="canonical" href={baseCanonical} />
         <meta property="og:title" content="INSULFILM™ Metallico Argento | Película Espelhada Premium" />
-        <meta property="og:description" content="INSULFILM™ Metallico Argento — película espelhada premium com até 86% de rejeição IR e garantia de 10 anos." />
+        <meta property="og:description" content="INSULFILM™ Metallico Argento, película espelhada premium com até 86% de rejeição IR e garantia de 10 anos." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={baseCanonical} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -80,10 +80,10 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium — Arquitetônica</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Building2 className="w-3.5 h-3.5 mr-2" />Solar Premium, Arquitetônica</Badge>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">
-                {copy?.h1 || `INSULFILM™ Metallico Argento — eficiência máxima com sofisticação espelhada`}
+                {copy?.h1 || `INSULFILM™ Metallico Argento, eficiência máxima com sofisticação espelhada`}
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">O mais alto desempenho térmico com estética espelhada. Para fachadas que não aceitam menos.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
@@ -128,8 +128,8 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-8">Quando máximo desempenho e máxima estética precisam coexistir.</motion.h2>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Metallico Argento combina tecnologia metalizada de alto poder refletivo com acabamento espelhado prateado — entregando até 86% de rejeição de infravermelho, proteção UV total e um visual arquitetônico que valoriza o imóvel e reduz drasticamente o consumo de climatização.</motion.p>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Para fachadas comerciais, residenciais e coberturas envidraçadas expostas ao sol com exigência máxima de desempenho — com 10 anos de garantia da marca registrada.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">A INSULFILM™ Metallico Argento combina tecnologia metalizada de alto poder refletivo com acabamento espelhado prateado, entregando até 86% de rejeição de infravermelho, proteção UV total e um visual arquitetônico que valoriza o imóvel e reduz drasticamente o consumo de climatização.</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed">Para fachadas comerciais, residenciais e coberturas envidraçadas expostas ao sol com exigência máxima de desempenho, com 10 anos de garantia da marca registrada.</motion.p>
             </motion.div>
           </div>
         </section>
@@ -182,11 +182,11 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">80% de energia solar total rejeitada</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Redução drástica da carga térmica — com impacto direto no consumo de ar-condicionado e no conforto dos ocupantes.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Redução drástica da carga térmica, com impacto direto no consumo de ar-condicionado e no conforto dos ocupantes.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">Acabamento espelhado prateado</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">Estética marcante que valoriza o imóvel e cria identidade visual arquitetônica — com reflexo elegante que não compromete a visibilidade interna.</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">Estética marcante que valoriza o imóvel e cria identidade visual arquitetônica, com reflexo elegante que não compromete a visibilidade interna.</p>
                 </motion.div>
                 <motion.div variants={fadeInUp}>
                   <h3 className="text-xl font-bold text-foreground mb-2">10 anos de garantia</h3>
@@ -238,7 +238,7 @@ const MetallicoArgento = ({ segment }: { segment?: Segment }) => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Solicite Atendimento Nacional</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Metallico Argento representa o padrão máximo da linha espelhada — máxima eficiência térmica, estética de alto impacto e 10 anos de garantia da marca registrada.</motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Metallico Argento representa o padrão máximo da linha espelhada, máxima eficiência térmica, estética de alto impacto e 10 anos de garantia da marca registrada.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><ArrowRight className="w-5 h-5" />Solicitar atendimento nacional</Link>

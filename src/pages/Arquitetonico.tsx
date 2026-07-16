@@ -25,7 +25,7 @@ const schemaData = [
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Películas Arquitetônicas INSULFILM™",
-    "description": "Linha completa de películas para vidros arquitetônicos INSULFILM™ — controle solar, segurança, decorativo e proteção de superfícies para residências e espaços comerciais.",
+    "description": "Linha completa de películas para vidros arquitetônicos INSULFILM™, controle solar, segurança, decorativo e proteção de superfícies para residências e espaços comerciais.",
     "url": "https://insulfilm.com.br/arquitetonico",
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -41,10 +41,10 @@ const schemaData = [
     "@type": "ItemList",
     "name": "Soluções Arquitetônicas INSULFILM™",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Películas Solares Arquitetônicas INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/solar", "description": "Controle solar para fachadas, sacadas e janelas — Performance e Premium." },
-      { "@type": "ListItem", "position": 2, "name": "Películas de Segurança Arquitetônica INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/seguranca", "description": "Proteção estrutural para vidros — retenção de estilhaços e reforço de segurança." },
-      { "@type": "ListItem", "position": 3, "name": "Películas Decorativas INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/decorativo", "description": "Películas decorativas — Jateado, Whiteout e Blackout." },
-      { "@type": "ListItem", "position": 4, "name": "INSULFILM™ Phantom SPF — Proteção de Superfícies", "url": "https://insulfilm.com.br/phantom-arquitetonico", "description": "Surface Protection Film para superfícies de design — Gloss e Matte." }
+      { "@type": "ListItem", "position": 1, "name": "Películas Solares Arquitetônicas INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/solar", "description": "Controle solar para fachadas, sacadas e janelas, Performance e Premium." },
+      { "@type": "ListItem", "position": 2, "name": "Películas de Segurança Arquitetônica INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/seguranca", "description": "Proteção estrutural para vidros, retenção de estilhaços e reforço de segurança." },
+      { "@type": "ListItem", "position": 3, "name": "Películas Decorativas INSULFILM™", "url": "https://insulfilm.com.br/arquitetonico/decorativo", "description": "Películas decorativas, Jateado, Whiteout e Blackout." },
+      { "@type": "ListItem", "position": 4, "name": "INSULFILM™ Phantom SPF, Proteção de Superfícies", "url": "https://insulfilm.com.br/phantom-arquitetonico", "description": "Surface Protection Film para superfícies de design, Gloss e Matte." }
     ]
   },
   {
@@ -52,7 +52,7 @@ const schemaData = [
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "O que são películas arquitetônicas?", "acceptedAnswer": { "@type": "Answer", "text": "Películas arquitetônicas são filmes técnicos aplicados sobre vidros de edificações. Oferecem controle solar, redução de calor, proteção UV, privacidade e segurança. INSULFILM™ é a marca registrada referência nesse segmento no Brasil desde 1986." } },
-      { "@type": "Question", "name": "Película arquitetônica realmente reduz o calor do ambiente?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. As películas INSULFILM™ bloqueiam entre 45% e 93% dos raios infravermelhos — o principal responsável pela sensação de calor em ambientes com vidro. O resultado é perceptível nos primeiros dias após a aplicação." } },
+      { "@type": "Question", "name": "Película arquitetônica realmente reduz o calor do ambiente?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. As películas INSULFILM™ bloqueiam entre 45% e 93% dos raios infravermelhos, o principal responsável pela sensação de calor em ambientes com vidro. O resultado é perceptível nos primeiros dias após a aplicação." } },
       { "@type": "Question", "name": "Película arquitetônica serve para residência e para escritório?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A linha INSULFILM™ foi desenvolvida para ambos os contextos, com produtos específicos para cada tipo de exposição solar, nível de privacidade e exigência estética." } },
       { "@type": "Question", "name": "Qual a garantia das películas arquitetônicas INSULFILM™?", "acceptedAnswer": { "@type": "Answer", "text": "As garantias variam de 3 a 10 anos dependendo do produto. Toda aplicação em canal oficial inclui certificado individual de garantia. Consulte condições com um dos nossos especialistas." } }
     ]
@@ -60,12 +60,12 @@ const schemaData = [
 ];
 
 const faqs = [
-  { q: 'Película arquitetônica realmente reduz o calor do ambiente?', a: 'Sim — e de forma perceptível. As películas INSULFILM™ bloqueiam entre 45% e 93% dos raios infravermelhos, o principal responsável pela sensação de calor em ambientes com vidro. O resultado é sentido nas primeiras horas após a aplicação.' },
-  { q: 'Película compromete a luminosidade do ambiente?', a: 'Depende do produto. A Clear70 mantém 72% de transmissão de luz. A Orizzonte70 mantém 68%. Há opções para cada nível de luminosidade desejada — nossos especialistas indicam a mais adequada para cada projeto e orientação de fachada.' },
+  { q: 'Película arquitetônica realmente reduz o calor do ambiente?', a: 'Sim, e de forma perceptível. As películas INSULFILM™ bloqueiam entre 45% e 93% dos raios infravermelhos, o principal responsável pela sensação de calor em ambientes com vidro. O resultado é sentido nas primeiras horas após a aplicação.' },
+  { q: 'Película compromete a luminosidade do ambiente?', a: 'Depende do produto. A Clear70 mantém 72% de transmissão de luz. A Orizzonte70 mantém 68%. Há opções para cada nível de luminosidade desejada, nossos especialistas indicam a mais adequada para cada projeto e orientação de fachada.' },
   { q: 'Quanto tempo dura uma película arquitetônica INSULFILM™?', a: 'As garantias variam de 3 a 10 anos dependendo do produto e da linha. Toda aplicação em canal oficial inclui certificado individual de garantia. Consulte condições com um dos nossos especialistas.' },
   { q: 'Película interfere em sinal de Wi-Fi ou automação predial?', a: 'As películas cerâmicas (Clear70 e Orizzonte70) não interferem em nenhum sinal eletrônico. Algumas películas metalizadas podem apresentar interferência em determinados modelos de antena. Nossos especialistas avaliam antes de especificar.' },
   { q: 'Qual a diferença entre película residencial e comercial?', a: 'O produto é o mesmo. O argumento e o benefício mudam. Para residências, o foco é conforto, privacidade e redução de conta de energia. Para espaços comerciais, entram conformidade NR17, redução de OPEX e documentação para auditorias.' },
-  { q: 'Película pode ser aplicada em pergolado ou cobertura de vidro?', a: 'Sim — algumas linhas são indicadas para isso. O Metallico Argento, o Reflesso d\'Argento e o Specchiato Bronzo são aprovados para teto de vidro e pergolados. Fale com um especialista para confirmar a indicação correta para o seu projeto.' },
+  { q: 'Película pode ser aplicada em pergolado ou cobertura de vidro?', a: 'Sim, algumas linhas são indicadas para isso. O Metallico Argento, o Reflesso d\'Argento e o Specchiato Bronzo são aprovados para teto de vidro e pergolados. Fale com um especialista para confirmar a indicação correta para o seu projeto.' },
 ];
 
 const architecturalCredentials = [
@@ -108,13 +108,13 @@ const Arquitetonico = () => (
   <>
     <Helmet>
       <title>INSULFILM™ Arquitetônico | Películas para Vidros de Ambientes</title>
-      <meta name="description" content="Seu ambiente esquenta, perde privacidade e desbota o que custou caro. Películas arquitetônicas INSULFILM™ resolvem isso — para residências e espaços comerciais." />
+      <meta name="description" content="Seu ambiente esquenta, perde privacidade e desbota o que custou caro. Películas arquitetônicas INSULFILM™ resolvem isso, para residências e espaços comerciais." />
       <link rel="canonical" href="https://insulfilm.com.br/arquitetonico" />
       <meta name="robots" content="index, follow" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://insulfilm.com.br/arquitetonico" />
       <meta property="og:title" content="INSULFILM™ Arquitetônico | Películas para Vidros de Ambientes" />
-      <meta property="og:description" content="Seu ambiente esquenta, perde privacidade e desbota o que custou caro. Películas arquitetônicas INSULFILM™ resolvem isso — residencial e comercial." />
+      <meta property="og:description" content="Seu ambiente esquenta, perde privacidade e desbota o que custou caro. Películas arquitetônicas INSULFILM™ resolvem isso, residencial e comercial." />
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:site_name" content="INSULFILM™" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -127,8 +127,8 @@ const Arquitetonico = () => (
       {/* ── HERO ── */}
       <PageHero
         title="O vidro que deveria proteger você está te custando caro todos os dias."
-        subtitle="Calor acumulado, conta de energia inflada, mobiliário que desbota e privacidade comprometida. Películas arquitetônicas INSULFILM™ resolvem isso — para residências e espaços comerciais."
-        badge={{ icon: <Building2 className="w-3.5 h-3.5" />, text: 'DIVISÃO ARQUITETÔNICA — INSULFILM™' }}
+        subtitle="Calor acumulado, conta de energia inflada, mobiliário que desbota e privacidade comprometida. Películas arquitetônicas INSULFILM™ resolvem isso, para residências e espaços comerciais."
+        badge={{ icon: <Building2 className="w-3.5 h-3.5" />, text: 'DIVISÃO ARQUITETÔNICA, INSULFILM™' }}
         cta={{ text: 'Falar com um Especialista', href: '/contato', icon: <MessageCircle className="w-5 h-5" /> }}
       />
 
@@ -137,13 +137,13 @@ const Arquitetonico = () => (
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
-              Películas arquitetônicas INSULFILM™ — para quem mora bem e trabalha bem.
+              Películas arquitetônicas INSULFILM™, para quem mora bem e trabalha bem.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              O ar-condicionado que nunca descansa. O sofá que desbotou antes da hora. A sala de reunião onde ninguém quer sentar perto do vidro. A fachada que expõe o interior para quem passa na rua. Vidros sem proteção cobram esse preço todo mês — na conta de energia, no conforto, no patrimônio e na privacidade de quem vive ou trabalha no ambiente.
+              O ar-condicionado que nunca descansa. O sofá que desbotou antes da hora. A sala de reunião onde ninguém quer sentar perto do vidro. A fachada que expõe o interior para quem passa na rua. Vidros sem proteção cobram esse preço todo mês, na conta de energia, no conforto, no patrimônio e na privacidade de quem vive ou trabalha no ambiente.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              A INSULFILM™ desenvolve películas técnicas para vidros arquitetônicos há quase 40 anos. Películas originais, com tecnologia certificada, aplicação profissional e garantia documentada — para residências e espaços comerciais que não aceitam esse custo.
+              A INSULFILM™ desenvolve películas técnicas para vidros arquitetônicos há quase 40 anos. Películas originais, com tecnologia certificada, aplicação profissional e garantia documentada, para residências e espaços comerciais que não aceitam esse custo.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-sm text-muted-foreground/80 font-semibold italic">
               Muitas pessoas utilizam o termo "insulfilm" para se referir a películas para vidro. INSULFILM™ é marca registrada, com titularidade exclusiva. O uso da marca por terceiros não é autorizado.
@@ -238,7 +238,7 @@ const Arquitetonico = () => (
       <div id="solucoes-arquitetonicas" className="scroll-mt-24" />
       <ProductBanner
         title="Películas Solares para Vidros"
-        description="O calor acumulado pelo vidro não espera o verão. Ele está lá todo dia — sobrecarregando o ar-condicionado, tornando certos cômodos inabitáveis e chegando na sua conta de energia todo mês."
+        description="O calor acumulado pelo vidro não espera o verão. Ele está lá todo dia, sobrecarregando o ar-condicionado, tornando certos cômodos inabitáveis e chegando na sua conta de energia todo mês."
         buttonText="EXPLORE"
         buttonIcon={Sun}
         link="/arquitetonico/solar"
@@ -251,10 +251,10 @@ const Arquitetonico = () => (
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
-              Películas Solares — porque o calor não pede licença.
+              Películas Solares, porque o calor não pede licença.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              Fachadas envidraçadas vendem apartamentos e valorizam imóveis. E depois cobram o preço diário em calor acumulado, conta de energia inflada e mobiliário que desbota mais rápido do que deveria. A linha solar INSULFILM™ bloqueia entre 45% e 93% do calor infravermelho — antes que ele atravesse o vidro e esquente o ambiente.
+              Fachadas envidraçadas vendem apartamentos e valorizam imóveis. E depois cobram o preço diário em calor acumulado, conta de energia inflada e mobiliário que desbota mais rápido do que deveria. A linha solar INSULFILM™ bloqueia entre 45% e 93% do calor infravermelho, antes que ele atravesse o vidro e esquente o ambiente.
             </motion.p>
             <motion.div variants={fadeInUp} className="mb-4">
               <h3 className="text-lg font-extrabold text-foreground mb-2">Linha Performance</h3>
@@ -292,10 +292,10 @@ const Arquitetonico = () => (
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
-              Películas de Segurança — porque vidro quebrado sem proteção é risco real.
+              Películas de Segurança, porque vidro quebrado sem proteção é risco real.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              A maioria das pessoas nunca pensa no vidro da janela como risco. Até ele quebrar. Um impacto acidental, um objeto arremessado, uma situação de vandalismo — sem película, o vidro se fragmenta em estilhaços que causam lesões reais. Com a película de segurança INSULFILM™, os fragmentos ficam retidos. O acesso é dificultado. O risco é reduzido.
+              A maioria das pessoas nunca pensa no vidro da janela como risco. Até ele quebrar. Um impacto acidental, um objeto arremessado, uma situação de vandalismo, sem película, o vidro se fragmenta em estilhaços que causam lesões reais. Com a película de segurança INSULFILM™, os fragmentos ficam retidos. O acesso é dificultado. O risco é reduzido.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-sm font-light leading-relaxed mb-4">
               <strong>Produtos disponíveis:</strong> INSULFILM™ ISSF4000 · INSULFILM™ ISSF7000
@@ -328,10 +328,10 @@ const Arquitetonico = () => (
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
-              Películas Decorativas — porque privacidade não deveria depender de cortina.
+              Películas Decorativas, porque privacidade não deveria depender de cortina.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              Fechar a cortina resolve o problema de privacidade. E elimina a luz natural, o visual e a razão de ter aquele vidro no projeto. As películas decorativas INSULFILM™ entregam privacidade, identidade visual e acabamento estético — sem obras, sem substituição de vidros, sem abrir mão da luminosidade do ambiente.
+              Fechar a cortina resolve o problema de privacidade. E elimina a luz natural, o visual e a razão de ter aquele vidro no projeto. As películas decorativas INSULFILM™ entregam privacidade, identidade visual e acabamento estético, sem obras, sem substituição de vidros, sem abrir mão da luminosidade do ambiente.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-sm font-light leading-relaxed mb-4">
               <strong>Produtos disponíveis:</strong> INSULFILM™ Jateado · INSULFILM™ Whiteout · INSULFILM™ Blackout
@@ -350,8 +350,8 @@ const Arquitetonico = () => (
 
       {/* ── BANNER 4: PHANTOM SPF ── */}
       <ProductBanner
-        title="INSULFILM™ Phantom SPF — Proteção de Superfícies"
-        description="O mármore que manchou. O lacado que riscou. O fosco que perdeu a uniformidade. Superfícies de alto padrão não falham por falta de beleza — falham pelo uso. Depois do dano, restaurar não é a mesma coisa."
+        title="INSULFILM™ Phantom SPF, Proteção de Superfícies"
+        description="O mármore que manchou. O lacado que riscou. O fosco que perdeu a uniformidade. Superfícies de alto padrão não falham por falta de beleza, falham pelo uso. Depois do dano, restaurar não é a mesma coisa."
         buttonText="SAIBA MAIS"
         buttonIcon={Layers}
         link="/phantom-arquitetonico"
@@ -364,10 +364,10 @@ const Arquitetonico = () => (
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">
-              INSULFILM™ Phantom SPF — porque o projeto custou caro demais para desgastar.
+              INSULFILM™ Phantom SPF, porque o projeto custou caro demais para desgastar.
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-muted-foreground text-base font-light leading-relaxed mb-6">
-              Você escolheu o material. Aprovou a execução. Recebeu o ambiente exatamente como imaginou. E o uso diário começa a cobrar o preço — silenciosamente, progressivamente, de forma irreversível. O INSULFILM™ Phantom SPF cria uma camada de proteção invisível sobre a superfície — preservando exatamente o que faz aquele acabamento especial.
+              Você escolheu o material. Aprovou a execução. Recebeu o ambiente exatamente como imaginou. E o uso diário começa a cobrar o preço, silenciosamente, progressivamente, de forma irreversível. O INSULFILM™ Phantom SPF cria uma camada de proteção invisível sobre a superfície, preservando exatamente o que faz aquele acabamento especial.
             </motion.p>
             <motion.div variants={fadeInUp} className="mb-4">
               <h3 className="text-lg font-extrabold text-foreground mb-1">INSULFILM™ Phantom Gloss</h3>
@@ -375,7 +375,7 @@ const Arquitetonico = () => (
             </motion.div>
             <motion.div variants={fadeInUp} className="mb-6">
               <h3 className="text-lg font-extrabold text-foreground mb-1">INSULFILM™ Phantom Matte</h3>
-              <p className="text-muted-foreground text-sm font-light">Para superfícies fosco. Preserva uniformidade, toque aveludado e o luxo silencioso do projeto. <em>Um fosco perfeito não admite correções — apenas preservação.</em> <strong>Garantia: 5 anos.</strong></p>
+              <p className="text-muted-foreground text-sm font-light">Para superfícies fosco. Preserva uniformidade, toque aveludado e o luxo silencioso do projeto. <em>Um fosco perfeito não admite correções, apenas preservação.</em> <strong>Garantia: 5 anos.</strong></p>
             </motion.div>
             <motion.div variants={fadeInUp}>
               <Link to="/phantom-arquitetonico" className="text-accent font-bold text-sm flex items-center gap-1 hover:underline">
@@ -446,9 +446,9 @@ const Arquitetonico = () => (
       <section className="py-16 bg-background border-t border-border/30">
         <div className="container mx-auto px-4">
           <motion.div className="max-w-4xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <h3 className="text-lg font-extrabold text-foreground mb-4">Películas arquitetônicas INSULFILM™ — o que são e por que a procedência importa.</h3>
+            <h3 className="text-lg font-extrabold text-foreground mb-4">Películas arquitetônicas INSULFILM™, o que são e por que a procedência importa.</h3>
             <p className="text-sm text-muted-foreground font-light leading-relaxed mb-4">
-              O termo "insulfilm" é utilizado popularmente no Brasil para se referir a películas para vidro em geral. INSULFILM™ é a marca registrada que originou essa associação — com proteção nominativa válida perante o INPI e presença contínua no segmento desde 1986.
+              O termo "insulfilm" é utilizado popularmente no Brasil para se referir a películas para vidro em geral. INSULFILM™ é a marca registrada que originou essa associação, com proteção nominativa válida perante o INPI e presença contínua no segmento desde 1986.
             </p>
             <p className="text-sm text-muted-foreground font-light leading-relaxed">
               Películas arquitetônicas sem procedência certificada não possuem garantia da marca, não respondem pelo desempenho técnico especificado e não oferecem suporte pós-aplicação. Toda aplicação INSULFILM™ em canal oficial inclui certificado individual de procedência. O uso da marca por terceiros não é autorizado.

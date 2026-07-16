@@ -33,7 +33,7 @@ const categories = [
   {
     title: 'Decorativo',
     icon: <Layers className="w-8 h-8" />,
-    desc: 'Privacidade para salas de reunião, divisórias e fachadas. Jateado, Whiteout e Blackout — soluções profissionais sem obra civil.',
+    desc: 'Privacidade para salas de reunião, divisórias e fachadas. Jateado, Whiteout e Blackout, soluções profissionais sem obra civil.',
     path: '/arquitetonico/comercial/decorativo',
   },
   {
@@ -48,7 +48,7 @@ const ArquitetonicoComercial = () => (
   <>
     <Helmet>
       <title>Películas para Empresas | INSULFILM™ Arquitetônico Comercial</title>
-      <meta name="description" content="Películas INSULFILM™ para empresas — controle solar (NR17), segurança patrimonial, decorativo e proteção de superfícies. Reduza OPEX e aumente a produtividade." />
+      <meta name="description" content="Películas INSULFILM™ para empresas, controle solar (NR17), segurança patrimonial, decorativo e proteção de superfícies. Reduza OPEX e aumente a produtividade." />
       <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/comercial" />
       <meta property="og:title" content="Películas para Empresas | INSULFILM™" />
       <meta property="og:description" content="Linha completa de películas INSULFILM™ para edificações comerciais. OPEX, NR17 e produtividade." />
@@ -57,7 +57,7 @@ const ArquitetonicoComercial = () => (
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "Películas Comerciais INSULFILM™",
-        "description": "Linha completa de películas para edificações comerciais INSULFILM™ — controle solar, segurança, decorativo e proteção de superfícies.",
+        "description": "Linha completa de películas para edificações comerciais INSULFILM™, controle solar, segurança, decorativo e proteção de superfícies.",
         "url": "https://insulfilm.com.br/arquitetonico/comercial",
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -73,7 +73,7 @@ const ArquitetonicoComercial = () => (
     <main>
       <PageHero
         title="Menos OPEX, mais produtividade. Vidros que trabalham a favor da sua operação."
-        subtitle="Películas INSULFILM™ para edificações comerciais e corporativas — controle solar conforme NR17, segurança patrimonial e estética profissional que reduz custos operacionais."
+        subtitle="Películas INSULFILM™ para edificações comerciais e corporativas, controle solar conforme NR17, segurança patrimonial e estética profissional que reduz custos operacionais."
         badge={{ icon: <Building2 className="w-3.5 h-3.5" />, text: 'INSULFILM™ COMERCIAL' }}
         cta={{
           text: 'Falar com um Especialista',

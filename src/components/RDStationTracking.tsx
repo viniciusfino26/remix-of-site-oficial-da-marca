@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { trackPageView, hasConsent, CONSENT_CHANGE_EVENT } from "@/lib/rdstation";
 
 /**
- * RD Station Marketing — Loader global do script de rastreamento.
+ * RD Station Marketing, Loader global do script de rastreamento.
  *
  * - Injeta o script oficial somente após consentimento LGPD;
  * - Dispara pageviews automaticamente a cada mudança de rota (SPA);
@@ -11,7 +11,7 @@ import { trackPageView, hasConsent, CONSENT_CHANGE_EVENT } from "@/lib/rdstation
  * - Token configurado via VITE_RD_STATION_TOKEN (build-time).
  */
 
-// Token público do RD Station Marketing — exposto no HTML do loader oficial,
+// Token público do RD Station Marketing, exposto no HTML do loader oficial,
 // portanto seguro para versionar no código (não é credencial sensível).
 const RD_TOKEN =
   (import.meta.env.VITE_RD_STATION_TOKEN as string | undefined) ||

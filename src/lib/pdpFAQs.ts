@@ -1,6 +1,6 @@
 // src/lib/pdpFAQs.ts
 // Manifesto centralizado e TRILÍNGUE (pt/en/es) de FAQs e Breadcrumbs por PDP.
-// Single Source of Truth — espelhado no FAQPage Schema (JSON-LD) e no <PDPFaqSection> visível.
+// Single Source of Truth, espelhado no FAQPage Schema (JSON-LD) e no <PDPFaqSection> visível.
 // Atualizar AQUI quando alterar specs nas páginas correspondentes.
 
 import { buildBreadcrumbSchema, buildFAQSchema, type BreadcrumbItem, type FAQItem } from './pdpSchemas';
@@ -78,7 +78,7 @@ const arqSPFCanonical = (name: string, slug: string): I18nBreadcrumbItem[] => [
 
 // ───────── Manifesto trilíngue ─────────
 export const PDP_META: Record<string, PDPMeta> = {
-  // ═══ AUTOMOTIVO — SOLAR ═══
+  // ═══ AUTOMOTIVO, SOLAR ═══
   matrix: {
     breadcrumb: autoSolar('INSULFILM™ Matrix', '/matrix'),
     faqs: [
@@ -214,7 +214,7 @@ export const PDP_META: Record<string, PDPMeta> = {
       },
     ],
   },
-  // ═══ AUTOMOTIVO — SEGURANÇA ═══
+  // ═══ AUTOMOTIVO, SEGURANÇA ═══
   antivandalismo13k: {
     breadcrumb: autoSecurity('INSULFILM™ Antivandalismo 13K', '/antivandalismo13k'),
     faqs: [
@@ -373,13 +373,13 @@ export const PDP_META: Record<string, PDPMeta> = {
         },
         a: {
           pt: 'Sim. Construção tetra laminada com adesivo extremo, é a película de segurança automotiva mais robusta da marca.',
-          en: 'Yes. Tetra-laminated construction with extreme adhesive — the most robust automotive security film of the brand.',
-          es: 'Sí. Construcción tetra laminada con adhesivo extremo — la película de seguridad automotriz más robusta de la marca.',
+          en: 'Yes. Tetra-laminated construction with extreme adhesive, the most robust automotive security film of the brand.',
+          es: 'Sí. Construcción tetra laminada con adhesivo extremo, la película de seguridad automotriz más robusta de la marca.',
         },
       },
     ],
   },
-  // ═══ AUTOMOTIVO — PPF ═══
+  // ═══ AUTOMOTIVO, PPF ═══
   'phantom-gloss': {
     breadcrumb: autoPPF('INSULFILM™ Phantom Gloss', '/phantom-gloss'),
     faqs: [
@@ -421,7 +421,7 @@ export const PDP_META: Record<string, PDPMeta> = {
       },
     ],
   },
-  // ═══ ARQUITETÔNICO — SOLAR ═══
+  // ═══ ARQUITETÔNICO, SOLAR ═══
   clear70: {
     breadcrumb: arqSolarCanonical('INSULFILM™ Clear70', 'clear70'),
     faqs: [
@@ -791,7 +791,7 @@ export const PDP_META: Record<string, PDPMeta> = {
       },
     ],
   },
-  // ═══ ARQUITETÔNICO — SPF ═══
+  // ═══ ARQUITETÔNICO, SPF ═══
   'phantom-arquitetonico': {
     breadcrumb: arqSPF('INSULFILM™ Phantom Arquitetônico', '/phantom-arquitetonico'),
     faqs: [
@@ -833,7 +833,7 @@ export const PDP_META: Record<string, PDPMeta> = {
       },
     ],
   },
-  // ═══ ARQUITETÔNICO — SPF (entradas dedicadas, separadas da auto) ═══
+  // ═══ ARQUITETÔNICO, SPF (entradas dedicadas, separadas da auto) ═══
   'phantom-gloss-spf': {
     breadcrumb: arqSPFCanonical('INSULFILM™ Phantom Gloss', 'phantom-gloss'),
     faqs: [
@@ -885,9 +885,9 @@ export const PDP_META: Record<string, PDPMeta> = {
           es: '¿La Phantom Matte preserva el acabado mate original?',
         },
         a: {
-          pt: 'Sim. A formulação é específica para acabamentos foscos — não adiciona brilho nem altera a textura visual do material original.',
-          en: 'Yes. The formulation is specific to matte finishes — it does not add gloss nor alter the visual texture of the original material.',
-          es: 'Sí. La formulación es específica para acabados mate — no añade brillo ni altera la textura visual del material original.',
+          pt: 'Sim. A formulação é específica para acabamentos foscos, não adiciona brilho nem altera a textura visual do material original.',
+          en: 'Yes. The formulation is specific to matte finishes, it does not add gloss nor alter the visual texture of the original material.',
+          es: 'Sí. La formulación es específica para acabados mate, no añade brillo ni altera la textura visual del material original.',
         },
       },
       {

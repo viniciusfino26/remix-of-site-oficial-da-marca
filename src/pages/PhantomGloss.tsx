@@ -36,10 +36,10 @@ const PhantomGloss = () => {
     <>
       <Helmet>
         <title>INSULFILM™ Phantom Gloss | SPF para Superfícies Gloss | Proteção Invisível</title>
-        <meta name="description" content="INSULFILM™ Phantom Gloss — Surface Protection Film para superfícies brilhosas. Preserva o brilho original contra micro-riscos, manchas ácidas e desgaste. 180 microns. Garantia 5 anos." />
+        <meta name="description" content="INSULFILM™ Phantom Gloss, Surface Protection Film para superfícies brilhosas. Preserva o brilho original contra micro-riscos, manchas ácidas e desgaste. 180 microns. Garantia 5 anos." />
         <link rel="canonical" href="https://insulfilm.com.br/arquitetonico/phantom-gloss" />
         <meta property="og:title" content="INSULFILM™ Phantom Gloss | SPF para Superfícies Gloss" />
-        <meta property="og:description" content="INSULFILM™ Phantom Gloss — Surface Protection Film para superfícies brilhosas. 180 microns. Garantia 5 anos." />
+        <meta property="og:description" content="INSULFILM™ Phantom Gloss, Surface Protection Film para superfícies brilhosas. 180 microns. Garantia 5 anos." />
         <meta property="og:type" content="product" />
         <meta property="og:url" content="https://insulfilm.com.br/arquitetonico/phantom-gloss" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -56,9 +56,9 @@ const PhantomGloss = () => {
           <motion.div className="container mx-auto px-4 pt-32 pb-20 relative z-10 text-center" style={{ y: heroTextY, opacity: heroOpacity }}>
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} className="flex justify-center mb-4">
-                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Sparkles className="w-3.5 h-3.5 mr-2" />SPF — Surface Protection Film</Badge>
+                <Badge className="bg-accent/10 text-accent border-accent/20 text-xs uppercase tracking-widest px-4 py-1.5"><Sparkles className="w-3.5 h-3.5 mr-2" />SPF, Surface Protection Film</Badge>
               </motion.div>
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Phantom Gloss — brilho que não se refaz se preserva</motion.h1>
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-extrabold text-primary-foreground mb-4 leading-[0.95]">INSULFILM™ Phantom Gloss, brilho que não se refaz se preserva</motion.h1>
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-primary-foreground/60 font-light max-w-2xl mx-auto">Brilho não se refaz. Se preserva.</motion.p>
               <motion.div variants={scaleIn} className="flex justify-center mt-6"><div className="separator-accent" /></motion.div>
             </motion.div>
@@ -71,7 +71,7 @@ const PhantomGloss = () => {
           answer="O INSULFILM™ Phantom Gloss é uma película de proteção de pintura (PPF) com tecnologia auto-regenerativa que recupera microriscos com calor e protege a pintura contra impactos, insetos e contaminantes."
           context="Acabamento brilhante premium com 5 anos de garantia, ideal para preservar a pintura original do veículo."
           specs={[
-            { label: 'Tipo', value: 'PPF — Paint Protection Film' },
+            { label: 'Tipo', value: 'PPF, Paint Protection Film' },
             { label: 'Acabamento', value: 'Gloss' },
             { label: 'Tecnologia', value: 'Auto-regenerativa' },
             { label: 'Garantia', value: '5 anos' },
@@ -103,7 +103,7 @@ const PhantomGloss = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-8">Superfícies de alto padrão não falham por falta de beleza. Falham pelo uso.</motion.h2>
               <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">O conflito central do design de interiores é que as superfícies mais bonitas são as mais expostas.</motion.p>
-              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">Uma superfície gloss impecável — em mármore, lacado, vidro ou madeira polida — é um investimento significativo. E é exatamente essa superfície que enfrenta, todos os dias:</motion.p>
+              <motion.p variants={fadeInUp} className="text-muted-foreground font-light leading-relaxed mb-6">Uma superfície gloss impecável, em mármore, lacado, vidro ou madeira polida, é um investimento significativo. E é exatamente essa superfície que enfrenta, todos os dias:</motion.p>
               <motion.ul className="space-y-4 mb-6" variants={stagger}>
                 {[
                   'Micro-riscos: o uso cotidiano cria uma rede de abrasões que difunde a luz e mata o brilho progressivamente',
@@ -125,10 +125,10 @@ const PhantomGloss = () => {
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-foreground mb-10">Uma camada de engenharia invisível. 180 microns de proteção que não aparecem.</motion.h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {[
-                  { title: 'Preserva o brilho', desc: 'Mantém a profundidade e os reflexos impecáveis — criando uma barreira entre a superfície e os agentes de desgaste sem interferir na aparência.' },
-                  { title: 'Barreira química', desc: 'Impede manchas de vinho, cítricos e produtos agressivos — eliminando o principal vetor de dano permanente em superfícies gloss.' },
-                  { title: 'Resistência a riscos', desc: 'Protege contra abrasões do dia a dia — vasos, utensílios, joias, objetos que deslizam sobre a superfície.' },
-                  { title: 'Limpeza facilitada', desc: 'Superfície ultra lisa que facilita a manutenção — sem acúmulo de resíduos nas micro-abrasões.' },
+                  { title: 'Preserva o brilho', desc: 'Mantém a profundidade e os reflexos impecáveis, criando uma barreira entre a superfície e os agentes de desgaste sem interferir na aparência.' },
+                  { title: 'Barreira química', desc: 'Impede manchas de vinho, cítricos e produtos agressivos, eliminando o principal vetor de dano permanente em superfícies gloss.' },
+                  { title: 'Resistência a riscos', desc: 'Protege contra abrasões do dia a dia, vasos, utensílios, joias, objetos que deslizam sobre a superfície.' },
+                  { title: 'Limpeza facilitada', desc: 'Superfície ultra lisa que facilita a manutenção, sem acúmulo de resíduos nas micro-abrasões.' },
                 ].map((item, i) => (
                   <motion.div key={i} variants={fadeInUp}>
                     <Card className="glass-card rounded-2xl h-full"><CardContent className="p-8">
@@ -179,7 +179,7 @@ const PhantomGloss = () => {
               <motion.div variants={fadeInUp} className="rounded-2xl border border-primary-foreground/10 bg-background/30 backdrop-blur-md p-6 md:p-8">
                 <div className="space-y-3">
                   {[
-                    { label: 'Produto', value: 'INSULFILM™ Phantom Gloss — Surface Protection Film' },
+                    { label: 'Produto', value: 'INSULFILM™ Phantom Gloss, Surface Protection Film' },
                     { label: 'Espessura total', value: '7 mil (≈ 180 microns)' },
                     { label: 'Força do adesivo', value: '≥15N/25mm' },
                     { label: 'Força para rompimento', value: '≈355 lbs/in' },
@@ -246,7 +246,7 @@ const PhantomGloss = () => {
                     <CheckCircle className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                     <div>
                       <span className="text-foreground font-bold">{item.title}</span>
-                      <span className="text-muted-foreground font-light"> — {item.desc}</span>
+                      <span className="text-muted-foreground font-light">, {item.desc}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -268,7 +268,7 @@ const PhantomGloss = () => {
           <div className="container mx-auto px-4 relative z-10">
             <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
               <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-extrabold text-primary-foreground mb-4">Solicite Atendimento Nacional</motion.h2>
-              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Phantom Gloss preserva exatamente o que torna uma superfície gloss extraordinária — com a procedência da marca registrada referência no segmento.</motion.p>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/60 text-lg font-light mb-8">A INSULFILM™ Phantom Gloss preserva exatamente o que torna uma superfície gloss extraordinária, com a procedência da marca registrada referência no segmento.</motion.p>
               <motion.div variants={scaleIn} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-6 rounded-xl shadow-premium-lg hover:shadow-premium transition-all">
                   <Link to="/contato"><ArrowRight className="w-5 h-5" />Solicitar atendimento nacional</Link>

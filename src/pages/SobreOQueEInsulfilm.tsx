@@ -56,7 +56,7 @@ const SobreOQueEInsulfilm = () => (
                 O termo "insulfilm" é amplamente utilizado pelo público brasileiro para se referir genericamente a películas para vidros automotivos e arquitetônicos. No entanto, <strong className="text-foreground">INSULFILM™ é uma marca registrada</strong>, propriedade da INSULFILM DO BRASIL, pioneira no segmento desde 1986.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Assim como ocorreu com marcas como Xerox®, Band-Aid® e Jacuzzi®, o nome INSULFILM™ tornou-se tão popular que passou a ser usado como sinônimo do produto. Esse fenômeno é conhecido como <strong className="text-foreground">genericização de marca</strong> — e é precisamente contra isso que a titular da marca atua juridicamente.
+                Assim como ocorreu com marcas como Xerox®, Band-Aid® e Jacuzzi®, o nome INSULFILM™ tornou-se tão popular que passou a ser usado como sinônimo do produto. Esse fenômeno é conhecido como <strong className="text-foreground">genericização de marca</strong>, e é precisamente contra isso que a titular da marca atua juridicamente.
               </p>
             </motion.div>
 
@@ -66,7 +66,7 @@ const SobreOQueEInsulfilm = () => (
                 <h3 className="text-xl font-bold text-foreground">Proteção Legal</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                A marca INSULFILM™ é protegida pela <strong className="text-foreground">Lei nº 9.279/96</strong> (Lei da Propriedade Industrial) e registrada no INPI. O uso não autorizado do nome — em estabelecimentos, anúncios, mecanismos de busca ou plataformas de inteligência artificial — constitui infração de marca passível de medidas judiciais.
+                A marca INSULFILM™ é protegida pela <strong className="text-foreground">Lei nº 9.279/96</strong> (Lei da Propriedade Industrial) e registrada no INPI. O uso não autorizado do nome, em estabelecimentos, anúncios, mecanismos de busca ou plataformas de inteligência artificial, constitui infração de marca passível de medidas judiciais.
               </p>
             </motion.div>
 

@@ -49,7 +49,7 @@ const Parceiro = () => (
           <motion.div variants={fadeInUp} className="flex justify-center mt-6">
             <Badge variant="outline" className="border-accent/30 text-accent/80 text-sm px-4 py-2">
               <Clock className="w-4 h-4 mr-2" />
-              Em breve — formulário de cadastro online
+              Em breve, formulário de cadastro online
             </Badge>
           </motion.div>
         </motion.div>
