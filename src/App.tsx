@@ -81,6 +81,7 @@ import ArqHubDecorativo from "./pages/ArqHubDecorativo";
 
 /* ── Hubs Segmentados, Residencial + Comercial ── */
 import ArquitetonicoResidencial from "./pages/ArquitetonicoResidencial";
+import ArqResidencialGuiaCompleto from "./pages/ArqResidencialGuiaCompleto";
 import ArquitetonicoComercial from "./pages/ArquitetonicoComercial";
 import ArqResidencialHubSolar from "./pages/ArqResidencialHubSolar";
 import ArqResidencialHubSeguranca from "./pages/ArqResidencialHubSeguranca";
@@ -267,6 +268,7 @@ const App = () => (
 
           {/* Divisão Arquitetônica, Hubs Segmentados */}
           <Route path="/arquitetonico/residencial" element={<ArquitetonicoResidencial />} />
+          <Route path="/arquitetonico/residencial/guia-completo" element={<ArqResidencialGuiaCompleto />} />
           <Route path="/arquitetonico/comercial" element={<ArquitetonicoComercial />} />
 
           {/* Divisão Arquitetônica, Hubs de Silo (legado, mantidos temporariamente) */}

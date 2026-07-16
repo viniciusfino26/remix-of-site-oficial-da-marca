@@ -50,6 +50,7 @@ const EXTRA_ROUTES = [
   '/anti-pirataria',
   '/ppf',
   '/arquitetonico/residencial',
+  '/arquitetonico/residencial/guia-completo',
 ];
 EXTRA_ROUTES.forEach((path) => routes.add(path));
 
