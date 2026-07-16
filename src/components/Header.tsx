@@ -13,12 +13,14 @@ import flagEs from '@/assets/flag-es.svg';
 interface NavItem { label: string; href: string; desc?: string }
 interface NavColumn { title: string; items: NavItem[] }
 interface NavFooter { title: string; items: NavItem[] }
+interface NavHighlight { label: string; href: string; desc?: string }
 interface NavMenu {
   key: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
   columns?: NavColumn[];
   footer?: NavFooter;
+  highlight?: NavHighlight;
   items?: NavItem[];
   href?: string;
 }
@@ -74,7 +76,12 @@ const Header = () => {
           items: [
             { label: 'Ceramic', href: '/automotivo/solar/ceramic', desc: 'Nano cerâmica de alta rejeição.' },
             { label: 'Matrix', href: '/automotivo/solar/matrix', desc: 'Nano cerâmica Ultra Definition.' },
-            { label: 'Comparar Linhas', href: '/automotivo/solar', desc: 'Tabela técnica lado a lado.' },
+          ],
+        },
+        {
+          title: 'PPF · Proteção de Pintura',
+          items: [
+            { label: 'Phantom Gloss', href: '/automotivo/ppf/phantom-gloss', desc: 'Proteção de pintura automotiva.' },
           ],
         },
         {
@@ -84,10 +91,14 @@ const Header = () => {
             { label: 'Antivandalismo 13K', href: '/automotivo/seguranca/antivandalismo13k', desc: 'Barreira contra depredação rápida.' },
             { label: 'SkudoGuard', href: '/automotivo/seguranca/skudoguard', desc: 'Escudo estrutural após a quebra.' },
             { label: 'SkudoUltra', href: '/automotivo/seguranca/skudoultra', desc: 'Proteção estrutural máxima.' },
-            { label: 'PPF Phantom Gloss', href: '/automotivo/ppf/phantom-gloss', desc: 'Proteção de pintura automotiva.' },
           ],
         },
       ],
+      highlight: {
+        label: 'Comparar Películas Solares',
+        href: '/automotivo/solar',
+        desc: 'Tabela técnica lado a lado — Performance, High Performance e Ultra Performance.',
+      },
       footer: {
         title: 'Atendimento',
         items: [
@@ -165,7 +176,15 @@ const Header = () => {
       onMouseEnter={() => setOpenMenu(menu.key)}
       onMouseLeave={() => setOpenMenu(null)}
     >
-      <div className={`grid gap-8 ${menu.columns!.length >= 4 ? 'grid-cols-4' : 'grid-cols-3'}`}>
+      <div
+        className={`grid gap-6 ${
+          menu.columns!.length >= 5
+            ? 'grid-cols-5'
+            : menu.columns!.length === 4
+            ? 'grid-cols-4'
+            : 'grid-cols-3'
+        }`}
+      >
         {menu.columns!.map((col) => (
           <div key={col.title}>
             <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3 px-2">
@@ -179,11 +198,11 @@ const Header = () => {
                   onClick={() => setOpenMenu(null)}
                   className="group block px-2 py-2 rounded-md hover:bg-muted transition-colors"
                 >
-                  <div className="text-sm font-semibold text-foreground group-hover:text-accent">
+                  <div className="text-sm font-semibold text-foreground group-hover:text-accent leading-tight">
                     {it.label}
                   </div>
                   {it.desc && (
-                    <div className="text-xs text-muted-foreground font-light leading-snug mt-0.5">
+                    <div className="text-[11px] text-muted-foreground font-light leading-snug mt-0.5">
                       {it.desc}
                     </div>
                   )}
@@ -193,6 +212,28 @@ const Header = () => {
           </div>
         ))}
       </div>
+      {menu.highlight && (
+        <Link
+          to={menu.highlight.href}
+          onClick={() => setOpenMenu(null)}
+          className="group mt-5 flex items-center justify-between gap-4 rounded-lg border border-accent/40 bg-gradient-to-r from-accent/10 via-accent/5 to-transparent px-5 py-4 hover:border-accent hover:from-accent/20 transition-all"
+        >
+          <div>
+            <div className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1">
+              Destaque
+            </div>
+            <div className="text-sm font-bold text-foreground group-hover:text-accent">
+              {menu.highlight.label}
+            </div>
+            {menu.highlight.desc && (
+              <div className="text-xs text-muted-foreground font-light mt-0.5">
+                {menu.highlight.desc}
+              </div>
+            )}
+          </div>
+          <ChevronDown className="w-4 h-4 -rotate-90 text-accent transition-transform group-hover:translate-x-1" />
+        </Link>
+      )}
       {menu.footer && (
         <>
           <Separator className="my-4" />
