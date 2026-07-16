@@ -113,7 +113,7 @@
       "e2018": "Primeira a oferecer películas com tecnologia de alta definição, INSULFILM™ Elite.",
       "e2019": "Lançamento da película premium de proteção à pintura (PPF), INSULFILM™ Phantom®8mil.",
       "e2024": "Lançamento da tecnologia de ultra definição, INSULFILM™ LT Polariz e LT Matrix.",
-      "e2025": "Lançamento das películas LT Eclipse, LT Skye Ultra, LT Panoramic e da nova categoria Películas de Segurança Superior para vidros automotivos."
+      "e2025": "Reorganização da linha Solar Performance Films (RayStart, RayPro, Carbon, Ceramic), lançamento da película INSULFILM™ Panoramic para tetos solares e da nova categoria Películas de Segurança Superior para vidros automotivos."
     },
     "intro": {
       "whoTitle": "Quem Somos",
@@ -159,36 +159,6 @@
       "sunroof": "Teto Solar",
       "security": "Segurança e Proteção"
     },
-    "ltDark": {
-      "name": "INSULFILM™ LT Dark",
-      "category": "Clássica",
-      "serie": "Pigmentada",
-      "heat": "Até 39%",
-      "tech": "Clear",
-      "type": "Pigmentação",
-      "desc": "A película mais tradicional do Brasil. Proteção solar com estilo clássico e custo-benefício imbatível.",
-      "warranty": "Garantia de Fábrica"
-    },
-    "ltEclipse": {
-      "name": "INSULFILM™ LT Eclipse",
-      "category": "Premium Performance",
-      "serie": "Carbono",
-      "heat": "Até 49%",
-      "tech": "High Definition",
-      "type": "Carbono HD",
-      "desc": "Tecnologia carbono com alta definição. Rejeição de calor superior para máximo conforto.",
-      "warranty": "Garantia de Fábrica Estendida"
-    },
-    "ltVip": {
-      "name": "INSULFILM™ LT VIP",
-      "category": "Premium Performance",
-      "serie": "Carbono Extra",
-      "heat": "Até 58%",
-      "tech": "High Definition",
-      "type": "Carbono Extra HD",
-      "desc": "O máximo em rejeição de calor da linha carbono. Para quem exige o melhor em performance.",
-      "warranty": "Garantia de Fábrica Estendida"
-    },
     "ltPolariz": {
       "name": "INSULFILM™ LT Polariz",
       "category": "Ultra Performance",
@@ -198,36 +168,6 @@
       "type": "Nano Cerâmica",
       "desc": "Tecnologia nano cerâmica com ultra definição. O topo da linha em performance e claridade visual.",
       "warranty": "Garantia Premium Vitalícia"
-    },
-    "dark": {
-      "name": "INSULFILM™ LT Dark",
-      "category": "Clássica",
-      "serie": "Pigmentada",
-      "heat": "Até 39%",
-      "tech": "Clear",
-      "type": "Pigmentação",
-      "desc": "A película mais tradicional do Brasil. Proteção solar com estilo clássico e custo-benefício imbatível.",
-      "warranty": "Garantia de Fábrica"
-    },
-    "eclipse": {
-      "name": "INSULFILM™ LT Eclipse",
-      "category": "Premium Performance",
-      "serie": "Carbono",
-      "heat": "Até 49%",
-      "tech": "High Definition",
-      "type": "Carbono HD",
-      "desc": "Tecnologia carbono com alta definição. Rejeição de calor superior para máximo conforto.",
-      "warranty": "Garantia de Fábrica Estendida"
-    },
-    "vip": {
-      "name": "INSULFILM™ LT VIP",
-      "category": "Premium Performance",
-      "serie": "Carbono Extra",
-      "heat": "Até 58%",
-      "tech": "High Definition",
-      "type": "Carbono Extra HD",
-      "desc": "O máximo em rejeição de calor da linha carbono. Para quem exige o melhor em performance.",
-      "warranty": "Garantia de Fábrica Estendida"
     },
     "polaris": {
       "name": "INSULFILM™ LT Polariz",
@@ -390,7 +330,7 @@
     "faqTitle": "Perguntas Frequentes",
     "faq1": {
       "q": "Qual película é indicada para o meu carro?",
-      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
+      "a": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a linha Matrix (nanocerâmica premium). Para boa performance com custo-benefício, a linha Carbon ou Ceramic. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF."
     },
     "faq2": {
       "q": "A película escurece muito o vidro?",
@@ -835,7 +775,7 @@
     "catWarranty": "Garantia",
     "catGeneral": "Geral",
     "auto1Q": "Qual película é indicada para o meu carro?",
-    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a LT Polariz ou LT Matrix. Para boa performance com custo-benefício, a LT VIP ou LT Eclipse. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
+    "auto1A": "A escolha depende da sua necessidade. Para conforto térmico máximo, recomendamos a linha Matrix (nanocerâmica premium). Para boa performance com custo-benefício, a linha Carbon ou Ceramic. Para segurança, o Antivandalismo 13K ou SkudoGuard. Para proteção de pintura, o Phantom® PPF.",
     "solar1Q": "A película escurece muito o vidro?",
     "solar1A": "Cada linha possui diferentes níveis de transmissão de luz visível (VLT). Oferecemos opções desde tonalidades leves até escurecimento máximo permitido pela legislação CONTRAN.",
     "solar2Q": "A película pode ser aplicada no para-brisa?",
@@ -918,10 +858,10 @@
     "heroTitle": "Garantia INSULFILM™",
     "heroSubtitle": "Qualidade comprovada com garantia de fábrica em todos os produtos",
     "tableTitle": "Garantia por Produto",
-    "w1Product": "LT Dark",
+    "w1Product": "RayStart",
     "w1Period": "Garantia de Fábrica",
     "w1Coverage": "Descoloração, bolhas e descascamento",
-    "w2Product": "LT Eclipse / LT VIP",
+    "w2Product": "RayPro / Carbon",
     "w2Period": "Garantia Estendida",
     "w2Coverage": "Descoloração, bolhas, descascamento e desbotamento",
     "w3Product": "LT Polariz / LT Matrix",

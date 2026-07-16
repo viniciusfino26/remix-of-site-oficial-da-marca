@@ -726,8 +726,8 @@ const SkudoUltra = () => {
               <div className="flex flex-wrap justify-center gap-3">
                 {[
                   { name: 'RayStart', gen: 'Solar Performance · Basic Film Pigmentada', href: '/automotivo/solar/raystart' },
-                  { name: 'Eclipse', gen: '3ª Geração, Carbono', href: '/automotivo/solar/eclipse' },
-                  { name: 'Vip', gen: '3ª Geração evoluída, Carbono-Cerâmica', href: '/automotivo/solar/vip' },
+                  { name: 'RayPro', gen: 'Solar Performance · Classic Film Pigmentação Homogênea', href: '/automotivo/solar/raypro' },
+                  { name: 'Carbon', gen: 'Solar Performance · Carbon Film Cor Estável', href: '/automotivo/solar/carbon' },
                   { name: 'Matrix', gen: '4ª Geração, Cerâmica', href: '/automotivo/solar/matrix' },
                   { name: 'Polariz Ultra', gen: '5ª Geração, Cerâmica Metalizada', href: '/automotivo/solar/polariz-ultra' },
                 ].map((line) => (

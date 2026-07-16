@@ -111,7 +111,7 @@
       "e2018": "Primera en ofrecer películas con tecnología de alta definición, INSULFILM™ Elite.",
       "e2019": "Lanzamiento de la película premium de protección de pintura (PPF), INSULFILM™ Phantom 8mil.",
       "e2024": "Lanzamiento de la tecnología de ultra definición, INSULFILM™ Elite, Polariz y Matrix.",
-      "e2025": "Lanzamiento de las películas Eclipse, Skye Ultra, Panoramic y la nueva categoría \"Películas de Seguridad Superior\" para vidrios automotrices."
+      "e2025": "Reorganización de la línea Solar Performance Films (RayStart, RayPro, Carbon, Ceramic), lanzamiento de INSULFILM™ Panoramic para techos solares y de la nueva categoría \"Películas de Seguridad Superior\" para vidrios automotrices."
     },
     "intro": {
       "whoTitle": "Quiénes Somos",
@@ -151,36 +151,6 @@
     "specType": "Tipo",
     "cta": "Quiero saber más",
     "viewMore": "Ver página del producto",
-    "dark": {
-      "name": "INSULFILM™ Dark",
-      "category": "Clásica",
-      "serie": "Pigmentada",
-      "heat": "Hasta 39%",
-      "tech": "Clear",
-      "type": "Pigmentación",
-      "desc": "La película más tradicional de Brasil. Protección solar con estilo clásico y relación calidad-precio inigualable.",
-      "warranty": "Garantía de Fábrica"
-    },
-    "eclipse": {
-      "name": "INSULFILM™ Eclipse",
-      "category": "Premium Performance",
-      "serie": "Carbono",
-      "heat": "Hasta 49%",
-      "tech": "High Definition",
-      "type": "Carbono HD",
-      "desc": "Tecnología carbono con alta definición. Rechazo de calor superior para máximo confort.",
-      "warranty": "Garantía de Fábrica Extendida"
-    },
-    "vip": {
-      "name": "INSULFILM™ VIP",
-      "category": "Premium Performance",
-      "serie": "Carbono Extra",
-      "heat": "Hasta 58%",
-      "tech": "High Definition",
-      "type": "Carbono Extra HD",
-      "desc": "El máximo en rechazo de calor de la línea carbono. Para quienes exigen lo mejor en rendimiento.",
-      "warranty": "Garantía de Fábrica Extendida"
-    },
     "polaris": {
       "name": "INSULFILM™ Polaris",
       "category": "Ultra Performance",
@@ -252,7 +222,7 @@
     "faqTitle": "Preguntas Frecuentes",
     "faq1": {
       "q": "¿Qué película es la indicada para mi auto?",
-      "a": "La elección depende de su necesidad. Para confort térmico, recomendamos la línea Eclipse o VIP. Para seguridad, el Antivandálico 13K. Para protección de pintura, el Phantom PPF. Nuestro equipo puede ayudar con la consultoría técnica."
+      "a": "La elección depende de su necesidad. Para confort térmico, recomendamos la línea Matrix (nanocerámica premium). Para buen rendimiento con relación calidad-precio, la línea Carbon o Ceramic. Para seguridad, el Antivandálico 13K. Para protección de pintura, el Phantom PPF. Nuestro equipo puede ayudar con la consultoría técnica."
     },
     "faq2": {
       "q": "¿La película oscurece mucho el vidrio?",
@@ -704,7 +674,7 @@
     "catWarranty": "Garantía",
     "catGeneral": "General",
     "auto1Q": "¿Qué película es recomendada para mi auto?",
-    "auto1A": "La elección depende de su necesidad. Para confort térmico máximo, recomendamos la LT Polariz o LT Matrix. Para buen rendimiento con relación calidad-precio, la LT VIP o LT Eclipse. Para seguridad, el Antivandálico 13K o SkudoGuard. Para protección de pintura, el Phantom® PPF.",
+    "auto1A": "La elección depende de su necesidad. Para confort térmico máximo, recomendamos la línea Matrix (nanocerámica premium). Para buen rendimiento con relación calidad-precio, la línea Carbon o Ceramic. Para seguridad, el Antivandálico 13K o SkudoGuard. Para protección de pintura, el Phantom® PPF.",
     "solar1Q": "¿La película oscurece mucho el vidrio?",
     "solar1A": "Cada línea tiene diferentes niveles de transmisión de luz visible (VLT). Ofrecemos opciones desde tonalidades leves hasta oscurecimiento máximo permitido por la legislación.",
     "solar2Q": "¿La película se puede aplicar en el parabrisas?",
@@ -787,10 +757,10 @@
     "heroTitle": "Garantía INSULFILM™",
     "heroSubtitle": "Calidad comprobada con garantía de fábrica en todos los productos",
     "tableTitle": "Garantía por Producto",
-    "w1Product": "LT Dark",
+    "w1Product": "RayStart",
     "w1Period": "Garantía de Fábrica",
     "w1Coverage": "Decoloración, burbujas y desprendimiento",
-    "w2Product": "LT Eclipse / LT VIP",
+    "w2Product": "RayPro / Carbon",
     "w2Period": "Garantía Extendida",
     "w2Coverage": "Decoloración, burbujas, desprendimiento y desteñido",
     "w3Product": "LT Polariz / LT Matrix",

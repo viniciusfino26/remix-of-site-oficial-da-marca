@@ -55,7 +55,7 @@
             "slug": {
               "type": "string",
               "minLength": 1,
-              "description": "Product slug, e.g. 'matrix', 'eclipse', 'raystart'."
+              "description": "Product slug, e.g. 'matrix', 'raystart', 'carbon'."
             },
             "lang": {
               "type": "string",
@@ -91,7 +91,7 @@
             "slug": {
               "type": "string",
               "minLength": 1,
-              "description": "Product slug, e.g. 'matrix', 'eclipse'."
+              "description": "Product slug, e.g. 'matrix', 'raystart', 'carbon'."
             },
             "lang": {
               "type": "string",

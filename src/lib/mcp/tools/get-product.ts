@@ -8,7 +8,7 @@ export default defineTool({
   description:
     "Return full public details for one INSULFILM™ product: description, technical properties, category, rating, and page URL.",
   inputSchema: {
-    slug: z.string().min(1).describe("Product slug, e.g. 'matrix', 'eclipse', 'raystart'."),
+    slug: z.string().min(1).describe("Product slug, e.g. 'matrix', 'raystart', 'carbon'."),
     lang: z.enum(["pt", "en", "es"]).default("pt").describe("Language for text fields."),
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },

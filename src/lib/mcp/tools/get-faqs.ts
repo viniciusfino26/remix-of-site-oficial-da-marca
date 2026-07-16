@@ -8,7 +8,7 @@ export default defineTool({
   description:
     "Return the public FAQ list (question/answer pairs) for one INSULFILM™ product page.",
   inputSchema: {
-    slug: z.string().min(1).describe("Product slug, e.g. 'matrix', 'eclipse'."),
+    slug: z.string().min(1).describe("Product slug, e.g. 'matrix', 'raystart', 'carbon'."),
     lang: z.enum(["pt", "en", "es"]).default("pt").describe("Language for the FAQs."),
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
