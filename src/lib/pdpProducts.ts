@@ -5,7 +5,7 @@
 //
 // Atualizar AQUI sempre que mudar specs/descrição na página correspondente.
 
-import { PDP_PRODUCT_IMAGES } from './pdpProductImages';
+
 
 import type { Lang, I18nText } from './pdpFAQs';
 
@@ -450,8 +450,7 @@ export const buildProductSchema = (slug: string, lang: Lang = 'pt') => {
     additionalProperty,
   };
 
-  const img = PDP_PRODUCT_IMAGES[slug];
-  if (img) schema.image = ABS(img);
+  if (p.image) schema.image = p.image;
   if (p.category) schema.category = p.category[lang];
 
   if (p.offer) {

@@ -9,12 +9,6 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.22.2";
 import { z } from "npm:zod@^3.23.8";
 
-// src/lib/pdpProductImages.ts
-import autoAntivandalismo13K from "npm:@/assets/auto-antivandalismo13k.jpg";
-import autoSkinSafe8K from "npm:@/assets/auto-skinsafe8k.jpg";
-import autoSkudoGuard from "npm:@/assets/auto-skudoguard.jpg";
-import autoSkudoUltra from "npm:@/assets/auto-skudoultra.jpg";
-
 // src/lib/pdpProducts.ts
 var CAT_AUTO_SOLAR = {
   pt: "Pel\xEDcula automotiva, prote\xE7\xE3o solar",
