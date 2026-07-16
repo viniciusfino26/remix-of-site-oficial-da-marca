@@ -691,6 +691,52 @@ const Lojas = () => {
         <meta property="og:description" content="Encontre o Centro Autorizado INSULFILM™ mais próximo com atendimento especializado." />
         <meta property="og:url" content="https://www.insulfilm.com.br/lojas" />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': STORES.map((s) => {
+            const lines = s.address.split('\n').map((l) => l.trim()).filter(Boolean);
+            const street = lines[0];
+            const cityLine = lines.find((l) => /,\s*SP/i.test(l)) || lines[1] || '';
+            const localityMatch = cityLine.match(/([^,]+),\s*([A-Za-zÀ-ÿ\s]+),\s*SP/);
+            const neighborhood = localityMatch?.[1]?.trim();
+            const city = localityMatch?.[2]?.trim() || 'São Paulo';
+            const telephones: string[] = [];
+            if (s.phoneTel) telephones.push(s.phoneTel);
+            const waMatch = s.whatsapp.match(/wa\.me\/(\d+)/);
+            if (waMatch) telephones.push(`+${waMatch[1]}`);
+            const openingHours: string[] = [];
+            s.hours.forEach((h) => {
+              const timeMatch = h.time.match(/(\d{2})h\s*às\s*(\d{2})h/);
+              if (!timeMatch) return;
+              const open = `${timeMatch[1]}:00`;
+              const close = `${timeMatch[2]}:00`;
+              if (/segunda.*sexta/i.test(h.days)) openingHours.push(`Mo-Fr ${open}-${close}`);
+              else if (/sábado|sabado/i.test(h.days)) openingHours.push(`Sa ${open}-${close}`);
+              else if (/domingo/i.test(h.days)) openingHours.push(`Su ${open}-${close}`);
+            });
+            return {
+              '@type': 'Store',
+              '@id': `https://www.insulfilm.com.br/lojas#${s.id}`,
+              name: `INSULFILM™ ${s.name}`,
+              url: 'https://www.insulfilm.com.br/lojas',
+              image: 'https://www.insulfilm.com.br/placeholder.svg',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: street,
+                addressLocality: city,
+                addressRegion: 'SP',
+                addressCountry: 'BR',
+                ...(neighborhood ? { addressLocality: `${neighborhood}, ${city}` } : {}),
+              },
+              geo: { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lng },
+              ...(telephones.length ? { telephone: telephones[0] } : {}),
+              hasMap: s.maps,
+              openingHours,
+              areaServed: s.zone,
+              parentOrganization: { '@type': 'Organization', name: 'INSULFILM™', url: 'https://www.insulfilm.com.br/' },
+            };
+          }),
+        })}</script>
       </Helmet>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center bg-carbon-gradient overflow-hidden">
