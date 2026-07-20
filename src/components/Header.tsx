@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Menu, ChevronDown, Shield, Car, Building2, MapPin } from 'lucide-react';
@@ -35,6 +35,21 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 180);
+  };
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const openNow = (key: string) => {
+    cancelClose();
+    setOpenMenu(key);
+  };
 
   const megaMenuItems: NavMenu[] = [
     {
@@ -187,10 +202,12 @@ const Header = () => {
 
   const renderMegaPanel = (menu: NavMenu) => (
     <div
-      className="fixed left-[50vw] top-[calc(3px+6rem)] lg:top-[calc(3px+8rem)] mt-1 w-[min(96vw,1280px)] bg-card rounded-xl shadow-premium-lg border border-border p-6 z-50 animate-mega-fade-in-up"
-      onMouseEnter={() => setOpenMenu(menu.key)}
-      onMouseLeave={() => setOpenMenu(null)}
+      className="fixed left-1/2 -translate-x-1/2 top-[calc(3px+6rem)] lg:top-[calc(3px+8rem)] w-[min(96vw,1280px)] z-50 animate-mega-fade-in-up"
+      onMouseEnter={() => openNow(menu.key)}
+      onMouseLeave={scheduleClose}
     >
+      <div className="h-3" aria-hidden="true" />
+      <div className="bg-card rounded-xl shadow-premium-lg border border-border p-6">
       <div
         className={`grid gap-6 ${
           menu.columns!.length >= 5
@@ -269,6 +286,7 @@ const Header = () => {
           </div>
         </>
       )}
+      </div>
     </div>
   );
 
@@ -362,8 +380,8 @@ const Header = () => {
                   <div
                     key={menu.key}
                     className="relative"
-                    onMouseEnter={() => setOpenMenu(menu.key)}
-                    onMouseLeave={() => setOpenMenu(null)}
+                    onMouseEnter={() => openNow(menu.key)}
+                    onMouseLeave={scheduleClose}
                   >
                     <button
                       className="nav-link-premium flex items-center gap-2 px-4 py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors rounded-md"
