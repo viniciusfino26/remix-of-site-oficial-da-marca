@@ -204,7 +204,7 @@ const AutomotivoHubSeguranca = () => {
                   <h3 className="text-primary-foreground font-extrabold text-base">Proteção Antivandalismo</h3>
                 </div>
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
-                  Anti-estilhaços projetados e proteção contra atos de vandalismo.
+                  Proteção contra atos de vandalismo e anti-estilhaços projetados.
                 </p>
                 <p className="text-primary-foreground/60 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
                 <div className="flex flex-wrap gap-2">
