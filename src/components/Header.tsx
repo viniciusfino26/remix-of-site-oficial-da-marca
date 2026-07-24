@@ -117,7 +117,7 @@ const Header = () => {
         {
           title: 'Proteção e Segurança',
           items: [
-            { label: 'SkinSafe 8K', href: '/automotivo/seguranca/skinsafe8k', desc: 'Proteção da pele a bordo.' },
+            { label: 'Antivandalismo PS12', href: '/automotivo/seguranca/skinsafe8k', desc: 'Proteção contra estilhaços e vandalismo.' },
             { label: 'Antivandalismo 13K', href: '/automotivo/seguranca/antivandalismo13k', desc: 'Barreira contra depredação rápida.' },
             { label: 'SkudoGuard', href: '/automotivo/seguranca/skudoguard', desc: 'Escudo estrutural após a quebra.' },
             { label: 'SkudoUltra', href: '/automotivo/seguranca/skudoultra', desc: 'Proteção estrutural máxima.' },
