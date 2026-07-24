@@ -75,7 +75,7 @@ const AutomotivoHubSeguranca = () => {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
               className="text-accent font-extrabold text-center text-base md:text-lg mb-6 leading-snug"
             >
-              Veja como é fácil quebrar o vidro do carro.
+              Veja como é fácil quebrar o vidro do carro:
             </motion.p>
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
