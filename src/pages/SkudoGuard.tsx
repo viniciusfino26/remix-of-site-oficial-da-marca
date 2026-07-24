@@ -308,7 +308,7 @@ const SkudoGuard = () => {
                 {[
                   'Retenção de fragmentos, protege pele, rosto e olhos de todos os ocupantes',
                   'Não altera a originalidade do veículo, instalação discreta e profissional',
-                  'Não aplicável a furtos, proteção específica contra abordagens violentas',
+                  'Proteção específica contra abordagens violentas',
                   'Não interfere em sinais eletrônicos, pedágio, GPS e celular funcionam normalmente',
                 ].map((text, i) => (
                   <motion.li key={i} variants={fadeInLeft} className="flex items-start gap-3">
