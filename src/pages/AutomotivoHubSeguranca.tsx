@@ -62,7 +62,7 @@ const AutomotivoHubSeguranca = () => {
                 Conheça as películas de Proteção Antivandalismo e Segurança Superior originais <strong>INSULFILM™</strong>. Desenvolvidas com engenharia de ponta e polímeros sintéticos de alto desempenho mecânico, nossas películas de defesa oferecem muito mais resistência. Faça do seu carro uma fortaleza, fortificando os vidros contra acidentes e ataques criminosos.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Não interfere em sinais de celulares e demais eletrônicos. Não altera a originalidade do veículo, não interferindo na garantia da montadora.
+                Não altera a originalidade do veículo, não interferindo na garantia da montadora.
               </motion.p>
             </motion.div>
           </div>
