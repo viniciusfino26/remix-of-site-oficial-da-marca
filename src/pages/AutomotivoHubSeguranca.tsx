@@ -231,7 +231,7 @@ const AutomotivoHubSeguranca = () => {
                   <h3 className="text-primary-foreground font-extrabold text-base">Segurança Superior</h3>
                 </div>
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
-                  Verdadeiros escudos muito mais resistentes a tentativas de invasão.
+                  Verdadeiros escudos muito mais resistentes à tentativas de invasão.
                 </p>
                 <p className="text-primary-foreground/60 text-xs uppercase tracking-widest mb-3">Explore nossas películas</p>
                 <div className="flex flex-wrap gap-2">
