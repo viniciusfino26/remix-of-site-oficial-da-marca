@@ -210,7 +210,7 @@ const AutomotivoHubSeguranca = () => {
                 <div className="flex flex-wrap gap-2">
                   <Link to="/automotivo/seguranca/skinsafe8k">
                     <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold text-xs rounded-full px-4">
-                      SkinSafe8K
+                      Antivandalismo PS12
                     </Button>
                   </Link>
                   <Link to="/automotivo/seguranca/antivandalismo13k">
@@ -261,7 +261,7 @@ const AutomotivoHubSeguranca = () => {
               Películas de Proteção
             </motion.h2>
 
-            {/* SkinSafe8K */}
+            {/* Antivandalismo PS12 */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
               className="grid md:grid-cols-2 gap-8 items-center mb-16"
@@ -271,7 +271,7 @@ const AutomotivoHubSeguranca = () => {
                 <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-[11px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-sm">
                   <ShieldCheck className="w-3.5 h-3.5" /> Proteção Básica
                 </div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™SkinSafe8K</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">INSULFILM™Antivandalismo PS12</p>
                 <h3 className="text-lg font-extrabold text-primary uppercase tracking-wide">PROTEÇÃO CONTRA ACIDENTES.</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Película de proteção contra estilhaços projetados em quebras acidentais. Retém grande parte dos fragmentos do vidro quebrado, evitando lesões na pele e nos olhos geradas por projeção direta contra os ocupantes do veículo.
@@ -282,10 +282,10 @@ const AutomotivoHubSeguranca = () => {
                   </Button>
                 </Link>
               </motion.div>
-              {/* Foto SkinSafe8K */}
+              {/* Foto Antivandalismo PS12 */}
               <motion.div variants={fadeInRight}>
                 <div className="w-full rounded-xl overflow-hidden border border-border" style={{ aspectRatio: '4/3' }}>
-                  <img src={autoSkinSafe8K} alt="INSULFILM™ SkinSafe8K, proteção contra estilhaços" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={autoSkinSafe8K} alt="INSULFILM™ Antivandalismo PS12, proteção contra estilhaços" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </motion.div>
             </motion.div>
