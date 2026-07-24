@@ -201,7 +201,7 @@ const AutomotivoHubSeguranca = () => {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <ShieldCheck className="w-5 h-5 text-accent" />
-                  <h3 className="text-primary-foreground font-extrabold text-base">Proteção e Antivandalismo</h3>
+                  <h3 className="text-primary-foreground font-extrabold text-base">Proteção Antivandalismo</h3>
                 </div>
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
                   Anti-estilhaços projetados e proteção contra atos de vandalismo.
@@ -228,7 +228,7 @@ const AutomotivoHubSeguranca = () => {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Swords className="w-5 h-5 text-accent" />
-                  <h3 className="text-primary-foreground font-extrabold text-base">Películas de Defesa</h3>
+                  <h3 className="text-primary-foreground font-extrabold text-base">Segurança Superior</h3>
                 </div>
                 <p className="text-primary-foreground/60 text-sm mb-5 leading-relaxed">
                   Verdadeiros escudos muito mais resistentes a tentativas de invasão.
