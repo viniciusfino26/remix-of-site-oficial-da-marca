@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { hasConsent, CONSENT_CHANGE_EVENT } from '@/lib/rdstation';
 
 // ─── CONFIG ────────────────────────────────────────────────────────────────
 const GTM_ID = 'GTM-XXXXXXX';
@@ -145,10 +146,21 @@ export const Analytics = {
 
 const AnalyticsProvider = () => {
   const location = useLocation();
+  const [consent, setConsent] = useState<boolean>(() => hasConsent());
 
   useEffect(() => {
-    injectScripts();
+    const recheck = () => setConsent(hasConsent());
+    window.addEventListener(CONSENT_CHANGE_EVENT, recheck as EventListener);
+    window.addEventListener('storage', recheck);
+    return () => {
+      window.removeEventListener(CONSENT_CHANGE_EVENT, recheck as EventListener);
+      window.removeEventListener('storage', recheck);
+    };
   }, []);
+
+  useEffect(() => {
+    if (consent) injectScripts();
+  }, [consent]);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.gtag) {

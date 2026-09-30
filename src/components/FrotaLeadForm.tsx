@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { trackConversion } from "@/lib/rdstation";
 import { sanitizeInput } from "@/lib/sanitize";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z
@@ -58,9 +59,10 @@ const FrotaLeadForm = () => {
 
   const consentValue = watch("consent");
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     // Anti-bot: bloqueia submissão muito rápida (< 3s) ou honeypot preenchido
-    if (Date.now() - mountedAt.current < 3000 || data.company_url) {
+    const elapsed = Date.now() - mountedAt.current;
+    if (elapsed < 3000 || data.company_url) {
       setStatus("error");
       return;
     }
@@ -75,6 +77,19 @@ const FrotaLeadForm = () => {
     };
 
     try {
+      // Grava no servidor independentemente do consentimento de cookies
+      const { error } = await supabase.functions.invoke("fleet-lead", {
+        body: {
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone,
+          consent: true,
+          company_url: data.company_url ?? "",
+          elapsed_ms: elapsed,
+        },
+      });
+      if (error) throw error;
+      // RD Station continua condicionado ao consentimento (checado internamente)
       trackConversion("frota-lead-b2b", payload);
       setStatus("success");
     } catch {
