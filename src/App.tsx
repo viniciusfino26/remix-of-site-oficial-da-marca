@@ -188,7 +188,7 @@ const App = () => (
           <SchemaOrg />
           <AnalyticsProvider />
           <RDStationTracking />
-          <RDDebugOverlay />
+          {import.meta.env.DEV && <RDDebugOverlay />}
           <Header />
         <Routes>
           <Route path="/" element={<Index />} />
