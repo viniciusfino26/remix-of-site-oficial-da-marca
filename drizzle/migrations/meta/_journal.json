@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790759172361,
+      "tag": "0000_security_audit_videos_and_fleet_leads",
+      "breakpoints": true
+    }
+  ]
+}
